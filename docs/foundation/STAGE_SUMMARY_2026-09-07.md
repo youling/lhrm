@@ -120,7 +120,7 @@ P(FutureRelationshipState | Z_t)
 mechanism
 primitive_state
 observable_proxy
--derived_outcome
+derived_outcome
 role_constraint
 ```
 
