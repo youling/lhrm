@@ -18,6 +18,7 @@ LHRM 是一个用于研究、表达与仿真人际/亲密关系的开放研究�
 当前关键入口：
 
 - `AGENTS.md` — 项目本地 Agent 规则与治理指针
+- `docs/foundation/STAGE_SUMMARY_2026-09-07.md` — 当前阶段 checkpoint、成熟理论锚点与后续研究边界
 - `docs/foundation/RELATIONSHIP_EVALUATION_FOUNDATION.md` — 早期基础坐标系研究稿
 - `docs/ARCHITECT_BOOTSTRAP_REPORT.md` — 架构师接管记录
 - `docs/ARCHITECT_RECONNAISSANCE_REPORT.md` — 当前架构预研与外部对齐
