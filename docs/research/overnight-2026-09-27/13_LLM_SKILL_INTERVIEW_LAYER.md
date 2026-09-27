@@ -12,8 +12,26 @@ human natural language
  -> uncertainty-aware result
 ```
 
-- **立场声明**：本报告对 LLM 层采取**对抗性**评估。理由不是 LLM 抽取效果差（§2.1 里 F1 0.88–0.98 是真实结果），而是 §9.6 的一条元论证：**"多个 LLM 达成一致"本身就是 LLM 层的失败模式之一，而不是它的解药**。
+- **立场声明**：本报告对 LLM 层采取**对抗性**评估。理由不是 LLM 抽取效果差（§2.1 里 F1 0.88–0.98 是真实结果），而是 §9.6 的一条规范：**"多个 LLM 达成一致"不得被当作质量证据**。这条规范的依据已在 Round-3 修复中更换（**不是**"单一输出不可检测"，见 §9.6），结论方向不变，依据已改写为「共享训练先验 ⇒ 相关误差」。
 - **引用强度约定**：`CITED_PRIMARY`（读到原文/官方页）/ `CITED_SECONDARY`（仅经转述）/ `AGENT_RECALL`（先验，未核实）。核实日期 2026-09-27。
+- **检索范围声明（X-14）**：本报告所有"未找到 / 0 条 / 基本为空"类表述，一律指**本次检索范围**（所列关键词、基线与可达数据库），**不构成领域存在性结论**。凡本报告写"0 条"处，均应读作「**在本次检索范围内未找到**」。
+
+---
+
+## 0. Substrate 与权利边界（Fixture 003 / StoryCorps）
+
+本报告在 §1、§4.1(c)、§5.3、§7.1、§7.3、§9.2、§9.9、§10(R3/R7)、§13.2 使用 `FIXTURE_003` 的 `Sxxx` 冻结单元、锚点约定与 freeze rules。**权利边界逐字记录如下：**
+
+> **唯一被授权的 LHRM substrate 是该 fixture 的 frozen paraphrase-only 冻结包。** 包内只保存「忠实 paraphrase + 短锚点」（fair use / fair dealing，保留归属），**不含 transcript / audio 原文，不镜像全文**。
+> **StoryCorps 正文与音频保持 `rights_policy = HUMAN_REVIEW_REQUIRED`；Eye 侧为 `POINTER_HASH_ONLY` fail-closed**（`raw_artifact_ref = null`、`representation_artifact_refs = []`、`content_hashes = []`）。
+> **来源站 `robots.txt` 含 `Content-Signal: … ,ai-train=no,use=reference`（EU 2019/790 reservation）与 `Disallow` for GPTBot / ClaudeBot / CCBot 等。**
+> **Eye 未向本项目提供 transcript body、raw artifact 或 anchored Representation。** `SC/page/...` / `SC/transcript/pNN` 是**冻结包自身按"非空可见段落"定义的锚点约定**，**不是** Eye 产出的 `anchored Representation` 对象。
+> 本报告只使用冻结包本身已含的短锚点与其转述，**不重建、不复原任何受保护正文**（非平凡的受保护逐字重建：0 处）。
+> **权利 fail-closed 立场不变，不因本报告的引用而放宽，也不因任何"未检出违规"而升级。**
+
+**权利与检索的关系（不可倒推）**：本条只声明边界，**不断言**边界是否曾被违反。是否构成违反属 Human 权利裁决；fail-closed 无论裁决结果如何都继续生效。
+
+**待 Architect / Human 裁决（不由本报告处理）**：`FIXTURE_003` 的 canonical 页面地址在 **2026-09-14** 实测出现 **404**（旧 `-perasa/` 路径）；冻结包头部记录了据此做出的指针更正并称现行地址当日 live 200。**现行 canonical 指针是否仍然有效、fixture 记录是否需要重新定位，属 Architect / Human 裁决**——本报告不裁定该有效性，也不自行重新定位。同一裁决还决定 Fixture 003 是否计入"3 份已冻结 fixture"。
 
 ---
 
@@ -35,7 +53,7 @@ sentence / event -> valid LHRM mapping ?
 所以 LLM Skill 层在项目里承担的是一个**非常窄但非常难**的职责：
 
 1. 把自由文本切成句/事件单元；
-2. 为每个单元定位源 span（`FIXTURE_001` 的 `source_paragraph(s)`、`FIXTURE_002` 的 `PG7256/body/pNN`、`FIXTURE_003` 的 `SC/transcript/pNN` 已经是这个约定的三个实例）；
+2. 为每个单元定位源 span（`FIXTURE_001` 的 `source_paragraph(s)`、`FIXTURE_002` 的 `PG7256/body/pNN`、`FIXTURE_003` 的 `SC/transcript/pNN` 已经是这个约定的三个实例——**注意**这三个都是**冻结包自身定义的锚点约定**，不是 Eye `anchored Representation` 产物；`FIXTURE_003` 的权利边界见 §0）；
 3. 提出候选映射，或显式产出 `MAPPING_FAILURE`；
 4. **不发明 construct**。
 
@@ -66,7 +84,7 @@ sentence / event -> valid LHRM mapping ?
 
 > 也就是说，在"事件 + 谁 + 什么 + 何时 + 何状态"这种正是 LHRM 需要的粒度上，**人类专家自己的一致度是 ~0.82**。任何把 LHRM 抽取结果与该类 gold 比 F1 的做法，都是把 0.82 当成 1.0。
 
-**(c) LLM 的一致性是"对齐多数派先验"，不是"更准"。** Nakamura, Tan & Yean 2026（arXiv:2609.22133v1）复现 14 项同行评审政治学研究的二元文本分类，用 **10 个 LLM、3 位专家、165 名众包工**标注同一批文本（每研究抽 100 条）：
+**(c) LLM 与人类编码在标注质量上「观测等价」，分歧的驱动因素是歧义本身。** Nakamura, Tan & Yean 2026（arXiv:2609.22133v1）复现 14 项同行评审政治学研究的二元文本分类，用 **10 个 LLM、3 位专家、165 名众包工**标注同一批文本（每研究抽 100 条）：
 
 | 任务组 | expert–expert 一致度 | LLM–expert 一致度 |
 |---|---|---|
@@ -79,7 +97,16 @@ sentence / event -> valid LHRM mapping ?
 2. **澄清 codebook 同时降低专家间与（足够强的）LLM 间的分歧。**
 3. crowd 工人表现出同样的集中模式，但与专家的一致度显著更低。
 
-> **对 LHRM 的直接后果**：把"LLM 一致度高"当质量证据，等于说"LLM 和人群**平均/多数**读法一致"。这在专家自己都分裂的文本上恰恰是误导。§9.6 会把这写成一条硬规则。
+**该文摘要的逐字结论（原转述方向与此相反，Round-3 已更正）**：
+
+> "we show that LLM and human coding are **observationally equivalent** in terms of annotation quality: recent LLMs agree with expert coders at rates comparable to those observed among experts themselves."
+> "Thus, there is **little empirical basis for preferring human coding** on the basis of annotation quality alone, while LLMs offer substantial advantages in speed and cost."
+> "we therefore argue that the central challenge of text annotation is no longer choosing between human and machine coders, but **developing coding rules that minimize ambiguity** and accounting for the ambiguity that remains."
+> "we propose using **disagreement across LLMs to identify difficult cases and refine codebooks**."
+
+> **对 LHRM 的直接后果（方向已更正）**：本报告此前把该文读作「LLM 的高一致性 = 对齐人群多数派先验、因此不更准」。**该读法与来源结论方向相反**：来源说的是"选不出更好的那一方"，其**真正**的规范含义是——**把「LLM 一致度高」当作质量证据，与把「人类一致度高」当作质量证据犯的是同一个错**，因为分歧的来源是歧义而非标注者类别。因此 LHRM 的门是**把歧义显式化并消解歧义**（R6 + codebook 版本化），不是"投票选多数派"，也不是"选人类"。§9.6 把该文用作**「一致不等于准」的依据**是成立的，但推导路径必须是"歧义驱动 ⇒ 一致与不准相容"，不是"LLM 对齐多数派"。
+
+**Round-3 标注**：以上四段引文为**摘要逐字**（`CITED_PRIMARY_ABSTRACT`，本轮实读）。**被取代的转述**：「把"LLM 一致度高"当质量证据，等于说"LLM 和人群**平均/多数**读法一致"」——方向讲反，已删。
 
 **(d) 迁移与分组差异显著。** SBDH-Reader 从内部验证的 0.97 掉到 MIMIC-G 0.92 / MIMIC-A 0.89（employment 降到 0.83）。SODA（GatorTron，*J Biomed Inform* 2024, PMC11141428）端到端 strict mF1 0.8963，但**种族分组差距 >15pp**：White 组 F1 0.9038/0.9160 vs Other 组 0.7465/0.7960。
 
@@ -138,7 +165,9 @@ DISPUTED_BY_SOURCE           # 来源自身标记为争议（alleged / disputed 
 
 **(c) "时变事实"的可判定性本身不稳定。** arXiv:2603.15892 对 DYNAMICQA 与 MULAN 做统一复现，发现两篇对"时变事实是否比静态事实更易被外部上下文更新"给出**相反结论**。归因于 temporality 的操作化差异：DYNAMICQA 用 Wikipedia 编辑次数近似，**未记录质量核查也未列出进入 temporal 类的具体事实版本**；MULAN 用 Wikidata 关系类型与对象计数。
 
-> **对 LHRM 的直接后果**：任何"矛盾 vs 状态变化"的判定规则，如果**不显式声明其时间对齐假设**，就不构成可复现的判定。`FIXTURE_003` freeze rule 2 已经做出了正确区分（`recording_time != recalled_event_time != event_time`），这是 LHRM 相对文献的真实领先点。
+> **对 LHRM 的直接后果**：任何"矛盾 vs 状态变化"的判定规则，如果**不显式声明其时间对齐假设**，就不构成可复现的判定。`FIXTURE_003` freeze rule 2 已经做出了正确区分（`recording_time != recalled_event_time != event_time`），这是 LHRM 相对文献的真实领先点。（**权利边界见 §0**：本处只引用冻结包自带的 freeze rule，不重建受保护正文。）
+>
+> **承重状态：非承重（explicit non-load-bearing）。** 这条外部佐证提高了对 `FIXTURE_003` freeze rule 2 的信心，但**不改变本报告任何一条裁决**：R7（时间轴未对齐前禁止报 `contradiction`）引用的是同一篇论文的**另一条**命题，且 §4.2 的三分类本来就标注为「本研究提出，无文献背书」。若把 §4.1(c) 当成 R7 的证据来源，就是重复计数。
 
 ### 4.2 结论：矛盾不是二值
 
@@ -188,7 +217,7 @@ UNRESOLVED_PENDING_TIME_ALIGNMENT     # 时间轴未对齐前，不得报 contra
 三重后果：
 
 1. **反应性升级为本体论问题**。被问"他有没有在控制你"这个问题本身，可能改变接下来可观测到的控制行为（S38 已在家庭日记场景中观察到同类效应）。关系叙事访谈是这个效应的**最高风险场景**而非最低。
-2. **访谈记录是状态的共同生产者，不是窗口**。`FIXTURE_002` freeze rule 2/3 与 `FIXTURE_003` freeze rule 2/3/7 已在做这件事（`said != believed != true`；`narrator_evaluation` 不升级为客观 latent state；`happily married / shelter / never another Annie` 不量化）。本报告只是把它推到"**提问动作本身也要入 provenance**"这一步。
+2. **访谈记录是状态的共同生产者，不是窗口**。`FIXTURE_002` freeze rule 2/3 与 `FIXTURE_003` freeze rule 2/3/7 已在做这件事（`said != believed != true`；`narrator_evaluation` 不升级为客观 latent state；`happily married / shelter / never another Annie` 不量化）。本报告只是把它推到"**提问动作本身也要入 provenance**"这一步。（**权利边界见 §0**：此处只引用冻结包自带的 freeze rule。）
 3. **顺序与揭示效应在此处没有证据**。Zhang et al. 报告顺序效应在选民态度题上"可能很小"，但**那不是关系题**。涉及忠诚、控制、嫉妒、依赖的问题带有强社会赞许与需求特征；该领域**无对应证据**（U-6）。
 
 **结论 3**：信息增益最大化在 LHRM 中是**有理论依据但默认关闭**的优化目标。开启需 Human 显式裁定，且提问预算、提问内容、提问顺序必须作为**观测事件**进入 provenance（见 R15）。
@@ -255,7 +284,7 @@ PROV Working Group 于 **2013-04-30** 发布 12 份文档，其中四项为 W3C 
 | `wasAssociatedWith` | LLM 对抽取活动负责 |
 | `actedOnBehalfOf` | Human 委托 LLM 的委托链 |
 | `specializationOf` / `alternateOf` | `AGENTS.md` §8–10 的 history 分叉、Belief 内嵌世界、purpose-specific views |
-| `revision` / `quotation` | "只存 paraphrase + 锚点、不镜像全文"（Fixture 001/002/003 全部如此） |
+| `revision` / `quotation` | "只存 paraphrase + 锚点、不镜像全文"（Fixture 001/002/003 全部如此）——**`FIXTURE_003` 的这一条同时是权利边界的实现方式，见 §0** |
 
 PROV-AGENT（arXiv:2508.02866）表明把 PROV 扩展到 agentic workflow 溯源（含 MCP 可观测性）是一条活跃的工程路径。
 
@@ -279,7 +308,7 @@ evidence_item:
 ### 7.3 三个 PROV 没覆盖、需要 LHRM 自行裁定的点
 
 1. **slot 级而非记录级溯源**。PROV 的 `used` 绑定在 activity/entity 上；LHRM 需要"时间指代可信、动机不可信"这种**字段级可信度差异**。这不是 PROV 的缺陷，但 PROV 也不直接提供。
-2. **knowledge-time vs event-time**。`FIXTURE_001` 的 `knowledge_time_by_agent` 与 `FIXTURE_003` 的三分**比 PROV 更细**——PROV 只有 activity 的 start/end。**这可能是 LHRM 的原创贡献点，但它属于扩展还是实现细节，属 Architect / Human 裁定，不由本研究决定。**
+2. **knowledge-time vs event-time**。`FIXTURE_001` 的 `knowledge_time_by_agent` 与 `FIXTURE_003` 的三分**比 PROV 更细**——PROV 只有 activity 的 start/end。**这可能是 LHRM 的原创贡献点，但它属于扩展还是实现细节，属 Architect / Human 裁定，不由本研究决定。**（**权利边界见 §0**：本条只比较记录形态，不要求、也未获得 `FIXTURE_003` 的 transcript / raw / anchored representation。）
 3. **诚实标注 derivation 步数**。LLM 抽取通常经过 CoT、多步，标 `precise-1` 是撒谎；应标 `imprecise-n` 并给 `steps`。
 
 ---
@@ -312,6 +341,7 @@ DO   span_support           每个 slot 有源 span（机器可判）
 DO   external_corroboration 独立第三方 / 法条 / 记录（FIXTURE_001 的 adjudicated）
 DO   human_verified         有人读过并确认
 DO   codebook_version       映射规则本身的版本与明确 exclusion
+      （Round-3 提升：§3.3.1 CoMeDi 2025 是对此条的**直接外部佐证**——130,000+ 标注上"自由选择策略产生**更不多样**的标注，往往向常见标签收敛"，即固定 codebook + 显式 exclusion 优于"让模型自由列解读"。此前该佐证只停在 §3.3.1，未进入本裁决。）
 DO   residual_ambiguity     重复抽取的分布宽度（作为"可争议性"的记录，不作为精度）
 
 DON'T  model_reported_confidence
@@ -320,6 +350,22 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 ```
 
 最后一个反模式特别值得强调：`temperature = 0` 下"结果稳定"几乎只说明解码是确定的，**不说明判断正确**。Ziems et al. 2024 为可复现性采用 temperature 0 + 跨 prompt 扰动平均（*CL* 50(1):237–291），但那是**在有 gold 的基准上**；在没有 gold 的 LHRM 抽取层，稳定性不可被解释为可靠性。相关地，arXiv:2503.10671 报告 sampling temperature 导致的低方差会**使效应量估计有偏**。
+
+### 8.4 三条外部佐证的承重状态（Round-3 记账，H-F21 模式）
+
+本报告此前记录了三条「**外部证据佐证 LHRM 已经作出的决定**」，但它们**只停在各自的文献小节，从未进入 §10 的规则依据或 §12 的分阶段裁决**，因而在本报告的结论中权重为零。Round-3 逐条处置如下（既不假装它们一直是承重的，也不假装它们无关）：
+
+| # | 外部佐证 | 佐证的 LHRM 已有决定 | Round-3 处置 | 落地位置 |
+|---|---|---|---|---|
+| 1 | §2.2(g) Lho et al. 2025（JAMA Netw Open, PMC12102709）：**同一位患者**在 self-concept 叙述下被判为临床显著抑郁、在 gender-perception 叙述下**未**被判出 | LHRM 的 `prompt_derived_prior` 纪律 + `codebook_version` 要求 | **提升为承重** | 已加入 **R10** 的依据（原依据只引 arXiv:2603.22735 与 DiNCo，漏掉了最直接的一条） |
+| 2 | §3.3.1 CoMeDi 2025（ACL 2025.comedi-1，130,000+ 标注）：**自由选择策略产生更不多样的标注**，向常见标签收敛 | LHRM 采用**固定 codebook + 显式 exclusion**，而非"让模型自由列解读" | **提升为承重** | 已写入 **§8.3 `codebook_version` 的 DO 理由**（此前该佐证只停在 §3.3.1） |
+| 3 | §4.1(c) arXiv:2603.15892：DYNAMICQA / MULAN 对"时变事实是否更易被外部更新"给出**相反结论**，归因于 temporality 操作化差异 | `FIXTURE_003` freeze rule 2 的三分（`recording_time != recalled_event_time != event_time`） | **明确记为非承重（`NOT_LOAD_BEARING`）** | 见 §4.1(c) 的承重状态段：它提高对已有 freeze rule 的信心，但**不改变任何裁决**；R7 引用的是同一篇论文的**另一条**命题，把它算成 R7 的来源即重复计数 |
+
+**同族但已承重的对照（避免误伤）**：§2.2(f)（LLMStructBench / SchemaRAG / PARSE）此前已经通过"结论 2"进入推理链，**不属此列**；§5.2 的负担与反应性证据已经进入 R15，**不属此列**。
+
+**Round-3 明确不主张**：不主张这三条改变了本报告任何一条裁决的**方向**；只主张它们的**登记位置**从"文献小节"移到了"规则依据 / 裁决理由"，从而不必再以"未承接"为理由质疑其效力。
+
+**分派错位登记（route）**：该条 review finding 在 review-r2 中**逐字记载的对象是 `12`（`12` §2.1 / §8 的「可复用想法」从未进入 `12` §10 的裁决）**，而 `12` 不在本 child 的白名单内。**已作为冲突交回 parent / `12` 的 owner**；本节只对 `13` 自身的同族问题作上述处置。
 
 ---
 
@@ -345,12 +391,14 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 ### 9.2 F2 — 单行为 → 稳定状态（single behaviour → stable disposition）
 
 - **机制**：F1 的行为版本。这正是项目自己的反例库攻击的方向：`RESEARCH_REPORT_REAL_WORLD_PROXY_DECOMPOSITION` 对"肯花钱"（W79）的四关审查结论是"降级为 `observable_proxy`"；对"陪伴"（W33/W34/W35）的结论是"拆为 responsiveness + availability + co-presence，不平级"。
-- **Fixture 对照**（`FIXTURE_003`，`SC/transcript/p004`–`p011`）：
+- **Fixture 对照**（`FIXTURE_003`，`SC/transcript/p004`–`p011`；**权利边界见 §0**——下表只使用冻结包自带的短锚点与其转述，不重建受保护正文）：
 
 | | 内容 |
 |---|---|
 | Bad | `Caregiving(Danny→Annie) = 高`（依据：每日晨间便条） |
 | 合规 | `ritual / observed: 每日晨间桌上留便条` + `speaker: AP`（"若晨间桌上无便条则会担心"）+ 叙述层 `narrator_evaluation: "shelter" / "color television"` 不折算 |
+
+> **锚点与短引的来源（权利相关）**：表中三个英文短引——`"shelter"`、`"color television"`、`若晨间桌上无便条则会担心`——**全部已由 `FIXTURE_003` 冻结包自身包含**（前两者逐字出现在该包 freeze rule 4 的隐喻清单中；第三者是本报告对该包中文 paraphrase 的转述）。**不属于本报告新增的受保护逐字重建。** 非平凡受保护逐字重建：**0 处**。
 
 - **探测信号**：一个 0..1 或 ordinal 读出，其 `support_set` 只有 1 个事件。
 
@@ -393,18 +441,34 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 
 - **探测信号**：`fact_status = unknown` 的来源单元在下游被赋了确定值。
 
-### 9.6 F6 — 歧义选边 + 共识幻觉（**本报告最强的一条元论证**）
+### 9.6 F6 — 歧义选边 + 共识幻觉（依据已在 Round-3 整体更换；**规范保留**）
 
-- **机制**：LLM 在模糊输入上**自发收敛到同一个似真解释**。多个模型一致不是因为对，而是因为共享训练分布与"选取最连贯叙述"的归纳偏置。
-- **文献**：
-  - arXiv:2602.13224（*A Geometric Taxonomy of Hallucination in LLMs*）：多数幻觉 benchmark 的假内容是"**被指示编造**"的，因此携带生成模式痕迹；HaluEval 的正确/幻觉回答在嵌入空间中距离 cos 0.10–0.78，而**人类 confabulation 是 0.72–0.92**、LLM confabulation 0.86–0.96；检测 AUROC **域内 0.76–0.99 但跨域 0.50（随机）**，判别方向跨域近正交（平均余弦 −0.07）。→ **自发产生的虚假内容与真实内容在可检测性上不可区分。**
-  - Nakamura et al.：LLM–expert 一致度与 expert–expert 同档；LLM 对齐的是人群平均 / 多数读法。
-  - S63–S66：judge 层有 self-preference、style、position、verbosity 偏差，且人类会被系统性说服（34% 改变选择）。
-- **推论**：
+- **机制**：LLM 在模糊输入上**自发收敛到同一个似真解释**。多个模型一致**不能推出**它们对，理由是**相关误差（correlated errors）**：同一训练分布上的同族模型共享归纳偏置，因此它们的错误在歧义处**不独立**，一致性与共同出错相容。
+- **文献（Round-3 已逐条重核，原文本节四个数字全部有误，方向亦相反）**：
+  - arXiv:2602.13224（Marín, *A Geometric Taxonomy of **Hallucinations** in LLMs*；本轮实读 v3 全文，`CITED_PRIMARY_FULLTEXT`）。该文**与多模型一致性无关**，它研究的是**单个**输出能否被单程检测；而且它的方向是**几何签名优于 NLI**，不是"不可检测"：
+    - **正确数字**：在同一批 212 对人称 confabulation 上，跨四个 sentence-encoder 架构的检测率为 **69.3%–78.3%**（HaluEval 同一表上为 **88.4%–97.2%**）；成对余弦 `cos(g, c)` 在人称 confabulation 上为 **0.72–0.92**（LLM 条件 0.86–0.96），HaluEval 上为 **0.10–0.78**。
+    - **"0.536"是 NLI baseline 的 AUROC**（`nli-deberta-v3-small`，同一 212 对人称 confabulation，检测率 57.5%），**不是该文自身方法的成绩，也不是"跨域"数字**。该文没有报告"跨域 AUROC"。
+    - **"0.766"是成对余弦，不是 AUROC**（`all-mpnet-base-v2` / 人称 confabulation 那一格）。
+    - **"0.99"在该文中不出现**（全文未出现该值）。
+    - **"判别方向跨域近正交（平均余弦 −0.07）"在该文中不出现**；该文的 `Γ`（Directional Grounding Index）范围是 `[−1, +1]`，`Γ = 0` 才是正交，本文未报告与之对应的 −0.07。
+    - **该文自身的显著性陈述是**：**所有 human 与 LLM 检测率都显著高于 50%**（`p < 10^{-8}`, binomial）。摘要逐字：confabulation 落在 plausibility region 之外会产生"a directional signature that **outperforms NLI** on expert-annotated error"；§6.4 ExpertQA 上 `Γ` 比 NLI 高 `Δ = 0.243`（`p < .001`），而 NLI 在该集上处于随机水平（0.452）。
+    - **该文完全没有跨模型一致性测量**：其 confabulation 由**单一** LLM（`claude-sonnet-4-5`，2026-02）生成，"多模型"指的是**检测端的五个 sentence encoder**，不是多个生成端模型。
+  - **由此得到的构念替换声明（Round-3）**：从"单次输出难检测"推到"多模型一致是失败模式"是**构念替换（construct substitution）**，原文本节的推论据此**撤回**。
+  - Nakamura, Tan & Yean 2026（arXiv:2609.22133v1，摘要逐字）：LLM 与人类编码在标注质量上**观测等价**，**"little empirical basis for preferring human coding"**；分歧由**歧义**驱动；该文**主动建议**把 LLM 之间的分歧用于定位难例并改进 codebook。⇒ 由"分歧是歧义的度量"得到的是"**一致 ≠ 准**"，不是"**LLM 对齐多数派先验**"。
+  - S63–S66：judge 层有 self-preference、style、position、verbosity 偏差，且人类会被系统性说服（34% 改变选择）。**该组证据只支撑"judge 打分有偏"，不支撑"生成端一致 ≠ 准"**，故不进入 R16 的依据。
+- **保守规范（保留，依据已更换）**：
 
-> **"多个 LLM 达成一致"是 F5/F6 的实例，不是它的解药。LLM 一致只能作为歧义定位信号，不能作为质量证据。**
+> **"多个 LLM 达成一致"不能作为质量证据，只能作为歧义定位信号（用于 codebook 迭代）。**
+> **依据（Round-3 换后）**：共享训练先验 ⇒ **相关误差**，因此多模型一致与共同出错相容。**这正是本报告 §13.3 已经写下的那一件事**：`CROSS_RUN_DISPERSION` **只**度量"该 item 在当前 codebook 下有多可争议"，**不是精度**。一致度与离散度是同一把尺子的两面——**两者都不是精度**。因此 R16 与 R6/§13.3 一致，不引入新主张。
 
-- **这直接反驳一条常见的 LHRM 内部诱惑**："让三个模型各跑一遍取交集 / 投票，这样就更可靠。" 在 §2.2(c) 的数据面前，这个做法的实际内容是"取多数派读法"，而在专家自己都分裂的文本上，多数派不等于正确。
+- **这直接反驳一条常见的 LHRM 内部诱惑**："让三个模型各跑一遍取交集 / 投票，这样就更可靠。" 该做法的实际内容是"取多个**误差相关**的读法的多数"，而在 §2.2(c) 记录的那些连专家自己都分裂的文本上，多数派**不是**独立的裁判。**但要说清它反驳的是什么**：它反驳"一致⇒更可靠"这个**推断**，不反驳"用多模型分歧定位歧义"这个**用法**——后者正是 Nakamura et al. 明确推荐的。
+
+- **Round-3 明确撤回的原表述**（供 `SUPERSEDED_BY_REPAIR` 标记）：
+  1. 「检测 AUROC **域内 0.76–0.99 但跨域 0.50（随机）**」——`0.76` 是成对余弦不是 AUROC；`0.99` 不存在；`0.50/0.536` 是 NLI baseline 且**不是**"跨域"。
+  2. 「**判别方向跨域近正交（平均余弦 −0.07）**」——该数字在该文中不存在。
+  3. 「**自发产生的虚假内容与真实内容在可检测性上不可区分**」——与该文「所有检测率显著高于 50%」及「几何签名优于 NLI」相反。
+  4. 「**LLM 对齐的是人群平均 / 多数读法**」——与 arXiv:2609.22133v1 摘要方向相反。
+  5. 本节标题「**本报告最强的一条元论证**」——撤回。该元论证的**规范**保留（见上），但**依据**已整体更换，不应再被当作"最强单条主张"引用。
 
 ### 9.7 F7 — 先验回洗（laundering a prior back as an observation）
 
@@ -442,7 +506,7 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 | Bad | `Carty 已被解雇 (adjudicated)` |
 | 合规 | `经理于 2020-03-23 发出含该主张的短信（消息存在 = adjudicated）`；`该主张为真 = unknown`（`FIXTURE_001` §2 规则 1 与 C013 已如此） |
 
-- **文献侧**：`FIXTURE_003` freeze rule 6 要求 `reported_speaker_ref` 用于嵌套引语（"Danny 引用 1978 的自己"）。这在文献里没有对等物，属于 LHRM 领先点。
+- **文献侧**：`FIXTURE_003` freeze rule 6 要求 `reported_speaker_ref` 用于嵌套引语（"Danny 引用 1978 的自己"）。这在文献里没有对等物，属于 LHRM 领先点。（**权利边界见 §0**；括注为冻结包自身 §2/§3 的示例描述，非本报告新增逐字。）
 
 ### 9.10 F10 — 跨构念族重复计数（double counting）
 
@@ -464,20 +528,20 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 |---|---|---|
 | **R1** | 不得从单条证据升格为稳定倾向或状态。`support_set` size = 1 的项只能停留在 `OBSERVED`（事件 / 行为层），不得产生 Agent 级或 Dyad 级的 trait 读出 | B（单题信度 37–78%）；**例外**：具体、单一对象 + 具体属性的构念（Bergkvist & Rossiter 2007）→ 本规则是"默认禁止 + 需显式登记例外"，不是绝对禁止 |
 | **R2** | `State != Action`（复用 `AGENTS.md` §6–7）。抽取层只产出 Action/Event 与 Observation；状态是下游演算结果 | A |
-| **R3** | `said / believed / true` 三分不可合并；每个断言必须携带 holder；嵌套引语必须用 `reported_speaker_ref` | A（`FIXTURE_002`/`003` freeze rules 已有） |
+| **R3** | `said / believed / true` 三分不可合并；每个断言必须携带 holder；嵌套引语必须用 `reported_speaker_ref` | A（`FIXTURE_002`/`003` freeze rules 已有；**权利边界见 §0**） |
 | **R4** | `UNKNOWN` 不得被静默转成 neutral / 低 / 零 / 缺失即默认 | A（`AGENTS.md` 研究纪律段） |
 | **R5** | 每条抽取项必须携带**逐 slot** 的源 span 指针；span 必须机器可验证存在。记录级锚不满足本规则 | B（W3C PROV 2013-04-30）+ C |
 | **R6** | 歧义必须保留为**分支集合**。禁止在无显式裁定时选边。`AMBIGUOUS_NO_UNIQUE_ANSWER` 是一等状态，与 `UNKNOWN_EVIDENCE` 严格区分 | B（Nakamura et al.；Zhang et al. 2025；NUTMEG） |
 | **R7** | 时间轴未对齐前禁止报 `contradiction`。矛盾三分类见 §4.2 | B（arXiv:2603.22735；arXiv:2603.15892；arXiv:2601.02627） |
 | **R8** | 禁止跨语言构念等同。每条 proxy 必须带 `construct_alignment ∈ {INVARIANCE_EVIDENCED, PARTIAL_ONLY, UNTESTED}`；`UNTESTED` 禁止折算为跨语言可比读出 | B（§6 全部） |
 | **R9** | 禁止把模型自报 confidence 写入证据记录并作为权重或证据等级 | B（DiNCo；*Wired for Overconfidence*；*DepressLLM*） |
-| **R10** | 禁止把 prompt、先前摘要、标签、类别名、用户断言当作证据来源。受其影响的项必须标 `prompt_derived_prior` 且不计入 `extracted` | B（arXiv:2603.22735；DiNCo suggestibility）+ C |
+| **R10** | 禁止把 prompt、先前摘要、标签、类别名、用户断言当作证据来源。受其影响的项必须标 `prompt_derived_prior` 且不计入 `extracted` | B（arXiv:2603.22735；DiNCo suggestibility；**§2.2(g) Lho et al. 2025 —— 同一患者在不同抽取 prompt 下被判出/未被判出，prompt 敏感性是已直接观测到的失败模式**）+ C |
 | **R11** | 禁止把高层复合词（漂亮 / 贤惠 / 高价值 / 真爱 / 关系质量 / 匹配度 / 幸福）落成单一坐标 | A（`AGENTS.md`；Proxy Decomposition §3） |
 | **R12** | 抽取过程中不得发明新 construct。`MAPPING_FAILURE` 必须记账并向上暴露，不得被"顺手修好" | A（`AGENTS.md` 验证纪律段） |
 | **R13** | 强制 blind forward windowing：`K(t)` 只含 `≤ t` 的信息。语料的预训练记忆是窗口外的旁路，必须在评估中作为混淆变量显式声明 | A（`VALIDATION_CORPUS_V0_1.md` 的 `future_leakage_risk` 字段已建立该实践） |
 | **R14** | 多项映射同一构念族读出时必须显式标注非独立，并留下四关审查痕迹 | A（Proxy Decomposition §8） |
 | **R15** | 若启用自适应提问：提问预算必须有硬上限；**提问动作本身（内容、顺序、被问者、时刻）必须作为观测事件进入 provenance**；候选问题在未经 Human 复核前不得进入被访谈者 | B（Jeong et al. 2023；Reynolds et al. 2016）+ C（LHRM 特化的反应性论证，`model hypothesis`） |
-| **R16** | LLM 之间的一致**不得**作为质量证据。它只能作为歧义定位信号，用于 codebook 迭代 | B（arXiv:2602.13224；Nakamura et al.；S63–S66） |
+| **R16** | LLM 之间的一致**不得**作为质量证据。它只能作为歧义定位信号，用于 codebook 迭代 | **B（依据已换，Round-3）**：Nakamura et al. —— 分歧由**歧义**驱动，且来源**主动建议**把 LLM 间分歧用于定位难例、改进 codebook；这直接蕴含"一致 ≠ 准"。**C**：共享训练先验 ⇒ **相关误差**，故多模型一致与共同出错相容（与 §13.3 `CROSS_RUN_DISPERSION` "不是精度" 同源，不引入新主张）。**已从依据中移除**：arXiv:2602.13224（该文**无**任何跨模型一致性测量，其 confabulation 由单一 LLM 生成；S63–S66 只支撑 judge 打分有偏，不支撑生成端一致≠准） |
 | **R17** | 以单一语言 schema 处理他语言原文时，必须做显式的语种 / 语域检查；语种错误**不产生告警**，必须主动检测 | B（arXiv:2603.21036 的"专建多语模型输错语种"案例） |
 
 ---
@@ -524,21 +588,25 @@ DON'T  single_llm_selfconsistency_at_temperature_0
 | 句/事件切分 | **弱** | 事件抽取有成熟基准（S16 PedSHAC 事件-论元 F1 78–82） | **无针对叙事 / 口述史 / 文学文本的切分 benchmark**；无中文的 |
 | schema-bound 结构化抽取（封闭取值） | **强** | F1 0.88–0.98（S14/S15/S18） | 域外：临床 / EHR，非关系叙事 |
 | schema-bound 结构化抽取（宽 schema / 开放构念） | **弱–中** | ExtractBench 369 字段 0%（S09）；Halterman & Keith（S13） | **无针对 LHRM 式方向化多坐标抽取的 benchmark** |
-| `Observation / Belief / Environment` 分层 | **基本为空** | 项目 fixture 有构造 | **0 条外部文献**。这是 LHRM 独有结构 |
-| 说话/相信/真值三分 | **弱** | `FIXTURE_002/003` freeze rules | 无针对叙事主张分层的评测 |
-| 歧义保留 | **中（方法论层）/ 空（实现层）** | Nakamura；Zhang 2025；NUTMEG；CoMeDi | 无"何时该保留为分支、何时该收敛"的判定规程 |
+| `Observation / Belief / Environment` 分层 | **弱–中**（Round-3 上调） | 项目 fixture 有构造；**`12` §3.2 / §8 `I8` 记录了一个结构同构的外部先例**：Concordia（Google DeepMind, arXiv:2312.03664）的 **Game Master / player 分离**（GM 持环境与结果判定，entities 只用自然语言表达意图）被判为「与 LHRM `Reality != Observation != Belief` 分层**同构**」 | **不再是「0 条外部文献 / LHRM 独有」。** 剩余缺口改为**可陈述的**：在本次检索范围内未找到**针对该三层分层的经验评测**（先例是**架构类比**，不是经验证据）。**不再主张"独有"** |
+| 说话/相信/真值三分 | **弱** | `FIXTURE_002/003` freeze rules（**权利边界见 §0**） | 在本次检索范围内未找到针对叙事主张分层的评测 |
+| 歧义保留 | **中（方法论层）/ 空（实现层）** | Nakamura；Zhang 2025；NUTMEG；CoMeDi | 在本次检索范围内未找到"何时该保留为分支、何时该收敛"的判定规程 |
 | 矛盾检测（同一切片内） | **中** | QC-NLI ≤83%（S29）；C³D（S26） | gold 部分由 LLM 生成（S26），存在循环风险 |
-| **变化 vs 不一致的区分** | **基本为空** | 只有 S30 的 benchmark 间**结论反转**这一警示 | **无可复现判定规程**。§4.2 的三分类是本研究提出，**无文献背书** |
-| 时间解析 | **弱–中** | TimeBench 19.4% gap（S31）；格式敏感 | 混合格式中文日期语料无研究 |
+| **变化 vs 不一致的区分** | **基本为空** | 只有 S30 的 benchmark 间**结论反转**这一警示 | **在本次检索范围内未找到可复现判定规程**。§4.2 的三分类是本研究提出，**无文献背书** |
+| 时间解析 | **弱–中** | TimeBench 19.4% gap（S31）；格式敏感 | 在本次检索范围内未找到混合格式中文日期语料的研究 |
 | 信息增益选问 | **强（理论）** | S33–S36 | latent 变量是"能力 / 态度"维度，**不是关系状态** |
-| **提问的反应性代价** | **一般问卷：强；关系状态：空** | S37（10–64% / −25%）；S38（日记反应性） | **U-3：0 条研究测量"追问关系状态"对关系状态的改变量** |
-| 跨语言 proxy 归一化 | **中（人类量表）/ 弱（LLM 抽取）** | S57–S61 | **U-1：LHRM 126 条 proxy 零条有不变性证据**；且无"LLM 抽取 + 人类因子结构"结合的先例 |
-| Provenance 记录 | **强（标准）** | W3C PROV 2013-04-30 | slot 级 + knowledge-time 的具体形态需 Architect 裁定 |
+| **提问的反应性代价** | **一般问卷：强；关系状态：空** | S37（10–64% / −25%）；S38（日记反应性） | **U-3：在本次检索范围内未找到测量"追问关系状态"对关系状态之改变量的研究** |
+| 跨语言 proxy 归一化 | **中（人类量表）/ 弱（LLM 抽取）** | S57–S61 | **U-1：LHRM 126 条 proxy 零条有不变性证据**（这是对**本项目自身**的陈述，不是领域存在性陈述）；且在本次检索范围内未找到"LLM 抽取 + 人类因子结构"结合的先例 |
+| Provenance 记录 | **强（标准）** | **W3C PROV Working Group**，2013-04-30 发布 12 份文档，其中四份为 W3C Recommendation（`PROV-DM` / `PROV-O` / `PROV-N` / `PROV-CONSTRAINTS`） | slot 级 + knowledge-time 的具体形态需 Architect 裁定 |
 | LLM confidence 的可用性 | **强（负向）** | S44–S48 | — |
-| 反幻觉（自发 confabulation） | **强（负向）** | arXiv:2602.13224 | 现有 benchmark 不测这一类（自指问题） |
+| 反幻觉（自发 confabulation） | **中（负向）** | arXiv:2602.13224（**Round-3 更正**：该文在 212 对人称 confabulation 上检测率 **69.3%–78.3%**，且**所有 human/LLM 率显著高于 50%**；其 NLI baseline 为 57.5% / AUROC 0.536。**不是**"跨域 0.50"，**也不是**"不可区分"） | 该文**不是** benchmark 自指问题研究；它在**部署型人称 confabulation** 上给出了一个具体的非平凡检测基线。**"现有 benchmark 不测这一类"已撤回** |
 | **抽取质量的度量本身** | **基本为空** | Nakamura 的 ambiguity-aware bounds 是最接近的 | 见 §13 |
 
-**统计**：本报告 70 条指针中，**直接**支撑"LLM 做人类关系语义抽取"的：**0 条**。全部为邻近领域外推。这必须被明确承认，而不是用"文献很多"掩盖。
+**X-14 检索范围声明（适用于上表全部"缺口"格）**：上表所有"未找到 / 无 / 空 / 0 条"表述**仅描述本次检索范围**（§2.2、§3.1、§6.1 所列关键词与基线，及本次可达的 arXiv / ACL Anthology / ACL Anthology 会议卷 / PubMed / Crossref），**不构成领域存在性结论**。凡"这是 LHRM 独有结构"一类措辞，一律**已删除或改写为检索范围陈述**（X-14）。
+
+**`Sxx` 编号可解析性声明（Round-3 新增）**：上表与 §2/§3/§6 中的 `Sxx` 编号**来自本报告之外的登记表，本报告不复现该登记表**（其所在位置本轮 `NOT_OPENED`）。因此**这些 `Sxx` 在本报告内不可解析**，§12 各行按 `Sxx` 做的外部复核**目前无法在本文件内完成**。这不影响 §12 各行的**结论**（结论由本报告正文实读的来源承担），但外部复核者须先取得该登记表。
+
+**统计**：本报告 70 条指针中，**直接**支撑"LLM 做人类关系语义抽取"的：**0 条**（这是对**本报告自身指针表**的陈述，不是领域陈述）。全部为邻近领域外推。这必须被明确承认，而不是用"文献很多"掩盖。
 
 ---
 
@@ -551,23 +619,35 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 | 直觉目标 | 致命缺陷 |
 |---|---|
 | 与人工 gold 比 F1 / κ | gold 本身一致度只有 81.9 F1（S16 事件-论元级）；专家 ICR 可低至 0.533（S02）；"多对少"是聚合伪影（Artstein & Poesio 2008） |
-| 与 LLM 的一致度 | **循环论证**；且已证明是失败模式的实例（§9.6） |
+| 与 LLM 的一致度 | **循环论证**；且由歧义驱动的一致与**共同出错**相容，一致度不是精度（§9.6） |
 | 与真实关系状态的一致度 | **不可观测**（无 ground truth），且在伦理上不可获取 |
 
 ### 13.2 可行的替代：把目标从 *accuracy* 换成 **representation faithfulness**
 
-在冻结 fixture 上，下列量**完全可机器判定**（因为 fixture 本身是冻结的、有明确 `fact_status` 与 `source_anchor`）：
+在冻结 fixture 上，下列量**可在冻结文本上机器判定**。**Round-3 已把"六个都是"改成"四个是"，并撤回"完全"这个措辞**——理由见下方两段（自身 gold 循环 + 两个平凡策略同时最大化全部六项）。
 
-| 指标 | 定义 | 目标 | 为什么可判定 |
-|---|---|---|---|
-| `SPAN_SUPPORT_RATE` | 每个抽取 slot 是否有源 span，且 span 真实包含该断言 | 1.0 | 源文本固定 |
-| `ENTITY_INSERTION_RATE` | 抽取结果中的实体 / 日期 / 数值是否全部出现在源窗口 | 0 | 源窗口固定 |
-| `UNKNOWN_PRESERVATION_RATE` | fixture 明标 `unknown / disputed / alleged / 谨慎措辞` 时，抽取层是否保留 | 1.0 | fixture 的 `fact_status` 是冻结事实 |
-| `FUTURE_LEAK_RATE` | 是否引用了窗口外文本 | 0 | 窗口冻结（`FIXTURE_003` freeze rule 5） |
-| `HOLDER_LEAK_RATE` | 断言是否被安到了错误的 holder / 错误的时间切片 | 0 | `knowledge_time_by_agent` 冻结 |
-| `DISTINCTION_LEAK_RATE` | 高层评价（`narrator_evaluation` / `figurative_expression`）是否被升级为客观 latent state | 0 | `FIXTURE_002/003` 的 `fact_or_narrative_status` 冻结 |
+| 指标 | 定义 | 目标 | 判定依据 | 结构性干净？ |
+|---|---|---|---|---|
+| `SPAN_SUPPORT_RATE` | 每个抽取 slot 是否有源 span，且 span 真实包含该断言 | 1.0 | 源文本固定 | ✅ **是** |
+| `ENTITY_INSERTION_RATE` | 抽取结果中的实体 / 日期 / 数值是否全部出现在源窗口 | 0 | 源窗口固定 | ✅ **是** |
+| `UNKNOWN_PRESERVATION_RATE` | fixture 明标 `unknown / disputed / alleged / 谨慎措辞` 时，抽取层是否保留 | 1.0 | **fixture 的 `fact_status`** | ❌ **否**（见下 1） |
+| `FUTURE_LEAK_RATE` | 是否引用了窗口外文本 | 0 | 窗口冻结（`FIXTURE_003` freeze rule 5，**权利边界见 §0**） | ✅ **是** |
+| `HOLDER_LEAK_RATE` | 断言是否被安到了错误的 holder / 错误的时间切片 | 0 | **`knowledge_time_by_agent`**（时间字段，非裁决标签） | ✅ **是**（见下 2） |
+| `DISTINCTION_LEAK_RATE` | 高层评价（`narrator_evaluation` / `figurative_expression`）是否被升级为客观 latent state | 0 | **`FIXTURE_002/003` 的 `fact_or_narrative_status`** | ❌ **否**（见下 1） |
 
-这六个指标有一个共同性质：**它们测的不是"抽得准不准"，而是"有没有凭空引入 / 有没有把未知压实 / 有没有把叙述当事实"**。而这三件事恰恰是本报告找到的全部主要失效面。
+**（1）自身 gold 的循环性 —— Round-3 更正。** 原表述「下列量**完全可机器判定**（因为 fixture 本身是冻结的、有明确 `fact_status` 与 `source_anchor`）」把**被抽取的文本**与**判定用的 gold**混为一件事：`UNKNOWN_PRESERVATION_RATE` 与 `DISTINCTION_LEAK_RATE` 的判定依据是 fixture 自己的 `fact_status` / `fact_or_narrative_status`——那是**同一批文本上、由同一批准备者产出的同一批裁决标签**。**本报告对 LLM 输出施加的循环论证标准（§13.1）此前没有被施加到它自己的 gold 上。** 这两个指标**保留为诊断量，但降级为 `NOT_INDEPENDENT_OF_FIXTURE_GOLD`**，不得作为无循环的评测证据单独引用。判别式的区分线：**结构性干净 = 判定只读冻结源文本或非裁决性结构字段（时间 / 锚点）**；`fact_status` 与 `fact_or_narrative_status` 是裁决性标签，不算。
+
+**（2）`HOLDER_LEAK_RATE` 的限定。** 它的判定依据 `knowledge_time_by_agent` 仍是 fixture 提供的；之所以算"结构性干净"，是因为该字段是**时间归属**而非**裁决/分类**标签，且可对源文本逐条独立复核。此处**不主张**它独立于准备者，只主张它不与被测的分类标签同源。
+
+**（3）充分性主张已撤回 —— Round-3 更正。** **存在两个平凡策略同时最大化全部六项**：
+- **策略 A（不输出任何抽取项）**：全部率**空真**成立 ⇒ 六项同时达标。
+- **策略 B（逐 unit 完整复制源文本 + 每 slot 用该 unit 自身的锚）**：`SPAN_SUPPORT_RATE = 1`（锚真含该文本）、`ENTITY_INSERTION_RATE = 0`（无凭空实体）、`UNKNOWN_PRESERVATION_RATE = 1`（被标 `unknown` 的 unit 整条保留）、`FUTURE_LEAK_RATE = 0`（不跨窗）、`HOLDER_LEAK_RATE = 0`（holder 取自该行自身 `speaker_ref`）、`DISTINCTION_LEAK_RATE = 0`（保留叙述者原话）⇒ 六项同时达标。
+
+⇒ **这六项不构成充分的评价工具**：`DIRECT` 复制通过率、任何真实表示工作都**不是**这六项的函数。**"这六项是足够的评测工具"这一主张已撤回**（`13` §14.6 仍保留"本方案不充分"的自陈，本条把该自陈从"态度"升级为"有具体反例"）。
+
+**（4）保留的部分。** §13.1 的目标重定向**保留**（`VERIFIED`）：LHRM 的第一产物是 latent dyad state，**没有 ground truth，也不应该有**；因此"抽取准确率"在 LHRM 语境下**没有定义**。**四项结构性干净指标保留**（`SPAN_SUPPORT_RATE` / `ENTITY_INSERTION_RATE` / `FUTURE_LEAK_RATE` / `HOLDER_LEAK_RATE`）；两项裁决标签依赖指标保留但降级。**本节不主张四项干净指标是充分的评测工具**——它们只覆盖"凭空引入 / 越窗 / 错时"三类失效面，不覆盖 F5（歧义选边）与 F6（一致 ≠ 准）。
+
+这六项的共同性质**仍然成立**：它们测的不是"抽得准不准"，而是"有没有凭空引入 / 有没有越窗 / 有没有把断言安到错误的 holder"（加上两项循环性的"有没有把未知压实 / 有没有把叙述当事实"）。而这几件事确实落在本报告找到的主要失效面内——但**失效面不等于被这六项覆盖**。
 
 ### 13.3 统计量（明确不设阈值）
 
@@ -589,7 +669,8 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 ```text
 对每个冻结 fixture：
   1. 冻结 window（blind forward），声明窗口外旁路风险
-  2. 三次独立抽取（不同采样），记录 13.2 的六个率 + 13.3 的两个分布
+  2. 三次独立抽取（不同采样），记录 13.2 的**四项结构性干净指标** + 两项降级指标（分列报告）
+     + 13.3 的两个分布
   3. 至少两位 Human 独立执行同一协议（消费同一 merged exact version）
   4. 计算 HUMAN_LLM_LEAVE_ONE_OUT 与 DIVERGENCE_CONCENTRATION
   5. 记录 MAPPING_FAILURE_PROFILE
@@ -605,14 +686,20 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 1. **不主张** LLM 抽取"不可靠"。§2.1 的 F1 0.88–0.98 是真实结果。本报告只主张它**不能外推**到 LHRM 的任务形态。
 2. **不主张** 人类标注是 gold standard。Nakamura et al. 与 PedSHAC（81.9 F1）都直接反驳。
 3. **不主张** 本报告的 70 条指针里"文献多"等于"证据强"。其中直接支撑本项目任务的为 **0 条**。
-4. **不主张** LLM 一致度代表正确性。§9.6 是本报告最强的单条主张。
-5. **不主张** §10 的 17 条硬规则经过验证。它们是 research candidate，其中 R1 / R15 / R17 明确标为 `C`（纯研究推断）。
-6. **不主张** §13 的度量方案是充分的。它是**在现有条件下唯一诚实可做**的度量，不是好的度量。
+4. **不主张** LLM 一致度代表正确性。（Round-3 更正：依据**已更换**为"共享训练先验 ⇒ 相关误差"；§9.6 的旧依据——某检测论文的跨域近随机 AUROC 与"不可区分"——**已撤回**。）
+5. **不主张** §10 的 17 条硬规则经过验证。它们是 research candidate，其中 R1 / R15 / R17 明确标为 `C`（纯研究推断）。**Round-3 追加**：R16 的依据标签已从 `B` 改为 `B + C`，且**已移除** arXiv:2602.13224 与 S63–S66 作为其依据。
+6. **不主张** §13 的度量方案是充分的。**Round-3 更强**：它**有具体的平凡策略反例**——策略 A（不输出任何抽取项）与策略 B（逐 unit 完整复制源文本 + 每 slot 用该 unit 自身锚）**同时最大化全部六项指标**；"六项是充分工具"的主张已撤回。四项结构性干净指标保留，两项裁决标签依赖指标降级。
 7. **不主张** 信息增益在 LHRM 不可用。只主张其**代价目前无文献支撑**（U-3），因此默认关闭。
 8. **不主张** 本报告需要修改任何 canonical 文档。`knowledge_time_by_agent` 是否升格为 LHRM 对 PROV 的扩展，是 **Architect / Human 的裁定**，不是研究结论。
 9. **不主张** 西方量表（BFI / EPQ 等）的中文版可直接用作 LHRM proxy 的校准目标。§6.3 恰恰说明相反。
 10. **不主张** `#20` / `#21` / `#22` 的 verifier 结果已被读取。因此 **U-5（fixture 上人工 verifier 的真实 ICR）是 open**。
 11. **不主张** §12 表中标注为"强"的那些格，其证据可以跨域迁移到关系叙事。它们全部标明了原始域。
+12. **不主张** `Observation / Belief / Environment` 分层是"LHRM 独有"。（Round-3 撤回该表述：`12` 记录了结构同构的外部先例 Concordia 的 Game Master / player 分离。**剩下的缺口只是"该分层的经验评测"，不是"该分层的存在"。**）
+13. **不主张** Fixture 003 的权利边界曾被违反，也**不主张**它未被违反。§0 只声明边界（fail-closed 无论裁决结果如何都继续生效）；**是否构成违反属 Human 权利裁决**，本报告不裁定。
+14. **不主张** Eye 曾向本项目提供 Fixture 003 的 transcript body、raw artifact 或 anchored Representation。**§0 所述 `SC/...` 锚点是冻结包自身的段落锚约定。**
+15. **不主张** §8.4 的三条外部佐证改变了任何裁决的**方向**；只主张它们的登记位置已从"文献小节"移到"规则依据 / 裁决理由"（其中第 3 条明确记为 `NOT_LOAD_BEARING`）。
+16. **不主张** 本报告的 `Sxx` 编号在本报告内可解析（U-12）。§12 各行的**结论**由本报告实读的来源承担，但**按 `Sxx` 做的外部复核目前无法在本文件内完成**。
+17. **不主张** 本报告任何"未找到 / 0 条 / 基本为空"是领域存在性结论。一律为**检索范围陈述**（X-14）。
 
 ---
 
@@ -620,17 +707,19 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 
 | # | 未知 | 为什么重要 | 本次已尝试 |
 |---|---|---|---|
-| U-1 | LHRM 126 条 proxy 的**跨语言测量不变性** | §6.5 的默认分支直接决定能否跨语言归一化 | 检索 cross-lingual MI / 跨文化心理测量文献；**未找到任何 proxy-level 不变性研究** |
-| U-2 | "叙事中 状态变化 vs 事实不一致" 的可复现判定规程 | §4.2 三分类目前**没有可实现的算法** | 检索 NLI / document inconsistency / temporal fact conflict 文献；全部无此切分；S30 甚至显示 benchmark 间结论反转 |
-| U-3 | 追问关系状态对关系状态的**反应性量级** | 决定 R15 / 自适应层是否伦理可接受 | 只找到一般问卷负担（S37）与日记反应性（S38）；**0 条研究测量关系状态的自反应性** |
+| U-1 | LHRM 126 条 proxy 的**跨语言测量不变性** | §6.5 的默认分支直接决定能否跨语言归一化 | 检索 cross-lingual MI / 跨文化心理测量文献；**在本次检索范围内未找到 proxy-level 不变性研究**（**不是**领域存在性结论，X-14） |
+| U-2 | "叙事中 状态变化 vs 事实不一致" 的可复现判定规程 | §4.2 三分类目前**没有可实现的算法** | 检索 NLI / document inconsistency / temporal fact conflict 文献；**在本次检索范围内**全部无此切分；S30 甚至显示 benchmark 间结论反转 |
+| U-3 | 追问关系状态对关系状态的**反应性量级** | 决定 R15 / 自适应层是否伦理可接受 | 只找到一般问卷负担（S37）与日记反应性（S38）；**在本次检索范围内未找到测量关系状态之自反应性的研究**（X-14） |
 | U-4 | LHRM 目标语料（中文关系叙事 + 英文学术/文学）的**歧义密度分布** | 决定 codebook 迭代优先级与最小评估样本量 | 无 |
 | U-5 | `FIXTURE_001/002/003` 上人工 verifier 之间的**真实 ICR** | 现有 fixture 报告的是材料结构，**未报告任何 ICR**；PedSHAC 表明事件-论元级人工一致度可能仅 ~0.82 F1 | contract 禁止读取 `#20/#21/#22`，**不知道 verifier 结果是否已存在** |
-| U-6 | AI 辅助关系访谈中的 **social desirability / demand characteristics** 量级 | 关系访谈必然涉及忠诚 / 控制 / 嫉妒等社会赞许敏感项 | 未检索到直接文献；S40 只覆盖 survey fatigue |
-| U-7 | Nakamura et al. 2026（arXiv:2609.22133v1）的**同行评审状态** | 该文是本报告最重的单一支柱 | 未核实。标 `CITED_PRIMARY_FULLTEXT`（已读全文大部分）+ `PEER_REVIEW_STATUS = UNKNOWN_AS_OF` |
+| U-6 | AI 辅助关系访谈中的 **social desirability / demand characteristics** 量级 | 关系访谈必然涉及忠诚 / 控制 / 嫉妒等社会赞许敏感项 | 在本次检索范围内未找到直接文献；S40 只覆盖 survey fatigue |
+| U-7 | Nakamura et al. 2026（arXiv:2609.22133v1）的**同行评审状态** | 该文是本报告最重的单一支柱 | 未核实。标 `CITED_PRIMARY_FULLTEXT`（已读全文大部分）+ `PEER_REVIEW_STATUS = UNKNOWN_AS_OF`。**Round-3 追加**：本轮实读**摘要逐字**并据此更正了 §2.2(c) 与 §9.6 的转述方向（`CITED_PRIMARY_ABSTRACT`）；**全文层面的数字未重核** |
 | U-8 | 中文关系叙事上**专门训练过**的抽取模型 vs 通用前沿模型 | S15 显示通用 GPT-5 在临床域已达 domain F1 0.88；关系域未知 | 无 |
-| U-9 | LHRM 的 `Observation / Belief / Environment` 分层在 LLM 抽取下的**错误率** | 项目独有结构 | **0 条外部文献** |
+| U-9 | LHRM 的 `Observation / Belief / Environment` 分层在 LLM 抽取下的**错误率** | 该三层分层的**经验评测**（不是该分层是否存在先例——先例见 §12，`12` 的 Concordia GM/player） | **在本次检索范围内未找到该分层的经验评测**（X-14）。**Round-3 撤回**「项目独有结构 / 0 条外部文献」这一**存在性**表述 |
 | U-10 | prompt 层的**先验回洗**（F7）能否被机器检测 | 它污染 prompt 层而非文本层，不在现有 benchmark 覆盖内 | DiNCo 的 suggestibility 是最接近的技术，可能可用；**未验证** |
 | U-11 | "style bias 是最大 judge 偏差"（arXiv:2604.23178）是否也适用于**抽取**层 | 若成立，抽取层输出的措辞华丽程度会污染下游 | 邻近推断，未验证 |
+| U-12 | 本报告的 `Sxx` 编号登记表在何处 | §12 与 §2/§3/§6 的 `Sxx` 目前在本报告内不可解析，外部复核无法完成 | 本轮 `NOT_OPENED`（未打开 `19_SYNTHESIS_CANDIDATE.md` 等同族文件） |
+| U-13 | `FIXTURE_003` 现行 canonical 页面指针是否仍然有效 | 若失效，§0 所述权利边界的"现行指针"一侧需重新定位 | **不属本报告裁决范围**：canonical 页面地址在 2026-09-14 实测出现 404（旧 `-perasa/` 路径），冻结包头部记录了据此所做的指针更正。**已作为 Architect / Human 裁决交回 parent**（并同时决定 003 是否计入"3 份已冻结 fixture"） |
 
 ---
 
@@ -638,7 +727,7 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 
 ### 结构化抽取 / LLM-as-annotator
 - Gilardi, F., Alizadeh, M., & Kubli, M. (2023). ChatGPT outperforms crowd workers for text-annotation tasks. *PNAS* 120(30):e2305016120. DOI `10.1073/pnas.2305016120` · PMC10372638 · arXiv:2303.15056
-- Nakamura, K., Tan, J. L., & Yean, G. (2026). Observational Equivalence of LLM and Human Annotation. arXiv:2609.22133v1（同行评审状态未知）
+- Nakamura, K., Tan, J. L., & Yean, G. (2026). Observational Equivalence of LLM and Human Annotation. arXiv:2609.22133v1（同行评审状态未知）。**Round-3 追加**：摘要逐字实读——"little empirical basis for preferring human coding on the basis of annotation quality alone"；本报告此前对该文结论方向的转述已更正（见 §2.2(c)、§9.6）
 - Huo et al. (2024). Comparing LLM and human annotations of conversational safety. *EMNLP 2024*, main 511
 - Zhang, M. J., et al. (2025). Diverging Preferences: When do Annotators Disagree and do Models Know? *ICML 2025*, PMLR 267:76193–76212
 - Ivey, J., Gauch, S., & Jurgens, D. (2025). NUTMEG: Separating Signal From Noise in Annotator Disagreement. *EMNLP 2025*, main 144, pp. 2874–2887. DOI `10.18653/v1/2025.emnlp-main.144` · arXiv:2507.18890
@@ -685,7 +774,7 @@ LHRM 的第一产物是 **latent dyad state**。它没有 ground truth，也**�
 
 ### 幻觉 / 校准 / 文化 / 判官 / 标注 artifact
 - Huang, L., et al. (2024). A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions. *ACM Computing Surveys*. DOI `10.1145/3703155`
-- A Geometric Taxonomy of Hallucination in LLMs. arXiv:2602.13224
+- A Geometric Taxonomy of Hallucinations in LLMs. arXiv:2602.13224 — **题名更正（Round-3）**：arXiv 元数据题名为复数 **Hallucinations**；该文 v3 PDF/HTML 的running head 印的是单数 `Hallucination`。本报告此前**两处**引用了单数形式（§9.6 正文与本清单），现按 arXiv 元数据统一为复数，并保留本注以说明两个形式并存。（本轮实读 v3 全文：`CITED_PRIMARY_FULLTEXT`）
 - Stengel-Eskin, V. W., & Wang, C. (2025). Calibrating Verbalized Confidence with Self-Generated Distractors (DiNCo). arXiv:2509.25532
 - Wired for Overconfidence: A Mechanistic Perspective on Inflated Verbalized Confidence in LLMs. arXiv:2604.01457 (COLM 2026)
 - The Dunning-Kruger Effect in Large Language Models: An Empirical Study of Confidence Calibration. arXiv:2603.09985（preprint，弱证据）

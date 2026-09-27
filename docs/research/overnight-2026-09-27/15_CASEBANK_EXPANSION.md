@@ -26,6 +26,17 @@
 - Fixture 001 连 `unit_type` 都没有；
 - verdict 词表两份缺 `DIRECT` / `NARRATIVE_ONLY` / `IRRELEVANT`。
 
+**Fixture 003 的可运行状态（X-7，Round-3 补记）**：`FIXTURE_001` 与 `FIXTURE_002` **可以运行**；`FIXTURE_003` **需要 Human 的权利裁决**才能计入"可运行的已冻结 fixture"。理由：其 `rights_policy = HUMAN_REVIEW_REQUIRED`、Eye 侧 `POINTER_HASH_ONLY` fail-closed、来源站 `robots.txt` 含 `ai-train=no` + `Disallow` for GPTBot/ClaudeBot/CCBot，且**canonical 页面地址在 2026-09-14 实测出现 404**（旧 `-perasa/` 路径；冻结包头部记录了据此所做的指针更正）。**该裁决与 fixture 记录是否需要重新定位，均属 Architect / Human 决定，本报告不裁定，也不自行重新定位。** §15.5 / §15.6 中一切以 F003 为载体的设计（尤其 §15.7 **A06**）在此裁决前**不得视为可执行**。
+
+### 15.1.1 Fixture 001 的**被检验对象**（X-9 裁决，Round-3 补记）
+
+**Fixture 001 是「事实 / 观察 / 信念 / 行为 / 历史 / provenance 的表示与映射失败语义」之测试。它不是"8 项 relationship-state 构念都必要"的有效测试。**
+
+- 其 core dyad 是 `Miss Z. Carty ↔ her 2020 line manager`（**雇主↔雇员**），26 个原子事实是**机构性事实**：排班、停业、未付薪、CAB（咨询调解委员会）、申诉。
+- 依据该件声称"8 维 basis（Liking / RomanticAttraction / SexualDesire / Trust / AttachmentSecurity / Caregiving / Dedication / OutcomeDependence）均必要"是**类目错误**：材料里没有可用于区分这 8 个有向关系状态坐标的关系内容；任何结果都落入 §15.1 已记录的退化（`PairState` 层事实齐备而 `DirectedRelationshipState` 层无实例），或落入"该件本就无此类内容"的平凡结论。
+- **因此**：本报告的 §15.5 覆盖矩阵、§15.6.3 harness、§15.7 A01–A14 **全部只主张 representation 维度的判别性**，**不得**被读作构念最小性（minimality / ablation）的证据。
+- **构念最小性需要一个独立的、承载构念的基准集（construct-bearing benchmark）**：其单元必须**以关系状态构念为目标**地采样，而不是以法律事实 / 叙事为载体。该基准集的规划**正在由另一个 child 进行，本报告只指出依赖，不在此建造**。在本报告新增的任何 fixture（N01–N30）**同样不构成构念承载材料**——它们全部是公开记录或公有领域叙事，取样理由是关系**情境**覆盖，不是构念**承载**。
+
 **更重要的两个流程缺口**：
 
 1. **`#13` comment 2（status CURRENT）强制 `INPUT PACKAGE` / `HOLDOUT PACKAGE` 分离，三份 fixture 均无 `t0` 锚点、无 `holdout` 标记。** 仅靠每行 `future_leakage_note` 不足以满足该要求。
@@ -115,7 +126,7 @@
 | non-romantic | ✗ | ✗ | ✗ | N16 ●, N01 ●, N15 ◐, N10 ◐ | **●** |
 | kin | ✗ | ✗ | ◐ | N01 ●, N10 ●, N16 ●, N03 ◐, N21 ◐ | **●** |
 | caregiving | ✗ | ✗ | ◐ | N01 ●, N10 ●, N08 ●, N16 ◐ | **●** |
-| same-sex | ✗ | ✗ | ✗ | N20 ◐, N19 ●(expressivity), N14 ◐, N21/N22/N23 ◐ | **◐ 结构性缺口**：不存在"当代、逐句、私域、已裁判"的合法同性 dyad 记录；官方材料一律制度性 |
+| same-sex | ✗ | ✗ | ✗ | N20 ◐, N19 ●(expressivity), N14 ◐, N21/N22/N23 ◐ | **◐ 结构性缺口**（**X-14：在本次检索范围内**未找到"当代、逐句、私域、已裁判"的合法同性 dyad 记录；本轮读到的官方材料一律为**制度性**材料。**不主张**该类记录在全部合法来源中不存在） |
 | opposite-sex | ● | ● | ● | N04/N05/N06/N17/N18 ● | **● 已过度满足，需防失衡** |
 | longitudinal | ◐ | ● | ● | N13 ●, N15 ●, N01 ●, N02/N07 ◐ | **●** |
 | deception | ● | ● | ◐ | N04 ●, N15 ●, N18 ●, N03/N05/N10/N13 ◐ | **●** |
@@ -127,6 +138,12 @@
 | adversarial | ◐ | ◐ | ◐ | §15.6 A01–A14 + `DERIVED_TRANSFORM` 池 | **●** |
 
 **诚实缺口（不可填充掩盖）**：① 当代私域 same-sex 逐句记录不存在；② 无争议普通稳定关系的 P0 记录按构造不存在；③ dyad 内部"修复"官方来源基本不产出；④ 中国大陆官方可稳定引用的家事判决本次不可达（`wenshu.court.gov.cn` 与最高法指导性案例 `UNVERIFIED`），中文需求暂由公有领域文本满足；⑤ 非西方/非英语 P0 裁判文书稳定全文入口本环境全部不可达 —— **这是核实限制，不是可用性结论**。
+
+> **X-14 检索范围声明（Round-3 新增，适用于上列 ①–③ 与全表所有"不存在 / 缺口"格）**：以上一律是**本次检索范围**（本轮实读的 Find Case Law / LGSO / gov.ie / rotherham.gov.uk / 各类 Wikisource，以及 §15.12 记录的可达与不可达站点）下的结果，**不是**关于法律与档案可获得性的领域存在性结论。逐项改述为：
+> ① 「在本次检索范围内未找到**当代、私域、逐句、已裁判**的合法同性 dyad 记录；本轮读到的官方材料一律为制度性材料」——**不说**"这种记录不存在"。
+> ② 「以**诉讼 / 申诉**为框的官方记录**按构造**无法产出无争议的普通关系」——这是关于**该类来源的结构性限制**的陈述（可辩护），**不是**关于全部合法来源的存在性陈述（未主张）。
+> ③ 「在本次检索范围内读到的官方记录里的'修复'几乎都是机构补救」——**不说**"dyad 内部修复在官方来源中不存在"。
+> 同格处理：§15.5 `same-sex` 行的「不存在"当代、逐句、私域、已裁判"的合法同性 dyad 记录」与 §15.7 **C-3**、§15.11 U 系列的相关条目，均按上述口径读取。
 
 ## 15.6 Fixture 设计模板 v0.2
 
@@ -195,6 +212,8 @@ mapping_expectation ∈ <七值> | UNSET                                 # 空�
 
 ### 15.6.3 Mapping-test harness
 
+> **覆盖 ≠ 最小性（X-9）**：本 harness 产出的是 **coverage / closure / mapping-failure profile**。它**不产出**构念最小性（"删掉某个 construct 后是否仍有无法表示的重要句子"）的任何证据。最小性需要 (a) 独立的 **construct-bearing 单元**（见 §15.1.1；`F001` 与本报告 N01–N30 **都不算**），与 (b) 一条 **leave-one-construct-out** 的臂——后者在本项目当前的任何门里都**不存在**（Round-3 记录，见 `17` §3 F1 的处置段）。两者都不可用时，本 harness 的结果**不得**被引用为 8 项 basis 的必要性证据。
+
 1. **单一 verdict 词表**：`DIRECT | PARTIAL | MULTI | NARRATIVE_ONLY | IRRELEVANT | UNKNOWN | MAPPING_FAILURE`。
 2. **`MAPPING_FAILURE` 必附九类之一**（`#13` comment 3）：`ONTOLOGY_HOLE / CONSTRUCT_HOLE / SCOPE_HOLE / TEMPORAL_HOLE / BELIEF_OBSERVATION_HOLE / TRANSITION_HOLE / MEASUREMENT_HOLE / NARRATIVE_ONLY / DATA_INSUFFICIENT`。
 3. **`UNKNOWN` 与 `MAPPING_FAILURE` 必须分清**：`UNKNOWN` = 材料不足；`MAPPING_FAILURE` = 材料充分但表示装不下。
@@ -222,6 +241,8 @@ mapping_expectation ∈ <七值> | UNSET                                 # 空�
 **成本收益**：这是本报告里单份成本最低、对抗性收益最高的一条。Carty 与 LGSO 已冻结，`T1–T5` 几乎零采集成本。
 
 ## 15.7 对抗性 fixture 清单（A01–A14）
+
+> **本清单的被检验对象（X-9）**：以下 14 条全部是 **representation / mapping-failure 判据**，**不是**构念最小性判据。它们测的是"某一类现实句子能否被合法表示"，**不测**"8 项 relationship-state 构念是否都必要"。用它们支持构念 ablation 是类目错误（见 §15.1.1）。另注：**A06** 以 F003 为载体，在 Fixture 003 的权利裁决落地前**不可执行**（见 §15.1）。
 
 | id | 对抗类型 | 载体 | 失败判据 |
 |---|---|---|---|
@@ -313,10 +334,14 @@ C-1 N15 紅樓夢 选章（需中文标注 + 120 回切分）；C-2 N17（英译
 7. **不主张**三份已冻结 fixture 有错；意见是关于**跨 fixture 可比性**与 `#13` comment 2 合规性**的流程缺口**。
 8. **不主张**读过 `#20`/`#21`/`#22`、Eye、Juece、`#30`、PR31。未读、未引、未改。
 9. **不主张**任何 unit 数、unit_type 或词表属于 LHRM 本体。它们是材料层标签。
+10. **不主张** Fixture 001 能检验 8 项 relationship-state 构念的必要性（X-9）。它检验的是事实 / 观察 / 信念 / 行为 / 历史 / provenance 的**表示与映射失败语义**；其 core dyad 为雇主↔雇员，26 个原子事实为机构性事实。**构念最小性需要独立的 construct-bearing benchmark；本报告只指出该依赖，不建造它。**
+11. **不主张**本报告新增的 N01–N30 构成 construct-bearing 材料。它们是公开记录或公有领域叙事，取样理由是关系**情境**覆盖，不是构念**承载**。
+12. **不主张** Fixture 003 的权利状态可由本报告推进。`HUMAN_REVIEW_REQUIRED` / `POINTER_HASH_ONLY` fail-closed / `ai-train=no` + GPTBot/ClaudeBot/CCBot `Disallow` 全部继续生效；权利裁决与 canonical 指针重新定位均属 Human / Architect（见 §15.1）。
+13. **不主张** §15.5 / §15.7 / §15.11 的任何"不存在 / 缺口"是领域存在性结论（X-14）；一律为**本次检索范围**下的结果。
 
 ## 15.11 剩余未知
 
-U1 N02–N07 实质事实段与 fact_status 分布（阻塞其 `t0`/unit 数/赋值）· U2 N10 Ch.32 是否记载系统性篡改登记（阻塞 A07 载体）· U3 N20 courts.ie 官方 URL（阻塞 Wave C）· U4 Pepys 1661 条目是否存在（决定 N13 是否同填 same-sex）· U5 `wenshu.court.gov.cn` 与最高法指导性案例可用性（阻塞中国 P0）· U6 非西方官方源可用性（`courts.ie`/`saflii`/`austlii`/`uitspraken.rechtspraak.nl`/`judiciary.ie`/`rcirc`/`agedcarecommission`/`justice.gov`/`ons.gov.uk`/`pair.wustl.edu` 本次全部不可达）· U7 N17 英译无扫描背书是否满足 corpus 的 scan-backed 要求 · U8 项目是否接受 `DERIVED_TRANSFORM` 这一 fixture 类（**Human decision**）· U9 `SIT::` 锚点集最终条目（需 Verifier×3 共识轮）· U10 三份已冻结件是否**追补** `t0`/`holdout_class`（**Human decision**；本报告不主张回改）· U11 N16 目标章节确切情节（我只核实到标题）· U12 N19 目标段落行文（正文未读）。
+U1 N02–N07 实质事实段与 fact_status 分布（阻塞其 `t0`/unit 数/赋值）· U2 N10 Ch.32 是否记载系统性篡改登记（阻塞 A07 载体）· U3 N20 courts.ie 官方 URL（阻塞 Wave C）· U4 Pepys 1661 条目是否存在（决定 N13 是否同填 same-sex）· U5 `wenshu.court.gov.cn` 与最高法指导性案例可用性（阻塞中国 P0）· U6 非西方官方源可用性（`courts.ie`/`saflii`/`austlii`/`uitspraken.rechtspraak.nl`/`judiciary.ie`/`rcirc`/`agedcarecommission`/`justice.gov`/`ons.gov.uk`/`pair.wustl.edu` 本次全部不可达）· U7 N17 英译无扫描背书是否满足 corpus 的 scan-backed 要求 · U8 项目是否接受 `DERIVED_TRANSFORM` 这一 fixture 类（**Human decision**）· U9 `SIT::` 锚点集最终条目（需 Verifier×3 共识轮）· U10 三份已冻结件是否**追补** `t0`/`holdout_class`（**Human decision**；本报告不主张回改）· U11 N16 目标章节确切情节（我只核实到标题）· U12 N19 目标段落行文（正文未读）· **U13（Round-3 新增）** `FIXTURE_003` 的权利裁决（`HUMAN_REVIEW_REQUIRED` + Eye `POINTER_HASH_ONLY` fail-closed + `robots.txt` `ai-train=no` + canonical 页 URL 2026-09-14 实测 404）及其是否计入"3 份已冻结 fixture"，以及现行 canonical 指针是否需重新定位（**Human 权利裁决 + Architect 记录裁决**；本报告不裁定，§15.7 A06 在此之前不可执行）· **U14（Round-3 新增）** 构念承载基准（construct-bearing benchmark）的规格与落点（**由另一个 child 规划中**；本报告只指出依赖，见 §15.1.1。`N01`–`N30` 与 F001/F002/F003 **均不构成**构念承载材料）· **U15（Round-3 新增）** §15.5 / §15.7 中"不存在 / 缺口"类陈述的**完整总体口径**：当前全部为检索范围陈述（X-14），是否需要一次专门的可获得性调研属 Human 决定。
 
 ## 15.12 核实日志（2026-09-27）
 
@@ -344,3 +369,7 @@ U1 N02–N07 实质事实段与 fact_status 分布（阻塞其 `t0`/unit 数/赋
 - **未升 SUCCESS 的原因**：① 30 条中 7 条为 `UNVERIFIED_CANDIDATE` / `UNVERIFIED_OFFICIAL_ACCESS`，主因本环境出口对 `courts.ie`/`saflii`/`rcirc`/`agedcarecommission`/`justice.gov`/`pair.wustl.edu`/`gutenberg.org` 全部不可达；② N02–N07 的判别性理由是未读原文的假设；③ 4 个必需 cell 只能标 `○` 或 `◐`，其中"当代私域 same-sex 逐句记录"按我的判断在合法来源中不存在 —— 但我没有权威来源支撑"不存在"，故亦为带保留的判断。
 - **升 SUCCESS 的条件**：换网络出口重跑 §15.2–15.4 全部核实（U6），补读 N02–N07 原文（U1）与 N10 Ch.32（U2），确认 N20 官方 URL（U3）。这是纯核实工作，不需新设计。
 - **给 parent 的最小建议**：**Wave A-1 / A-2 / A-3 可立即授权开工** —— N02、N06 官方 URL 本轮已 200 核实，N16 公有领域无 gate；三者不依赖任何待确认项，且分别打 `#13` comment 2 合规性、非浪漫 kin、legal-vs-relational 三个当前空缺或结构性有缺的假设。**明确不建议**：在剩余核实完成前，不要把 N02–N07 的 `t0`、unit 数或 `fact_status` 赋值写进任何 durable fixture。
+- **Round-3 追加（不改变 `PARTIAL` 定级）**：
+  - **X-9 已补记**（§15.1.1）：Fixture 001 的被检验对象是**表示与映射失败语义**，**不是** 8 项 relationship-state 构念的必要性；构念最小性需要独立的 construct-bearing benchmark，其规划在另一个 child 处进行，本报告只指出依赖。**§15.8 的 Wave A/B/C 排序不受影响**（三条都是材料获取排序，不是构念排序），但任何以本批 fixture 支持"8 构念必要"的说法都应撤回。
+  - **X-7 已补记**（§15.1）：`F001` / `F002` 可运行；`F003` **需 Human 权利裁决**（+ canonical 指针重新定位，属 Architect/Human）。**§15.7 A06 与 §15.5 中以 F003 为载体的格在该裁决前不可执行。**
+  - **X-14 已补记**（§15.5 表下）：全表"不存在 / 缺口"改为检索范围陈述；`PARTIAL` 定级不受影响（缺失是真的，本轮只是把它从存在性命题降为检索结果）。
