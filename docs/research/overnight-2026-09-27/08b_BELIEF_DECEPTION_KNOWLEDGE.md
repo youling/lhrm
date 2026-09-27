@@ -10,6 +10,7 @@
 > ```
 >
 > 这条链提供形式化候选、最小必要原语、以及一份**最小 belief 层设计**。本文件的中心主张是**简约**：整条链可以用 **8 个逐记录带类型槽位 + 2 个逐 (持有者, 内容) 带类型标量 + 4 个派生类 + 1 个世界模式标签** 表达；其余全部是 readout。
+> **Round 3 必读（`review-r2 R-E5` / `E-C18`）**：上面这句话里「**可以**用这 10 项 + 4 派生类表达」是**对本设计的陈述**（`ACCEPT`）；「**没有**第九个原语」作为**最小性**主张是 **`UNSUPPORTED`**。本文件**不**主张任何最小性证明。特别地：**`M`（世界模式枚举）是一个有意的设计选择，不是一个最小性证明**——见 §4.2 的 Round 3 段（逐字定性）。
 > **本文件最重要的产出是它的删减论证，不是它的构造。** §3 逐项说明为什么不采用动态认知逻辑、公共知识、事件模型、POMDP 引擎、后验作为状态、完整信号检测参数、以及完整信念修正理论——不是因为它们不优雅，而是因为它们在这里**不划算或不可解**。
 > **标签约定：** `ESTABLISHED`（已引同行评审结果）、`FORMAL-THEOREM`（所引形式系统内的已证结果）、`MODEL_HYPOTHESIS`（本文件的设计提议，未验证）、`NEGATIVE`（反证据）、`UNKNOWN`。
 > **硬边界（本次 attempt）：** `MERGE = FORBIDDEN`；`CANONICAL_MUTATION = FORBIDDEN`；`PRODUCTION_MUTATION = FORBIDDEN`；`CROSS_PROJECT_MUTATION = FORBIDDEN`；未读/未引用 LHRM `#20/#21/#22`；未触碰 Juece `#30` / PR `#31`。
@@ -17,13 +18,46 @@
 
 ---
 
+## Round 3 修复记录（`r3/a3d`，依 `ARCHITECT_ADJUDICATION_V1` + review-r2）
+
+| # | 位置 | 缺陷 / 裁决 | 处置 | 依据 |
+| --- | --- | --- | --- | --- |
+| A3-1 | 文件头 / §4.2 / §10 | 「**没有第九个原语**」作为**最小性**主张是 `UNSUPPORTED` | `M` 明确标为**有意的设计选择，不是最小性证明**；设计本身 `ACCEPT` | review-r2 `R-E5` / `E-C18` |
+| A3-2 | §3 vs §0 vs §10 | §3 正文的判决数与 §0 / §10 的抬头**不一致** | 以 **§3 正文为权威**，加对账表；抬头改为引用 §3 | `E-C17`（"要求 08b 把 §3.2(b) 与 §3.x 的不一致修好，并让 §3 的正文成为权威"） |
+| A3-3 | §0 | 「LHRM 已经决定要有 belief 层」是**已核实的 canonical 既决事项** | 记为**确认（`VERIFIED`）**，**不是新构念** | `E-C20` / `H-D6` / `CURRENT_ARCHITECTURE.md` §3·§8 + `AGENTS.md` 方向 10 |
+| A3-4 | §0 / §9-1 / §10-3 | 「head-of-list 阻塞」在**三处**重复陈述 | 合并为**一条**（`08b` §9-1 为权威），另两处改为指针 | 派发任务 8（duplicate-counting） |
+| A3-5 | §2.11 / §3.6 / §3.10 / §4.5 / §4.6-I5 / §7-CB-B3 / §9-10 | `Disclosure` 措辞过宽（"持续的不可及性"），会落进 `Constraint` | 改为 **`InformationAction` 家族**（`Disclose` / `Withhold` / `Misrepresent`），措辞收紧为「一次披露 / 不披露的**动作**」；标为**需 Architect sign-off**；**不实施** | Architect **C-P11** / D3 / `E-C19` / `CANONICAL_CHANGE_PROPOSALS.md` C-P11（含 `:190` 先例） |
+| A3-6 | §9-1 | 可观察性登记表缺口与 `07` 各写一遍 | 合并为**一条** `BLOCKER-OBS-01`，单一 owner，指向 measurement-semantics child（**测量元数据，不是本体扩张**） | Architect **C-P13** / `E-C16` / `R-E6` |
+| A3-7 | §4.3 / §1 | `Divergent` 与 `07` 的 `disputed` / canonical 的 `disputed` / canonical 的 `Role` 构成**同名不同义** | 显式标注重复 + 记录「**`08b` 未读 `07`**，故不是独立佐证」+ 路由 taxonomy child；**不发明第三套编码** | `R-E8` / `E-C23` / `H-F15`；C-P5 |
+| A3-8 | §4.1 / §4.4 | 本文件未处理 Architect **X-1**（`PPR` 层归属） | 补记：`PPR_(i about j,t)` **remains BeliefState**；本文件任何原语都**不**是 Reality 坐标；改层位须走**明确架构修订** | **X-1** / 裁决 §C.1 |
+| A3-9 | §2.5 / §4.1-2 | 本文件未使用 Architect **X-4** / **X-5** 的表述 | 补记：值域**许可式**；适用性是**独立轴**（`APPLICABLE / NOT_APPLICABLE_BY_RULE / APPLICABILITY_UNKNOWN`），**不**折进 `Unknown`，**不**是 `0` | **X-4** / **X-5** / **C-P5** |
+| A3-10 | §3.1–§3.3 / §3.6 / §3.7 | 三项 REJECT 的**论证**依赖本 child **未打开**的复杂度 / 等价性结果 | 结论 `ACCEPT_AS_PROPOSAL`；论证标 **`NOT_OPENED`** | `E-C17` / `H-D6` |
+
+**本 child 未做**：任何 canonical 改动；任何 merge；任何 Gate A/B/C 运行；`#20`/`#21`/`#22` 未读未执行未引用；未做文献横扫（除 §3.9 已有的 Kuhn/Harman 文献更正外，本轮**未打开任何新来源**）。
+
+---
+
 ## 0. 为什么这个 lane 值得存在，以及它最容易犯的错
 
-`CURRENT_ARCHITECTURE.md` §3 已经写下 `Reality != Observation != Belief`，§8 已经写��� `SimWorld_(Agent,m) = fork(BeliefState_A, mode)`，`AGENTS.md` 当前架构方向第 10 条也已经写明梦境/幻想/计划/反事实应当作为 nested Belief 存在。**换言之，LHRM 已经决定要有 belief 层。剩下的唯一问题是它有多小。**
+### 0.0 首要句**不是**本文件的新发现（Round 3：`VERIFIED` 的**确认**，不是新构念）
 
-这个 lane 最大的失败模式不是设计不足，而是**设计过度**：模态逻辑、公共知识、POMDP、贝叶斯后验、SDT 的 `d′`/`β`、AGM 修正理论，每一个都有独立的学术合法性，堆在一起会得到一个既不可解、又无解释力、又把 `Unknown` 碾平的层——而这恰好是 `AGENTS.md`「representation-first invariant」所禁止的。本文件的 §3 是一份**逐项的过度工程审计**，其中三条判决是明确的 **REJECT**，两条是 **REUSE-EQUATION-ONLY**，一条是 **DEFER**。
+`CURRENT_ARCHITECTURE.md` §3 已经写下 `Reality != Observation != Belief`，§8 已经写明 `SimWorld_(Agent,m) = fork(BeliefState_A, mode)`，`AGENTS.md` 当前架构方向第 10 条也已经写明梦境/幻想/计划/反事实应当作为 nested Belief 存在。**换言之，LHRM 已经决定要有 belief 层。剩下的唯一问题是它有多小。**
 
-第二个失败模式是**把不披露当成信息缺失**。这是本文件 §4.4 的核心设计修正，也是 §5 中四个硬失败案例的共同根源。
+**Round 3 的登记（`review-r2 E-C20` `VERIFIED` / `H-D6`）**：这一段是**对 canonical 的确认**，**不是**一条新主张、**不是**一个新构念、**不是**一个需要 Architect 重新批准的东西。
+
+- **三条指针逐条可核**（本 child 在本 worktree `8adcf0b` 上逐条读过）：`CURRENT_ARCHITECTURE.md:80`（`Reality != Observation != Belief`）；`CURRENT_ARCHITECTURE.md` §8（`SimWorld_(Agent,m) = fork(BeliefState_A, mode)`）；`AGENTS.md` 当前架构方向第 10 条（时间/历史可 fork；Dream/fantasy/plan/counterfactual worlds 应作为 nested Belief/simulated histories）。
+- **因此：不要重新审议「LHRM 要不要 belief 层」。** 这个问题**已经关闭**。把它重新打开需要**一次明确的架构修订**，不是本轮证据。
+- **本文件剩下的、真正开放的只有**：(a) 这个层**多小**（§2 / §4 的设计，全部 `MODEL_HYPOTHESIS`）；(b) 两项**外部依赖**（`BLOCKER-OBS-01` 可观察性登记表；`InformationAction` 家族），二者都是**已裁定的落地项**，不是开放研究问题。
+
+**层归属已被裁定的部分（Architect X-1 / 裁决 §C.1）**：`PPR_(i about j,t)` **remains BeliefState / relationship-specific perception**。一个 belief 可以有持久性与因果/动力学重要性，而**不因此**成为 `Reality` / `DirectedRelationshipState` 的坐标；「organizing variable」、持久性或预测强度**本身不蕴含** Reality-state 成员资格。⇒ **本文件的每一个原语（`p` / `H` / `τ` / `M` / `k` / `g` / `src` / `m` / `Pol` / `Rel` / `Claim_ι⊛`）都位于 `Belief` 侧，没有一个是 Reality-state 坐标。** 若将来要让本层任一构造升格为状态层，那是**一次明确的架构修订**，不是本轮证据触发的静默变更。**本文件不主张任何升格。**
+
+### 0.1 这个 lane 最容易犯的两个错
+
+**错一：设计过度。** 模态逻辑、公共知识、POMDP、贝叶斯后验、SDT 的 `d′`/`β`、AGM 修正理论，每一个都有独立的学术合法性，堆在一起会得到一个既不可解、又无解释力、又把 `Unknown` 碾平的层——而这恰好是 `AGENTS.md`「representation-first invariant」所禁止的。本文件的 §3 是一份**逐项的过度工程审计**。
+
+**Round 3 更正**：原文在此处写「其中**三条**判决是明确的 **REJECT**，**两条**是 **REUSE-EQUATION-ONLY**，**一条**是 **DEFER**」。**这个抬头与 §3 的正文不一致**——§3 正文给出的**全部**判决是 **7 项 `REJECT` + 4 项 `REJECT` 的对偶/条件形式 + 2 项 `REUSE-EQUATION-ONLY` + 4 项 `ADOPT` + 1 项 `DEFER`**（含条件/上限）。**§3 的正文是权威的**；抬头的「三条 REJECT」只是把**头条三项**（modal logic、common knowledge、后验作为状态）单列了出来。见 §3.11 的对账表。
+
+**错二：把不披露当成信息缺失。** 这是本文件 §4.4 的核心设计修正，也是 §5 中四个硬失败案例的共同根源。**Round 3 收紧其形态**：Architect 裁定其落点是 `Action/Event` 的一个**动作**，不是 `Belief` 的一个字段，也不是 `Constraint` 的一个持续状态（先例：`CURRENT_ARCHITECTURE.md:190`）。见 §2.11。
 
 ---
 
@@ -188,7 +222,7 @@ frame  ∈  { conducive , obstructive }
 **三个强制约束：**
 1. **必须按内容 `p` 索引。** 依据：`Lackey` / `Fricker` 的异质性论证 `[S63]`。
 2. **必须按 frame（有利于/不利于当前立场）索引。** 依据：Polarization Paradox——被极化主体的结构是「我信 `p`，且我信**所有会告诉 `p` 为假的来源在 `p` 上不可信**」`[S10]`。若无 frame 维度，该结构不可表达（正是 §4-C3 的 `NEGATIVE`）。
-3. **禁止塌缩为标量 `Trust(ι')`。** 这是一条**可检验的不变式**（§4.6）。
+**3. 禁止塌缩为标量 `Trust(ι')`。** 这是一条**可检验的不变式**（§4.6）。**Round 3 与 Architect X-4 的接口**：`Rel(ι', p; frame)` **不是** canonical 的 `Trust` / `AttachmentSecurity` 候选，也**不是**它们的 facet。X-4 逐字裁定：`Trust` 与 `AttachmentSecurity` 保持**分立**候选；`domain` 是**可选 facet / context 索引，不是必需 signature**，直到 measurement invariance 有话说；**不要**在 Trust 之下加第二个 `FeltSecurity` 槽。⇒ **`08b` 不对 `Trust` 的层归属做任何主张**，也**不**建议把 `Rel` 接到 `Trust` 上（那会是「一个 belief 层的来源可靠性」与「一个关系状态构念」之间的跨层合并）。若将来要做，那是一次**明确的架构修订**。
 
 **为什么用 Low/Mid/High 而不是概率或区间？** 简约：这是一个 `Pol` 式的**策略输入**，不是 `Θ` 的量。`AGENTS.md` 说「A coordinate may be an interval, ordinal state, category…」，序数在此足够；任何更细的量化在 §3.4 已论证为不划算。
 
@@ -201,13 +235,69 @@ frame  ∈  { conducive , obstructive }
 | `BelievesBoth(p)` | `k_ι(p) = k_ι'(p) = +` | 两个持有者上的合取 |
 | `Shared_Noted(p)` | `k_ι(p) = k_ι'(p) = ?` 或 `⊘` | 同上 |
 | `Asymmetric(p)` | 恰有一个 `k ∈ {+,−}` | 同上 |
-| `Divergent(p)` | `k_ι(p) = +, k_ι'(p) = −`（或反） | 同上 |
+| `Divergent(p)` | `k_ι(p) = +, k_ι'(p) = −`（或反） | 同上。**⚠ 同名不同义，见 §2.11.1** |
 | `Overclaim(ι, p)` | `m_ι(p) ∈ {+,−}` 而 `k_ι'(p) ∉ {与 m 相应值}` | `m` vs `k` |
 | `Meta_Unrealized(ι, p)` | `m_ι(p) = +` 而 `k_ι'(p) = ?` 或 `⊘` | `m` vs `k` |
-| `NonDisclosure(ι, p)` | `k_ι(p) = +` ∧ `m_ι(p) ∈ {?, −}` ∧ `ι` 有保留 `p` 的记录 | `k` ∧ `m` ∧ `Behavior` |
+| `NonDisclosure(ι, p)` | `k_ι(p) = +` ∧ `m_ι(p) ∈ {?, −}` ∧ **存在一条 `ι` 对 `p` 的 `InformationAction = Withhold`** | `k` ∧ `m` ∧ `Action/Event` |
 | `Unreliable(ι, p)` | `Rel(ι', p; frame) ∈ {Low}` | `Rel` |
 
-**关键：** `NonDisclosure` 需要一个**第三输入**——「`ι` 确实有东西没披露」。这只能是**行为记录**（`Action/Event` 层），不能是 `Bel` 层的字段。→ **LHRM 需要一个 `Disclosure` 事件类型**，其内容是「`ι'` 把 `p` 放在 `ι` 可及范围内 / 放在不可及范围内」。这是一个 `Action/Event`，不是 belief。这是一个重要的分层结论：**部分披露的表示不在 belief 层，而在 action 层**（§4.2 的 `g` 与 `src` 是 belief 侧的接收结构；披露动作本身是 `CURRENT_ARCHITECTURE.md` §6 的 `Action/Event`）。
+**关键（三输入论证，Round 3 保留其骨架并收紧其措辞）**：`NonDisclosure` 需要一个**第三输入**——「`ι` 确实**做了某件**把 `p` 留在 `ι'` 可及范围之外的事」。这只能来自**一条 `Action/Event` 层的记录**，不能是 `Bel` 层的字段。⇒ **LHRM 需要一个信息动作家族**，而不是一个 belief 字段。
+
+**`SUPERSEDED_BY_REPAIR`（原措辞，问题在于「记录」而非「动作」）**：
+
+> **关键：** `NonDisclosure` 需要一个**第三输入**——「`ι` 确实有东西没披露」。这只能是**行为记录**（`Action/Event` 层），不能是 `Bel` 层的字段。→ **LHRM 需要一个 `Disclosure` 事件类型**，其内容是「`ι'` 把 `p` 放在 `ι` 可及范围内 / 放在不可及范围内」。这是一个 `Action/Event`，不是 belief。……
+>
+> **取代依据**：Architect **C-P11**（`ACCEPT AS ACTION VOCABULARY, NOT NEW STATE PRIMITIVE`）+ `CANONICAL_CHANGE_PROPOSALS.md` C-P11 的落点条件（"措辞必须从「**持续的不可及性**」收紧为「**一次披露 / 不披露的动作**」，否则会落进 `Constraint` 而非 `Action/Event`（`CURRENT_ARCHITECTURE.md:190` 的先例）"）。**被换掉的**是把非披露读成一个**状态/持续条件**的措辞；**被保留的**是它属于 `Action/Event` 而非 `Belief` 的分层结论。
+
+### 2.11.1 `InformationAction` 家族（`C-P11`；**需 Architect sign-off；本文件不实施**）
+
+```text
+InformationAction( ι , p , τ , item, opportunity , form ) ∈
+    Disclose      # item 被放在可及范围内
+  | Withhold      # item 明确存在 **且** 存在机会 / 期待，而未被放在可及范围内
+  | Misrepresent  # item 被放在可及范围内，但内容被曲解
+```
+
+**三条硬约束（逐字保留裁决的语义）**：
+
+1. **`Withhold` 有一个 gate：只有在「一个 information item **加**一个 opportunity / expectation」都显式时**才可记录。** 单纯的沉默 / 缺席**不**自动是一个 `Action`。
+2. **`InformationAction` 是 `Action/Event` 下的一个族，不是新的状态原语。** 它增加**动作词表**，不增加**状态坐标**（C-P11 标题逐字："AS ACTION VOCABULARY, NOT NEW STATE PRIMITIVE"）。
+3. **它落在 `Action/Event`，不落在 `Constraint`。** 这是本族与 `CURRENT_ARCHITECTURE.md:190`（"「订婚前不发生性行为」更接近 Agent boundary / constraint，而不是「性欲为零」"）的**结构性区别**：那条先例讲的是一条**持续的**边界/约束；披露讲的是**一次**做了什么。**把非披露写成「持续不可及」，会把它错误地落到 `Constraint` 那一类。**
+
+**为什么 `Belief` 侧不能自己解决**：`NonDisclosure` 的第三输入是关于 `ι` 的**外显行为**的事实。一个 belief 记录无法自证「对方做了某个动作」；它只能**推断**「他可能在隐瞒」（`I6` 的 `g = INFERRED` + 线索 provenance）。**「我认为你在隐瞒」与「你确实做了不披露的动作」是两条不同的记录**，前者是 belief，后者是 event。混淆二者正是本文件 §0.1 的「错二」。
+
+**`Misrepresent` 为何必须单列**：`Disclose` 的内容与该动作**相符**；`Withhold` 是「item 存在但不给你」；`Misrepresent` 是「给你了，但内容被曲解」。**三者不构成一条序**（`Disclose` 与 `Misrepresent` 都把 item 放到可及范围内），所以不能用一个布尔 `disclosed ∈ {yes, no}` 表示。这是从 `m` / `k` 不可推出的三种不同 `Action`。
+
+**与 `08b` 其余部分的关系**：
+
+- `I5`（§4.6）的措辞已按本族改写（见该行）。
+- `CB-B3`（§7）的「预期 `MAPPING_FAILURE`」现在有了**确定的**落点：不是「缺一个尚未设计的类型」，而是「**缺一条已裁定、待 sign-off 的 Action/Event 词表**」。
+- `§9-10` 已按本族改写；`§4.5` 的「不实现」清单已更新。
+
+**本文件的立场**：`ACCEPT_AS_PROPOSAL`，**形态需 Architect sign-off**。**本 child 不写 canonical、不实现、不改 `CURRENT_ARCHITECTURE.md` §6。**
+
+### 2.11.2 `Divergent` 与外部词汇的同名不同义（Round 3 新增）
+
+`Divergent(p)` 在本文件里 = **两个主体对同一条内容持相反立场**（`k_ι = +`、`k_ι' = −`）。同一批语料里还有三处近名，语义**不同**：
+
+| 名 | 出处 | 含义 |
+| --- | --- | --- |
+| `Divergent` | 本文件 §2.11 / §4.3 | **主体立场对立** |
+| `disputed` | `07_PARTIAL_OBSERVABILITY.md` §1（tag） | **缺失机制**：存在相反证据 ⇒ K4 的 `B` |
+| `disputed` | `CURRENT_ARCHITECTURE.md:315`（fact status） | **事实状态**：`adjudicated\|admitted\|alleged\|disputed\|unknown` |
+| `Role` | `CURRENT_ARCHITECTURE.md:96`；`AGENTS.md` 方向 3 | **query/evaluation lens**，不是世界状态 |
+
+**结论（Round 3）**：本文件的 `Divergent` **不是** `CURRENT_ARCHITECTURE.md:315` 的 `disputed` 的同义词——一个说的是**两个人的立场**，另一个说的是**一份证据的事实状态**（例：法院文书里被指称的「他出轨」是 `alleged`；夫妻双方对「他出轨」的**信念**才是 `Divergent`）。**本文件不改名**（它是本文件内部的派生类名），但**不得**在任何跨文档的读出中把二者当同一个值。
+
+**并且——这不是独立佐证**：`07` 与 `08b` **各自**发明了一套「缺失 / 不适用 / 冲突 / 不可寻址」的平行编码，**`08b` 没有读 `07`**（§0.0 / §9-11 的覆盖缺口清单包含既有报告 A–D 与 `07` 之后的语料）。因此「两个 lane 独立发现同一件事」在这两处**不成立**；成立的是「两次各自发明的**收敛**」。合并由 Track R3-F 的 taxonomy child 负责（**两轴**：epistemic/measurement 不确定性轴 + 适用性轴；`MAPPING_FAILURE` 留在两轴之外；**不得**生成 14+ 值单一枚举）。**本 child 不发明第三套编码。**
+
+### 2.11.3 与 Architect X-5 / C-P5 的接口
+
+`08b` 的 `k = { +, −, ?, ⊘ }` 与 `g = { … , UNKNOWN }` 都是**许可式枚举**，**不是**封闭集合——本文件从未主张它们穷尽任何东西。Architect 已裁定（X-5）：
+
+> 「Not applicable because the construct has no independent meaning in this dyad/context」**既不是 0，也不是 Unknown**；它落在**一条独立的适用性轴**上，词表 `APPLICABLE | NOT_APPLICABLE_BY_RULE | APPLICABILITY_UNKNOWN` + reason/provenance。**不要**把 `NA` 加进值域。
+
+**因此**：`⊘`（"没有这个问题"）**不**等于 `NOT_APPLICABLE_BY_RULE`。`⊘` 是**一次提问之后得到的回答**（主体说「这不是个问题」）；`NOT_APPLICABLE_BY_RULE` 是**规则元数据**（本 dyad 语境下该构念无独立语义）。两者正交。**本文件不实施适用性轴**（canonical 落地由 Track R3-D `D2` 拥有）。
 
 ---
 
@@ -294,7 +384,8 @@ frame  ∈  { conducive , obstructive }
 2. 「不忠」标签本身高度依赖规范违反：52.13% 研究未确立规范违反，施加后 emotional infidelity 流行率由 35.23% 降至 17.38% `[S33]`。→ `deceptive` 记录**不蕴含**规范判断。
 
 **判决：ADOPT（作为带动机的事件类型 + `NonDisclosure` 派生关系）。REJECT（作为 trait 或作为 belief 状态）。**
-**关键设计：** 隐瞒是**关于一个 `Behavior` 的断言**，不是 belief 字段；`m`（归属他人立场）提供「我认为你不知道」这一必要侧翼；`Pol` 提供「我因此不听」的策略后果。**三层都不需要「deception」这个原语。**
+**关键设计：** 隐瞒是**关于一次动作的断言**，不是 belief 字段；`m`（归属他人立场）提供「我认为你不知道」这一必要侧翼；`Pol` 提供「我因此不听」的策略后果。**三层都不需要「deception」这个原语。**
+**Round 3 收紧**：那条动作必须是一条 `Action/Event` 记录，且形态是 `InformationAction` 家族的一个取值（§2.11.1）；`Withhold` 有 gate（**必须**同时存在一个 information item **和**一个 opportunity / expectation）。**单纯的沉默不是动作。**
 
 ### 3.7 POMDP
 
@@ -347,6 +438,48 @@ frame  ∈  { conducive , obstructive }
 3. 它会把 belief 层的复杂度从「几个带类型槽位」推到「嵌套的模型变换算子」，违反 `AGENTS.md`「Prefer few stable constructs + composition + time evolution over a growing checklist」。
 
 **判决：DEFER。触发条件：** 若 Case Bank 出现一个**通信回合族**（有成对发言、有接收者、有可争议的「我当时说的是另一回事」），则 event model 是正确的升级路径。**在此之前不实现。** 这是一个有明确触发条件的延后，不是拒绝。
+
+### 3.11 Round 3 对账表：**§3 的正文是权威**（`review-r2 E-C17`：`ACCEPT` 结论、`NOT_OPENED` 论证）
+
+**问题**：§0 与 §10 的抬头写「**3 项 `REJECT`**（modal logic、common knowledge、后验作为状态），**2 项 `REUSE-EQUATION-ONLY`**（POMDP、AGM），**1 项 `DEFER`**（event model）」；而 §3 的正文给出的判决**更多**。两者不一致。**处置：§3 的正文为准**（review-r2 明确要求），本表把正文逐项列出，抬头的「头条三项」只作为**摘要**保留。
+
+| §3 小节 | 形式化 | 主判决 | 附带/条件判决 | 论证的证据状态（Round 3） |
+| --- | --- | --- | --- | --- |
+| 3.1 | Epistemic / modal logic | **`REJECT`**（作为 LHRM 本体） | `ADOPT`（`KD45` 读法这一最小切片） | **`NOT_OPENED`**：`PAL` Expressivity/Succinctness Theorem、`S5` 可靠性完备性 |
+| 3.2 | 公共知识 common knowledge | **`REJECT`** | — | **`NOT_OPENED`**：`PAL+C` / `RCK` 的 EXPTIME-completeness（Lutz 2006）；迭代 PAL 不可递归公理化（Miller & Moss 2005） |
+| 3.3 | 递归 ToM | `ADOPT`，**硬上限 order-2** | `ADOPT` 深度上限 3，仅限 `M ∈ {IMAGINED, PLANNED, CF}` | 经验部分 `[S34]–`[S39]` 为 `CITED_*`；**形式不可判定** 部分 **`NOT_OPENED`** |
+| 3.4 | Bayesian 更新 / 后验作为状态 | **`REJECT`**（后验作为状态） | `REUSE-EQUATION-ONLY`（更新骨架） | `[S16]`, `[S14]`, `[S19]`, `[S20]`, `[S22]` 为 `CITED_*`；**sufficient-statistic 前提的失效推断**为本文件 `MODEL_HYPOTHESIS` |
+| 3.5 | Signal detection theory | **`REJECT`**（`d′`/`β` 作为 belief 层参数） | `ADOPT`（discriminability 与 criterion 分离原则） | `[S19]`, `[S20]`, `[S21]`, `[S22]` 为 `CITED_*`；**「最相关通道接近随机」到「LHRM 无 gold standard」的迁移**为 `MODEL_HYPOTHESIS` |
+| 3.6 | 欺骗 / 印象管理 / 动机性推理 | `ADOPT`（作为带动机的事件类型 + `NonDisclosure` 派生） | **`REJECT`**（作为 trait；作为 belief 状态） | `[S14]`–`[S33]` 为 `CITED_*`；**"作为 dyad trait" 的反驳**（`[S31]`, `[S33]`）为经验性 |
+| 3.7 | POMDP | `REUSE-EQUATION-ONLY` | — | **`NOT_OPENED`**：value iteration 展开 `|V_{t+1}|` 策略树对 `|Ω|` 指数 `[S16]`；分段线性凸值函数上 DP 不可解 `[S18]`；witness 算法一般仍指数 `[S17]` |
+| 3.8 | 证言 / 转述 / 来源可靠性 | `ADOPT`（异质性 + 二手不变式） | **`REJECT`**（reductionism / non-reductionism 之争） | `[S62]`, `[S63]`, `[S65]` 为 `CITED_*` |
+| 3.9 | 信念修正 / 固着 / dogmatism paradox | `ADOPT`（`Pol` 的语义来源 + 强禁 doxastic closure + `Observation` 类型化 + frame-indexed `Rel`） | **`REJECT`**（AGM 完整公理化 / 收缩算子 / 收缩 / 完备性公理表） | `[S5]`–`[S13]`, `[S66]`, `[S68]`, `[S72]` 为 `CITED_*`；**Kuhn/Harman 文献更正为本文件自陈的** `[S5]`, `[S11]`, `[S12]`, `[S72]`, `[S71]`（`UNVERIFIED_CONTENT`） |
+| 3.10 | 事件模型 / action model | `DEFER`（有明确触发条件） | — | `[S1]`, `[S3]` 为 `CITED_*` |
+
+**净计数（Round 3，`SUPERSEDED_BY_REPAIR` 取代 §0 / §10 的旧抬头）**：
+
+```text
+REJECT            7 项   §3.1(as ontology) §3.2 §3.4(posterior) §3.5(d′/β)
+                         §3.6(as trait) §3.8(reductionism debate) §3.9(AGM)
+REUSE-EQUATION-   2 项   §3.4(更新骨架) §3.7
+ONLY
+ADOPT             4 项   §3.1(KD45 slice) §3.3(带上限) §3.5(分离原则)
+                         §3.6(作为事件类型) §3.8(异质性+二手不变式) §3.9(四项)
+                         —— 注意 §3.9 一次给出 4 个 ADOPT 点，§3.6 一次给出 1 个
+                         —— 若按「点」计，ADOPT 点多于「项」
+DEFER             1 项   §3.10（另：§2.2 的 H=ThirdParty、§2.8/§9-9 的 m 拆分、
+                         §5-5 的 m 引用形态、§6-7 的动机深度，也都是 DEFER，
+                         但它们在 §2 / §5 / §6 而不在 §3）
+头条三项（摘要）    3 项   §3.1 modal logic / §3.2 common knowledge / §3.4 后验作为状态
+                         —— 这三项是 review-r2 H-D6 所称的「三项 REJECT 的结论」，
+                            ACCEPT_AS_PROPOSAL
+```
+
+**证据强度的统一限定（`review-r2 E-C17` 的逐字要求）**：
+
+> **三项 REJECT（以及 §3 的其余判决）的**结论**是 `ACCEPT_AS_PROPOSAL`；但它们的**论证**依赖若干复杂度 / 等价性结果，本 child **`NOT_OPENED`**——本轮**没有打开** §3.1 的 PAL 定理、§3.2 的 EXPTIME-completeness 结果、§3.7 的 POMDP 复杂度结果。**因此**：本文件的判决是一个**设计判断**（在这种项目目标下，引入 X 的成本高于收益），**不是**「X 在理论上不可行」的定理性断言。**凡要把这些判决当作复杂度结论引用，必须先打开来源。**
+
+**并且**：按裁决 **X-12**，「某形式化未被选中」**不是** blocker。§3 的 7 项 `REJECT` **不**是待解项，是**已做出的取舍**。唯一真正的外部依赖是 §9 的两项（其中一项已由 C-P13 收编为 `BLOCKER-OBS-01`）。
 
 ---
 
@@ -405,6 +538,23 @@ Record  =  ( p , H , τ , M , k , g , src , m , parent )
 
 **加一个派生类集合**（§4.3），**加一个 `M` 枚举**，**加一个 `parent` 指针**。**没有第九个原语，没有 credence 字段，没有 modality 深度。**
 
+**Round 3 必读（`review-r2 R-E5` / `E-C18`：这段的**设计**被接受，**「最小」这个强主张**是 `UNSUPPORTED`）**
+
+上面这句话包含**两个不同性质**的断言，Round 3 把它们拆开：
+
+| 断言 | 判定 | 说明 |
+| --- | --- | --- |
+| 「**这一版**设计不含第九个原语、不含 credence 字段、不含 modality 深度」 | **`ACCEPT`**（对本设计而言 `VERIFIED`——逐字段可数） | 这是一条**关于本设计**的可数陈述 |
+| 「**任何**满足 `Reality → Observation → Belief → Evaluation` 的设计都**不可能**更小 / 不需要第九个原语」 | **`UNSUPPORTED`**（`E-C18`） | 这是一条**最小性主张**。本文件的 §2 / §4 只做了「删除 X 会**在本设计内**导致 Y」的**内部反证尝试**，**没有**做过：跨设计的等价性证明、复杂度下界、或与任何替代方案（例如：不存 `Φ` 而把内容当作 `Rel` 的特例；用一个 `k = {+,−,?,⊘}` + 一条派生规则取代 `m`；把 `Pol` / `Rel` 折进 `g`）的**穷举**比较 |
+
+**因此，下面这段是本文件对「`M`」的正式定性（派发任务 7 要求逐字）**：
+
+> **`M`（世界模式枚举）是一个有意的设计选择，不是最小性证明。** 本文件**没有**证明 `M` 不可省；本文件证明的是「若不把世界模式显式化，则需要另一种机制承载 `M ≠ ACTUAL` 的记录，而那种机制的爆炸半径覆盖 `Θ`」（§2.4 的反证尝试）。这是一个**设计理由**，不是**下界**。若将来有人给出一种更小的表示（例如把世界模式编入 `parent` 链的一个位置标签），本文件会**接受**它，并相应缩减槽位表。
+
+**同一条定性适用于全部 10 项**（8 个逐记录槽位 + 2 个逐 `(持有者, 内容)` 标量）：每一项的「不可更少」列都是**在本设计内部**的反证尝试，**不是**最小性证明。**本文件不主张任何最小性。** §4.6 的 10 条不变式是**可证伪的断言**（`ACCEPT`），它们是比最小性主张**弱得多**、也**可检验得多**的东西。
+
+**并且**：`Θ`（`p` 的内容类型）、`InformationAction` 家族（§2.11.1）与适用性轴（§2.11.3）**都在**本文件的「原语」清单**之外**，而这三者各自都有独立的、已核实或已裁定的理由。⇒ 「八个 + 两个」的清单是**本设计的账**，**不是** LHRM 的账。
+
 ### 4.3 派生关系与 alignment 四分类
 
 四个 alignment class 穷尽 `k` 对的 16 种组合，且**完全由记录派生，绝不存储**：
@@ -419,9 +569,12 @@ DIVERGENT       ( +, − )  ( −, + )                     2
 --------------------------------------------------------  16 ✓
 ```
 
+**命名警示（Round 3）**：`DIVERGENT` / `Divergent` 指的是**两个主体持相反立场**。它**不是** `CURRENT_ARCHITECTURE.md:315` 的 fact status `disputed`，也**不是** `07` §1 tag 里的 `disputed`（存在相反证据 ⇒ K4 的 `B`）。三者语义不同，见 §2.11.2。**Round 3 不改名**（改名会是一次无谓的 SSOT 破坏），但**禁止**在任何跨文档读出中把它们当同一个值。
+
 **诚实的自我批评：`ASYMMETRIC` 占 16 中的 8，说明这个维度几乎不携带信息。** 任何真实案例都落进 `ASYMMETRIC`。因此：
 
-1. **`ASYMMETRIC` 必须配一个 motive 位才有信息量。** 至少三值：`UNKNOWN`（未检查是否知晓）/ `UNAWARE`（查明对方不知，且无隐瞒迹象）/ `CONCEALED`（查明对方不知，且有 `Action` 层的未披露行为记录）。这个位是 `ORDINAL | UNKNOWN`，由 `m` + `Behavior` 派生，**不是原语**。
+1. **`ASYMMETRIC` 必须配一个 motive 位才有信息量。** 至少三值：`UNKNOWN`（未检查是否知晓）/ `UNAWARE`（查明对方不知，且无隐瞒迹象）/ `CONCEALED`（查明对方不知，**且**存在一条 `ι` 的 `M = ACTUAL` 的 `InformationAction` 记录，其 `form = Withhold`、`item = p`、`opportunity ≠ ∅`——C-P11 的 gate，§2.11.1）。这个位是 `ORDINAL | UNKNOWN`，由 `m` + 一条 `Action/Event` 记录派生，**不是原语**。
+   **Round 3 提示**：`CONCEALED` 这一值的存在**依赖** `C-P11` 落地；在此之前它不可赋值，故 `ASYMMETRIC` 的三值细分中只有 `UNKNOWN` / `UNAWARE` 可用。**这正是 `I5` 的可测伪性所在**：一旦 `CONCEALED` 被赋成却没有 `Withhold` 记录支撑，`I5` 就被违反。
 2. `ASYMMETRIC` 的 8 种组合需要按方向（谁持）区分，方向从 `H` 直接得到。
 3. **`Claim_ι⊛(p)`**（`H = ι⊛` 的记录）是**唯一**的 pair-level 原语。语义：**以二人名义的联合承诺，是一个第三方可观察的对象**。
    - **不是** `BelievesBoth(p)`（那是两个持有者上的合取，是派生）。
@@ -444,25 +597,31 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 
 ### 4.5 显式不实现清单
 
+**Round 3 提示**：本表是「**本设计不实现**」的清单。**它不主张**被列出的形式化在理论上不可行（§3.11 的证据强度表：本 child `NOT_OPENED` 了它们所依赖的复杂度 / 等价性结果）。
+
 | 不实现 | 理由 | 替代 |
 | --- | --- | --- |
 | modal logic / Kripke 模型 | §3.1：表达力零增益、假设与目标情境冲突、无法承载 `Φ` 的类型 | `k` 字段 + `m` 字段 |
-| public announcement | §3.1：可信-真实-公开假设被违反 | `Disclosure` 的 `Action/Event` |
+| public announcement | §3.1：可信-真实-公开假设被违反 | `InformationAction` 族的 `Action/Event` 记录（§2.11.1） |
 | common knowledge | §3.2：EXPTIME-complete + 人做不到 | `Claim_ι⊛` |
 | 迭代嵌套 > 3 | §3.3 + Miller & Moss 不可递归公理化 | order-2 截断 + 混合动机例外 |
-| event model | §3.10：需要完备原子命题语言 | `g` + `m` + `Disclosure` 事件 |
+| event model | §3.10：需要完备原子命题语言 | `g` + `m` + `InformationAction` 族 |
 | `credence` / posterior 状态 | §3.4：需已知 observation model（`[S22]` 表明为假） | `k` + `Rel` + `Pol` |
 | `d′` / `β` / criterion | §3.5：等方差假设不可检验且已知可疑 `[S20]` | 测量层的 discriminability 注解 |
 | POMDP policy solving / reward | §3.7：需 reward 与受控链；一般不可解 | 借更新式；策略交 R06/R09 |
 | AGM 完整公理化 / 收缩 | §3.9：把经验判据换成公理判据 | 声明的序偏好先验 |
 | doxastic closure | §3.9：它是教条悖论的引擎 `[S9]` | 显式禁令 + `MAPPING_FAILURE` 记录 |
 | 标量 `Trust(ι')` | §3.8：`testimony is not a unitary category` `[S63]` | `Rel(ι', p; frame)` |
-| 关系级「deception」trait | §3.6：策略性是任务/激励条件化的 `[S31]` | `NonDisclosure` 派生 + `Behavior` |
+| 关系级「deception」trait | §3.6：策略性是任务/激励条件化的 `[S31]` | `NonDisclosure` 派生 + `InformationAction` 记录 |
 | 「欺骗」作为规范判断 | §3.6：52.13% 的研究根本没确立规范违反 `[S33]` | 保留 `provenance` 与 `fact status` 分轴 |
+| **把非披露当作持续状态** | §0.1 / §2.11：那是 `Constraint` 那一类（`CURRENT_ARCHITECTURE.md:190` 的先例），不是 `Action/Event` | 一次一个 `InformationAction = Withhold` 记录（**需 Architect sign-off**） |
+| **适用性作为值域的一元** | Architect **X-5** / **C-P5**：「不适用」**既不是 0 也不是 Unknown**，值域**许可式、非封闭** | 独立适用性轴 `APPLICABLE / NOT_APPLICABLE_BY_RULE / APPLICABILITY_UNKNOWN` + reason/provenance（Track R3-D `D2`） |
 
 ### 4.6 可检验的不变式（作为 Case Bank 断言）
 
 这些是**可以逐条被 Case Bank 测伪的**陈述，不是设计许愿：
+
+**Round 3 提示**：这 10 条是**可证伪断言**，它们**远弱于**「本设计最小」这一主张（§4.2）。它们**接受**；最小性主张**不接受**。
 
 | ID | 不变式 | 若违反 |
 | --- | --- | --- |
@@ -470,7 +629,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 | I2 | 任何 `M ≠ ACTUAL` 的记录不出现在 `Θ` 派生量中 | 梦/幻想污染真实状态（`AGENTS.md` 第 10 条） |
 | I3 | `Rel` 从不以标量形式出现 | 违反 testimony 异质性 `[S63]` |
 | I4 | 任何 `g = REPORTED` 的记录都有非 `UNKNOWN` 的 `src` | provenance 断裂；二手不变式 `[S65]`` 无法检查 |
-| I5 | `NonDisclosure(ι, p)` 为真 ⟹ 存在一条 `ι` 的 `M = ACTUAL` 的 `Disclosure` 记录标记 `p` 为「未放在 `ι' ` 可及范围内」 | belief 层在断言一个没有行为支撑的行为事实 |
+| I5 | `NonDisclosure(ι, p)` 为真 ⟹ 存在一条 `ι` 的 `M = ACTUAL` 的 `InformationAction` 记录，其 `form = Withhold`，且该记录的 `item = p` **并且** `opportunity ≠ ∅`（C-P11 的 gate：沉默 / 缺席**不**自动是一个 `Action`） | belief 层在断言一个没有动作支撑的行为事实 |
 | I6 | 任何「他从线索看起来在隐瞒我」的断言带有 `g = INFERRED` 且 `src` 指向线索的 provenance | 把 `[S22]` 的 54% 判读静默升格为 fact |
 | I7 | `k` 从不在 belief 层内被 belief 层自动改写（无隐式闭包） | 触发 `Gaultier` 悖论 `[S9]`，且掩盖了教条主义 |
 | I8 | 任何「我们意见一致」的 readout 都同时报告其来源：是 `CO_CONSTRUCTED`、`ASYMMETRIC` 的 `m` 失配，还是两条独立收敛的 `k` | 把投射读成知觉（S48 的 indirect accuracy） |
@@ -499,7 +658,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 
 **最小层的具体失效：** `m = +` 与 `k_ι'(p) ≠ +` 之间的失配**可以被表示**（I-invariant §4.6 无需改）。但**分类会错**：最小层没有「透明度误差的符号依赖于 `ι` 自身的情感状态」这一维度。→ 任何把「透明 / 不透明」建成**单一参数**的下游 readout 都**必然**错：当 `ι` 平静诚实时，`ι` 的 `m` 系统性**低估**；当 `ι` 高度唤起时，`ι` 的 `m` 系统性**高估**。
 
-**需要什么：** 把透明/不透明做成**逐 `(ι, p, τ)` 的有向失配**，而不是 trait 参���；并把「该失配依赖 `ι` 的内部状态」记为 `Θ` 侧的 Agent 层输入，而非 belief 层参数。
+**需要什么：** 把透明/不透明做成**逐 `(ι, p, τ)` 的有向失配**，而不是 trait 参数；并把「该失配依赖 `ι` 的内部状态」记为 `Θ` 侧的 Agent 层输入，而非 belief 层参数。
 
 **最小代价修法：** 不加任何 belief 层结构，只需在 §4.3 的 `Meta_Unrealized` readout 上**禁止**跨 `p` 聚合。→ 一条 readout 禁令。`MODEL_HYPOTHESIS`。
 
@@ -529,7 +688,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 
 **最小层的具体失效：** 逐条 `NonDisclosure(ι, p, τ)` 是逐 `τ` 的，无法表达**轨迹**（"lie more when partners lie" 是关于 `τ` 序列的结构）。另外，若 `m` 只记 `+`/`?` 而不记**「我预期你会配合」**，则无法区分「独立隐瞒」与「共谋」。
 
-**需要什么：** (a) 允许在 `τ` 轴上对 `Disclosure` 事件序列做序列分析（这是 `Action/Event` 层的，不是 belief 层的）；(b) `m` 需要能表达「我预期你对 `p` 也保持 `?`」——即**对他人 stance 的 stance**。
+**需要什么：** (a) 允许在 `τ` 轴上对 `InformationAction` 记录序列做序列分析（这是 `Action/Event` 层的，不是 belief 层的）；(b) `m` 需要能表达「我预期你对 `p` 也保持 `?`」——即**对他人 stance 的 stance**。
 
 **最小代价修法：** (a) 零新增（`τ` 已在）；(b) 超出 `m` 的当前语义。**`MODEL_HYPOTHESIS` 的候选扩展**：`m` 增一值 `⊕`（我预期对方与我同向），或允许 `m` 的取值来自**另一条记录的 `k`**（即 `m` 指向一个 `(p, ι')` 记录而非枚举值）。后者**更简约**且能表达「我预期你会继续隐藏」。→ 建议 `m` 的第四种实现方式是**引用**而非枚举，但**标 `DEFER`**，因为它会引入记录间的引用环。
 
@@ -537,7 +696,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 
 **现象：** 52.13% 的不忠研究未确立信任/排他性规范违反；施加后 emotional infidelity 流行率由 35.23% 降至 17.38%；约 20% 美加成人报告过 CNM，在其中相关行为**不**构成不忠 `[S33]`。
 
-**最小层的具体失效：** 若把 `deceptive` 作为 belief 层的一个**谓词**（而不是 `g` + provenance + `Behavior` 的组合），则该谓词隐含了规范判断，违反 `AGENTS.md`「descriptive / legal / moral / social-desirability 分轴」。
+**最小层的具体失效：** 若把 `deceptive` 作为 belief 层的一个**谓词**（而不是 `g` + provenance + 一条 `InformationAction` 记录的组合），则该谓词隐含了规范判断，违反 `AGENTS.md`「descriptive / legal / moral / social-desirability 分轴」。
 
 **需要什么：** `g` 与 provenance 只能表达**描述性**事实（说了什么、依据什么、谁可及）。规范违反必须**留在轴上**，不参与 belief 层的任何派生。
 
@@ -625,7 +784,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 - **选择性隐瞒内容而非收悉**：掌握私密信息者「不会隐瞒自己收到过信息，而可能策略性隐瞒其内容」`[S29]`；但只有在 **bargaining power 变化未达阈值**时才选择隐瞒 `[S30]`。
 - 而且隐瞒是**反馈回路**：50 对夫妻 14 天日记中，自我隐瞒 ↔ 信任互为日层面因果 `[S27]`；putative secret 导致冲突**更高且波动更大** `[S28]`。
 
-**→ 朴素层的误述：** 把「关系中有隐瞒」建成 dyad 特质。修正：§4.3 的 `NonDisclosure` + `m` + `Behavior`，并且**隐瞒必须随 `τ` 变化并与 `Trust` 耦合**。
+**→ 朴素层的误述：** 把「关系中有隐瞒」建成 dyad 特质。修正：§4.3 的 `NonDisclosure` + `m` + 一条 `InformationAction` 记录（§2.11.1），并且**隐瞒必须随 `τ` 变化并与 `Trust` 耦合**。
 
 ### 6-7 动机不是单一方向：accuracy motive 可能**稳定**扭曲
 
@@ -664,7 +823,7 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 | --- | --- | --- | --- |
 | CB-B1 | 一方明确说「我告诉你是因为我不想让你担心」，内容在事实上为真 | `g = REPORTED` + `src` + 动机（`[S25]` 的 partner-protective）vs 描述性不诚实 | 应成功映射；检验 `g` 是否被 `Deceives` 污染 |
 | CB-B2 | 双方对同一已发生事件给出**互相矛盾但各自内部一致**的叙述，且双方都真诚 | `DIVERGENT` + I7（无隐式闭包） | 应成功；`?` 归属 vs `−` 归属的区分 |
-| CB-B3 | A 知道 B 有秘密**且让 B 以为仍未知**（putative secret） | `NonDisclosure` + I5（须有 `Behavior` 记录支撑） | **预期 MAPPING_FAILURE** 若 `Action/Event` 层尚无 `Disclosure` 类型；这是设计缺口而非 bug |
+| CB-B3 | A 知道 B 有秘密**且让 B 以为仍未知**（putative secret） | `NonDisclosure` + I5（须有一条 `InformationAction` 记录支撑） | **预期 `MAPPING_FAILURE`，直到 `C-P11` 的 `InformationAction` 族被 sign-off 并落地**；落地点已在 §2.11.1 定死（`Action/Event`，非 `Constraint`）。**Round 3**：这不是一个**未定义的**缺口，而是一个**已裁定、待落地**的缺口——所以它是**排程依赖**，不是 `BLOCKER-OBS-01`（那一条是 Architect 裁决依赖） |
 | CB-B4 | A 谎称「没什么事」，B 事后从第三方得知 | `NonDisclosure` + I6（推断必须带 `g = INFERRED` 与线索 provenance） | 应成功；检验是否把「B 相信 A 在隐瞒」静默升格为 fact |
 | CB-B5 | A 在某次谈话中把第三方 C 的行为描述得比实际更糟/更好，随后**自己**的回忆朝该方向偏移 | §5-1 `FIRSTHAND_TUNED` | **预期 MAPPING_FAILURE**：现有 6 值 `g` 无法表达 |
 | CB-B6 | 一方平静诚实，另一方却确信「他在隐藏什么」；随后揭示并无隐瞒 | §5-2 透明度错觉在诚实态**反向** `[S41]` | 应成功；检验 readout 是否误把方向性写死 |
@@ -692,14 +851,23 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 13. **不主张**文献数量或 LLM 一致度构成本文件任何主张的验证。
 14. **不主张**本层对任何法律 / 道德 / 社会赞许性评价负责；`deceptive` 记录**不蕴含**规范判断（`[S33]`）。
 15. **不主张**「互惠」「一致性」「对齐」「高透明度」是原语；它们是派生 readout。
-16. **不主张**本文件与 `PARAMETER_CONVERGENCE_V0_1.md` 的现有候选 `k` 族兼容或冲突——**本 lane 未读该文件**（覆盖缺口，§9-10）。
+16. **不主张**本文件与 `PARAMETER_CONVERGENCE_V0_1.md` 的现有候选 `k` 族兼容或冲突——**本 lane 未读该文件**（覆盖缺口，§9-11）。
 17. **不主张** `k` 应当是 outright belief。`[S9]` 表明 outright-belief 语义 + doxastic closure 会产生悖论并导出不可接受结论。
+18. **Round 3 新增 — 不主张**本设计**最小**。8+2+4+1 是**本设计的账**，不是 LHRM 的账。「没有第九个原语」作为**最小性**主张是 `UNSUPPORTED`（`R-E5` / `E-C18`）；**`M` 是有意的设计选择，不是最小性证明**（§4.2）。
+19. **Round 3 新增 — 不主张** §3 的 `REJECT` 判决是**不可能性证明**。它们的**结论** `ACCEPT_AS_PROPOSAL`；**论证**依赖的复杂度 / 等价性结果本 child `NOT_OPENED`（§3.11）。
+20. **Round 3 新增 — 不主张**本文件与 `07` 互相印证。**`08b` 未读 `07`**（§9-11）。平行编码的相似是**两次发明收敛**，不是**独立发现复制**（§2.11.2）。
+21. **Round 3 新增 — 不主张**任何 belief 侧原语是 `Reality` / `DirectedRelationshipState` 坐标。X-1 / §C.1 已裁定 `PPR_(i about j,t)` **remains BeliefState**；持久性、因果/动力学重要性、预测强度**本身不蕴含** Reality-state 成员资格。改层位须走**一次明确的架构修订**（§0.0）。
+22. **Round 3 新增 — 不主张**「LHRM 要不要 belief 层」是开放问题。它**已关闭**（`CURRENT_ARCHITECTURE.md` §3/§8 + `AGENTS.md` 方向 10，`E-C20` `VERIFIED`）。本文件开放的只有**它多小**与**两项外部依赖**（§0.0）。
+23. **Round 3 新增 — 不主张** `Rel(ι', p; frame)` 是 canonical `Trust` / `AttachmentSecurity` 的 facet，或应与之合并。X-4：二者保持**分立**候选；`domain` 是**可选 facet，不是必需 signature**；`08b` 不对 `Trust` 的层归属做任何主张（§2.10 第 3 约束）。
+24. **Round 3 新增 — 不主张**本文件实施 `InformationAction` 族、适用性轴或可观察性登记表。三者都是**已裁定、待落地**项，本 child **只描述形态并指向 owner**（§2.11.1、§2.11.3、§9.12）。
 
 ---
 
 ## 9. 剩余未知
 
-1. **LHRM 的可观察性通道结构。** 哪些构念原则上可被直接观察、哪些只能被报告、哪些只能被推断——项目内不存在这样的列表。`g = FIRSTHAND` 因此无法落地。**这是落地 belief 层的头号阻塞。** 建议与 R07、R03 联合处理。
+1. **`BLOCKER-OBS-01` — LHRM 的可观察性通道结构（本节的**唯一** head-of-list 阻塞项；Round 3 合并，权威陈述见下方专门框）。**
+   ~~哪些构念原则上可被直接观察、哪些只能被报告、哪些只能被推断——项目内不存在这样的列表。`g = FIRSTHAND` 因此无法落地。**这是落地 belief 层的头号阻塞。** 建议与 R07、R03 联合处理。~~
+   **Round 3 的处置**：本条与 `07` §11-3 **是同一个缺口**，已在下方合并为**一条**、**单一 owner**。原文本**保留**（作为本文件的发现记录），但**不再**在 §0 / §10 重复。
 2. **真实亲密 dyad 的递归心智理论深度。** 未找到专门测量亲密关系中 ToM 阶次的研究。现有证据来自矩阵博弈、谈判、重复博弈。向 romantic dyad 的外推是 `UNKNOWN`。**建议作为 R16 的一个具体实验设计目标。**
 3. **二阶 `Rel` 的表示冲突。** `Rel(ι', p; frame)` 既是 ground 家族的一个注解，又是 `Φ` 中的一等内容项。二者在实现层是否碰撞**未知**。
 4. **alignment 四分类在 Case Bank 逐句映射下的稳定性。** 四类穷尽 16 种组合（可证），但 `ASYMMETRIC` 占 8 种说明该维度几乎不携带信息。`ASYMMETRIC` 是否需要按方向与 motive 再细分——**未决**。交 R15 / R16。
@@ -708,8 +876,26 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 7. **belief 层与 transition law 的接口。** `Belief_t` 如何进入 `X_{t+1} = F(X_t, Action_t, Event_t, Belief_t, …)`——本文件**不**提出任何 `F`。交 R06 / R09。本文件的唯一主张是：`Pol` 与 `Rel` 的存在会**约束** R06 所能提出的 transition law 家族的形式。
 8. **transcript 中 testimony chain 的实用长度上限。** `[S65]` 排除了「只经证言被知」，但**未**给出链条长度上限。`UNKNOWN`。
 9. **`m` 是否需要拆成「我认为他知道」与「我认为他相信」。** `[S5]` 反对合并；但关系材料中没有廉价操作测试可分。`DEFER`。
-10. **`Disclosure` 作为 `Action/Event` 类型的具体形态。** §4.3 的 `NonDisclosure` 依赖它，但本文件**未**设计它（它属于 `CURRENT_ARCHITECTURE.md` §6 的 `Action/Event` 层）。**这是本设计的最大外部依赖。**
-11. **coverage 缺口。** 本 lane 未读 `PARAMETER_CONVERGENCE_V0_1.md`、`CONSTRUCT_SCOPE_DIRECTIONALITY.md`、既有报告 A–D、validation fixtures。
+10. **`InformationAction` 族的落地形态（Round 3：从「未设计」改为「已裁定、待 sign-off」）。** §2.11.1 / §4.6-I5 依赖它。Architect **C-P11** 已裁定形态：Action/Event 下的一个**族**，`Disclose` / `Withhold`（**仅当**一个 information item **加**一个 opportunity/expectation 显式）/ `Misrepresent`；**单纯的沉默/缺席不自动是一个 Action**。**本文件不实施。** 状态：**排程依赖**，不是 `BLOCKER-OBS-01`。
+11. **coverage 缺口。** 本 lane 未读 `PARAMETER_CONVERGENCE_V0_1.md`、`CONSTRUCT_SCOPE_DIRECTIONALITY.md`、既有报告 A–D、validation fixtures。**Round 3 补**：也**未读** `07_PARTIAL_OBSERVABILITY.md`。⇒ 本文件与 `07` 各自发明的平行 `Unknown` 编码**不构成互相印证**（§2.11.2）。
+12. **Round 3 新增 — 适用性轴的接口。** `⊘`（主体说「这不是个问题」）与 `NOT_APPLICABLE_BY_RULE`（规则元数据）**不是**同一件事（§2.11.3）。本文件**不**实施适用性轴（Track R3-D `D2` 拥有），**只**记录这一区分会被下游需要。
+
+### 9.12 `BLOCKER-OBS-01` — 可观察性 / 锚点登记表（**唯一一条、单一 owner**）
+
+**Round 3 把本文件 §9-1 与 `07` §11-3 的重复陈述合并为一条**（review-r2 `R-E6` / `E-C16`；Architect **C-P13**）：
+
+| 字段 | 内容 |
+| --- | --- |
+| `id` | `BLOCKER-OBS-01` |
+| `nature` | **一条 Architect / Human 裁决，不是一个研究问题。** 本文件原 §9-1 的定性（「头号阻塞」）**正确**；缺的是**合并**与**owner** |
+| `gap` | 项目内**不存在**「哪些构念 / facet 原则上可被直接观察、只能自报、只能由伴侣报告、有行为锚、只能推断为 latent、**结构性不可观测**」的清单 |
+| `blocks` | ① `08b` 的**整个** belief 层——`g = FIRSTHAND` 无法赋值；② `07` 的 `Unknown` 分类落地（`structurally_unobservable` 无法赋值）；③ `07` 的 `⊑` 程序（`I9` / `I13` 需要一份已登记的依赖 / 锚点表）；④ `02` 已局部提出的单构念登记（`coordination` 不可知觉） |
+| `status` | **`ACCEPT`（C-P13）**：逐 construct / facet 建立一份**候选**登记表 |
+| `性质` | **测量元数据，不是本体扩张**（C-P13 逐字："This registry is measurement metadata, **not a new primitive list**"） |
+| `owner` | **Track R3-D 的 measurement-semantics child**（`ARCHITECT_ROUND3_DISPATCH_V1` `D5`，分支 `architect/measurement-semantics-v0.1`），**唯一 owner**。本文件与 `07` **都**只是**提出者** |
+| `本文件的角色` | **需求方 + 转换表的一列。** `08b` 需要它来决定 `g` 的六个值里哪些可赋值、`k` 的 `⊘` 在哪些构念上真的可达 |
+| `它阻塞什么**不**阻塞什么** | 它**不**阻塞 §3 的取舍（那是设计判断）；它**不**阻塞 `M` / `k` / `m` 的**存在性**主张（那些是 schema 决定）；它**确实**阻塞 `g = FIRSTHAND` 与 `structurally_unobservable` 的**赋值** |
+| `priority` | **head-of-list。** 按裁决 **X-12**，优先级是**依赖解锁序**，不是「便宜」；**一条负面结果不是阻塞项** |
 
 ---
 
@@ -720,15 +906,33 @@ SimWorld( ι , m )  =  { Record : M = m , H = ι }  ∪  closure under parent li
 - mission 的每一个 bullet 都得到了有真实指针的覆盖。
 - 产生了一条**对 mission 前提的实质性更正**（C1：不存在「Kuhn's dogmatism paradox」，规范对象是 Kripke–Harman paradox）。
 - 产生了一个**可落地且简约**的 belief 层设计（8 槽位 + 2 标量 + 4 派生类 + 1 枚举 + 1 指针），并给出 10 条**可证伪**的不变式。
-- 产生了一份**强制的过度工程审计**，含 3 项 `REJECT`（modal logic、common knowledge、后验作为状态）、2 项 `REUSE-EQUATION-ONLY`（POMDP、AGM）、1 项 `DEFER`（event model）。
+  - **Round 3 限定**：这是**一个**可落地的设计，`ACCEPT`；但「**最小**」是 `UNSUPPORTED`（§4.2）。**`M` 是有意的设计选择，不是最小性证明。**
+- 产生了一份**强制的过度工程审计**，含 **7 项 `REJECT`**、2 项 `REUSE-EQUATION-ONLY`、1 项 `DEFER`（event model）——**逐项对账见 §3.11，§3 正文为权威**。原文此处写的「3 项 `REJECT` / 2 项 `REUSE-EQUATION-ONLY` / 1 项 `DEFER`」是**头条三项**的摘要，**不是**全量计数。
+  - **Round 3 限定**：这些判决的**结论** `ACCEPT_AS_PROPOSAL`；**论证**依赖的复杂度 / 等价性结果本 child `NOT_OPENED`（§3.11 末）。因此它们是**设计判断**，不是**不可能性断言**。
 - 产生了一份**naive layer 误述清单**（§6，9 项），其中 4 项给出**方向相反**的 readout。
+
+**Round 3 状态修订表（必须与上表一起引用）**：
+
+| 项 | 原自陈 | Round 3 |
+| --- | --- | --- |
+| `SUCCESS` | `SUCCESS` | **保留**（附上表三条降级） |
+| belief 层已被决定要 | §0 断言 | **`VERIFIED` 的确认**（§0.0），**不是新构念**；不要重新审议 |
+| 8+2 的简约性 | 作为**最小**性 | **`ACCEPT` 设计 / `UNSUPPORTED` 最小性** |
+| 3 项 `REJECT` | 全量 | **§3.11 为权威：7 项 `REJECT`**；证据强度 `NOT_OPENED` |
+| 2 项 head-of-list 阻塞 | §10-3 | **合并为 1 条** `BLOCKER-OBS-01`（§9.12）；另一项降为**排程依赖**（C-P11 的 `InformationAction` 族） |
+| `Disclosure` 未设计 | §9-10 列为最大外部依赖 | **已由 C-P11 裁定形态**，待 sign-off；不再是「未定义」缺口 |
+| 与 `07` 的关系 | 未提 | **未读 `07`**；平行编码**不构成独立佐证**（§2.11.2） |
+| 适用性 | 未提 | 独立轴，**不**折进 `Unknown`、**不**是 `0`（§2.11.3，X-5 / C-P5） |
+| `PPR` 层 | 未提 | **`remains BeliefState`**（X-1 / §C.1，§0.0）；本文件任何原语都**不是** Reality 坐标 |
 
 **限定（诚实记录）：**
 1. **`[S69]` 的发表年份未核实**（PMC 编号暗示为近期）。写入前必须复核，否则按 `UNKNOWN_AS_OF` 处理。
 2. **`[S71]`（Kuhn）未读**，本文件任何主张都不基于它。
-3. **head-of-list 阻塞**是 §9-1（可观察性通道表不存在）与 §9-10（`Disclosure` 未设计）。**本设计不能在这两项解决前进入表示测试。**
-4. 本 lane 未读项目内既有报告 A–D，故**不主张**跨 lane 一致性或冲突。
+3. **唯一的 head-of-list 阻塞项是 `BLOCKER-OBS-01`（见 §9.12）**。~~原表述：「head-of-list 阻塞是 §9-1（可观察性通道表不存在）与 §9-10（`Disclosure` 未设计）。**本设计不能在这两项解决前进入表示测试。**」~~
+   **Round 3 更正**：这是**两条**不同的东西被并列了。`§9-1` 是 **Architect 裁决依赖**（`BLOCKER-OBS-01`）；`§9-10` 是**已裁定、待 sign-off 的落地项**（C-P11 的 `InformationAction` 族）。**本设计确实不能进入表示测试**（`g = FIRSTHAND` 无从赋值）；但那是**因为前者**，不是因为「两项同时未解决」。
+4. 本 lane 未读项目内既有报告 A–D，故**不主张**跨 lane 一致性或冲突。**Round 3 补**：也**未读** `07`，故**不主张**与 `07` 的互证（§2.11.2）。
 5. 本文件是 `RESEARCH_CANDIDATE`，**不是** canonical。采纳任何部分都需要 reviewed 的 Human/Architect 决策。
+6. **Round 3 新增** — 本 child **未打开**任何新来源；§3 的判决所依赖的复杂度 / 等价性结果全部 `NOT_OPENED`。本文件的**内容层**引用（`[S1]`–`[S72]`）与 §3.9 的 Kuhn/Harman 文献更正均沿用 Round 1 的核实状态，本轮**未复核**。
 
 **对 manifest 的状态建议：** lane `R08` → `SUCCESS`；报告文件状态 `RESEARCH_CANDIDATE`；Wave 2 中 `A01`（证据质量）应复核 `[S69]` 年份与 `[S71]` 的 `UNVERIFIED_CONTENT` 标记；`A03`（可证伪性）应把 §4.6 的 10 条不变式与 §7 的 10 条 Case Bank 候选作为具体测伪清单。
 
