@@ -178,6 +178,18 @@ Trust_(i->j,t)
 - generalized trust（Agent tendency）与 target trustworthiness 不能替代特定 dyadic trust；
 - 可高喜欢低信任，也可低喜欢高制度性信任。
 
+> **层与 scope 裁决（2026-09-28，`ARCHITECT_ADJUDICATION_V1` X-4 / C-P3 部分接受）。已定，非开放问题：**
+>
+> - **本文不为 `Trust` 新增 `domain` 必需 signature 字段。** 替代登记：
+>   `domain = FACET_RECOMMENDED_NOT_REQUIRED`——`domain` 是**可选 facet / context index**，
+>   必需与否**待 measurement invariance 检验**。依据：该强制要求的引文本身是一个**工作场所例子**
+>   （`organizational trust`），而该来源族只有**一条** organizational 来源。
+> - **不在本节新增具名 `FeltSecurity` 槽位。** §4 `D5` 的标题 `Attachment Security / Felt Security`
+>   **已经拥有该措辞**；在 `D4` 下再登记一次同一语义会**加重**正在被审查的那处歧义，
+>   而不是消除它。任何更细的 Trust-vs-Attachment facet 切分**必须使用更窄的语义标签**
+>   （例如 vulnerability / non-exploitation expectation），且在相关证据出现前**保持 candidate**。
+> - **本次不新增任何槽位。** 本节构念集合与 §11 basis 清单不变。
+
 **Open question:** `Distrust` 是否应作为独立 construct，而不是 `1 - Trust`，保留待测。
 
 ### D5. Attachment Security / Felt Security
@@ -192,6 +204,12 @@ AttachmentSecurity_(i->j,t)
 
 - 与喜欢/浪漫/性欲不同；
 - 可出现强吸引但低 security、低浪漫但高 attachment/security 的长期关系。
+
+> **与 `D4 Trust` 的关系已定（2026-09-28，X-4）。已定，非开放问题：**
+> **`Trust` 与 `AttachmentSecurity` 暂时保持为两个独立 candidate，本轮不合并、不拆分。**
+> 更细的 facet 切分仍为 candidate，且**必须使用比 `FeltSecurity` 更窄的语义标签**
+> （例如 vulnerability / non-exploitation expectation）——`FeltSecurity` 措辞已由本节拥有，
+> 不得在 `D4` 侧重复登记（见 `D4` 的裁决块）。
 
 **Open question:** attachment security 是否应拆成更细 facet，暂不做。
 
@@ -266,6 +284,21 @@ layer = Belief / relationship-specific perception
 - PPR 是关系科学里很强的 construct；
 - 但它本质上包含 i 对 j 的解释，不等于 j 的客观 responsiveness；
 - 同一行为可因 attribution 不同得到不同 PPR。
+
+> **层归属已定（2026-09-28，`ARCHITECT_ADJUDICATION_V1` X-1 / ruling §C item 1）。已定，非开放问题：**
+>
+> - `PPR_(i about j,t)` **保持 BeliefState / 关系特定知觉**。这是当前架构的既定层位；
+>   只有一次**显式的架构修订**才能推翻它。
+> - 一个 belief 可以有**时间持续性**与**因果 / 动态重要性**，而**不因此**成为
+>   Reality / `DirectedRelationshipState` 坐标。
+> - 「organizing variable」、持续性或预测强度**本身不蕴含** Reality-state 成员资格。
+>   纵向证据将来若显示独立的动态信息，那会触发**一次新的提升复核**，
+>   而**不是**追溯改变它现在的层。
+> - 记录一项**未解决的耦合**（`X-1` 独立指出）：「测量层冗余与层位正交」只在特定语境下成立。
+>   **若将来 Gate 的冗余判定被用于层归属，该正交性即失效。** 本条不预设其后果。
+> - 本节**不因**文献主张改变层位；`F3` 的层位部分已被判 `WRONG-SCOPE`，
+>   且其前提（canonical 把 Belief 当成 state 的下游）在 canonical 中**不存在**——
+>   `Belief` 已是转移函数的一级 co-input（`CURRENT_ARCHITECTURE` §6）。
 
 因此区分：
 
@@ -493,6 +526,28 @@ PowerImbalance_(A,B)
 Satisfaction 是主体对当前关系结果与期望的综合评价，很有预测价值，但它可能是多个底层状态、偏好、belief 和 environment 的 readout，而不是最小关系 basis。
 
 需后续用 longitudinal incremental information 检验：若已知底层状态后 satisfaction 仍携带稳定独立动态信息，才考虑提升。
+
+> **层归属与后果预登记（2026-09-28，`ARCHITECT_ADJUDICATION_V1` X-1 / X-3、ruling §C item 2、C-P8 窄接受）。已定，非开放问题：**
+>
+> - `Satisfaction_i(t)` **保持 Derived / evaluation-state candidate**。
+> - **提升是条件式且预登记的，绝不由预测强度隐含推出。** 「很有预测价值」本身**不是**提升依据。
+>
+> **条件式后果预登记（本条只登记后果，不预设结论）：**
+>
+> ```text
+> IF  本节的提升判据（longitudinal incremental information）成立
+>     AND Satisfaction 被提升为独立 basis 条目
+> THEN  §4 D7 Dedication 的 basis 地位
+>     AND §11 的 8 项 basis 清单
+>     MUST 重新审议，且该审议必须经 GATE_REDUNDANCY 签发处置
+>           （docs/foundation/VALIDATION_GATES_V0_2.md §2.3 / §7），
+>           不得直接删改 §11。
+> ```
+>
+> - **本轮不提升 `Satisfaction`，也不改动 `D7`。** 上述 `THEN` 分支**尚未发生**。
+> - **§4 D7 与本节之间没有逻辑矛盾，当前不存在被强制的二选一。**
+>   此前把二者表述为「canonical 内部不一致」的框架**在此撤回**（`X-3`：
+>   `NO LOGICAL CONTRADICTION`）。那是一个记账 / 文档层级问题，不是本体冲突。
 
 ### R4. Relationship Quality / Compatibility / Match Score
 

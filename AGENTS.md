@@ -59,7 +59,7 @@ Until superseded by a reviewed durable decision:
 - Case Bank primarily tests `representation completeness | closure | regression | adversarial coverage`, not population probability.
 - For court/official materials, provenance quality and fact status are separate; do not treat all statements in a judgment as equally adjudicated truth.
 - First representation test should map source text sentence/event by sentence/event without inventing new constructs mid-test.
-- Record unmappable material as `MAPPING_FAILURE`; Architect diagnoses whether the failure is ontology, construct, scope, temporal/history, belief/observation, measurement, or merely narrative/irrelevant.
+- Record unmappable material as `MAPPING_FAILURE`; Architect diagnoses whether the failure is ontology hole, construct hole, scope hole, temporal/history hole, belief/observation hole, measurement hole, redundancy hole (a unit losslessly representable by <k>, so <m> is unnecessary), or — only as a conditional and logged discharge — merely narrative/irrelevant, which requires a recorded relation-relevance reason **and** a demonstrated unmappability, and is counted apart from failures, never merged into them.
 - Fiction may be used as expressivity stress test; fictional world rules belong in Environment/History unless they truly require a new Human relationship construct.
 
 ## Mutation discipline
