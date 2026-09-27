@@ -8,6 +8,28 @@
 > **权限:** 无 GitHub 写权限；本文件为 research packet，**未修改 `D:\coding\lhrm` 任何文件**
 > **本文件不是 canonical architecture。** 本目录下所有文件都是 `RESEARCH_CANDIDATE`。
 
+### Round 3 `A1` 修复记录（bookkeeping + citation repair，依 `ARCHITECT_ADJUDICATION_V1`）
+
+本节声明 Round 3 对本文件做过的全部改动。**原始审计文本一律保留**，每处改动都带 `SUPERSEDED` 注记（原文 + 取代依据）。
+
+| # | 位置 | 改动 | 依据 |
+|---|---|---|---|
+| 1 | §0 第 2 条 | 「10 个 DOI 完全不解析」→ **9** | manifest §7 **M-5** 关联项 / `EV2` §5.8 第二块 |
+| 2 | §1.1 Crossref 解析行 | `353/353（100%）` → **`337/353（95.5%）`** | manifest §7 **M-5**（`J-C13`） |
+| 3 | §1.1 反查行 | `11` 标 **`NOT_RECONCILED`**，不改数 | `EV2` §5.8 变更说明（四数互斥簇） |
+| 4 | §1.1 词频行 | `17 个标签` → 标 `SUPERSEDED`，指向 §3.3 | Round 3 实测 |
+| 5 | **§3.3（新增）** | 证据等级词汇台账：F-12 的 12 个变体逐个复跑 + 9 个未枚举写法 | Round 3 实测 |
+| 6 | **F-12** | 订正 `UNVERIFIED_AGENT_RECALL`（R11）= **幽灵 token**，出现 0 次 | Round 3 实测 |
+| 7 | **F-35** | 「逐 lane 相加的 **788+**」→ **878** | manifest §7 **M-2** / `EV2` §4.1 |
+| 8 | **NR-ALL-1** | 标 **`PROPOSAL_NOT_APPLIED`** + 写明落地前置条件 | X-14（不得声称已实施） |
+| 9 | **NR-ALL-5** | `788+` → **878** | 同 #7 |
+| 10 | **NR-ALL-7（新增）** | 登记四个互斥「未命中」数的消解动作 | `EV2` §5.8 |
+| 11 | **§10.3.0（新增）** | 83 项 `NARROW_REPAIR_REQUEST` 执行状态台账（`EXECUTED` 10 / `PARTIAL` 31 / `NOT_EXECUTED` 31 / `UNPROBEABLE` 11）+ (i)(ii)(iii) 三分类 | Round 3 派发「重新机械计数，绝不复制旧总数」 |
+| 12 | **§13（新增）** | Round 3 的复算脚本、命令与逐项输出 | 可复现性 |
+| 13 | §1.4（新增） | `[ESTABLISHED]` 与 Fixture 003 两项词表/边界声明 | 见 §1.4 |
+
+**本 child 的白名单内另一份文件** `A04_CITATION_PROVENANCE_AUDIT.md` 同步修复（见该文件 §0 Round 3 记录）。**`00_MANIFEST.md` 与 `19_SYNTHESIS_CANDIDATE.md` 由 `A2` 拥有，本 child 未触碰。**
+
 ---
 
 ## 0. 一句话结论（先说最要紧的）
@@ -17,7 +39,10 @@
 **但发现 3 类实质缺陷：**
 
 1. **29 个 DOI「解析到一篇真实论文，但不是报告所引的那一篇」**（作者/年份/期刊错配）。这比死链更危险：死链会自己暴露，错配不会。
-2. **10 个 DOI 完全不解析**（Crossref 404 + `doi.org` 404），其中 3 个是承重引用。
+2. **9 个 DOI 完全不解析**（Crossref 404 + `doi.org` 404），其中 3 个是承重引用。
+
+> **`SUPERSEDED`（Round 3 `A1` 修复，依 manifest §7 M-5 / `EV2` §5.8）**：上一版本本行写「**10** 个 DOI 完全不解析」。该数与本文件其它三处互斥：`:15` 的 `337/353 = 95.5%`、§1.1 的 `353 − 337 = 16`（= 9 死链 + 5 DataCite + 1 `.pdf` 格式错 + 1 字面占位符）、§3.1 的 `DEAD_BOTH = 9`。**唯一与本文件 tier 表自洽的数是 9**（9/353 = 2.5%）。已改为 9。
+> **仍未消解的一处**：§1.1「缺失引用反查」行写「**11 条**死链，9 条找到了正确 DOI」。`11` 与 §3.1 的 `DEAD_BOTH = 9` 不一致，但该行描述的是**反查步骤的输出**（含报告侧格式错与占位符），本轮**无法从本文件内部重算**，故标 `NOT_RECONCILED` 而非改数。见 `NR-ALL-7`。
 3. **证据等级词表在 18 个 lane 之间漂移**，且存在 lane 间对 `CITED_PRIMARY` 的**互相矛盾定义**；R03/R13 两条产出来源最多的 lane 几乎不给证据等级。
 
 **BLOCKER 3 条，MAJOR 12 条，MINOR 20 条（共 35 条 findings）。全部为指针/标签/措辞层，无一条要求重做构念裁决。**
@@ -31,13 +56,13 @@
 | 步骤 | 工具 | 覆盖 |
 |---|---|---|
 | DOI 全量抽取 | Python 正则 `10\.\d{4,9}/[^\s CJK]+` + 尾缀规范化 | 18 份报告，**588 处出现 / 353 个唯一 DOI** |
-| Crossref 解析 | `https://api.crossref.org/works/<DOI>` | **353/353（100%）** |
+| Crossref 解析 | `https://api.crossref.org/works/<DOI>` | **337/353（95.5%）**；余 16 条经 `doi.org` 定向探测，16/16 确认不解析（其中 5 条为 DataCite 注册、3 条为自陈 `FETCH_FAILED`） |
 | `doi.org` 重定向探测 | `HEAD https://doi.org/<DOI>`（禁跟随重定向） | 16 个 Crossref 未命中者 **16/16** |
 | 语义匹配（标题/作者/年份） | 人工逐条比对 Crossref 元数据 ↔ 报告行 | 353 中全部做过「作者是否出现在引用行」「CR 年份是否出现在引用行」自动筛查 + **48 + 18 条人工细读** |
 | 承重数值核对 | Crossref abstract 抽取 | 9 个承重数字（Tran 2019 / Mayo 2021 / de Bel 2019 / Körner 2026 / Eberhardt 2025 / Hassebrauck 2002 / Falconier 2015 / Bodenmann 2011 / Liddell & Kruschke 2018） |
 | arXiv 存在性 | `arxiv.org/abs/<id>` 直接抓取 | 40 个中抽 **2 个**（`2603.22735`、`2604.23178`），另 1 个经 API 单查（`2304.03442`） |
-| 缺失引用反查 | Crossref `query.bibliographic` | 11 条死链，**9 条找到了正确 DOI** |
-| 证据等级词频 | 字符串计数 | 18 份报告 × 17 个标签 |
+| 缺失引用反查 | Crossref `query.bibliographic` | 11 条死链，**9 条找到了正确 DOI** —— **`NOT_RECONCILED`**：`11` 与 §3.1 的 `DEAD_BOTH = 9` 不一致（见 §0 supersession）。本轮未重跑该步骤，**不擅自改数** |
+| 证据等级词频 | 字符串计数 | 18 份报告 × **17 个标签** —— **`SUPERSEDED`**：Round 3 `A1` 实测，18 份 lane 文件里 tier 形态的 token 共 **21** 个不同写法（见 §3.2 词汇台账）。`17` 这个数在任何地方都无法复现 |
 | 时间敏感性 | `As of` / 核实日期 头部字段扫描 | 18 份报告 |
 | 语料稳定性 | 抓取前后 SHA-256 比对 | 20 个文件 |
 
@@ -52,6 +77,35 @@
 - **未裁定任何构念裁决的对错。** 那是 A02/A03 与 Architect 的事。
 - **未读取 `#20/#21/#22`**，未触碰 Eye / Juece。
 - **未做跨 lane 全局去重**（A04 的职责）。本报告的行号与计数均以 §2.3 的 snapshot 为准。
+
+### 1.4 Round 3 补充：两术语表与边界声明
+
+#### 1.4.1 `[ESTABLISHED]` —— 本文件**不使用**该标签，故不新增定义
+
+Round 3 派发要求：「`[ESTABLISHED]` 不在 A01 自己的 convention 表里 —— 若 A01 使用它，要么补定义，要么停止使用它。」
+
+**处置选择：停止使用（事实上已经不用）。**
+
+**实测依据**：对 `A01_EVIDENCE_QUALITY_AUDIT.md` 全文（1053 行）做大小写不敏感的字面检索，`ESTABLISHED` **命中 0 次**。本文件从 Wave 2 起草至今**从未使用**该标签。
+
+**为什么选「停止使用」而不是「补定义」**：
+1. **补定义等于凭空造一个等级。** 本文件的等级词汇现状已在 §3.3 记录为「21 个 tier 形态写法、11 个属 F-12 枚举、其中 1 个是幽灵 token、且 R10 与 R07 对 `CITED_PRIMARY` 的定义互相矛盾」。在这种状态下新增第 22 个 `ESTABLISHED`，会**加重** F-12 记录的那个缺陷，而不是缓解它。
+2. **语义上它与本文件的职责不匹配。** AGENTS.md「Research discipline」要求区分 `Human requirement | empirical evidence | model hypothesis | architecture decision | implementation detail`，并明令「Do not label an unvalidated formula, parameter, weight, probability, causal relation, distance metric, normalization rule, or state transition as scientifically established」。本文件是**证据质量审计**，它的产出是**指针层缺陷裁定**，没有哪一条 finding 达到「scientifically established」。加一个 `ESTABLISHED` 等级等于给审计报告本身预留了一个会被误用的最高档。
+3. **加定义需要裁决，不在 bookkeeping 修复的权限内。** 若 Architect 后续要在 18 lane 范围内确立一个可用的最高等级，它应当作为 `NR-ALL-1` 的**一部分**裁决（那才是规范化提案的落点），而不是由一个 bookkeeping repair child 单独引入。
+
+**残留风险（记录）**：其它 lane 或 `A04` 若使用 `ESTABLISHED`，本文件不会因此失效，但**跨文件不可比性**会再增一项。已列入 packet 的 `conflicts_and_routes`，交 parent / Architect 决定是否需要一次全语料检索。
+
+#### 1.4.2 Fixture 003 权利/归属边界（X-7）—— 本文件**不使用** Fixture 003 单元，故无权利义务，但记录边界
+
+**Architect X-7 裁决（逐字要点）**：**未成立权利违反；已确认 provenance 遗漏。** LHRM 唯一被授权的 substrate 是**冻结的、仅含改写的（paraphrase-only）Fixture 003 包**；StoryCorps 正文/音频保持 `HUMAN_REVIEW_REQUIRED / pointer-only`。**不得**升级权利状态。
+
+**本文件的使用情况（实测）**：
+- 对 `A01_EVIDENCE_QUALITY_AUDIT.md` 全文检索 Fixture 003 的单元编号模式 `S\d{3}` → 命中 10 次，**逐条核对后全部是 Elsevier PII / DOI 字符串**（`S0010-0277(02)0549-8`、`S0065-2601(08)60144-6`、`S0140-1971(86)80043-4`、`S0004-3702(98)00023-X`、`S0378-8733(99)00010-6`、`S0065-2601(08)…` 等）与 lane 内编号 `[S34]`，**没有一个是 Fixture 003 的单元编号**。
+- 检索 `Fixture 003` / `StoryCorps` / `pointer_only` / `HUMAN_REVIEW_REQUIRED` → 命中 **0** 次。
+
+**结论**：**A01 不使用 Fixture 003 的任何单元，因此不产生权利陈述义务，也不存在「暗示曾取得 transcript / raw / anchored 证据」的措辞。** 本小节记录该边界，以便下游读者不必重新检索即可确认 A01 在 Fixture 003 上的地位。
+
+**同一语料内其余文件的状态（只登记，不代为修复）**：`A04` §6 有完整的 Fixture 003 权利基线与逐 lane 传递审计（该文件由本 child 同步修复，X-7 相关措辞已按裁决调整）。**其它 21 份报告是否使用 Fixture 003 单元、以及是否遗漏权利陈述，不在本 child 的白名单内**，已列入 packet 的 `conflicts_and_routes`。
 
 ---
 
@@ -174,6 +228,54 @@ $ git -C D:\coding\lhrm diff --stat
 
 > `CITED_PRIMARY` 的分布从 **0**（`03`、`14`）到 **61**（`08b`），跨度极大，且与各 lane 产出的具名指针数**不成比例**。这不是质量差异的直接证据，但它说明**该标签在不同 lane 不是一个可比较的量**——这本身是审计发现（见 F-12）。
 
+### 3.3 证据等级词汇台账（Round 3 `A1` 实测；**这是枚举，不是规范化**）
+
+**方法**：对 18 份 Wave 1 lane 报告全文跑 `\b(?:CITED|UNVERIFIED|AGENT|NO_DOI|SUBSTANCE|POINTER|NOT_VERIFIED)[A-Z_]*\b`，按 token 去重计数。
+
+**本文件不定义 canonical 等级表。** 下面三张表是**观测到的写法枚举**，**不是**本审计批准的分级方案；把其中任何一个映射到统一的 5 级或任何级别，都需要 Architect 裁决（见 `NR-ALL-1`，该条是**提案**，状态 `PROPOSAL_NOT_APPLIED`）。
+
+**表 A｜F-12（F-12 行）枚举的 12 个变体 —— 逐个复跑结果：11 个真实存在，1 个是幽灵 token。**
+
+| F-12 枚举的 token | F-12 归属 | Round 3 实测出现次数 | 实测出现于 | 裁定 |
+|---|---|---:|---|---|
+| `CITED_PRIMARY` | 全 swarm | 172 | `01 02 02b 04 05 06 07 08b 09 10 11 12 13 16 17` | ✅ 存在 |
+| `CITED_SECONDARY` | 全 swarm | 97 | 15 份 lane | ✅ 存在 |
+| `AGENT_RECALL` | 全 swarm | 36 | `01 02 03 04 05 06 07 09 10 12 13 14 17` | ✅ 存在 |
+| `UNVERIFIED_DOI` | R03 / R14 | 30 | `02 03 14` | ✅ 存在 |
+| `UNVERIFIED`（裸用） | 未归属 | 32 | `02 02b 03 04 06 07 10 11 15` | ✅ 存在（F-12 未单列） |
+| `NO_DOI_VERIFIED` | R02 / R03 | 10 | `02` | ✅ 存在（实测只在 `02`） |
+| `UNVERIFIED_CANDIDATE` | R15 | 8 | `15` | ✅ 存在 |
+| `CITED_PRIMARY_CONTENT` | R15 | 10 | `15` | ✅ 存在 |
+| `SUBSTANCE_NOT_READ` | R15 | 7 | `15` | ✅ 存在 |
+| `CITED_PARTIAL` | R09 | 4 | `09` | ✅ 存在 |
+| `CITED_METADATA` | R07 | 3 | `07` | ✅ 存在 |
+| `UNVERIFIED_POINTER` | R09 | 3 | `09` | ✅ 存在 |
+| **`UNVERIFIED_AGENT_RECALL`** | **R11** | **0** | **无** | ❌ **幽灵 token —— 见下方 supersession** |
+
+> **`SUPERSEDED`（Round 3 `A1` 实测）**：F-12 原文枚举 12 个变体并把 `UNVERIFIED_AGENT_RECALL` 归属 R11。实测：**(a) `UNVERIFIED_AGENT_RECALL` 在 18 份 lane 文件中出现 0 次**——该字符串只出现在 A01 自身（F-12 与 `NR-ALL-1`）；**(b) R11（`11_GENERAL_HUMAN_DYADS_SCOPE.md`）全文 `AGENT_RECALL` 出现 0 次**，因此 R11 不可能使用 `UNVERIFIED_AGENT_RECALL`。**「12 个变体」应改为「F-12 枚举 12 个，其中 11 个实测存在」。** 依据：Round 3 `A1` 对 18 份 lane 报告的全文 token 计数（脚本与输出见 §12）。
+
+**表 B｜实测存在、但 F-12 未枚举的 tier 形态 token（9 个）—— F-12 的枚举不完备。**
+
+| token | 实测次数 | 出现于 | 说明 |
+|---|---:|---|---|
+| `CITED_CLASSIC` | 6 | `17` | 疑似 `CITED_*` 家族的第四种写法 |
+| `UNVERIFIED_AS_OF` | 9 | `04 16` | 形态上像 tier，实际语义是「截至某时未核」的时间限定符 |
+| `UNVERIFIED_HYPOTHESIS` | 4 | `15` | 疑似字段限定符而非等级 |
+| `UNVERIFIED_CONTENT` | 3 | `08` | 疑似字段限定符 |
+| `UNVERIFIED_OR_UNKNOWN` | 3 | `12` | 疑似把「未核」与「未知」两个不同轴压进一个 token |
+| `UNVERIFIED_OFFICIAL_ACCESS` | 2 | `15` | 疑似可达性轴而非证据等级轴 |
+| `UNVERIFIED_VOL_PAGES` | 1 | `02` | 疑似字段级限定符 |
+| `CITED_PRIMARY_SECONDARY` | 1 | `04` | **两个等级的合并写法，语义不可判定** |
+| `CITED_PRIMARY_FULLTEXT` | 1 | `13` | 与 R07 的 `CITED_METADATA` 争夺「读到正文」这一格的定义权 |
+
+**表 C｜Round 3 `A1` 的计数与限度。**
+
+- F-12 枚举 **12** → 实测存在 **11**。
+- 表 B 另有 **9** 个 F-12 未枚举的写法。
+- 连同裸 `UNVERIFIED`，本轮实测的 tier 形态 token 合计 **21**。
+- **但「21」同样是下限而非定论。** 三个理由：(1) 上表的 token 集合由正则 `[A-Z_]+` 决定，带连字符、小写、或以 `…_AS_OF_2026-09-27` 形式书写的等级（如 R11 的 `DOI_UNKNOWN_AS_OF_2026-09-27` 记法）**不在计数内**；(2) 哪些 token 是「等级」、哪些是「字段限定符」，**本文件与各 lane 都未定义**（例：`UNVERIFIED_VOL_PAGES` 到底是等级还是「卷期页码未核」的字段标记）；(3) 本轮**未**统计同一 token 在同一 lane 内的定义是否一致——已知 R10 与 R07 对 `CITED_PRIMARY` 给出互相矛盾的定义（F-12），同类冲突**必然还有**，只是本轮没有逐 lane 拉取定义文本。
+- **因此本节的唯一结论是：跨 lane 的 `CITED_PRIMARY` 计数不可比较，跨 lane 的任何等级计数都不可相加。** 这个结论不依赖「到底是 12 个还是 21 个」——两者都 ≥ 12，都远超可比较的门槛。
+
 ---
 
 ## 4. 承重引用抽样核对（本次抽样声明）
@@ -241,7 +343,7 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 | **F-09** | `02_CONSTRUCT_CONVERGENCE.md:484` 与 `:465` | `:484`「Ackerman, S. J. (2021). *Social and Personality Psychology Compass*. `10.1111/spc3.12308` ✓」；`:465`「Roisman, G. I., & Fraley, R. C. (2019). Adult attachment: Toward a rapprochement of methodological cultures. `10.1111/j.1467-8721.2009.01621.x` ✓」 | `POINTER` + `LABEL` | **MAJOR** | 两条**自标 ✓**（R01 §10 声明「DOI 已核验者标 ✓」）但都错：`spc3.12308` = **Reis, Lemay & Finkenauer (2017), "Toward understanding understanding"**；`j.1467-8721.2009.01621.x` = **Roisman, G. I. (2009), "Adult Attachment", *Current Directions in Psychological Science***（单作者，2009）。后者尤其要注意：`14_PAPER_POSITIONING_NOVELTY.md:70` 用**同一个 DOI** 写 "Roisman (2009)"——R01 与 R14 对同一 DOI 给出互相矛盾的题录。R11（`:23`）与 R17（`:514`）还各自独立指出 §2.4 的跨文化稳定性判据"超出了文献共识"。**38 个 ✓ 中 2 个是错的（5.3%）。** |
 | **F-10** | `02_CONSTRUCT_CONVERGENCE.md:457` | 「Sibley, C. G., Fischer, R. D., & Liu, J. H. (**2005**). *PSPB*, 31(11), 1524–1536. `10.1177/0146167205276865` ✓」 | `POINTER` | **MAJOR** | DOI 解析正确（Sibley, Fischer & Liu 2005, ECR-R 题录，*PSPB* 31(11)），**年份 2005 是对的**；错的是 `00_MANIFEST.md:49` 把它写成「Sibley **2012**」。manifest 错误会传染给任何只读 manifest 的下游。此项**报告侧无误，manifest 侧需修**。 |
 | **F-11** | `02_CONSTRUCT_CONVERGENCE.md:503` | 「证据分级（`CITED_PRIMARY` / `CITED_SECONDARY` / `AGENT_RECALL`）见 parent packet `R01_packet.md` §2 的 sources 表，**该表应随本文一并 durable writeback**」 | `LABEL` + `AUTHORITY` | **MAJOR** | durable 报告本体**不含**证据等级表。R01 有 51 个 DOI token，但正文只有 3 `CITED_PRIMARY` / 8 `CITED_SECONDARY` / 8 `AGENT_RECALL` / 10 `NO_DOI_VERIFIED`；**manifest 承诺的「45 条带 DOI 指针」中，大部分在 durable 报告内没有可核的证据等级**。等级表停留在非 durable 的 temp packet 里 → 引用者无法判断任一主张的证据强度。 |
-| **F-12** | 全 swarm；代表 `10:757` vs `07:8` | R10 定义 `CITED_PRIMARY` = 「本次实际读到原文/原始摘要/**出版元数据**」；R07 明确把 `CITED_METADATA`（只核到 DOI 元数据，未读正文）**单列为低于 `CITED_PRIMARY` 的等级** | `LABEL` | **MAJOR** | 两条 lane 对同一标签给出**互相矛盾**的定义。此外词表在 18 个 lane 间至少出现 12 个变体：`CITED_PRIMARY` / `CITED_SECONDARY` / `CITED_METADATA`（R07）/ `CITED_PARTIAL`（R09）/ `UNVERIFIED_POINTER`（R09）/ `AGENT_RECALL` / `NO_DOI_VERIFIED`（R02/R03）/ `UNVERIFIED_DOI`（R03/R14）/ `UNVERIFIED_AGENT_RECALL`（R11）/ `UNVERIFIED_CANDIDATE` / `CITED_PRIMARY_CONTENT` / `SUBSTANCE_NOT_READ`（R15）。**后果：跨 lane 的 `CITED_PRIMARY` 计数不可比较，`00_MANIFEST.md` §3 的"全 swarm 指针数"更不可相加。** |
+| **F-12** | 全 swarm；代表 `10:757` vs `07:8` | R10 定义 `CITED_PRIMARY` = 「本次实际读到原文/原始摘要/**出版元数据**」；R07 明确把 `CITED_METADATA`（只核到 DOI 元数据，未读正文）**单列为低于 `CITED_PRIMARY` 的等级** | `LABEL` | **MAJOR** | 两条 lane 对同一标签给出**互相矛盾**的定义。此外词表在 18 个 lane 间至少出现 12 个变体：`CITED_PRIMARY` / `CITED_SECONDARY` / `CITED_METADATA`（R07）/ `CITED_PARTIAL`（R09）/ `UNVERIFIED_POINTER`（R09）/ `AGENT_RECALL` / `NO_DOI_VERIFIED`（R02/R03）/ `UNVERIFIED_DOI`（R03/R14）/ `UNVERIFIED_AGENT_RECALL`（R11）/ `UNVERIFIED_CANDIDATE` / `CITED_PRIMARY_CONTENT` / `SUBSTANCE_NOT_READ`（R15）。**后果：跨 lane 的 `CITED_PRIMARY` 计数不可比较，`00_MANIFEST.md` §3 的"全 swarm 指针数"更不可相加。**<br>**`SUPERSEDED`（Round 3 `A1` 实测，详见 §3.3）**：本行枚举的 12 个变体中，`UNVERIFIED_AGENT_RECALL`（归属 R11）在 18 份 lane 文件中出现 **0 次**，且 R11 全文 `AGENT_RECALL` 亦为 0 次 —— **该 token 不存在，此条枚举有误**。实测存在的 F-12 变体为 **11** 个；另有 **9** 个 F-12 未枚举的 tier 形态写法（`CITED_CLASSIC` / `CITED_PRIMARY_FULLTEXT` / `CITED_PRIMARY_SECONDARY` / `UNVERIFIED_AS_OF` / `UNVERIFIED_HYPOTHESIS` / `UNVERIFIED_CONTENT` / `UNVERIFIED_OR_UNKNOWN` / `UNVERIFIED_OFFICIAL_ACCESS` / `UNVERIFIED_VOL_PAGES`）。**F-12 的核心结论（跨 lane 不可比较、不可相加）不受影响**：两个候选计数（12 / 21）都远超可比较门槛。 |
 | **F-13** | `03_MEASUREMENT_INSTRUMENTS.md`（全篇） | 41 个 instrument family / 54 条目、112 个 DOI token、逐条给出 α / ω / N / 载荷 / 跨文化不变性结论，但 **`CITED_PRIMARY` 出现 0 次**，只有 4 `CITED_SECONDARY` | `LABEL` | **MAJOR** | R03 是产出具体心理测量数字最多的 lane，却是**唯一一条完全不给 `CITED_PRIMARY` 的 lane**。`X9`（F-01）的 `DIRECT_PROXY` 判定所依据的一整套信效度数字（`N=2,334`；`PRI-8 R α=.93 ω_WP=.83`）**没有任何证据等级标注**。要么补标等级，要么把这些数字降级为 `UNVERIFIED`。 |
 | **F-14** | `03_MEASUREMENT_INSTRUMENTS.md:130` vs `:131` | `:130`「**38 个**有名有姓的 power/equity/balance 量表各自仅被用 1–2 次，**无一成为主流工具**」；`:131`「谱系审计指出 SRPS 是**最常用的性权力工具**」 | `OVERCLAIM` | **MAJOR** | 两条引用**同一个 DOI**（`10.1111/jftr.70019`）且**互相矛盾**。R10 对同一来源的引用（`:360-364`）是逐字引用并明确写着「There were **no established scales used repeatedly that were developed specifically with power bases in mind**」+「the measures were focused on White, younger, and heterosexual men and women in shorter-length relationships」——**R10 引对了，R03 把它改写成了一个更强的、且与自家下一行冲突的绝对命题**。另外 Crossref 摘要报告的是 **k=319** 份 power 测量，不是 38；「无一成为主流工具」在摘要层无支持。修法：R03 `:130` 改回 R10 的原句转述，并加人口学限定。 |
 | **F-15** | `02b_CONSTRUCT_REDUNDANCY_AUDIT.md:286`（并被 `00_MANIFEST.md:50` 复述为承重指针） | 「三者联合解释 commitment 方差 `R² = .54 (95% CI [.53,.55])`；单项最强为 satisfaction（`β² = .47`），其次 investment（`.32`），再次 alternatives（`−.19`）」 | `OVERCLAIM` | **MAJOR** | `N=50,427` / `k=202` / `r=.65·.53·−.43` 全部与摘要一致 ✓，但**摘要没有给 R² 的置信区间，也没有给 `β²`**。一个宽度仅 ±.01 的 meta-analytic R² CI 极不寻常，报告未指页码/表号。`β²` 记法本身也含混（平方标准化 beta？）。manifest 把这条列为 R02 的头号证据指针。修法：补页码/表号，或把 CI 与 `β²` 降级为 `CITED_SECONDARY` 并注明"未在摘要层核对"。 |
@@ -264,7 +366,7 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 | **F-32** | `02:488`、`:447` | 「**Overall, J. A.**, Fletcher, G. J. O., & Simpson, J. A. (2010)」；「**Agnew, P. A. M.**, Van Lange, P. A. M., Rusbult… (1998)」 | `POINTER` | **MINOR** | 姓氏首字母错：Crossref 为 **Overall, Nickola C.**（N.C. 非 J.A.）与 **Agnew, Christopher R.**（C.R. 非 P.A.M.，后者是同文第三作者 Langston 的缩写位）。两条都自标 ✓。 |
 | **F-33** | `05:509`、`:517`、`:546`；`06:1033`；`10:453`；`11:511`；`12:81`；`17:280` 等 | 单年差：Lucas 2025/2026、`s44159-026` 标 `年份 UNKNOWN_AS_OF`（实为 **2026**）、Neubauer 2019/2020、Pusch 2022/2023、Garcia 2014/2015、Moyano 2016/2017、Mudimu 2014/2015、JASSS JuSpace 2020/2021、Brooks 2018/2019、Hirsh 1976/1977、Graham 2010/2011 | `POINTER` | **MINOR** | 全部是 online-first 年与卷期年之差，属正常引用实践，不影响主张。唯一值得改的是 `05:546`：R05 把一个**可解析**的 2026 年文献标成 `年份 UNKNOWN_AS_OF`，属过度保守的不确定性声明（同 F-06 的模式）。 |
 | **F-34** | `02:137`、`:149`、`:185`；`03:118`、`:119`；`04:620`；`12:434`、`:435`；`09:406` | `AGENT_RECALL` 出现在**测量族**与**反例**位置：「Hatfield & Sprecher 1986 `AGENT_RECALL`」（PLS）；「具体工具 `AGENT_RECALL`」；「MacCallum et al. (2001) `AGENT_RECALL`, U09」；「Stets & Burke (2000) `AGENT_RECALL`, U12」；「Peterman (1963) `CITED_PARTIAL`, 作者/卷期 `AGENT_RECALL` 未核实」 | `LABEL` | **MINOR** | 这些 lane 都**同时**声明了"`AGENT_RECALL` 不得作为裁决依据"（R02:45）/「只用于举例或线索，不用于判定」（R09:18）/「不承重」（R17:332）——**纪律是到位的**。但 R02 把 `AGENT_RECALL` 的 Hatfield & Sprecher PLS 列进 `SexualDesire` 的**测量族**格、R09 把 `AGENT_RECALL` 的 Peterman 1963 列为 hysteresis 存在性的**经典展示**格：一旦读者只看表格不看纪律声明，这些格子会被当作已核实。修法：在表格格内保留标签（现状正确），并在这两处加一句"本格不可作为证据"。 |
-| **F-35** | 全 swarm；`00_MANIFEST.md:85` | 「单 lane 自报去重指针数：R00 30+ · R01 **45** · R02 34 · R03 41 family · R04 16 dataset · R05 **109** · R06 33 · R07 33 · R08 **72** · R09 78 · R10 59 · R11 60+ · R12 40 · R13 70 · R14 60+ · R15 30 · R16 24 · R17 41+3」 | `LABEL` | **MINOR** | manifest §4 B-3 已声明"在 A04 完成前，上表不可相加"——**这一点做得好，保留**。A01 补充一条实测：**我抽到 353 个唯一 DOI**（跨 18 lane），远低于 manifest 逐 lane 相加的 788+。这个差值主要来自：(a) 非 DOI 指针（URL/ISBN/issue id）未计入我的口径；(b) 同 DOI 在多 lane 重复计数；(c) 若干 lane 的"指针"计数包含同一文献的多次引用。**因此 manifest 的"全 swarm 150+ 独立来源"目标尚不能由现有计数支撑。** |
+| **F-35** | 全 swarm；`00_MANIFEST.md:85` | 「单 lane 自报去重指针数：R00 30+ · R01 **45** · R02 34 · R03 41 family · R04 16 dataset · R05 **109** · R06 33 · R07 33 · R08 **72** · R09 78 · R10 59 · R11 60+ · R12 40 · R13 70 · R14 60+ · R15 30 · R16 24 · R17 41+3」 | `LABEL` | **MINOR** | manifest §4 B-3 已声明"在 A04 完成前，上表不可相加"——**这一点做得好，保留**。A01 补充一条实测：**我抽到 353 个唯一 DOI**（跨 18 lane），远低于 manifest 逐 lane 相加的 878。这个差值主要来自：(a) 非 DOI 指针（URL/ISBN/issue id）未计入我的口径；(b) 同 DOI 在多 lane 重复计数；(c) 若干 lane 的"指针"计数包含同一文献的多次引用。**因此 manifest 的"全 swarm 150+ 独立来源"目标尚不能由现有计数支撑。**<br>**`SUPERSEDED`（Round 3 `A1` 实测重算，依 manifest §7 M-2/M-5、`EV2` §4.1）**：本行原文写「逐 lane 相加的 **788+**」。该数**算术不成立** —— 本行自己列出的这 18 个数逐项相加 = **875**（`+` 项按下界计），`41+3` 记作 44 则 = **878**。**878 才是真值**；`788` 无论按哪种读法都得不到。已改为 878。<br>另注：`875 / 533 = 1.64×`、`878 / 533 = 1.65×`；`875 / 350 = 2.50×`、`878 / 350 = 2.51×`。脚本与逐项输出见 §12。**倍率的具体数值不影响本行的定性结论**（lane 自报数不可相加、不可对外声称为「N 个独立来源」）。 |
 
 ---
 
@@ -676,6 +778,17 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 8. **我不主张 `R12`「无一个可比先例」或 `R02`「该 ESEM 研究不存在」这类 `NEGATIVE` 结论错了。** R12 自己写了「不主张…已被证明『不存在』——只主张本次在指定渠道内未能核实（`NEGATIVE`，非 `DISPROVEN`）」，R02 写了「这不是本轮检索不足，是文献里确实不存在」并给了多路检索日志。**这两处的措辞纪律是全 swarm 的正面示范**，我未找到反证。
 9. **我不主张我修改过任何东西。** 本 lane 全程只读 `D:\coding\lhrm`，唯一写入是 `C:\Users\gg828\AppData\Local\Temp\opencode\lanes\` 下的临时文件与本 packet。
 
+### 9.1 Round 3 `A1` 追加的 non-claims（bookkeeping 修复轮）
+
+10. **我不主张 A01 的内容层结论有任何一条是错的。** Round 3 改的是**记账、标签计数与内部一致性**：`100%` → `95.5%`、`10` → `9`、`788+` → `878`、F-12 的幽灵 token、§10.3 的执行状态台账。**F-01…F-35 的 35 条 findings 全部保留，严重度分布 `BLOCKER 3 / MAJOR 12 / MINOR 20` 经 Round 3 机械复算确认原样正确，未改动一条。**
+11. **我不主张 878 是「独立来源数」。** 878 是**各 lane 自报数之和**，而 lane 自报数是**各 lane 内去重后**的计数。它与 A04 的 `1,199`（跨文件原始出现次数）、`642`（distinct pointer）、`533`（distinct source）**是四个不同量纲**，互相之间只能算比值，**不能相互校验、不能相互替代**。**`533` 仍是上界估计，本轮未上调也未下调。**
+12. **我不主张 21 是「证据等级的准确个数」。** §3.3 的 21 是**本轮正则下界**。哪些 token 是「等级」、哪些是「字段限定符」在本文件与各 lane 中**都未定义**；且本轮**未**统计同一 token 在不同 lane 的定义是否一致（已知 R10/R07 对 `CITED_PRIMARY` 冲突，同类冲突必然还有）。**§3.3 的唯一可用结论是「跨 lane 不可比、不可相加」，这个结论不依赖 12 还是 21。**
+13. **我不主张 `EXECUTED = 10` 与 Round 2 的「~13 项」矛盾。** 两者量级一致（10–13），差异来自「真正执行」的阈值判据不同，Round 2 未公开其判据。**我采用更严的判据（缺陷标记必须完全消失），并把 `PARTIAL` 单列。**
+14. **我不主张 §10.3.0 的台账可以替代人工判读。** 该台账是**字符串探测**的产物。`PARTIAL` 类的 31 项里，多数是「缺陷标记与修正值并存」，**是否算修完取决于该条目原意要求改什么**。`NR-08-8` / `NR-03-8` / `NR-13-9` 三项被明确标为 `UNPROBEABLE` / 携带指针，正是因为字符串计数对「给全篇补等级」这类动作**没有判据**。
+15. **我不主张 §1.1 的 `11` 是错的。** 我把它标为 **`NOT_RECONCILED`** 而非改数：该格描述的是**缺失引用反查步骤**的输出，Round 3 **未重跑该步骤**，因此**没有依据**说 `11` 错。只把它与 §3.1 的 `DEAD_BOTH = 9` 的不一致登记出来（`NR-ALL-7`）。
+16. **我不主张 `[ESTABLISHED]` 应当被引入。** §1.4.1 记录了「停止使用」的选择与三条理由。**本文件不使用该标签；本轮也未新增定义。** 这**不是**对「全语料是否该有最高等级」这一问题的裁决——那属 `NR-ALL-1` 的 Architect 裁决范围。
+17. **我不主张 A01 对 Fixture 003 有任何权利义务或已履行它。** §1.4.2 的实测结论是：**A01 不使用任何 Fixture 003 单元**（`S\d{3}` 命中 10 次逐条核对全为 Elsevier PII / lane 内编号；`StoryCorps` / `pointer_only` / `HUMAN_REVIEW_REQUIRED` 命中 0 次）。因此**无义务、也无履行**。**其余 21 份报告的 Fixture 003 使用与权利陈述状态不在本 child 白名单内，本轮未审。**
+
 ---
 
 ## 10. `status_recommendation`
@@ -700,8 +813,102 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 
 > 全部为**窄修复**：只改指针/题录/标签措辞，**不动任何裁决、结论、参数、schema**。
 > 每项都给了实测过的正确值，可直接替换。
+>
+> **⚠️ Round 3 `A1` 补充：以下 83 项的执行状态台账（见 §10.3.0）。本节各条保留为原始请求文本，未删改。**
+>
+> **计数说明（避免读者误判为记账错）**：修复前本节共 **83** 项（77 项 lane 路由 + 6 项 `NR-ALL-*`）。§10.3.0 的台账覆盖的正是这**原有 83 项**。**Round 3 新增了 `NR-ALL-7`**（登记 §1.1 那个仍未消解的 `11`），因此**本节现在共有 84 行**（77 + 7）。**`NR-ALL-7` 本身没有执行状态** —— 它是本轮新开的待办，状态为 `NOT_EXECUTED_BY_DEFINITION`。
 
-#### → `R01`（`02_CONSTRUCT_CONVERGENCE.md`）
+### 10.3.0 执行状态台账（Round 3 `A1` 实测，2026-09-27）
+
+**为什么需要这张表**：本节列出 **83** 项窄修复请求。Round 2 的证据核查发现**其中只有约 13 项被真正执行**，但原文既没有记录执行了哪 13 项，也没有把「已执行」与「未执行」分开，导致**约 70 项待办持续稀释真正的 blocker**。本节补上这个记账缺口。
+
+**方法（可复跑）**：对每项在**其目标文件的当前状态**上探测两个字符串——(a) 该项所指的**缺陷标记**（错误 DOI / 错误作者 / 错误期刊 / 缺失字段），(b) 该项给出的**修正值**。
+
+| 判定 | 条件 |
+|---|---|
+| `EXECUTED` | 修正值存在 **且** 缺陷标记已消失 |
+| `PARTIAL` | 修正值存在 **但** 缺陷标记仍在（只改了题录的一部分） |
+| `NOT_EXECUTED` | 缺陷标记仍在，修正值不存在 |
+| `UNPROBEABLE` | 该项是**跨 lane 的流程性动作**（如「统一词表」「每条 lane 加一步 `doi.org` 302 探测」），没有单一字符串特征；任何正则判定都会是编造的，故**明确不给判定** |
+
+#### 计数（Round 3 `A1` 实测，n = 83 = 本节全部条目）
+
+| 状态 | 数 | 占 83 |
+|---|---:|---:|
+| `EXECUTED` | **10** | 12.0% |
+| `PARTIAL` | **31** | 37.3% |
+| `NOT_EXECUTED` | **31** | 37.3% |
+| `UNPROBEABLE` | **11** | 13.3% |
+| **合计** | **83** | 100% |
+
+**与 Round 2 复核口径的差异（记录，不是矛盾）**：Round 2 复核表述为「只有 ~13 项被真正执行」。本轮按上述判据实测得 `EXECUTED = 10`。两者量级一致（10–13），差异来自**「真正执行」的阈值**：Round 2 未公开其判据；若把 `PARTIAL` 中「作者已改对、仅副标题未改」这类（实测仅 `NR-10-2` 一项）计入，则为 11。**本报告采用更严的 `EXECUTED` 判据（缺陷标记必须完全消失），并把 `PARTIAL` 单独列出**，因为 `PARTIAL` 项在引用时仍会传播残留错误。
+
+#### 逐项状态（互斥、穷尽，合计 83）
+
+| 状态 | NR id（实测，无遗漏无重复） | 数 |
+|---|---|---:|
+| `EXECUTED` | `NR-02-1` `NR-03-1` `NR-03-10` `NR-05-2` `NR-08-1` `NR-08-2` `NR-08-4` `NR-08-7` `NR-10-1` `NR-14-1` | 10 |
+| `PARTIAL` | `NR-01-3` `NR-01-4` `NR-02-6` `NR-02-7` `NR-03-5` `NR-03-6` `NR-04-1` `NR-04-2` `NR-05-1` `NR-05-4` `NR-05-5` `NR-08-3` `NR-08-5` `NR-08-6` `NR-08-8` `NR-09-2` `NR-10-2` `NR-10-3` `NR-10-4` `NR-10-5` `NR-11-2` `NR-11-4` `NR-13-1` `NR-13-7` `NR-13-9` `NR-14-3` `NR-14-4` `NR-14-5` `NR-15-1` `NR-17-2` `NR-17-3` | 31 |
+| `NOT_EXECUTED` | `NR-01-1` `NR-01-2` `NR-01-5` `NR-02-2` `NR-02-3` `NR-02-4` `NR-02-5` `NR-03-2` `NR-03-3` `NR-03-4` `NR-03-7` `NR-03-9` `NR-05-3` `NR-07-1` `NR-00-1` `NR-11-1` `NR-11-3` `NR-12-1` `NR-13-2` `NR-13-3` `NR-13-4` `NR-13-5` `NR-13-6` `NR-14-2` `NR-14-6` `NR-14-7` `NR-14-8` `NR-17-1` `NR-ALL-3` `NR-ALL-4` `NR-ALL-5` | 31 |
+| `UNPROBEABLE` | `NR-02-8` `NR-03-8` `NR-13-8` `NR-14-9` `NR-16-1` `NR-17-4` `NR-09-1` `NR-09-3` `NR-ALL-1` `NR-ALL-2` `NR-ALL-6` | 11 |
+| | **合计** | **83** |
+
+**`PARTIAL` 项的残留缺陷定位**（这 31 项不是「做了一半」，而是「修正值已落地一部分、缺陷标记仍在」，引用时仍会传播错误）：
+
+- `NR-01-3` 证据等级表仍指向非 durable 的 `R01_packet.md` · `NR-01-4` `Overall, J. A.` / `Agnew, P. A. M.` 仍在（修正值已另有出现）
+- `NR-02-6` `β² = .47` 仍在 · `NR-02-7` `.54` 仍跨行复用
+- `NR-03-5` 转述链断裂仍在 · `NR-03-6` `Laurenceau` 仍在
+- `NR-04-1` **期刊已改为 *Theory and Decision*，但 `.pdf` 后缀仍在（2 处）** —— 这是本轮唯一确认「改对一半」的 R04 项
+- `NR-05-1` / `NR-05-4` / `NR-05-5` `UNKNOWN_AS_OF` 类过度保守声明仍在
+- `NR-08-3` `Uuk` 仍在 · `NR-08-5` `Bornstein` 仍在 · `NR-08-6` `Sharon` 仍在（`Bar-Shachar` / `Goodie` / `Borges` 已部分落地）
+- `NR-08-8` 61 个 `CITED_PRIMARY` **一个都没降级**（计数前后同为 61）
+- `NR-10-2` **作者已改对（`Falconier, M. K., & Kuhn, R. (2019)`），但副标题仍写 "a research agenda"**，真值是 "a **Review of the Empirical Literature**"
+- `NR-13-1` / `NR-14-3` / `NR-14-5` / `NR-17-3` / `NR-09-2` / `NR-15-1` / `NR-04-2` / `NR-13-7` / `NR-11-2` / `NR-11-4` / `NR-13-9` / `NR-10-3` / `NR-10-4` / `NR-10-5` / `NR-14-4` —— 缺陷标记与修正值并存，需逐条人工判读
+- `NR-17-2` 正确 DOI 已落地，但 R17 原写的另一组题录（`JSPR 30(5), 647–661 (2013), N=1004`）是否已随之更正**未能机械判定**
+
+#### 分类 (i)：零风险、已实测、可直接执行（不依赖任何裁决）
+
+这些项的正确值 A01 当时已**实测过**（Crossref / `doi.org` 逐条确认），修正动作是纯字符串替换，**不需要新的文献核查、不需要 Architect 裁决**。
+
+- **`EXECUTED` 10 项可从待办中移除**：`NR-02-1`（`f6wbn` → `f6wbn_v1`）· `NR-03-1`（`2021-17028-001` → `pas0000986`）· `NR-03-10`（Moyano / Hirsh 年份）· `NR-05-2`（Bumpass + *Journal of Family Issues*）· `NR-08-1`（`0549-8` → `00054-9`）· `NR-08-2`（Audi → Goldberg & Henderson）· `NR-08-4`（Bosson → Lackenbauer）· `NR-08-7`（van Benthem → van Ditmarsch）· `NR-10-1`（`2092623` → `2089716`）· `NR-14-1`（`v35i1` → `v35i7`）
+- **`NOT_EXECUTED` 31 项 + `PARTIAL` 31 项 = 62 项仍是可执行待办**（其中 31 项的残留缺陷已定位到行）
+- **`UNPROBEABLE` 11 项**不计入本类，因为它们要么是流程性动作（`NR-ALL-1` / `-2` / `-6`），要么在原文中就**自陈为「无需修改」/「不构成通过也不构成不通过」**（`NR-09-1` `NR-09-3` `NR-14-9` `NR-16-1` `NR-17-4`），要么是「给全篇补等级」这类无法用单字符串判定的批量标注（`NR-02-8` `NR-03-8` `NR-13-8`）
+
+#### 分类 (ii)：携带指针的项（**带指针，不得当独立待办执行**）
+
+以下项**本身不是修复动作**，而是「若要动 X，必须同时动 Y」的耦合声明。执行它们需要先决定**是否**动承重来源，**那是 Architect 的裁决，不是 bookkeeping 修复**：
+
+| NR id | 携带的指针 | 为什么不能当独立待办 |
+|---|---|---|
+| `NR-08-8` | `08b` 的 **61 个** `CITED_PRIMARY` | 降级 61 条等级 = 宣告该 lane 的证据基座整体降级。Round 2 EV2 已实测其中 6 条作者错配。**这会改变 A01 §3.2 的分布表与 `08b` 的 lane 状态。** 实测：`EXECUTED/PARTIAL` 判定为**一个都没降级** |
+| `NR-03-8` | `03` 的 **41 个** instrument family / 54 条目 | 同上，且 `03` 是 `F-01`（`X9` / PRI-16）的承重 lane，降级会连带影响 `DIRECT_PROXY` 判定 |
+| `NR-13-9` | `13` 的 26 条 DOI | 同上 |
+| `NR-14-4` | R14 自称「最高优先 prior-art」的 **Acitelli & Antonioni (2006)** | A01 当时用 Crossref 书目检索**未命中**。**「未命中」不等于「不存在」**（X-14：search-scope claim 不是 field-wide absence claim）。需人工确认，不能由本报告代判 |
+| `NR-ALL-1` | 18 lane 的全部等级标签 | 这是**规范化提案**，不是修复。落地会改写 18 份报告的措辞，**必须先有 Architect 裁决**（当前状态 `PROPOSAL_NOT_APPLIED`，见下） |
+| `NR-ALL-3` | 审计期间 **198 行**未提交追加（`02b` / `11`） | 依赖「先 commit 或 stash 并由其 owner 说明来源」这一**外部动作**，不在本报告权限内 |
+| `NR-ALL-2` | 全 lane 核验流程 | 流程变更，影响后续所有 lane 的产出，不是一次窄修复 |
+| `NR-ALL-6` | 4 份报告的头部字段 | 机械但跨 4 个文件，属流程一致性而非单点题录修复 |
+
+#### 分类 (iii)：**接受为已知残余**（不再作为待办稀释 blocker）
+
+以下项**已被显式接受为残余**，它们**不应**继续出现在任何「待修」清单里：
+
+| NR id | 残余类型 | 接受残余的**确切含义** |
+|---|---|---|
+| `NR-14-4`（Acitelli & Antonioni 2006） | `KNOWN_RESIDUAL` | 存在性 `UNKNOWN`。由 `A04` §10 P0 单点跟踪。**接受残余的含义是：R14 的 prior-art 基座在解决前不得承重** —— 不是「这条可以不管」 |
+| `NR-02-8` / `NR-09-2`（`AGENT_RECALL` 格加注） | `ACCEPTED_RESIDUAL / FORMULATION_ONLY` | 各 lane 的降级声明（R01 `:45`、R09 `:18`、R17 `:332`）在**纪律层面已到位**；表格单元格内加注是**表述增强**，不是缺陷闭合。**引用纪律不受影响** |
+| `NR-11-4`（de Bel 2019 引摘要原句） | `ACCEPTED_RESIDUAL / OPTIONAL_STRENGTHENING` | 原文自陈「逐字核对通过」，本报告从未主张该 lane 缺证据。这是**可选加强** |
+| `NR-09-3` / `NR-04-2` / `NR-15-1` / `NR-13-7` | `NOT_A_DEFECT` | 这四项在原文中就**自陈为「无需修改」/「非 Crossref 注册」/「无 DOI 可核，不构成通过也不构成不通过」**。留在待办表里会虚增待办数 |
+| `NR-03-9` / `NR-01-5` | `MERGED_INTO_FINDING` | 这两项的**内容**已分别被 `F-26` / `F-27` 独立记录为 MINOR 措辞问题。`NR` 条目与 findings 行**重复计数**了同一缺陷；合并为单一待办，避免双份 |
+
+#### 本节的记账结论
+
+- **本节原有 83 项中，真正闭合的只有 10 项**（12.0%）。
+- **31 项完全未执行、31 项部分执行、11 项无法机械判定。**
+- **承接本轮 Round 3 派发的是 bookkeeping 与引用修复；执行这 70 余项 lane 内窄修是 Track R3-A3（lane-specific research repair）的职责，不在本 child 的白名单内。** 本节的唯一交付是**这张状态表**——它让下游能区分「已闭合」「部分闭合」「必须先裁决」三类，从而不再把全部 83 项当作同等重量的待办。
+- **本节未删改任何一条原始 `NR` 文本**，以保留 A01 当时的判断与证据链。
+
+---#### → `R01`（`02_CONSTRUCT_CONVERGENCE.md`）
 
 | ID | 位置 | 动作 |
 |---|---|---|
@@ -867,12 +1074,13 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 
 | ID | 动作 |
 |---|---|
-| **NR-ALL-1** ⚠ | **统一证据等级词表。** 现状 12 个变体（F-12），且 R10 与 R07 对 `CITED_PRIMARY` 的定义直接冲突。建议固定 5 级：`CITED_PRIMARY`（读到原文/官方文档正文）· `CITED_ABSTRACT`（只读到出版方摘要）· `CITED_METADATA`（只核到 Crossref/DataCite 元数据）· `CITED_SECONDARY`（转述）· `UNVERIFIED`（含 `AGENT_RECALL`）。所有 lane 改用同一张表，**并且每个级别必须回答"我打开了哪一页"**。 |
+| **NR-ALL-1** ⚠ | **统一证据等级词表｜状态 `PROPOSAL_NOT_APPLIED`。** 现状见 §3.3 实测台账：**F-12 枚举 12 个变体，其中 11 个实测存在（`UNVERIFIED_AGENT_RECALL` 为幽灵 token），另有 9 个 F-12 未枚举的写法，实测 tier 形态 token 合计 21**。且 R10 与 R07 对 `CITED_PRIMARY` 的定义直接冲突。**以下 5 级方案是本审计的提案，不是已实施的规范化，任何 lane 都尚未采用**：建议固定 5 级：`CITED_PRIMARY`（读到原文/官方文档正文）· `CITED_ABSTRACT`（只读到出版方摘要）· `CITED_METADATA`（只核到 Crossref/DataCite 元数据）· `CITED_SECONDARY`（转述）· `UNVERIFIED`（含 `AGENT_RECALL`）。所有 lane 改用同一张表，**并且每个级别必须回答"我打开了哪一页"**。<br>**⚠️ 落地前置条件（Round 3 `A1` 记录）**：本条会改写 18 份报告的措辞，**必须先有 Architect 裁决**；且 §3.3 已实测出 9 个 F-12 未枚举的写法，**它们各自的落位在提案里没有对应项**（例：`UNVERIFIED_VOL_PAGES` 是等级还是字段限定符？`CITED_PRIMARY_SECONDARY` 这种合并写法归哪一级？）。**在这两点解决前，本条不得被当作可直接执行的待办。** |
 | **NR-ALL-2** ⚠ | **在所有 lane 的核验流程里加一步 `doi.org` 302 探测。** 本次这一步救回 5 条有效指针（`10.12758/...`、`10.13718/...`、`10.4232/...`、`10.6103/SHARE.w1.900`、`10.6103/SHARE.w8.900`），并把"Crossref 无记录"与"真死链"区分开。 |
 | **NR-ALL-3** ⚠ | **冻结 corpus。** §2.3：Wave 1 报告在 A01 审计期间仍被并发修改——`00_MANIFEST.md` 声称的终态 commit `2d392ba` 已产生，但 `02b_CONSTRUCT_REDUNDANCY_AUDIT.md` 与 `11_GENERAL_HUMAN_DYADS_SCOPE.md` 在工作区还有 **198 行未提交追加**（`git diff --stat`）。**在按本报告行号路由 NR 之前必须先 commit 或 stash 这 198 行，并请其 owner 说明来源**；否则 §5 中所有指向 `02b_*` 与 `11_*` 的行号都可能已被推移。 |
 | **NR-ALL-4** | **修 `00_MANIFEST.md` 的 3 处**（本报告只报不改）：`:49` Sibley 2012 → **Sibley 2005**；`:53` 列出 R08 核心指针 "QSR/Renz 2007" 与 R07 `:551` 的 Belnap 1976 对不上；`:85` 的逐 lane 计数**不可相加**（B-3 已声明，保留），并补一句"实测唯一 DOI 353 个，含 29 条书目错配"。 |
-| **NR-ALL-5** | **`00_MANIFEST.md` §3 的"150+ 独立来源"目标。** 我实测唯一 DOI 353 个，manifest 逐 lane 相加 788+。差额来自非 DOI 指针与跨 lane 重复。**在 A04 完成全局去重前，不得对外声称 150+ 独立来源**（B-3 已声明，保留并强化）。 |
+| **NR-ALL-5** | **`00_MANIFEST.md` §3 的"150+ 独立来源"目标。** 我实测唯一 DOI 353 个，manifest 逐 lane 相加 **878**。<br>**`SUPERSEDED`（Round 3 `A1` 实测重算）**：本条原文写「manifest 逐 lane 相加 **788+**」——**该数算术不成立**，真值 **878**（`+` 项按下界计 = 875；`41+3` 记作 44 = 878）。差额来自非 DOI 指针与跨 lane 重复。**在 A04 完成全局去重前，不得对外声称 150+ 独立来源**（B-3 已声明，保留并强化）。 |
 | **NR-ALL-6** | 4 份报告（`09` / `14` / `16` / `17`）补 `As of` 头部字段（F-29）。`00_CHILD_CONTRACT.md:29` 是硬要求。 |
+| **NR-ALL-7** ⚠ | **（Round 3 `A1` 新增）消解 A01 内部四个互斥的「未命中」数。** §0 与 §1.1 现给出 `10`（已订正为 9）/ `11` / `16` / `9` 四个数。Round 3 已把 `10` 订正为 `9`（与 tier 表自洽），`16` 与 `9` 已在 §1.1 写清构成（16 = 9 死链 + 5 DataCite + 1 `.pdf` 格式错 + 1 字面占位符），**但 §1.1「11 条死链」仍未消解** —— 该数对应的是**缺失引用反查步骤**的输出，本轮**未重跑该步骤**，因此**不擅自改数**。**需要的动作**：重跑 Crossref `query.bibliographic` 反查，给出该步骤的输入集合定义，才能确定 `11` 是否包含那 2 个非死链项。**在消解前，§1.1 该格的 `11` 应读作 `NOT_RECONCILED`。** |
 
 ---
 
@@ -907,3 +1115,91 @@ manifest 向外承诺的每一条核心证据，我全部单独核对过。
 - `verified_dois.md` — §6 的表格源
 
 **未使用的**：任何 GitHub 写操作；任何需要 auth 的端点；任何受限数据下载。
+
+---
+
+## 13. Round 3 `A1` 的复算脚本与逐项输出（可复跑）
+
+Round 3 派发的硬要求：「**重新机械计数；绝不复制旧总数。**」本节给出本 child 用来产生 §0 / §3.3 / §10.3.0 全部新数字的脚本与原始输出。**所有数字都由下列脚本实测产生，没有任何一处沿用旧总数。**
+
+### 13.1 lane 自报数求和（产出 F-35 / NR-ALL-5 / `A04` §2.1–2.3 的修正值）
+
+**脚本**：`C:\Users\gg828\AppData\Local\Temp\opencode\a1_lane_sum.py`
+**命令**：`python C:\Users\gg828\AppData\Local\Temp\opencode\a1_lane_sum.py`
+
+**方法**：正则定位 18 份 lane 报告中**携带完整 18-lane 清单**的行（命中 2 行：`A01` 的 F-35 行与 `A04` 的 §2.1 行）。**修复前行号分别为 `A01:267` 与 `A04:84`；因 Round 3 在两处之前插入了新章节，修复后分别为 `A01:369` 与 `A04:105`。** 逐项解析 `R<nn> <数字>`（允许 markdown 强调 `**45**`）与 `+` 尾注，逐项求和。
+
+**实测输出（逐字）**：
+
+```
+A01_EVIDENCE_QUALITY_AUDIT.md:369   lanes parsed = 18
+  R00=30+ · R01=45 · R02=34 · R03=41 · R04=16 · R05=109 · R06=33 · R07=33 · R08=72 ·
+  R09=78 · R10=59 · R11=60+ · R12=40 · R13=70 · R14=60+ · R15=30 · R16=24 · R17=41+3
+  SUM lower-bound ("+" at lower bound, 41+3 -> 41) = 875
+  SUM 41+3 recorded as 44                          = 878
+  "+" items: {R00:(30,'+'), R11:(60,'+'), R14:(60,'+'), R17:(41,'+3')}
+
+  lower=875   / 533  = 1.6417  ->  1.64x   (533 distinct source)         diff +342
+  lower=875   / 350  = 2.5000  ->  2.50x   (350 peer-reviewed)            diff +525
+  lower=875   / 642  = 1.3629  ->  1.36x   (642 distinct pointer)         diff +233
+  lower=875   / 1199 = 0.7298  ->  0.73x   (1199 raw occurrences)         diff -324
+  41+3=44     / 533  = 1.6473  ->  1.65x   (533 distinct source)         diff +345
+  41+3=44     / 350  = 2.5086  ->  2.51x   (350 peer-reviewed)            diff +528
+  41+3=44     / 642  = 1.3676  ->  1.37x   (642 distinct pointer)         diff +236
+  41+3=44     / 1199 = 0.7323  ->  0.73x   (1199 raw occurrences)         diff -321
+  41+3=44     / 1201 = 0.7311  ->  0.73x   (1201 old A04 claim)           diff -323
+  41+3=44     / 788  = 1.1142  ->  1.11x   (788+ old A01 claim)           diff  +90
+
+A04_CITATION_PROVENANCE_AUDIT.md:105   lanes parsed = 18   (per-lane numbers IDENTICAL, 0 mismatches)
+  A01 sum(lower)=875   A04 sum(lower)=875   delta=+0
+```
+
+**结论（本 child 独立算得，与 `EV2` §4.1 一致）**：
+- 两份文件列出的是**同一串 18 个数，逐 lane 无一处不符**（脚本显式做了跨文件比对：`MISMATCHES: none`）。
+- 和 = **875**（`+` 项按下界）= **878**（`41+3` 记作 44）。
+- 真倍率：**878 / 533 = 1.65×**、**878 / 350 = 2.51×**。
+- **878 − 1199 = −321**；**878 − 1201 = −323**。旧数 `1,201` 与实测和**差 −323，不是「差 2」**。
+- **旧数 `788` 与实测和差 +90，任何读法都得不到 `788`。**
+- 三个 `+` 项（`R00 30+` / `R11 60+` / `R14 60+`）按下界合计 **150**；即便全部按上界补满，也远不足以把 875 抬到 1,201。**旧数 `1,201` 在任何读法下都不可辩护。**
+
+### 13.2 证据等级词汇台账（产出 §3.3）
+
+**命令**：对 18 份 Wave 1 lane 报告全文跑
+`\b(?:CITED|UNVERIFIED|AGENT|NO_DOI|SUBSTANCE|POINTER|NOT_VERIFIED)[A-Z_]*\b`，
+按 token 去重计数；对 F-12 枚举的 12 个 token 另用 `(?<![A-Z_])TOKEN(?![A-Z_])` 精确计数并记录出现 lane。
+
+**实测结果**：`F-12` 的 12 个 token 中 **11 个存在、1 个（`UNVERIFIED_AGENT_RECALL`）命中 0 次**；另有 **9 个** tier 形态写法未被 F-12 枚举；连同裸 `UNVERIFIED` 共 **21** 个。`R11` 全文 `AGENT_RECALL` 命中 **0** 次。逐 token 计数与出现 lane 见 §3.3 表 A / 表 B。
+
+### 13.3 `NARROW_REPAIR_REQUEST` 执行状态（产出 §10.3.0）
+
+**脚本**：`C:\Users\gg828\AppData\Local\Temp\opencode\a1_nr_ledger.py`
+**命令**：`python C:\Users\gg828\AppData\Local\Temp\opencode\a1_nr_ledger.py`
+**原始输出留存**：`a1_nr_ledger_out.txt`
+
+**方法与判据**：对 §10.3 的 83 项，每项在**其目标文件的当前状态**上探测两个字符串——缺陷标记与修正值。判据 `EXECUTED` = 修正值在 ∧ 缺陷标记不在；`PARTIAL` = 修正值在 ∧ 缺陷标记仍在；`NOT_EXECUTED` = 缺陷标记在 ∧ 修正值不在；`UNPROBEABLE` = 该项无单一字符串特征（跨 lane 流程动作，或原文自陈「无需修改」），**明确不给判定**。
+
+**探测器的两处已知假阳性（已修正，记录在此以免下游复用出错版本）**：
+1. 首版把「缺陷 DOI」当探测键，误判了 5 项**缺陷在作者归属、DOI 本身正确**的条目（`NR-08-3` / `-5` / `-6` / `NR-05-2` / `NR-04-1`）。已改为探测**错误作者名 / 错误期刊名**。修正后 `NR-05-2` 由 `NOT_EXECUTED` 升为 `EXECUTED`（`:572` 现为 `Bumpass, L. L., Martin, T. C., & Sweet, J. A. (1991) … *Journal of Family Issues*`，`JMF` 全文命中 0）。
+2. 首版把 `NR-04-1` 的修正值正则写成 `s11238-014-9448-x`，它**同时匹配**缺陷形态 `…-9448-x.pdf`，导致 `PARTIAL` 恒成立。已改为负向断言 `(?!\.pdf)`。修正后 `NR-04-1` = `PARTIAL`（期刊已改对、`.pdf` 后缀仍在 2 处）。
+
+**实测输出（末 5 行，逐字）**：
+
+```
+TOTAL ITEMS PROBED : 83
+  NOT_EXECUTED      31
+  PARTIAL           31
+  UNPROBEABLE       11
+  EXECUTED          10
+```
+
+### 13.4 Crossref 复验（产出 `A04` §4.2 的作者修正与 M-8 / M-9 的裁定）
+
+**脚本**：`C:\Users\gg828\AppData\Local\Temp\opencode\a1_crossref.py`
+**命令**：`python C:\Users\gg828\AppData\Local\Temp\opencode\a1_crossref.py`
+**原始输出留存**：`a1_crossref_out.txt`
+
+**范围限定**：只查**本 child 实际改动或需要裁定的那 33 个 DOI**（`A04` §4.2 承重表的 30 个 DOI + 三个未改动行的守卫对照 + M-8 / M-9 两条）。**未做新的文献扫描**（Round 3 派发禁止）。UA `LHRM-R3A1-Repair/1.0`，端点 `https://api.crossref.org/works/<DOI>`，只读 GET。
+
+**守卫对照的作用**：12 个被判定为**正确**的行（Rusbult 1998 / Laurenceau 1998 / Le & Agnew 2003 / Tran 2019 / Joel 2020 / Aron 1992 / Keltner 2003 / Hamaker & Grasman 2015 / Lucas 2023 / Malloy & Kenny 1986 / Gable 2004 / Liell-Cock & Staton 2025）被**一并复查以防误改**，实测全部与 `A04` 原文一致，**未改动**。详见 `A04` §4.2.1。
+
+**本 child 独立发现（不在 `EV2` packet 中）**：`A04` §4.2 第 15 行 `Robitzsch 2025` 的 Crossref `issued` 年份是 **2024**（*Structural Equation Modeling* 32(1):36–45）。已修正并在 `A04` §4.2.1 登记。

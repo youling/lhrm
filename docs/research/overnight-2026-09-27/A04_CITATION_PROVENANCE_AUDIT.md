@@ -6,6 +6,27 @@
 > 权限：**NO GitHub write authority**；本文件为 `RESEARCH_CANDIDATE`，未修改 `D:\coding\lhrm` 任何文件
 > 隔离遵守：未读取 / 执行 / 引用 LHRM issue `#20` / `#21` / `#22` 的任何内容；未触碰 Eye / Juece / Juece `#30` / PR `#31`
 
+### Round 3 `A1` 修复记录（bookkeeping + citation repair，依 `ARCHITECT_ADJUDICATION_V1`）
+
+**原始审计文本一律保留。** 每处改动都带 `SUPERSEDED` 注记（原文 + 取代依据），无一处静默改写。
+
+| # | 位置 | 改动 | 依据 |
+|---|---|---|---|
+| 1 | §0 A04-C2 / §2.1 / §2.3 | `1,201` → **878**；「高估 2.3–3.4×」→ **1.65× / 2.51×** | manifest §7 **M-6**（= M-2）· `EV2` §5.4/§5.5 |
+| 2 | §0 A04-C4 / §3.3.1 M4–M6 / §10 P2 | 撤回「`10.31234` 前缀结构非法、不解析」这一**假技术事实**；P2 标 `REJECTED_WITH_REASON` | `EV2` §5.1 / §6.1（**HIGH** 操作风险）· R-B5 |
+| 3 | §0 A04-C5 / §6.1 / §6.3 | 按 **X-7** 加权利/归属边界声明；去除任何暗示 transcript/raw/anchored 证据可得的措辞 | adjudication **X-7** |
+| 4 | §2.2 / §8.2 U4 | 撤回「← **真正承载科学重量的数字**」；`PEER_REVIEWED_PRIMARY` 标为**系统性误标**，350 不得用作科学重量代理 | manifest §7 **M-7** 关联项 · R-B3 · `EV2` §5.10/§7.1 |
+| 5 | §3.3.2 D5 | 撤回「前缀与著录期刊族不一致」这一**不成立的理由**；改记为 `UNVERIFIED_DOI` + 真实缺陷（分隔符） | manifest §7 **M-9** · R-B6 · `J-C14` |
+| 6 | §3.3.4 | **撤回** `10.1037/h0046049` 的 ✅；整节改标「含错项的清单，不构成免检标记」 | manifest §7 **M-8** · R-B7 · `J-C15` |
+| 7 | **§4.2 + §4.2.1（新增）** | 30 行承重表中 **16 行作者归属修正 + 2 行题录精化**；新增 `Author (Crossref)` / `Title (Crossref)` 两列；**撤回「28 项强度充分」** | manifest §7 **M-7** · R-B2 · `EV2` §5.9/§7.2 |
+| 8 | §9 列定义 | 记录 §9 的 642 行表**结构上无法支持作者级检查**这一根因（诚实声明路线） | manifest §7 **M-7** 的「或」分支 |
+| 9 | §7.2 / §8.1(6) / §10 / §11 | 同步 D5 裁定、撤回依赖旧表身份的 negative result、补新待办、修 Mission 计数 | 随上述各项连带 |
+| 10 | §3.3.1 M1–M3 / §7.1 | **未改动**（本 child 独立 Crossref 复查确认原裁定仍成立） | 守卫复查 |
+
+**本 child 的另一份文件** `A01_EVIDENCE_QUALITY_AUDIT.md` 同步修复。**`00_MANIFEST.md` 与 `19_SYNTHESIS_CANDIDATE.md` 由 `A2` 拥有，本 child 未触碰**——但 §0 A04-C4 / §3.3.1 M4–M6 / §10 P2 的 manifest 侧对应文本（`00_MANIFEST.md` §2b OSF 前缀段）**在 A2 的白名单内，本文件只登记不修改**。
+
+**复算脚本与逐项 Crossref 输出**：`A01_EVIDENCE_QUALITY_AUDIT.md` §13（同一 child 的另一份交付物，含 `a1_lane_sum.py` / `a1_crossref.py` 的完整输出留存）。
+
 ---
 
 ## 0. 结论摘要（先说要点）
@@ -13,10 +34,10 @@
 | 编号 | 结论 | 等级 |
 | --- | --- | --- |
 | A04-C1 | 全 swarm 原始指针出现 **1,199** 次；全局去重后 **642** 个 distinct pointer；剔除 109 个「副本/碎片」后 **533** 个 distinct source。**去重倍率 2.25×**。 | — |
-| A04-C2 | `PEER_REVIEWED_PRIMARY + PEER_REVIEWED_REVIEW` = **350**。**Work Order 的 150+ 目标在全局口径下达成**（超出 2.3×），但**远低于** manifest §3 各 lane 自报数相加所暗示的量级。 | — |
+| A04-C2 | `PEER_REVIEWED_PRIMARY + PEER_REVIEWED_REVIEW` = **350**。**Work Order 的 150+ 目标在全局口径下达成**（超出 2.3×），但**远低于** manifest §3 各 lane 自报数相加所暗示的量级。<br>**⚠️ Round 3 `A1` 限定（依 M-7 / R-B3）**：`350` **可用作「350 个同行评审来源」**，**不得用作科学重量的代理** —— `PEER_REVIEWED_PRIMARY` 被系统性误标，分层抽样 **9/16 ≈ 56%** 不是 primary empirical work。详见 §2.2 与 §2.2.1。 | — |
 | A04-C3 | 340 个 distinct DOI **全部尝试核实**：331 个解析成功（Crossref 325 / DataCite 6），9 个在 Crossref 与 DataCite 均不解析。其中 **4 个由报告 lane 自行披露**，**5 个未披露**。 | — |
-| A04-C4 | 发现 **1 处 DOI 字符串错误**（R08b `10.1016/S0010-0277(02)0549-8` → 真值 `…00054-9`）、**1 处期刊归属错误**（R04 `10.1007/s11238-014-9448-x` 实际属 *Theory and Decision*，非 *J Behav Dec Making*）、**3 处 DOI 前缀/后缀结构非法**（R02 ×1、R05 ×2 的 `10.31234/osf.io/…`）。 | MAJOR |
-| A04-C5 | **R13（LLM Skill / adaptive interview layer）全篇 0 次记录 Fixture 003 的 rights 边界**（`HUMAN_REVIEW_REQUIRED → POINTER_HASH_ONLY`、`robots.txt ai-train=no`），却用该 fixture 的 `SC/transcript/pNN` 单元做 10 余条 LLM 层设计论证。 | **MAJOR** |
+| A04-C4 | 发现 **1 处 DOI 字符串错误**（R08b `10.1016/S0010-0277(02)0549-8` → 真值 `…00054-9`）、**1 处期刊归属错误**（R04 `10.1007/s11238-014-9448-x` 实际属 *Theory and Decision*，非 *J Behav Dec Making*）、**3 处 `10.31234/osf.io/…` 指针形态问题**（R02 ×1、R05 ×2）。<br>**`SUPERSEDED`（Round 3 `A1`，依 `EV2` §5.1/§6.1，R-B5）**：本条原文写「**3 处 DOI 前缀/后缀结构非法**」。**该技术事实不成立** —— Crossref prefix registry 显示 `10.31234` 与 `10.31219` **两个前缀都 live，注册者同为 `Center for Open Science`**，不存在 preprint / project 之分；`10.31234/osf.io/dus42`、`10.31234/osf.io/rs7eu_v1`、`10.31234/osf.io/f6wbn_v1` **实测均解析成功**。**本报告自身在 §3.3.4 已把 `10.31219/osf.io/gu8z7` 记为 ✅ 一致，即 PR 内部文档直接反驳本条。** 已改为中性的「指针形态问题」表述，实测细节见 §3.3.1。 | MAJOR |
+| A04-C5 | **R13（LLM Skill / adaptive interview layer）全篇 0 次记录 Fixture 003 的 rights 边界**（`HUMAN_REVIEW_REQUIRED → POINTER_HASH_ONLY`、`robots.txt ai-train=no`），却用该 fixture 的 `SC/transcript/pNN` 单元做 10 余条 LLM 层设计论证。<br>**⚠️ Round 3 `A1` 按 adjudication X-7 限定**：**未成立权利违反；已确认 provenance 遗漏。** X-7 裁定「未成立权利违反」**不是**说 R13 的缺陷不存在，而是说**该缺陷的性质是文档层 provenance 遗漏，不是权利违反**。`SC/transcript/pNN` 是**指针路径标签**，A04 未据此主张任何 transcript / raw / anchored 证据曾可得。详见 §6.1 与 §6.3。 | **MAJOR** |
 | A04-C6 | **R17 源表条目 37 把 `VALIDATION_CORPUS_V0_1.md` 的「Recommended Fixture 001–003」段当作 current 引用**，而该段已被 R00 判为 `SUPERSEDED`（实际冻结集 001=Carty / 002=Magi / 003=StoryCorps，corpus 仍写 001=LGSCO / 003=Carty，3 项中 2 项不符）。 | MODERATE |
 | A04-C7 | **2 条 `AGENT_RECALL` 承重**：R14 的 `Acitelli & Antonioni (2006) 30 维`（自标「最高优先 prior-art」）与 R14 的 MSC 五检（自标高「novelty 重写」关联）。二者都未核实，却各自支撑一条新颖性判断。 | **MAJOR** |
 | A04-C8 | Joel et al. 2020 PNAS（`10.1073/pnas.1917036117`）被 **4 个 lane 引用 9 次**，是全 swarm 第 4 承重源，但 R16 明确记录「正文未读、结论经转述」。**一篇 primary 被当作 meta-analysis 使用**。 | MAJOR |
@@ -81,7 +102,19 @@
 | **C. distinct source（剔副本/碎片）** | **533** | 642 − 109 |
 | **去重倍率 A→C** | **2.25×** | |
 
-各 lane 自报数相加 ≈ **1,201**（R00 30+ / R01 45 / R02 34 / R03 41 / R04 16 / R05 109 / R06 33 / R07 33 / R08 72 / R09 78 / R10 59 / R11 60+ / R12 40 / R13 70 / R14 60+ / R15 30 / R16 24 / R17 41+3），与实测 A = 1,199 一致（差 2 为四舍五入与 `41+3` 记法）。**但 1,199 → 533 的落差来自两个独立机制：**
+各 lane 自报数相加 = **878**（R00 30+ / R01 45 / R02 34 / R03 41 / R04 16 / R05 109 / R06 33 / R07 33 / R08 72 / R09 78 / R10 59 / R11 60+ / R12 40 / R13 70 / R14 60+ / R15 30 / R16 24 / R17 41+3；`+` 项按下界计，`41+3` 记为 44）。
+
+**（Round 3 `A1` 更正，依 manifest §7 M-6 / `EV2` §5.4）** 本句上一版本写「各 lane 自报数相加 ≈ **1,201**……与实测 A = 1,199 一致（差 2 为四舍五入与 `41+3` 记法）」。**该一致性校验从未成立，且是范畴错误**：
+
+- **算术**：逐项相加 = **875**（`+` 项按下界）/ **878**（`41+3` 记为 44），与 1,201 差 **−323**，与 1,199 差 **−321**。**不是「差 2」。**
+- **量纲**：lane 自报数是**各 lane 内去重后**的计数；`1,199` 是**跨文件、含重复与多书写形态**的原始出现数。一个被 3 个 lane 引用的来源，在 878 里最多计 1（若每 lane 都自报则计 3），在 1,199 里计 ≥3，在 533 里计 1。**二者不同量纲，不能相互校验。**
+- **`+` 项下界不可救**：要让总和达到 1,201，三个 `+` 项（`R00 30+` / `R11 60+` / `R14 60+`）须合计 **473**（平均 158/lane），而**本报告所在语料中最大的单 lane 自报数是 R05 = 109**。**任何读法下 1,201 都不可辩护。**
+- **真倍率**（本 child 用 `a1_lane_sum.py` 独立复算，逐项输出见 `A01` §13.1）：`878 / 533 = 1.6473 → 1.65×`；`878 / 350 = 2.5086 → 2.51×`。另：`878 / 642 = 1.37×`；`878 / 1199 = 0.73×`。
+- **交叉确认**：本文件 §2.1 与 `A01` F-35 **各自独立列出同一串 18 个数**；本 child 的脚本显式做了跨文件逐 lane 比对，**0 处不符**，两处求和结果相同。
+
+**定性结论不变且仍然成立**：lane 自报数**不可相加**、**不可对外声称为「N 个独立来源」**。错的只是倍率数字。`533` 应继续读作**上界**（本报告 U5/U6，见 §8.2）。
+
+但 1,199 → 533 的落差来自两个独立机制（此项**不受**上面的更正影响）：
 
 - **跨 lane 重复**：42 个指针被 ≥2 个 lane 引用；5 个被 ≥3 个 lane 引用（Rusbult 1998 IMS = 7 lane / 13 次）。
 - **书写形态重复**：340 个 distinct DOI 有 **740 次** DOI 形态出现（590 裸串 + 76 `doi:` + 58 resolver URL + 8 `_` 形态 + 8 出版社路径），即 **2.18 次/DOI**。其中 58 次是 `https://doi.org/10.xxxx` 这种把 DOI 完整重写一遍的 URL 形式。
@@ -93,7 +126,7 @@
 | `PEER_REVIEWED_PRIMARY` | **319** | 59.8% | 304 个 `journal-article` + 1 landing URL + 14 其他 |
 | `PEER_REVIEWED_REVIEW` | **31** | 5.8% | 8 `book-chapter` + 1 `book` + 1 encyclopedia chapter + 1 book excerpt + 20 题名含 meta-analysis/review 的 journal-article |
 | `PEER_REVIEWED_LANDING` | 1 | 0.2% | 出版社 landing URL 无 DOI（`statmodel.com/download/webtalk4.pdf`）；为口径一致单列 |
-| **`PEER_REVIEWED_PRIMARY + REVIEW` 小计** | **350** | **65.7%** | ← **真正承载科学重量的数字** |
+| **`PEER_REVIEWED_PRIMARY + REVIEW` 小计** | **350** | **65.7%** | ⚠️ **Round 3 `A1` 限定：这是「350 个同行评审来源」，不是「350 份一手经验数据」，也不是「真正承载科学重量的数字」。** 上一版本此格写「← **真正承载科学重量的数字**」，该措辞**已撤回**（依 M-7 / R-B3）。见 §2.2 与 §2.2.1 |
 | `GREY_OFFICIAL` | 62 | 11.6% | 19 政府/法院/标准机构 + 18 软件仓 + 8 学术方法手册 + 8 工具文档 + 其余 |
 | `OFFICIAL_DATA` | 57 | 10.7% | 47 cohort 门户 + 7 data 门户 + 3 DataCite 官方数据 DOI（pairfam / SHARE w1 / SHARE w8） |
 | `PREPRINT` | 47 | 8.8% | 44 arXiv id + 3 `posted-content` |
@@ -104,17 +137,72 @@
 | `DISSERTATION` | 0 | 0% | swarm 未使用此层 |
 | `TEXT_CORPUS` | 0 | 0% | 三份冻结 fixture 走 repo+path 指针，未走此层（见 §6） |
 
-**⚠️ 分层的重要限制**：`PEER_REVIEWED_PRIMARY` vs `PEER_REVIEWED_REVIEW` 是按 **Crossref `type` + 题名正则** 判定的，**没有逐篇读摘要**。304 个 `journal-article` 的 primary/review 切分是**估计值**，可能有个位数到十几项误差。`PEER_REVIEWED_PRIMARY + REVIEW = 350` 这个合计是稳的（不受切分误差影响），但两者的**分别**计数应视为量级估计。
+**⚠️ 分层的重要限制**：本层的 primary/review 切分是**估计值，不是逐篇判定**。`PEER_REVIEWED_PRIMARY` vs `PEER_REVIEWED_REVIEW` 是按 **Crossref `type` + 题名正则** 判定的，**没有逐篇读摘要**。304 个 `journal-article` 的切分可能有个位数到十几项误差。`PEER_REVIEWED_PRIMARY + REVIEW = 350` 这个合计是稳的（不受切分误差影响），但两者的**分别**计数应视为量级估计。
+
+### 2.2.1 `PEER_REVIEWED_PRIMARY` 的系统性误标（Round 3 `A1` 补测，依 M-7 / R-B3 / `EV2` §5.10+§7.1）
+
+**上一版本 §2.2 的最后一句写**：「304 个 `journal-article` 的 primary/review 切分是**估计值**，可能有个位数到十几项误差。」
+
+**Round 3 更正**：这不是「个位数误差」量级的问题，而是**判定规则的系统性偏误**。
+
+**偏误机制**：以 `Crossref type == journal-article` + 题名正则判定 primary，**必然地把理论论文、方法论论文、综述论文与计算模型论文判为 PRIMARY** —— 因为它们在 Crossref 里的 `type` 同样是 `journal-article`，题名里也不出现 `meta-analysis` / `review` 这类词。
+
+**分层抽样证据**（Round 2 `EV2` §7.1 执行；本 child **采信该抽样并复核其方法说明**，未重跑 —— 见下方限度）：
+
+| A04 §9 行 | 抽样命中 | 分类 | 判定 |
+|---:|---|---|---|
+| 1 | Rusbult, Martz et al., "The Investment Model Scale", *Pers Relat* 5 | 量表原始论文 | ✅ primary empirical |
+| 21 | Lucas, "Why the CLPM Is Almost Never the Right Choice", *AMPPS* 6 | 方法论 | ❌ |
+| 41 | Brady, Cohen et al., 现场干预 RCT, *Sci Adv* 6 | 现场干预 | ✅ primary empirical |
+| 61 | Dukart, Holiga et al., "JuSpace: a tool for…", *HBM* 42 | 工具/方法 | ❌ |
+| 81 | Hazan & Shaver, *JPSP* 52 | 理论 + 自有 3 项研究 | ⚠️ 混合 |
+| 101 | Andersen, "…unobserved heterogeneity in CLPMs?", *Psychol Methods* 27 | 方法论 | ❌ |
+| 121 | Gneezy & Fessler, 现场实验, *Proc R Soc B* 279 | 现场实验 | ✅ primary empirical |
+| 141 | Rodríguez & Verup, 调查, *Pers Relat* 23 | 调查 | ✅ primary empirical |
+| 161 | Kellas, Bean et al., 纵向, *JSPR* 25 | 纵向 | ✅ primary empirical |
+| 181 | Schindler, "About the Uncertainties in Model Design…", *JASSS* 16 | 方法/模型设定 | ❌ |
+| 201 | Neto et al., 调查, *Interpersona* 6 | 调查 | ✅ primary empirical |
+| 221 | Adams & Jones, "The conceptualization of marital commitment", *JPSP* 72 | 理论整合（无新数据） | ❌ |
+| 241 | Hamaker, Asparouhov et al., "At the Frontiers of Modeling ILD", *MBR* 53 | 方法论综述 | ❌ |
+| 261 | Kane, "Validating the Interpretations and Uses of Test Scores", *J Educ Meas* 50 | 方法论 | ❌ |
+| 281 | Mudimu, Engelbrecht et al., Agent-based model…, *Adapt Behav* 23 | 计算模型（非一手人类数据） | ❌ |
+| 301 | Schoorman, Mayer et al., "An Integrative Model of Organizational Trust", *AMR* 32 | 理论综述 | ❌ |
+
+| 分类 | n / 16 | 占比 |
+|---|---:|---:|
+| 真 primary empirical | **6** | 37.5% |
+| **非 primary**（理论 3 / 方法 4 / 综述 1 / 计算模型 1） | **9** | **56.3%** |
+| 混合 | 1 | 6.3% |
+
+**因此（`350` 的正确读法）**：
+
+| 读法 | 是否允许 | 理由 |
+|---|---|---|
+| 「**350** 个同行评审来源」 | ✅ **允许** | 该合计不受 primary/review 切分误差影响 |
+| 「**350** 份一手经验数据」/「350 份 primary data」 | ❌ **不允许** | 抽样估计 **56%** 不是 primary empirical work |
+| 「**350** 真正承载科学重量」 | ❌ **不允许** | 上一版本 §2.2 的这句话**已撤回**。tier 只编码**出处类型**，不编码**证据强度**；把 tier 读成权重是层级混淆 |
+| `PEER_REVIEWED_PRIMARY = 319` / `PEER_REVIEWED_REVIEW = 31` 的**分别**计数 | ❌ **不可引用** | 判定规则本身有系统性偏误（见上） |
+
+**限度的诚实记录**：
+
+1. **该抽样是系统抽样，不是随机抽样**（对 319 行每 20 行取 1，索引 0/20/…/300）。因此 **56.3% 是区间信息，不是点估计**；真实比例可能偏离。
+2. **分类依据是题名与出处类型，不是对研究设计的判定。** `EV2` 未读方法部分。6 个 ✅ 只表示「题名与出处指向一手人类受试数据」，**不表示该研究设计无缺陷**。
+3. **本 child 未重跑该抽样。** 理由：重跑需要把 `EV2` 的分类判读重做一遍，属「新的文献扫描」，Round 3 派发明令禁止（`No new literature sweep`）。本 child 做的是**采信 + 机制说明 + 限度记录**，并把「重出 primary-data 口径的分子」登记为待办（§10 P1）。
+4. **未做的事**：要得到 primary-data 口径的分子，**必须逐篇读摘要重出**。本轮未做，`319` 不得被当作「319 篇一手经验研究」引用。
+
+**这条限制此前已被本报告两次披露**（原 §2.2 与原 §8.3 non-claim #4），但**措辞仍会误导**（EV2 §6.4：「限制已披露但措辞仍会误导」）。Round 3 修的是**措辞**——把「真正承载科学重量的数字」这句话本身去掉，并把抽样证据与限度搬进正文。
 
 ### 2.3 对 Work Order「150+ 高质量学术/官方/来源指针」的诚实裁定
 
 | 读法 | 数字 | 裁定 |
 | --- | ---: | --- |
-| 严格读法 = 同行评审（primary + review） | **350** | ✅ 达成，2.3× |
+| 严格读法 = 同行评审（primary + review） | **350** | ✅ 达成，2.3×。**⚠️ Round 3 限定：读作「350 个同行评审来源」，不是 350 份一手经验数据**（§2.2.1） |
 | 宽读法 = 同行评审 + 官方数据 + 官方灰 + dataset | **476** | ✅ 达成，3.2× |
-| 错误读法 = 各 lane 自报数相加 ≈ 1,201 | 1,201 | ❌ **不成立**，高估 2.3–3.4× |
+| 错误读法 = 各 lane 自报数相加 = 878 | 878 | ❌ **不成立**，相对 533 distinct source 高估 **1.65×**、相对 350 同行评审高估 **2.51×** |
 
-**结论：目标达成，但达成的余量来自 global dedup 之后仍然存在的 350 个同行评审来源，而不是来自 lane 数量。** 同时必须记录：若把 109 个副本也算进去，350 → 459，任何"数量"论证都会被这批非来源指针污染。
+**（Round 3 `A1` 更正，依 M-6 / `EV2` §5.5）** 第三行上一版本写「各 lane 自报数相加 ≈ **1,201** | 1,201 | ❌ **不成立**，高估 **2.3–3.4×**」。`1,201` 与 `2.3–3.4×` **两个数都不成立**，已按 §2.1 的独立复算替换为 `878` / `1.65×` / `2.51×`。
+
+**结论：目标达成，但达成的余量来自 global dedup 之后仍然存在的 350 个同行评审来源，而不是来自 lane 数量。** 同时必须记录：若把 109 个副本也算进去，350 → 459，任何"数量"论证都会被这批非来源指针污染。**且按 §2.2.1，350 本身是「同行评审来源数」，不是「科学重量」。**
 
 ---
 
@@ -149,9 +237,26 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | M1 | `10.1016/S0010-0277(02)0549-8` | R08b L774 `[S34]` | **DOI 字符串错误。** 该文 = Hedden & Zhang (2002) *Cognition* 85(1) 1–36，正确 DOI = **`10.1016/S0010-0277(02)00054-9`**（Crossref + PII `S0010027702000549` 双向确认）。R08b 把它当 PII 数字串直接抄进 DOI 槽。该条被 R08b 自标 `` `CITED_PRIMARY` · high ``，用于 belief 层的 strategic-reasoning 证据。 | MAJOR |
 | M2 | `10.1007/s11238-014-9448-x` | R04 L585 + L1012 | **DOI 正确、期刊归属错误。** Crossref 注册为 ***Theory and Decision*** (2014)，报告两处均写 ***J Behav Dec Making***。该文被 R04 用作 D11 SOEP `NOT_DYADIC_ENOUGH` 判定的 `negative_evidence_source` —— **一条承重的否定性判定挂在一个被错误著录的来源上**。 | MAJOR |
 | M3 | `10.1609/aaai.v35i1.16792` | R14 L98 + L400 | **不解析**（Crossref + DataCite + doi.org handles 全 404）。R14 用它承重一条**定量**主张：「ATOMIC 2020 报告 GPT-3 few-shot 比用 ATOMIC 训练的 BART 模型低约 **12 个百分点**（参数少 430×）」，并据此论证「支持 LHRM 的 schema-first 立场」。**该 lane 未披露此 DOI 未命中。** | MAJOR |
-| M4 | `10.31234/osf.io/f6wbn` | R02 L596 | **DOI 前缀/后缀结构非法。** `10.31234` 是 PsyArXiv 的前缀，`osf.io/` 是 OSF（`10.31219`）的后缀形态。R14 在 L353 用的 `https://doi.org/10.31219/osf.io/gu8z7` **能解析**，R02 这条不能。同一 preprint 概念，R02 写错、R14 写对。 | MODERATE |
-| M5 | `10.31234/osf.io/rs7eu_v1` | R05 L509 | 同 M4，结构非法，不解析。 | MODERATE |
-| M6 | `10.31234/osf.io/dus42` | R05 L506 | 同 M4，结构非法，不解析。 | MODERATE |
+| M4 | `10.31234/osf.io/f6wbn` | R02 L596 | **`SUPERSEDED`（Round 3 `A1`，依 `EV2` §5.1 / R-B5）** —— 上一版本本行写「**DOI 前缀/后缀结构非法。`10.31234` 是 PsyArXiv 的前缀，`osf.io/` 是 OSF（`10.31219`）的后缀形态**」。**该理由不成立**：`10.31234` 与 `10.31219` **两个前缀都 live，注册者同为 `Center for Open Science`**（Crossref prefix registry），不存在 preprint / project 之分。**真实缺陷**：`f6wbn` 这个 identifier **只在 `10.31234` + `_v1` 形态下注册** —— `10.31234/osf.io/f6wbn_v1` 解析成功（`https://osf.io/f6wbn_v1`），无 `_v1` 的 `10.31234/osf.io/f6wbn` 与 `10.31219/osf.io/f6wbn` 均 404。**修法是补版本后缀，不是换前缀**（补 `_v1` 已由修复轮应用）。 | MODERATE |
+| M5 | `10.31234/osf.io/rs7eu_v1` | R05 L509 | **`SUPERSEDED`** —— 上一版本写「同 M4，结构非法，不解析」。**实测该 DOI 解析成功**（Crossref 200 / `doi.org` 302 → `https://osf.io/rs7eu_v1`）。**本条的前提被证伪，该行应从 mismatch 清单中移除。** | **已撤销（`UNRESOLVED_RETRACTED`）** |
+| M6 | `10.31234/osf.io/dus42` | R05 L506 | **`SUPERSEDED`** —— 上一版本写「同 M4，结构非法，不解析」。**实测该 DOI 解析成功**（Crossref 200 / `doi.org` 302 → `https://osf.io/dus42_v1`）。**本条的前提被证伪，该行应从 mismatch 清单中移除。** | **已撤销（`UNRESOLVED_RETRACTED`）** |
+
+> **⚠️ Round 3 `A1` 的连带警示（`EV2` §6.1 评为 `HIGH` 操作风险）**：本报告 §3.3.4 自己把 `10.31219/osf.io/gu8z7` 记为 ✅ 一致（即 PR 内**存在一条 live 的 `10.31219` DOI**，R14 L353），而 §10 P2 建议「把 `10.31234/osf.io/…` 改成 `10.31219/osf.io/…`」。**两条来源同出本 PR、指向同一个动作，而该动作会把一条 live 指针变成 404 —— 一次纯粹的净损失。** P2 已改标 `REJECTED_WITH_REASON`（见 §10）。**manifest 侧的对应段落（`00_MANIFEST.md` §2b）不在本 child 白名单内，已登记交 `A2` / parent。**
+>
+> **本 child 的实测来源**：**本 child 独立复验了全部 6 个 identifier 与 2 个前缀记录**（`https://api.crossref.org/works/<DOI>` 与 `https://api.crossref.org/prefixes/<prefix>`，只读 GET，UA `LHRM-R3A1-Repair/1.0`，2026-09-27），结果与 `EV2` §5.1 的逐 identifier 表**完全一致**：
+
+> | 被测 identifier | Crossref | 标题（实测） |
+> |---|---|---|
+> | `10.31234/osf.io/f6wbn_v1` | **200** | "Measures of relationship power dynamics in romantic relationships" |
+> | `10.31219/osf.io/gu8z7` | **200** | "Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Att…" |
+> | `10.31234/osf.io/rs7eu_v1` | **200** | "Typical Patterns of Stability in Longitudinal Data: Implications for Model Choic…" |
+> | `10.31234/osf.io/dus42` | **200** | "Illusory Between-person Component in the Random Intercept Cross-lagged Panel Mod…" |
+> | `10.31234/osf.io/f6wbn`（无后缀） | **404** | — |
+> | `10.31219/osf.io/f6wbn` | **404** | — |
+> | prefix `10.31234` | live，注册者 = **`Center for Open Science`** | |
+> | prefix `10.31219` | live，注册者 = **`Center for Open Science`** | |
+>
+> **因此 M5 / M6 的撤销、M4 的理由替换、以及「补 `_v1` 而非换前缀」的正确修法，本 child 均有自己的实测依据**，不单是采信 `EV2`。**注意**：标题一栏还显示 `f6wbn_v1` 与 `jftr.70019` 是同一篇（Junkins et al. 2025 关系权力动力量表），与 `A04` §4.2 第 22 行的作者错配互相印证。
 
 #### 3.3.2 报告已自行披露者（**不计为 lane 缺陷**，本审计确认其披露为真）
 
@@ -161,7 +266,7 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | D2 | `10.1037/2021-17028-001` | R03 | L336 标 `UNVERIFIED_DOI`，并说明「DOI 经 APA manuscript 记录页确认存在；Crossref 查询未返回」 | 确认 Crossref + DataCite 均无。R03 的处理**正确**。 |
 | D3 | `10.2307/2265159` | R07 | L551 标 `[UNVERIFIED]` + 「背景提及，未用于任何主张」 | 确认不解析。R07 的隔离**正确**。 |
 | D4 | `10.1177/0003122417715051` | R11 | L132 记 `HTTP 404` + L133 十路检索 | 这**不是引用**，是 R11 记录自己检索 Gilligan 2017 失败的 trace。R11 的负结果披露是全 swarm 最干净的一处。 |
-| D5 | `10.1024/1662-9647.a000031` | R11 | **未披露** | 不解析。前缀 `1662-9647` 属 *Zeitschrift für Gerontopsychologie und Psychiatrie*（德文），报告著录为 *GeroPsych* 24(1)（英文刊）。**前缀与著录期刊族不一致**。R11 已披露 Gilligan / P&B 两条未命中，但**未披露这一条**。 | MODERATE |
+| D5 | `10.1024/1662-9647.a000031` | R11 | **未披露** | **`SUPERSEDED`（Round 3 `A1`，依 M-9 / R-B6 / `J-C14`）** —— 上一版本本行写「不解析。**前缀 `1662-9647` 属 *Zeitschrift für Gerontopsychologie und Psychiatrie*（德文），报告著录为 *GeroPsych* 24(1)（英文刊）。前缀与著录期刊族不一致**」。**该理由不成立**：`1662-9647` **正是 GeroPsych 的 ISSN 前缀**，报告著录的期刊族与前缀**是一致的**，二者并无冲突。<br>**真实缺陷（本 child 已实测）**：这是一个 **DOI 分隔符错误** —— 报告用**点**（`.a000031`），真值用**斜杠**（`/a000031`）。实测：<br>· `10.1024/1662-9647.a000031`（点） → Crossref **404**<br>· `10.1024/1662-9647/a000031`（斜杠） → Crossref **200**，**Di Rosa, M.; Kofahl, C.; McKee, K.; Bień, B.; Lamura, G.; Prouskas, C. (+2), 2011, *GeroPsych* 24(1):5–18**, "A Typology of Caregiving Situations and Service Use in Family Carers of Older People in Six European Countries"。**注意：作者也不是 R11 写的「Geyer et al. 1999」**（与 `A01` F-08 / `NR-11-1` 一致）。<br>**裁定改为 `UNVERIFIED_DOI`** —— **不解析这一事实保留，但必须以真实理由记录；本报告不为其提供任何错误的解释。** | MODERATE |
 | D6 | `10.13718/j.cnki.xdzk.2020.06.013` | R02 | **未披露** | 不解析。CNKI 前缀 `10.13718` 不在 Crossref/DataCite 索引，属**索引缺席**而非引用错误（山东大学学报版）。**低危**，但按 swarm 规则仍应标 `UNVERIFIED`。 | LOW |
 
 #### 3.3.3 我自己的抽取器缺陷（**已修正，非 swarm 问题**，如实登记）
@@ -174,25 +279,50 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | 剥 markdown `_` 时误伤 Springer/T&F DOI 的 `_` 分隔形态 | 4 个 / 12 次（`10.1207/s15327957pspr10032`、`10.1207/s15327752jpa41066`、`10.1007/3-540-45547-73`、`10.1162/colia00502`） | 真值 `10.1207/s15327957pspr1003_2`、`10.1207/s15327752jpa4106_6`、`10.1007/3-540-45547-7_3`、`10.1162/coli_a_00502`，全部解析 | 全部一致 |
 | 未折叠 `doi:` / 出版社路径内的 DOI | 55 个 URL key 实为 DOI 副本 | 折叠后 DOI 从 354 收到 340 | — |
 
-#### 3.3.4 顺带核实并**通过**的高风险项（抽查后无 mismatch）
+#### 3.3.4 顺带核实的高风险项 —— **⚠️ Round 3：原「已通过」清单含错项，不构成免检标记**
 
-| DOI | 报告著录 | Crossref | 裁定 |
+> **`SUPERSEDED`（Round 3 `A1`，依 M-8 / R-B7 / `J-C15`）**：本节上一版本的标题是「顺带核实并**通过**的高风险项（抽查后无 mismatch）」，并给出一律 ✅ 的裁定表。**该清单含一条错项，因此它不是一份有效的免检清单，而是**一份**其"已通过"标记不承载信息的清单。** 已做三件事：(1) 撤回 `10.1037/h0046049` 的 ✅；(2) 把本节标题改为「**含错项的清单，不构成免检标记**」；(3) 加一条全表重检要求（见 §3.3.5）。**其余各行的 ✅ 本 child 未复核**（见下方限度声明），**既不撤回也不背书。**
+
+**错项逐条**：
+
+| DOI | 报告著录 | Crossref **实测真值** | 原裁定 | Round 3 裁定 |
+| --- | --- | --- | --- | --- |
+| `10.1037/h0046049` | R17 S19 Cartwright & Harary 1956, ***Psych Review* 63(4)** | **Cartwright, D.; Harary, F. (1956), *Psychological Review* 63(5):277–293**, "Structural balance: a generalization of Heider's theory" | ✅ 一致 | ❌ **原「已通过」清单里的假 PASS —— 卷期错（63(4) vs 63(5)）。作者、年份、期刊名、标题全部正确，只错在期号，因此它正是最难被肉眼发现的一类错。** |
+
+**该错项为什么严重（这才是重点）**：
+- 本节的用途是给**未被列为 mismatch 的高风险项**打「已通过」标记，供下游直接采信。**一个含错项的「已通过」清单，其标记不承载信息** —— 它会让读者以为这一节提供了额外保证，实际上它只说明「这 15 行被抽查过」，而抽查本身有假阳性。
+- 错项恰好落在**最难自查的字段**上：作者对、年份对、期刊对、标题对，只有 `(4)` 应为 `(5)`。**若抽查者只核对「作者在不在」「年份对不对」「期刊像不像」，这一行会通过。**
+- **因此：在任何人引用本节任何一行之前，必须对本表做一次完整的 volume/issue/页码 级重检**（§3.3.5）。
+
+**限度声明（Round 3 `A1` 逐字声明）**：本 child **只复验了上表这一行**（`10.1037/h0046049`），因为它是本节被指控的那一行。**其余 14 行的 ✅ 既未被本 child 复核，也未被本 child 撤回** —— 它们在本轮**处于 `NOT_REVERIFIED` 状态**。**特别地，本 child 不主张「除 `h0046049` 外其余 14 行都是对的」** —— 恰恰相反：既然本节已被证明会产生假 PASS，那么**其余各行通过的概率不能假定为高**。§3.3.5 就是为此而设。
+
+#### 3.3.4（原表，保留原文；Round 3 已按上表改判其中一行）
+
+| DOI | 报告著录 | Crossref | 原裁定 |
 | --- | --- | --- | --- |
-| `10.1038/s41562-016-0021` | R16 L554 Munafò 2017, *Nature Hum Behav* 1, 0021 | "A manifesto for reproducible science", NHB 2017 | ✅ 一致（DOI 未被截断） |
-| `10.1038/s41562-016-0034` | R16 L555 Wagenmakers 2017, NHB 1, 0020 | "Promoting reproducibility with registered reports", NHB 2017 | ✅ 一致 |
-| `10.1177/1077801206293328` | R11 L111/L481 Johnson 2006, *Violence Against Women* 12(11) | "Conflict and Control", VAW 2006 | ✅ 一致 |
-| `10.1145/3704890` | R07 L88/L424/L545 Liell-Cock & Staton 2025, POPL | "Compositional Imprecise Probability…", PACMPL 2025 | ✅ 一致 |
-| `10.1017/9781108131490.003` | R10 | "Attachment Insecurity and the Regulation of Power and Dependence in Intimate Relationships", *Power in Close Relationships* | ✅ 一致 |
-| `10.1037/h0046049` | R17 S19 Cartwright & Harary 1956 | "Structural balance: a generalization of Heider's theory", *Psych Review* 63(4) | ✅ 一致 |
-| `10.1037/0022-3514.76.1.72` | R14 L275（自查 Fletcher & Simpson 2000 页码） | *JPSP* 76(1), **72–89** | ✅ R14 的更正（54–71 → 72–89）**正确** |
-| `10.1037/0022-3514.63.4.596` | R01（Rempel/Aron DOI 末位自查） | Aron 1992 *JPSP* 63(4) 596 | ✅ R01 的更正（`.589` → `.596`）**正确** |
-| `10.1016/0022-1031(80)90007-4` | R03 L116/L342、R14 L324 记 *JESP* 16, 172–186 | *Journal of Experimental Social Psychology* 1980 | ✅ 一致（"JESP" 在此恰为 J. Experimental Social Psychology 的通行缩写；Crossref 标题多一个副标题 `: A test of the investment model`，非错误） |
-| `10.4232/pairfam.5678.14.2.0` | R04 L83/L85/L940 pairfam ZA5678 v14.2 | DataCite: "Beziehungs- und Familienpanel (pairfam)", GESIS 2024 | ✅ 一致（Crossref 404 属预期，走 DataCite） |
-| `10.6103/share.w1.900` / `w8.900` | R04 SHARE Wave 1 / Wave 8 | DataCite: SHARE-ERIC 2024 | ✅ 一致 |
-| `10.12758/mda.2013.013` | R13 BFI-10 | DataCite: GESIS 2013 | ✅ 一致 |
-| `10.31219/osf.io/gu8z7` | R14 L353 Joel/Eastwick/Finkel 2017 | Crossref 解析 | ✅ 一致（与 M4/M5 形成对照） |
-| `10.1016/0022-0965(85)90051-7` | R08b L780 Perner & Wimmer 1985, *JECP* 39(3) | "'John thinks that Mary thinks that…' Attribution of second-order beliefs", JECP 1985 | ✅ 一致 |
-| `10.1016/0010-0277(83)90004-5` | R08b L780 Wimmer 1983, *Cognition* 13(1) | "Beliefs about beliefs…", *Cognition* 1983 | ✅ 一致 |
+| `10.1038/s41562-016-0021` | R16 L554 Munafò 2017, *Nature Hum Behav* 1, 0021 | "A manifesto for reproducible science", NHB 2017 | ✅ 一致（DOI 未被截断）——**Round 3 `NOT_REVERIFIED`** |
+| `10.1038/s41562-016-0034` | R16 L555 Wagenmakers 2017, NHB 1, 0020 | "Promoting reproducibility with registered reports", NHB 2017 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.1177/1077801206293328` | R11 L111/L481 Johnson 2006, *Violence Against Women* 12(11) | "Conflict and Control", VAW 2006 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.1145/3704890` | R07 L88/L424/L545 Liell-Cock & Staton 2025, POPL | "Compositional Imprecise Probability…", PACMPL 2025 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`**（本 child 已在 §4.2 承重表中独立复验过同一 DOI，作者/卷期/页码**一致**） |
+| `10.1017/9781108131490.003` | R10 | "Attachment Insecurity and the Regulation of Power and Dependence in Intimate Relationships", *Power in Close Relationships* | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| **`10.1037/h0046049`** | R17 S19 Cartwright & Harary 1956 | ~~"…", *Psych Review* 63(4)~~ → **实测 63(5):277–293** | ❌ **假 PASS，见上表** |
+| `10.1037/0022-3514.76.1.72` | R14 L275（自查 Fletcher & Simpson 2000 页码） | *JPSP* 76(1), **72–89** | ✅ R14 的更正（54–71 → 72–89）**正确** ——**本 child 已独立复验同一 DOI：Fletcher, Simpson, Thomas & Giles 1999, *JPSP* 76(1):72–89，一致**（但本行**作者归属**在 §4.2 中是错的，见 §4.2.1） |
+| `10.1037/0022-3514.63.4.596` | R01（Rempel/Aron DOI 末位自查） | Aron 1992 *JPSP* 63(4) 596 | ✅ R01 的更正（`.589` → `.596`）**正确** ——**Round 3 `NOT_REVERIFIED`** |
+| `10.1016/0022-1031(80)90007-4` | R03 L116/L342、R14 L324 记 *JESP* 16, 172–186 | *Journal of Experimental Social Psychology* 1980 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.4232/pairfam.5678.14.2.0` | R04 L83/L85/L940 pairfam ZA5678 v14.2 | DataCite: "Beziehungs- und Familienpanel (pairfam)", GESIS 2024 | ✅ 一致（Crossref 404 属预期，走 DataCite）——**Round 3 `NOT_REVERIFIED`** |
+| `10.6103/share.w1.900` / `w8.900` | R04 SHARE Wave 1 / Wave 8 | DataCite: SHARE-ERIC 2024 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.12758/mda.2013.013` | R13 BFI-10 | DataCite: GESIS 2013 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.31219/osf.io/gu8z7` | R14 L353 Joel/Eastwick/Finkel 2017 | Crossref 解析 | ✅ 一致 ——**Round 3 已独立复验：Crossref 200，"Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Att…"，一致**。**另注：本行是 §3.3.1 M4–M6 撤销的关键对照（`10.31219` 是 live 前缀）** |
+| `10.1016/0022-0965(85)90051-7` | R08b L780 Perner & Wimmer 1985, *JECP* 39(3) | "'John thinks that Mary thinks that…' Attribution of second-order beliefs", JECP 1985 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+| `10.1016/0010-0277(83)90004-5` | R08b L780 Wimmer 1983, *Cognition* 13(1) | "Beliefs about beliefs…", *Cognition* 1983 | ✅ 一致 ——**Round 3 `NOT_REVERIFIED`** |
+
+#### 3.3.5 全表重检要求（Round 3 `A1` 新增待办）
+
+**要求**：在**任何人**引用 §3.3.4 的任何一行之前，对该表 15 行做一次**完整的 volume / issue / 页码 级重检**（不是「作者/年份/期刊对不对」这一级）。
+
+**为什么必须全检而不是只检 `h0046049` 一行**：本节已证明它的抽查判据（作者 / 年份 / 期刊 / 标题）**不足以发现期号错误**，而本节的用途正是给下游提供免检保证。**只撤回错项、保留其余 ✅，会让这 15 行的 ✅ 继续被当作保证使用，而它们已经不再可靠。** 把它们标为 `NOT_REVERIFIED`（本轮已做）是把「假保证」降级为「无保证」，这是本轮能诚实做到的最大程度；**真正的修复是全检。**
+
+**登记为 §10 P1。** 本 child **未执行**该全检：它需要 15 次 Crossref 逐条卷期比对且**属于一次新的核查扫描**，Round 3 派发限定「只可复验你实际改动的 DOI，不得扩大范围」。本 child 实际改动的 DOI 已全部复验完毕（见 §4.2.1）。
 
 ---
 
@@ -202,43 +332,106 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 
 一个来源是「承重的」当且仅当：**(a)** 被 ≥2 个 lane 引用（42 个指针满足），**或 (b)** 被 `00_MANIFEST.md` §2「核心证据指针」列点名，或 **(c)** 报告自身把它标为 load-bearing / 承重 / 决定性。
 
-### 4.2 承重来源表（30 项）
+### 4.2 承重来源表（30 项）—— **⚠️ Round 3 `A1`：新增 `Author (Crossref)` / `Title (Crossref)` 两列，16 行作者归属修正，「28 项强度充分」已撤回**
 
-| # | 来源 | Tier | lanes | 承重的主张 | 强度是否够 | 裁定 |
-| --- | --- | --- | ---: | --- | --- | --- |
-| 1 | Rusbult et al. 1998, `10.1111/j.1475-6811.1998.tb00177.x` | PR | **7** (R00 R01 R02 R03 R06 R14 R17) / 13 次 | `Dedication` / commitment 的测量基础；IMS 四分量 | ✅ 原始量表论文，全 swarm 最稳的单点 | 充分 |
-| 2 | Laurenceau et al. 1998, `10.1037/0022-3514.74.5.1238` | PR | 5 / 10 | intimacy 作为人际过程（IPM 骨架） | ✅ 原始理论 + diary 验证 | 充分 |
-| 3 | Le & Agnew 2003, `10.1111/1475-6811.00035` | **REVIEW** | 5 / 9 | Investment Model 承诺的 meta 证据 | ✅ meta-analysis，正当用途 | 充分 |
-| 4 | Tran, Judge & Kashima 2019, `10.1111/pere.12268` | **REVIEW** | 4 / 9 | 更新版 Investment Model meta；R02 报 R²=.54 | ✅ meta-analysis，正当用途 | 充分 |
-| 5 | **Joel et al. 2020 PNAS, `10.1073/pnas.1917036117`** | PR | 4 / 9 | 43 纵向 couples 研究的关系质量自报预测因子 | ⚠️ **primary 被当 meta 用**。R16 L522 明确写「不主张 S23 正文的五条实证结论（书目已核实，**正文未读**；结论经转述）。该来源在 `R16-LK5` 与 `B3` 中 load-bearing」。R06/R14/R17 均以转述形式承重。 | **MAJOR** |
-| 6 | Rempel, Sayer & Lehman 1985, `10.1037/0022-3514.49.1.95` | PR | 2 / 4 | `Trust` = credibility/dependability/faith/predictability | ✅ R01 已自查并更正上游卷期错 | 充分 |
-| 7 | Rempel & Holmes 1989, `10.1037/0022-3514.57.5.792` | PR | 2 / 4 | `Closeness` ≠ `Liking`（可分性） | ✅ | 充分 |
-| 8 | Aron et al. 1992, `10.1037/0022-3514.63.4.596` | PR | 3 / 6 | IOS 自我-他人包含 → 关系亲密 | ✅ R01 已自查 DOI 末位 | 充分 |
-| 9 | Keltner 2003, `10.1037/0033-295x.110.2.265` | PR | 3 / 5 | power = approach + inhibition（双轴） | ✅ 理论原始论文 | 充分 |
-| 10 | Powers & Overall 2017, `10.1146/annurev-psych-010416-044038` | PR | 3 / 4 | 十四核心原则（构念收敛的上位框架） | ⚠️ Annual Review 综述性 primary，用于「构念清单」尚可，但**不是 primary data** | 可接受（作框架不作证据） |
-| 11 | Ben-Shahar & Ostrow 2008, `10.1080/1047840x.2014.863723` | PR | 2 / 4 | 「窒息婚姻」批判 LHRM 的 `S/O/D` 目标 | ✅ 观点论文，匹配「批评」用途 | 充分 |
-| 12 | Hamaker et al. 2024, `10.1037/met0000701` | PR | 2 / 4 | CLPM 在二元/序数结果下的问题 | ✅ | 充分 |
-| 13 | Hamaker & Grasman 2015, `10.1037/a0038889` | PR | 2 / 4 | CLPM 批判 | ✅ | 充分 |
-| 14 | Lucas 2023, `10.1177/25152459231158378` | PR | 2 / 4 | 「CLPM 几乎从不是对的选择」 | ✅ | 充分 |
-| 15 | Robitzsch 2025, `10.1080/10705511.2024.2379495` | PR | 1 | RI-CLPM 的 illusory between-person component | ✅ 方法论文 | 充分 |
-| 16 | Cameron & Overall 2015（APIM）, `10.1080/01650250444000405` | PR | 3 / 4 | APIM 双路径模型 | ✅ | 充分 |
-| 17 |Ledgerwood, Koval &.Samek 2018, `10.1037/pspp0000166` | PR | 2 / 3 | `OutcomeDependence` 多维主观模型 | ✅ | 充分 |
-| 18 | Overall, Sibley & Struthers 2018, `10.1111/pere.12240` | PR | 2 / 3 | APIM 反思 | ✅ | 充分 |
-| 19 | Kenny & La Voie 1984, `10.1111/j.1467-6494.1986.tb00393.x` | PR | 2 / 3 | Social Relations Model | ⚠️ DOI 实际是 Malloy & Kenny 1986 *J Personality*（报告著录一致），Kenny & La Voie 1984 走另一 DOI `10.1016/S0065-2601(08)60144-6`（也已核实）。两条都在。 | 充分（无缺陷） |
-| 20 | Grzyb & Talboom 2018, `10.1111/j.1467-8721.2009.01621.x` | PR | 2 / 3 | Adult Attachment 综述 | ✅ | 充分 |
-| 21 | Fraley et al. 2005, `10.1177/0146167205276865` | PR | 2 / 3 | ECR-R 信效度 | ✅ | 充分 |
-| 22 | Chivers et al. 2025, `10.1111/jftr.70019` | PR | 3 / 7 | 关系权力动力量表（2025 新工具） | ✅ | 充分 |
-| 23 | Eaton & Finkel 2026, `10.1177/01461672251409849` | PR | 1 / 7 | 权力知觉偏差 | ✅ | 充分 |
-| 24 | Overall et al. 2026, `10.1146/annurev-psych-012325-032022` | PR | 2 / 6 | 权力与意识形态 | ✅ | 充分 |
-| 25 | Laurenceau / Bar-Kalifa et al. 2000, `10.1177/0146167200265007` | PR | 2 / 5 | 关系质量成分 CFA | ✅ | 充分 |
-| 26 | Gable et al. 2004, `10.1037/0022-3514.87.2.228` | PR | 2 / 4 | 积极事件分享（capitalization） | ✅ | 充分 |
-| 27 | Drigotas, Rusbult, Wieselquist & Whitton 1999, `10.1037/0022-3514.76.1.72` | PR | 2 / 4 | 理想（ideals）vs 现实 | ✅ | 充分 |
-| 28 | Gerych 2007, `10.1198/016214506000001437` | PR | 2 / 3 | strictly proper scoring rules | ✅ | 充分 |
-| 29 | **Liell-Cock & Staton 2025, `10.1145/3704890`** | PR | 1 / 3 | credal set 朴素组合系统性过松（R07 D1 的核心） | ✅ 编程语言论文，**该主张的领域归属正确**（组合子的非交换性），不是勉强类比 | 充分 |
-| 30 | **Bodenmann & Frighi 2011, `10.1007/s11238-014-9448-x`**（R04）/ `10.1016/j.cpr.2015.07.002`（R10） | PR | 1 / 5 | reciprocity 的判别实验 | ⚠️ R10 的 N=443 落在 `10.1016/j.cpr.2015.07.002`（*Clinical Psychology Review*，解析一致）。**但 R10 L825 与 manifest 的「We-ness Questionnaire 完整出版元数据未核实」自标诚实。** | 充分 |
-| — | **`10.1007/s11238-014-9448-x`（R04 用于 SOEP 否定判定）** | PR（著录错） | 1 / 4 | D11 SOEP `NOT_DYADIC_ENOUGH` 的 `negative_evidence_source` | ❌ **期刊归属错误（M2）。** 否定判定的唯一依据来源著录不准 | **MAJOR** |
+> **`SUPERSEDED`（Round 3 `A1`，依 M-7 / R-B2 / `EV2` §5.9+§6.3）**
+>
+> **上一版本本节的根因**：表列定义为 `Tier / Pointer / Year / Lanes / n / Resolved`（§9），**没有 `author` 列，也没有 `title` 列**。**因此「作者归属错误」这一缺陷类在本报告内部结构上不可能被发现** —— 审计者的注意力被结构性地引导到 DOI 是否解析、期刊/年份是否一致，而「这个 DOI 指向的是谁」根本没有列可以写、也没有列可以查。**这不是一次疏忽，是一个 schema 缺陷。**
+>
+> **Round 3 做的三件事**：(1) **给本表新增 `Author (Crossref)` 与 `Title (Crossref)` 两列**，30 行的 Crossref 真值全部实测填入 —— 这样本表**现在可以自我纠错**；(2) **修正 16 行作者归属 + 2 行题录精化**（§4.2.1 逐条记录，含原值、真值、影响）；(3) **撤回本节结论「30 项中 28 项强度充分」**。
+>
+> **为什么必须撤回而不是就地改数**：原结论「28 项强度充分」是在一张**身份错了 ≥16 行**的表上作出的。**你无法为一个你叫不出名字的来源背书强度。** 更严格地说：那 28 个 ✅ 中的每一个，其 ✅ 都是对**错误的论文**作出的。**逐格改数会保留「这张表已被完整评估过」这个印象，而那个印象正是错的。**
+>
+> **§9 的 642 行表未加这两列** —— 见 §9 的结构性限制声明。加列需要为 642 行逐条取回 author/title，其中 **257 个 URL + 44 个 arXiv + 109 个 `POINTER_ONLY` 根本没有 Crossref 记录可取**，实际只有 DOI 行可填。这既是一次新的扫描（Round 3 禁止），也会产生一半空格一半实值的混合表。**本节选择「明确的诚实声明 + 已知坏行列表」这条 M-7 允许的替代路线**（见 §9）。
 
-**承重层结论：30 项承重来源中 28 项强度充分；2 项不合格（Joel 2020 转述承重、R04 SOEP 否定判定著录错）。** 未发现「meta-analysis 被要求承担当需要 primary data 的主张」这一具体失效模式 —— 全 swarm 对 review 类来源的用法（Le & Agnew、Tran、Sargon 等）都是正当的。这是本审计的**正面结论**，与 A01 的判断方向一致但依据不同（我核的是 DOI 层，不是论证层）。
+**表（新列：`Author (Crossref)` / `Title (Crossref)` 均为本 child 2026-09-27 实测；删除线为原表著录）**
+
+| # | 来源（原表著录） | **`Author (Crossref)`** | **`Title (Crossref)`** | Tier | lanes | 承重的主张 | 强度是否够 | 裁定 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Rusbult et al. 1998, `10.1111/j.1475-6811.1998.tb00177.x` | Rusbult, C. E.; Martz, J. M.; Agnew, C. R. | "The Investment Model Scale: Measuring commitment level, satisfaction level, quality of alternatives, and investment size" | PR | **7** (R00 R01 R02 R03 R06 R14 R17) / 13 次 | `Dedication` / commitment 的测量基础；IMS 四分量 | ✅ 原始量表论文，全 swarm 最稳的单点 | 充分 |
+| 2 | Laurenceau et al. 1998, `10.1037/0022-3514.74.5.1238` | Laurenceau, J.-P.; Barrett, L. F.; Pietromonaco, P. R. | "Intimacy as an interpersonal process…" | PR | 5 / 10 | intimacy 作为人际过程（IPM 骨架） | ✅ 原始理论 + diary 验证 | 充分 |
+| 3 | Le & Agnew 2003, `10.1111/1475-6811.00035` | Le, B.; Agnew, C. R. | "Commitment and its theorized determinants: a meta-analysis of the Investment Model" | **REVIEW** | 5 / 9 | Investment Model 承诺的 meta 证据 | ✅ meta-analysis，正当用途 | 充分 |
+| 4 | Tran, Judge & Kashima 2019, `10.1111/pere.12268` | Tran, P.; Judge, M.; Kashima, Y. | "Commitment in relationships: an updated meta-analysis of the Investment Model" | **REVIEW** | 4 / 9 | 更新版 Investment Model meta；R02 报 R²=.54 | ✅ meta-analysis，正当用途 | 充分 |
+| 5 | **Joel et al. 2020 PNAS, `10.1073/pnas.1917036117`** | Joel, S.; Eastwick, P. W.; Allison, C. J.; Arriaga, X. B.; Baker, Z. G.; Bar-Kalifa, E.; (+80) | "Machine learning uncovers the most robust self-report predictors of relationship quality across 43 longitudinal datasets" | PR | 4 / 9 | 43 纵向 couples 研究的关系质量自报预测因子 | ⚠️ **primary 被当 meta 用**。R16 L522 明确写「不主张 S23 正文的五条实证结论（书目已核实，**正文未读**；结论经转述）。该来源在 `R16-LK5` 与 `B3` 中 load-bearing」。R06/R14/R17 均以转述形式承重。 | **MAJOR** |
+| 6 | ~~Rempel, Sayer & Lehman 1985~~ → **Rempel, Holmes & Zanna 1985**, `10.1037/0022-3514.49.1.95` | **Rempel, J. K.; Holmes, J. G.; Zanna, M. P.** | "Trust in close relationships" | PR | 2 / 4 | `Trust` = credibility/dependability/faith/predictability | ✅ 修正后**更贴合**（原归属的 "Sayer & Lehman" 不在该文的作者名单内）· *JPSP* 49(1):95–112 · R01 已自查并更正上游卷期错 | 充分 |
+| 7 | ~~Rempel & Holmes 1989~~ → **Berscheid, Snyder & Omoto 1989**, `10.1037/0022-3514.57.5.792` | **Berscheid, E.; Snyder, M.; Omoto, A. M.** | "The Relationship Closeness Inventory: Assessing the closeness of interpersonal relationships" | PR | 2 / 4 | `Closeness` ≠ `Liking`（可分性） | ✅ 修正后**恰好命中**——RCI 的原始量表论文 | 充分 |
+| 8 | Aron et al. 1992, `10.1037/0022-3514.63.4.596` | Aron, A.; Aron, E. N.; Smollan, D. | "Inclusion of Other in the Self Scale and the structure of interpersonal closeness" | PR | 3 / 6 | IOS 自我-他人包含 → 关系亲密 | ✅ R01 已自查 DOI 末位 | 充分 |
+| 9 | Keltner 2003, `10.1037/0033-295x.110.2.265` | Keltner, D.; Gruenfeld, D. H.; Anderson, C. | "Power, approach, and inhibition" | PR | 3 / 5 | power = approach + inhibition（双轴） | ✅ 理论原始论文 | 充分 |
+| 10 | ~~Powers & Overall 2017~~ → **Finkel, Simpson & Eastwick 2017**, `10.1146/annurev-psych-010416-044038` | **Finkel, E. J.; Simpson, J. A.; Eastwick, P. W.** | "The Psychology of Close Relationships: **Fourteen Core Principles**" | PR | 3 / 4 | 十四核心原则（构念收敛的上位框架） | ✅ 修正后**恰好命中**（标题即含 "Fourteen Core Principles"）；仍属 Annual Review 综述性文章，**作框架不作证据** | 可接受（作框架不作证据） |
+| 11 | ~~Ben-Shahar & Ostrow 2008~~ → **Finkel, Hui, Carswell & Larson 2014**, `10.1080/1047840x.2014.863723` | **Finkel, E. J.; Hui, C. M.; Carswell, K. L.; Larson, G. M.** | "The **Suffocation of Marriage**: Climbing Mount Maslow Without Enough Oxygen" | PR | 2 / 4 | 「窒息婚姻」批判 LHRM 的 `S/O/D` 目标 | ✅ 修正后**恰好命中**（标题即含 "Suffocation of Marriage"）；观点论文，匹配「批评」用途 | 充分 |
+| 12 | ~~Hamaker et al. 2024~~ → **Muthén, Asparouhov & Witkiewitz 2024**, `10.1037/met0000701` | **Muthén, B. M.; Asparouhov, T.; Witkiewitz, K.** | "Cross-lagged panel modeling with **binary and ordinal outcomes**" | PR | 2 / 4 | CLPM 在二元/序数结果下的问题 | ✅ 修正后**恰好命中** | 充分 |
+| 13 | Hamaker & Grasman 2015, `10.1037/a0038889` | Hamaker, E. L.; Kuiper, R. M.; Grasman, R. P. P. P. | "A critique of the cross-lagged panel model" | PR | 2 / 4 | CLPM 批判 | ✅ | 充分 |
+| 14 | Lucas 2023, `10.1177/25152459231158378` | Lucas, R. E. | "Why the Cross-Lagged Panel Model Is Almost Never the Right Choice" | PR | 2 / 4 | 「CLPM 几乎从不是对的选择」 | ✅ | 充分 |
+| 15 | Robitzsch ~~2025~~ **2024**, `10.1080/10705511.2024.2379495` | Robitzsch, A.; Lüdtke, O. | "A Note on the Occurrence of the Illusory Between-Person Component in the Random Intercept Cross-Lagged Panel Model" | PR | 1 | RI-CLPM 的 illusory between-person component | ✅ 方法论文；**年份订正 `2025` → `2024`**（Crossref `issued`；*Structural Equation Modeling* 32(1):36–45） | 充分 |
+| 16 | ~~Cameron & Overall 2015（APIM）~~ → **Cook & Kenny 2005**, `10.1080/01650250444000405` | **Cook, W. L.; Kenny, D. A.** | "The **Actor–Partner Interdependence Model**: A model of bidirectional effects in developmental stu…" | PR | 3 / 4 | APIM 双路径模型 | ✅ 修正后**恰好命中**（标题即含 "Actor–Partner Interdependence Model"）· *Int. J. Behav. Dev.* 29(2):101–109 | 充分 |
+| 17 | ~~Ledgerwood, Koval &.Samek 2018~~ → **Gerpott, Balliet, Columbus, Molho & de Vries 2018**, `10.1037/pspp0000166` | **Gerpott, F. H.; Balliet, D.; Columbus, S.; Molho, C.; de Vries, R. E.** | "How do people think about interdependence? A multidimensional model of **subjective outcome interdependence**" | PR | 2 / 3 | `OutcomeDependence` 多维主观模型 | ✅ 修正后**恰好命中**（原归属 Ledgerwood 是**另一构念族**）· *JPSP* 115(4):716–742 | 充分 |
+| 18 | ~~Overall, Sibley & Struthers 2018~~ → **Kenny 2018**（单作者）, `10.1111/pere.12240` | **Kenny, D. A.** | "Reflections on the actor–partner interdependence model" | PR | 2 / 3 | APIM 反思 | ✅ 修正后**恰好命中**（单作者文章，原表三人署名不可能成立）· *Personal Relationships* 25(2):160–170 | 充分 |
+| 19 | Kenny & La Voie 1984, `10.1111/j.1467-6494.1986.tb00393.x` | **Malloy, T. E.; Kenny, D. A.**（1986） | "The Social Relations Model: An integrative method for personality research" | PR | 2 / 3 | Social Relations Model | ⚠️ 原表已自行披露：DOI 实际是 **Malloy & Kenny 1986** *Journal of Personality* 54(1):199–225（报告著录一致）；Kenny & La Voie 1984 走另一 DOI `10.1016/S0065-2601(08)60144-6`（也已核实）。两条都在。**本行是原表中唯一一处「已知不一致但已披露」的项，Round 3 复验确认该披露为真。** | 充分（无缺陷） |
+| 20 | ~~Grzyb & Talboom 2018~~ → **Roisman 2009**（单作者）, `10.1111/j.1467-8721.2009.01621.x` | **Roisman, G. I.** | "Adult Attachment" | PR | 2 / 3 | Adult Attachment 综述 | ✅ 修正后**年份与作者同时订正**（`2018` → `2009`）；*Current Directions in Psychological Science* 18(2):122–126。**注意：该文是 CDPS 的短篇综述，不是 meta-analysis**，措辞不宜用「meta」 | 充分 |
+| 21 | ~~Fraley et al. 2005~~ → **Sibley, Fischer & Liu 2005**, `10.1177/0146167205276865` | **Sibley, C. G.; Fischer, R.; Liu, J. H.** | "Reliability and Validity of the Revised Experiences in Close Relationships (**ECR-R**) Self-Report Measure of Adul…" | PR | 2 / 3 | ECR-R 信效度 | ✅ 修正后**恰好命中**（标题即含 "ECR-R"）· *PSPB* 31(11):1524–1536 | 充分 |
+| 22 | ~~Chivers et al. 2025~~ → **Junkins, Derringer, Ogolsky, Hardesty & Weisberg 2025**, `10.1111/jftr.70019` | **Junkins, E. J.; Derringer, J.; Ogolsky, B. G.; Hardesty, J. L.; Weisberg, Y.** | "**Measures of Relationship Power Dynamics** in Romantic Relationships" | PR | 3 / 7 | 关系权力动力量表（2025 新工具） | ✅ 修正后**恰好命中**（标题即含 "Measures of Relationship Power Dynamics"）· *JFTR* 18(1):170–191。**⚠️ 交叉印证**：`10.31234/osf.io/f6wbn_v1`（§3.3.1 M4）实测标题与此**同一篇** | 充分 |
+| 23 | ~~Eaton & Finkel 2026~~ → **Körner & Overall 2026**, `10.1177/01461672251409849` | **Körner, R.; Overall, N. C.** | "**Bias in Perceptions of Power** in Close Relationships: The Role of Self-Protection, Pro-Relationship, and Power …" | PR | 1 / 7 | 权力知觉偏差 | ✅ 修正后**恰好命中** · *PSPB* | 充分 |
+| 24 | Overall ~~et al.~~ **& Hammond** 2026, `10.1146/annurev-psych-012325-032022` | **Overall, N. C.; Hammond, M. D.**（仅 2 位作者） | "Power and Ideology in Close Relationships" | PR | 2 / 6 | 权力与意识形态 | ✅ 题录精化：2 位作者不应用 "et al." · *Annu. Rev. Psychol.* 77(1):393–421 | 充分 |
+| 25 | ~~Laurenceau / Bar-Kalifa et al. 2000~~ → **Fletcher, Simpson & Thomas 2000**, `10.1177/0146167200265007` | **Fletcher, G. J. O.; Simpson, J. A.; Thomas, G.** | "The **Measurement of Perceived Relationship Quality Components**: A Confirmatory Factor Analytic Approach" | PR | 2 / 5 | 关系质量成分 CFA | ✅ 修正后**恰好命中** · *PSPB* 26(3):340–354 | 充分 |
+| 26 | Gable et al. 2004, `10.1037/0022-3514.87.2.228` | Gable, S. L.; Reis, H. T.; Impett, E. A.; Asher, E. R. | "What Do You Do When Things Go Right? The Intrapersonal and Interpersonal Benefits of Sharing Positive Events" | PR | 2 / 4 | 积极事件分享（capitalization） | ✅ | 充分 |
+| 27 | ~~Drigotas, Rusbult, Wieselquist & Whitton 1999~~ → **Fletcher, Simpson, Thomas & Giles 1999**, `10.1037/0022-3514.76.1.72` | **Fletcher, G. J. O.; Simpson, J. A.; Thomas, G.; Giles, L.** | "**Ideals** in intimate relationships" | PR | 2 / 4 | 理想（ideals）vs 现实 | ✅ 修正后**恰好命中** · *JPSP* 76(1):72–89（R14 自查页码 54–71 → 72–89 正确） | 充分 |
+| 28 | ~~Gerych 2007~~ → **Gneiting & Raftery 2007**, `10.1198/016214506000001437` | **Gneiting, T.; Raftery, A. E.** | "**Strictly Proper Scoring Rules**, Prediction, and Estimation" | PR | 2 / 3 | strictly proper scoring rules | ✅ 修正后**恰好命中** · *JASA* 102(477):359–378 | 充分 |
+| 29 | **Liell-Cock & Staton 2025, `10.1145/3704890`** | Liell-Cock, J.; Staton, S. | "Compositional Imprecise Probability: A Solution from Graded Monads and Markov Categories" | PR | 1 / 3 | credal set 朴素组合系统性过松（R07 D1 的核心） | ✅ 编程语言论文，**该主张的领域归属正确**（组合子的非交换性），不是勉强类比 · *PACMPL* 9(POPL):1596–1626 | 充分 |
+| 30 | ~~Bodenmann & Frighi 2011~~ → **Bacon, Conte & Moffatt 2014**, `10.1007/s11238-014-9448-x`（R04）/ `10.1016/j.cpr.2015.07.002`（R10） | **Bacon, P. M.; Conte, A.; Moffatt, P. G.** | "**Assortative mating on risk attitude**" | PR | 1 / 5 | reciprocity 的判别实验 | ❌ **撤回**。`10.1007/s11238-014-9448-x` 实为 *Theory and Decision* 77(3):389–401 的**风险态度同类婚配**研究，**与「reciprocity 的判别实验」无关**（即 M2 的期刊归属错误之外的**第二重**身份错误：作者也错）。R10 的 N=443 落在**另一个 DOI** `10.1016/j.cpr.2015.07.002`（*Clinical Psychology Review*，Falconier et al.）。**「We-ness Questionnaire 完整出版元数据未核实」的自标诚实（R10 L825 / manifest）保持有效。** | **WITHDRAWN / 需重新指向** |
+| — | **`10.1007/s11238-014-9448-x`（R04 用于 SOEP 否定判定）** | Bacon, P. M.; Conte, A.; Moffatt, P. G. | "Assortative mating on risk attitude" | PR（著录错） | 1 / 4 | D11 SOEP `NOT_DYADIC_ENOUGH` 的 `negative_evidence_source` | ❌ **期刊归属错误（M2）+ 作者归属错误（第 30 行）。否定判定的唯一依据来源著录不准。** | **MAJOR** |
+
+**修正计数（本 child 独立实测，见 §4.2.1）**
+
+| 类别 | 行 | 数 |
+|---|---|---:|
+| **作者归属错误** | 6 · 7 · 10 · 11 · 12 · 16 · 17 · 18 · 20 · 21 · 22 · 23 · 25 · 27 · 28 · 30 | **16 / 30 = 53.3%** |
+| 题录精化（非作者） | 15（年份 `2025`→`2024`）· 24（2 位作者不应用 `et al.`） | 2 / 30 |
+| 原表即正确 | 1 · 2 · 3 · 4 · 5 · 8 · 9 · 13 · 14 · 19 · 26 · 29 | 12 / 30 |
+| **合计** | | **30 / 30** |
+
+### 4.2.1 修正审计记录（Round 3 `A1`）
+
+**方法**：对**本表 30 行的 30 个 DOI + 12 个守卫对照行**逐条 `GET https://api.crossref.org/works/<DOI>`（UA `LHRM-R3A1-Repair/1.0`，2026-09-27），取 `author` / `title` / `issued` / `container-title` / `volume` / `issue` / `page`。**脚本 `a1_crossref.py`，完整原始输出留存于 `a1_crossref_out.txt`；调用与逐行输出见 `A01` §13.4。**
+
+**守卫对照的作用（防误改）**：12 个被判定为**原表即正确**的行被**一并复查**以确保本轮没有把它们改坏。实测结果：**12 / 12 与原表著录一致，未改动。** 若不做这一步，「批量修正」很容易把对的行一起改错，而那正是本节要修的缺陷类本身。
+
+**修正的净效果（必须与缺陷计数一起读）**：
+
+| 结果 | 行 | 数 |
+|---|---|---:|
+| 修正后**该来源与承重主张更贴合**（原归属根本不是这篇论文） | 6 · 7 · 10 · 11 · 12 · 16 · 17 · 18 · 20 · 21 · 22 · 23 · 25 · 27 · 28 | **15** |
+| 修正后**该来源不再支撑其承重主张** | **30** | **1** |
+| 题录精化，主张不变 | 15 · 24 | 2 |
+
+**这 15 行的修正方向值得单独记录**：原审计把它们记成了 A、B、C 三位并不在作者名单里的人（例如把 "Fourteen Core Principles" 记给 Powers & Overall、把 "Suffocation of Marriage" 记给 Ben-Shahar & Ostrow、把 APIM 记给 Cameron & Overall）。**修正后 Crossref 标题往往与承重主张逐字吻合** —— 这说明**这些主张本身多半是对的，错的是它们被归属给的作者**。**但这不构成对主张内容的背书**：本 child 只读了 Crossref 元数据与题名，**未读任何一篇论文的正文或摘要**，因此**只裁定「身份」，不裁定「该论文是否真的支持该主张」**。后者是 `A01` / `A03` 的职责。
+
+**第 30 行是本轮唯一的实质损失**：「reciprocity 的判别实验」这一承重主张，在其原本指向的 DOI 上**找不到支撑**。该主张可能由 R10 的另一个 DOI（`10.1016/j.cpr.2015.07.002`，Falconier et al. 2015）承载 —— **但本 child 未核该 DOI 是否真的包含一个 reciprocity 判别实验**（那需要读正文）。已登记为 §10 P1。
+
+**与 Round 2 复核的关系**：Round 2 lane `J` 打开 19 行、实测 10 行错；Round 2 `EV2` 独立打开 J 未开的 11 行、实测 6 行错；两者合并覆盖 30 行中的 30 行，得 `≥16/30 ≈ 53%`。**本 child 未复跑 J 与 EV2 的抽样，而是对全部 30 行做了完整复验**（因此本节的分母是确定的 30，不是「至少 30」）。**结果与 `J`/`EV2` 的头条数字一致：16 行作者归属错。** 两处口径差异记录在案：(a) `EV2` §7.2 指出 J 的表实际列 **10** 个 ❌ 而非其散文的 11 —— **本 child 的 16 是独立计数，不依赖该纠正**；(b) `EV2` §7.2 判第 24 行（Overall 2026）为 ✅ —— **本 child 判为「✅ 但需题录精化」**，因为该文只有 2 位作者，写 "et al." 不准确。这是**本 child 与 `EV2` 唯一的实质分歧，且方向是 `EV2` 更宽松。**
+
+**责任归属（沿用 `EV2` §8 non-claim #4，本 child 无新证据改变它）**：本 child **未读 Wave-1 报告正文**，因此**不主张这 16 处错著录是从 lane 继承的还是 `A04` 自行编造的**。`UNDETERMINED`。本 child 主张的是两件可验证的事：**(a) 在 `A04` 的交付物内部，身份列与它自己记录的指针不一致**；**(b) `A04` 的方法声明（§8.3.6 声称核过题名/年份/期刊一致性）与其表结构（无 author/title 列）不相容。**
+
+### 4.2.2 承重层结论（Round 3 重写；**「28 项强度充分」已撤回**）
+
+> **`SUPERSEDED`（Round 3 `A1`，依 M-7 / R-B2）**：上一版本本节结论逐字为：
+>
+> 「**承重层结论：30 项承重来源中 28 项强度充分；2 项不合格（Joel 2020 转述承重、R04 SOEP 否定判定著录错）。未发现「meta-analysis 被要求承担当需要 primary data 的主张」这一具体失效模式 —— 全 swarm 对 review 类来源的用法（Le&Agnew、Tran、Sargon 等）都是正当的。这是本审计的正面结论，与 A01 的判断方向一致但依据不同（我核的是 DOI 层，不是论证层）。**」
+>
+> **该结论撤回。** 三条理由：
+> 1. **它的分母不可信。** 「28 项强度充分」是在一张 **≥16 行身份错误**的表上作出的。那 28 个 ✅ 每一个都是对**错误的论文**作出的判断，因此**不构成 28 项肯定证据，只构成 28 次未生效的检查**。
+> 2. **它的第二句（negative result）现在有反例。** 「未发现 meta-analysis 被要求承担当需要 primary data 的主张」—— 修正后可见第 11 行（`Finkel et al. 2014`，*Psychological Inquiry* 的**观点/评论**文章）与第 20 行（`Roisman 2009`，*CDPS* 的**短篇综述**）都曾被当作 primary 承重。**更根本的是 §2.2.1：tier 判定规则本身把 56% 的非 primary 工作标成了 PRIMARY，所以「未发现误用」这一观察的检出力接近于零 —— 判定规则与被检测对象用了同一套（错误的）primary 定义。** 这不是发现了误用，而是**这个 negative result 不具备发现误用的能力**。
+> 3. **它与本报告自身的 §2.2.1 冲突。** 上一版本同时写「350 ← 真正承载科学重量的数字」（已撤回）与「28/30 强度充分」——两者都在用 tier 与计数承载科学重量，而 §2.2.1 证明 tier 不编码证据强度。
+
+**Round 3 的替代结论（三层，逐层降强度）**：
+
+| 层 | 结论 | 强度 |
+|---|---|---|
+| **L1 身份层** | 30 行的 DOI 身份现已**逐行实测并写入表内**（含 `Author` / `Title` 两列）。**30 / 30 可自证**。「哪一个 DOI 指向谁」这个问题在 `A04` 内部现在**可回答**。 | **可复现的强陈述** |
+| **L2 身份-主张匹配层** | 15 行的修正后身份**比原归属更贴合**其承重主张（题名逐字吻合）；12 行原表即正确；**1 行（第 30 行）不再支撑其主张**。**但本 child 只核了题名，未读正文/摘要** —— 因此这一层是「题名层面的匹配」，**不是「论文是否真的支持该主张」的判定**。 | **中等强度的陈述，带明确限度** |
+| **L3 强度层** | **`WITHDRAWN`。** 本 child **不主张** 30 项中有多少项「强度充分」。该判断需要读正文，而本轮范围禁止。已登记为 §10 P2。 | **不主张** |
+
+**仍然成立的正面结论（缩小后仍然成立的部分）**：§2.2.1 之外，A04 关于**全局去重**的三层计数（`1,199 → 642 → 533`）与 109 个 `POINTER_ONLY` 的显式剔除**未被本轮任何修正触及**，本 child 独立复算确认其内部算术自洽（`642 − 109 = 533`；tier 表逐行加总 = 533）。**这与承重评估是两件事，不应互相引用。**
+
 
 ---
 
@@ -246,7 +439,15 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 
 ### 5.1 全 swarm `AGENT_RECALL` 标记分布
 
-`AGENT_RECALL` / `UNVERIFIED_AGENT_RECALL` 显式标记共 **85 处 / 16 份文件**：
+> **`SUPERSEDED`（Round 3 `A1` 实测）**：本节上一版本首句写「`AGENT_RECALL` / `UNVERIFIED_AGENT_RECALL` 显式标记共 **85 处 / 16 份文件**」。该句有两个问题：
+>
+> **(1) `UNVERIFIED_AGENT_RECALL` 在 18 份 lane 文件中出现 0 次。** 本 child 对 18 份 Wave 1 报告做严格 token 检索（`(?<![A-Z_])UNVERIFIED_AGENT_RECALL(?![A-Z_])`），命中 **0**。该字符串在**整个 `docs/research/overnight-2026-09-27/` 语料内只出现在审计文件自身**（`A01` 的 F-12 与 `NR-ALL-1`、以及本行）。**顺带定位了 `A01` F-12 的同一处错误**：F-12 把该 token 归属 **R11**，而 **R11 全文 `AGENT_RECALL` 出现 0 次** —— 一个不写 `AGENT_RECALL` 的 lane 不可能使用 `UNVERIFIED_AGENT_RECALL`。`A01` §3.3 已据此订正，本行同步订正。
+>
+> **(2) `85 处 / 16 份文件` 不可复现，但本 child 不宣称它错。** 严格 token 计数（把散文中的纪律声明一并计入）实测为 **36 处 / 13 份文件**，逐 lane 为 `01`=2 `02`=8 `03`=2 `04`=1 `05`=3 `06`=2 `07`=1 `09`=3 `10`=2 `12`=3 `13`=1 `14`=7 `17`=1，**其余 5 份为 0**。本 child **不知道 A04 的计数规则**（是否区分「标记」与「纪律声明里的提及」、是否含大小写变体、是否含 `AGENT_RECALL（` 之类的行内用法）。**因此本行标 `NOT_REPRODUCIBLE`，不擅自改数。** 需要 A04 公开其计数规则才能对齐 —— 已登记为 §10 P2。**关键差异点是 R11**：A04 的 16 份文件清单包含 R11，而 R11 的 `AGENT_RECALL` 实测为 **0**。
+>
+> **本节下方的逐 lane 分布表按原文保留**（其逐 lane 数与本 child 的严格计数口径不同，且其**处置纪律**列的内容 —— 各 lane 的降级声明 —— 本 child 抽样核对后确认在文中确实存在，见 §11 Mission 5）。
+
+`AGENT_RECALL` / ~~`UNVERIFIED_AGENT_RECALL`~~ 显式标记共 **85 处 / 16 份文件**（`NOT_REPRODUCIBLE`，见上方 supersession 注）：
 
 | lane | 标记数 | 处置纪律 |
 | --- | ---: | --- |
@@ -297,6 +498,18 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 
 ## 6. Provenance-of-provenance（冻结 fixture 的权利/归属边界）
 
+> ### ⚠️ Round 3 `A1` 权利/归属声明（依 Architect adjudication **X-7**，逐字要点）
+>
+> **X-7 裁定：`NO RIGHTS VIOLATION ESTABLISHED; PROVENANCE OMISSION CONFIRMED.`**
+>
+> 1. **唯一被授权的 LHRM substrate 是冻结的、仅含改写的 Fixture 003 包（frozen paraphrase-only Fixture 003 package）。**
+> 2. **StoryCorps 正文 / 音频保持 `HUMAN_REVIEW_REQUIRED / pointer-only`。**
+> 3. **不得升级权利状态**（`No rights upgrade`）；**fail-closed 仍然有效**（adjudication §C.7）。
+> 4. **本报告（A04）自身不使用任何 Fixture 003 单元。** 实测：对本文件全文检索 Fixture 003 单元编号模式 `S\d{3}` → 命中 5 次，**逐条核对后全部是 Elsevier PII / DOI 字符串**（`S0010-0277(02)0549-8`、`S0065-2601(08)60144-6`）与 lane 内编号 `[S34]`，**没有一个是 Fixture 003 的单元编号**。**A04 未引用、未改写、未重建任何 Fixture 003 正文。**
+> 5. **`SC/transcript/pNN` 是指针路径标签，不是证据可得性的主张。** 本报告 §6.3 描述 R13 的做法时使用该路径标签，**其含义是「R13 的文档里出现了这个路径」，不意味着 A04 或任何人曾取得该 transcript 单元**。**本报告不主张、也未依赖任何 transcript / raw / anchored 证据。**
+> 6. **本节的缺陷裁定性质**：§6.3 的 F1 与 §6.2 的 F2 是**文档层 provenance 遗漏**（某 lane 的文档没有继承它所用 substrate 的权利边界），**不是**「某 lane 取得了不该取得的材料」的认定。**X-7 明确「未成立权利违反」与本节的两条缺陷裁定不矛盾** —— 前者裁定的是权利事实，后者裁定的是文档完整性。
+> 7. **本 child 未做也不主张**：未审计其余 21 份报告的 Fixture 003 使用与权利陈述状态（**不在白名单内**）；未对任何 Fixture 003 单元做内容级评估；未主张任何 rights 状态应当被放宽。
+
 ### 6.1 三份冻结 fixture 的权利状态（基线）
 
 | Fixture | 源 | 权利 | LHRM 存储边界 |
@@ -318,6 +531,8 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | R12 / R05 / 其余 | 未引用 fixture | 不适用 | ✅ |
 
 ### 6.3 缺陷 F1（MAJOR）：R13 丢失 Fixture 003 的 rights 边界
+
+> **Round 3 `A1` 按 X-7 限定本节的裁定性质**：F1 是**文档层 provenance 遗漏**，**不是**「权利违反已发生」的认定（X-7：`NO RIGHTS VIOLATION ESTABLISHED; PROVENANCE OMISSION CONFIRMED`）。本节描述的 `SC/transcript/p004`–`p011` 是**R13 文档中出现的指针路径标签**；**A04 自身未取得、未引用、未重建任何 transcript / raw / anchored 证据**，本节不依赖也不主张这类证据可得。见 §6 顶部 Round 3 声明第 4–6 条。
 
 **事实**：R13（`13_LLM_SKILL_INTERVIEW_LAYER.md`）是全 swarm 唯一以「LLM 读关系材料」为 mission 的 lane。它：
 
@@ -375,7 +590,7 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | Parsons & Bales 1955 原件 | R11 | 已解析记录 + `LCCN 55007343` + Internet Archive id + 「无文字层，**未读正文**」 | R11 另明写「**本文件正文从未引用 P&B**」 | ✅ 已妥善隔离 |
 | We-ness Questionnaire (2021) 完整元数据 | R10 | 「完整出版元数据（期刊名/卷期/页码/DOI）本次未核实」 | 我在 340 DOI 集中未见该条 | ✅ 已隔离，未作论据 |
 | Peterman 1963 作者/卷期 | R09 | `AGENT_RECALL` 未核实 | 未在 340 DOI 集中 | ✅ 已隔离 |
-| Geyer et al. 1999 EUROFAMCARE | R11 | **未标不确定** | DOI 不解析 + 前缀与著录期刊族不符 | **MODERATE**，见 §3.3.2 D5 |
+| Geyer et al. 1999 EUROFAMCARE | R11 | **未标不确定** | DOI 不解析 —— 但**「前缀与著录期刊族不符」这一理由不成立**（`1662-9647` 正是 GeroPsych 的 ISSN 前缀）。**真实缺陷是 DOI 分隔符错误**：报告写 `10.1024/1662-9647.a000031`（点），真值 `10.1024/1662-9647/a000031`（斜杠）= **Di Rosa, M.; Kofahl, C.; McKee, K.; Bień, B.; Lamura, G.; Prouskas, C. (+2), 2011, *GeroPsych* 24(1):5–18**；**作者也不是 Geyer 1999**。裁定改记 **`UNVERIFIED_DOI`**，见 §3.3.2 D5 | **MODERATE**（理由已订正，缺陷本身仍成立） |
 | R16 Besser/Perla/Hamaker 2022 | R05 | 「DOI 未核实」 | 未在 340 DOI 集中 | ✅ 已隔离 |
 | R03 A7 Collins & Read 1990 / A8 Fraley & Shaver 2000 / A6 Griffin & Bartholomew 1994 | R03 | `UNVERIFIED_DOI` + U 列 | 11 个 `UNVERIFIED_DOI` 条目 R03 已在 L399 统一声明「完整作者名单或期刊卷期本次未逐一核对」 | ✅ **R03 的处理是全 swarm 最规范的**：19 个 instrument 条目逐条标 `UNVERIFIED_DOI` 并配 U 编号，末尾统一免责 |
 
@@ -392,7 +607,13 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 3. **CONTRADICTION｜R14 的 novel-art 论证与 R14 自己的引用纪律矛盾。** R14 L275 批评上游「全部引用未经 DOI 级核实」并给出**正确**的更正；同一份报告 L409/L411 用两条 `AGENT_RECALL` 承重。见 §5.3。
 4. **CONTRADICTION｜R13 的评测材料与 R13 的合规声明脱节。** R13 L477 正确识别「LLM 预训练记忆是窗口外旁路，必须作为混淆变量显式声明」，但对同一份材料的 `ai-train=no` / `POINTER_HASH_ONLY` 零提及。见 §6.3。
 5. **CONTRADICTION｜corpus 的 fixture 推荐段（001=LGSCO / 003=Carty）与 main 实际冻结集（001=Carty / 003=StoryCorps）3 项中 2 项不符**，且该冲突**只存在于 issue comment，不在 corpus 文件内**（R00 S-4 已记录）。R00 / R15 知情并标注；**R17 不知情**。
-6. **NEGATIVE｜未发现 meta-analysis 被要求承担当需要 primary data 的主张。** 30 个承重来源逐条核查，2 个 review 类来源（Le & Agnew 2003、Tran 2019）都只用于它们能承重的 meta 主张。这与 Work Order 的顾虑相反。
+6. ~~NEGATIVE｜未发现 meta-analysis 被要求承担当需要 primary data 的主张。30 个承重来源逐条核查，2 个 review 类来源（Le & Agnew 2003、Tran 2019）都只用于它们能承重的 meta 主张。这与 Work Order 的顾虑相反。~~
+   > **`SUPERSEDED`（Round 3 `A1`，依 M-7 / R-B2）—— 该 negative result 撤回。**
+   >
+   > **撤回理由一：分母不可信。** 该结论建立在「30 个承重来源**逐条核查**」之上，而 §4.2.1 实测该表 **16 / 30 行作者归属错误**。**一个身份错了 16 行的表，不能支撑「逐条核查」这四个字。**
+   > **撤回理由二（更根本）：该 negative result 不具备发现误用的能力。** 它的检测方式是「检查是否出现 meta-analysis 承担当需要 primary data 的主张」，而**判定 primary 与 meta 的规则本身**（Crossref `type` + 题名正则）**系统性地把理论、方法论、综述、计算模型论文判为 PRIMARY**（§2.2.1 实测 **9/16 ≈ 56%**）。**判定规则与被检测对象共用同一套错误的 primary 定义，因此「未发现误用」的观察接近于零检出力** —— 这不是「查过没查到」，而是「这种查法查不出来」。
+   > **撤回理由三：修正后已能举出反例。** 第 11 行（`Finkel et al. 2014`，*Psychological Inquiry* 的**观点/评论**文章）与第 20 行（`Roisman 2009`，*CDPS* 的**短篇综述**）都曾被当作 primary 承重。
+   > **仍然成立的部分（缩小后）**：本报告**未发现** Work Order 所担心的那种**具体**失效模式（把一个明确的 meta-analysis 逼去承担当需要 primary data 的主张）在**作者归属原本就正确**的 12 行里发生。**但这不是「未发生」，是「在检出力接近零的检查下未被发现」。** 登记为 §10 P2。
 7. **NEGATIVE｜109 个「指针」不是来源。** 若把它们算进来源数，任何"150+/350/500"论证都会失真。
 8. **NEGATIVE｜我自己的抽取器制造了 16 个假 `NOT_FOUND`。** 首轮正则排除了 `)` 且误剥 `_`，把 9 个 Elsevier 平衡括号 DOI 和 4 个 Springer/T&F `_` 形态 DOI 弄坏。**已全部修正并逐条核实。** 记录此事实是因为：不修正就会把这 16 个合法 DOI 误报为 swarm 的引用错误 —— 那会是**假阳性**。审计工具的缺陷必须与被审对象的缺陷分开登记。
 
@@ -403,7 +624,7 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | U1 | 257 个 URL 的当前可达性 | 本 lane **未做 HTTP 实测**。不主张任何一个在 2026-09-27 live |
 | U2 | 44 个 arXiv id 的存在性 | 只做编号合理性目视检查，未查 arXiv API |
 | U3 | 44 个 arXiv id 的 peer-review 状态（多数 TIER=PREPRINT） | 需逐条查是否已发表；其中 `2603.*` / `2604.*` / `2609.*` 太新，不可能有期刊版 |
-| U4 | `PEER_REVIEWED_PRIMARY` vs `REVIEW` 的 304 项逐篇判定 | 只用 Crossref `type` + 题名正则。**分项计数是估计值** |
+| U4 | `PEER_REVIEWED_PRIMARY` vs `REVIEW` 的 304 项逐篇判定 | 只用 Crossref `type` + 题名正则。**分项计数是估计值** —— **Round 3 `A1` 已把这一点加重**：该规则有**系统性偏误**（理论 / 方法 / 综述 / 计算模型论文被系统性判为 PRIMARY），分层抽样 **9/16 ≈ 56%** 非 primary empirical work（§2.2.1）。**因此 `PRIMARY = 319` 与 `REVIEW = 31` 的分别计数不仅"不精确"，而是"方向性错误"；`350` 的合计仍可用。** 重出 primary-data 口径的分子需逐篇读摘要，**本轮未做**（§10 P1） |
 | U5 | 26 个 `LANDING_URL_NO_DOI` 的 primary/review 归类 | 只有 landing URL，无 DOI 记录；未逐页读 |
 | U6 | 80 个 `UNSTABLE_COPY` 与 331 个已解析 DOI 的对应关系 | 多数作者 PDF 的文件名不含 DOI，无法机械匹配。**因此"533 distinct source"仍可能低估去重不足** —— 同一篇文章可能以 DOI + 作者 PDF 两种形态各计一次 |
 | U7 | 57 个 `OFFICIAL_DATA` 的条款 currentness | 未逐条 live-fetch（与 R04 的 B-1 同源） |
@@ -425,11 +646,44 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 9. **不修改** `D:\coding\lhrm` 任何文件（已核对：本 lane 全部写操作均在 `C:\Users\gg828\AppData\Local\Temp\opencode\`）。
 10. **不主张** 上述任何发现构成对项目架构的裁决。`AGENTS.md` 的 Human sovereignty 条款不受本报告影响。
 
+### 8.4 Round 3 `A1` 追加的 non-claims（bookkeeping + citation 修复轮）
+
+11. **我不主张 30 项承重来源中有多少项「强度充分」。** §4.2.2 的 **L3 强度层 `WITHDRAWN`**。本 child 只读了 Crossref 元数据（author / title / issued / container-title / volume / issue / page），**未读任何一篇论文的正文或摘要**。因此本 child **只裁定「身份」，不裁定「该论文是否真的支持该主张」**。
+12. **我不主张那 16 处作者错著录的责任归属。** 本 child **未读 Wave-1 报告正文**，因此不主张这些错是**从 lane 继承**的还是 **`A04` 自行编造**的。`UNDETERMINED`（沿用 `EV2` §8 non-claim #4，本 child 无新证据改变它）。
+13. **我不主张 §4.2 修正后「更贴合」等于「已被验证」。** 15 行修正后 Crossref **题名**与承重主张逐字吻合，这**只说明身份找对了**。**题名吻合不证明该论文的结论支持该主张。** 这是两个不同的判断。
+14. **我不主张 §3.3.4 原清单中除 `h0046049` 外的 14 行是正确的。** 恰恰相反：该节已被证明会产生**假 PASS**（作者 / 年份 / 期刊 / 标题全对，只错在期号），因此其余各行通过的概率**不能假定为高**。它们在本轮一律标 **`NOT_REVERIFIED`** —— 那是把「假保证」降级为「无保证」，**不是**宣称它们错（§3.3.5 的全表重检**未执行**）。
+15. **我不主张 `85 处 / 16 份文件` 这个 `AGENT_RECALL` 计数是错的。** 我实测的严格 token 计数是 36 处 / 13 份文件，但**我不知道 A04 的计数规则**，因此标 `NOT_REPRODUCIBLE` 并**不改数**（§5.1）。**唯一确定的是：`UNVERIFIED_AGENT_RECALL` 在 18 份 lane 文件中出现 0 次**，该 token 应从本节的 token 清单中删除。
+16. **我不主张 §2.2.1 的 56% 是点估计。** 该抽样是**系统抽样**（每 20 行取 1），**不是随机抽样**；分类依据是**题名与出处类型**，不是对研究设计的判定；本 child **未重跑该抽样**（重跑属新的文献扫描，Round 3 禁止）。它是**区间信息**。
+17. **我不主张 `533` / `642` / `1,199` 这三个数被本轮修正触及。** 本轮修正的是 `1,201` 与 `2.3–3.4×`（**这两个数在 A04 侧原本就是错的**），以及 `878` / `1.65×` / `2.51×`。**`642 − 109 = 533` 与 tier 表逐行加总 = 533 这两处算术本 child 复算确认仍成立，未改动一个数字。**
+18. **我不主张 M5 / M6 背后的 R05 内容有问题。** 本轮**只撤销了 A04 对这两条 DOI 的错误判定**（实测它们解析成功）。**R05 L506 / L509 的指针是否被正确使用，是 R05 的事，不在本 child 白名单内。**
+19. **我不主张任何 Fixture 003 的权利状态应当被放宽或升级。** X-7 明确 `No rights upgrade`，fail-closed 继续有效。本 child 只陈述边界与 provenance 遗漏，**不做任何权利裁定**（权利裁定属 Human）。
+20. **我不主张本 child 审计了 Fixture 003 在其余 21 份报告中的使用情况。** §6 顶部声明第 7 条已登记该缺口。
+
 ---
 
 ## 9. 完整去重来源表（642 行 · 本报告的主要交付物）
 
 **列定义**：`Tier` = provenance tier；`Lanes` = 引用该指针的 lane（已映射为 R00–R17）；`n` = 该指针在 18 份报告中的出现次数；`Resolved` = `Y` = DOI 经 Crossref 或 DataCite 解析成功并与著录一致；`form-only` = URL/arXiv/ISBN 指针形式合法但本 lane 未做可达性实测；`N` = DOI 在 Crossref 与 DataCite 均不解析。
+
+> ### ⚠️ Round 3 `A1`：本表**结构上无法支持作者级检查**（manifest §7 M-7 的根因声明）
+>
+> **本表没有 `author` 列，也没有 `title` 列。** 这是 §4.2 承重表 **16 / 30 行作者归属错误**能够长期存在于本报告内部的**结构原因**，不是一次抽查疏漏：
+>
+> - 本表的列把审计者的注意力固定在「**这个指针存不存在、解析到哪、出现在哪些 lane、出现几次、属于哪一层**」这五个问题上。**「这个 DOI 指向的是谁」既没有列可以写，也没有列可以查。**
+> - 因此**作者归属错误这一缺陷类在 `A04` 内部不可能被发现** —— 不是「没查」，是**无处可查**。`Resolved = Y` 这一列只保证「DOI 解析到了某篇论文」，**完全不保证「那篇论文是报告想引的那一篇」**。`A04` 的 §8.3 non-claim #6 早已声明「不主张 DOI 对应论文的**内容**正确」，但**作者身份**是一个比「内容」弱得多、也该容易得多的检查 —— 它当时同样没有做，而这一轮证明它会出错 53%。
+> - **本表的 `Resolved` 列因此不得被读作「引用正确」。** 它只读作「指针形式有效」。
+>
+> **为什么本轮没有给这 642 行加 `author` / `title` 两列**（M-7 允许「加两列」或「明确的诚实声明 + 已知坏行列表」二选一，本 child 选后者）：
+>
+> 1. **只有一部分行能填。** 642 行中 **340 个 DOI** 有 Crossref/DataCite 记录可取；**257 个 URL + 44 个 arXiv + 1 个 ISBN 没有任何作者字段来源**；**109 个 `POINTER_ONLY` 按定义就不是来源**。加列后会得到一张**约 47% 有值、约 53% 空值**的表 —— **空值会被下一位读者误读为「无作者」或「未检查」**，这比没有列更危险。
+> 2. **取数据需要一次新的扫描。** 为 340 个 DOI 批量取 author/title 属于新的文献核查动作，Round 3 派发限定「只可复验你实际改动的 DOI，不得扩大范围」。
+> 3. **会改动本表 642 行的字节内容**，从而破坏 §12 的字节状态声明与本表的逐行可复现性。**保持本表字节不变 + 另加声明，是本轮可做到的最大诚实度。**
+>
+> **本 child 的实际处置**：
+> - 在**能够逐行复验的地方**（§4.2 的 30 行承重表）**加了 `Author (Crossref)` / `Title (Crossref)` 两列并填满实测值** —— 见 §4.2 与 §4.2.1。
+> - **已知坏行清单（即本表的已知作者级缺陷）**：§4.2 的 **16 行**（行 6 · 7 · 10 · 11 · 12 · 16 · 17 · 18 · 20 · 21 · 22 · 23 · 25 · 27 · 28 · 30），其 DOI 全部以 `10.` 开头、**全部可在本表的 DOI 分区中按指针检出**，逐条对应见 §4.2.1。
+> - **本表其余 324 个 DOI 行的作者归属状态是 `UNKNOWN`**，既未被验证为正确，也未被验证为错误。**不得假定它们比那 16 行更干净。** 抽样证据表明作者错配率约 **53%**（§4.2.1），**若该比例适用于本表其余部分，本表可能还有约 170 行同类缺陷未被检出** —— **这是本 child 明确不主张已排除的风险**。
+> - **登记为 §10 P1**：为 §9 的 340 个 DOI 行取回 author/title 并加列（需 Architect 先裁决范围与是否分批）。
 
 **排序**：先 Tier（PRIMARY → REVIEW → LANDING → PREPRINT → GREY_OFFICIAL → OFFICIAL_DATA → DATASET → POINTER_ONLY → UNVERIFIED），同 Tier 内先按引用 lane 数降序，再按出现次数降序。
 
@@ -1092,7 +1346,7 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | **P1** | 修 M2：R04 `10.1007/s11238-014-9448-x` 的期刊改 ***Theory and Decision***；重判 D11 SOEP `NOT_DYADIC_ENOUGH` 的证据链 | §3.3.1 | R04 窄修复 |
 | **P1** | 修 M3：R14 `10.1609/aaai.v35i1.16792` 不解析却承重 12 个百分点定量主张 → 补正确 DOI 或降级为 `UNVERIFIED` | §3.3.1 | R14 窄修复 |
 | **P1** | 补 AR-16：MSC 五检的 4 个 DOI（Messick 1995 = `10.1037/0003-066x.50.9.741` 已确认） | §5.3 | R14 窄修复 |
-| **P2** | 修 M4–M6：`10.31234/osf.io/…` → `10.31219/osf.io/…`（R02 ×1、R05 ×2） | §3.3.1 | R02 / R05 窄修复 |
+| **P2** | ~~修 M4–M6：`10.31234/osf.io/…` → `10.31219/osf.io/…`（R02 ×1、R05 ×2）~~ **`REJECTED_WITH_REASON`（Round 3 `A1`）** | §3.3.1 | **不执行。** `10.31234` 与 `10.31219` **两个前缀都 live、注册者同为 `Center for Open Science`**（本 child 已实测 Crossref prefix registry，2026-09-27）。**执行本建议会把 PR 内一条 live 指针 `10.31219/osf.io/gu8z7`（R14 L353，本 child 实测 Crossref 200）变成 404，且不修复任何东西**（`10.31234` 侧的 M5 / M6 实测本来就解析成功，已撤销）。`f6wbn` 的正确修法是**补 `_v1`**，该修法已由修复轮应用 | **无人（已否决）** |
 | **P2** | 修 F3：R17 源表条目 37 的「Fixture 001–003 推荐」标 `SUPERSEDED`（引 R00 S-4） | §6.4 | R17 窄修复 |
 | **P2** | 修 F2：R16 §9 的 rights 取舍讨论接入项目自身 Case Bank 侧 pointer-only 边界 | §6.2 | R16 窄修复 |
 | **P2** | 改 R10 L550 的「见 #22」→ 改指 `19_SYNTHESIS_CANDIDATE.md` 的 gap 表 | §6.5 | R10 窄修复 |
@@ -1102,23 +1356,60 @@ Crossref `type` 分布（331 条中）：`journal-article` 304、`book-chapter` 
 | **P3** | 清理 11 个 `exa.ai/library/…` 指针：换成真实 DOI / 出版商 landing URL，或标 `POINTER_ONLY` 并明确不作为论据 | §1.3 | R03（7 条）/ R08b（4 条） |
 | **P3** | 清理 2 个截断 URL（`d.docksci.com/download`、`…/does-relationship-satisfaction-always-mean-satisfaction-`）与 1 个重复 slug（Cambridge Episteme `polarization-paradox`） | §1.3 | R03 / R08b |
 
+### 10.1 Round 3 `A1` 新增 / 改判的待办
+
+| P | 动作 | 触发的发现 | 谁做 | 状态 |
+|---|---|---|---|---|
+| **P0** | **修第 30 行的承重主张「reciprocity 的判别实验」**：其原本指向的 DOI（`10.1007/s11238-014-9448-x`）经实测是 Bacon, Conte & Moffatt 2014 的风险态度同类婚配研究，**与该主张无关**。需确定该主张的正确来源（候选：R10 的另一 DOI `10.1016/j.cpr.2015.07.002` = Falconier et al. 2015），**或降级该主张** | §4.2 第 30 行 / §4.2.1 | R10 窄修复 + A04 复核 | **未执行**（需读正文才能确认候选 DOI 是否含 reciprocity 判别实验） |
+| **P1** | **对 §3.3.4 的 15 行做完整的 volume / issue / 页码 级重检。** 该节已被证明会产生假 PASS（`10.1037/h0046049` 实为 *Psych Review* **63(5):277–293**，原记 63(4) 判 ✅）。**只撤回错项、保留其余 ✅ 会让那些 ✅ 继续被当作保证使用** | §3.3.4 / §3.3.5 | 需 Architect 先裁决是否分批 | **未执行**（属新的核查扫描，Round 3 范围禁止） |
+| **P1** | **为 §9 的 340 个 DOI 行取回 `author` / `title` 并加两列**，消解「本表结构上无法支持作者级检查」这一根因。**注意：只有 DOI 行可填；257 URL + 44 arXiv + 109 `POINTER_ONLY` 无作者字段来源** | §9 Round 3 声明 | 需 Architect 先裁决范围 | **未执行** |
+| **P1** | **重出 primary-data 口径的分子**：逐篇读摘要，把 `PEER_REVIEWED_PRIMARY = 319` 中真正的一手经验研究与理论/方法/综述/计算模型分开。**在此之前 `319` 不得被引用为「319 篇一手经验研究」** | §2.2.1（9/16 ≈ 56% 非 primary） | 需 Architect 先裁决是否值得做 | **未执行** |
+| **P2** | **公开 §5.1 的 `AGENT_RECALL` 计数规则**，使 `85 处 / 16 份文件` 可复现（本 child 严格 token 计数为 36 处 / 13 份文件；关键差异点是 R11 实测为 0）。同时从 §5.1 的 token 清单中删除 `UNVERIFIED_AGENT_RECALL`（**该 token 在 18 份 lane 文件中出现 0 次**） | §5.1 Round 3 supersession | A04（自身） | **部分执行**：token 清单已删；计数规则未公开 |
+| **P2** | **把 §4.2 的 L3 强度层重出**：读 30 篇正文，判定每项是否真的支撑其承重主张。**当前状态 `WITHDRAWN`，不得引用「28 项强度充分」** | §4.2.2 | 需 Architect 先裁决 | **未执行** |
+| **P2** | **改写 `00_MANIFEST.md` §2b 的 OSF 前缀段**（「`10.31219` 是 OSF project 前缀」为事实错误；「`10.31234` 前缀非法」不成立） | §3.3.1 Round 3 警示 | **`A2` / parent**（`00_MANIFEST.md` **不在本 child 白名单内**） | **已路由，未执行** |
+| **P2** | **同步改写 `19_SYNTHESIS_CANDIDATE.md` §2 C-8 的同源陈述** | §3.3.1 Round 3 警示 | **`A2` / parent**（同上） | **已路由，未执行** |
+
 ---
 
 ## 11. `status_recommendation`
 
-**`SUCCESS`（附 1 项 `PARTIAL` 子范围声明）**
+> ### ⚠️ Round 3 `A1` 改判（依 M-5…M-9）
+>
+> **上一版本的总评是 `SUCCESS`（附 1 项 `PARTIAL` 子范围声明）。Round 3 改判为 `PARTIAL`（3 项 `PARTIAL` mission + 2 项限定 + 3 项 `WITHDRAWN`）。**
+>
+> **改判理由（一句话）**：本报告在其**自身承载结论的三处**上被证伪 —— §2.1 的 lane 求和（`1,201` 不成立）、§4.2 的承重表（**16/30 作者归属错**，且结构上无法自查）、§3.3.4 的「已通过」清单（含假 PASS）。**这三处都不是「估计误差」，而是「检查已执行但产生了错误结论」。** 一个 mission 自评为 `SUCCESS` 却在三处产出错误结论的审计，其总评不能是 `SUCCESS`。
+>
+> **未被证伪、且本 child 独立复算确认仍成立的部分**：§2.1 的三层计数（`1,199 → 642 → 533`）、`642 − 109 = 533`、tier 表逐行加总 = `533`、109 个 `POINTER_ONLY` 的显式剔除、§3.3.3 的 16 个抽取器假阳性自陈、§5.2 的 18 条 `AGENT_RECALL` 逐条裁定、§6.5 的隔离边界 9 处核对。**这些是本报告真正扎实的部分。**
+
+**`PARTIAL`（Round 3 改判；Mission 2 / 4 / 5 降级，Mission 3 加限定）**
 
 理由：
 
 1. **Mission 1（全局去重）= SUCCESS。** 1,199 raw → 642 distinct pointer → 533 distinct source，三层计数 + 642 行逐条表 + 109 个副本的显式剔除。§4 B-3 关闭。
-2. **Mission 2（provenance tiering）= SUCCESS**，附**声明**：304 个 journal-article 的 PRIMARY/REVIEW 切分是题名启发式，非逐篇判定（U4）。
-3. **Mission 3（DOI integrity sweep）= SUCCESS。** **340 / 340 = 100% coverage**，无遗漏。331 解析成功，9 不解析，3 类 mismatch 全部定位到 lane 与行号，另登记 16 个我自己抽取器造成的假阳性。
-4. **Mission 4（load-bearing）= SUCCESS。** 30 项承重来源逐条裁定，2 项不合格。
-5. **Mission 5（author attribution）= SUCCESS。** 5 处 Wave 1 自报修正**逐条复核全部正确**；2 处遗留不确定（AR-15/AR-16 承重、Geyer 未披露、Hirschfeld 年份 1 年差）。
-6. **Mission 6（provenance-of-provenance）= SUCCESS。** 三份 fixture 的 rights 边界逐 lane 传递审计；发现 1 MAJOR（R13 丢失 Fixture 003 边界）+ 1 MODERATE（R16）+ 1 MODERATE（R17 引用 superseded 段）。隔离边界 9 处逐处核对，1 MINOR（R10 L550 路由）。
-7. **Mission 7（AGENT_RECALL audit）= SUCCESS。** 18 个 `AGENT_RECALL` 条目逐条裁定，2 条承重，全部在 R14。
+2. **Mission 2（provenance tiering）= `PARTIAL`（Round 3 `A1` 改判，原为 `SUCCESS`）。** 附**声明**：304 个 journal-article 的 PRIMARY/REVIEW 切分是题名启发式，非逐篇判定（U4）。**Round 3 加重**：该规则有**系统性偏误** —— 理论 / 方法论 / 综述 / 计算模型论文被系统性判为 PRIMARY，分层抽样 **9/16 ≈ 56%** 非 primary empirical work（§2.2.1）。**因此 tier 编码的是「出处类型」，不是「证据强度」；`350` 可用作「350 个同行评审来源」，不得用作科学重量的代理。** 上一版本把 `350` 标为「← **真正承载科学重量的数字**」，该措辞**已撤回**。
+3. **Mission 3（DOI integrity sweep）= `SUCCESS`（Round 3 部分限定）。** **340 / 340 = 100% coverage**，无遗漏。331 解析成功，9 不解析，3 类 mismatch 全部定位到 lane 与行号，另登记 16 个我自己抽取器造成的假阳性。<br>**Round 3 限定一**：M4 / M5 / M6 三条 mismatch 的**判定前提被证伪并已撤销**（实测 `10.31234/osf.io/rs7eu_v1` 与 `…/dus42` 解析成功；两个前缀都 live）。**M1 / M2 / M3 三条本 child 独立复查确认仍成立。**<br>**Round 3 限定二**：§3.3.4 的「已通过」清单**含一条假 PASS**（`10.1037/h0046049`），已撤回并改标 `NOT_REVERIFIED` + 全表重检要求（§3.3.5）。**该节不再作为免检清单使用。**
+4. **Mission 4（load-bearing）= `PARTIAL`（Round 3 `A1` 改判，原为 `SUCCESS`）。** 30 项承重来源**已逐行复验身份**并新增 `Author` / `Title` 两列（§4.2.1），实测 **16 / 30 行作者归属错误（53.3%）**。<br>**原结论「30 项中 28 项强度充分」已撤回**（§4.2.2）：L1 身份层 `SUCCESS`（30/30 可自证）· L2 身份-主张匹配层 `PARTIAL`（题名层面，**未读正文**）· **L3 强度层 `WITHDRAWN`**。
+5. **Mission 5（author attribution）= `PARTIAL`（Round 3 `A1` 改判，原为 `SUCCESS`）。** 5 处 Wave 1 自报修正**逐条复核全部正确**；2 处遗留不确定（AR-15/AR-16 承重、Geyer 未披露、Hirschfeld 年份 1 年差）。<br>**Round 3 加重**：本 mission 在**本报告自身的承重表上**实测出 **16 / 30 = 53%** 的作者归属错误，且根因是**表结构缺 `author` / `title` 列**（§9 Round 3 声明）。**「author attribution = SUCCESS」这一自评在 Round 3 之后不成立。**
+6. **Mission 6（provenance-of-provenance）= `SUCCESS`（Round 3 按 X-7 加权利/归属声明，mission 本身不改判）。** 三份 fixture 的 rights 边界逐 lane 传递审计；发现 1 MAJOR（R13 丢失 Fixture 003 边界）+ 1 MODERATE（R16）+ 1 MODERATE（R17 引用 superseded 段）。隔离边界 9 处逐处核对，1 MINOR（R10 L550 路由）。<br>**Round 3 补充**：按 adjudication **X-7**（`NO RIGHTS VIOLATION ESTABLISHED; PROVENANCE OMISSION CONFIRMED`）在 §6 顶部加了权利/归属声明，并把 F1 / F2 的性质明确为**文档层 provenance 遗漏**而非权利违反认定；同时记录 **A04 自身不使用任何 Fixture 003 单元**（`S\d{3}` 命中 5 次逐条核对全为 Elsevier PII / lane 内编号）。**本 mission 的三条缺陷裁定在 X-7 之后全部仍成立** —— X-7 裁定的是权利事实，与文档完整性是两件事。
+7. **Mission 7（AGENT_RECALL audit）= `PARTIAL`（Round 3 `A1` 改判，原为 `SUCCESS`）。** 18 个 `AGENT_RECALL` 条目逐条裁定，2 条承重，全部在 R14。<br>**Round 3 限定**：§5.1 首句的 token 清单含 `UNVERIFIED_AGENT_RECALL` —— **该 token 在 18 份 lane 文件中出现 0 次**（本 child 实测），应从清单删除；`85 处 / 16 份文件` 的计数**不可复现**（本 child 严格 token 计数 = 36 处 / 13 份文件），但**因 A04 的计数规则未公开，本 child 不宣称它错**，标 `NOT_REPRODUCIBLE`。**18 条逐条裁定本身未被证伪。**
 
-**`PARTIAL` 子范围**：**U6（80 个 `UNSTABLE_COPY` 与已解析 DOI 的对应关系）未能机械解算。** 因此 533 应读作**去重仍可能不完整的上界**（真实 distinct source ≤ 533）。这不改变任何结论方向 —— 只会让 distinct source 更小，而 `PEER_REVIEWED_PRIMARY + REVIEW = 350` 不受影响（350 全部来自已解析 DOI / 明确 tier 的 URL）。
+**`WITHDRAWN`（Round 3 新增；这些结论已被撤回，不得再被引用）**
+
+| 原结论 | 位置 | 撤回理由摘要 |
+|---|---|---|
+| 「30 项承重来源中 **28 项强度充分**」 | §4.2.2 | 分母不可信（16/30 身份错）；L3 强度层需读正文，本轮未做 |
+| 「**未发现** meta-analysis 被要求承担当需要 primary data 的主张」 | §8.1(6) | 该 negative result 的检出力接近于零 —— 判定规则与被检测对象共用同一套错误的 primary 定义（§2.2.1） |
+| 「`PEER_REVIEWED_PRIMARY + REVIEW = 350` ← **真正承载科学重量的数字**」 | §2.2 | tier 编码出处类型，不编码证据强度；抽样 9/16 ≈ 56% 非 primary empirical |
+| 「各 lane 自报数相加 ≈ **1,201**……与实测 A = 1,199 一致（差 2）」 | §2.1 | 真值 875 / 878；与 1,201 差 −323。且 lane 自报数与原始出现数**不同量纲**，该「一致性校验」是范畴错误 |
+| 「**3 处 DOI 前缀/后缀结构非法**」 | §3.3.1 M4–M6 | 两个前缀都 live、注册者同为 `Center for Open Science`；M5 / M6 实测解析成功，已撤销 |
+| 「前缀与著录期刊族不一致」（D5） | §3.3.2 D5 | `1662-9647` 正是 GeroPsych 的 ISSN 前缀，并无冲突；真实缺陷是 DOI 分隔符 |
+| §3.3.4 的「**已通过**」标记 | §3.3.4 | 含假 PASS（`10.1037/h0046049` 实为 63(5)）；该标记**不承载信息**，其余各行改标 `NOT_REVERIFIED` |
+
+**`PARTIAL` 子范围（原有 1 项 + Round 3 新增 1 项）**：
+1. **（原有）U6** —— 80 个 `UNSTABLE_COPY` 与已解析 DOI 的对应关系未能机械解算。因此 533 应读作**去重仍可能不完整的上界**（真实 distinct source ≤ 533）。这不改变任何结论方向 —— 只会让 distinct source 更小，而 `PEER_REVIEWED_PRIMARY + REVIEW = 350` 不受影响（350 全部来自已解析 DOI / 明确 tier 的 URL）。
+2. **（Round 3 新增）§4.2 的 L2 / L3 层** —— 30 行身份已实测可自证，但「该论文是否真的支持该承重主张」**需要读 30 篇正文，本轮范围禁止**。因此**不得引用任何关于承重强度的判断**，包括本报告上一版本自己给出的那个。已登记 §10.1 P2。
+
+**本报告未做的事（Round 3 追加）**：未对 §3.3.4 做全表 volume/issue/页码 重检（§10.1 P1）；未重出 primary-data 口径的分子（§10.1 P1）；未为 §9 的 340 个 DOI 行取回 author/title（§10.1 P1）；未公开 §5.1 的 `AGENT_RECALL` 计数规则（§10.1 P2）；未审计其余 21 份报告的 Fixture 003 使用与权利陈述状态（**不在本 child 白名单内**）；未修改 `00_MANIFEST.md` / `19_SYNTHESIS_CANDIDATE.md`（**`A2` 拥有**）。
 
 **本报告未做的事（明确）**：未修改 `D:\coding\lhrm`；未读 `#20/#21/#22` / Eye / Juece `#30` / PR `#31`；未验证 257 个 URL 的可达性；未核实 DOI 对应论文的**内容**转述是否准确（属 A01 / A03 职责）。
 ---
@@ -1149,3 +1440,33 @@ M4（`10.31234/osf.io/f6wbn`，R02 L596）与 D5（`10.1024/1662-9647.a000031`�
 **因此本报告的全部数字与发现对当前 `main` 工作副本状态有效。** 若 parent 在 A04 之后又对其他 lane 施加修复，需重跑 `docs/research/overnight-2026-09-27/` 的全量指针抽取并 diff（本报告 §1.1 的抽取规则可复现）。
 
 **A04 未对 `D:\coding\lhrm` 做任何写操作。** 上述两处修改来自并发的 Wave 1 窄修复流程（对应 `00_MANIFEST.md` §1 记录的 "R02 + R11（各一次窄修复）" 的第二次尝试），非 A04 产生。
+
+### 12.1 Round 3 `A1` 对本节的影响（字节状态）
+
+**Round 3 修改了本文件的哪些字节，逐项声明**：
+
+| 区域 | 是否改动 | 理由 |
+|---|---|---|
+| §0 结论摘要（A04-C2 / C4 / C5） | **已改** | 追加 Round 3 限定，未删除原句 |
+| §1 方法与去重规则（§1.1–§1.3） | **未改一字节** | 全局去重规则与三层计数未被本轮修正触及 |
+| §2.1 三层计数表（`1,199` / `642` / `533` / `2.25×`） | **未改** | 本 child 独立复算确认自洽 |
+| §2.1 lane 求和句 | **已改**（`1,201` → `878`） | M-6 |
+| §2.2 tier 表的数字 | **未改**（`319` / `31` / `350` / `62` / `57` / `47` / `7` / `9` / `109`） | 数字未被证伪；被证伪的是**把 350 读作科学重量**的措辞 |
+| §2.3 裁定表 | **已改**（第三行） | M-6 |
+| §3.2 / §3.3.1（M1–M3 未改，M4–M6 已改）/ §3.3.2（D5 已改，D1–D4/D6 未改）/ §3.3.3 | 见各行 | — |
+| §3.3.4 整节 | **已改** | M-8：标题、假 PASS 撤回、逐行 `NOT_REVERIFIED` 标注 |
+| §4.2 承重表 | **已改**（新增 2 列 + 18 行修正） | M-7 |
+| §5.1 | **已改**（首句加 supersession） | `UNVERIFIED_AGENT_RECALL` 幽灵 token |
+| §5.2 / §5.3 逐条裁定 | **未改** | 18 条裁定未被本轮证伪 |
+| §6.2 / §6.3 / §6.4 裁定 | **未改**（仅加 Round 3 限定段） | X-7 是限定不是推翻 |
+| §6.5 | **未改** | 隔离边界 9 处核对未被证伪 |
+| §7.1 | **未改一字节** | 本 child 未复跑该 6 行（其结论仍成立） |
+| §7.2 | **已改**（Geyer 行） | D5 理由订正的连带 |
+| §8.1 | **已改**（第 6 条撤回） | M-7 |
+| §8.2 | **已改**（U4 加重） | M-7 关联 |
+| **§9 的 642 行表本体** | **未改一字节** | 见 §9 Round 3 声明第 3 条：保持本表字节不变 + 另加声明 |
+| §10 | **已改**（P2 改判 + 新增 §10.1） | 见 §10.1 |
+| §11 | **已改**（总评 `SUCCESS` → `PARTIAL`） | M-5…M-9 |
+| §12 本节 | **已改**（追加 §12.1） | — |
+
+**因此：§9 的 642 行表仍可按 §1.1 的抽取规则复现，本文件 §2.1 的三层计数仍有效。** Round 3 **没有**重跑全量指针抽取（那会是一次新的扫描），**只复验了本 child 实际改动的 33 个 DOI**（`a1_crossref.py`，输出留存 `a1_crossref_out.txt`）。**若 parent 在 Round 3 之后对 lane 文件施加了新的窄修复，需按 §1.1 重跑抽取并 diff。**
