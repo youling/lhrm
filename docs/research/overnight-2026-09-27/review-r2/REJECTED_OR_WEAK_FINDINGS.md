@@ -5,10 +5,21 @@
 > **重要限定**：`REJECTED_OR_WEAK` 中的「被拒绝」指的是**该表述不可按现状引用**，
 > **不等于**「其为假」。`REVIEW_CONTRACT.md` §4：`UNSUPPORTED` = 断言存在但未找到足够证据，**不等于为假**。
 > 本文件绝大多数条目是**表述、量词、层级、严重性、推论**的问题，不是「事实为假」。
+> **Round-3 supersession pointer.** 本文件未删改任何 Round-2 评审主张。
+> 已被取代 / 已被本轮修复取代的主张，逐条登记在
+> **`SUPERSEDED_REGISTER.md`**（stable id `SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`
+> 取代，`SR-B*` = 被 Track R3-A 的 PR #31 修复取代，`SR-X*` = 明确不取代）。
+> 取代依据：`youling/lhrm#30` comment `5854920569`（adjV1）与
+> `r3/a1`…`r3/a4b` 的 repair commit（见该 register §2 表头）。
+> **本文件是 Round-2 的记录；不得再把被取代的表述当作待议项引用。**
+
+
 
 ---
 
 ## R-0 · 本轮识别的**首要失败模式**：检索覆盖不足被写成领域存在性结论
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A14（`X-14` = search-scope 原则）· §SR-B8 · §SR-B21
 
 `WRONG-SCOPE` 的定义（`REVIEW_CONTRACT.md` §4）：命题本身可能成立，但**层级 / 总体 / 分析单位 / 时间尺度 / 情境域**
 与被当作依据的那一层不匹配；或**方法学与数据访问限制被误读成 ontology 结论**。
@@ -37,7 +48,11 @@
 
 ## R-A · Gate / 门相关
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A23 · §SR-A3 · §SR-B16 · §SR-X1
+
 ### R-A1 — 「`MERGE` 与 `REJECT` 从未被签发过一次 ⇒ 8 项 candidate basis 单调增长」
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A23（事实层保留；呈现与推论理由被换）· §SR-X1
 
 - **判定**：**项目层为 `WRONG-SCOPE`（表述被换主语）**。`EV1` `PARTLY_REFUTED`；`ADJ3` Q1 三层裁定；`L-C3` `WRONG-SCOPE`；`J-C8` 侧同向。
 - **被推翻的证据**（可 grep 复现）：
@@ -57,6 +72,8 @@
 - **`ADJ3` 亦不主张项目应引入 `MERGE`**：`MERGE` 的 0 次在三个层级上都成立。
 
 ### R-A2 — 「`§2.6` 是唯一能删除 construct 的准入侧判据」
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A23 · §SR-B15
 
 - **判定**：`WRONG-SCOPE`（全称量词为假）。`EV1` `PARTLY_REFUTED`；`I-C2` `CONTESTED`（核心成立、两处子命题被推翻）；`ADJ3` Q2 `VERIFIED`（缺陷存在、范围比三家所述都大）。
 - **`ADJ3` 的逐条后果分档**（读的是原文，不是任何 lane 的转述）：
@@ -87,6 +104,8 @@
 
 ### R-A3 — headline 的**严重性**（「昂贵 canonical patch + 重跑 Fixture」）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A3（adjV1 `C-P1` 修改条款）· §SR-B16（严重性已被 Architect 部分改写）
+
 - **判定**：`EV1` `REJECT`（对严重性）
 - **理由**：`A03` 与 `19:282` 已推导出「删掉 §13 的 3 个 catch-all 映射类与自由文本出口；把 §2.6 改写成可触发的准入侧判据（含至少一条 `MERGE` 与一条 `REJECT` 的判定规则）；重跑 Fixture 001」。
   **`EV1` §7：这个 patch 规模（删 3 个 catch-all + 重跑 fixture）与缺陷实际所需的规模不匹配。**
@@ -105,6 +124,8 @@
 ---
 
 ## R-B · 引用与证据分级
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B1 · §SR-B2 · §SR-B3 · §SR-B4 · §SR-B5 · §SR-B6 · §SR-B9 · §SR-B12 · §SR-B14 · §SR-B15 · §SR-B17
 
 | id | 必须撤回 / 重述的表述 | 判定 | 依据 |
 |---|---|---|---|
@@ -135,6 +156,8 @@
 
 ## R-C · 权利与数据可得性
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B7 · §SR-B9 · §SR-A9 · §SR-B20
+
 | id | 必须撤回的表述 | 判定 | 依据 |
 |---|---|---|---|
 | **R-C1** | `04` §6 末行 + §10：「ICPSR SOMAR VDE / MiCDA Enclave …… **这是目前唯一已知可行的『合规地用 LLM 处理受限数据』路径**」 | **`WRONG-SCOPE`（`C-C14`）—— `C` 判为「本 packet 中唯一的、会导致真实合规后果的错误」** | `C` 直开三份官方页面：SOMAR VDE **只服务社交媒体受限数据**；ICPSR 自己的 VDE/PDE **明文「no LLMs available」**；HRS CoU **逐字禁止 AI 程序与 LLM 与 HRS 数据同用，且点名 open-source AI**。⇒ 建议拆成三句独立、各带条件与出处的陈述 |
@@ -159,6 +182,8 @@
 ---
 
 ## R-D · 统计 / 识别 / 律
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B10 · §SR-B11 · §SR-B20 · §SR-A12
 
 | id | 必须撤回或重述的表述 | 判定 | 依据 |
 |---|---|---|---|
@@ -194,6 +219,8 @@
 
 ## R-E · belief / 形式化
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B12
+
 | id | 必须撤回或重述的表述 | 判定 | 依据 |
 |---|---|---|---|
 | **R-E1** | `07` §2.3：在信息序 `⊑` 上 `N < B` 不成立，`N` 与 `B` **不可比**；唯一单调方向是 `B → T`、`B → F` | **`UNSUPPORTED`（`E-C3`）—— `E` 判「这是我在本 lane 找到的唯一内容错误，且它出现在承重的 `AI_RECOMMENDATION` 上」** | **与 K4 的构造相反**：近似/信息序上 `N` 是底、`B` 是顶、`T` 与 `F` 不可比；逻辑/真值序上 `T` 是顶、`F` 是底、`N` 与 `B` 在两翼不可比。`07` **把两个格的性质互换了**。「双序」这个**结论**保留（`E-C4` `VERIFIED`），但**理由与方向必须改**——否则 `value_class` 的设计依据是错的 |
@@ -209,6 +236,8 @@
 ---
 
 ## R-F · 动力学
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B11 · §SR-A12
 
 ### R-F1 — 「生理同步 `ES=.09` ⇒ 强耦合前提在多数真实 dyad 中不成立」
 
@@ -251,6 +280,8 @@
 
 ## R-G · 一般 dyad 范围 / ABM / LLM 层
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A5 · §SR-A14 · §SR-B13 · §SR-B21
+
 | id | 必须撤回的表述 | 判定 | 依据 |
 |---|---|---|---|
 | **R-G1** | `11` §3.1 的**值类封闭集逻辑矛盾**主张（`G-C4` / `G-C5`）——「唯一的合法表示方式就是把不适用填成 0 或 Unknown」「U1…U12 任何实验都无法裁决」 | **`REFUTED`（`EV3` Claim 1）** | 值类清单是**许可式而非封闭集**（`可以` / `may be`；两份清单互不一致；全库无封闭性声明）；canonical **已有**具名槽位 `BoundaryRule_(A,B,domain)`（`PARAMETER:359-367`）与针对 `性欲` 的 worked example（`CURRENT_ARCHITECTURE:190`）。详见 `CONTESTED_FINDINGS.md` X-5 |
@@ -271,6 +302,8 @@
 
 ## R-H · 定位 / 新颖性
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B14 · §SR-A11
+
 | id | 必须撤回或降级的表述 | 判定 | 依据 |
 |---|---|---|---|
 | **R-H1** | `14` §1 BLUF：「LHRM 的 8 个有向构念**全部是 REUSE，无一条可主张原创** / 强度=高（逐条有 DOI）」 | `UNSUPPORTED`（`H-C17`） | 至少两条 REUSE 断言的证据分级与元数据不符；`H` 的 §12 指出「14 §9.3 的 7 条 O-row 中 5 条引用问题」 |
@@ -287,6 +320,8 @@
 
 ## R-I · red-team / Gate
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A7 · §SR-B15
+
 | id | 必须撤回的表述 | 判定 | 依据 |
 |---|---|---|---|
 | **R-I1** | `17` F4：复合态无法由「每构念一个坐标」表达，状态空间**必须增加模态/析取层** | **`REJECT`（作为架构主张）**（`I-C19`） | MacDonald 是**冗余证据**，Zoppolat **支持**现有分离。真实的现象改写为 Gate C 冗余条目 + 已有 Observation/Belief 分离条目。**不要据此引入 lattice/析取状态空间** |
@@ -299,6 +334,8 @@
 ---
 
 ## R-K · cross-lane 冲突图
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B17 · §SR-A13
 
 | id | 必须撤回或重述的表述 | 判定 | 依据 |
 |---|---|---|---|
@@ -314,6 +351,8 @@
 ---
 
 ## R-L · actionability / Work Order
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A13 · §SR-B16 · §SR-A12 · §SR-B20
 
 | id | 必须撤回或重述的表述 | 判定 | 依据 |
 |---|---|---|---|
@@ -331,6 +370,8 @@
 ---
 
 ## R-4 · 结构性记账（不是单条主张，是**三处必须先修的 register 缺陷**）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A13 · §SR-B17
 
 `ADJ3` Q8 明确：**register 层面必须先修三处，否则 join 会产出错误数字**。
 

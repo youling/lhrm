@@ -5,10 +5,21 @@
 > 阶段 1（lane A–L）与阶段 2（ADJ1–3 / EV1–3）之间的分歧、阶段 2 之间的分歧，一律原样进入本文件。
 >
 > 每条给出：`id` · 命题 · 对立读法（各带指针）· 阶段 2 裁决及其**适用范围** · 残余不确定性 · 谁能裁决。
+> **Round-3 supersession pointer.** 本文件未删改任何 Round-2 评审主张。
+> 已被取代 / 已被本轮修复取代的主张，逐条登记在
+> **`SUPERSEDED_REGISTER.md`**（stable id `SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`
+> 取代，`SR-B*` = 被 Track R3-A 的 PR #31 修复取代，`SR-X*` = 明确不取代）。
+> 取代依据：`youling/lhrm#30` comment `5854920569`（adjV1）与
+> `r3/a1`…`r3/a4b` 的 repair commit（见该 register §2 表头）。
+> **本文件是 Round-2 的记录；不得再把被取代的表述当作待议项引用。**
+
+
 
 ---
 
 ## X-1 · `PPR` / `Satisfaction` 层归属（「三方互斥」之争）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A6（adjV1 `X-1` = DECIDED；层归属不再是待裁项）
 
 **命题**：`19` §1 C-1 与 `18` CF-03 把 `PPR` 的处置写成「**三方互斥**」（R01 判 `BELIEF_ONLY` / R06 给 null 判据前提 / R14 给优先级表条目 / R17 判应升为一等状态层）。
 
@@ -37,6 +48,8 @@
 ---
 
 ## X-2 · `17` F3 的层边界主张
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A7（adjV1 `X-2` = REJECT AS ARCHITECTURE CLAIM）· §SR-B15
 
 **命题**：`17` F3 = 「**LHRM 的层边界被经验文献反向排序**」（`PPR` 应升为一等状态层 / `Satisfaction` 不应是 Derived）。
 
@@ -71,6 +84,8 @@
 
 ## X-3 · `§4 D7` 与 `§9 R3` 是否逻辑上不能同时成立
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A8（adjV1 `X-3` = NO LOGICAL CONTRADICTION；二选一不采纳）· §SR-A19
+
 **命题**：`I-C23` 主张 `17` T1 + F3/A21 合起来蕴含一个二选一：若 `Dedication` 由 (satisfaction, alternatives, investment) 决定，则 `§4 D7`（primitive）与 `§9 R3`（Satisfaction=DERIVED）不能同时成立。
 
 | 读法 | 来源 | 断言 |
@@ -98,6 +113,8 @@
 ---
 
 ## X-4 · `Trust` 的层级与 `domain` 强制条件
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A1（`FeltSecurity` 槽位被拒）· §SR-A24（`domain` 降级）· §SR-B21
 
 **命题**：`A-C19` = `02` §3.4 判 `Trust` = `KEEP` + **强制 `domain` 索引**（「13 个候选中最稳的一个」）；
 `02b` §5.1 + MGS-C 判「`Trust` 与 `AttachmentSecurity` 不是两个独立 primitive」，把 `Trust` 降为部分 facet。
@@ -132,6 +149,8 @@
 ---
 
 ## X-5 · 值类集合的封闭性（lane `G` vs `EV3`）— **本轮分歧最大的一处**
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A5（adjV1 `X-5` = PERMISSIVE, NOT CLOSED）· §SR-A17
 
 **命题**（`G-C5`，lane `G` 判为**唯一必须落到 canonical 而不能停在 proposal** 的发现）：
 `11` §3.1 论证 `SexualDesire × {友谊,兄弟姐妹,亲子,敌对} = NA` 是**值类缺口**；正确值既不是 `Unknown` 也不是 `0`；
@@ -170,6 +189,8 @@
 
 ## X-6 · `B2` null（lane `D` vs `EV3` vs `ADJ2`）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A4（adjV1 `X-6` + `C-P10`：改名 `B2_STABLE_LEVEL`，parent 的「不裁定」已被裁定）
+
 **命题**：`16:203` 的 `B2 = SELECTION_ONLY`（稳定 per-dyad 截距、无 wave-to-wave 增量）被称为「**本协议认为最重要的一条 null，因为它已经击败过一个候选**」。
 
 | 子命题 | `D-C19` | `EV3` Claim 2 | `ADJ2` Q2 |
@@ -205,6 +226,8 @@
 
 ## X-7 · Fixture 003 的权利边界是否被违反
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A9（adjV1 `X-7`：无侵权成立，但 provenance 遗漏确认）· §SR-B7
+
 **命题**：`13` 在六处实质使用 `FIXTURE_003` 的 transcript 单元与 freeze rules，**全文不记录**该 fixture 的
 `pointer_only` / `ai-train=no` / `GPTBot Disallow` 边界。
 
@@ -221,6 +244,8 @@
 ---
 
 ## X-8 · 12 条 robust agreement 的独立性（`ADJ3` Q6 重判）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A10（adjV1 `X-8`：改用 `N-A1…N-A12` + `independent_sources × methods`）
 
 `19` §1 的「12 条 robust agreement」经逐条独立性审计后：**5 条存活、5 条降级、2 条移出**。
 **「12」应读作「5 + 5 + 2」。**
@@ -254,6 +279,8 @@
 
 ## X-9 · WO-N1 的被检验对象（`L-C11` 对被 relay 建议的反证）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A11（adjV1 `X-9` = DECIDED）
+
 **命题**：`WO-N7` / `WO-N1` 用 Fixture 001 检验 8 维 basis。
 
 | 读法 | 来源 | 断言 |
@@ -269,6 +296,8 @@
 ---
 
 ## X-10 · 「5 类 dyad 零覆盖」是 test-list gap 还是 domain gap
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A11（adjV1 `X-10` = DECIDED: TWO-LAYER BOOKKEEPING）· §SR-B20
 
 **命题**：`19` §1 A12 / R17 A6 把「Gate B 清单不含 sibling / parent–adult-child / ex-partner / professional / adversarial」呈现为覆盖缺口。
 
@@ -305,6 +334,8 @@
 ---
 
 ## X-11 · 五条候选律的处置（lane `L` vs lane `D` vs `ADJ2`）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A12（adjV1 `X-11` = NONE FROZEN）
 
 | 律 | `L-C15`（lane L） | lane D | **`ADJ2` 逐律裁定** |
 |---|---|---|---|
@@ -344,6 +375,8 @@
 
 ## X-12 · 优先级排序与「唯一的真正阻塞项」
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A13（adjV1 `X-12` = ACCEPT RECLASSIFICATION）
+
 **命题**：`19` §7 优先级 1 写「**这是唯一的真正阻塞项**」。
 
 | 读法 | 来源 | 断言 |
@@ -359,6 +392,8 @@
 
 ## X-13 · `total power` 的实现规格（`F-C21` vs `F-C23`）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A14（adjV1 `X-13` = DECIDED）· §SR-A16（`C-P4` = ACCEPT R2-a / HOLD R2-b）· §SR-B11
+
 - `F-C21`（`VERIFIED`，含全部引文）：`total power = mutual dependence / relational cohesion`（非零和）。
 - `F-C23`（`WRONG-SCOPE`，**技术性错配**）：`10` 把 **Lawler 的 relational-cohesion 规格**当成了 **total-power 规格**。
   正确形式：`TP` = 对称聚合（和）；`C`（relational cohesion）是 `TP` 与 `RP` 的关系，**不是** `TP` 的定义。
@@ -370,6 +405,8 @@
 ---
 
 ## X-14 · `11` §6.1 的格统计（`G-C3` `UNSUPPORTED`）与 `04` 的头条否定（C-C29）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A14（adjV1 `X-14` = DECIDED）· §SR-B8
 
 - `G-C3`：`11` §6.1（采样框架后果，全报告最承重的一节）引用了四个矩阵格统计，**其中两个错误**；§3.4 引用的 D 列统计**两个都错**。`G` 逐格重算后证伪这五个具体数字 ⇒ `REJECT` 拒绝以现有形式引用 §6.1 的格统计。
 - `C-C29`：§8.9「最重要的整体否定结果」——「本审计**未发现**任何『完全公开 + 双报告 + 方向性 + 多波 + 关系状态构念』的数据集。**这四个条件的交集为空。** 这是本 landscape 最重要的结构性事实」。

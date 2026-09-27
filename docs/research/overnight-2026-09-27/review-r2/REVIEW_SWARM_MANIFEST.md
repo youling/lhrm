@@ -5,6 +5,14 @@
 >
 > **本 swarm 是审计，不是研究。** 目标是把 PR #31 的既有研究结果分块判定成可提交 Architect 审议的 verdict，
 > **不产出任何新文献调研，不修改任何被审文件，不实施任何 Work Order。**
+>
+> **Round-3 追加（child `B1`，branch `r3/b1`）**：§1 增 base 行；§3 / §5 / §7 / §8
+> 增取代指针；§7 增 `supersession` 列；**§9 指向新的 §11**。
+> 旧的「packet 未随 PR 提交」交付缺陷**已关闭**，机制与复现命令见 **§11**。
+> 被取代的评审主张逐条登记在 **`SUPERSEDED_REGISTER.md`**
+> （`SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`（`#30` comment `5854920569`）取代，
+> `SR-B*` = 被 Track R3-A 的 `r3/a1`…`r3/a4b` repair 取代，`SR-X*` = 明确不取代）。
+> **本 child 未删改任何 Round-2 评审主张。**
 
 ---
 
@@ -19,6 +27,8 @@
 | 上一轮终端指针 | `AGENT_CLAIMED` `issues/30#issuecomment-5850793190` · `CP2` `#issuecomment-5851651404` · `AGENT_TERMINAL_RESULT` `#issuecomment-5851720786` |
 | 本轮 review branch | `review/overnight-2026-09-27-r2`（从被审 head 派生，**PR #31 的 branch 与 head 未被本轮触碰**） |
 | 治理来源 | `youling/ai-use@AGENTS.md` (L0, `64018d80`) · `youling/lhrm@AGENTS.md` · `docs/research/overnight-2026-09-27/review-r2/REVIEW_CONTRACT.md` (commit `79f297d`) |
+| **Round-3 child `B1` 的 base** | `99a0d32a2cdf4f649dac389aa0b1679262e50df5`（= 本文件在 PR #32 上的 head；`git rev-parse HEAD` 开工前核实**一致，无 drift**） |
+| **Round-3 child `B1` 的 branch** | `r3/b1`（**未 push、未建 PR、未改任何 review state**；见 §11） |
 
 **被审对象只读。** Round 2 的全部 18 个 child 与 parent 都**未修改** `D:\coding\lhrm` 下任何被审文件、
 `docs/foundation/*`、`docs/validation/*`、`AGENTS.md`、`README.md`。
@@ -67,6 +77,8 @@ parent 在 join 时逐条标注二者是否一致（见 `CONTESTED_FINDINGS.md`�
 
 ## 3. 独立性台账（含已披露的越界）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A10（adjV1 `X-8` 要求改用 `independent_sources × methods`；`5+5+2` 分层必须保留）· §SR-B2
+
 `REVIEW_CONTRACT.md` §4 的硬规则：**「本 swarm 有 N 个 lane 都这么说」在任何情况下都不构成 verdict 升级依据。**
 
 | 项 | 状态 |
@@ -90,6 +102,8 @@ parent 在 join 时逐条标注二者是否一致（见 `CONTESTED_FINDINGS.md`�
 | 在 PR #31 留指针 | 触碰 Eye / Juece；读取或引用 `youling/lhrm#20/#21/#22` |
 
 ## 5. Join 规程（可复现）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B18。**第 3 条已被取代**：join 现在有可复跑的抽取器与机器可读断言，见 `tools/extract_packets.py`（`--assert-complete`）与 `packets/COMPLETENESS.md`；散文免责不再是完备性依据
 
 1. **抽取。** 对 18 份 packet 做字段级抽取，只取 `claim_id / claim / verdict / requires_canonical_change /
    needs_experiment_or_data / corroboration|independence_status / recommendation_to_architect`。
@@ -121,26 +135,31 @@ parent 在 join 时逐条标注二者是否一致（见 `CONTESTED_FINDINGS.md`�
 
 ## 7. 本轮对 PR #31 durable 文本的记账更正（记录，不改 PR #31）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B1…§SR-B7（逐行指针见本表新增列）· §SR-B19。**本表继续有效**：它记录的是「当时为假」，取代的是被审文本的状态
+
 以下全部来自 `J` 与 `EV2`，`EV2` 已独立复算。**这些是本 review 交付物的实质内容之一**：
 PR #31 的 manifest 与两份审计报告的记账与引用分级**不可按现状引用**。
 
-| # | 位置 | 现状 | 更正 | 依据 |
+| # | 位置 | 现状 | 更正 | 依据 | supersession |
+|---|---|---|---|---|---|
 |---|---|---|---|---|
-| M-1 | `00_MANIFEST.md` §2b（OSF 前缀段） | 「`10.31234` 解析、`10.31219` 404」；`10.31219` 是 OSF project 前缀 | 两个前缀**均 live**（同属 `Center for Open Science`）；`f6wbn` 只在 `10.31234` + `_v1` 下注册。`10.31219/osf.io/gu8z7` → 302 → 终态 200 | `EV2` 实测 + `A04:193` 自己记 ✅ ⇒ PR 内部文档直接反驳 manifest |
-| M-2 | `00_MANIFEST.md` §4 B-9 | 18 lane 自报数之和 ≈ **1,201**；高估 **2.3–3.4×** | 之和 = **878**（脚本相加，两处清单各自求和一致）；相对 533 distinct source = **1.65×**，相对 350 = **2.51×**。`1,199` 是原始出现次数，与 lane 内去重计数不同量纲 | `EV2` §4（独立复算）+ `J-C4` |
-| M-3 | `00_MANIFEST.md` §2b（`08b` 修复计数） | 「修了 7 处」 | **8 处**（`git show 8adcf0b -- 08b` 改动行 `[S2][S12][S13][S34][S37][S51][S60][S70]`） | `EV2` §1（`J-C20` 成立） |
-| M-4 | `00_MANIFEST.md` §2b（`08b [S15]`） | 「只改作者，未改年份」；A01 给 2008 / action 行给 2010 | `08b:755` 的 `[S15]` **根本没有作者字段**；其年份是 **2025**，A01 实际给的就是 2025（`A01:456`）。**A01 是对的，manifest 的转述在年份与性质上都错** | `EV2` §1（`J-C21` 成立且更错） |
-| M-5 | `A01_EVIDENCE_QUALITY_AUDIT.md` §1.1 line 34 | 「Crossref 解析 **353/353（100%）**」 | **337/353 = 95.5%**（`A01:15` 自己已写对）。同一文件两行冲突 | `EV2` §1（`J-C13` 成立） |
-| M-6 | `A04` §2.1 / §2.3 | `1,201` 与「2.3–C3.4×」 | 见 M-2 | `EV2` §5.4 / §5.5（提供 verbatim 替换文本） |
-| M-7 | `A04` §4.2 承重表作者列 | 「30 项中 28 项强度充分」 | **≥16/30（53%）作者归属错**。`EV2` 独立打开 J 未开的 11 行，测得 6/11 错，与 J 的 53% 合并成立。另：`A04` 的 642 行来源表**结构上没有 author / title 两列** ⇒ 该缺陷类在 A04 内**无法被发现** | `EV2` §1、§6.3（`J-C7` 成立） |
-| M-8 | `A04` §3.3.4 | `10.1037/h0046049` = Cartwright & Harary 1956, *Psych Review* **63(4)** 判 ✅ 一致 | 实为 **63(5):277–293** ⇒ **「已通过」清单里有错项** | `J-C15` `UNSUPPORTED` |
-| M-9 | `A04` D5 | `10.1024/1662-9647.a000031` 的问题是「前缀与著录期刊族不一致」 | 该理由不成立 | `J-C14` `UNSUPPORTED` |
-| M-10 | `A04` §6.3 F1 / Fixture 003 权利边界 | `13` 全篇 0 次记录 `pointer_only` / `ai-train=no` / `GPTBot Disallow`，却用其 transcript 单元 | **边界存在**（`J-C16` `VERIFIED`）；是否构成违反由 Human 权利裁决，`J` 与 `G` 均标 `CONTESTED` / 无权裁定 | `J-C16` `VERIFIED` + `J-C17` `CONTESTED` |
+| M-1 | `00_MANIFEST.md` §2b（OSF 前缀段） | 「`10.31234` 解析、`10.31219` 404」；`10.31219` 是 OSF project 前缀 | 两个前缀**均 live**（同属 `Center for Open Science`）；`f6wbn` 只在 `10.31234` + `_v1` 下注册。`10.31219/osf.io/gu8z7` → 302 → 终态 200 | `EV2` 实测 + `A04:193` 自己记 ✅ ⇒ PR 内部文档直接反驳 manifest | `SR-B1`（已修：两前缀均 live；真 404 的是无版本后缀 / 前缀错配）
+| M-2 | `00_MANIFEST.md` §4 B-9 | 18 lane 自报数之和 ≈ **1,201**；高估 **2.3–3.4×** | 之和 = **878**（脚本相加，两处清单各自求和一致）；相对 533 distinct source = **1.65×**，相对 350 = **2.51×**。`1,199` 是原始出现次数，与 lane 内去重计数不同量纲 | `EV2` §4（独立复算）+ `J-C4` | `SR-B2`（已修：878；1.65× vs 533 / 2.51× vs 350）
+| M-3 | `00_MANIFEST.md` §2b（`08b` 修复计数） | 「修了 7 处」 | **8 处**（`git show 8adcf0b -- 08b` 改动行 `[S2][S12][S13][S34][S37][S51][S60][S70]`） | `EV2` §1（`J-C20` 成立） | `SR-B3`（已修：8 处，8/8）
+| M-4 | `00_MANIFEST.md` §2b（`08b [S15]`） | 「只改作者，未改年份」；A01 给 2008 / action 行给 2010 | `08b:755` 的 `[S15]` **根本没有作者字段**；其年份是 **2025**，A01 实际给的就是 2025（`A01:456`）。**A01 是对的，manifest 的转述在年份与性质上都错** | `EV2` §1（`J-C21` 成立且更错） | `SR-B3`（已修且**加强**：`[S15]` 无作者字段；年份 2025；A01 是对的）
+| M-5 | `A01_EVIDENCE_QUALITY_AUDIT.md` §1.1 line 34 | 「Crossref 解析 **353/353（100%）**」 | **337/353 = 95.5%**（`A01:15` 自己已写对）。同一文件两行冲突 | `EV2` §1（`J-C13` 成立） | `SR-B4`（已修：337/353 = 95.5%）
+| M-6 | `A04` §2.1 / §2.3 | `1,201` 与「2.3–C3.4×」 | 见 M-2 | `EV2` §5.4 / §5.5（提供 verbatim 替换文本） | `SR-B5`（已修：承重表加 `Author`/`Title` 两列）
+| M-7 | `A04` §4.2 承重表作者列 | 「30 项中 28 项强度充分」 | **≥16/30（53%）作者归属错**。`EV2` 独立打开 J 未开的 11 行，测得 6/11 错，与 J 的 53% 合并成立。另：`A04` 的 642 行来源表**结构上没有 author / title 两列** ⇒ 该缺陷类在 A04 内**无法被发现** | `EV2` §1、§6.3（`J-C7` 成立） | `SR-B5`（已修：≥16/30 逐条改正；承重层结论**撤回**并改三层）
+| M-8 | `A04` §3.3.4 | `10.1037/h0046049` = Cartwright & Harary 1956, *Psych Review* **63(4)** 判 ✅ 一致 | 实为 **63(5):277–293** ⇒ **「已通过」清单里有错项** | `J-C15` `UNSUPPORTED` | `SR-B6`（已修：63(5):277–293；「已通过」清单含假 PASS）
+| M-9 | `A04` D5 | `10.1024/1662-9647.a000031` 的问题是「前缀与著录期刊族不一致」 | 该理由不成立 | `J-C14` `UNSUPPORTED` | `SR-B6`（已修：前缀无冲突；真缺陷 = DOI 分隔符错误）
+| M-10 | `A04` §6.3 F1 / Fixture 003 权利边界 | `13` 全篇 0 次记录 `pointer_only` / `ai-train=no` / `GPTBot Disallow`，却用其 transcript 单元 | **边界存在**（`J-C16` `VERIFIED`）；是否构成违反由 Human 权利裁决，`J` 与 `G` 均标 `CONTESTED` / 无权裁定 | `J-C16` `VERIFIED` + `J-C17` `CONTESTED` | `SR-A9` · `SR-B7`（已修：权利边界在六处使用点写明；**无权利升级**）
 
 `EV2` §5 另提供了 **10 块 verbatim 替换文本**（每块标明目标文件与行号），可直接用于 PR #31 的后续修订。
 本 review 不代为 paste（PR #31 不在本轮变更面内）。
 
 ## 8. 覆盖缺口与本轮的非主张
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B18（第 1 行「packet 未随 PR 提交」**已关闭**，见 `packets/`）· §SR-X5（第 2–5 行**仍然成立**）
 
 **parent 的非主张（explicit non-claims）**
 
@@ -164,10 +183,15 @@ PR #31 的 manifest 与两份审计报告的记账与引用分级**不可按现�
 
 ## 9. 本目录 7 份产物
 
+> **Round-3 更新（child `B1`）**：本表仍是 Round-2 的 7 份叙述性产物。
+> 第 8 份（`SUPERSEDED_REGISTER.md`）、`packets/` 目录与 `tools/` 三个脚本
+> 见 **§11**。矩阵一行的行数已由 397 变为 **401**（补回 4 行），
+> 其余 6 份**内容未被本 child 改动**，只加了取代指针。
+
 | 文件 | 内容 | 读法 |
 |---|---|---|
-| `REVIEW_SWARM_MANIFEST.md` | 本文件。入口 | 先读 §2 §3 §7 |
-| `CROSS_LANE_VERDICT_MATRIX.md` | 397 行 mechanical verdict 矩阵（12 lane） | 分诊用；**先读 §0 免责** |
+| `REVIEW_SWARM_MANIFEST.md` | 本文件。入口 | 先读 §2 §3 §7 §11 |
+| `CROSS_LANE_VERDICT_MATRIX.md` | **401** 行 mechanical verdict 矩阵（12 lane；Round-3 由 `packets/*.json` 重生成，**不截断**） | 分诊用；**先读 §0 免责与 §1.3 抽取覆盖断言** |
 | `HIGH_CONFIDENCE_FINDINGS.md` | 站得住的结论与缺陷发现 | Architect 优先读 |
 | `CONTESTED_FINDINGS.md` | 两侧都有证据 / 阶段间不一致的命题 | **需 Architect 或 Human 裁决的都在这里** |
 | `REJECTED_OR_WEAK_FINDINGS.md` | 被推翻、需撤回或需重述的 PR #31 主张 | 引用 PR #31 前必读 |
@@ -187,3 +211,41 @@ PR #31 的 manifest 与两份审计报告的记账与引用分级**不可按现�
 - 执行任何新文献调研。
 
 下一动作权在 **Human / Project Architect**。本目录 7 份产物是提交审议的输入，不是决议。
+
+## 11. Round-3（`r3/b1`）新增的 durable 产物
+
+本节由 Round-3 child `B1` 追加。**它不修改上面任何一节的原文**；它记录
+本目录在 Round 3 之后**多了什么**，以及旧的「packet 未随 PR 提交」缺陷
+是如何被关闭的。
+
+| 产物 | 内容 | 谁生成 | 怎么复现 |
+|---|---|---|---|
+| `packets/R2_<child>.json` ×18 | 18 个 child packet 的**每一个结构化字段**，逐字、**不截断**；438 条 record，全部有稳定 `claim_id` 主键与 `_locator`（回指源 packet 行号） | `tools/extract_packets.py` | 需要原始 18 个 `R2_*.md`（不在本 PR 内；sha256 登记在 `packets/INDEX.md` §2） |
+| `packets/INDEX.md` | 18 个 child 的 sha256 / 字段计数 / **抽取契约** / 体量预算 | 同上 | 同上 |
+| `packets/COMPLETENESS.md` | 逐包 `declared_records` vs `extracted_records` vs `records_with_empty_claim` + 字段覆盖矩阵 + 字段缺失归因 + 被重并的表行清单 | 同上 | 同上 |
+| `packets/SANITISATION.md` | private chain-of-thought 筛查：6 条冻结规则、逐条命中与**处置** | 同上 | 同上 |
+| `tools/extract_packets.py` | 确定性抽取器，6 种布局变体，**完备性断言**（`--assert-complete` 不通过则退出码 1） | — | `python tools/extract_packets.py --packets-dir <dir> --out-dir packets --assert-complete` |
+| `tools/packet_contract.py` | **冻结的抽取契约**：record scope、列名别名表、复合列顺序、捕获/不捕获范围、sanitisation 登记表 | — | 只读 |
+| `tools/regenerate_matrix.py` | 从 `packets/*.json` 重生成 `CROSS_LANE_VERDICT_MATRIX.md`；**只读本目录内已提交的 JSON** | — | `python tools/regenerate_matrix.py --packets-dir packets --out CROSS_LANE_VERDICT_MATRIX.md` |
+| `SUPERSEDED_REGISTER.md` | 被取代的评审主张登记（`SR-A*` 24 条 / `SR-B*` 21 条 / `SR-X*` 6 条） | Round-3 child `B1` | — |
+
+### 11.1 旧的「packet 未随 PR 提交」缺陷：现状
+
+| 原记录位置 | 原状态 | 现状态 |
+|---|---|---|
+| §8 表第 1 行 | 「packet 未随 PR 提交（18 份共 ~1.5 MB）……**这是本轮最需要 Architect 知晓的交付缺陷**」 | **已关闭。** 完整机器可读 artifact 在 `packets/`；源 packet 的 sha256 在 `packets/INDEX.md` §2；抽取完备性由 `packets/COMPLETENESS.md` + `--assert-complete` 保证。**取代指针**：`SUPERSEDED_REGISTER.md` §SR-B18 |
+| §8 表第 2 行 | 「`E` / `H` / `K` 部分行未被机械抽取」 | **行级已关闭**（`E` 21 → **25** 行，补回 `E-C21`…`E-C24`；`H` 57 / `K` 50 行不变）。**字段级空缺保留并精确定义**：`H` 的 17 行 claim、`K` 的 24 行 verdict 是 **packet 本身无该列**，见 `packets/COMPLETENESS.md` §5。**取代指针**：`SUPERSEDED_REGISTER.md` §SR-B18 |
+| §5 第 3 条 | 「抽取覆盖缺口是公开的」（散文免责） | **被取代**为机器可读断言。**取代指针**：`SUPERSEDED_REGISTER.md` §SR-B18 |
+| §9 产物表 | 列 7 份产物 | **扩为 8 份 + 3 个脚本 + `SUPERSEDED_REGISTER.md`**，见 §11 |
+| §7 全表 M-1…M-10 | 逐行「更正值」 | **逐行新增 `supersession` 列**（PR #31 侧已修 / 仍成立 / 被 Architect 部分改写）。**取代指针**：`SUPERSEDED_REGISTER.md` §SR-B19 |
+
+### 11.2 本 child **没有**做的事
+
+* **没有重跑 18 个 child。** `packets/` 里的一切都是对既有 packet 的机械抽取。
+* **没有改任何 verdict。** 438 条 record 的 `verdict` 文本与源 packet 逐字相同；
+  `CROSS_LANE_VERDICT_MATRIX.md` 的 `primary` 派生列因输入不再被截断而变，
+  **这是派生列的变，不是 verdict 的变**。
+* **没有实施任何 Architect 裁决。** `SUPERSEDED_REGISTER.md` 只做**登记**。
+* **没有 push、没有 PR、没有改任何 review state、没有 `--amend`、没有 merge。**
+* **没有触碰 canonical / PR #31 / `docs/validation/*` / fixture / Eye / Juece。**
+* **没有读取、执行或引用 `youling/lhrm#20` / `#21` / `#22`。**

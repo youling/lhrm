@@ -10,12 +10,25 @@
 > 未入选者不是错的，只是**未达此门槛**——它们的去处是 `CONTESTED_FINDINGS.md` 或 `REJECTED_OR_WEAK_FINDINGS.md`。
 >
 > 每条给出：`id` · 命题 · 证据（含指针）· 独立性 · 对 PR #31 的处置。
+> **Round-3 supersession pointer.** 本文件未删改任何 Round-2 评审主张。
+> 已被取代 / 已被本轮修复取代的主张，逐条登记在
+> **`SUPERSEDED_REGISTER.md`**（stable id `SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`
+> 取代，`SR-B*` = 被 Track R3-A 的 PR #31 修复取代，`SR-X*` = 明确不取代）。
+> 取代依据：`youling/lhrm#30` comment `5854920569`（adjV1）与
+> `r3/a1`…`r3/a4b` 的 repair commit（见该 register §2 表头）。
+> **本文件是 Round-2 的记录；不得再把被取代的表述当作待议项引用。**
+
+
 
 ---
 
 ## A. Gate 的结构性事实（最高优先级）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A3 · §SR-A22 · §SR-X1
+
 ### H-A1 — Gate A/B/C 在判据原文下不存在会被算作失败的结果
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A3（C-P1 修改条款：不得发明 N 阈值）· §SR-B16（严重性）· §SR-X1（事实层不取代）
 
 - **判定**：`VERIFIED`（`I-C1`；`ADJ3` Q1 逐节点过；`EV1` §7 独立复现）
 - **证据**：`PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A/B/C 为纯 test-only 章节，全章唯一的后果句是 `:748` 的 keep-end；
@@ -61,6 +74,8 @@
 
 ### H-A4 — Gate B 的 11 个 cell 中 10 个是项目自身文本的逐条复述
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A22（C-P2 增补分表约束）· §SR-B17
+
 - **判定**：`VERIFIED`（`I-C7`；`ADJ3` Q3 独立重算）
 - **关键更正**：`19:35` 与 `19:182` 的「A03 修正为 **8/11**」是**误引**。`A03:736`（`X-5`）与 `A03:751`（`N-A03-6`）**逐字否决过 8/11**，
   理由是「8/11 是 scope 标签（§1.5）」。`ADJ3` 进一步发现 A03 自己的第 11 格也错：
@@ -83,7 +98,11 @@
 
 ## B. 引用与记账（`J` + `EV2`，两者独立复算）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B4 · §SR-B5 · §SR-B6 · §SR-B7 · §SR-X2
+
 ### H-B1 — A01 的 DOI 解析率是 95.5%，不是 100%
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B4
 
 - **判定**：`VERIFIED`（`J-C1`、`J-C13`；`EV2` §1 独立复核）
 - **证据**：`A01:15` 自己写 `337/353 = 95.5%`；`A01:34` 写「353/353（100%）」。**同一文件两行直接冲突。**
@@ -104,6 +123,8 @@
 
 ### H-B4 — A04 的 `PEER_REVIEWED_PRIMARY` 分层系统性错标
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B5
+
 - **判定**：`VERIFIED`（`J-C6` 作为「peer-reviewed 计数」`VERIFIED` / 作为「科学重量」`WRONG-SCOPE`；`EV2` 实测更差）
 - **证据**：`EV2` 对 319 行每 20 行取 1（n=16），**9/16 = 56%** 不是 primary empirical work（是 theory / methodology / review / 综述 / 计算模型）。
   `J` 说「至少 20–30% 名不副实」，方向一致、量级更差。
@@ -111,6 +132,8 @@
   在分层重出前，`350` 不得进入任何承重陈述。见 `REJECTED_OR_WEAK_FINDINGS.md` R-B3。
 
 ### H-B5 — A04 承重表 ≥16/30（53%）作者归属错，且该表结构上无法发现此类错误
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B5
 
 - **判定**：`VERIFIED`（`J-C7`；`EV2` §1 + §6.3）
 - **证据**：`J` 打开 19 行得 10 行错（其表内行数与散文的「11 行」不一致——`EV2` 已指出）；`EV2` 打开 J 未开的 11 行得 6/11 错。
@@ -128,6 +151,8 @@
   **不要让 70 条挂账稀释真正的 blocker**。
 
 ### H-B7 — Fixture 003 存在 `pointer_only` / `ai-train=no` / `GPTBot Disallow` 边界
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A9 · §SR-B7
 
 - **判定**：`VERIFIED`（`J-C16`）
 - **独立性**：`G-C22` 独立以穷尽检索确认「`13` 在六处实质使用该 fixture 却全文不记录边界」（`VERIFIED`）。
@@ -269,59 +294,66 @@
 
 ## F. 已知缺陷（child 直接重算或重读得出，可复现）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` 逐行指针见本表新增的 `supersession` 列；总表见 `SUPERSEDED_REGISTER.md`
+
 这些不是「结论」，是**对 PR #31 制品本身的可复算不一致**。它们全部 `VERIFIED`，且不需要任何新证据。
 
-| id | 缺陷 | 判定 | 独立性 |
+| id | 缺陷 | 判定 | 独立性 | supersession |
+|---|---|---|---|---|
 |---|---|---|---|
-| **H-F1** | `02b` §2 声明 `INDEPENDENT` = 「≥3 个 lens 有正面分离证据」；实算 6 条 `INDEPENDENT` 中 **4 条不满足**（E2=2、E11=1、E11c=2、E14=2）。同样 2-lens 的 E3 却判 `CONTESTED` | `A-C1` `UNSUPPORTED`（标签与自定规则无推导关系） | `A` 用脚本重算 21×5 单元格，未采信报告自述 |
-| **H-F2** | `02b` §4 边表 105 个单元格**无任何来源列**；11 条边的判定无法追溯到 `02b` 内的引用编号。**E5 与 E17 在四节中均无对应行** | `A-C4` `UNSUPPORTED` | 同上 |
-| **H-F3** | `02b` §6 用 `R1`–`R11` 表示「不可消去残余」，而 `PARAMETER_CONVERGENCE` §9 已用 `R1`–`R5` 表示 `Derived/Readout` 清单。**同 PR 内两套 `R` 编号语义完全不同**，且无编号空间隔离声明 | `A-C12` `PLAUSIBLE` | `A` 逐条核对 |
-| **H-F4** | `02b` §3.1 图例定义 `---` = 「判定为 `INDEPENDENT` 的边」，但 E1、E18（均 `CONTESTED`）都用 `---` 绘制；ASCII 另标 E3 为 `CONTESTED/mod` 而边表 E3 的 `strength` 是 `STRONG` | `A-C5` `UNSUPPORTED` | `A` |
-| **H-F5** | `01` §9.1 的操作性交接写「从 §7 的 **S-9（F-09 表）**开始」，而 **`01` 全文不存在任何 `F-xx` 条目** | `A-C27` `UNSUPPORTED`（该交接指令不可执行） | `A`。**这是 packet 的可执行性发现** |
-| **H-F6** | `02` 与 `02b` 报同一个数不同值：男性 `r=.66` / 女性 `r=.26`（`02`）vs 女性 `r=.25`（`02b`，且同时挂在两个来源上） | `A-C13` `CONTESTED` | `A` 两侧同 cluster |
-| **H-F7** | `05` §5 把 17 条「不是可回答清单」当作**单一逻辑类型**呈现 | `D-C10` `WRONG-SCOPE` | `D` |
-| **H-F8** | `05` §7：把 `RIx` 的方差直接写成「稳定 trait」是错的——illusory between-person component 可能**只**来自省略的 time-varying covariate | `D-C11` `VERIFIED` | `D` |
-| **H-F9** | `16` 把「17 条不可建立事项」与「21 条失败模式」计入已达成的交付物 | `D-C29` `UNSUPPORTED`（作为独立交付物计数） | `D` |
-| **H-F10** | `16:117` 称「L1–L8 是本协议的实例化」，但同时自陈「**不声称**复现 S01 的八分类（S01 图 1 确切标签未取得）」⇒ 两者不能同时成立 | `D-C28` `UNSUPPORTED`（作为「该来源不可得」的断言） | `D` |
-| **H-F11** | `05` §1 的「45% 的文献用两波拟合 CLPM」与「89% 尺度看似有效、4% 全面评估后」两条被并列引用，但后者的语境（Orth 2021 / Hussey & Hughes）未开 | `D-C38` `PLAUSIBLE` | `D` |
-| **H-F12** | `07` §5 开篇写「以下 **15 条**是候选可检验不变量」，但 §5.1 给 I1–I15、§5.2 给 I16–**I19**，合计 **19 条**；§13 也写「给出 19 条」 | `E-C12` `VERIFIED`（缺陷确认） | `E` |
-| **H-F13** | `07` 的证据等级约定（`:8`）只定义 6 个等级，但正文 **15 处**使用 `[ESTABLISHED]` | `E-C13` `VERIFIED` | `E` |
-| **H-F14** | `07` §5 的 19 条中，`I14` / `I17` / `I18` **不可执行**（判据含 `07` 自己拒绝给值的 `θ`、未定义的 coverage 阈值、需成本模型而项目明确不冻结分数）；`I19` **空过**（任何非恒定函数都满足） | `E-C11` | `E`。「9 条现在就能检查」这一计数 `REJECT` |
-| **H-F15** | `07` 与 `08b` 在同一 PR 内**各自发明一套平行编码**（缺失性/不适用性/冲突/不可寻址的分区），零协调，且存在**三处同名不同义**：`disputed`（07 缺失机制）vs `disputed`（`CURRENT_ARCHITECTURE.md:315` fact status）vs `Divergent`（08b 主体立场对立）、`reporter_role`（07）vs `Role`（canonical）。直接并入会得到 14+ 值枚举，违反 `AGENTS.md:22`/`:24` | `E-C23` `VERIFIED`（重叠存在且未被协调） | `E`。**但**「08b 的存在性结论是对 07 的独立佐证」不成立——`08b` 未读 `07` |
-| **H-F16** | `10` §5 的 test table 与 §6.3 / §7 / §8 之间存在同义与双重计数（多处由报告**自己**的交叉引用证实） | `F-C30` `VERIFIED` | `F` |
-| **H-F17** | `09` §0 第 1 条（headline）：「**不存在**可与 LHRM 对象直接比较的既有关系 ABM」；而 §1 写「通过 C5 的：**本 lane 未找到任何一个**」 | `G-C17` `WRONG-SCOPE` | `G` |
-| **H-F18** | `13` §12 判定其 `Observation / Belief / Environment` 分层的外部证据「**基本为空**… **0 条外部文献**。这是 LHRM 独有结构」；而 `12` §8 `I8` 判定 Concordia 的 GM/player 分离「在结构上**等价于** LHRM 的 `Reality != Observation != Belief` 分层」 | `G-C25` `CONTESTED`（cluster `G` 内部） | `G` |
-| **H-F19** | `13` §2.2(c) 标题「LLM 的一致性是『对齐多数派先验』，不是『更准』」，但转述把来源的结论方向讲反——`13` 自己引的发现 3 就是该转述的反证 | `G-C28` `WRONG-SCOPE` | `G` |
-| **H-F20** | `13` §13.2 主张六项指标「在冻结 fixture 上**完全可机器判定**（因为 fixture 本身是冻结的、有明确 `fact_status` 与 `source_anchor`）」；但被抽取的文本与判定 gold 是**同一批文本的同一批标签** | `G-C29` `WRONG-SCOPE`（对自己的 gold 不施加循环论证标准） | `G` |
-| **H-F21** | `12` 记录了三条对 LHRM **已有 canonical 决策**的独立外部佐证，但三条全部只出现在 §2.1 / §8（作为「可复用想法」），**从未进入 §10 的裁决** ⇒ 在该报告的最终结论里权重为零 | `G-C26` `VERIFIED` | `G` |
-| **H-F22** | `14` §9.1 与 §9.2 的两项「最高优先未核实 prior art」极可能都是**不存在的引用**：`Acitelli & Antonioni (2006)`（JPSP 90(6)，Crossref 该期无此文，真人姓氏是 **Antonucci**）；`Boyd & Heewer (2007)`（Crossref `query.author=Heewer` = **0 results**） | `H-C24` `UNSUPPORTED` + `H` 的专项 9.1-1/2 | `H` 与 `L-C20` **各自**查了不同的一半（`H` 查 Crossref 该期；`L` 指出 Heewer 极可能是第三作者，且正确项应为 **Boyd & Hilton (2007), *The law of the wed*, Cognition**）⇒ `PARTIALLY_INDEPENDENT`。**这两项被列为「决定新颖性判断的最大单一变量」却零证据** |
-| **H-F23** | `14` §2.5 + F-6 + F-16 用 Lalk et al. (2025) 证明「LLM 抽多类语义的上限是 κ=.42」——**原文是** GoEmotions 28 类公开数据集 → 翻译德语 → fine-tune 预训练 LLM → 应用于 reddit 心理治疗评论；且该数据集的**人类标注一致性本身就是 κ=.331–.468**，模型的 .42 **达到而非低于**天花板 | `H-C26` `WRONG-SCOPE` | `H` |
-| **H-F24** | `17` 的 S 编号体系（`S1`…`S29`）无法从其 §12 引用清单解析 | `I-C14` `VERIFIED` | `I` |
-| **H-F25** | `17` 的 Gate B 覆盖表枚举不完整：含 1 个非 Gate B cell（`work colleague`），漏 2 个真 cell（`opposite-sex`、`non-kin`） | `I-C8` `VERIFIED` | `I` |
-| **H-F26** | `17` §4 表实际裁定分布是 `CHALLENGED 12 / CONTESTED 6 / UNCHALLENGED 3 / NO_EVIDENCE 2`（23 条） | `I-C15` `VERIFIED` | `I` |
-| **H-F27** | `17` §12 line 549 的「所有卷期页均经 Crossref API 核验」这一**总括声明**不成立 | `I-C30` `VERIFIED` | `I` |
-| **H-F28** | `VALIDATION_CORPUS_V0_1.md` 的「Recommended Fixture 001–003」已被实际冻结的三个 fixture 取代 ⇒ **canonical 内部存在未更新的文档级冲突**（已发生过，不是假设） | `I-C12` `VERIFIED` | `I` 自己做的 git + SHA + grep；两份报告都靠读文件而非索引躲过了它 |
-| **H-F29** | `04` D12 命名为「**Add Health (NLSY97/ECLS)**」 | `C-C20` `CONTESTED`（事实误标 + 报告内部矛盾） | `C` |
-| **H-F30** | `04` D08 断言「**配偶关系质量是单方报告**……→ `Z[i→j]` 与 `Z[j→i]` 在 NSFH 中不可分离」，依据是 **Wave 1 的一句问卷描述** | `C-C35` `CONTESTED` | `C` |
-| **H-F31** | `18` 使用了两个从未定义的编码命名空间 `CR-x` 与 `NR-x`；`CR-1/3/4/6/7/8` + `NR-1/8` 共 8 个码在 `18` 自身没有登记表，其中 5 个被 §10 的 `NARROW_REPAIR_REQUEST` 当作**理由码**引用 | `K-C11` `UNSUPPORTED` | `K` |
-| **H-F32** | `19:353` 的方法学缺口第 3 条（「`02b` 依赖 `R04`/`R06`」）是错的：`02b` **零**引用 `R04`/`R06`（全文正则计数 `R04`=0 `R06`=0 `pairfam`=0 `APES`=0 `DVA`=0 `BMR`=0） | `K-C12` `VERIFIED` | `K` 用机器可复算的正则计数。**这是 `19` 唯一的硬事实错误，且它在「诚实记录自身缺口」的段落里** |
-| **H-F33** | 「`Unknown` 值类被**五**个 lane 各自重新发明」中的计数**偏低**：语料中至少存在**第 6 套**「无值」词表 `UNKNOWN_AS_OF` / `DOI_UNKNOWN_AS_OF_2026-09-27`，且它是**全语料使用最广**的一套 | `K-C7` | `K` |
-| **H-F34** | `19` §8 有 **B-1…B-8**（8 项）；`00_MANIFEST` §4 有 **B-1…B-9**（9 项）；两者对 **B-3** 指不同事物；且 manifest 自身对「全局去重」同时使用 **B-3**（§4）与 **B-9**（§4 末）两个编号 | `L-C18` + `ADJ3` Q7/Q8 独立核实 | `L` 与 `ADJ3` **各自**读两份 register 并逐项比对，结论一致 ⇒ `INDEPENDENT` |
-| **H-F35** | `19` §7 抬头「**全部**为 AI 推荐…**均**不属本 Work Order 授权范围，需 Human 授权后另行派发」把**两种不同性质**的批准混为一谈：**(a)** 因 canonical mutation 需 Human 主权批准（N1/N2/N3/N4-冻结部分）与 **(b)** 仅因 Work Order 边界而需新派发（N5-前半/N6/N7/N8） | `K-C44` `WRONG-SCOPE` | `K` 读了 `19` §7 全部 8 条的变更面 |
-| **H-F36** | `19` §7 自报排序依据是「修起来便宜 / 收益大」，但实际排序（canonical 最贵的 N1 打头，最便宜的 N8 垫底）遵循的是**架构依赖**，不是成本/收益 | `K-C45` `UNSUPPORTED` | `K`。`ADJ3` Q7 独立得出同一结论并补充：N1 的**编辑工时**确实最低，真实排序依据是「**依赖解锁序**」 |
-| **H-F37** | `lhrm` 仓库只有 `AGENTS.md`、`README.md`、`docs/`；**无 runner、无 CI、无 metric 实现、无 schema 文件** ⇒ `19` §7「修起来便宜」对文档编辑成立，对「重跑 Fixture 001」不成立 | `L-C7` `VERIFIED` | `L` |
-| **H-F38** | Fixture 003 把验证 schema 钉在 `f237784`（`CURRENT_ARCHITECTURE + PARAMETER_CONVERGENCE + CONSTRUCT_SCOPE_DIRECTIONALITY @ f237784`）⇒ WO-N1 一旦落地，**所有在改动前产出的 mapping 计数都不可与之后的结果比较** | `L-C9` `VERIFIED` | `L` |
-| **H-F39** | `19` §8 的 B-1…B-8 与 §2 的 C-1…C-8 **只有 `B-6 ↔ C-3` 一项对应**；`C-1`/`C-2`/`C-4`/`C-5`/`C-6` 在 §8 无编号，反向 `B-1`/`B-2`/`B-5`/`B-7`/`B-8` 在 §2 不是「阻塞级」⇒ **两份 register 不是「编号错乱」，是「分母不同」** | `ADJ3` Q7 | `ADJ3` 逐项核实。`L-C18` 抓到编号冲突但**未抓到成员不相交**——后者更难修 |
-| **H-F40** | Fixture 001 的 core dyad 是**雇主↔雇员**（`Miss Z. Carty <-> her 2020 line manager`），其 26 个原子事实是排班/停业/未付薪/CAB/申诉等**机构性事实** | `L-C11` | `L` 直读冻结 substrate。**这使 WO-N1 的被检验对象成为开放问题**（见 X-9） |
+| **H-F1** | `02b` §2 声明 `INDEPENDENT` = 「≥3 个 lens 有正面分离证据」；实算 6 条 `INDEPENDENT` 中 **4 条不满足**（E2=2、E11=1、E11c=2、E14=2）。同样 2-lens 的 E3 却判 `CONTESTED` | `A-C1` `UNSUPPORTED`（标签与自定规则无推导关系） | `A` 用脚本重算 21×5 单元格，未采信报告自述 | `SR-B21`
+| **H-F2** | `02b` §4 边表 105 个单元格**无任何来源列**；11 条边的判定无法追溯到 `02b` 内的引用编号。**E5 与 E17 在四节中均无对应行** | `A-C4` `UNSUPPORTED` | 同上 | `SR-B21`
+| **H-F3** | `02b` §6 用 `R1`–`R11` 表示「不可消去残余」，而 `PARAMETER_CONVERGENCE` §9 已用 `R1`–`R5` 表示 `Derived/Readout` 清单。**同 PR 内两套 `R` 编号语义完全不同**，且无编号空间隔离声明 | `A-C12` `PLAUSIBLE` | `A` 逐条核对 | `SR-B21`
+| **H-F4** | `02b` §3.1 图例定义 `---` = 「判定为 `INDEPENDENT` 的边」，但 E1、E18（均 `CONTESTED`）都用 `---` 绘制；ASCII 另标 E3 为 `CONTESTED/mod` 而边表 E3 的 `strength` 是 `STRONG` | `A-C5` `UNSUPPORTED` | `A` | `SR-B21`
+| **H-F5** | `01` §9.1 的操作性交接写「从 §7 的 **S-9（F-09 表）**开始」，而 **`01` 全文不存在任何 `F-xx` 条目** | `A-C27` `UNSUPPORTED`（该交接指令不可执行） | `A`。**这是 packet 的可执行性发现** | `SR-B21`
+| **H-F6** | `02` 与 `02b` 报同一个数不同值：男性 `r=.66` / 女性 `r=.26`（`02`）vs 女性 `r=.25`（`02b`，且同时挂在两个来源上） | `A-C13` `CONTESTED` | `A` 两侧同 cluster | — （未修：仍是真冲突）
+| **H-F7** | `05` §5 把 17 条「不是可回答清单」当作**单一逻辑类型**呈现 | `D-C10` `WRONG-SCOPE` | `D` | `SR-B10`
+| **H-F8** | `05` §7：把 `RIx` 的方差直接写成「稳定 trait」是错的——illusory between-person component 可能**只**来自省略的 time-varying covariate | `D-C11` `VERIFIED` | `D` | `SR-B10`
+| **H-F9** | `16` 把「17 条不可建立事项」与「21 条失败模式」计入已达成的交付物 | `D-C29` `UNSUPPORTED`（作为独立交付物计数） | `D` | `SR-B11`
+| **H-F10** | `16:117` 称「L1–L8 是本协议的实例化」，但同时自陈「**不声称**复现 S01 的八分类（S01 图 1 确切标签未取得）」⇒ 两者不能同时成立 | `D-C28` `UNSUPPORTED`（作为「该来源不可得」的断言） | `D` | `SR-B11`
+| **H-F11** | `05` §1 的「45% 的文献用两波拟合 CLPM」与「89% 尺度看似有效、4% 全面评估后」两条被并列引用，但后者的语境（Orth 2021 / Hussey & Hughes）未开 | `D-C38` `PLAUSIBLE` | `D` | `SR-B10`
+| **H-F12** | `07` §5 开篇写「以下 **15 条**是候选可检验不变量」，但 §5.1 给 I1–I15、§5.2 给 I16–**I19**，合计 **19 条**；§13 也写「给出 19 条」 | `E-C12` `VERIFIED`（缺陷确认） | `E` | `SR-B12`
+| **H-F13** | `07` 的证据等级约定（`:8`）只定义 6 个等级，但正文 **15 处**使用 `[ESTABLISHED]` | `E-C13` `VERIFIED` | `E` | `SR-B12`
+| **H-F14** | `07` §5 的 19 条中，`I14` / `I17` / `I18` **不可执行**（判据含 `07` 自己拒绝给值的 `θ`、未定义的 coverage 阈值、需成本模型而项目明确不冻结分数）；`I19` **空过**（任何非恒定函数都满足） | `E-C11` | `E`。「9 条现在就能检查」这一计数 `REJECT` | `SR-B12`
+| **H-F15** | `07` 与 `08b` 在同一 PR 内**各自发明一套平行编码**（缺失性/不适用性/冲突/不可寻址的分区），零协调，且存在**三处同名不同义**：`disputed`（07 缺失机制）vs `disputed`（`CURRENT_ARCHITECTURE.md:315` fact status）vs `Divergent`（08b 主体立场对立）、`reporter_role`（07）vs `Role`（canonical）。直接并入会得到 14+ 值枚举，违反 `AGENTS.md:22`/`:24` | `E-C23` `VERIFIED`（重叠存在且未被协调） | `E`。**但**「08b 的存在性结论是对 07 的独立佐证」不成立——`08b` 未读 `07` | `SR-B12`
+| **H-F16** | `10` §5 的 test table 与 §6.3 / §7 / §8 之间存在同义与双重计数（多处由报告**自己**的交叉引用证实） | `F-C30` `VERIFIED` | `F` | `SR-B11`
+| **H-F17** | `09` §0 第 1 条（headline）：「**不存在**可与 LHRM 对象直接比较的既有关系 ABM」；而 §1 写「通过 C5 的：**本 lane 未找到任何一个**」 | `G-C17` `WRONG-SCOPE` | `G` | `SR-A14` · `SR-B8`
+| **H-F18** | `13` §12 判定其 `Observation / Belief / Environment` 分层的外部证据「**基本为空**… **0 条外部文献**。这是 LHRM 独有结构」；而 `12` §8 `I8` 判定 Concordia 的 GM/player 分离「在结构上**等价于** LHRM 的 `Reality != Observation != Belief` 分层」 | `G-C25` `CONTESTED`（cluster `G` 内部） | `G` | `SR-B15`
+| **H-F19** | `13` §2.2(c) 标题「LLM 的一致性是『对齐多数派先验』，不是『更准』」，但转述把来源的结论方向讲反——`13` 自己引的发现 3 就是该转述的反证 | `G-C28` `WRONG-SCOPE` | `G` | `SR-B15`
+| **H-F20** | `13` §13.2 主张六项指标「在冻结 fixture 上**完全可机器判定**（因为 fixture 本身是冻结的、有明确 `fact_status` 与 `source_anchor`）」；但被抽取的文本与判定 gold 是**同一批文本的同一批标签** | `G-C29` `WRONG-SCOPE`（对自己的 gold 不施加循环论证标准） | `G` | `SR-B15`
+| **H-F21** | `12` 记录了三条对 LHRM **已有 canonical 决策**的独立外部佐证，但三条全部只出现在 §2.1 / §8（作为「可复用想法」），**从未进入 §10 的裁决** ⇒ 在该报告的最终结论里权重为零 | `G-C26` `VERIFIED` | `G` | — （权重发现，未修）
+| **H-F22** | `14` §9.1 与 §9.2 的两项「最高优先未核实 prior art」极可能都是**不存在的引用**：`Acitelli & Antonioni (2006)`（JPSP 90(6)，Crossref 该期无此文，真人姓氏是 **Antonucci**）；`Boyd & Heewer (2007)`（Crossref `query.author=Heewer` = **0 results**） | `H-C24` `UNSUPPORTED` + `H` 的专项 9.1-1/2 | `H` 与 `L-C20` **各自**查了不同的一半（`H` 查 Crossref 该期；`L` 指出 Heewer 极可能是第三作者，且正确项应为 **Boyd & Hilton (2007), *The law of the wed*, Cognition**）⇒ `PARTIALLY_INDEPENDENT`。**这两项被列为「决定新颖性判断的最大单一变量」却零证据** | `SR-B14`
+| **H-F23** | `14` §2.5 + F-6 + F-16 用 Lalk et al. (2025) 证明「LLM 抽多类语义的上限是 κ=.42」——**原文是** GoEmotions 28 类公开数据集 → 翻译德语 → fine-tune 预训练 LLM → 应用于 reddit 心理治疗评论；且该数据集的**人类标注一致性本身就是 κ=.331–.468**，模型的 .42 **达到而非低于**天花板 | `H-C26` `WRONG-SCOPE` | `H` | `SR-B14`
+| **H-F24** | `17` 的 S 编号体系（`S1`…`S29`）无法从其 §12 引用清单解析 | `I-C14` `VERIFIED` | `I` | — （未修）
+| **H-F25** | `17` 的 Gate B 覆盖表枚举不完整：含 1 个非 Gate B cell（`work colleague`），漏 2 个真 cell（`opposite-sex`、`non-kin`） | `I-C8` `VERIFIED` | `I` | `SR-A22` · `SR-B15`
+| **H-F26** | `17` §4 表实际裁定分布是 `CHALLENGED 12 / CONTESTED 6 / UNCHALLENGED 3 / NO_EVIDENCE 2`（23 条） | `I-C15` `VERIFIED` | `I` | `SR-B15`
+| **H-F27** | `17` §12 line 549 的「所有卷期页均经 Crossref API 核验」这一**总括声明**不成立 | `I-C30` `VERIFIED` | `I` | `SR-B15`
+| **H-F28** | `VALIDATION_CORPUS_V0_1.md` 的「Recommended Fixture 001–003」已被实际冻结的三个 fixture 取代 ⇒ **canonical 内部存在未更新的文档级冲突**（已发生过，不是假设） | `I-C12` `VERIFIED` | `I` 自己做的 git + SHA + grep；两份报告都靠读文件而非索引躲过了它 | `SR-A18`
+| **H-F29** | `04` D12 命名为「**Add Health (NLSY97/ECLS)**」 | `C-C20` `CONTESTED`（事实误标 + 报告内部矛盾） | `C` | `SR-B9`
+| **H-F30** | `04` D08 断言「**配偶关系质量是单方报告**……→ `Z[i→j]` 与 `Z[j→i]` 在 NSFH 中不可分离」，依据是 **Wave 1 的一句问卷描述** | `C-C35` `CONTESTED` | `C` | `SR-B9`
+| **H-F31** | `18` 使用了两个从未定义的编码命名空间 `CR-x` 与 `NR-x`；`CR-1/3/4/6/7/8` + `NR-1/8` 共 8 个码在 `18` 自身没有登记表，其中 5 个被 §10 的 `NARROW_REPAIR_REQUEST` 当作**理由码**引用 | `K-C11` `UNSUPPORTED` | `K` | `SR-B17`
+| **H-F32** | `19:353` 的方法学缺口第 3 条（「`02b` 依赖 `R04`/`R06`」）是错的：`02b` **零**引用 `R04`/`R06`（全文正则计数 `R04`=0 `R06`=0 `pairfam`=0 `APES`=0 `DVA`=0 `BMR`=0） | `K-C12` `VERIFIED` | `K` 用机器可复算的正则计数。**这是 `19` 唯一的硬事实错误，且它在「诚实记录自身缺口」的段落里** | `SR-B17`
+| **H-F33** | 「`Unknown` 值类被**五**个 lane 各自重新发明」中的计数**偏低**：语料中至少存在**第 6 套**「无值」词表 `UNKNOWN_AS_OF` / `DOI_UNKNOWN_AS_OF_2026-09-27`，且它是**全语料使用最广**的一套 | `K-C7` | `K` | `SR-B17`
+| **H-F34** | `19` §8 有 **B-1…B-8**（8 项）；`00_MANIFEST` §4 有 **B-1…B-9**（9 项）；两者对 **B-3** 指不同事物；且 manifest 自身对「全局去重」同时使用 **B-3**（§4）与 **B-9**（§4 末）两个编号 | `L-C18` + `ADJ3` Q7/Q8 独立核实 | `L` 与 `ADJ3` **各自**读两份 register 并逐项比对，结论一致 ⇒ `INDEPENDENT` | `SR-A13` · `SR-B17`
+| **H-F35** | `19` §7 抬头「**全部**为 AI 推荐…**均**不属本 Work Order 授权范围，需 Human 授权后另行派发」把**两种不同性质**的批准混为一谈：**(a)** 因 canonical mutation 需 Human 主权批准（N1/N2/N3/N4-冻结部分）与 **(b)** 仅因 Work Order 边界而需新派发（N5-前半/N6/N7/N8） | `K-C44` `WRONG-SCOPE` | `K` 读了 `19` §7 全部 8 条的变更面 | `SR-A13`
+| **H-F36** | `19` §7 自报排序依据是「修起来便宜 / 收益大」，但实际排序（canonical 最贵的 N1 打头，最便宜的 N8 垫底）遵循的是**架构依赖**，不是成本/收益 | `K-C45` `UNSUPPORTED` | `K`。`ADJ3` Q7 独立得出同一结论并补充：N1 的**编辑工时**确实最低，真实排序依据是「**依赖解锁序**」 | `SR-A13` · `SR-B17`
+| **H-F37** | `lhrm` 仓库只有 `AGENTS.md`、`README.md`、`docs/`；**无 runner、无 CI、无 metric 实现、无 schema 文件** ⇒ `19` §7「修起来便宜」对文档编辑成立，对「重跑 Fixture 001」不成立 | `L-C7` `VERIFIED` | `L` | — （未修）
+| **H-F38** | Fixture 003 把验证 schema 钉在 `f237784`（`CURRENT_ARCHITECTURE + PARAMETER_CONVERGENCE + CONSTRUCT_SCOPE_DIRECTIONALITY @ f237784`）⇒ WO-N1 一旦落地，**所有在改动前产出的 mapping 计数都不可与之后的结果比较** | `L-C9` `VERIFIED` | `L` | — （未修）
+| **H-F39** | `19` §8 的 B-1…B-8 与 §2 的 C-1…C-8 **只有 `B-6 ↔ C-3` 一项对应**；`C-1`/`C-2`/`C-4`/`C-5`/`C-6` 在 §8 无编号，反向 `B-1`/`B-2`/`B-5`/`B-7`/`B-8` 在 §2 不是「阻塞级」⇒ **两份 register 不是「编号错乱」，是「分母不同」** | `ADJ3` Q7 | `ADJ3` 逐项核实。`L-C18` 抓到编号冲突但**未抓到成员不相交**——后者更难修 | `SR-A13` · `SR-B17`
+| **H-F40** | Fixture 001 的 core dyad 是**雇主↔雇员**（`Miss Z. Carty <-> her 2020 line manager`），其 26 个原子事实是排班/停业/未付薪/CAB/申诉等**机构性事实** | `L-C11` | `L` 直读冻结 substrate。**这使 WO-N1 的被检验对象成为开放问题**（见 X-9） | `SR-A11`
 
 ---
 
 ## G. 独立性坍缩（`ADJ3` Q6 — 12 条 robust agreements 的重判）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A10（adjV1 `X-8` 要求改用 `independent_sources × methods`）
+
 `19` §1 的 12 条「robust agreement」经独立性审计后：**5 条存活、5 条降级为单源收敛、2 条必须移出**。
 「12」应读作「5 + 5 + 2」。完整重判表见 `CONTESTED_FINDINGS.md` X-8；此处只记**独立**的两条最重发现：
 
 ### H-G1 — 「最大预注册研究结论逆向于工程优先级」是 1 篇 study 被 4 个 lane 转引
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A10 · §SR-B2（`r3/a2` S15：1 study × 4 = 3 转引 + 1 独立复核）
 
 - **判定**：`ADJ3` 独立裁定（原 `A6`）
 - **内容**：`R06` / `R14` / `R16` / `R17` 四个 lane 全部转引**同一组数字**（43 数据集 / 11,196 对 / ≤45% / ≤18%），来自 **Joel et al. 2020, PNAS** 一篇。
@@ -329,6 +361,8 @@
 - **处置**：`19` 的 Lanes 行必须从「4 lane」改为「**1 study**」；保留 `19:76` 的「这只是 population-level 方差陈述」限定。
 
 ### H-G2 — 「有向性在测量层被确认」是 1 个 instrument 台账 + 2 处转引
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A10
 
 - **判定**：`ADJ3`（原 `A2`）
 - **内容**：`r=.43` / `r=.11` / `r=.18 vs .90` 三组数**全部来自 `R03` 的 instrument table**；`R01`/`R02` 大概率转引同一批 primary study。

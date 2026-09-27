@@ -1,0 +1,861 @@
+{
+ "child_id": "R2_B",
+ "lane": "B",
+ "cluster": "measurement instruments / proxies",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "kv_table",
+ "source": {
+  "file": "R2_B.md",
+  "sha256": "a956ebf566edfd9c5de8fd5315ab68dd7fb3213d24cedd1d699d15ac7513ab51",
+  "bytes": 90236,
+  "lines": 705
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "B-C1",
+   "_title": "B-C1 — 头条统计「41 instrument family / 54 可引用条目」",
+   "claim": "被审报告自述目录含 41 个独立 instrument family / 54 个可引用条目（§2 L35、§8 L405）。",
+   "source_report": "`03_MEASUREMENT_INSTRUMENTS.md` §2 表头 L35；§8 L405",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "自算 regex：表格行 ID（L/R/S/T/A/C/D/O/X 前缀）实测 **73 行**；§2 说明写 54；文档内 distinct DOI 形态字符串 **80 个**。`VERIFIED_BY_ME`（自算，可复现）",
+   "strongest_counterevidence": "逐节清点：§2.1=4、§2.2=3、§2.3=8、§2.4=8、§2.5=14、§2.6=7、§2.7=5、§2.8=8、§2.9=16，**合计 73**。即便剔除 13 条自标\"非独立工具/非量表\"的行（T4/T6/A3/A4/A10/A11/A12/A13/A14/S8/X3/X8/X11），仍为 60 ≠ 54。检索了什么：全文 413 行逐节读过、标题全枚举、ID regex 计数、DOI 形态 regex 计数。缺什么：报告**从未给出 54 的计数规则**（是否排除某几类、按 family 还是按 entry 计数），因此无法复现该数。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C2`（同一处统计-编号体系的不可复现性）",
+   "corroboration": "`NON_INDEPENDENT`（自算，非独立来源）",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — 计数不可复现属报告编制缺陷，**不得**让 \"41/54\" 进入任何 canonical 文档或下游 lane 的引用。",
+   "_locator": {
+    "line_start": 57,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C2",
+   "_title": "B-C2 — 审计任务前提中的「217 DOI pointers / 48 UNVERIFIED flags」在本文件中不存在",
+   "claim": "我的审计任务书把被审报告描述为\"claim of 217 DOI pointers with 48 `UNVERIFIED` flags\"；文件内不存在该 claim。",
+   "source_report": "任务书描述 vs `03_MEASUREMENT_INSTRUMENTS.md` 全文",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`Select-String` 对字面量 `217` = **0 命中**；`DOI pointers` = **0 命中**；`UNVERIFIED` token 共 **30** 次（其中 `UNVERIFIED_DOI` 25 次）；§7 参考文献表止于第 76 条。",
+   "strongest_counterevidence": "若 217/48 来自本 packet 范围外的某份汇总报告（如 `00_MANIFEST.md`），则该汇总与被审报告本体不符；我按独立性契约**未读** `00_MANIFEST.md`，故不能判定汇总侧的对错。检索了什么：全文字面量搜索 + §7 条目计数。缺什么：`00_MANIFEST.md` 的口径（**主动不读**，见 §2.1）。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C1`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE` — 在 join 时先确认 217/48 的出处 lane；不要把它当作 `03` 的自述数字向下游传递。",
+   "_locator": {
+    "line_start": 75,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C3",
+   "_title": "B-C3 — `G1`：无 relation-level `OutcomeDependence_(i->j)` 工具（最重后果之一）",
+   "claim": "`OutcomeDependence_(i->j)` 这一关系层有向坐标没有现成可用工具；§4.1 据此建议把 canonical 候选 D8 **降级为 `NOT_IDENTIFIABLE`**。",
+   "source_report": "§2.8（O1–O8）；§4.1 表格 D8 行 L254；`G1` 引用列",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "我自己在预算内**未能**定位到任何 validated 的 relation-level outcome-dependence 自陈工具 → 缺口本身 `PLAUSIBLE`（不能给 `VERIFIED`）。支撑\"工具族不可比\"的那份审计本身 `VERIFIED_BY_ME`：`10.1111/jftr.70019` = **Junkins, J. E., Derringer, J., Ogolsky, B. G., Hardesty, J. L., & Weisberg, Y. (2025), *J Family Theory & Review* 18(1):170–191**（Crossref 题录实读，报告 §7 条 50 未写作者）。依赖性工具侧：O3 `10.1111/1467-6494.00143`（Pincus & Wilson 2001）、O4 `10.1207/s15327752jpa4106_6`（Hirschfeld 等 1976）Crossref 题录 `VERIFIED_BY_ME`；其**心理测量数字 NOT_OPENED**。",
+   "strongest_counterevidence": "①**定义层面的自我违反（最强）**：报告 §1.2 明写 `NOT_IDENTIFIABLE` = \"现有工具在结构上无法支撑…（**不因为'还没人做'，而是因为'这样做不了'**）\"，而 G1 的全部证据形态是\"还没人做\"。用它降级一个 canonical candidate，越过了报告自己设的门槛。② 报告的推断链是\"power 工具不可比 → dependence 无工具\"，但 §2.8 自己列了 O1(RPI)/O2(RBA)/O7(SRPS) 三个 power 工具，因此 §4.1 D8 那句\"**两端（dependence 工具、power 工具）皆空**\"与本报告目录**直接矛盾**。③ 报告**从未检索 dependence 工具的经典文献**（Emerson 1962、Kelley & Thibaut 1978、Kipnis 等 interpersonal-dependence 量表、Kenny & Kashy 的 dyadic perceived-dependence 模型），也未从它自己引用的 jftr 审计里点名任何一个 dependence 工具。④ 报告把 outcome dependence / resource dependence / investment-commitment 三个不同东西合并成一个\"instrument gap\"，使 D8 的降级范围过宽。",
+   "requires_canonical_change": "`NO` — 但**必须停在 proposal**。`PARAMETER_CONVERGENCE_V0_1.md` §4 D8 的现有 open question 明确把\"dependence 是否应完全由 Agent resources / alternatives / institutional constraints 推导\"留给 redundancy test；报告的降级建议若要进 §4，需要 Architect 先裁决 `NOT_IDENTIFIABLE` 的语义门槛。",
+   "needs_experiment_or_data": "`YES`:一次定向检索（dependence 工具族 + dyadic perceived-dependence SEM 文献）+ 一次 `PARAMETER_CONVERGENCE` D8 redundancy test。",
+   "duplicate_of": "`B-C4`（同一 `NOT_IDENTIFIABLE` 门槛问题）",
+   "corroboration": "`NON_INDEPENDENT`（仅本报告 + 其自引的 jftr 审计；无第二条独立支撑）",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — \"目录里没找到\"是检索覆盖限制，不是\"结构上做不到\"的 ontology 结论；D8 不得据此降级。",
+   "_locator": {
+    "line_start": 93,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C4",
+   "_title": "B-C4 — `NOT_IDENTIFIABLE` 被系统性误用为\"层级不对 / 尚未检索\"（分类学缺陷）",
+   "claim": "报告把 9 个条目判为 `NOT_IDENTIFIABLE`（S2 HISD、D3 WTC-Trait、O3 3VDI、O4 Interpersonal Dependency、O5 Personal Sense of Power、T8 泛信任族、X14 Romantic Beliefs、X15 Reiss RPS、X8 ANS），但报告自己对这些条目的说明是\"是 Agent 层 trait / 抽样框错 / 已在别处有替代\"，属层级不匹配或检索不足，不是结构上不可测。",
+   "source_report": "§1.2 分类定义表；§2.3 S2/S5；§2.4 T8；§2.7 D3；§2.8 O3/O4/O5；§2.9 X8/X14/X15",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：T8 行自身写 \"**当 LHRM 需要 Agent 倾向（§7 generalized trust）时用它**\"——即该工具在 Agent 层**可用**；O3/O4/O5 行自身写 \"代理'我这一型的依赖'… **不是'我依赖 j'**\"；X8 行自身写 \"**不能作为 Cohesion / Care / Trust 的 proxy，只能作为 mechanism evidence**\"。这三条是报告内部的**反证**。`10.1111/j.1467-6494.2011.00734.x`（Anderson, John & Keltner 2012）、`10.1111/1467-6494.00143`、`10.1207/s15327752jpa4106_6` 题录 `VERIFIED_BY_ME`。",
+   "strongest_counterevidence": "对立方是报告自身的定义句（§1.2）与自身各行说明，不是我引入的外部证据。**同名对立方**：`03_MEASUREMENT_INSTRUMENTS.md` §1.2 分类定义表 + §2.4 T8 行 + §2.8 O3/O4/O5 行 + §2.9 X8 行（全部在本 cluster 内，不跨 lane）。检索了什么：把每个 `NOT_IDENTIFIABLE` 行的\"Score is a proxy for\"栏与 §1.2 定义逐条对读。缺什么：报告**从未**给出 `AGENT_LEVEL_PROXY` 或 `WRONG_LAYER` 这一类目，缺了它才会把层级错配硬塞进 `NOT_IDENTIFIABLE`。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C3`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — 需要一个\"层级不匹配 / 抽样框错位\"的独立类目；否则 `NOT_IDENTIFIABLE` 这个词会被误读成\"科学上不可测\"，并污染 §4.1 对 D7/D8 的降级建议。",
+   "_locator": {
+    "line_start": 111,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C5",
+   "_title": "B-C5 — 目录内部重复计数与同义（合同强制专项之一，答案在 §6.4）",
+   "claim": "41/54 这套计数至少含 6 处重复或近同义 double-count，报告未标注。",
+   "source_report": "§2.1/§2.9/§2.7/§2.8/§2.2 交叉",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`（全部来自我自己对被审文件的逐行对读 + Fletcher et al. 2000 原文脚注，见下）",
+   "strongest_counterevidence": "唯一可能的抗辩是 §2 开头 L35 的规则：\"短版、修订版、跨文化再验证并入母族并在备注中注明\"。但该规则被自己违反：`T2`（2025 重做版）单列一行并单给一个 `DIRECT_PROXY` 裁决，而 §2.9 `X5`/`X6`/`X7` 三行的 Instrument 栏分别直接写着\"**同 L1**\"\"**同 L2**\"\"**同 X1**\"却仍各算一条；`O8` 与 `D1` 共用同一 DOI `10.1111/j.1475-6811.1998.tb00177.x` 且 O8 行自写\"见 D1\"。检索了什么：73 行逐行对读 Instrument 栏与引用栏。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C1`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL` — 目录的**内容**大体可用；只是计数口径需在 durable 版本里改成\"去重后清单\"。",
+   "_locator": {
+    "line_start": 129,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C6",
+   "_title": "B-C6 — 三处引用元数据错误（author/year 层面），已定位到具体行",
+   "claim": "被审报告有 3 处引用在 Crossref 上**解析到的不是它声称的作品**：`O1` RPI、`O2` RBA、`A13` 依恋日记。",
+   "source_report": "§2.8 `O1` L125 / `O2` L126；§2.5 `A13` L96；§7 条 25 / 26 / 11 / 42",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`（Crossref REST 实读 + 二次独立确认）",
+   "strongest_counterevidence": "报告在 `A13` 行标注了 `CITED_SECONDARY`、\"未读原文\"，在 §7 标注\"作者全名单未逐一核对\"——它**部分预警**了。但 `O1` 的\"Beach (2017)\"、`O2` 的\"Lativos et al.\"在表内是**以确定语气给出的作者名**，没有任何降级标记。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`REJECT`（拒绝把这三行按原样并入任何 durable 引用表）",
+   "_locator": {
+    "line_start": 156,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C7",
+   "_title": "B-C7 — `L2` RCI：三个 α 全部正确，但**题数错**且**\"弱信度分量\"推论反了**",
+   "claim": "RCI 行报告 \"self-report，**10 题**\"，并推出 \"**Frequency 与 Diversity 是弱信度分量**\"。",
+   "source_report": "§2.1 `L2` L42；§2.9 `X6` L143",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：CMU Common Cold Project 官方 measure 页（直取原文）",
+   "strongest_counterevidence": "① APA PsycTests 记录（`10.1037/t03601-000` 摘要实读）确认 total index α = .62、retest total r(75)=.82、3–5 周窗口、primary sample 241（116M/125F）、各分量 retest（freq .82 / div .61 / str .81）。② 反证：CMU 页 \"**Number of Items: 75 (3 frequency, 38 diversity, 34 strength)**\"。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C5`（`X6` 与 `L2` 同源）",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`REJECT`（\"10 题\"这一格必须改成 75；若要引用请同时写明 diversity 是 38 项 checklist）",
+   "_locator": {
+    "line_start": 180,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C8",
+   "_title": "B-C8 — `L1` IOS 与 `S8` Chivers：数字全对，但 `S8` 存在层级外推",
+   "claim": "(a) IOS = 单题图示 1–7、2 因子 \"Feeling Close / Behaving Close\"、minimal 社会赞许相关、5 项陌生人 dyad 附加研究；(b) Chivers et al. 2010 男 r=.66 / 女 r=.26、调节为 stimulus variability + 自评时点；(c) 由此推出 \"`SexualDesire_(i->j)` 在女性方向上只有一条弱通道\"。",
+   "source_report": "§2.1 `L1` L41；§2.3 `S8` L65；§4.1 D3 行 L248",
+   "verdict": "(a) `VERIFIED`；(b) `VERIFIED`；(c) `WRONG-SCOPE`",
+   "supporting_refs": "(a)(b) `VERIFIED_BY_ME`：APA PsycINFO 1992 摘要实读 + Ovid 摘要实读 + PMC2811244 全文 + Springer PDF 索引文本。",
+   "strongest_counterevidence": "对 (c)：① Chivers et al. 的构念是**实验室刺激下的 genital arousal 与 self-reported arousal 的一致性**，不是\"对特定伴侣 j 的性欲\"。`10.1007/s10508-009-9556-9` 题录实读 = \"Agreement of Self-Reported and **Genital Measures of Sexual Arousal**\"。把它搬到 `SexualDesire_(i->j)`（一个 person-specific、partner-directed 的动机状态坐标）属层级外推。② 我在 Springer PDF 索引文本里读到 Chivers 自己的子样本数字：**女性用 genital thermography 时一致性 avg r=.55（n=97, k=6）**，远高于合并的 .26。报告只引 .26，**漏掉了对己方结论最不利的那个子样本**。③ 报告自己在 `S8` 行把该条标为\"非量表，而是**测量通道等价性证据**\"且分类栏填\"—\"（正确克制），但 §4.1 D3 行把它变成\"**女性方向无等价生理通道**\"并写进 canonical 建议。**哪一层对、哪一层被误用**：通道等价性层对（且数字准确）；把它当作 LHRM `SexualDesire` 坐标的可观测性层论据，是把方法学测量通道限制当成 ontology 结论。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`:一次\"subjective vs genital arousal 在 partner-directed 情境下的通道等价性\"检索/测量。",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — (a)(b) 接受；(c) 降级为\"实验室唤起通道的性别不对称\"，不得进 D3 的测量学裁决。",
+   "_locator": {
+    "line_start": 206,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C9",
+   "_title": "B-C9 — `A2` ECR-R：承重数字与官方评分规则**逐条命中**",
+   "claim": "ECR-R = 36 题 2 维；IRT 分析 N=1,085；官方评分 1–18 anxiety（items 9/11 反向）、19–36 avoidance（12 题反向）；官方页明示可改写指向其他关系类型；官方指引即 trait 语言。",
+   "source_report": "§1.1 规则 4 L20；§2.5 `A1`/`A2` L84–85；§3.1 类1 关键细节 L169",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：Fraley 官方 ECR-R FAQ 页（直取全文）+ ECR-R items 页 + Fraley/Waller/Brennan (2000) 摘要实读",
+   "strongest_counterevidence": "唯一反向点是报告 §3.1 L169 那句\"会牵动 IRT 标定的有效性\"——官方页在授权改写时**并未**要求任何再验证，所以这句是报告自己的测量学推论，不是来源陈述。检索了什么：Fraley 官方页 Q&A 全文（改写授权、评分范式、IRT 参数表、N=1,085 摘要）。缺什么：Fraley et al. (2000) 正文 PDF 未打开（IRT 条件 alpha 曲线未读）。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "_locator": {
+    "line_start": 224,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C10",
+   "_title": "B-C10 — 报告的改写成本（Q3 论证的代价核算）**没有**被诚实计入",
+   "claim": "报告正确指出 ECR-R 定向化是 rewriting 决策且会牵动 IRT 标定，但只说\"必须作为独立决策审计（交 R05）\"，**没有核算代价**，也没有把已存在的官方 relation-target 工具纳入讨论。",
+   "source_report": "§3.1 类1 L169；§4.2 Q1/Q2/Q3 L261–268；§4.3 → R05 L273",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：Fraley 官方 ECR-R 页（授权改写、但零再验证要求）；Fray, Heffernan, Vicary & Brumbaugh (2011) PubMed 摘要实读（`10.1037/a0022898`, *Psychological Assessment* 23(3):615–625）；Fraley 官方 ECR-RS 页实读",
+   "strongest_counterevidence": "**对立方就在被我审计的报告自身论点结构里，但报告漏了它**：ECR-RS（`10.1037/a0022898`）就是官方 relation-target 依恋工具——摘要实读 \"The ECR-RS can be used to assess attachment-related anxiety and avoidance in people's relationships with their **mothers, fathers, partners, and** [friends]\"；Study 1 \">21,000 individuals\"、Study 2 `N=388`，\"relationship-specific measures of attachment generally predict intra- and interpersonal outcomes better than broader attachment measures\"。Fr al ey 官方 ECR-R 页**自己**链接到 ECR-RS，理由是 \"This web page… a new (and shorter) version of the ECR-R that can be used for a **variety of relational targets**\"。同时 ECR-RS 页还指向 Fraley, Vicary, Brumbaugh & Roisman (2011), *JPSP* 101:974–992，报告 \"**stability of ECR-RS scores when used as a 'state' measure of attachment**\"。→ 这意味着：报告 §4.1 D5 写的\"**唯一 state 指针是 Overall & Sibley (2009)**\"至少不完整；报告 §3.1 类1 也不该把整个 attachment 族放进\"target slot 结构上为空\"。检索了什么：Fraley 官方两个 measure 页 + PubMed 21443364 + APA PsycNet。缺什么：ECR-RS 的具体因子载荷与不变性证据未读。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`（补目录即可）",
+   "duplicate_of": "`B-C12`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL` — 方向性论证接受，但必须先补 ECR-RS 并重算改写成本。",
+   "_locator": {
+    "line_start": 250,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C11",
+   "_title": "B-C11 — `G9`（无坐标拥有两个独立观测通道）：报告版本过宽，严格版本成立",
+   "claim": "报告称 \"没有任何已验证坐标同时拥有自陈信念通道与行为/生理独立通道\"，并据此称 `G9` 为**架构级 gap**。",
+   "source_report": "§4.2 Q1 L262；§8 L406；§6 第 8 项 L308",
+   "verdict": "`WRONG-SCOPE`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`10.1037/pas0000986` 摘要实读（PRI Study 3 细节）；`10.1037/a0022898` 摘要实读（ECR-RS 为双 informant 多关系目标，但仍是单一自陈通道）",
+   "strongest_counterevidence": "① 报告**自己给的证据就已经更弱**：`X9` PRI 的 Study 3（`n=161` couples，APIM）实读是 \"the PRI subscales were associated with **partners' self-reported behaviors** even after controlling for own behaviors\"——这是**同一自陈通道的两个 informant**，不是 belief 通道 + 独立行为/生理通道。报告 §3.1 L197 说\"只有 PRI 的 Study 3 把'i 的知觉'与'j 的自报行为'在同一模型里对起来\"，然后把它当作\"最接近 `Belief_i(Z[j→i])` 与 `Z[j→i]` 分离并联结的既有范式\"——**这句话把\"双 informant\"当成了\"双通道\"**。② 报告内部已 hedge：§6 第 8 项写 \"G9（双通道）是否真的在测量学上不可得 → **开放的技术问题**\"，但 §4.2 Q1 与 §8 把它称为\"架构级 gap\"，**同一文档内两处口径不一致**。③ 报告的目录**没有任何行为/生理 trust 测量条目**：信任博弈范式（`Keysar et al. 2000` 等 behavioral cooperation/distrust 范式）不在目录里，所以\"没有任何坐标有行为通道\"这句话在 trust 上是**目录未覆盖**，不是\"做过搜索后没有\"。**哪一层对、哪一层被误用**：若把 G9 收窄为\"没有任何 **LHRM 关系层有向坐标**（`Z[k,i,j]`）拥有 pair-level、关系特异的 自陈信念 + 独立观察/生理 双通道\"，它成立；报告现在这个\"任何已验证坐标\"的写法，按字面在 trust / 依恋等处是错的。",
+   "requires_canonical_change": "`NO` — 但**必须停在 proposal**。若 `G9` 要被写进任何 canonical 文档作为\"架构级 gap\"，收窄措辞是前置条件。",
+   "needs_experiment_or_data": "`YES`:一次\"trust / 依恋 / 欲望 的行为或生理通道\"定向检索。",
+   "duplicate_of": "`B-C12`",
+   "corroboration": "`NON_INDEPENDENT`（⚠️ 提醒 parent：lane `19` 对本条有逐字转引，**不得**计为独立支撑，见 §2.2）",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — `G9` 需先重述为\"关系层有向坐标的 pair-level 双通道不可得\"，并把\"架构级 gap\"降为\"待检索的开放问题\"。",
+   "_locator": {
+    "line_start": 274,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C12",
+   "_title": "B-C12 — 目录漏掉 3 个已验证的承重工具",
+   "claim": "报告的 41 族目录遗漏了至少 3 个可直接回应其自身核心论点的已验证工具。",
+   "source_report": "§2.5 AttachmentSecurity（`A1`–`A14`）；§2.4 Trust（`T1`–`T8`）；§2.8 OutcomeDependence（`O1`–`O8`）",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`（三条全部为 Crossref/PubMed/官方页实读）",
+   "strongest_counterevidence": "报告 §5 第 12 条已声明不覆盖若干子域，但那三项**都在**它声明覆盖的构念族内，不属声明的免责范围。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C10` / `B-C11`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL` — durable 版本必须补齐这三项，否则方向性与双通道两条主结论都缺反例检验。",
+   "_locator": {
+    "line_start": 292,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C13",
+   "_title": "B-C13 — `O6` power 谱系审计：`NOT_IDENTIFIABLE` 判决对 power 侧是过强的",
+   "claim": "报告称关系权力测量谱系\"38 个有名有姓的量表各自仅被用 1–2 次，无一成为主流工具\"，并判为\"本 packet 对 `OutcomeDependence` 最重的一份证据：整个工具族不可比\"。",
+   "source_report": "§2.8 `O6` L130；§4.1 D8 L254；§4.3 → R10 L276",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`10.1111/jftr.70019` 题录实读（Junkins, Derringer, Ogolsky, Hardesty & Weisberg, 2025, 18(1):170–191）；同作者群的另一条 2015 论文亦实读。",
+   "strongest_counterevidence": "① 报告引的 **38 个量表、1–2 次使用、\"无一成为主流\"、\"经常有人用一个 dependence scale 去研究 power\"、样本多为北美白人异性关系** 这五项具体断言，**全部 NOT_OPENED**——我只验证了这份综述存在与题录，没读正文数字。② 报告的\"无一成为主流工具\"与它自己 §2.8 同时把 RPI 列为\"目前最接近\"的 `O8`/§3.1\"方向性良好的族\"相矛盾（RPI 已被 49+ 次引用，且有 APA PsycNet 独立条目）。③ 报告由\"power 族不可比\"推出\"`OutcomeDependence` 无工具\"，属于**跨构念推论**：power 与 outcome dependence 在 Kelley–Thibaut 传统里是同一结构的两面，但该报告从未引用该传统文献（Emerson 1962 / Kelley & Thibaut 1978），因此这个桥是自己搭的且未标注。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`:打开 `10.1111/jftr.70019` 全文核对 38 / 1–2 次 / 依赖度-权力混用三条断言。",
+   "duplicate_of": "`B-C3`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE` — 五个具体数字未核前，不得作为 D8 降级的承重依据。",
+   "_locator": {
+    "line_start": 315,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C14",
+   "_title": "B-C14 — `UNVERIFIED` / `AGENT_RECALL` 源却携带分类裁决的条目（审计任务第 8 问，清单）",
+   "claim": "12 个条目的来源被标 `UNVERIFIED_DOI` / `UNVERIFIED` / `AGENT_RECALL`，但仍各自携带一个 `DIRECT_PROXY` / `NOISY_PROXY` / `NOT_IDENTIFIABLE` 裁决。",
+   "source_report": "§2.4 `T7`/`T8`；§2.5 `A6`/`A7`/`A8`/`A9`/`A10`/`A11`/`A14`；§2.6 `C6`；§2.7 `D4`/`D5`；§2.3 `S5`/`S6`/`S7`；§2.9 `X4`/`X16`",
+   "verdict": "`VERIFIED`（对\"存在降级不合格\"这一事实的判定）",
+   "supporting_refs": "`VERIFIED_BY_ME`（自算：全文 `UNVERIFIED` 30 次 / `UNVERIFIED_DOI` 25 次 / `AGENT_RECALL` 2 次 / `CITED_SECONDARY` 4 次，逐行对读）",
+   "strongest_counterevidence": "反向考虑：报告对其中若干条**主动不附数值**（`C6`\"原始题录未核实 → 不附任何题数、alpha 或结构结论\"；`D4`\"本 packet 不附任何数值结论\"；`X16`\"本 packet 不为其编造任何题数、alpha 或结构结论\"；`A12`/`A13`\"本 packet 未读原文，**不附任何数值**\"）。这是**值得肯定的诚实**，但**分类裁决本身就是一种结论**，附不附数字不改变这一点。检索了什么：逐行对读所有带降级标记的行。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`:13 条 `UNVERIFIED` 指针的抽样复核（parent 应把它排成 lane `J` 的输入）。",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE` — 全部降级为 `NOT_ASSESSED`，或补齐一手来源后再恢复裁决。",
+   "_locator": {
+    "line_start": 333,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C15",
+   "_title": "B-C15 — 目录里**没有可解析指针**的条目，与 §8「全部带真实指针」的自我声明冲突",
+   "claim": "§8 L405 自称 54 个条目\"**全部带真实指针（DOI、官方记录或可访问原文页）**\"。至少 5 条没有。",
+   "source_report": "§2.2 `R3`；§2.6 `C4`；§2.7 `D5`；§2.3 `S7`；§2.5 `A9`；§7 条目说明 L399",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`（自算：73 行逐行检查引用栏 + §7 列表）",
+   "strongest_counterevidence": "报告对 `X16` 用了\"原始出处 `UNKNOWN`\"、对 `S7` 用了\"经 `10.1007/s13178-024-01040-0` **转述**\"——它对部分条目是自觉的。缺口在于 §8 的**总结句**没有反映这些例外。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C1`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "_locator": {
+    "line_start": 369,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C16",
+   "_title": "B-C16 — `C3` Stafford 2010：定性结论全部命中，但**被报告放错了 confound 类别**",
+   "claim": "RMBM = 26 题 / 7 因子；两个前代 RMSM 有 \"fundamental measurement flaws\" 且在正确 item construction 下均不可用；因子结构在 3 样本间稳定。报告把该证据归入 §3.3 的 \"**求值者/施测者效应**\" confound 行。",
+   "source_report": "§2.6 `C3`/`C4` L105–106；§3.3 confound 表 L218",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：Ovid/SAGE 摘要实读；Chonody et al. PDF（oro.open.ac.uk）实读；Ogolsky & Stafford 2023 全文实读",
+   "strongest_counterevidence": "报告的行内陈述全部对上：\"The most frequently utilized measures of relational maintenance (i.e., the five-factor … RMSM, and the revised seven-factor RMSM) suffer from **fundamental measurement flaws**\"；\"When sound item-construction practices are followed, **neither prior RMSM is viable**. However, **the factor structure of the RMBM is stable across three samples**\"；7 因子名称 \"positivity, understanding, assurances, self-disclosure, relationship talk, tasks, and networks\" **逐项吻合**。**争点只在类别**：Stafford 的发现是 **item construction 缺陷**（双重/三重题干、non-behavioral item）——oro PDF 实读：\"of the original **29 items, 11 are double or triple barreled**\"（注意：是原 RMSM 的 29 题，不是 RMBM 的 26 题），且\"some items are not explicitly behavioral\"。这是**工具设计缺陷**，不是施测者/求值者效应。报告把它归到\"求值者/施测者效应\"行，并与 `S18`（Schumm et al. 1985 判 DTS 测 benevolence）并列——两者都不是施测效应。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL` — 保留证据，修正 confound 类别；并把 `C4` 的两个指针补上。",
+   "_locator": {
+    "line_start": 394,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C17",
+   "_title": "B-C17 — `X8` ANS 生理同步：四个效应量**逐个命中**，`NOT_IDENTIFIABLE` 判决成立",
+   "claim": "关系结局总体 `ES=.09`（边缘显著）、`I²=76.0%`；交感 `ES=+.19 (p=.02)`、副交感 `ES=−.21 (p=.03)`、合并 `ES=+.16`；结构上不可分解为 i→j / j→i；不能作任何 LHRM 构念的 proxy。",
+   "source_report": "§2.9 `X8` L145；§3.1 类3 L181–185",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：PubMed 33744259 全文摘要 + ScienceDirect S0031938421000834 摘要 + Bar-Ilan CRIS 记录，三处独立一致",
+   "strongest_counterevidence": "① \"2026 年综述称'其心理意义仍然含糊'\"（`10.1038/s44159-026-00535-4`）——DOI 题录 `VERIFIED_BY_ME`（Gordon & Bartsch, *Nature Reviews Psychology* 5(3):201–215, 2026），但**\"心理意义仍然含糊\"这句具体措辞 NOT_OPENED**，属二手转述。② \"Gates et al. (2015) 发现 couples' RSA 同步与自报婚姻冲突**正**相关\"、`Thomsen & Gilbert (1998)` 两项 **无指针、NOT_OPENED**。③ Mayo 摘要同时给出 performance 侧 `ES=0.26, I²=52.7%`，报告未引（不影响判决）。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT` — 这是本报告最扎实的单条，且它对 `CURRENT_ARCHITECTURE.md` §2 \"神经/遗传/进化只作 mechanism evidence\" 的引用我逐字核对**正确**。",
+   "_locator": {
+    "line_start": 412,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C18",
+   "_title": "B-C18 — `X9` PRI：承重数字全对，但报告漏报 Study 2 的 `n=173`",
+   "claim": "PRI item pool = 19 量表 246 题、`N=2,334`；PRI-8 R `α=.93 ω_WP=.83`、I `α=.88 ω_WP=.77`；Study 3 APIM 161 对伴侣把 i 的知觉与 j 的自报行为对起来；`DIRECT_PROXY`。",
+   "source_report": "§2.9 `X9` L146；§3.1 L197；§3.2 L203；§4.3 → R09/R16 L275/L278",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：APA PsycINFO 摘要实读（Semantic Scholar API 取回完整 abstract）",
+   "strongest_counterevidence": "我能取到的只有摘要，摘要**不含** `α=.93/.88`、`ω_WP=.83/.77`、也不含 \"caring 题项因与 global satisfaction 交叉负荷被剔除\" 与 \"正题 ceiling\" 这两条。这三条**NOT_OPENED**（报告自述\"论文正文与全部数值已实际读到\"，见 §7 条 15 声明——与我的可核实范围一致但我无法独立确认）。另：摘要实读 Study 2 为 `n=173`（每两周 × 8 周，RI-CLPM），报告在 `X9` 行未写这个 n，只在 §3.2 写\"每两周 × 8 周\"。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C11`",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT`（附一条：`§4.3 → R16` 把 PRI-8 列入\"最小可用测量面板\"，须同时标 `NOT_OPENED` 的那三条）",
+   "_locator": {
+    "line_start": 430,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C19",
+   "_title": "B-C19 — `X1` DAS 信度泛化：四个数字逐条命中，且报告正确区分了\"信度泛化\"与\"测量不变性\"",
+   "claim": "DAS 信度泛化 meta = 91 篇研究 / 128 样本 / 25,035 人；total 与 Cohesion/Consensus/Satisfaction 内部一致性可接受但低于 Spanier 原报告；Affective Expression 分量 α 差；reliability 不因 sexual orientation / gender / marital status / ethnicity 而异。",
+   "source_report": "§2.9 `X1`/`X7` L138/L144；§3.4 L226–236",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：摘要经两个独立来源逐字复现（fetzer.org 自测手册、Springer Encyclopedia of Mental Health 章节均引同一 abstract）",
+   "strongest_counterevidence": "① `X1` 引用栏把这份 meta 放在 \"**Invariance**\" 列——但报告在\"信效度与 confounds\"列也写了同样内容，且 `§3.4` 的\"跨性别\"行**没有**把 DAS 列入，因此它**没有**把 reliability invariance 误当成 measurement invariance。**处理正确**。② 报告漏掉了 DAS 存在真正的**跨性别二阶因子阈值不变性**研究（PMC2788300），因而低估了该条的 invariance 证据。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`B-C5`（`X7` 是 `X1` 的分量）",
+   "corroboration": "`VERIFIED_BY_ME`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "_locator": {
+    "line_start": 450,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C20",
+   "_title": "B-C20 — 抽样框论证：对 PLS fallback 的指控**超范围**；对\"关系条件性施测\"的核心问题**未处理**",
+   "claim": "\"工具层面对'关系不存在'这一状态的处理方式是造一个替代对象 —— 在 LHRM 框架里等于把 `Unknown` 静默 coerce 成一个值，**违反 `CURRENT_ARCHITECTURE.md` §9** 与 `AGENTS.md` 的 Unknown 保留原则\"；并据此建议这些工具不能用于 Case Bank 中的陌生人/敌对/未确立关系材料。",
+   "source_report": "§3.3 confound 表末行 L222；§4.2 Q3 L267–268",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`AGENTS.md` 部分 `VERIFIED_BY_ME`（逐字：\"Unknown/missing data must remain explicit; **never silently coerce missing information into neutral/perfect-match values.**\"）。`CURRENT_ARCHITECTURE.md §9` 部分 `VERIFIED_BY_ME`（全文读过）**= 不支持该引用**。",
+   "strongest_counterevidence": "① **canonical 引用错节**：`CURRENT_ARCHITECTURE.md` §9 的标题是 \"Measurement / Canonicalization 的原则\"，六条原则讲的是\"原始事实不因归一化而删除\"\"不强迫所有变量进入 `0..1`\"\"**自然语言 proxy 可通过 fuzzy membership、ordinal model、posterior distribution 等方式提供 evidence**\"\"一个 latent coordinate 可以表示成 estimate + uncertainty + evidence/provenance\"——**它没有一条是禁止替代目标指令的**。真正的 canonical 依据在 §3 的 `Reality != Observation != Belief`、§9 原则 1、§10 的 `unknown` 事实状态。**\"违反 §9\"这个断言按字面不成立。**（同一报告对 `CURRENT_ARCHITECTURE.md §2` 的两处引用我都核对**正确**——\"不预设异性、陌生起点、婚恋目标\"与\"只作为 mechanism evidence\"逐字命中——所以这是孤立错引，不是系统性乱引。）② **对 ECR 的指控是范畴错误**：ECR-R 的 trait 语言**不是**\"造一个替代对象\"，而是**明确声明它测的是 Agent 层量**——§3.1 类1 自己也写了 \"target slot **结构上为空**\"。**这恰恰是\"不静默 coerce\"**：工具诚实标出自己的 scope。报告把它列为\"静默伪造 target\"的实例，与它自己的类1 论证冲突。③ **真正的问题被漏掉**：目录里绝大多数工具（DAS、IMS、RSQ、ECR-SF…）在\"无关系\"情形下走的是 **skip / inapplicable 分支**（关系条件性施测），报告**一次都没有**区分\"关系条件性施测（招募/抽样决定）\"与\"替代目标指令（计分决定）\"。④ PLS fallback 的具体措辞**NOT_OPENED**。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`:逐条目记录每个工具的 inapplicable/skip 分支与替代目标指令。",
+   "duplicate_of": "`NONE`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT` — `AGENTS.md` 那条保留（但表述改为\"工具的 inapplicable 分支与替代目标指令都会把 `Unknown` 折叠掉\"）；`CURRENT_ARCHITECTURE.md §9` 的引用必须改正节号。",
+   "_locator": {
+    "line_start": 471,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C21",
+   "_title": "B-C21 — `§4.1` 对 canonical 候选的 12 条裁决：7 条可接受、3 条需降级、1 条内部矛盾、1 条引用错节",
+   "claim": "报告对 `PARAMETER_CONVERGENCE_V0_1.md` D1–D8 / B1 / P1 / R3 逐项给出的 `KEEP` / `降级` 裁决。",
+   "source_report": "§4.1 表格 L244–257",
+   "verdict": "`CONTESTED`（逐行不一致，见下）",
+   "supporting_refs": "`VERIFIED_BY_ME`（`PARAMETER_CONVERGENCE_V0_1.md` 全文 + 本 packet 各分项核验）",
+   "strongest_counterevidence": "见逐行判定。**同名对立方**：`PARAMETER_CONVERGENCE_V0_1.md` §4 D8 的 open question、§4 D7 的边界说明、§4 D4 的 Distrust open question、§9 R3 的\"需 longitudinal incremental information 检验\"——canonical 原文与报告裁决在 D7/D8/Distrust 三处**张力明显**。",
+   "requires_canonical_change": "`UNSURE` — D7/D8 两条若要落地，**必须停在 proposal**（见各行）",
+   "needs_experiment_or_data": "`YES`（D7/D8/Distrust 三条）",
+   "duplicate_of": "`B-C3` / `B-C4`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`",
+   "_locator": {
+    "line_start": 489,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C22",
+   "_title": "B-C22 — 分类学一致性：`T1`/`T2` 判 `DIRECT_PROXY` 与 `A2` 判 `NOISY_PROXY` 的门槛不一致",
+   "claim": "报告对 trust 类给了 3 个 `DIRECT_PROXY`（`T1` Rempel TS、`T2` 2025 重做、`T3` DTS），但同一报告承认 `T1` 的 1985 因子结构从未与竞争的 4 因子模型对拆、2025 重做发现一个反向措辞方法因子、`T3` 五年后被独立复核判定测的是 benevolence 而非 trust——这些证据强度足以把 ECR-R 判成 `NOISY_PROXY`，却不足以把 TS/DTS 判成 `DIRECT_PROXY`。",
+   "source_report": "§2.4 `T1`/`T2`/`T3` L71–73；§2.5 `A2` L85",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：报告自身各行的\"信效度与 confounds\"栏（`T1` 行自述\"bifactor 下 faith 题项残余特异性极低\"\"反向措辞方法因子未解决\"；`T3` 行自述 Schumm et al. 1985 判定）；`10.1037/0022-3514.49.1.95` 与 `10.2307/351903` 题录 `VERIFIED_BY_ME`；ERIC `EJ229886` 摘要实读（\"Dyadic trust proved to be associated with love and with intimacy of self-disclosure, **especially for longer married partners**. It varied by level of commitment.\"）。",
+   "strongest_counterevidence": "① 报告**自己**的 `§1.2` 要求 `DIRECT_PROXY` 需\"工具在结构上直接测该有向坐标，**且有可查的信效度证据**\"——`T1` 行的信效度栏自认方法因子未解决，`T3` 行的效度栏自认被独立复核改判。这不满足自己的门槛。② `T1` 与 `T2` 是同一工具的原版与重做版，却各自给一个 `DIRECT_PROXY`，违反 §2 的折叠规则（`B-C5`）。③ `T3` 的 DTS 只有 `8 题`、`5 题反向`——`T3` 自己的方向性行（T4）还报告了 `Female r=.23 / Male r=−.06` 的性别不对称，这直接削弱\"i about j\"的可解释性却被归入 `DIRECT_PROXY`。④ 抗辩：DTS 的**反向**证据（social desirability `r=.00 n.s.`、与泛信任几乎不相关）确实是少见的正面证据，这部分我认可；但它不足以支撑 `DIRECT_PROXY` 而非 `NOISY_PROXY`。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`：`T4` 的 `Female r=.23 / Male r=−.06` 原文复核（我 NOT_OPENED）",
+   "duplicate_of": "`B-C5`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "_locator": {
+    "line_start": 522,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C23",
+   "_title": "B-C23 — `T4`「Trust 坐标的值本身依赖 i 的 dependence → Trust 与 OutcomeDependence 在测量层纠缠」",
+   "claim": "Larzelere & Huston (1980)：Female 对 partner 的 love `r=.23 (p<.05)`；Male 的 `r=−.06 (n.s.)`；作者解释为信任在依赖度低的一方更关键；因此 Trust 坐标在测量层与 OutcomeDependence 纠缠。§4.3 把这当作交给 R05 的量化警示。",
+   "source_report": "§2.4 `T4` L74；§3.3；§4.3 → R05 L273",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`VERIFIED_BY_ME`（引文层）：`10.2307/351903` 题录实读 = \"The Dyadic Trust Scale: **Toward Understanding Interpersonal Trust in Close Relationships**\"，J Marriage and the Family 42(3):595。ERIC `EJ229886` 作者摘要实读（内容见 `B-C22`）。",
+   "strongest_counterevidence": "① **两个 r 值与性别解释我 NOT_OPENED**（JSTOR 全文未取）。② 报告写\"依赖度低的一方（通常为女性）\"——但 `T4` 行的表头写的是 \"**Female 对 partner 的 love**\"，即自变量是 **love**，不是 dependence；作者摘要实读也只说 \"associated with **love** and with intimacy of self-disclosure… **It varied by level of commitment**\"。从 \"trust~love 的性别不对称\" + \"trust 随 commitment 水平变化\" 推到 \"Trust 坐标的值依赖 i 的 dependence\"，是一个**未标注的额外推理步骤**。③ 该推论方向与报告自己在 §4.1 D8 的\"OutcomeDependence 无工具\"**互相拉扯**：若两者在测量层纠缠，则\"无工具\"部分是因为工具在偷测另一个构念。检索了什么：Crossref、ERIC 记录、relascale 工具页（该页实读 DTS = \"an eight-item measure designed to measure belief in a partner's **benevolence and honesty**\"，与报告引 Schumm 的判断一致）。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`:取 `10.2307/351903` 全文核对两个 r 与作者原句。",
+   "duplicate_of": "`B-C21`（D4 open question / D8）",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "_locator": {
+    "line_start": 540,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "claim_id": "B-C24",
+   "_title": "B-C24 — §3.3 / §3.4 的两条\"跨表结论\"（不变量高度集中；三个最缺构念零证据）",
+   "claim": "\"关系科学里'跨文化不变'的证据高度集中在两个构念族（依恋、性欲），而 LHRM 最缺的三个（Dedication、OutcomeDependence、Cohesion）恰好是零证据。\"",
+   "source_report": "§3.4 末行 L236",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`VERIFIED_BY_ME`：ECR-R 62 文化区（`10.1177/0022022104266105` 题录实读，标题逐字含 \"62 Cultural Regions\"）；SDI-2 42 国 / 26 语言（`10.1080/00224499.2024.2417023` 题名逐字实读）；DAS 信度泛化（`B-C19`）",
+   "strongest_counterevidence": "① SDI-2 的 `N=82,243` / `CFI=.980` / `RMSEA=.060` 我 **NOT_OPENED**（只核了题录）；\"本 packet 最强\"这句依赖这三个数。② `Eisert et al. (2026) HISD-SF` 走 `10.1007/s10508-026-03487-1`（`UNVERIFIED`）——**性欲族的第二个工具未核**，所以\"证据集中于性欲族\"是单来源。③ Cohesion 侧\"零证据\"不成立：DAS 的**跨性别二阶因子阈值不变性**已被检验（`B-C12` 第 4 条），报告把它排除在\"零证据\"之外但没说明理由。④ 该结论的措辞把\"没有 invariance 检验报告\"与\"不变性失败\"混为一谈——报告自己在 §3.4 表格里是有区分的（\"有证据的\" vs \"明确失败或缺失的\"），但**末行的总结句丢了这个区分**。",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`YES`",
+   "duplicate_of": "`B-C12`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL` — 保留为结构性观察，但把\"零证据\"改为\"本 packet 未检出不变性检验报告\"。",
+   "_locator": {
+    "line_start": 558,
+    "section": "R2 Review Packet — Lane `B`（measurement instruments / proxies） / 3. `verdict_matrix`"
+   },
+   "corroboration_source": "explicit_field"
+  }
+ ],
+ "record_count": 24,
+ "field_coverage": {
+  "claim_id": 24,
+  "claim": 24,
+  "source_report": 24,
+  "verdict": 24,
+  "supporting_refs": 24,
+  "strongest_counterevidence": 24,
+  "requires_canonical_change": 24,
+  "needs_experiment_or_data": 24,
+  "duplicate_of": 24,
+  "corroboration": 24,
+  "recommendation_to_architect": 24
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "3. `verdict_matrix`"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. `verdict_matrix`",
+    "line_start": 50,
+    "line_end": 575
+   }
+  ]
+ },
+ "files_audited": "### [line 9] 1. `lane` / `cluster` / `files_audited`\n| lane | cluster |\n|---|---|\n| `B` | measurement instruments / proxies（唯一被审报告 = `03_MEASUREMENT_INSTRUMENTS.md`） |\n\n| file | bytes | lines | 读取方式 |\n|---|---|---|---|\n| `docs/research/overnight-2026-09-27/03_MEASUREMENT_INSTRUMENTS.md` | 78,256 | 413 | **全文分段读完**（L1–45 / 46–90 / 91–135 / 136–180 / 181–225 / 226–270 / 271–320 / 321–365 / 366–413），另做 5 次全文件 regex 计数 |\n| `docs/research/overnight-2026-09-27/review-r2/REVIEW_CONTRACT.md` | 8,210 | 103 | 全文 |\n| `AGENTS.md` | 5,718 | 70 | 全文 |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | 18,510 | 780 | 全文（用于核对「哪些 candidate construct 需要 instrument」） |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 7,862 | 270 | 全文 |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 9,649 | 361 | 全文（被审报告 4 处引用其 §2/§7/§9，须核对） |\n\n---",
+ "coverage_statement": "### [line 26] 2. `coverage_statement`（必读：未覆盖处显式声明）\n### 2.1 我**没有**读的文件（cluster 外，主动规避）\n`01_CURRENTNESS_AND_GAP_MAP.md` · `02_CONSTRUCT_CONVERGENCE.md` · `02b_CONSTRUCT_REDUNDANCY_AUDIT.md` · `04`–`19`（除下列事故）· `A01` · `A03` · `A04` · `00_MANIFEST.md` · `00_CHILD_CONTRACT.md` · `docs/validation/*`（不属 cluster I/K，未读）。\n\n### 2.2 ⚠️ 独立性事故声明（必须记录，见 §7 强制项）\n我在用 `Grep` 定位被审报告内部的 `G1`–`G10` 编号时，把 `path` 参数误设为整个 `overnight-2026-09-27/` 目录。该次调用返回了 **cluster 外** 报告的匹配行。实际被返回并进入我上下文的内容为：\n- `10_MUTUALITY_POWER_DEPENDENCE.md` L674–L689：它自己那份 **另一套编号体系**（其 `G1`–`G16`）的 16 行 gap 表；\n- `16_EMPIRICAL_VALIDATION_PROTOCOL.md` 两行（`F-06` 提到 R03 `G9`）；\n- `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` 一行（引 R16 `F-06` 转述 R03 `G9`）；\n- `18_CROSS_LANE_CONFLICT_AUDIT.md` 一行（`U-1` 引 R03 `G9`）；\n- `19_SYNTHESIS_CANDIDATE.md` 两行（引 R03 `G1` / R03 `G9` 原文一句）。\n\n**我未**打开上述任何文件的正文，**未**据此下任何跨 cluster 结论。本 packet 的 `verdict_matrix` 中没有任何一条以这些内容为 `supporting_refs`，也没有任何一条 `verdict` 因\"别的 lane 也这么说\"而升级。下游 parent 在做 join 时，若发现某条 B-lane 结论与这些行号有关联，应视为本 lane 独立性已受损并降权。**另需 parent 特别注意一处实质风险**：上面第五行是 lane `19` 对 R03 `G9` 的**逐字转引**，与我在 §6 对 `G9` 的独立判定直接相关——请把那条转引与本 packet 的 `B-C19` 对照阅读，不要把两者当独立支撑。\n\n### 2.3 被审报告内部的**未覆盖/不可覆盖**内容\n- **`G1`–`G10` 这份 gap 清单在本文件中并不存在。** 我实测：`G1`–`G10` 的出现次数分别为 `2,1,1,1,0,1,0,0,3,2`——**`G5`/`G7`/`G8` 零次**；`N1`–`N12` 只有 `N1` 与 `N12` 出现在 \"N1–N12\" 这个范围串里，**逐条 N2–N11 零次**；`F1`/`F2`/`F11` 零次。全文没有任何一节枚举 gap 表、negative-result 表或 F-编号 finding 表（§1–§8 标题已全部枚举确认）。因此**审计任务第 4 问（\"10 个 gap 是否真 gap\"）在字面上无法完整回答**——我只能审计从 §4.1 表格的引用列里**反推**出来的 7 个 gap 编号（G1/2/3/4/6/9/10）。见 `B-C2`。\n- `A9` 行的指针栏写 \"见 §1.4 与 U 列\"，但**本文件没有 §1.4**（§1 只到 §1.2）。`U01`–`U20` 也没有一张 register 表，只有 §6 的散列文本。因此 `A9` 的来源链条在文件内是**断的**。\n- §7 参考文献表第 5 条**重复出现两次**（`5.`），作者名单核对声明（第 399 行）也漏掉了 `X16` 所依赖的条目 71。\n- 联网抽样预算：Crossref REST 28 次 DOI 解析；Semantic Scholar Graph API 2 次；官方/机构页直取 2 次（Fraley ECR-R FAQ、CMU Common Cold Project RCI 页）；websearch 8 组；webfetch 5 次（3 次失败/被墙）。**承重条目我未能全部打开原文**：`T1`/`T2`（Rempel 原版与 2025 重做，仅 PMC 链接）、`A3`（Alessandri）、`A5`（Wei et al. 数字）、`X2`（Røysamb）、`X3`（Graham et al. 2011 数字）、`X10`（PPRS 一致性）、`O4`/`O5`（Hirschfeld / Anderson et al.）、`C2`（CMS）、`S1` 的 `N=82,243 / CFI=.980 / RMSEA=.060`、以及 **Fletcher et al. 2000 的 PRQC 六个分量的两两相关矩阵**（`L1.1` 规则 2 / §3.3 / §4.3 三处承重，SAGE PDF 403，无法取得原表）。\n- `P1 Cohesion`（`G6`）我没有找到独立的 `G6` 命题文本，只能从 §4.1 的引用列反推为\"工具侧无法裁决 shared latent 是否存在\"，因此对 `G6` 的判定置信度低于其它 gap。\n\n---",
+ "top_recommendations": "### [line 637] 5. `top_recommendations`（按对 Architect 的重要性排序，≤7）\n1. **`NOT_IDENTIFIABLE` 的语义门槛必须先裁决，再谈 D7/D8 降级。** 报告 §1.2 把 `NOT_IDENTIFIABLE` 定义为\"结构上做不到\"，却用它承载了 9 条\"层级不对/尚未检索\"的条目，并据此建议降级两个 canonical candidate（D7 `Dedication`、D8 `OutcomeDependence`）。**这两条降级建议应整体打回**。→ `RECLASSIFY_AS_METHOD_LIMIT`。\n2. **修 5 处会传播的引用错误**：§2.8 `O1` RPI（Beach 2017 → **Farrell, Simpson & Rothman 2015**）；§2.8 `O2` RBA（Lativos → **Luttrell et al.**）；§2.5 `A13`（**Pietromonaco & Barrett 1997**，非 Laurenceau 1998）；§7 条 42（Mønster et al. 2016 / Soc Personal Relat → **Palumbo et al. 2017 / PSPR 21(2)**）；§2.1 `L2` RCI（**10 题 → 75 题**）。→ `REJECT` 原样并入。\n3. **补 3 个漏掉的已验证工具**（ECR-RS `10.1037/a0022898`；PICS；Fraley et al. 2011 JPSP 101:974–992 的 ECR-RS state 稳定性）。ECR-RS 直接证伪 `A9` 的\"唯一方向正确的工具\"，并使 D5 的\"唯一 state 指针\"失效。→ `ACCEPT_AS_PROPOSAL`。\n4. **`G9` 必须重述后才能用。** 现措辞（\"没有任何已验证坐标\"）按字面为假（trust 有行为博弈范式未检索；且报告自己的 PRI Study 3 是双 informant 单通道）。收窄为\"没有任何**关系层有向坐标**拥有 pair-level、关系特异的 自陈信念 + 独立观察/生理 双通道\"后方成立。同时把\"架构级 gap\"降为\"开放技术问题\"，与 §6 第 8 项口径统一。→ `RECLASSIFY_AS_METHOD_LIMIT`。\n5. **12 条 `UNVERIFIED`/`AGENT_RECALL` 源携带分类裁决 → 全部降为 `NOT_ASSESSED`**（`B-C14` 清单）。最高危链条是 `T7`(`UNVERIFIED_DOI`) → `T6`(Hsu 2019 学位论文) → §4.1 D4 \"Distrust 升级为独立候选\"，两个未核源串成一条驱动 canonical 状态跃迁的链。\n6. **修 §3.3 的 canonical 引用**：把\"违反 `CURRENT_ARCHITECTURE.md` §9\"改到正确依据（§3 `Reality != Observation != Belief` + §9 原则 1 + §10 `unknown` 事实状态），并把 ECR 的 trait 语言从\"静默伪造 target\"改判为\"诚实标注 Agent 层 scope\"。另把 Stafford (2010) 从\"求值者/施测者效应\"移到\"量表 item construction 缺陷\"。\n7. **统计口径必须重出**：`41 family / 54 条目` 与实际 73 行不符，且 6 处重复未标注（`X5`/`X6`/`X7`/`O8`/`T2`/`R1`≈`R3`）；`217 DOI / 48 UNVERIFIED` 不存在于该文件。durable 版本应给\"去重后清单\"与可复现的计数规则。**另：gap 清单 `G1`–`G10` 与 `N1`–`N12` 在本文件中根本不存在**（`G5`/`G7`/`G8`/`N2`–`N11` 零次出现，无任何枚举节），因此 §8 的 \"10 项 instrument gap / 12 项 negative result\" 是**无产物支撑的自述统计**，任何下游 lane 引用 R03 `G1`–`G10` 前必须先向作者索取原表。\n\n---",
+ "explicit_non_claims": "### [line 649] 6. `explicit_non_claims`（≥5）\n1. **不主张** `03_MEASUREMENT_INSTRUMENTS.md` 之外的任何 overnight 报告的内容；我在 §2.2 记录了一次 grep 越界事故，返回的是 lane `10` 的另一套 `G1`–`G16` 编号表与 4 处对本 lane `G9` 的一行转引。**我未据此下任何结论**，并请 parent 特别不要把 lane `19` 对 R03 `G9` 的转引当作独立支撑。\n2. **不主张** Fletcher, Simpson & Thomas (2000) 的 PRQC 六分量两两相关矩阵（trust↔satisfaction `.58` / commitment `.38` / intimacy `.47` / love `.48` / passion `.14`）是错的。SAGE 全文 PDF 返回 403，我**没有**取得原表。这五个数被报告用于 §1.1 规则 2、§3.3 CMV 行、§4.3 → R01/R02 与 Gate C 冗余挑战，是全报告最承重的一组数，**我判 `NOT_OPENED` 而不是判错**。parent 若要动 Gate C，必须先补这一表。\n3. **不主张** 任何工具的 `DIRECT_PROXY` / `NOISY_PROXY` 裁决本身错误。我给出的是**门槛一致性**问题（`B-C4`/`B-C22`）：同一套门槛在不同行被宽严不一地应用，而不是某一条的标签选错了。\n4. **不主张** 本 packet 完成了对 41 族 / 73 行的逐条审计。我完成的是：29 次 Crossref DOI 解析、28 个条目引用的题录核对、**25+ 个承重心理测量数字**的逐条核对（其中 22 项命中、2 项不符、1 项分类错误）、以及 4 个必答专项的判断。**未打开原文的条目一律 `NOT_OPENED`，不得被读成 `VERIFIED`。**\n5. **不主张** 关系维持测量族（RMBM/RMSM）存在\"更干净\"的替代工具。我只验证了 `10.1111/pere.12429`（Ogolsky & Stafford 2023 系统综述）存在且未收进目录；`Chonody et al.`（2016, Guilford）同理。二者都**可能**削弱也可能加强报告对 `C4` 的判断，我未读。\n6. **不主张** `OutcomeDependence` 一定有现成工具。我只是**没有**在预算内找到。因此 `B-C3` 是 `PLAUSIBLE`（缺口可信、证据不足），不是\"gap 已被填上\"，也不是\"gap 不存在\"。\n7. **不主张** 本 packet 对 `docs/foundation/*` 的一致性判断构成 canonical 修改建议。我只指出报告**引用 canonical 时引错/引对**的具体位置，以及哪些 §4.1 建议若要落地必须先停在 proposal。**我未修改任何 canonical 文件。**\n8. **不主张** 我核过的 `10.1038/s44159-026-00535-4`（Gordon & Bartsch, *Nature Reviews Psychology* 5(3):201–215, 2026）支持报告所引的\"心理意义仍然含糊\"措辞。**题录 `VERIFIED_BY_ME`，措辞 `NOT_OPENED`。**\n\n---",
+ "provenance_note": "### [line 662] 7. `packet_sha_note`（读了哪些源、各自的核实方式）\n### 7.1 我**实际打开过**的一手/权威源（`VERIFIED_BY_ME`）\n\n| 源 | 方式 | 我读到的支撑句（摘） |\n|---|---|---|\n| Crossref REST API（28 次 DOI 解析） | HTTP 实际请求 | 逐条 author/title/journal/volume/issue/page/issued-year。用于 `B-C6`（3 处错引 + 1 处期刊错）、`B-C12`、`B-C13`、`B-C15`、`B-C17`、`B-C24` |\n| Fraley 官方 ECR-R FAQ（`labs.psychology.illinois.edu/~rcfraley/measures/ecrr.htm`） | webfetch 全文 | ① 改写授权 \"You should feel free to modify the items in any way that seems appropriate to you.\"；② 评分算例 `…+(8-ECRR09)+ECRR10+(8-ECRR11)+…`；③ avoidance 12 题反向；④ \"Both the ECR and the ECR-R are designed to assess **individual differences**\"；⑤ 链接到 ECR-RS（\"a new (and shorter) version of the ECR-R that can be used for a variety of relational targets\"） |\n| Fraley 官方 ECR-R items 页 | webfetch | \"**We are interested in how you generally experience relationships, not just in what is happening in a current relationship.**\"（逐字命中报告 §1.1 规则 4 的引文，报告把它误拼为 \"Faley\"） |\n| Fraley 官方 ECR-RS 页 | websearch 索引全文 | \"Information on the stability of ECR-RS scores when used as a **'state' measure**\" → 指向 JPSP 101:974–992 |\n| CMU Common Cold Project — Relationship Closeness (RCI) | webfetch 全文 | \"**Number of Items: 75 (3 frequency, 38 diversity, 34 strength)**\"；\"Frequency subscale, alpha = 0.56 / Diversity subscale, alpha = 0.81 / Strength subscale, alpha = 0.90\"；retest 3–5 周 total r=0.82、freq .82 / div .61 / str .81；\"closest relationship within each of 5 social domains\" |\n| APA PsycTests RCI 记录（`10.1037/t03601-000`） | 检索索引 | \"The coefficient alpha computed from this three-item RCI index was **.62**\"；\"r(75) = **.82**, p < .001\"；primary sample 241 (116M/125F) |\n| APA PsycINFO — Aron et al. 1992 摘要（`10.1037/0022-3514.63.4.596`） | 检索索引（APA + Ovid 双源） | \"a **2-factor closeness model—Feeling Close and Behaving Close**\"；\"single-item, pictorial\"；\"minimal social desirability correlations\"；\"**Five supplementary studies**… with intimacy and attraction measures in **stranger dyads**\" |\n| PubMed PMC2811244 / Springer PDF — Chivers et al. 2010 | 检索索引（PMC + Springer PDF 双源） | \"men (**r = .66**) … than women (**r = .26**)\"；132 studies / 2,505F / 1,918M；moderators \"stimulus variability and **timing of the assessment of self-reported**\"；**women with thermography avg r=.55 (n=97, k=6)** |\n| PubMed 33744259 / ScienceDirect / Bar-Ilan CRIS — Mayo et al. 2021 | 三源实读 | \"**ES=0.09, p>.10 and high heterogeneity (I 2 =76.0%)**\"；\"sympathetic (**ES=0.19, p=.02**)\"；\"parasympathetic (**ES=-0.21, p=.03**)\"；\"combined (**ES =0.16, p=.02**)\" |\n| APA PsycINFO — Crasta et al. 2021 摘要（经 Semantic Scholar Graph API） | API 实际请求 | \"Study 1, **n = 2,334** … **246 candidate items derived from 19 PPR measures**\"；\"two **8-item** subscales … **incremental prediction over global satisfaction**\"；\"Study 2, **n = 173** … **every other week for 8 weeks** … **Random intercept cross-lagged panel models**\"；\"Study 3, **n = 161 heterosexual couples** … **Actor-partner interdependence models** … partners' self-reported behaviors **even after controlling for own behaviors**\" |\n| CMU 托管的 Krishnamurti & Loewenstein (2011) 正文 | 检索索引（PDF 文本层；直接 fetch 返回原始 PDF 字节，不可用） | \"**PSSL … α=.93** and **PSSW … α=.87**\"；\"**Test–retest … (n=30) … r=.75**\"；\"**CFI = .97, TLI = .96, RMSEA = .06**\"；15 items（PSSL 10 + PSSW 5）。**三项 Study N（1145/67/2589）仍 NOT_OPENED** |\n| fetzer.org 自测手册 + Springer Encyclopedia — Graham, Liu & Jeziorski (2006) 摘要 | 两源逐字互证 | \"across **91 published studies with 128 samples and 25,035 participants**\"；\"lower than those originally reported by Spanier (1976)\"；\"**did not differ by the sexual orientation, gender, marital status, or ethnicity**\"；\"Affective Expression … **poor Cronbach's alpha**\" |\n| PMC2788300 — DAS 跨性别不变性 | 检索索引 | 二阶模型 loadings + thresholds 均 invariant；\"ranging from **.72** … to **.93** for the DAS total score\"；Consensus 13 / Satisfaction 10 / Cohesion 5 / Affectional Expression 4 = 32 |\n| Ovid / SAGE — Stafford (2010/2011) 摘要 | 检索索引 | \"**suffer from fundamental measurement flaws**\"；\"**neither prior RMSM is viable**\"；\"**factor structure of the RMBM is stable across three samples**\"；7 因子名称逐项 |\n| oro.open.ac.uk — Chonody et al. | 检索索引 | \"of the original **29 items, 11 are double or triple barreled**\"（→ 是原 RMSM 的 29 题，非 RMBM 的 26 题） |\n| SAGE — Fletcher et al. 2000 论文页（脚注 + 参考文献） | 检索索引 | 脚注 2：\"Hatfield and Sprecher's (1986) passionate love scale … **correlate highly (r = .82** in a study by Acker & Davis, 1992)\"；脚注 9 + 参考条目：\"Fletcher, Simpson, Thomas, & Giles, 2000 … **Unpublished manuscript**, Psychology Department, University of Canterbury\"；二阶 PRQC CFI=.92 |\n| PubMed 21443364 / APA PsycNet — ECR-RS `10.1037/a0022898` | 检索索引 | 期刊题录 **Psychological Assessment 23(3):615–625**；\">**21,000 individuals**\"；\"Study 2 (**N = 388**)\"；\"relationships with their **mothers, fathers, partners**, and [friends]\" |\n| PMC6269212 — PICS | 检索索引 | \"a self-report measure of relationship power among **men in same-sex, committed relationships**\"；`N1=96 / N2=341 / N3=434`；\"**the RPI was not developed or validated for use with same-sex couples**\" |\n| APA PsycNet / Wiley / UMN PDF — RPI `10.1111/pere.12072` | 检索索引（三源） | 作者 = **Farrell, Simpson & Rothman (2015), 22(3):387–413**；\"Study 3 revealed RPI scores **predict observer ratings of power during decision-making discussions** and … good test–retest reliability\" |\n| PubMed 29568159 / PMC5847161 / Crossref — RBA `10.1007/s10591-017-9421-2` | 检索索引（三源） | 作者 = **Luttrell, Distelberg, Wilson, Knudson-Martin & Moline**；\"**268 individuals and 91 couples** identified **12 consistent latent factors**\"；\"**12 factors … included 35 items**\"；TREASURES 缩写 12 项逐项吻合 |\n| Crossref — `10.1177/1088868316628405` | HTTP 实际请求 | = **Palumbo et al. (2017), *Personality and Social Psychology Review* 21(2):99–141**（Semantic Scholar 独立显示 2017），**不是** Mønster et al. (2016) / Soc Personal Relat |\n| Crossref — `10.1111/jftr.70019` | HTTP 实际请求 | = **Junkins, Derringer, Ogolsky, Hardesty & Weisberg (2025), *J Family Theory & Review* 18(1):170–191** |\n| Crossref — `10.1038/s44159-026-00535-4` | HTTP 实际请求 | = **Gordon, I. & Bartsch, R. P. (2026), \"Correlates of interpersonal physiological synchrony and sources of empirical heterogeneity\", *Nature Reviews Psychology* 5(3):201–215** |\n| Crossref — `10.1080/00224499.2024.2417023` | HTTP 实际请求 | = **Castro-Calvo, J.**, Beltrán-Martínez, M., Ballester-Arnal, R., et al. (2024), *The Journal of Sex Research* **63(5):755–768**，题名逐字含 \"42 Countries and 26 Languages\"。→ 报告的 \"63:755-768\" **与 Crossref 完全一致**（issued 2024 = online-first，vol 63 = 2026 印刷）；但报告 §7 条 33 把第一作者写成 \"Castro-Calvo, **A.**\"（应为 **J.**）。`N=82,243 / CFI=.980 / RMSEA=.060` 仍 `NOT_OPENED` |\n| ERIC `EJ229886` — Larzelere & Huston 1980 | 检索索引 | \"Dyadic trust proved to be associated with **love** and with intimacy of self-disclosure, **especially for longer married partners**. **It varied by level of commitment.**\"（支持 `T4` 的方向性论点**定性**部分；两个 r 值 `NOT_OPENED`） |\n| scales.arabpsychology.com — RSQ | 检索索引 | 30 题单列、7-point 完整题面（支持 `A6` 的题数描述） |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 全文 | §2 两处引用**逐字正确**；§2 \"只作为 mechanism evidence\" **逐字正确**；**§9 无 Unknown 禁令 → 报告错引**（`B-C20`） |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` / `CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 全文 | 用于 4.4 的重复性判定 |\n| `AGENTS.md` | 全文 | \"Unknown/missing data must remain explicit; **never silently coerce**…\" **逐字命中**报告 §3.3 的 canonical 依据 |\n\n### 7.2 明确 `NOT_OPENED`（**不得**被读成 `VERIFIED`）\n`10.1037/0022-3514.49.1.95` 正文（26 题池 / EFA N=47 / 17 题）· `PMC12316384`（2025 Rempel 重做）· `Wei et al. 2007` 的 α 区间与 1 月重测 `.80/.83` · **Fletcher et al. 2000 PRQC 相关矩阵**（SAGE 403）· `10.1037/0022-3514.74.5.1238` 全文 · `Overall & Sibley 2009` 全文 · `Røysamb et al. 2014` 的 `N=117,178` 与跨性别 invariance · `Graham, Diebels & Barnow 2011` 的 639/398/636,806 · `PPRS` 的 consistencies `.91–.98` · `x10.1111/jftr.70019` 正文（38 个量表 / 1–2 次 / 依赖度-权力混用三断言）· `Hirschfeld et al. 1976` 与 `Anderson et al. 2012` 的数字 · `PMC12761549`（CMS）· `Castro-Calvo` 的 `N=82,243 / CFI=.980 / RMSEA=.060` · `Krishnamurti & Loewenstein` 的三个 Study N · `Crasta et al.` 的 `α=.93/.88`、`ω_WP=.83/.77`、caring 剔除、ceiling · `Larzelere & Huston` 的 `Female r=.23 / Male r=−.06` · `Schumm et al. 1985` · `Gates et al. 2015` / `Thomsen & Gilbert 1998` · Gordon & Bartsch (2026) 的\"心理意义含糊\"措辞 · 全部 13 条 `UNVERIFIED` 指针（exa.ai / docksci / sciencedirect / ntnu / stacks.cdc / pmc 链接）· PLS fallback 指令的确切措辞。\n\n### 7.3 本 packet 未做的事（合同 §3 边界自查）\n未 merge PR #31 · 未 push / comment / 建 PR · 未修改 `D:\\coding\\lhrm` 任何文件（唯一写入 = 本文件）· 未执行 WO-N1/N2/N3 · 未触碰 Eye / Juece · 未读取 LHRM `#20`/`#21`/`#22` · 未下载受限数据 / 绕过 auth / 绕过 robots · 未新增文献调研（全部联网行为均为对被判承重条目的抽样复核）。\n\n**本 packet 唯一写入路径**：`C:\\Users\\gg828\\AppData\\Local\\Temp\\opencode\\lanes\\R2_B.md`",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "4.1 哪些是**单 lane 推测**（无第二条独立支撑）",
+   "line_start": 578,
+   "answer": "| # | 结论 | 状态 |\n|---|---|---|\n| 1 | `G1`（无 relation-level `OutcomeDependence` 工具） | **纯单点推测**。唯一支撑是本报告自己的一组 power 工具 + 一份它未读正文的谱系审计。 |\n| 2 | `G3`（`Dedication` 需自建工具） | **纯单点推测**。三条支撑（D3 WTC / D4 CWTC / D5 Stets&Burke）分别是 `NOT_IDENTIFIABLE`、`AGENT_RECALL`、`AGENT_RECALL`——**没有一条**是独立来源。 |\n| 3 | `G4`（`Caregiving` 是 instrument gap） | 单点。唯一正面指针 \"C2 因子结构最贴近\" 挂在未核 PMC 上。 |\n| 4 | `T6` 的 \"279 名被试中 78% 曾同时经历 trust 与 distrust\" | 单点，且出自学位论文；它是 §4.1 D4 \"Distrust 升级为独立候选\"的**唯一**依据。 |\n| 5 | `T4` 的 \"Trust 与 OutcomeDependence 在测量层纠缠\" | 单点，两个 r 值我 NOT_OPENED。 |\n| 6 | `A11` 的 \"9 个性取向量表中仅 4 个通过\" | 单点，`UNVERIFIED_DOI`，且被 §4.3 交给 R11 当\"量化约束\"。 |\n| 7 | §3.3 \"fallback 指令 = 静默伪造 target，违反 `CURRENT_ARCHITECTURE.md` §9\" | 单点，且 canonical 引用按字面不成立（`B-C20`）。 |\n| 8 | \"只有 PRI 的 Study 3 是 `Belief_i(Z[j→i])` 与 `Z[j→i]` 分离并联结的既有范式\" | 单点（`B-C18`），且被报告自己用作 `G9` 的最强支持，而 `B-C11` 指出它是**双 informant 单通道**。 |\n| 9 | `A9` 的 \"ECR-R-GSF 是唯一方向正确的工具\" | 单点 + **已被证伪**（ECR-RS，`B-C12`）。 |\n| 10 | 全部 12 条 gap 判定 | **元问题**：gap 清单本身在文件内不存在（`B-C2` 的 coverage 段），因此严格说 **10 条 gap 判定里只有 7 条可审计，另 3 条（`G5`/`G7`/`G8`）我无法判定**。 |"
+  },
+  {
+   "index": 2,
+   "heading": "4.2 哪些是**方法学/访问限制**被误报成 ontology 发现（合同 §6.2 强制清单）",
+   "line_start": 593,
+   "answer": "| # | 被误报的内容 | 实际性质 | 出现在 |\n|---|---|---|---|\n| 1 | \"`D8 OutcomeDependence` 降级为 `NOT_IDENTIFIABLE`\" | **检索覆盖限制**。`NOT_IDENTIFIABLE` 按报告 §1.2 自定义 = \"结构上做不到\"；这里的证据形态是\"目录里没有\"。 | §4.1 L254 |\n| 2 | \"`D7 Dedication` 降级为 `NOT_IDENTIFIABLE`\" | **来源核实限制**（两条 `AGENT_RECALL` + 一条层级错配）。 | §4.1 L253 |\n| 3 | \"女性方向无等价生理通道\" | **实验室测量通道的性别不对称**，被搬到 `SexualDesire_(i->j)` 坐标层；且漏掉 thermography `r=.55`。 | §4.1 L248、§2.3 S8 |\n| 4 | \"违反 `CURRENT_ARCHITECTURE.md` §9\" | **canonical 错节引用**。§9 讲的是归一化/不确定性保留，不是替代目标指令禁令。 | §3.3 L222 |\n| 5 | \"ECR 的 trait 语言 = 静默 coerce `Unknown`\" | **层级/作用域限制**。ECR 明确声明自己测 Agent 层量，是诚实标 scope，不是伪造 target。 | §3.3 L222 |\n| 6 | \"`G9` 架构级 gap\" | **目录未覆盖**（信任博弈等行为通道未检索）+ **措辞过宽**（把双 informant 当双通道）+ 报告 §6 自认\"开放的技术问题\"。 | §4.2 L262、§8 L406 |\n| 7 | 9 条 `NOT_IDENTIFIABLE` | **层级不匹配 / 抽样框错位**，缺一个 `AGENT_LEVEL_PROXY` 类目。 | §2 全表 |\n| 8 | \"38 个 power 量表无一成为主流工具\" | **文献计量观察**，不能推成\"power 侧无工具\"；且与报告自己的 RPI 裁决矛盾。 | §2.8 O6 |\n| 9 | §3.3 \"求值者/施测者效应\" 行里的 Stafford 结论 | **量表设计缺陷**（double-barreled item），不是施测效应。 | §3.3 L218 |\n| 10 | \"T7/T8/A11 的 COSMIN / 性取向不变性数字\" | **来源可及性限制**（exa.ai 非持久指针）。 | §2.4/§2.5 |\n| 11 | \"`RCI` 是 10 题\" | **事实错误**，非限制（真值 75 题）。 | §2.1 L42 |\n| 12 | \"`Mønster et al. (2016) / Soc Personal Relat`\" | **来源指针错误**（真值 Palumbo et al. 2017 / PSPR）。 | §7 条 42 |"
+  },
+  {
+   "index": 3,
+   "heading": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 610,
+   "answer": "| # | 建议 | 目标 canonical 位置 | 是否必须停在 proposal |\n|---|---|---|---|\n| 1 | D8 `OutcomeDependence` 降级 `NOT_IDENTIFIABLE` | `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 | **必须停在 proposal**。理由：① 违反报告自己 §1.2 对 `NOT_IDENTIFIABLE` 的定义（`B-C3`）；② 与该节现有 open question（\"是否应完全由 Agent resources / alternatives / institutional constraints 推导\"）冲突——降级等于替 redundancy test 做了它该做的判断；③ 内部矛盾（\"power 工具皆空\" vs §2.8 三个 power 工具）。 |\n| 2 | D7 `Dedication` 降级 `NOT_IDENTIFIABLE` | 同上 §4 D7 | **必须停在 proposal**。理由：全部支撑来自 `AGENT_RECALL`；且 §4 D7 明写 \"dedication 可与'因为孩子/财产/法律而留下'的 constraint commitment 解耦\"——降级会把这个 candidate 需要的 Gate C 反例测试一并取消。 |\n| 3 | `Distrust` 升级为独立候选 | 同上 §4 D4 open question | **必须停在 proposal**。理由：唯一依据是学位论文 + `UNVERIFIED_DOI`。canonical 里它现在是 \"**保留待测**\"——升级为 candidate 是状态跃迁，不该由一条未核证据驱动。 |\n| 4 | D6 `Caregiving` 标 `instrument gap` | 同上 §4 D6 | **可以不停在 proposal**，但须先把\"gap\"的语义从\"结构上不可测\"改为\"本 packet 未检出\"。 |\n| 5 | D5 追加\"唯一 state 指针 = Overall & Sibley\" | 同上 §4 D5 | **必须停在 proposal**，且**唯一性断言应先撤回**（ECR-RS state 稳定性论文，`B-C12`）。 |\n| 6 | D4 新增 open question\"Trust 是否有事件层表示\" | 同上 §4 D4 | 可以落 proposal：它只把\"现有工具全是 level\"记录为待测，不改 candidate 状态。 |\n| 7 | 新增 \"冗余检验会在测量噪声上运行\"的告诫 | `CURRENT_ARCHITECTURE.md` §7 / `AGENTS.md`「低冗余」条 | **必须停在 proposal**。理由：`AGENTS.md` 现行文本写 \"Low redundancy means low **semantic/conditional** redundancy, not zero statistical correlation\"；报告要提的是\"两方向差异常常小于测量误差\"——这是对现行判据的**修订**，不是补充，不能由一份 instrument catalogue 单方写入。 |\n| 8 | 新增 \"有向坐标双通道要求\" 作为架构要求 | `CURRENT_ARCHITECTURE.md` §3（`Reality != Observation != Belief`） | **必须停在 proposal**，且需先收窄 `G9` 措辞（`B-C11`）。 |"
+  },
+  {
+   "index": 4,
+   "heading": "4.4 哪些结论**重复 / 同义 / 双重计数**（与本 cluster 内、与 canonical 的重复）",
+   "line_start": 623,
+   "answer": "**本 cluster 内（6 处，见 `B-C5` 逐条）**：`X5`=`L1` · `X6`=`L2` · `X7`=`X1` 分量 · `O8`=`D1` 分量 · `T2`=`T1` 修订版 · `R1`≈`R3`（`r≈.82`）。\n**做对了的折叠**：`S1`(SDI/SDI-2) · `S2`(HISD/HISD-SF) · `A1`+`A2`(ECR/ECR-R) —— 说明折叠规则存在但未一致执行。\n\n**与 canonical 现有条目的重复：**\n1. `X1`/`X2`/`X3` 三条对 `Satisfaction = DERIVED` 的裁决，**与 `PARAMETER_CONVERGENCE_V0_1.md` §9 R3 现有文本同向**（该节已写 \"Satisfaction… 可能是多个底层状态、偏好、belief 和 environment 的 readout\"）。→ 不是新发现，**不得作为升级依据**（合同 §4 禁止把重复当独立）。报告未标注这条同向关系。\n2. `C3` 对 caregiving 行为应降级为 Action/Observation 的支持，**与 `PARAMETER_CONVERGENCE` §4 D6 边界段 + §8 完全同向**（canonical 已列 \"caregiving acts\" 于降级清单）。报告写 \"本 packet 支持该降级\" —— **正确地把它当成支持而非新发现**，这一处处理得好。\n3. `B1 PPR` 的\"行为 responsiveness vs 感知 PPR 分离\"与 `PARAMETER_CONVERGENCE` §5 B1 的 `ResponsiveAction_(j->i)` / `PPR_(i about j)` 分离，**是同一架构判断**。报告称 \"与 LHRM §5 B1 完全一致\" —— 处理正确。\n4. `X5`/`X6` 的 we-ness 记法与 `PARAMETER_CONVERGENCE` §6 P1 的 `PerceivedWeNess_(A about pair)` / `(B about pair)` **重复**；`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 的 `Asymmetry_k(A,B) = distance(Z[k,A,B], Z[k,B,A])` 也覆盖 §3.1 类2 的问题。报告**未引用 canonical 的这两处已有表述**，导致它把自己的发现当成新的。\n5. 报告 §3.1 类1 末尾说\"这与 `CURRENT_ARCHITECTURE.md` §7 相关\" —— 引用**正确但不精确**：该问题（两方向差异常是噪声）canonical 归属是 `AGENTS.md`「低冗余」条 + `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 的 `directionality test`，§7 讲的是\"低冗余≠动态独立\"。属轻微误锚。\n\n---"
+  }
+ ],
+ "specialty_section": "4. 四项必答专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `B`（measurement instruments / proxies）",
+   "line_start": 1,
+   "line_end": 705
+  },
+  {
+   "level": 2,
+   "title": "1. `lane` / `cluster` / `files_audited`",
+   "line_start": 9,
+   "line_end": 25
+  },
+  {
+   "level": 2,
+   "title": "2. `coverage_statement`（必读：未覆盖处显式声明）",
+   "line_start": 26,
+   "line_end": 49
+  },
+  {
+   "level": 3,
+   "title": "2.1 我**没有**读的文件（cluster 外，主动规避）",
+   "line_start": 28,
+   "line_end": 30
+  },
+  {
+   "level": 3,
+   "title": "2.2 ⚠️ 独立性事故声明（必须记录，见 §7 强制项）",
+   "line_start": 31,
+   "line_end": 40
+  },
+  {
+   "level": 3,
+   "title": "2.3 被审报告内部的**未覆盖/不可覆盖**内容",
+   "line_start": 41,
+   "line_end": 49
+  },
+  {
+   "level": 2,
+   "title": "3. `verdict_matrix`",
+   "line_start": 50,
+   "line_end": 575
+  },
+  {
+   "level": 3,
+   "title": "B-C1 — 头条统计「41 instrument family / 54 可引用条目」",
+   "line_start": 57,
+   "line_end": 74
+  },
+  {
+   "level": 3,
+   "title": "B-C2 — 审计任务前提中的「217 DOI pointers / 48 UNVERIFIED flags」在本文件中不存在",
+   "line_start": 75,
+   "line_end": 92
+  },
+  {
+   "level": 3,
+   "title": "B-C3 — `G1`：无 relation-level `OutcomeDependence_(i->j)` 工具（最重后果之一）",
+   "line_start": 93,
+   "line_end": 110
+  },
+  {
+   "level": 3,
+   "title": "B-C4 — `NOT_IDENTIFIABLE` 被系统性误用为\"层级不对 / 尚未检索\"（分类学缺陷）",
+   "line_start": 111,
+   "line_end": 128
+  },
+  {
+   "level": 3,
+   "title": "B-C5 — 目录内部重复计数与同义（合同强制专项之一，答案在 §6.4）",
+   "line_start": 129,
+   "line_end": 155
+  },
+  {
+   "level": 3,
+   "title": "B-C6 — 三处引用元数据错误（author/year 层面），已定位到具体行",
+   "line_start": 156,
+   "line_end": 179
+  },
+  {
+   "level": 3,
+   "title": "B-C7 — `L2` RCI：三个 α 全部正确，但**题数错**且**\"弱信度分量\"推论反了**",
+   "line_start": 180,
+   "line_end": 205
+  },
+  {
+   "level": 3,
+   "title": "B-C8 — `L1` IOS 与 `S8` Chivers：数字全对，但 `S8` 存在层级外推",
+   "line_start": 206,
+   "line_end": 223
+  },
+  {
+   "level": 3,
+   "title": "B-C9 — `A2` ECR-R：承重数字与官方评分规则**逐条命中**",
+   "line_start": 224,
+   "line_end": 249
+  },
+  {
+   "level": 3,
+   "title": "B-C10 — 报告的改写成本（Q3 论证的代价核算）**没有**被诚实计入",
+   "line_start": 250,
+   "line_end": 273
+  },
+  {
+   "level": 3,
+   "title": "B-C11 — `G9`（无坐标拥有两个独立观测通道）：报告版本过宽，严格版本成立",
+   "line_start": 274,
+   "line_end": 291
+  },
+  {
+   "level": 3,
+   "title": "B-C12 — 目录漏掉 3 个已验证的承重工具",
+   "line_start": 292,
+   "line_end": 314
+  },
+  {
+   "level": 3,
+   "title": "B-C13 — `O6` power 谱系审计：`NOT_IDENTIFIABLE` 判决对 power 侧是过强的",
+   "line_start": 315,
+   "line_end": 332
+  },
+  {
+   "level": 3,
+   "title": "B-C14 — `UNVERIFIED` / `AGENT_RECALL` 源却携带分类裁决的条目（审计任务第 8 问，清单）",
+   "line_start": 333,
+   "line_end": 368
+  },
+  {
+   "level": 3,
+   "title": "B-C15 — 目录里**没有可解析指针**的条目，与 §8「全部带真实指针」的自我声明冲突",
+   "line_start": 369,
+   "line_end": 393
+  },
+  {
+   "level": 3,
+   "title": "B-C16 — `C3` Stafford 2010：定性结论全部命中，但**被报告放错了 confound 类别**",
+   "line_start": 394,
+   "line_end": 411
+  },
+  {
+   "level": 3,
+   "title": "B-C17 — `X8` ANS 生理同步：四个效应量**逐个命中**，`NOT_IDENTIFIABLE` 判决成立",
+   "line_start": 412,
+   "line_end": 429
+  },
+  {
+   "level": 3,
+   "title": "B-C18 — `X9` PRI：承重数字全对，但报告漏报 Study 2 的 `n=173`",
+   "line_start": 430,
+   "line_end": 449
+  },
+  {
+   "level": 3,
+   "title": "B-C19 — `X1` DAS 信度泛化：四个数字逐条命中，且报告正确区分了\"信度泛化\"与\"测量不变性\"",
+   "line_start": 450,
+   "line_end": 470
+  },
+  {
+   "level": 3,
+   "title": "B-C20 — 抽样框论证：对 PLS fallback 的指控**超范围**；对\"关系条件性施测\"的核心问题**未处理**",
+   "line_start": 471,
+   "line_end": 488
+  },
+  {
+   "level": 3,
+   "title": "B-C21 — `§4.1` 对 canonical 候选的 12 条裁决：7 条可接受、3 条需降级、1 条内部矛盾、1 条引用错节",
+   "line_start": 489,
+   "line_end": 521
+  },
+  {
+   "level": 3,
+   "title": "B-C22 — 分类学一致性：`T1`/`T2` 判 `DIRECT_PROXY` 与 `A2` 判 `NOISY_PROXY` 的门槛不一致",
+   "line_start": 522,
+   "line_end": 539
+  },
+  {
+   "level": 3,
+   "title": "B-C23 — `T4`「Trust 坐标的值本身依赖 i 的 dependence → Trust 与 OutcomeDependence 在测量层纠缠」",
+   "line_start": 540,
+   "line_end": 557
+  },
+  {
+   "level": 3,
+   "title": "B-C24 — §3.3 / §3.4 的两条\"跨表结论\"（不变量高度集中；三个最缺构念零证据）",
+   "line_start": 558,
+   "line_end": 575
+  },
+  {
+   "level": 2,
+   "title": "4. 四项必答专项",
+   "line_start": 576,
+   "line_end": 636
+  },
+  {
+   "level": 3,
+   "title": "4.1 哪些是**单 lane 推测**（无第二条独立支撑）",
+   "line_start": 578,
+   "line_end": 592
+  },
+  {
+   "level": 3,
+   "title": "4.2 哪些是**方法学/访问限制**被误报成 ontology 发现（合同 §6.2 强制清单）",
+   "line_start": 593,
+   "line_end": 609
+  },
+  {
+   "level": 3,
+   "title": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 610,
+   "line_end": 622
+  },
+  {
+   "level": 3,
+   "title": "4.4 哪些结论**重复 / 同义 / 双重计数**（与本 cluster 内、与 canonical 的重复）",
+   "line_start": 623,
+   "line_end": 636
+  },
+  {
+   "level": 2,
+   "title": "5. `top_recommendations`（按对 Architect 的重要性排序，≤7）",
+   "line_start": 637,
+   "line_end": 648
+  },
+  {
+   "level": 2,
+   "title": "6. `explicit_non_claims`（≥5）",
+   "line_start": 649,
+   "line_end": 661
+  },
+  {
+   "level": 2,
+   "title": "7. `packet_sha_note`（读了哪些源、各自的核实方式）",
+   "line_start": 662,
+   "line_end": 705
+  },
+  {
+   "level": 3,
+   "title": "7.1 我**实际打开过**的一手/权威源（`VERIFIED_BY_ME`）",
+   "line_start": 664,
+   "line_end": 697
+  },
+  {
+   "level": 3,
+   "title": "7.2 明确 `NOT_OPENED`（**不得**被读成 `VERIFIED`）",
+   "line_start": 698,
+   "line_end": 700
+  },
+  {
+   "level": 3,
+   "title": "7.3 本 packet 未做的事（合同 §3 边界自查）",
+   "line_start": 701,
+   "line_end": 705
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ }
+}

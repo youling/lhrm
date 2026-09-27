@@ -7,10 +7,21 @@
 >
 > `REVIEW_CONTRACT.md` §5 字段 7 要求：`requires_canonical_change: YES` 时必须写明**具体要改哪个文件的哪一节**
 > 以及**为什么不能停在 proposal**。**「不能停在 proposal」必须有理由；没有理由的一律标 `可停在 proposal`。**
+> **Round-3 supersession pointer.** 本文件未删改任何 Round-2 评审主张。
+> 已被取代 / 已被本轮修复取代的主张，逐条登记在
+> **`SUPERSEDED_REGISTER.md`**（stable id `SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`
+> 取代，`SR-B*` = 被 Track R3-A 的 PR #31 修复取代，`SR-X*` = 明确不取代）。
+> 取代依据：`youling/lhrm#30` comment `5854920569`（adjV1）与
+> `r3/a1`…`r3/a4b` 的 repair commit（见该 register §2 表头）。
+> **本文件是 Round-2 的记录；不得再把被取代的表述当作待议项引用。**
+
+
 
 ---
 
 ## 状态汇总
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` 逐条指针见各 `C-P*` / `C-W*` 节末；总表见 `SUPERSEDED_REGISTER.md` §1
 
 | 状态 | 数量 | id |
 |---|---:|---|
@@ -24,6 +35,8 @@
 ---
 
 ## C-P1 — Gate 的后果动词、阈值、诊断类型与 ablation 臂
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A3（adjV1 `C-P1` = ACCEPT WITH MODIFICATION：**不得发明 N 阈值**；单次 `MAPPING_FAILURE` 是待诊断失败事件）
 
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`
   **+ `AGENTS.md:62`（镜像同步）**
@@ -57,6 +70,8 @@
 
 ## C-P2 — Gate B 重写为外部生成的反例集
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A22（adjV1 `C-P2` = ACCEPT，**新增** sampling-frame 与 construct-decoupling 分表约束）
+
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§15 Gate B**
 - **建议改动**（`I-C7` + `ADJ3` Q3 + `I-C8` + `I-C9` + `I-C10` + `I-C11` + `G-C13` + `L-C5`）：
   1. 把 §15 Gate B 从「项目自产的 11 个 cell」重写为**外部生成**的反例集。
@@ -76,6 +91,8 @@
 ---
 
 ## C-P3 — `§4 D4` 增加具名 `FeltSecurity` facet 槽位 + `domain` 降级
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A1（adjV1 `C-P3` = PARTIAL ACCEPT：**Reject** 在 `Trust` 下新增 `FeltSecurity` 槽位）· §SR-A24
 
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§4 D4**（`:168-181`）
 - **建议改动**（`ADJ1` Q4，`requires_canonical_change: YES`，但**极窄**）：
@@ -97,6 +114,8 @@
 
 ## C-P4 — 权力三分的落地（须拆 R2-a / R2-b）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A16（adjV1 `C-P4` = ACCEPT R2-a / HOLD R2-b；**必须同时修正 total-power 公式**）· §SR-A14
+
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`（R2 相关节）+ `docs/foundation/CURRENT_ARCHITECTURE.md`（P1 槽位）
 - **建议改动**（`F-C21` `VERIFIED`；`F-C22`；`F-C23` `WRONG-SCOPE`；`ADJ2` rec 4）：
   - **R2-a（可越过 proposal）**：把 R2 限定为「relative power 分量的 **derived readout**」；在 schema 中显式加入 **total power 对称 readout** + **domain 索引**。
@@ -112,6 +131,8 @@
 ---
 
 ## C-P5 — 值类清单：增补「构念 × dyad-type 适用性元数据」的登记位
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A17（adjV1 `C-P5` = ACCEPT AS SEPARATE AXIS；落点由「值类清单」改为「独立适用性轴」）· §SR-A5
 
 - **目标**：`docs/foundation/CURRENT_ARCHITECTURE.md` §9 原则 4（值类清单）+ `AGENTS.md` 对应条
 - **建议改动**：**不是**补一个「不适用」值类（该主张已被推翻，见 C-W1），而是**增补一个登记位**：
@@ -129,6 +150,8 @@
 
 ## C-P6 — `VALIDATION_CORPUS` 的两处文档级冲突
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A18（adjV1 `C-P6` = ACCEPT IMMEDIATE REPAIR；**新增** pretraining/memorization 泄漏轴）
+
 - **目标**：`docs/validation/VALIDATION_CORPUS_V0_1.md`
 - **建议改动**（`I-C28` + `I-C12`，**成本最低、无判据语义变更**）：
   1. 把 `future_leakage_risk` **拆成两列**：「文档内 / 结局泄漏」与「预训练记忆泄漏」。当前合并为一列 ⇒ **互相遮蔽**。
@@ -142,6 +165,8 @@
 ---
 
 ## C-P7 — 域枚举与三张 cross-context 清单的文档对齐
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A11（adjV1 `C-P7` = ACCEPT）
 
 - **目标**：`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 · `PARAMETER_CONVERGENCE_V0_1.md` §2.4 与 §15 Gate B（→ `CURRENT_ARCHITECTURE.md:53-56`）
 - **建议改动**：**层 1（零成本）**——三张清单与 `CURRENT_ARCHITECTURE` §2 的**文档对齐**。
@@ -157,6 +182,8 @@
 ---
 
 ## C-P8 — `§9 R3` 追加后果预登记
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A19（adjV1 `C-P8` = ACCEPT NARROWLY：只加条件后果注记）
 
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§9 R3**（`:489-495`）
 - **建议改动**：追加一句**后果预登记**：
@@ -174,6 +201,8 @@
 ---
 
 ## C-P9 — 单一 blocker register + Work Order 重分类（**Architect 决议，不是文件改动**）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A13（adjV1 `C-P9` = ACCEPT：单一 register、5 分类、负结果移出 blocker）
 
 - **目标**：**不触碰 canonical 文本。** 需要的是一次**决议** + 对 `19` / `00_MANIFEST` 两份 register 的合并。
 - **决议内容**（`ADJ3` Q8 + `K-C44` + `L-C17`/`L-C18` + `K-C45`/`K-C46`）：
@@ -193,6 +222,8 @@
 ---
 
 ## C-P10 — `B2` null 的重定义（**CONDITIONAL**）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A4（adjV1 `X-6` + `C-P10` = 改名 `B2_STABLE_LEVEL`；**禁止**「被 B1 严格支配」的表述）
 
 - **目标**：`docs/research/overnight-2026-09-27/16_EMPIRICAL_VALIDATION_PROTOCOL.md`（`§7` 的 `B1`/`B2`/主判定规则）
   与 `#29` issue body。**注意：这不在 `docs/foundation/*` 内**，故严格说不是 canonical 变更；
@@ -221,6 +252,8 @@
 
 ## C-P11 — `Disclosure` 作为 `Action/Event` 子类型
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A20（adjV1 `C-P11` = ACCEPT AS ACTION VOCABULARY，**不是新状态原语**）
+
 - **目标**：`docs/foundation/CURRENT_ARCHITECTURE.md` §6（`Action/Event` 子类型表）
 - **建议改动**：新增 `Disclosure` 作为 `Action/Event` 的子类型。
 - **证据**（`E-C19` —— lane `E` 判 `requires_canonical_change: YES` 中**唯一**一条 `ACCEPT` 的）：
@@ -235,6 +268,8 @@
 ---
 
 ## C-P12 — Gate A 归因推理的 `⊥` 偏算子前置检查
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A2（adjV1 `C-P12` = **HOLD / NOT CANONICAL NOW**）
 
 - **目标**：`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A（若采纳）
 - **候选内容**（`D-C32`）：把「Gate A 的归因推理是否按算子组合实现」作为一条**前置工程检查项**加入 Gate A。
@@ -253,6 +288,8 @@
 
 ## C-P13 — 构念可观察性 / 锚点登记表（`NOT_YET`）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A21（adjV1 `C-P13` = ACCEPT；`NOT_YET` 取消）
+
 - **目标**：`docs/foundation/CURRENT_ARCHITECTURE.md` §9 或 §10 前置条件
 - **候选内容**（`E-C16`）：建立「哪些构念原则上可被直接观察 / 哪些只能被报告 / 哪些只能被推断」的登记表。
 - **证据**（`E-C16` —— `E` 判为**本 lane 唯一的 head-of-list 阻塞项**）：
@@ -267,6 +304,8 @@
 ---
 
 ## WITHDRAWN — 被阶段 2 推翻或无授权的 canonical 变更候选
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A5（C-W1 的**撤回理由**被取代）· §SR-A1（C-W4）· §SR-A4（C-W3/B2）· §SR-B21
 
 ### C-W1 — 值类集合是穷举集、存在逻辑矛盾（原 `G-C4` / `G-C5`）
 

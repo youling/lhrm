@@ -5,10 +5,21 @@
 >
 > 分层依据：`REVIEW_CONTRACT.md` §3（禁止绕过 rights / egress / 隔离）、`ADJ2` Q6（数据的实际可及性）、
 > `L`（本仓库无 runner / CI / metric 实现 / schema）、`C`（逐条打开的 rights 事实）。
+> **Round-3 supersession pointer.** 本文件未删改任何 Round-2 评审主张。
+> 已被取代 / 已被本轮修复取代的主张，逐条登记在
+> **`SUPERSEDED_REGISTER.md`**（stable id `SR-A*` = 被 `ARCHITECT_ADJUDICATION_V1`
+> 取代，`SR-B*` = 被 Track R3-A 的 PR #31 修复取代，`SR-X*` = 明确不取代）。
+> 取代依据：`youling/lhrm#30` comment `5854920569`（adjV1）与
+> `r3/a1`…`r3/a4b` 的 repair commit（见该 register §2 表头）。
+> **本文件是 Round-2 的记录；不得再把被取代的表述当作待议项引用。**
+
+
 
 ---
 
 ## 层 0 — 零成本、零新证据、**只需文档编辑**（不需要任何授权）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-B16（严重性降级：不再是「昂贵 patch + 重跑 Fixture」）
 
 这些不是「实验」，是**协议定义 + 记账修正**。把它们列在第 0 层是因为：**在它们完成之前，任何后续结果都不可解释。**
 
@@ -37,6 +48,8 @@
 
 ## 层 1 — 可立即执行、有明确后果、**今天就能跑**
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A3 · §SR-B20（`16` 的默认几何撤回、`FZ-1` 两级冻结）
+
 | id | 实验 / 动作 | 依据 | 前置 | 产出 |
 |---|---|---|---|---|
 | **E-6** | 删掉 `NARRATIVE_ONLY` / `IRRELEVANT` 出口后**重跑 Fixture 001 的 C001–C026** | `I-C29`（`I` 判：**全项目唯一一条可执行、后果明确、今天就能跑、且能同时产出两个退守结论的 falsifier**）。`A03` U-F 已独立确认它尚未运行 | Z-5（`MAPPING_FAILURE` 可达） | 两个退守结论：哪些 unit 落到被删掉的出口；`DIRECT_MAPPING` 率的变化 |
@@ -48,6 +61,8 @@
 ---
 
 ## 层 2 — 需要**测量学 / 统计设计**（不需架构裁决，但需 Human 授权采样）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A22
 
 `ADJ3` Q8 明确：**真·研究设计任务 = 2 项**，**不需架构裁决**。
 
@@ -81,6 +96,8 @@
 ---
 
 ## 层 3 — 需要**外部数据 + egress + 存储决策**（今天物理上做不到）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A9 · §SR-B7 · §SR-B9
 
 ### 3a. rights / egress 现状（`ADJ2` Q6 判 `PLAUSIBLE`：**0 / 5 条律有可及的法律识别数据集**）
 
@@ -122,6 +139,8 @@
 
 ## 层 4 — 需要**密集观测 regime**（律 E / 转移律的唯一可行入口）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A12（`X-11` = NONE FROZEN）· §SR-B20（`09` 的 K1–K9 状态改写）
+
 | id | 动作 | 依据 |
 |---|---|---|
 | **E-11** | 把 **ESM / IL / EMA escape clause** 补进 `09` §4.4，并**点名这些 regime** | `F-C11` + `ADJ2` rec 5。`09` 的密度条件是 regime 条件化的，但全文**未点名** ESM / IL / EMA。**这一条同时是 `RT` 的唯一可行数据 regime 的入口**（律 E 需要**事件内顺序** = 密集设计） |
@@ -132,6 +151,8 @@
 ---
 
 ## 层 5 — 需要**架构裁决**（Human / Project Architect；不是研究问题）
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A6 · §SR-A7 · §SR-A8 · §SR-A11 · §SR-A12 · §SR-A13 · §SR-A24
 
 | id | 动作 | 依据 | 为什么不能靠实验解决 |
 |---|---|---|---|
@@ -174,6 +195,8 @@
 
 ## 层 6 — 本轮**物理上不可能**（不得记为 ontology blocker）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-X5（未运行 Gate A/B/C 仍然成立）
+
 `ADJ3` Q8 明确：**这些属 contract §6.2 意义上的「方法学/访问限制而非 ontology 发现」，无人可裁决。**
 
 | id | 事项 | 状态 |
@@ -189,6 +212,8 @@
 
 ## 被降级为 `NEGATIVE_RESULT` 的项（**记录，不是 blocker，也不是缺陷**）
 
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A12
+
 | id | 内容 | 依据 |
 |---|---|---|
 | **NR-1** | 「missingness lowers certainty, not computability」在仓库内**字面不存在**；项目实际持有的是更弱的 `Computable != Certain` | `R-E3`（`E-C1` 判「这是本 lane 最有价值的一条，应作为 `NEGATIVE_RESULT` 进入 join」） |
@@ -200,6 +225,8 @@
 ---
 
 ## 派工前必须知道的四个顺序约束
+
+> **取代指针**： 见 `SUPERSEDED_REGISTER.md` §SR-A13 · §SR-B20
 
 1. **Z-1 先于 E-6。** `MAPPING_FAILURE` 类型上不可达时，E-6 的任何计数都不可解释。
 2. **基线先于 schema。** Fixture schema pin 在 `f237784`；Z-1 落地后，改动前产出的 mapping 计数**不可与之后比较**（`L-C9`）。

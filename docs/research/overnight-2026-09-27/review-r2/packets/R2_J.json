@@ -1,0 +1,963 @@
+{
+ "child_id": "R2_J",
+ "lane": "J",
+ "cluster": "citation / provenance recheck",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "table_wide",
+ "source": {
+  "file": "R2_J.md",
+  "sha256": "474bb498074599a6f785fb1d67489c0aadd0899b52e66df6a7c4d4ff604be07c",
+  "bytes": 64453,
+  "lines": 461
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 227,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C1",
+   "claim": "A01：353 DOI 中 337（95.5%）Crossref 解析成功",
+   "source_report": "A01 §0 L15；§3.1 L139–150",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：我打开 99 个语料 DOI，post-repair 死链 1/99；`10.1037/pas0000986`/`aaai.v35i7`/`S0010-0277(02)00054-9`/`osf.io/f6wbn_v1` 均 OK",
+   "strongest_counterevidence": "A01 §1.1 L34 自己写\"353/353（100%）\"；死链数在 A01 内部有 9/10/11/16 四个版本",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C13`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "1"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 228,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C2",
+   "claim": "A01：29 个 DOI「解析到一篇真实论文但不是所引那一篇」",
+   "source_report": "A01 §0 L19；§6 附录",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：15/15 我亲自打开的错配指控全部成立（§3.2）",
+   "strongest_counterevidence": "我未重建那 29 条的**集合**（未重跑 A01 的正则），故 29 这个**计数**本身为 `PLAUSIBLE`",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "2"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 229,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C3",
+   "claim": "A04：1,199 → 642 → 533，倍率 2.25×",
+   "source_report": "A04 §2.1 L78–87",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：642=340+257+44+1；533=642−109；1199/533=2.2495",
+   "strongest_counterevidence": "无。我尝试反驳未成功",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "3"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 230,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C4",
+   "claim": "A04：各 lane 自报数相加 ≈1,201，\"高估 2.3–3.4×\"",
+   "source_report": "A04 §2.1 L84；§2.3 L115",
+   "verdict": "`WRONG-SCOPE`",
+   "supporting_refs": "`VERIFIED_BY_ME`：所列 18 个 lane 数之和 = **878**，不是 1,201；真倍率 **1.65×–2.51×**",
+   "strongest_counterevidence": "A04 的**定性**结论（lane 自报数不可相加）独立成立，与数字无关",
+   "requires_canonical_change": "`NO`（但 manifest §4 B-9 需改数字）",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C3`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "4"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 231,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C5",
+   "claim": "A04：5 种 DOI 书写形态、2.18 次/DOI",
+   "source_report": "A04 §0 C10；§2.1 L87",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：5 形态中我亲眼见到 4 种；590+76+58+8+8=740、740/340=2.176",
+   "strongest_counterevidence": "第 5 种（`_` 分隔 Springer 形态）我未在语料亲眼见到",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "5"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 232,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C6",
+   "claim": "A04：350 个同行评审来源",
+   "source_report": "A04 §2.2 L96；§2.3 L113",
+   "verdict": "`VERIFIED`（作为\"peer-reviewed 计数\"）/ `WRONG-SCOPE`（作为\"科学重量\"）",
+   "supporting_refs": "`VERIFIED_BY_ME`：15/15 抽样行确为同行评审；350+1+62+57+47+7+9=533；350/533=65.7%",
+   "strongest_counterevidence": "`PEER_REVIEWED_PRIMARY` 319 由「type=journal-article 且题名无 review」判定，**系统性把理论/方法论论文标成 PRIMARY**（我实测 7 例）",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "6"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 233,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C7",
+   "claim": "A04：承重表 30 项\"28 项强度充分\"",
+   "source_report": "A04 §4.2 L207–239；§4.2 结论 L241",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：19 行我逐条打开，**11 行作者错**；另 5 行据 A01 附录亦错 → **≥16/30 = 53% 身份不可信**",
+   "strongest_counterevidence": "无。缺陷在 A04 自己的表内",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`REJECT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "7"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 234,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C8",
+   "claim": "A04：「3 处 `10.31234/osf.io/…` 前缀结构非法、不解析」",
+   "source_report": "A04 §0 C4；§3.3.1 M4/M5/M6 L152–154",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`osf.io/dus42` 302 ✓、`osf.io/rs7eu_v1` 302 ✓、`osf.io/gu8z7`(10.31219) 302 ✓；A01 §6 附录 L624/L626 已把前两条记为 `RESOLVED`。`corroboration: NON_INDEPENDENT`（反驳依据来自 A01 的附录，两审计同源同日同工具）",
+   "strongest_counterevidence": "若应用，M5/M6 两条 live 预印本会被改成 404",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C9`",
+   "recommendation_to_architect": "`REJECT`",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "_extra_columns": {
+    "#": "8"
+   },
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 235,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C9",
+   "claim": "修��� child 拒绝 `10.31234→10.31219`，理由\"10.31234 解析、10.31219 404\"",
+   "source_report": "`00_MANIFEST.md` §2b（`git show 8adcf0b` diff）",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：结论对（两个前缀对 `f6wbn` 都 404）；**理由错**（`10.31219/osf.io/gu8z7` → **302**）",
+   "strongest_counterevidence": "manifest 的字面陈述被我实测直接反驳",
+   "requires_canonical_change": "**`YES`** — `00_MANIFEST.md` §2b「唯一被实测推翻的审计断言」整段必须改写为「两个前缀均 live；`f6wbn` 只在 `10.31234` + `_v1` 下注册」；**不能停在 proposal**，因为该段现在是一条会误导下一次 repair 的操作性指令",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C8`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "9"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 236,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C10",
+   "claim": "A04：无 meta-analysis 承担当需 primary data 的主张",
+   "source_report": "A04 §8.1.6 L412；§4.2 L241",
+   "verdict": "`VERIFIED`（窄）",
+   "supporting_refs": "`VERIFIED_BY_ME`：唯二 review 类承重项 Le & Agnew 2003（*Pers Relat* 10(1):37–57 meta）与 Tran 2019（*Pers Relat* 26(1):158–180 updated meta）我都打开，均为真 meta；A01 §4.2 已从 Tran 摘要逐字核出 N=50,427 / k=202 / r=.65·.53·−.43",
+   "strongest_counterevidence": "该结论**只覆盖这 2 项**；承重表其余 28 项的身份列不可信（`J-C7`），故不能推广为\"承重层整体无此失效模式\"",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C7`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "10"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 237,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C11",
+   "claim": "A01：12 个证据等级词表变体 / 18 lane",
+   "source_report": "A01 §0 L21；F-12 L244；NR-ALL-1 L870",
+   "verdict": "`VERIFIED`（计数）/ 我的裁定见 §9.5",
+   "supporting_refs": "`VERIFIED_BY_ME`：A01 F-12 引的 R10 vs R07 对 `CITED_PRIMARY` 的**互相矛盾定义**属实（我在 A01 报告中读到两条原文）",
+   "strongest_counterevidence": "18 份报告是**独立文档**，各带本地图例；异质本身不是缺陷",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "11"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 238,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C12",
+   "claim": "修复正确性：9 条 applied repair",
+   "source_report": "`git show 8adcf0b`（8 个 Wave-1 文件）",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：8/9 完全正确（9 个新值我全部 Crossref 打开）；0 条造成新损坏",
+   "strongest_counterevidence": "Falconier & Kuhn 那条**题名仍错**（残留 \"a research agenda\"）；Emerson 那条**页码仍截断**（`31–51`）；`03:336` 的 `UNVERIFIED_DOI` 注解现已过期",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "12"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 239,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C13",
+   "claim": "A01 §1.1 L34「Crossref 解析 353/353（100%）」",
+   "source_report": "A01 §1.1 L34",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：与同报告 §0（337/95.5%）及 §3.1（308+29=337）直接矛盾",
+   "strongest_counterevidence": "无",
+   "requires_canonical_change": "`NO`（报告内订正即可）",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C1`",
+   "recommendation_to_architect": "`REJECT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "13"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 240,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C14",
+   "claim": "A04 D5：`10.1024/1662-9647.a000031` 的问题是「前缀与著录期刊族不一致」",
+   "source_report": "A04 §3.3.2 D5 L164",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`1662-9647` **正是 GeroPsych 的前缀**；真值 `10.1024/1662-9647/**a000031**`（斜杠）解析为 GeroPsych 24(1):5–18, Di Rosa et al. 2011 —— A01 F-08 的诊断与修法正确，A04 的机制解释错误",
+   "strongest_counterevidence": "A04 仍**正确地**判定它\"不解析\"",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C16`",
+   "recommendation_to_architect": "`REJECT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "14"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 241,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C15",
+   "claim": "A04 §3.3.4「`10.1037/h0046049` Cartwright & Harary 1956, *Psych Review* 63(4)」判 ✅ 一致",
+   "source_report": "A04 §3.3.4 L186",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：Crossref = *Psychological Review* **63(5):277–293**",
+   "strongest_counterevidence": "无。这是 A04 \"已通过\"清单里的一条**假 PASS**",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`REJECT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "15"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 242,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C16",
+   "claim": "Fixture 003 存在 `pointer_only` / `ai-train=no` / `GPTBot Disallow` 边界",
+   "source_report": "Fixture 003 L20、L21、L157–160",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`（读 metadata/rights 段）：`© StoryCorps` 非 PD 非 CC；`robots.txt` `Content-Signal: search=yes,ai-train=no,use=reference` + `Disallow` GPTBot/ClaudeBot/CCBot；`rights_policy=HUMAN_REVIEW_REQUIRED → POINTER_HASH_ONLY` fail-closed；`raw_artifact_ref=null`、`content_hashes=[]`；明文禁止下游取 transcript body / audio / `long-text-anchored/0.1`",
+   "strongest_counterevidence": "无。边界写在**专门的 Appendix — Rights & reuse note** 里，机器可读、显式、不可误解",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "16"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 243,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C17",
+   "claim": "A04 §6.3 F1：`13` 全篇 0 次记录该边界却用其 transcript 单元",
+   "source_report": "A04 §6.2 L313；§6.3 L320–331",
+   "verdict": "`CONTESTED`（**我无权裁定**）",
+   "supporting_refs": "我只能确认边界存在（`J-C16`）与其严重度",
+   "strongest_counterevidence": "**我未被允许读 `13`**，因此无法确认指控本身。若指控为真，缺陷性质见 §9.7",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C16`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "17"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 244,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C18",
+   "claim": "A04 的 642 行来源表结构上无法发现作者错配",
+   "source_report": "A04 §9 表头 L417（列定义仅 Tier/Pointer/Year/Lanes/n/Resolved）",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：A04 表无 author/title 列；其 §8.3.6 却声称核实过\"题名/年份/期刊是否与报告著录一致\"；结果 §4.2 出现 ≥16 处作者错",
+   "strongest_counterevidence": "A01 的 353 行附录**有** author/year/title 三列 → 这是 A01 与 A04 质量差距的**结构性**根因，不是偶然",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C7`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "18"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 245,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C19",
+   "claim": "A01 83 条 `NARROW_REPAIR_REQUEST` 只执行了约 13 条",
+   "source_report": "A01 §10.3（我复算 `NR-` 行数 = **83**）；`git show 8adcf0b --stat`（7 个文件被改）",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：A01 §3.1 报 29 条错配，本 commit 只改到约 11 条；`11_GENERAL_HUMAN_DYADS_SCOPE.md` 的 A01 F-08（MAJOR）**未修**（+98 行是 Wave-1 未提交追加，与 A01 无关）",
+   "strongest_counterevidence": "未修 ≠ 不可辩护：多数未修项 A01 自己就标了 `UNKNOWN_AS_OF` / `AGENT_RECALL`，属诚实降级",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C2`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "19"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 246,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C20",
+   "claim": "`00_MANIFEST.md` §2b 称 `08b` 修了\"7 处\"",
+   "source_report": "`00_MANIFEST.md` §2b；`git show 8adcf0b -- 08b`",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：diff 实改 **8** 个条目（`[S2][S12][S13][S34][S37][S51][S60][S70]`）",
+   "strongest_counterevidence": "无",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C12`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "20"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 247,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C21",
+   "claim": "`00_MANIFEST.md` §2b 称 `08b [S15]`「只改作者，未改年份」",
+   "source_report": "`00_MANIFEST.md` §2b；`git show 8adcf0b -- 08b`",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "`VERIFIED_BY_ME`：`08b` 的 `[S15]` 在 diff 中是**未改动的上下文行**，无作者字段",
+   "strongest_counterevidence": "措辞可能指另一 lane 的 S15；但 `08b` 是唯一的 belief-report 源列表",
+   "requires_canonical_change": "`UNSURE`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "21"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 248,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C22",
+   "claim": "两个审计的抽样是否偏倚 / 覆盖是否已知",
+   "source_report": "A01 §1.2 L44–46；A04 §1.1 L118–130",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "两份都声明 **100% DOI 覆盖**（A01 353/353、A04 340/340），同 18 文件、同 Crossref、同日 → 解析结论 `corroboration: NON_INDEPENDENT`",
+   "strongest_counterevidence": "**A04 从未做作者/年份/期刊比对**（§8.3.6 之外无任何 author 字段），A01 做了全量自动筛查 + 66 条人工细读 → **语义层的覆盖是 A01 独家，不是共同覆盖**",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`NONE`",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "_extra_columns": {
+    "#": "22"
+   },
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 249,
+    "section": "R2 Review Packet — Lane `J`（citation / provenance recheck） / 7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "J-C23",
+   "claim": "PR #31 的实际引用可靠性",
+   "source_report": "本 packet §10",
+   "verdict": "`VERIFIED`（对我自己的抽样）",
+   "supporting_refs": "方法与数字见 §10",
+   "strongest_counterevidence": "存在**双峰**：审计放过的 ≈92% 我抽 30/30 全干净；审计标出但未修的 ≈5–8% 仍带缺陷",
+   "requires_canonical_change": "`NO`",
+   "needs_experiment_or_data": "`NO`",
+   "duplicate_of": "`J-C1`,`J-C2`,`J-C19`",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "23"
+   },
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 23,
+ "field_coverage": {
+  "claim_id": 23,
+  "claim": 23,
+  "source_report": 23,
+  "verdict": 23,
+  "supporting_refs": 23,
+  "strongest_counterevidence": 23,
+  "requires_canonical_change": 23,
+  "needs_experiment_or_data": 23,
+  "duplicate_of": 23,
+  "corroboration": 2,
+  "recommendation_to_architect": 23
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "tables_accepted": 1,
+  "rows_with_cell_repair": 0,
+  "rows_with_cell_repair_ids": [],
+  "composite_columns_split": 0,
+  "composite_columns_unparsed": 0,
+  "in_scope_sections": [
+   "7. `verdict_matrix`（契约 §5 全 10 字段）"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "7. `verdict_matrix`（契约 §5 全 10 字段）",
+    "line_start": 223,
+    "line_end": 252
+   }
+  ]
+ },
+ "files_audited": "### [line 9] 1. `files_audited`\n| 文件 | 字节 | 行 | 我实际读到的范围 |\n|---|---:|---:|---|\n| `docs/research/overnight-2026-09-27/A01_EVIDENCE_QUALITY_AUDIT.md` | 130,040 | 909 | 读 L1–60、60–179、179–218、262–357、630–704；`Grep` 全量扫 `BLOCKER/MAJOR/MINOR/NR-/osf/年份/resolve` 等 12 个模式；**未整份读入** |\n| `docs/research/overnight-2026-09-27/A04_CITATION_PROVENANCE_AUDIT.md` | 119,588 | 1,151 | 读 L1–80、80–199、199–348、348–470；`Grep` 扫 `抽样/未做/A01/MAJOR` 等 8 个模式；**未整份读入**（642 行来源表只读前 34 行样本） |\n| `docs/validation/fixtures/FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md` | 13,061 | 160 | **仅 metadata / rights**：L1–78（§1 Source/provenance、§2 锚点约定、§3 freeze rules 标题）+ `Grep` rights 关键词全量命中行（L6/20/21/140/157/159/160）。**未读 §4 atomic narrative 表的逐条内容** |\n| `docs/research/overnight-2026-09-27/00_MANIFEST.md` | 19,558 | 152 | 只读 `git show 8adcf0b` diff 中的 §1 状态表、§2 lane 表、§2b 修复表、§3 计数、§4 B-1…B-9 |\n| `AGENTS.md` / `REVIEW_CONTRACT.md` | 4,318 / 9,169 | 70 / 103 | 全文 |\n\n**非报告类读取（仅 git 元数据）**：`git log --oneline`、`git show --stat 8adcf0b`、`git show 8adcf0b -- <8 个被修复文件>`。后者是契约 §2 允许的\"审计 audit-driven repairs\"必需动作，我用它读取了**修复前后的书目字符串行**，未读取这些报告的论证正文。\n\n---",
+ "coverage_statement": "### [line 23] 2. `coverage_statement`\n### 2.1 我实际做的独立核实\n\n- ** personally 打开 105 个 Crossref DOI 记录**（`https://api.crossref.org/works/<DOI>`，UA `LHRM-R2J-Audit/1.0`，2026-09-27），其中 **99 个是语料内指针**、6 个是我自建的对照 DOI（见 §3 附表）。逐条记录了 outcome / year / type / container / volume(issue)page / author / title。\n- **6 次 `HEAD https://doi.org/<DOI>`（禁跟随重定向）**，用于裁定 OSF 前缀争议。\n- **独立复算** A04 的去重三层算术、tier 表加总、\"2.3–3.4×\"倍率、A01 的 353 分母与各项百分比。\n- **独立重算 A01 §5 的 severity 计数**（3/12/20 = 35，F-01…F-35 逐行）与 §10.3 的 `NR-` 行数（= 83）。\n\n### 2.2 我明确没有读 / 没有做\n\n- **未读 `01`–`19` 中任何一份 Wave 1 报告的正文。** 通过 `git show 8adcf0b` 的 diff **上下文行**我看到过以下行的书目字符串（非论证正文）：`02b:596`、`03:146`、`03:336`、`04:585`、`04:1012`、`05:569`、`08b:742/752/755/774/777/780/791/797/800/810`、`10:786`、`10:804`、`11`（+98 行，仅 stat 未读内容）、`14:98`、`14:400`。**这是任务明确要求（\"用 `git log -p` / `git show` 检视 head commit 的每一条 applied repair\"）的必然结果，不构成越界读 cluster 外报告。**\n- **未读 `13_LLM_SKILL_INTERVIEW_LAYER.md`** —— 因此我**无法确认 A04 §6.3 对 `13` 的指控本身**（是否真 0 次命中 rights 关键词、是否真用了 `SC/transcript/p004–p011`）。我对该指控的裁定**只覆盖\"边界是否存在\"与\"若指控为真其严重度\"**（见 `J-C18`）。\n- **未做 HTTP 可达性实测**（257 个 URL / 44 个 arXiv id）—— 与 A04 的 U1/U2 同一缺口。**URL 死链率对 PR #31 仍然 UNKNOWN。**\n- **未读任何论文全文**；只到 Crossref 元数据 + abstract（JPSP/AAAI/PNAS/JFI 等有 abstract 的）。\n- **未复现 A01 的 353 / 340 分母本身**（即未重跑全量正则抽取），因此 29 条错配的**集合**我没有独立重建，只独立确认了其中 15 条 + 3 条死链。\n- 未 merge、未 push、未 comment、未修改 `D:\\coding\\lhrm` 任何文件；唯一写入为本 packet。\n\n### 2.3 覆盖缺口对结论的影响\n\n我的 §5「整体判断」建立在 **105 个 DOI 的抽样**上，不是一个穷尽扫描。任何\"整体准确率 X%\"的表述都受此限制，见 `J-C23` 的量化说明。\n\n---",
+ "top_recommendations": "### [line 417] 11. `top_recommendations`（7 条，按对 Architect 的重要性排序）\n1. **【立即】改写 `00_MANIFEST.md` §2b 的 OSF 前缀段。** 现文写\"`10.31234` 解析（302）、`10.31219` 404\"——**实测相反**：`10.31219/osf.io/gu8z7` → **302**。改成「两个前缀均 live；`f6wbn` 只在 `10.31234` + `_v1` 下注册」。**这是唯一一条不能停在 proposal 的**：它现在是一条会诱导下一次 repair 改坏 R14 那个 live DOI 的操作性指令。\n2. **【高】重出 A04 §4.2 承重表的作者列。** 19 行抽样 11 行错（≥16/30）。**在任何人引用这张表之前修**；至少要把 `Chivers et al. 2025`→Junkins et al.、`Gerych 2007`→Gneiting & Raftery、`Bodenmann & Frighi 2011`→Bacon/Conte/Moffatt、`Ledgerwood et al.`→Gerpott et al.、`Cameron & Overall 2015`→Cook & Kenny、`Fraley et al. 2005`→Sibley/Fischer/Liu 改掉。同时**给 A04 的 642 行表加 author + title 两列** —— 没有这两列，它在结构上无法发现本语料的主导缺陷类（A01 实测 8.2%）。\n3. **【高】把 A04 §4.3.4 的假 PASS 撤回。** `10.1037/h0046049` = *Psych Review* **63(5):277–293**，A04 写 63(4) 判 ✅。**「已通过」清单里有错项，等于给了一个假的免检标记。** 建议全表重跑一遍卷期核对。\n4. **【中】修 `00_MANIFEST.md` §4 B-9 的数字。** lane 自报数之和是 **878** 不是 1,201；真倍率 **1.65×–2.5×** 不是 2.3–3.4×。**定性结论（不可相加）保留。**\n5. **【中】把 A01 的 83 条 `NARROW_REPAIR_REQUEST` 分流。** 现状是 ~13 条已修、~70 条未动、其中 ≥4 条 MAJOR。**建议只做两类**：① 零风险且已实测的（`11:502` F-08、`03:336` 过期注解、`10:786` 题名、`10:786/804` 页码、`02b:596` 作者）；② 承重指针（`02b:286` 的 CI/β² 精度、manifest 的 Sibley 年份）。**其余明确标为\"接受为已知残余\"，不要让 70 条挂账稀释真正的 blocker。**\n6. **【中】改 `00_MANIFEST.md` §2b 的两处记账。** `08b` 实改 **8** 条不是 7；`[S15]`\"只改作者\"与 `git show` 不符（该行未改动）。**manifest 是 durable 记账表，记账错会污染后续所有审计的基线。**\n7. **【中】`05:569` 的 Hoffmann 1985：只批准\"改标签\"这一步。** 把 `UNKNOWN_AS_OF` 改成 `POINTER_WRONG`（**A01 已实测该 DOI = Vermunt et al. 1999, JEBS**），**但不要猜替代 DOI**。`AGENT_RECALL` 纪律、label 异质、Acitelli 存在性 —— 这三项**维持现状是对的，不要动**。\n\n---",
+ "explicit_non_claims": "### [line 429] 12. `explicit_non_claims`（我不主张什么）\n1. **我不主张 PR #31 的内容级引用可靠性。** 我未读任何论文全文。A01 只核了 9 个数字的摘要，A04 明确不主张内容正确。**§10.2 的 90–95% 只描述\"这篇论文存在、且书目字段对得上\"，不描述\"这篇论文支持这句话\"。**\n2. **我不确认 A04 对 `13` 的指控。** 契约禁止我读 `13`。我只确认 Fixture 003 的权利边界存在且严重（`J-C16`），并给出\"若指控为真\"的条件性严重度（`J-C17`、`§9.7`）。**A04 §6.3 的正则命中数（1）与 `13` 的实际内容均未经我核实。**\n3. **我不主张 A04 的 16 行作者错是\"伪造\"。** 其中大部分与 Wave-1 报告的真实著录一致（我未读那些报告的正文，无法判断 A04 是继承还是自行编造）。**我只主张：在 A04 的交付物内部，身份列与它自己记录的指针不一致，且 A04 的方法声明（§8.3.6）与它的输出结构（无 author 列）不相容。责任归属 UNDETERMINED。**\n4. **我不主张 A01 的 29 条错配集合是完备的。** 我确认了其中 15 条 + 3 条死链，**未重建集合本身**（未重跑其正则抽取、未读 `01`–`19`）。29 这个计数为 `PLAUSIBLE`，不是 `VERIFIED`。\n5. **我不主张 257 个 URL 或 44 个 arXiv 指针有效。** 我未做 HTTP 实测。**PR #31 的非 DOI 指针死链率仍然 UNKNOWN** —— 这与 A01 §2.2.1 和 A04 U1/U2 是同一个未填的洞，且是本 PR 引用层最大的单一未知。\n6. **我不主张 A04 的 `PEER_REVIEWED_PRIMARY` 319 有任何解释力。** 我只实测了 7 例系统性误判，**没有**重跑它的分层算法。**350 这个合计我验证成立；319/31 的拆分我判定不可用，但我不知道正确的拆分是什么。**\n7. **我不主张修复后的 `03:336` 是\"错的\"。** 那行现在同时写着（a）正确的 DOI 和（b）\"Crossref 查询未返回 → `UNVERIFIED_DOI`\"。（b）已过期但**不是错误断言**（它描述的是修复前的观测）。我判它是**自相矛盾且误导**，manifest 也这么认；**但它不构成对读者的错误引导**，因为紧邻的 DOI 字段是对的。\n8. **我不主张 A04 的 109 个 `POINTER_ONLY` 分类错了。** 我无法在 cluster 内验证\"某 URL 指向已发表作品的副本\"这个判断 —— 需要打开 80 个作者自托管 PDF。**A04 自己在 U6 承认这 80 个可能与已解析 DOI 重复，因此 533 应读作上界。** 我的复算只确认 642−109=533 与 tier 加总=533 两处算术。\n9. **我不主张本 packet 的任何发现需要改 canonical。** 全部发现都在 `docs/research/` 的 `RESEARCH_CANDIDATE` 层。`docs/foundation/*` 与 `docs/validation/*` 我只读未评，**除 Fixture 003 的 metadata/rights 段**（合同 §2 明确允许，且为验证 A04 的指控所必需）。\n10. **我不主张我读过的 Wave-1 报告内容。** 通过 `git show 8adcf0b` 的 diff 上下文我看到过约 17 行书目字符串（见 §2.2 清单）。**这些行足以裁定\"修复前后指针是否正确\"，不足以裁定任何 lane 的论证。** 我对 `01`–`19` 的内容质量零发言。\n\n---",
+ "provenance_note": "### [line 444] 13. `packet_sha_note`（读了什么 / 怎么核的）\n| 源 | 核实方式 |\n|---|---|\n| `A01_EVIDENCE_QUALITY_AUDIT.md`（130,040 B / 909 行） | 分段读 L1–60 / 60–179 / 179–218 / 262–357 / 630–704；`Grep` 12 个模式全量扫；**§5 severity 计数与 §10.3 NR- 计数用脚本独立复算**（3/12/20=35 ✓；NR 行 = 83 ✓；§9.4 的\"19 条 MINOR\"与 §0 的 20 矛盾 ✗） |\n| `A04_CITATION_PROVENANCE_AUDIT.md`（119,588 B / 1,151 行） | 分段读 L1–80 / 80–199 / 199–348 / 348–470；`Grep` 8 个模式；**§2.1–2.3 全部计数用脚本独立复算**；§4.2 承重表 30 行中 **19 行 personally Crossref 核实**；§9 642 行表只读前 34 行样本（够判定\"无 author 列\"） |\n| `FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md`（13,061 B / 160 行） | **只读 metadata/rights**：L1–78 + `Grep` rights 关键词命中行（L6/20/21/140/157/159/160）。**未读 §4 atomic narrative 逐条内容**（合同允许范围内） |\n| `00_MANIFEST.md` | 只读 `git show 8adcf0b` diff 中的 §1/§2/§2b/§3/§4 B-1…B-9 |\n| `git log --oneline` / `git show 8adcf0b --stat` / `git show 8adcf0b -- <8 files>` | 纯 git 元数据 + 修复 diff。**这是任务明确指定的核实手段**；diff 上下文带出的约 17 行 Wave-1 书目字符串已在 §2.2 逐行披露 |\n| `AGENTS.md` / `REVIEW_CONTRACT.md` | 全文 |\n| **105 个 DOI** | `https://api.crossref.org/works/<DOI>`，UA `LHRM-R2J-Audit/1.0 (mailto:...)`，逐条记录 outcome/year/type/container/volume(issue)page/author/title —— 全部列于 §3 |\n| **6 个 `HEAD doi.org`** | `MaximumRedirection 0`（禁跟随），结果列于 §3.5 |\n| 算术复算 | PowerShell 脚本，见 §4.1 / §4.2 的逐式结果 |\n\n**未核实通道（`UNVERIFIABLE_HERE`）**：257 个 URL 的 HTTP 可达性 · 44 个 arXiv id 的存在性 · 任何论文全文 · `#20/#21/#22`（合同隔离）· Eye / Juece。\n\n**写入确认**：本 packet 是我唯一写入的文件。`D:\\coding\\lhrm` 全程只读，无 merge / push / comment。",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "8.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 255,
+   "answer": "| # | 单 lane 推测 | 位置 | 为何仍是单 lane |\n|---|---|---|---|\n| S1 | **A04 的全部作者归属判断** | A04 §4.2（30 行）、§7.1 | A04 自己没做作者级比对；A01 的附录虽是**同一批 DOI 的另一份独立产出**，但同工具同日语料，只能算弱独立。**实测：19/19 我打开的行中 11 行错 → 这一整层推测已被我的实测推翻，不是缺支撑而是支撑被证伪。** `corroboration: NON_INDEPENDENT` |\n| S2 | **A04 的 `PEER_REVIEWED_PRIMARY` vs `REVIEW` 切分（319/31）** | A04 §2.2 | 仅由「Crossref type + 题名正则」生成，A04 自陈未读摘要。我实测 7 例系统性误判。**纯单 lane 推测。** |\n| S3 | **A01 §7.2「`10.1037/2021-17028-001` 死链使 PRI 那组数字不可引用」** | A01 §7.1 | 单一审计的 hold 判断。**现已可释放**：DOI 已修，且 lane 自陈读过正文。`corroboration: NON_INDEPENDENT`（A04 D2 只核了\"确实不解析\"，没碰强度） |\n| S4 | **A04 的\"109 个指针不是来源\"分类** | A04 §1.3 | 判据是我未见过的正则 + 人工归类；A04 自陈 U6「80 个 `UNSTABLE_COPY` 与 331 个已解析 DOI 的对应关系未建立」。**无第二来源。** |\n| S5 | **A01 §4.2 的 9 个承重数字** | A01 §4.2 L210–218 | 摘要级逐字核对，我抽查其中 2（Tran / Liddell-Kruschke 的表述）**方向一致**但未逐字复核全部 9。**仍是单 lane。** |\n| S6 | **A04 §6.2 的 lane 边界传递表** | A04 L310–318 | A01 完全没碰 fixture 权利，**这一整块是 A04 独家**。对 `13` 的指控我无法独立确认。 |"
+  },
+  {
+   "index": 2,
+   "heading": "8.2 哪些是方法学/访问限制，而非 ontology 发现",
+   "line_start": 266,
+   "answer": "这些**不是项目缺陷**，任何\"项目质量\"判断都不应把它们算进去：\n\n1. **arXiv API 通道整体不可用** —— A01 §2.2.3 诚实记录：批量查 43 个 ID **全部**返回 MISSING，包括它已单独证明存在的 `2304.03442`。A01 明确写下\"该 API 通道的输出不构成任何证据\"。**这是环境限制，A01 的处理是正确的（改用 `arxiv.org/abs/` 直抓，2/2 真实）。**\n2. **37/40 arXiv 指针未核** —— 同上，抽样边界，不是失效。\n3. **257 个 URL 未做 HTTP 实测** —— A04 U1 + A01 §2.2.1。**网络出口限制。** 两份报告都正确地不主张任何 URL live。\n4. **80 个 `UNSTABLE_COPY`（作者自托管 PDF / repository bitstream UUID）无法与已解析 DOI 机械匹配** —— A04 U6，工具能力限制。它因此只能声明\"真实 distinct source ≤ 533\"，**方向保守，不构成高估风险。**\n5. **304 个 `journal-article` 的 primary/review 切分是估计值** —— A04 §2.2 L107 自陈。**方法学限制，A04 已标注。**（我判断低估了误差量级，见 `J-C6`。）\n6. **Fixture 003 的 transcript body 不可读** —— 这是**权利设计**（`POINTER_HASH_ONLY` fail-closed），不是获取失败。任何\"应把 transcript 喂给模型\"的想法都必须先过这一关，不存在\"绕一下就能核\"的空间。\n7. **Acitelli & Antonioni (2006) 检索未命中** —— A01 §8.5 / A04 U9。**文献层面的未命中（`NEGATIVE`），不是工具失效。** 两者都诚实标 `UNKNOWN`，正确。"
+  },
+  {
+   "index": 3,
+   "heading": "8.3 哪些建议会导致 canonical change —— 逐条 + 是否必须停在 proposal",
+   "line_start": 278,
+   "answer": "| 建议 | 目标文件/节 | `requires_canonical_change` | 是否必须停在 proposal | 理由 |\n|---|---|---|---|---|\n| 改写 `00_MANIFEST.md` §2b 的 OSF 前缀实测陈述 | `00_MANIFEST.md` §2b | **YES** | **否，必须落地** | 该段现在是操作性指令（\"审计断言须经独立实测\"）。留着错误前缀结论 → 下一次 repair 有实测依据去改坏 `10.31219/osf.io/gu8z7`。这是**唯一一条我判\"必须落地而非停 proposal\"**的建议。 |\n| 修正 `00_MANIFEST.md` §4 B-9 的 \"1,201 / 2.3–3.4×\" | `00_MANIFEST.md` §4 B-9 | **YES** | **是，停在 proposal** | 这是研究计数，不是操作指令。改它只影响对外表述精度，不需要即时拦截。建议 Architect 改为 \"878 / 1.65–2.5×\" 并注明原值算术有误。 |\n| 把 A04 §4.2 承重表的作者列按 Crossref 真值重出 | `A04_CITATION_PROVENANCE_AUDIT.md` §4.2 + §9 表 | `NO`（研究 packet，非 canonical） | — | 报告自身是 `RESEARCH_CANDIDATE`；但**在它被任何人引用之前**必须修，因为它是\"provenance 权威\"。 |\n| 补 `03_MEASUREMENT_INSTRUMENTS.md:336` 的过期 `UNVERIFIED_DOI` 注解 | `03_…:336` | `NO` | — | 1 行、零风险、验证已完成。manifest 已自陈，建议 Architect 直接批。 |\n| 补 `02b_CONSTRUCT_REDUNDANCY_AUDIT.md:596` 的作者（Junkins et al. 2025） | `02b:596` | `NO` | — | A01 NR-02-1 的未完成半项。 |\n| 修 `10_MUTUALITY_POWER_DEPENDENCE.md:786` 的题名残留 | `10:786` | `NO` | — | 作者已对、题名仍挂另一篇论文的题名。 |\n| 修 `10_MUTUALITY_POWER_DEPENDENCE.md:786/804` 的页码 | `10:786`,`10:804` | `NO` | — | Emerson 页码 `31–51` 是 `310–351` 截断。 |\n| 修 `11_GENERAL_HUMAN_DYADS_SCOPE.md:502` 的 F-08（MAJOR，未修） | `11:502` | `NO` | — | `10.1024/1662-9647/a000031` → `/a000031`，作者 → Di Rosa et al. 2011。A01 已给实测正确值。 |\n| 统一证据等级词表（NR-ALL-1 的 5 级方案） | 全语料 | **NO** | **是，停 proposal** | 见 §9.5：异质本身不是缺陷，5 级重写 18 份文档的成本不划算。 |\n| `Acitelli & Antonioni 2006` 人工确认存在性 | R14 源表 | `NO` | **是，停 proposal** | 检索未命中 ≠ 不存在。猜一个 DOI 比留 `UNKNOWN` 更坏。 |\n| 任一改动进入 `docs/foundation/*` 或 `docs/validation/*` | — | — | — | **不适用。** 本 lane 的全部发现都在 `docs/research/` 的 `RESEARCH_CANDIDATE` 层。**零条建议需要碰 canonical。** |"
+  },
+  {
+   "index": 4,
+   "heading": "8.4 哪些结论重复、同义或双重计数",
+   "line_start": 294,
+   "answer": "**A01 ↔ A04 之间（同一缺陷被两份报告各记一次）** —— 共 **4 处实质重复**，其中 3 处的**严重度评级不一致**，说明两份报告对同一事实给了不同的框架：\n\n| 缺陷 | A01 | A04 | 我的裁定 |\n|---|---|---|---|\n| `10.1016/S0010-0277(02)0549-8` | F-17 **MINOR** | M1 **MAJOR** | **一条，两个等级。** A01 的 MINOR 理由（内容全对、只是指针坏了）比 A04 的 MAJOR 更精确 —— 严重度应按\"内容是否可用\"定，不是按\"是否承重\"定。 |\n| `10.1007/s11238-014-9448-x` 期刊 | F-16 **MINOR** | M2 **MAJOR** | 同上。**一条。** |\n| `10.1609/aaai.v35i1.16792` | F-02 **BLOCKER** | M3 **MAJOR** | 同上。A01 的 BLOCKER 更准（404 承重定量指针）。 |\n| `10.31234/osf.io/f6wbn` | F-07 **MAJOR**（给 `_v1`） | M4 **MODERATE**（给改前缀） | **两条互斥处方**，最终采纳 A01。**A04 的处方会失败。** |\n\n→ **\"3 条 BLOCKER\"这个被 manifest 采纳的数字，实际上只有 ~1 条（A01 F-02）是无争议的独立承重死链**，另两条被 A04 降级为 MAJOR。**parent 在 join 时若把两份报告的 finding 数相加，会得到 35 + ~30 的虚高计数。**\n\n**同一份来源被支撑两次（契约 §4 禁止按此升级）**：\n- 「无 fabricated citation」：A01 §9.3 + A04 §3.2 —— `corroboration: NON_INDEPENDENT`（同 18 文件、同 Crossref、同日、同一抽取任务）。\n- 「DOI 解析率 95.5% vs 97.4%」：**分母不同（353 vs 340）**，因此**不是**互相印证，反而是互相矛盾。不得取均值。\n- 「`AGENT_RECALL` 纪律良好」：A01 §9.5 + A04 §5.3 —— 结论一致但**依据不同**（A01 从标签分布看，A04 逐条裁定 18 项），这一处独立性较强。\n- 「meta-analysis 未被误用」：A04 §8.1.6 + A01 §0 方向 —— A04 独有（`corroboration: NON_INDEPENDENT`，A01 未做此判断）。\n\n**与 canonical 现有条目的重复**：**零。** 我未发现 A01/A04 的任何结论与 `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` 或 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` 重复 —— 这符合预期，因为两个审计的管辖范围是**引用层**，而 canonical 存的是**构念层**。**本 lane 不向 canonical 提出任何变更。**\n\n---"
+  }
+ ],
+ "specialty_section": "8. 契约 §6 四项必答专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "§3 the 105-DOI verification log and §4 recomputation sections",
+    "evidence detail, not per-claim fields"
+   ],
+   [
+    "§9 the ten focus answers",
+    "not part of contract §5"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `J`（citation / provenance recheck）",
+   "line_start": 1,
+   "line_end": 461
+  },
+  {
+   "level": 2,
+   "title": "1. `files_audited`",
+   "line_start": 9,
+   "line_end": 22
+  },
+  {
+   "level": 2,
+   "title": "2. `coverage_statement`",
+   "line_start": 23,
+   "line_end": 46
+  },
+  {
+   "level": 3,
+   "title": "2.1 我实际做的独立核实",
+   "line_start": 25,
+   "line_end": 31
+  },
+  {
+   "level": 3,
+   "title": "2.2 我明确没有读 / 没有做",
+   "line_start": 32,
+   "line_end": 40
+  },
+  {
+   "level": 3,
+   "title": "2.3 覆盖缺口对结论的影响",
+   "line_start": 41,
+   "line_end": 46
+  },
+  {
+   "level": 2,
+   "title": "3. 我 personally 打开的每一个 DOI（含 outcome）",
+   "line_start": 47,
+   "line_end": 138
+  },
+  {
+   "level": 3,
+   "title": "3.1 修复前为死链、本 commit 已修或已正确标注（5 条，全部被 A01/A04 预先发现）",
+   "line_start": 52,
+   "line_end": 61
+  },
+  {
+   "level": 3,
+   "title": "3.2 A01/A04 指控的\"解析到另一篇论文\"——我逐条确认（15 条，全部成立）",
+   "line_start": 62,
+   "line_end": 81
+  },
+  {
+   "level": 3,
+   "title": "3.3 A04 承重表 30 行中我逐条打开的 19 行 —— **11 行作者归属错误**",
+   "line_start": 82,
+   "line_end": 108
+  },
+  {
+   "level": 3,
+   "title": "3.4 \"审计给了高评价\"的 30 条 DOI 独立抽检（Q4）——**30/30 干净，0 个新缺陷**",
+   "line_start": 109,
+   "line_end": 114
+  },
+  {
+   "level": 3,
+   "title": "3.5 OSF 前缀争议的 6 次 `doi.org` HEAD 实测（Q3 的决定性证据）",
+   "line_start": 115,
+   "line_end": 125
+  },
+  {
+   "level": 3,
+   "title": "3.6 我自建的 6 个对照 DOI（非语料指针，仅用于检验前缀/形态规则）",
+   "line_start": 126,
+   "line_end": 138
+  },
+  {
+   "level": 2,
+   "title": "4. 复算结果（Q1 的直接答案）",
+   "line_start": 139,
+   "line_end": 189
+  },
+  {
+   "level": 3,
+   "title": "4.1 A04 的去重三层 —— **算术成立**",
+   "line_start": 141,
+   "line_end": 151
+  },
+  {
+   "level": 3,
+   "title": "4.2 A04 的 `1,201` 与 \"2.3–3.4×\" —— **算术错误，不成立**",
+   "line_start": 152,
+   "line_end": 160
+  },
+  {
+   "level": 3,
+   "title": "4.3 \"5 种 DOI 书写形态\" —— **成立（我亲眼见到 4/5）**",
+   "line_start": 161,
+   "line_end": 164
+  },
+  {
+   "level": 3,
+   "title": "4.4 A01 的解析率 —— **方向对，但报告内部有 4 处互相矛盾的计数**",
+   "line_start": 165,
+   "line_end": 177
+  },
+  {
+   "level": 3,
+   "title": "4.5 A01 vs A04 的 DOI 全集 —— **13 个之差，无人调和**",
+   "line_start": 178,
+   "line_end": 181
+  },
+  {
+   "level": 3,
+   "title": "4.6 `350 peer-reviewed` —— **作为\"同行评审来源数\"成立；作为\"承载科学重量的数字\"是 WRONG-SCOPE**",
+   "line_start": 182,
+   "line_end": 189
+  },
+  {
+   "level": 2,
+   "title": "5. 审计驱动的修复：逐条裁定（Q2）",
+   "line_start": 190,
+   "line_end": 207
+  },
+  {
+   "level": 2,
+   "title": "6. 拒绝是否正确（Q3）",
+   "line_start": 208,
+   "line_end": 222
+  },
+  {
+   "level": 2,
+   "title": "7. `verdict_matrix`（契约 §5 全 10 字段）",
+   "line_start": 223,
+   "line_end": 252
+  },
+  {
+   "level": 2,
+   "title": "8. 契约 §6 四项必答专项",
+   "line_start": 253,
+   "line_end": 316
+  },
+  {
+   "level": 3,
+   "title": "8.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 255,
+   "line_end": 265
+  },
+  {
+   "level": 3,
+   "title": "8.2 哪些是方法学/访问限制，而非 ontology 发现",
+   "line_start": 266,
+   "line_end": 277
+  },
+  {
+   "level": 3,
+   "title": "8.3 哪些建议会导致 canonical change —— 逐条 + 是否必须停在 proposal",
+   "line_start": 278,
+   "line_end": 293
+  },
+  {
+   "level": 3,
+   "title": "8.4 哪些结论重复、同义或双重计数",
+   "line_start": 294,
+   "line_end": 316
+  },
+  {
+   "level": 2,
+   "title": "9. 十个焦点问题的直接回答",
+   "line_start": 317,
+   "line_end": 383
+  },
+  {
+   "level": 3,
+   "title": "9.1 数字可复现吗？—— 见 §4。**核心算术全部成立；两处数字错误（A04 的 1,201 / 2.3–3.4×；A01 §1.1 的 100%）。**",
+   "line_start": 319,
+   "line_end": 320
+  },
+  {
+   "level": 3,
+   "title": "9.2 修复正确吗？—— **9 条 applied repair：8 条完全正确、1 条半修、0 条造成损坏。** 3 条 BLOCKER 全部落地。全部 8 个 belief-report 条目我逐条 Crossref 证实新值正确。**这是本 PR 最扎实的部分。**",
+   "line_start": 321,
+   "line_end": 322
+  },
+  {
+   "level": 3,
+   "title": "9.3 拒绝正确吗？—— **结果正确，理由错误。** 见 §6。**拒绝本身是本轮最强的正面流程证据**（一个审计断言在到达 durable artifact 前被实测推翻，且修�� child 顺带采用了 A01 的更优处方）；**但推翻过程产生的新错误断言已写进 `00_MANIFEST.md`，构成一个一步之遥的传播风险。**",
+   "line_start": 323,
+   "line_end": 324
+  },
+  {
+   "level": 3,
+   "title": "9.4 审计漏了什么？",
+   "line_start": 325,
+   "line_end": 330
+  },
+  {
+   "level": 3,
+   "title": "9.5 证据等级词表 12 个变体 —— 我的裁定",
+   "line_start": 331,
+   "line_end": 336
+  },
+  {
+   "level": 3,
+   "title": "9.6 承重引用分析 —— **A04 的核心正面结论我判定成立，但它自己无法支撑这个判定**",
+   "line_start": 337,
+   "line_end": 342
+  },
+  {
+   "level": 3,
+   "title": "9.7 Fixture 003 权利遗漏 —— 严重度裁定",
+   "line_start": 343,
+   "line_end": 354
+  },
+  {
+   "level": 3,
+   "title": "9.8 A04 对 A01 的独立性 —— **`corroboration: NON_INDEPENDENT` 标注如下**",
+   "line_start": 355,
+   "line_end": 370
+  },
+  {
+   "level": 3,
+   "title": "9.9 未解决项 —— 逐条：留下是否正确 / 是否阻塞下游",
+   "line_start": 371,
+   "line_end": 383
+  },
+  {
+   "level": 2,
+   "title": "10. 总体判断（Q10）",
+   "line_start": 384,
+   "line_end": 416
+  },
+  {
+   "level": 3,
+   "title": "10.1 方法",
+   "line_start": 386,
+   "line_end": 389
+  },
+  {
+   "level": 3,
+   "title": "10.2 结论",
+   "line_start": 390,
+   "line_end": 400
+  },
+  {
+   "level": 3,
+   "title": "10.3 关键结构发现（比数字更重要）",
+   "line_start": 401,
+   "line_end": 408
+  },
+  {
+   "level": 3,
+   "title": "10.4 一句话",
+   "line_start": 409,
+   "line_end": 416
+  },
+  {
+   "level": 2,
+   "title": "11. `top_recommendations`（7 条，按对 Architect 的重要性排序）",
+   "line_start": 417,
+   "line_end": 428
+  },
+  {
+   "level": 2,
+   "title": "12. `explicit_non_claims`（我不主张什么）",
+   "line_start": 429,
+   "line_end": 443
+  },
+  {
+   "level": 2,
+   "title": "13. `packet_sha_note`（读了什么 / 怎么核的）",
+   "line_start": 444,
+   "line_end": 461
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "§3 the 105-DOI verification log and §4 recomputation sections",
+    "evidence detail, not per-claim fields"
+   ],
+   [
+    "§9 the ten focus answers",
+    "not part of contract §5"
+   ]
+  ]
+ }
+}

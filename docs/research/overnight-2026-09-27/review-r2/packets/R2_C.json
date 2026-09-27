@@ -1,0 +1,1125 @@
+{
+ "child_id": "R2_C",
+ "lane": "C",
+ "cluster": "datasets / access / rights",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "block_numbered",
+ "source": {
+  "file": "R2_C.md",
+  "sha256": "cc0b9266635e2fe3c61c6c85daf1d77858af2a2f264c2b169237342ff4ed999b",
+  "bytes": 116384,
+  "lines": 923
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "C-C1",
+   "_title": "C-C1 — SHARE CoU §7 的 AI/ML 条款",
+   "claim": "SHARE 使用条款 §7 明文禁止「非完全自管」应用处理 SHARE 数据、禁止用于训练 AI 模型（本地纯科学用途除外），并规定 AI/ML 产生的派生物受与原数据相同的限制。\n04` §4 D02 `rights_and_limits`（L166–178）；§5.1 表首行（L773）",
+   "source_report": "04` §4 D02 `rights_and_limits`（L166–178）；§5.1 表首行（L773）\nVERIFIED**",
+   "verdict": "VERIFIED**\nhttps://share-eric.eu/data/data-access/conditions-of-use` — `VERIFIED_BY_ME`。逐字读到：",
+   "supporting_refs": "https://share-eric.eu/data/data-access/conditions-of-use` — `VERIFIED_BY_ME`。逐字读到：\n   > \"Furthermore, when using modern data processing and storage solutions, such as AI tools and cloud services, users must ensure that no unauthorised data transfer occurs. It is noted that such transfers can occur inherently upon the entry of data into an application. Therefore, the use of applications that are not fully self-administered is strictly prohibited, unless it can be verified that no data is stored or processed by others. Moreover, the data shall not be used for the training of AI models unless such training is conducted locally and exclusively for scientific purposes (cf. 2. above); any use for commercial purposes is expressly excluded. **Any derivative datasets, models, or analytical outputs generated through AI or machine learning processes remain subject to the same usage restrictions as the original data.**\"\n   页脚 `(Last updated: April 30, 2026)` — 与报告标注一致。\nNONE_LOCATED。检索范围：直开该页全文，逐条比对报告 §5.1 的四个单元格（公开发布个体记录 / 派生量 / LLM 处理 / 法律工具）。需修正的只有**限定词**（见 C-C2、C-C3），不是条款存在性或方向。附带核实：§6.a 的 \"protected by factual anonymity (as defined by the strict norms of the German Federal Statistics Act...)\" 亦逐字成立，报告 §5.1 该格准确。",
+   "strongest_counterevidence": "NONE_LOCATED。检索范围：直开该页全文，逐条比对报告 §5.1 的四个单元格（公开发布个体记录 / 派生量 / LLM 处理 / 法律工具）。需修正的只有**限定词**（见 C-C2、C-C3），不是条款存在性或方向。附带核实：§6.a 的 \"protected by factual anonymity (as defined by the strict norms of the German Federal Statistics Act...)\" 亦逐字成立，报告 §5.1 该格准确。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE",
+   "duplicate_of": "NONE\nACCEPT**",
+   "recommendation_to_architect": "ACCEPT**\n---",
+   "_locator": {
+    "line_start": 51,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C2",
+   "_title": "C-C2 — 「§7 使 SHARE 派生量在法务上不能进入 LLM 参与的公开验证流水线」",
+   "claim": "报告 D02 `lhrm_impact` 断言「§7 使 SHARE 派生量在法务上不能进入一个 LLM 参与的公开验证流水线」，并在 §5.2 结论 3 推广为「把问卷数据限制在方法学标定侧（且仅在本地合规环境内）」。\n04` §4 D02 L188；§5.2 结论 3（L801）",
+   "source_report": "04` §4 D02 L188；§5.2 结论 3（L801）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\n同上 — `VERIFIED_BY_ME`。§7 最后一句是**限制传播条款**，不是**使用禁令**：「派生量继承原数据的限制」。若原数据在完全自管、仅本地、纯科学用途下合规使用，其派生量同样在该条件下合规使用。条款文本本身**不**禁止派生量进入 LLM 流水线。",
+   "supporting_refs": "同上 — `VERIFIED_BY_ME`。§7 最后一句是**限制传播条款**，不是**使用禁令**：「派生量继承原数据的限制」。若原数据在完全自管、仅本地、纯科学用途下合规使用，其派生量同样在该条件下合规使用。条款文本本身**不**禁止派生量进入 LLM 流水线。\n报告方向是**保守**的（更严而非更松），因此不是被证伪，而是**从条款文本推不出来**。我未找到任何 SHARE 官方文本支持「派生量一律不得进入 LLM 流水线」这一更强命题。报告自身 §5.1 单元格反而**正确**记录了传播条款原文（`VERIFIED_BY_ME`），与 D02 的结论**自相矛盾**。另：报告 §7 自我约束 #13 声明「不主张任何权利解读构成法律意见」，而 D02 的 `lhrm_impact` 恰恰下了一个法务结论（\"在法务上\"）—— 内部不一致。",
+   "strongest_counterevidence": "报告方向是**保守**的（更严而非更松），因此不是被证伪，而是**从条款文本推不出来**。我未找到任何 SHARE 官方文本支持「派生量一律不得进入 LLM 流水线」这一更强命题。报告自身 §5.1 单元格反而**正确**记录了传播条款原文（`VERIFIED_BY_ME`），与 D02 的结论**自相矛盾**。另：报告 §7 自我约束 #13 声明「不主张任何权利解读构成法律意见」，而 D02 的 `lhrm_impact` 恰恰下了一个法务结论（\"在法务上\"）—— 内部不一致。\nNO**（在 §5 内部改写即可）",
+   "requires_canonical_change": "NO**（在 §5 内部改写即可）\nNO: 需 SHARE-ERIC 就「派生量可否进入 LLM 流水线」给一封书面 clarification；在此之前不得把该句作为合规依据引用**",
+   "needs_experiment_or_data": "NO: 需 SHARE-ERIC 就「派生量可否进入 LLM 流水线」给一封书面 clarification；在此之前不得把该句作为合规依据引用**\nC-C14（同一推理错误的第二次出现）",
+   "duplicate_of": "C-C14（同一推理错误的第二次出现）\nRECLASSIFY_AS_METHOD_LIMIT** —— D02 `lhrm_impact` 改写为「§7 是限制传播条款：任何 SHARE 派生量继承同一套限制，**其可行性取决于原始处理环境是否完全自管**」，删去\"在法务上\"这一越界措辞。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D02 `lhrm_impact` 改写为「§7 是限制传播条款：任何 SHARE 派生量继承同一套限制，**其可行性取决于原始处理环境是否完全自管**」，删去\"在法务上\"这一越界措辞。\n---",
+   "_locator": {
+    "line_start": 69,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C3",
+   "_title": "C-C3 — SHARE §11 后果条款的适用范围",
+   "claim": "报告称「§11 违反后果：立即撤销使用权、要求删除全部副本；**严重违反**可在网上公开违规者身份」。\n04` §4 D02 L177",
+   "source_report": "04` §4 D02 L177\nPLAUSIBLE**（方向对，范围描述不准）",
+   "verdict": "PLAUSIBLE**（方向对，范围描述不准）\n同上 — `VERIFIED_BY_ME`。原文：\"In case of an **intentional or serious breach of the data protection and privacy rules (cf. 6. above)**, or attempts thereof, SHARE-ERIC reserves the right to make public the data protection violation including the identity of the user.\"",
+   "supporting_refs": "同上 — `VERIFIED_BY_ME`。原文：\"In case of an **intentional or serious breach of the data protection and privacy rules (cf. 6. above)**, or attempts thereof, SHARE-ERIC reserves the right to make public the data protection violation including the identity of the user.\"\n   缺口：公开身份权**只挂在 §6（data protection / privacy）违反上**，不是\"任何严重违反\"。§7（confidentiality）违反不在该句覆盖内。\n原文即为反证（\"of the data protection and privacy rules (cf. 6. above)\"）。未找到 SHARE 另有把 §7 违规也公开身份的条款。",
+   "strongest_counterevidence": "原文即为反证（\"of the data protection and privacy rules (cf. 6. above)\"）。未找到 SHARE 另有把 §7 违规也公开身份的条款。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE",
+   "duplicate_of": "NONE\nACCEPT_AS_PROPOSAL** —— D02 §11 一行补上 \"(cf. 6. above)\" 限定，标为 precision fix。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** —— D02 §11 一行补上 \"(cf. 6. above)\" 限定，标为 precision fix。\n---",
+   "_locator": {
+    "line_start": 84,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C4",
+   "_title": "C-C4 — SHARE wave 数：报告低估且误述了「冲突」的性质",
+   "claim": "报告称 SHARE「≥8 完整常规 wave（2004–）+ 2 轮 COVID；第 9/10 wave 官方页面表述冲突 → UNKNOWN_AS_OF」。\n04` §3 表 D02（L56）；§4 D02 L153–155；§8 矛盾 1（L842–843）",
+   "source_report": "04` §3 表 D02（L56）；§4 D02 L153–155；§8 矛盾 1（L842–843）\nCONTESTED**",
+   "verdict": "CONTESTED**\n两处 `VERIFIED_BY_ME`：",
+   "supporting_refs": "两处 `VERIFIED_BY_ME`：\n   - `https://share-eric.eu/data/faqs-support` §4.3 逐波列表末尾明列 **\"Wave 9 (2021–2022) — 28 countries\"**，与 \"Wave 9 – COVID Survey (2021)\" 分列；§3.2 写 \"born 1971 or earlier in wave 9\"；§2.1 写跨波工具覆盖 \"Waves 1, 2, 4, 5, 6, 7, 8 and 9\"。\n   - `https://share-eric.eu/data/data-documentation` 的 Data Releases 表止于 **Wave 8 = 9.0.0（28 March 2024）**，另有 Wave 8 COVID、Wave 9 COVID、easySHARE、SHARE-RV、JEP；**常规 Wave 9 的微数据不在 DOI 表内**。同页 Scales Manual 写 \"Wave 1 to Wave 9\"。\n   → 正确表述：**已文档化的常规 wave = 9（2004/05–2021/22, 28 国）；已随 9.0.0 发布微数据的常规 wave = 8**。报告把「已文档化」与「已发布」混为一谈，于是把一个纯粹的**发布滞后**问题误报为**官方页面矛盾**。\n报告引用的 SHARE-CZ FAQ 称 \"Wave 10 (2023–2024)\"，我未打开该页；但即使 Wave 10 存在，也不会使报告的表述更准确 —— 报告当时的表述是「8 + 冲突 UNKNOWN」，而官方 FAQ 已给出常规 Wave 9 的国别与年份。报告方向是**过度保守**，不是造假。",
+   "strongest_counterevidence": "报告引用的 SHARE-CZ FAQ 称 \"Wave 10 (2023–2024)\"，我未打开该页；但即使 Wave 10 存在，也不会使报告的表述更准确 —— 报告当时的表述是「8 + 冲突 UNKNOWN」，而官方 FAQ 已给出常规 Wave 9 的国别与年份。报告方向是**过度保守**，不是造假。\nNO**",
+   "requires_canonical_change": "NO**\nNO: 一次 SHARE 官方 release-note 查询即可定论**",
+   "needs_experiment_or_data": "NO: 一次 SHARE 官方 release-note 查询即可定论**\nNONE",
+   "duplicate_of": "NONE\nRECLASSIFY_AS_METHOD_LIMIT** —— 「矛盾 1」从\"官方内部不一致\"降级为\"Week 9 已文档化但微数据未随 9.0.0 发布\"；wave 计数由 \"≥8\" 改为 \"已文档化 9 / 已发布 8\"。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 「矛盾 1」从\"官方内部不一致\"降级为\"Week 9 已文档化但微数据未随 9.0.0 发布\"；wave 计数由 \"≥8\" 改为 \"已文档化 9 / 已发布 8\"。\n---",
+   "_locator": {
+    "line_start": 100,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C5",
+   "_title": "C-C5 — SHARE 子女模块（CH）的官方向后兼容性警告被漏记",
+   "claim": "报告在 D02 把 `CH`/`SP` 列为 SHARE 的 `kin_coverage` 资产，未记录官方对 CH 模块顺序/linkage 不可靠的明文警告。\n04` §3 表 D02（L56）；§4 D02 L156",
+   "source_report": "04` §3 表 D02（L56）；§4 D02 L156\nVERIFIED**（漏记）",
+   "verdict": "VERIFIED**（漏记）\nhttps://share-eric.eu/data/faqs-support` §5.8 — `VERIFIED_BY_ME`：",
+   "supporting_refs": "https://share-eric.eu/data/faqs-support` §5.8 — `VERIFIED_BY_ME`：\n   > \"For longitudinal analyses on children users cannot rely on the order of the children in the CH module. It is necessary to **match them on gender and year of birth** - this will lead to correct merges **in most cases**. ... Third, you can never exclude reporting errors.\"\n   另有 §5.9：Wave 4 的 CH 子女**无法**直接链接到 SP/FT 模块。\nNONE_LOCATED。这直接冲击报告在别处的自定标准：报告在 D06（IFLS）与 D11（SOEP）明写「识别 spouse 是分析者的重建规则 → 方向性依赖重建假设（**模型假设，不是证据**）」。**同一标准没有被应用到 SHARE 的子女模块上** —— 而官方明文说它正是靠 gender + year-of-birth 匹配、且\"只能保证 most cases 正确\"。这是报告内部标准不一致的实例。",
+   "strongest_counterevidence": "NONE_LOCATED。这直接冲击报告在别处的自定标准：报告在 D06（IFLS）与 D11（SOEP）明写「识别 spouse 是分析者的重建规则 → 方向性依赖重建假设（**模型假设，不是证据**）」。**同一标准没有被应用到 SHARE 的子女模块上** —— 而官方明文说它正是靠 gender + year-of-birth 匹配、且\"只能保证 most cases 正确\"。这是报告内部标准不一致的实例。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE",
+   "duplicate_of": "NONE\nRECLASSIFY_AS_METHOD_LIMIT** —— D02 `kin_coverage` 单元格与 `cannot_identify_without_assumption` 加入：「CH 子女级 parent→child / child→parent 绑定需 gender+year-of-birth 重建，官方自承不保证正确；Wave 4 无法接 SP/FT。按报告自定标准，SHARE 的 kin dyad 方向性属**重建假设**而非证据。」",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D02 `kin_coverage` 单元格与 `cannot_identify_without_assumption` 加入：「CH 子女级 parent→child / child→parent 绑定需 gender+year-of-birth 重建，官方自承不保证正确；Wave 4 无法接 SP/FT。按报告自定标准，SHARE 的 kin dyad 方向性属**重建假设**而非证据。」\n---",
+   "_locator": {
+    "line_start": 118,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C6",
+   "_title": "C-C6 — SHARE 的 proxy 代答削弱「双方各自作答」的构念层成立性",
+   "claim": "报告 D02 `directionality` 判为 \"SUPPORTED 但**模块级不对称**\"，只标注 `fin_resp`/`fam_resp`/`hou_resp` 的单方报告；未标注 SHARE 存在 partly/fully **proxy interview**，即一方可代另一方作答。\n04` §4 D02 L148–152",
+   "source_report": "04` §4 D02 L148–152\nVERIFIED**（漏记）",
+   "verdict": "VERIFIED**（漏记）\nhttps://share-eric.eu/data/faqs-support` §3.4 — `VERIFIED_BY_ME`：",
+   "supporting_refs": "https://share-eric.eu/data/faqs-support` §3.4 — `VERIFIED_BY_ME`：\n   > \"If physical and/or cognitive limitations make it too difficult for a respondent to complete the interview her-/himself it is possible that the sample respondent is assisted by a so-called proxy respondent... ('partly proxy')... If the proxy respondent answers the entire questionnaire in lieu of the respondent, the interview is referred to as a 'fully proxy' interview.\"\n   > \"The other sections contain the information on who answered the section at the end of the respective questionnaire module: (1) respondent only, (2) respondent and proxy or (3) proxy only.\"\n报告在 D10（HRS）敏锐地抓住了「配偶常作 proxy respondent」并把它当作 LHRM 关心的「信息源即关系成员」。同一现象在 SHARE 存在却未被记录 —— 报告对不同数据集使用了不同严格度。反向抗辩：proxy 率可能不高且存在 non-proxy 模块；这使问题成为\"必须标注\"而非\"判定失败\"。",
+   "strongest_counterevidence": "报告在 D10（HRS）敏锐地抓住了「配偶常作 proxy respondent」并把它当作 LHRM 关心的「信息源即关系成员」。同一现象在 SHARE 存在却未被记录 —— 报告对不同数据集使用了不同严格度。反向抗辩：proxy 率可能不高且存在 non-proxy 模块；这使问题成为\"必须标注\"而非\"判定失败\"。\nNO**",
+   "requires_canonical_change": "NO**\nNO: SHARE Release Guide 9.0.0 的 proxy 发生率表即可定量**",
+   "needs_experiment_or_data": "NO: SHARE Release Guide 9.0.0 的 proxy 发生率表即可定量**\nC-C5（同一结论的两个独立成因，见 C-C28）",
+   "duplicate_of": "C-C5（同一结论的两个独立成因，见 C-C28）\nRECLASSIFY_AS_METHOD_LIMIT** —— D02 的\"双方各自作答 = 是\"应加限定：「自报为默认，但存在 partly/fully proxy 代答；任何 SHARE 方向性估计必须按模块的 respondent type + proxy 状态分层。」",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D02 的\"双方各自作答 = 是\"应加限定：「自报为默认，但存在 partly/fully proxy 代答；任何 SHARE 方向性估计必须按模块的 respondent type + proxy 状态分层。」\n---",
+   "_locator": {
+    "line_start": 136,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C7",
+   "_title": "C-C7 — Add Health LLM 禁令（全部三类均为 None）",
+   "claim": "Add Health 明文禁止用 LLM/AI 工具管理、处理或分析其数据，公版与 restricted 同等适用；LLM Type 1/2/3 的 Data Use 均为 None。\n04` §4 D12 `critical_rights_finding`（L621–648）；§5.1 表（L776）",
+   "source_report": "04` §4 D12 `critical_rights_finding`（L621–648）；§5.1 表（L776）\nVERIFIED**",
+   "verdict": "VERIFIED**\nhttps://addhealth.cpc.unc.edu/conditions-of-use/` — `VERIFIED_BY_ME`，逐字：",
+   "supporting_refs": "https://addhealth.cpc.unc.edu/conditions-of-use/` — `VERIFIED_BY_ME`，逐字：\n   > \"In addition, all users of Add Health data, both public-use and restricted-use, agree to abide by the following LLM and AI Use Policy.\"\n   > \"Large language models (LLMs) and other AI tools (e.g., ChatGPT, Claude AI, Microsoft Copilot, Google Gemini) **may not be used to manage, process, or analyze data distributed by Add Health. This policy applies to both public-use and restricted-use data.**\"\n   > \"Under Add Health Data Use Agreements, researchers are forbidden to distribute data or other materials we supply (apart from codebooks and metadata, described below) to other members, organizations, or individuals. **This means that use of LLMs or other AI is a violation of all existing data use agreements.**\"\n   > Type 1 → None；Type 2 → None（\"not permitted\"）；Type 3 → None（\"not available within the UNC SRW... At present, we are also not accepting requests for this kind of data use for Home Institution Hosting Agreements\"）\n   > \"It is permissible to use LLMs and AI tools with our public-facing documentation, codebooks, and study-level metadata, including group or population estimates. However, use of individual-level data is not permissible.\"\n   > 溯源句亦核实：\"Thanks to the University of Michigan's Health and Retirement Study and ICPSR as well as Sebastian Karcher at Syracuse University for originating this taxonomy of LLMs and/or policy.\"\nNONE_LOCATED。这是本 swarm 中最干净、最完整、无任何限定词的一条款，且报告引用逐字准确、连 taxonomy 溯源都记了。**报告在此处表现最好。**",
+   "strongest_counterevidence": "NONE_LOCATED。这是本 swarm 中最干净、最完整、无任何限定词的一条款，且报告引用逐字准确、连 taxonomy 溯源都记了。**报告在此处表现最好。**\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C8、C-C10、C-C11、C-C13（同一 taxonomy 家族，见 C-C36）",
+   "duplicate_of": "C-C8、C-C10、C-C11、C-C13（同一 taxonomy 家族，见 C-C36）\nACCEPT**（并建议把这一条作为 rights-first 筛选的**样板条款**）",
+   "recommendation_to_architect": "ACCEPT**（并建议把这一条作为 rights-first 筛选的**样板条款**）\n---",
+   "_locator": {
+    "line_start": 154,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C8",
+   "_title": "C-C8 — ICPSR LLM 政策（Type 1 None / Type 2 Public-Use / Type 3 Public+Restricted）",
+   "claim": "ICPSR LLM 政策为 Type 1 = None；Type 2 = Public-Use（须许可）；Type 3 = Public + Restricted（须许可）。\n04` §5.1 表 HARP 行（L775）",
+   "source_report": "04` §5.1 表 HARP 行（L775）\nVERIFIED**",
+   "verdict": "VERIFIED**\nhttps://www.icpsr.umich.edu/sites/icpsr/about/policies/large-language-models-and-ai` — `VERIFIED_BY_ME`，逐字：",
+   "supporting_refs": "https://www.icpsr.umich.edu/sites/icpsr/about/policies/large-language-models-and-ai` — `VERIFIED_BY_ME`，逐字：\n   > \"**Approved: December 11, 2024**\"\n   > \"Large language models (LLMs) may only be used to manage, process, or analyze data distributed by ICPSR if the LLM meets specific criteria regarding retention of user-supplied data and/or placement within a secure network.\"\n   > 表：Type 1 → **None**；Type 2 → **Public-Use Datasets**；Type 3 → **Public-Use Datasets / Restricted-Use Datasets**\n   > \"ICPSR may permit you to use ICPSR data with a Type 2 or 3 LLM as long as the LLM is not used to make connections in the data that would increase the risk of identifying individuals... **Please contact ICPSR prior to use.**\"\n   > \"Restricted-Use Datasets via Secure Download... **the only type of LLM that can be used with restricted data is Type 3**, and then only if the use is consistent with the security plan and approved by ICPSR.\"\n   > \"Restricted-Use Datasets via the ICPSR Virtual or Physical Data Enclaves (VDE or PDE): **At present, no LLMs are available within the VDE or PDE, so this is not an option.**\"\n   > \"ICPSR metadata records are licensed under a **Creative Commons Attribution-Noncommercial 4.0 United States License**.\"\n唯一需修正处** —— 报告 §1.2 与 §10 把 ICPSR 归入「**2025–2026** 年收紧」。该政策页面明写 `Approved: December 11, 2024`，早于该时间窗。方向无误，但时间窗表述不精确。",
+   "strongest_counterevidence": "唯一需修正处** —— 报告 §1.2 与 §10 把 ICPSR 归入「**2025–2026** 年收紧」。该政策页面明写 `Approved: December 11, 2024`，早于该时间窗。方向无误，但时间窗表述不精确。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C7（同一 taxonomy 家族）",
+   "duplicate_of": "C-C7（同一 taxonomy 家族）\nACCEPT**，并把 G2 的时间窗从 \"2025–2026\" 改为 \"2024-12 起（ICPSR）→ 2025–2026 扩散\"。",
+   "recommendation_to_architect": "ACCEPT**，并把 G2 的时间窗从 \"2025–2026\" 改为 \"2024-12 起（ICPSR）→ 2025–2026 扩散\"。\n---",
+   "_locator": {
+    "line_start": 180,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C9",
+   "_title": "C-C9 — ICPSR Redistribution Policy 与其中的 LLM 条款",
+   "claim": "ICPSR Redistribution Policy 要求任何再分发先经 Data Stewardship Policy Committee 批准；依据 Bylaws Art. 1.2.B；个人研究者存放的 study 仅对会员开放再分发。\n04` §5.1 表（L775，列为\"关键法律工具\"）；§11 引用清单（L946）",
+   "source_report": "04` §5.1 表（L775，列为\"关键法律工具\"）；§11 引用清单（L946）\nVERIFIED**",
+   "verdict": "VERIFIED**\nhttps://www.icpsr.umich.edu/sites/ICPSR/about/policies/redistribution` — `VERIFIED_BY_ME`：",
+   "supporting_refs": "https://www.icpsr.umich.edu/sites/ICPSR/about/policies/redistribution` — `VERIFIED_BY_ME`：\n   > Art. 1.2.B: \"Members will not distribute data or other materials supplied by ICPSR to other members, organizations, or individuals at other institutions, without the written agreement of ICPSR.\"\n   > \"**Providing ICPSR data to any large language model (LLM) which retains data, or uses provided data for training (e.g., ChatGPT, Microsoft Copilot, Google Gemini, etc.), is redistribution of ICPSR data and is barred by our terms of use. Using an LLM with more restrictive terms may be permissible, but contact ICPSR beforehand for permission.**\"\n   > \"For data deposited by individual investigators, these curation costs are borne by the ICPSR membership, and thus, these studies are **available to members only and cannot be redistributed**.\"\n   > \"Note: this policy does not apply to self-published data.\"\n报告只把该页当作引用清单里的一条 URL，**没有把其中任何实质内容写进正文**。尤其最后一句对 HARP（个人研究者存放 → members only 再分发）与 LHRM 直接相关：§5.1 HARP 行只写「须 ICPSR 书面许可（Redistribution Policy）」，未写\"个人存放 study 仅会员可再分发\"这一更强限制。属**记录不足**，非错误。",
+   "strongest_counterevidence": "报告只把该页当作引用清单里的一条 URL，**没有把其中任何实质内容写进正文**。尤其最后一句对 HARP（个人研究者存放 → members only 再分发）与 LHRM 直接相关：§5.1 HARP 行只写「须 ICPSR 书面许可（Redistribution Policy）」，未写\"个人存放 study 仅会员可再分发\"这一更强限制。属**记录不足**，非错误。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C8",
+   "duplicate_of": "C-C8\nACCEPT_AS_PROPOSAL** —— §5.1 HARP/ICPSR 行补 \"个人存放 study：仅会员可再分发\" 与 \"self-published data 不适用本政策\"。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** —— §5.1 HARP/ICPSR 行补 \"个人存放 study：仅会员可再分发\" 与 \"self-published data 不适用本政策\"。\n---",
+   "_locator": {
+    "line_start": 208,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C10",
+   "_title": "C-C10 — UAS / CESR LLM 禁令",
+   "claim": "CESR 明文禁止用 LLM/其他 AI 工具管理、处理或分析其分发的任何数据；构成对所有现行 DUA 的违反。\n04` §4 D13 `critical_rights_finding`（L667–672）；§5.1 表（L777）",
+   "source_report": "04` §4 D13 `critical_rights_finding`（L667–672）；§5.1 表（L777）\nVERIFIED**（但**非我直接打开含该条款的页面**）",
+   "verdict": "VERIFIED**（但**非我直接打开含该条款的页面**）\nhttps://uasdata.usc.edu/data-products/`（官方页面**搜索索引文本**）— 间接核实，索引文本与报告引用逐字一致：",
+   "supporting_refs": "https://uasdata.usc.edu/data-products/`（官方页面**搜索索引文本**）— 间接核实，索引文本与报告引用逐字一致：\n   > \"At this time, large language models (LLMs) and other artificial intelligence tools **may not be used to manage, process, or analyze any data distributed by CESR**. Under the terms of our Data Use Agreements, researchers may not share or distribute the data or related materials we provide to any other individuals, organizations, or entities. **Accordingly, the use of LLMs constitutes a violation of all existing Data Use Agreements.**\"\n   我**直接**打开了 `https://uasdata.usc.edu/` 首页 —— 成功，但**首页不含该条款**；该站使用 JS 跳转（`index.php?r=eNpLtDK0...`），故按报告自定的同一证据层级记 `CITED_PRIMARY (index), strength = MEDIUM`。缺口：与 ICPSR 系证据同级，非顶层直取。\nNONE_LOCATED（同一句在两个官方页面的索引中一致出现）。",
+   "strongest_counterevidence": "NONE_LOCATED（同一句在两个官方页面的索引中一致出现）。\n   **但我在 UAS 首页发现一条报告未记录的新事实**：顶部横幅 \"This repository is **under review for potential modification in compliance with Administration directives**.\"（与 HRS 同款，见 C-C15）。这削弱「UAS 是稳定 Data Access 路径」这一隐含前提。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C7",
+   "duplicate_of": "C-C7\nACCEPT**（条款），并追加 access-continuity 备注（见 C-C15）。",
+   "recommendation_to_architect": "ACCEPT**（条款），并追加 access-continuity 备注（见 C-C15）。\n---",
+   "_locator": {
+    "line_start": 230,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C11",
+   "_title": "C-C11 — HRS AI/LLM 禁令条文：U4 已可解，且比报告假设的更严",
+   "claim": "报告称 HRS CoU（2026-02-04）的 AI/LLM 政策「条文未取得 → `UNKNOWN_AS_OF`（U4）。**不得猜测条文内容**」，并在 §10 自评「HRS AI/LLM 政策条文未取得，而这**可能是最严的一份**」。\n04` §4 D10 `unknown`（L560–564）；§9 U4（L877）；§10（L903）",
+   "source_report": "04` §4 D10 `unknown`（L560–564）；§9 U4（L877）；§10（L903）\nCONTESTED** —— 谨慎正确，但\"不可得\"前提**已被推翻**",
+   "verdict": "CONTESTED** —— 谨慎正确，但\"不可得\"前提**已被推翻**\nhttps://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`（全文）。逐字：",
+   "supporting_refs": "https://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`（全文）。逐字：\n   > \"All data files are subject to the Conditions of Use for HRS data, **updated 02/04/2026**. Please review the updated conditions, which include a new policy on use of AI and Large Language Models.\"\n   > **\"Prohibit the use AI programs and LLMs—particularly open-source AI—in conjunction with HRS data. This restriction is in place to protect the confidentiality of HRS data and prevent unauthorized sharing; only individuals with a valid HRS Data Access Agreement may have access. See the current HRS policy on use of AI and Large Language Models for more information.\"**\n   同页导航另有独立的 \"AI and LLM Use Policy\" 页（本环境 404，正文未取得）。\n报告的\"不可得\"不是它自己的失败，而是它所选 host（`hrs.isr.umich.edu`）在本环境 403；同一份 CoU 挂在 `hrsdata.isr.umich.edu` 且完全可达。**我独立复现了 `hrs.isr.umich.edu` 的 403**（file-merge-reference 页），确认其失败记录环境真实。",
+   "strongest_counterevidence": "报告的\"不可得\"不是它自己的失败，而是它所选 host（`hrs.isr.umich.edu`）在本环境 403；同一份 CoU 挂在 `hrsdata.isr.umich.edu` 且完全可达。**我独立复现了 `hrs.isr.umich.edu` 的 403**（file-merge-reference 页），确认其失败记录环境真实。\n   **实质影响**：条文是**对 AI 程序与 LLM 的全面禁止，且点名 open-source AI**。这比 §5.1 单元格\"含新 AI/LLM 政策（条文未取得）\"所暗示的**严格得多**，并且**推翻了报告 §6 推荐的合规路径**（见 C-C14）。报告猜对了\"可能是最严的一份\"，但没去解它。\nNO**（但 C-C14 会触及 §6 与 §5.2）",
+   "requires_canonical_change": "NO**（但 C-C14 会触及 §6 与 §5.2）\nNO: 抓取 hrsdata 的 \"AI and LLM Use Policy\" 子页可得完整三分表**",
+   "needs_experiment_or_data": "NO: 抓取 hrsdata 的 \"AI and LLM Use Policy\" 子页可得完整三分表**\nC-C32",
+   "duplicate_of": "C-C32\nRECLASSIFY_AS_METHOD_LIMIT** —— U4 由 `UNKNOWN_AS_OF` 改为 `RESOLVED_2026-09-27`；§5.1 HRS 行 \"LLM/AI 处理个体级数据\" 由「含新政策（条文未取得）」改为「**全面禁止，含 open-source AI；仅持 HRS DAA 者可访问**」。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— U4 由 `UNKNOWN_AS_OF` 改为 `RESOLVED_2026-09-27`；§5.1 HRS 行 \"LLM/AI 处理个体级数据\" 由「含新政策（条文未取得）」改为「**全面禁止，含 open-source AI；仅持 HRS DAA 者可访问**」。\n---",
+   "_locator": {
+    "line_start": 249,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C12",
+   "_title": "C-C12 — HRS Certificate of Confidentiality 引文精度",
+   "claim": "报告 D10 逐字引 \"investigators and others who have access to HRS restricted data are **prohibited** from disclosing identifiable, sensitive information... This protection applies even under court order or subpoena\"，并归给 \"RDA PDF 原文\"。\n04` §4 D10 `critical_rights_finding`（L551–559）；§5.2 结论 2（L794–797）",
+   "source_report": "04` §4 D10 `critical_rights_finding`（L551–559）；§5.2 结论 2（L794–797）\nPLAUSIBLE**（实质成立，引文两处不准）",
+   "verdict": "PLAUSIBLE**（实质成立，引文两处不准）\nhttps://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`：",
+   "supporting_refs": "https://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`：\n   > \"Protect the data obtained from the HRS according to the provisions and requirements of the Certificate of Confidentiality issued by the National Institutes of Health (NIH). Under this Certificate, investigators and others who have access to HRS data are **generally prohibited** from disclosing identifiable, sensitive information about research participants in any civil, criminal, administrative, legislative, or other proceedings at the federal, state, or local level. This protection applies even under court order or subpoena.\"\n三处偏差 —— (a) 官方原文有 \"**generally** prohibited\"，报告的加粗引号版删掉了这个限定词；(b) 该条款位于**公开的 Conditions of Use 页面**，不只在 RDA PDF；(c) 官方写 \"HRS data\"，报告写 \"HRS **restricted** data\"（CoC 覆盖范围更广）。报告 §5.2 结论 2 把这条当成\"对 Case Bank 选材最硬的单点约束\"并据以建议改写 Case Bank 规则 —— 结论方向我仍认为成立，但**引文被强化了一档**。",
+   "strongest_counterevidence": "三处偏差 —— (a) 官方原文有 \"**generally** prohibited\"，报告的加粗引号版删掉了这个限定词；(b) 该条款位于**公开的 Conditions of Use 页面**，不只在 RDA PDF；(c) 官方写 \"HRS data\"，报告写 \"HRS **restricted** data\"（CoC 覆盖范围更广）。报告 §5.2 结论 2 把这条当成\"对 Case Bank 选材最硬的单点约束\"并据以建议改写 Case Bank 规则 —— 结论方向我仍认为成立，但**引文被强化了一档**。\nUNSURE** —— 若 Architect 采纳 §5.2 结论 2 去改 `VALIDATION_CORPUS_V0_1.md` 的选材规则，则必须先把 \"generally\" 这个限定补进依据文本，否则等于用一个被削弱的证书去支撑一条硬性排除规则。",
+   "requires_canonical_change": "UNSURE** —— 若 Architect 采纳 §5.2 结论 2 去改 `VALIDATION_CORPUS_V0_1.md` 的选材规则，则必须先把 \"generally\" 这个限定补进依据文本，否则等于用一个被削弱的证书去支撑一条硬性排除规则。\nNO: NIH CoC 模板原文可进一步确认 \"generally prohibited\" 的法定范围**",
+   "needs_experiment_or_data": "NO: NIH CoC 模板原文可进一步确认 \"generally prohibited\" 的法定范围**\nNONE",
+   "duplicate_of": "NONE\nHOLD_FOR_EVIDENCE** —— 先补回 \"generally\" 与 CoC 覆盖 HRS data（不限 restricted）的准确范围，再决定 §5.2 结论 2 的强度。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** —— 先补回 \"generally\" 与 CoC 覆盖 HRS data（不限 restricted）的准确范围，再决定 §5.2 结论 2 的强度。\n---",
+   "_locator": {
+    "line_start": 270,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C13",
+   "_title": "C-C13 — SOEP 有一份明确的 AI/LLM 使用政策，报告完全未记录",
+   "claim": "报告 D11 审计了 SOEP，但 §5.1 权利汇总表**没有 SOEP 行**，G2 的「2025–2026 收紧」也未列 SOEP；报告未发现 DIW Berlin 已发布专门的 SOEP AI and LLM Use Policy。\n04` §4 D11（L578–607）；§5.1 表（L771–784，无 SOEP 行）；§1.2（L35）；§10（L899）",
+   "source_report": "04` §4 D11（L578–607）；§5.1 表（L771–784，无 SOEP 行）；§1.2（L35）；§10（L899）\nCONTESTED**（对报告的覆盖完整性）",
+   "verdict": "CONTESTED**（对报告的覆盖完整性）\nhttps://www.diw.de/en/diw_01.c.1019277.en/soep_ai_and_llm_use_policy.html` — `VERIFIED_BY_ME`（全文）。逐字：",
+   "supporting_refs": "https://www.diw.de/en/diw_01.c.1019277.en/soep_ai_and_llm_use_policy.html` — `VERIFIED_BY_ME`（全文）。逐字：\n   > \"**General Statement: Currently, large language models (LLMs) and other AI tools may not be used to manage, process, or analyze SOEP data.** Under SOEP Data Use Agreements, researchers are forbidden to distribute data or other materials we supply (apart from codebooks and metadata, described below)... **This means that the use of LLMs is a violation under our present SOEP Data Use Agreements.**\"\n   > 表：Type 1 → None；Type 2 → None（\"At present, we are also not accepting requests for this kind of data use for **Public-Use** data\"）；Type 3 → **None**（\"current evidence shows that complete isolation cannot yet be reliably guaranteed, as unintended access beyond such controlled environments ('sandbox escapes') remains possible\"）\n   > \"It is permissible to use LLMs with our public-facing documentation, codebooks, study-level metadata, and aggregated group or population estimates. However, **person-level or household-level microdata must not be provided to or processed by LLMs.**\"\n   > FAQ 两条对 LHRM 直接相关：**\"Uploading analytic output to an LLM is acceptable as long as no SOEP microdata are uploaded\"**；**\"Is it acceptable to use AI-assisted development tools that automatically index files in the working directory... A: No. Users must disable this feature or store SOEP microdata outside any directory to which such a tool has access.\"**\n   > 溯源：**\"We gratefully acknowledge the Health and Retirement Study (HRS) at the University of Michigan, whose AI/LLM Use Policy served as the basis for this document.\"**\n报告可以主张\"本 lane 未取得 SOEP 条款页\"。但报告并未把 SOEP 权利状态记为 `FETCH_FAILED`/`UNKNOWN` —— 它**沉默地**把 SOEP 排除在 §5.1 之外，使 G2 的数据集集合**在无声中少了一个成员**，而这个成员的立场比它所列多数成员更严（连 Type 3 都拒绝，理由是 sandbox escape 不可靠保证）。这是本 lane 最实质的**漏项**，直接削弱 G2 的完整性陈述方式。",
+   "strongest_counterevidence": "报告可以主张\"本 lane 未取得 SOEP 条款页\"。但报告并未把 SOEP 权利状态记为 `FETCH_FAILED`/`UNKNOWN` —— 它**沉默地**把 SOEP 排除在 §5.1 之外，使 G2 的数据集集合**在无声中少了一个成员**，而这个成员的立场比它所列多数成员更严（连 Type 3 都拒绝，理由是 sandbox escape 不可靠保证）。这是本 lane 最实质的**漏项**，直接削弱 G2 的完整性陈述方式。\nNO**（若采纳 C-C36 的重述则改 §5.1 / §1.2 / §10）",
+   "requires_canonical_change": "NO**（若采纳 C-C36 的重述则改 §5.1 / §1.2 / §10）\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C36（G2 的重述）",
+   "duplicate_of": "C-C36（G2 的重述）\nACCEPT_AS_PROPOSAL** —— §5.1 补 SOEP 行（Type 1/2/3 全 None；派生分析输出可上传，只要无微数据）；G2 清单补 SOEP；并把 D11 的 `NOT_DYADIC_ENOUGH` 与权利判定**显式分离**（前者是数据形态，后者是 use-condition）。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** —— §5.1 补 SOEP 行（Type 1/2/3 全 None；派生分析输出可上传，只要无微数据）；G2 清单补 SOEP；并把 D11 的 `NOT_DYADIC_ENOUGH` 与权利判定**显式分离**（前者是数据形态，后者是 use-condition）。\n---",
+   "_locator": {
+    "line_start": 286,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C14",
+   "_title": "C-C14 — 「ICPSR SOMAR VDE / MiCDA Enclave = 唯一已知可行的合规 LLM 路径」",
+   "claim": "报告 §6 末行与 §10 断言「ICPSR SOMAR VDE / MiCDA Enclave —— ICPSR 可在 VDE 内放自托管模型（Llama-3.2-3B-Instruct、gemma-3-4b-it 等）……**这是目前唯一已知可行的『合规地用 LLM 处理受限数据』路径**」。\n04` §6 表末行（L818）；§10「最有价值的产出」（L899）",
+   "source_report": "04` §6 表末行（L818）；§10「最有价值的产出」（L899）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\n三条 `VERIFIED_BY_ME`：",
+   "supporting_refs": "三条 `VERIFIED_BY_ME`：\n   - `https://www.icpsr.umich.edu/sites/somar/somar-vde-overview-and-resources` — \"The **SOMAR** Virtual Data Enclave (VDE) is a secure, remote desktop research environment operated by the **Social Media Archive at ICPSR (SOMAR)**. The VDE enables researchers to work with sensitive or restricted **social media datasets**...\"；\"The SOMAR VDE can allow a variety of tools in accordance with the ICPSR LLM policy... We support several models from HuggingFace, including bert-base-uncased, **Llama-3.2-3B-Instruct, gemma-3-4b-it**\"；\"No external internet access... Researchers **cannot upload their own external files or export files**\"；**收费 $371/月 + $1,000 一次性设置费（2026 年起）**。\n   - `https://www.icpsr.umich.edu/sites/icpsr/about/policies/large-language-models-and-ai` — \"Restricted-Use Datasets via the ICPSR Virtual or Physical Data Enclaves (VDE or PDE): **At present, no LLMs are available within the VDE or PDE, so this is not an option.**\"\n   - `https://hrsdata.isr.umich.edu/data-products/conditions-of-use` — \"**Prohibit the use AI programs and LLMs—particularly open-source AI—in conjunction with HRS data.**\"（MiCDA 是 HRS 自己的 enclave）\n三条互相独立、都是我直开的官方页面，共同否定该断言的三个要素：",
+   "strongest_counterevidence": "三条互相独立、都是我直开的官方页面，共同否定该断言的三个要素：\n   (a) **归属错误** —— 有 LLM 的那个 VDE 是 **SOMAR（社交媒体档案）** 的 VDE，面向 social-media restricted datasets；报告所审的 ICPSR 常规研究（HARP / CLOC / NSFH / SECCYD / Oregon）**不是 SOMAR 数据**。ICPSR 自己的 VDE/PDE 明文「no LLMs available」。\n   (b) **MiCDA Enclave 对 HRS 是禁止的** —— HRS CoU 对 AI 程序与 LLM 的全面禁令点名 open-source AI，因此\"在 MiCDA Enclave 内跑自托管 Llama\"对 HRS **明确不合规**。报告把它写成一条\"可行路径\"，这是本 packet 中**合规风险最高**的一条。\n   (c) **成本未记** —— SOMAR VDE 自 2026 年初起收费（$371/月 + $1,000）；且 VDE 内\"不能导出文件、不能截屏\"，与 LHRM 要产出可审计工件存在张力。\n   报告的正面部分是对的：SOMAR 页确实逐字列出那三个模型，模型清单本身 `VERIFIED`。\nNO**（若 §5.2/§6 的建议被写进任何方法学文档则必须改）",
+   "requires_canonical_change": "NO**（若 §5.2/§6 的建议被写进任何方法学文档则必须改）\nYES: 需分别确认 (i) HARP/CLOC/NSFH/SECCYD 能否进入任一 LLM-enabled enclave；(ii) HRS 情形下是否存在与 CoU 禁令的官方豁免通道**",
+   "needs_experiment_or_data": "YES: 需分别确认 (i) HARP/CLOC/NSFH/SECCYD 能否进入任一 LLM-enabled enclave；(ii) HRS 情形下是否存在与 CoU 禁令的官方豁免通道**\nC-C2、C-C11",
+   "duplicate_of": "C-C2、C-C11\nRECLASSIFY_AS_METHOD_LIMIT** —— 把「唯一已知可行路径」拆成三句独立、各带条件与出处的陈述：SOMAR VDE 只覆盖 SOMAR 社交媒体数据；ICPSR VDE/PDE 当前无 LLM；**HRS 数据与 AI/LLM 同用被 CoU 禁止，MiCDA Enclave 不构成豁免**。在 Architect 未另作判断前，**不得**把该行当作 LHRM 的合规方案引用。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 把「唯一已知可行路径」拆成三句独立、各带条件与出处的陈述：SOMAR VDE 只覆盖 SOMAR 社交媒体数据；ICPSR VDE/PDE 当前无 LLM；**HRS 数据与 AI/LLM 同用被 CoU 禁止，MiCDA Enclave 不构成豁免**。在 Architect 未另作判断前，**不得**把该行当作 LHRM 的合规方案引用。\n---",
+   "_locator": {
+    "line_start": 310,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C15",
+   "_title": "C-C15 — HRS 仓库处于「under review for potential modification」状态",
+   "claim": "报告未记录 HRS 数据仓库自身的**可及性连续性风险**。\n04` 全篇（缺）；对照 §4 D13（L663–675）记录了同类事实",
+   "source_report": "04` 全篇（缺）；对照 §4 D13（L663–675）记录了同类事实\nVERIFIED**（报告漏记）",
+   "verdict": "VERIFIED**（报告漏记）\nhttps://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`：",
+   "supporting_refs": "https://hrsdata.isr.umich.edu/data-products/conditions-of-use` — `VERIFIED_BY_ME`：\n   > \"**On March 31, 2025, NIH requested that the following language be added to this website:** This repository is under review for potential modification in compliance with Administration directives.\"\n   同一句亦见于 `https://uasdata.usc.edu/` 首页（`VERIFIED_BY_ME`）—— 报告在 D13 记录了 UAS 侧的同类横幅，却**没有**记录 HRS 侧同款（2025-03-31，NIH 要求加入）。\n   同页另有报告未记录的 **Third Party Redistribution of HRS Public Release Files** 政策（\"All recipients of the files must personally register as a user on this site\"）与 Replication Policy（\"HRS supports this principle but **does not allow third-party distribution of its data by anyone, including journals**\"）。\nNONE_LOCATED。这不影响任何分类，但直接影响报告 §5.1 把 HRS 当作\"公版免费 + DUA\"这一**稳定**获取路径的隐含前提。对一个把全部权重压在 rights 层的报告，漏掉这一条是不对称的。",
+   "strongest_counterevidence": "NONE_LOCATED。这不影响任何分类，但直接影响报告 §5.1 把 HRS 当作\"公版免费 + DUA\"这一**稳定**获取路径的隐含前提。对一个把全部权重压在 rights 层的报告，漏掉这一条是不对称的。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C10",
+   "duplicate_of": "C-C10\nACCEPT_AS_PROPOSAL** —— D10 加一行 access-continuity 注记（含 2025-03-31 NIH 请求加入横幅这一日期戳）。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** —— D10 加一行 access-continuity 注记（含 2025-03-31 NIH 请求加入横幅这一日期戳）。\n---",
+   "_locator": {
+    "line_start": 332,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C16",
+   "_title": "C-C16 — speed dating 镜像的「完全公开」是过度主张",
+   "claim": "报告称「完全公开无门槛（可立即下载）：1（speed dating 公开镜像）」、「**完全公开**的那一个（speed dating）」、表内「**完全公开**：github.com/datasets/speed-dating」。\n04` §1.1（L31）；§1.2（L35）；§3 表 D04（L58）；§4 D04 L273；§5.1（L784）",
+   "source_report": "04` §1.1（L31）；§1.2（L35）；§3 表 D04（L58）；§4 D04 L273；§5.1（L784）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\nhttps://github.com/datasets/speed-dating` — `VERIFIED_BY_ME`（README 全文）。关键两句：",
+   "supporting_refs": "https://github.com/datasets/speed-dating` — `VERIFIED_BY_ME`（README 全文）。关键两句：\n   > \"**Licensed under the Public Domain Dedication and License (assuming either no rights or public domain license in source data).**\"\n   > \"This dataset was found under the name **SpeedDating on OpenML.org**\"\n   镜像自己的 license 声明是**带假设的**（\"assuming…\"），且明示来源是 OpenML 转贴 —— 原始 Fisman–Iyengar / Columbia 的授权状态**未确立**，也无人核过 IRB/同意书是否覆盖再分发。这是 2002–2004 年真人速配活动的个体级人类被试数据。\n   报告 §5.1 的 speed dating 行其实**已写对**：「原始研究机构的数据政策未在本 lane 核实 → 保守按『引用而非再分发』处理」—— 但 §1.1 / §1.2 / §3 表三处仍写\"完全公开\"，**与 §5.1 自相矛盾**。\n反面证据存在但只支持\"可下载\"，不支持\"权利干净\"：仓库公开、README 完整、无注册门槛（三项 `VERIFIED`）。这恰好说明报告混淆了两件事 —— **可下载 ≠ 可自由再分发**。报告在 §5.1 意识到了这点，在摘要处却丢掉。",
+   "strongest_counterevidence": "反面证据存在但只支持\"可下载\"，不支持\"权利干净\"：仓库公开、README 完整、无注册门槛（三项 `VERIFIED`）。这恰好说明报告混淆了两件事 —— **可下载 ≠ 可自由再分发**。报告在 §5.1 意识到了这点，在摘要处却丢掉。\nNO**",
+   "requires_canonical_change": "NO**\nYES: 需查 Fisman–Iyengar 原研究/Columbia 是否有公开的 redistribution 或 IRB/DUA 声明**",
+   "needs_experiment_or_data": "YES: 需查 Fisman–Iyengar 原研究/Columbia 是否有公开的 redistribution 或 IRB/DUA 声明**\nC-C17",
+   "duplicate_of": "C-C17\nRECLASSIFY_AS_METHOD_LIMIT** —— 全文把\"完全公开\"统一改为「**技术上零门槛可下载（第三方镜像，license 为假定式 PDDL）；原始授权未确立 → 按引用而非再分发处理**」。这是本 lane 第二高的合规风险条目（仅次于 C-C14）。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 全文把\"完全公开\"统一改为「**技术上零门槛可下载（第三方镜像，license 为假定式 PDDL）；原始授权未确立 → 按引用而非再分发处理**」。这是本 lane 第二高的合规风险条目（仅次于 C-C14）。\n---",
+   "_locator": {
+    "line_start": 351,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C17",
+   "_title": "C-C17 — speed dating 镜像的实时可用性与 D04 的结构判断",
+   "claim": "报告称镜像 2026-09-27 仍在线，并称该数据是\"唯一能证明 Z[i→j] 与 Z[j→i] 确实是两个不同自由度\"的数据集，含 6 项双向评分、`wave` = 21 场 session 而非同一 dyad 重复观测。\n04` §4 D04（L245–287）",
+   "source_report": "04` §4 D04（L245–287）\nVERIFIED**（可用性与方向性设计结构）／**PLAUSIBLE**（变量名与 21 场）",
+   "verdict": "VERIFIED**（可用性与方向性设计结构）／**PLAUSIBLE**（变量名与 21 场）\nhttps://github.com/datasets/speed-dating` — `VERIFIED_BY_ME`。README 逐字确认：",
+   "supporting_refs": "https://github.com/datasets/speed-dating` — `VERIFIED_BY_ME`。README 逐字确认：\n   > \"During the events, the attendees would have a four-minute 'first date' with **every other participant of the opposite sex**.\"\n   > \"At the end of their four minutes, participants were asked **if they would like to see their date again**. They were also asked to rate their date on **six attributes**: Attractiveness, Sincerity, Intelligence, Fun, Ambition, Shared Interests.\"\n   > \"The dataset also includes questionnaire data gathered from participants... **self-perception across key attributes**, **beliefs on what others find valuable in a mate**...\"\n   > 目录 `data/speed-dating.csv`；\"This dataset was found under the name SpeedDating on **OpenML.org**\"\n对\"21 场\"我未找到任何来源**（README 未给场次数，该数字来自报告引用的论文/未打开的 Data Key）→ `UNVERIFIABLE_HERE`。同样地，**\"同一 (i,j) 上同时有 i 对 j 的 6 项评分和 j 对 i 的 6 项评分\"** 是报告的核心方向性论据，需 `Speed Dating Data Key.doc` 才能确认变量级结构 → `UNVERIFIABLE_HERE`，故 `PLAUSIBLE`。",
+   "strongest_counterevidence": "对\"21 场\"我未找到任何来源**（README 未给场次数，该数字来自报告引用的论文/未打开的 Data Key）→ `UNVERIFIABLE_HERE`。同样地，**\"同一 (i,j) 上同时有 i 对 j 的 6 项评分和 j 对 i 的 6 项评分\"** 是报告的核心方向性论据，需 `Speed Dating Data Key.doc` 才能确认变量级结构 → `UNVERIFIABLE_HERE`，故 `PLAUSIBLE`。\n   **正面增补**：README 证实数据含 \"self-perception across key attributes\" 与 \"beliefs on what others find valuable in a mate\" —— 这是**「i 关于 j 的偏好信念」与「i 的自我知觉」两个不同测量在同一 i 上**，比报告写的\"感知属性与自身属性的不对称\"更贴近 LHRM 的 `Observation != Belief` 分离。这条**加强**报告的论点，且我只用 README 就核到了。\nNO**",
+   "requires_canonical_change": "NO**\nNO: 取 `Speed Dating Data Key.doc` 即可确认变量级双向结构与场次数**",
+   "needs_experiment_or_data": "NO: 取 `Speed Dating Data Key.doc` 即可确认变量级双向结构与场次数**\nC-C16",
+   "duplicate_of": "C-C16\nACCEPT**",
+   "recommendation_to_architect": "ACCEPT**\n---",
+   "_locator": {
+    "line_start": 372,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C18",
+   "_title": "C-C18 — pairfam 使用条款 §3 德文原文",
+   "claim": "pairfam 条款 §3 只允许汇总呈现，即使无直接个人指向也不得发布个体级记录（报告逐字引德文）；§1 禁再识别、§4 禁商用、§5 禁第三方转发、§7 出版后 4 周内交 FDZ；2025-01 起取消旧的内部转发通道。\n04` §4 D01 `rights_and_limits`（L109–118）；§5.1 表（L774）",
+   "source_report": "04` §4 D01 `rights_and_limits`（L109–118）；§5.1 表（L774）\nPLAUSIBLE**",
+   "verdict": "PLAUSIBLE**\nhttps://www.pairfam.de/en/data/data-access/` 与 `https://access.gesis.org/dbk/69762` — **均 `UNVERIFIABLE_HERE`**：pairfam 两个 data 页面在我这里返回 **HTTP 500（×3）**；GESIS dbk/69762 返回**二进制 PDF**（FlateDecode 流），本环境无法抽取德文条文。报告引的 `dbk/52241 / 53708 / 69762` 我同样打不开。缺口 = **全部条文原文未经第二来源交叉验证**。",
+   "supporting_refs": "https://www.pairfam.de/en/data/data-access/` 与 `https://access.gesis.org/dbk/69762` — **均 `UNVERIFIABLE_HERE`**：pairfam 两个 data 页面在我这里返回 **HTTP 500（×3）**；GESIS dbk/69762 返回**二进制 PDF**（FlateDecode 流），本环境无法抽取德文条文。报告引的 `dbk/52241 / 53708 / 69762` 我同样打不开。缺口 = **全部条文原文未经第二来源交叉验证**。\nNONE_LOCATED（但我无法证伪）。**风险说明**：这是全报告中最被 Architect 依赖的 rights 断言之一（pairfam 是三个 `CALIBRATION_READY` 之一，§5.1 写「派生量：**否**（§3 只允许汇总呈现）」），而其唯一依据是一段我无法复核的德文引文。若 §3 实际措辞弱于报告转述（例如只禁\"可再识别的个案呈现\"而非\"一切个体级记录\"），则 §5.1「派生量：否」会过严，可能把本来可做的聚合标定工作一并挡掉。",
+   "strongest_counterevidence": "NONE_LOCATED（但我无法证伪）。**风险说明**：这是全报告中最被 Architect 依赖的 rights 断言之一（pairfam 是三个 `CALIBRATION_READY` 之一，§5.1 写「派生量：**否**（§3 只允许汇总呈现）」），而其唯一依据是一段我无法复核的德文引文。若 §3 实际措辞弱于报告转述（例如只禁\"可再识别的个案呈现\"而非\"一切个体级记录\"），则 §5.1「派生量：否」会过严，可能把本来可做的聚合标定工作一并挡掉。\nUNSURE** —— 若 §5.2 的 `llm_use_condition` 字段设计最终落到 canonical，pairfam 的这一格取值完全依赖本条原文的准确性。",
+   "requires_canonical_change": "UNSURE** —— 若 §5.2 的 `llm_use_condition` 字段设计最终落到 canonical，pairfam 的这一格取值完全依赖本条原文的准确性。\nYES: 需要一份可抽取文本的 pairfam Nutzungsantrag（PDF→文本）或 GESIS DBK 的 HTML 版，逐条复核 §1/§3/§4/§5/§7**",
+   "needs_experiment_or_data": "YES: 需要一份可抽取文本的 pairfam Nutzungsantrag（PDF→文本）或 GESIS DBK 的 HTML 版，逐条复核 §1/§3/§4/§5/§7**\nNONE",
+   "duplicate_of": "NONE\nHOLD_FOR_EVIDENCE** —— 在拿到可读原文前，pairfam 的一切 rights 断言标 `PLAUSIBLE`，且**不得**据此对 Architect 下「不能把 pairfam 派生量放进任何标定流程」的强建议。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** —— 在拿到可读原文前，pairfam 的一切 rights 断言标 `PLAUSIBLE`，且**不得**据此对 Architect 下「不能把 pairfam 派生量放进任何标定流程」的强建议。\n---",
+   "_locator": {
+    "line_start": 395,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C19",
+   "_title": "C-C19 — Add Health 被误标为「NLSY97 / ECLS」",
+   "claim": "报告把 D12 命名为「**Add Health (NLSY97/ECLS)**」。\n04` §3 表 D12（L66）；§4 D12 标题（L609）",
+   "source_report": "04` §3 表 D12（L66）；§4 D12 标题（L609）\nCONTESTED**（事实误标 + 报告内部矛盾）",
+   "verdict": "CONTESTED**（事实误标 + 报告内部矛盾）\nhttps://www.bls.gov/nls/pdf/appendixd.pdf`（BLS/NCHS 官方对照文档）— 官方页面索引文本。该文件把三者列为**三个不同研究**并直接对比：",
+   "supporting_refs": "https://www.bls.gov/nls/pdf/appendixd.pdf`（BLS/NCHS 官方对照文档）— 官方页面索引文本。该文件把三者列为**三个不同研究**并直接对比：\n   > \"Reasons why the study might **not** compete with the NLS: There is unlikely any competition between the NLSY and the ECLS-K since **the ages of respondents studied are different** as is the goal of each survey: the NLSY seeks to know labor market outcomes while the ECLS-K tracks knowledge and skills of young children... This survey doesn't focus on later-life or labor market outcomes and **stops before the child reaches high school**.\"\n   Add Health 正式名为 *National Longitudinal Study of Adolescent to Adult Health*，Wave I = 1994/95 学年 7–12 年级。NLSY97 = National Longitudinal Survey of Youth 1997（NCES/NCHS，劳动力市场取向）；ECLS = Early Childhood Longitudinal Study。\n   **报告内部矛盾**：§9 的 U10 又把「NLSY79-97」当作与 Add Health **不同**的数据集列入待查清单。报告一边把 NLSY 当 Add Health 的别名，一边把 NLSY 当另一个数据集。\n无。三个名称指三个不同调查，这在我打开的 BLS 官方对照文档里是显式对比项。",
+   "strongest_counterevidence": "无。三个名称指三个不同调查，这在我打开的 BLS 官方对照文档里是显式对比项。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C34（见专项 4）",
+   "duplicate_of": "C-C34（见专项 4）\nRECLASSIFY_AS_METHOD_LIMIT** —— D12 标题改为「Add Health (National Longitudinal Study of Adolescent to Adult Health)」，删去 `NLSY97/ECLS`；并核查其它位置是否有 ECLS / NLSY 残留（§7 非主张 3 的 \"0–3 岁\" 亦是 SECCYD 的残留）。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D12 标题改为「Add Health (National Longitudinal Study of Adolescent to Adult Health)」，删去 `NLSY97/ECLS`；并核查其它位置是否有 ECLS / NLSY 残留（§7 非主张 3 的 \"0–3 岁\" 亦是 SECCYD 的残留）。\n---",
+   "_locator": {
+    "line_start": 410,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C20",
+   "_title": "C-C20 — U7「Add Health 无 friendship nomination 文件」已被可及官方文档推翻，且 D15 的「唯一」声明错误",
+   "claim": "报告 D12 写「**本 lane 未核实其文件存在性（U7）。不得主张该数据存在**」，§7 非主张 6 写「**不主张** Add Health 存在 friendship nomination 数据文件（U7）」；并在 D15 断言 Oregon Couples Study 是「本 lane 中**除 HARP 外唯一**明确『双报告恋爱 dyad』的美国数据集」。\n04` §4 D12（L618–620）；§7 非主张 6（L829）；§4 D15（L723–724）；§9 U7（L880）；§8.7（L860）",
+   "source_report": "04` §4 D12（L618–620）；§7 非主张 6（L829）；§4 D15（L723–724）；§9 U7（L880）；§8.7（L860）\nCONTESTED**",
+   "verdict": "CONTESTED**\n两条 `CITED_PRIMARY (index)`（官方页面搜索索引文本；本环境 `icpsr.umich.edu/web/**` 403、`addhealth.cpc.unc.edu` 可开但其数据文件表为 JS 渲染）：",
+   "supporting_refs": "两条 `CITED_PRIMARY (index)`（官方页面搜索索引文本；本环境 `icpsr.umich.edu/web/**` 403、`addhealth.cpc.unc.edu` 可开但其数据文件表为 JS 渲染）：\n   - Add Health 官方用户指南（`addhealth.cpc.unc.edu/wp-content/uploads/docs/user_guides/Overview_of_Add_Health_Harris.pdf` 索引文本）逐字列出：\"Questionnaire-based social context data – **In-School Network Data – Adolescent Romantic Pair Data – In-School Friendship Nominations – In-Home Friendship Nominations** – Family Context (Parent Interview, sibling information) – **Wave III Married, cohabiting, and dating couples (\"couple context\")**\"；restricted 侧含 \"**Romantic Pairs**\"（security-restricted）。\n   - ICPSR/DSDR 21600 索引文本：研究描述含 \"friendship networks, peer groups, schools, neighborhoods, and **romantic relationships**\"、\"**interviews with romantic partners**\"；public-use 文件表含 **\"DS3 | Wave I: Network Variables\"**、**\"DS9 | Wave III: In-Home Questionnaire, Public Use Sample (Section 17: Relationships)\"**、**\"DS11 | … (Section 19: Relationships in Detail)\"**、**\"DS23 / DS24 | Wave IV … (Section 16B / 16C: Relationships)\"**。\n(a) 我的证据是**官方页面的搜索索引文本**，不是直开页面 —— 按报告自定层级只是 `MEDIUM`，因此**不能**反过来断言「文件一定可下载且含双向测量」；(b) 报告的谨慎有其道理：Add Health 的 Data Documentation 文件表是 JS 渲染，报告确实拿不到行级清单；(c) 报告在 D12 写「变量层存在性仅为 AGENT_RECALL」—— **但这与本条显示的官方文档明文不符**：文档不是 recall，是官方用户指南。**报告把「我打不开那张表」升级成了「该数据不存在/不得主张」**，这是把抓取失败当成了否定证据。",
+   "strongest_counterevidence": "(a) 我的证据是**官方页面的搜索索引文本**，不是直开页面 —— 按报告自定层级只是 `MEDIUM`，因此**不能**反过来断言「文件一定可下载且含双向测量」；(b) 报告的谨慎有其道理：Add Health 的 Data Documentation 文件表是 JS 渲染，报告确实拿不到行级清单；(c) 报告在 D12 写「变量层存在性仅为 AGENT_RECALL」—— **但这与本条显示的官方文档明文不符**：文档不是 recall，是官方用户指南。**报告把「我打不开那张表」升级成了「该数据不存在/不得主张」**，这是把抓取失败当成了否定证据。\n   反过来，Add Health 确实**不能**满足 D15 的角色：(i) 恋爱配对数据（Romantic Pairs）是 restricted/security-restricted，Wave III partner 子样本仅 n≈1,507；(ii) 友谊提名网络是**单向提名**（i 提 j，j 另答），**不是双方答同一构念**。所以 D15 的\"唯一双报告恋爱 dyad\"结论在\"公开可得数据\"的意义上勉强成立，但在\"Add Health 不存在双报告恋爱数据\"的意义上**是错的**。\nNO**",
+   "requires_canonical_change": "NO**\nYES: 需 Add Health ACE 或 DS3/DS9/DS11/DS23/DS24 的 codebook 行级清单，确认 nomination 与 romantic pair 的变量级方向性结构；并确认 Romantic Pairs 的 restricted 等级**",
+   "needs_experiment_or_data": "YES: 需 Add Health ACE 或 DS3/DS9/DS11/DS23/DS24 的 codebook 行级清单，确认 nomination 与 romantic pair 的变量级方向性结构；并确认 Romantic Pairs 的 restricted 等级**\nC-C19、C-C29",
+   "duplicate_of": "C-C19、C-C29\nRECLASSIFY_AS_METHOD_LIMIT** —— (a) U7 由「不得主张存在」改为「官方用户指南已列 In-School/In-Home Friendship Nominations 与 Adolescent Romantic Pair Data；**变量级方向性结构 UNVERIFIED**」；(b) D15 的「唯一」限定为「在公开可得数据中」；(c) 删除 D12/§7 中把抓取失败表述为否定存在的措辞。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— (a) U7 由「不得主张存在」改为「官方用户指南已列 In-School/In-Home Friendship Nominations 与 Adolescent Romantic Pair Data；**变量级方向性结构 UNVERIFIED**」；(b) D15 的「唯一」限定为「在公开可得数据中」；(c) 删除 D12/§7 中把抓取失败表述为否定存在的措辞。\n---",
+   "_locator": {
+    "line_start": 429,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C21",
+   "_title": "C-C21 — pairfam partner 变量前缀「统一为 `p`」被过度一般化",
+   "claim": "报告 D01 写「官方 GESIS 变量清单中 partner 侧变量统一 `p` 前缀（psex_gen, page, preldur, pmarstat, pincoecd, ...）」。\n04` §4 D01（L96–97）；§3 表 D01（L55）",
+   "source_report": "04` §4 D01（L96–97）；§3 表 D01（L55）\nCONTESTED**",
+   "verdict": "CONTESTED**\npairfam Data Manual（`access.gesis.org/dbk/53708`）官方索引文本 — `CITED_PRIMARY (index)`：",
+   "supporting_refs": "pairfam Data Manual（`access.gesis.org/dbk/53708`）官方索引文本 — `CITED_PRIMARY (index)`：\n   > \"In general, a prefix `p-` is added to the names of anchor [variables]... `xpar-` is used in the parents survey, and `c-` indicates [variables] collected in the child survey. Finally, the prefix `-` is used in [the] survey on young [adults].\"\n   > 示例：\"Geschlecht: Anker = sex | Partner = psex | Eltern = parsex | Kinder = csex\"\n   > 键变量：\"ID-Variables: anchor= `id` | partner= `pid` | parents= `parid` | children= `cid(x)` | siblings= `sibid(x)`\"\n   **同时正面核实了报告最核心的那句引文**：`pairfam.de/en/data/data-structure/` 索引文本与 Data Manual 索引文本两处一致：\"Because information is stored separately by wave and respondent group, the scientific use file contains several data sets. **By using a standardized key variable it is possible to link those data sets for longitudinal or dyadic analyses.**\" → `VERIFIED`（间接）。\nData Manual 自身列举了 `p-` 之外的 alter 前缀（`xpar-`、`c-`、PAYA 前缀）。\"统一 p 前缀\"字面上不成立。**实质影响**：若按\"partner 侧一律 `p` 前缀\"机械构造 `Z[k,i,j,t]`，会漏掉父母模块、子女模块与 PAYA 的变量 —— 而这三类正是报告用来主张 pairfam「非浪漫 dyad 有真实结构」的依据。",
+   "strongest_counterevidence": "Data Manual 自身列举了 `p-` 之外的 alter 前缀（`xpar-`、`c-`、PAYA 前缀）。\"统一 p 前缀\"字面上不成立。**实质影响**：若按\"partner 侧一律 `p` 前缀\"机械构造 `Z[k,i,j,t]`，会漏掉父母模块、子女模块与 PAYA 的变量 —— 而这三类正是报告用来主张 pairfam「非浪漫 dyad 有真实结构」的依据。\nNO**",
+   "requires_canonical_change": "NO**\nNO: GESIS DBK 的变量总览（Variablenübersichten）HTML 版即可逐模块核对**",
+   "needs_experiment_or_data": "NO: GESIS DBK 的变量总览（Variablenübersichten）HTML 版即可逐模块核对**\nNONE",
+   "duplicate_of": "NONE\nRECLASSIFY_AS_METHOD_LIMIT** —— 「统一 `p` 前缀」改为「partner 侧主用 `p-`；父母/子女/PAYA 模块各用 `xpar-` / `c-` / 独立前缀，**按前缀机械配对会漏掉非浪漫 dyad**」。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 「统一 `p` 前缀」改为「partner 侧主用 `p-`；父母/子女/PAYA 模块各用 `xpar-` / `c-` / 独立前缀，**按前缀机械配对会漏掉非浪漫 dyad**」。\n---",
+   "_locator": {
+    "line_start": 447,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C22",
+   "_title": "C-C22 — pairfam「当前版本 = Release 14.2」在 2026-09-27 很可能已过时",
+   "claim": "报告 D01 写「`current_version_observed`: Release 14.2（14 survey waves, doi 10.4232/pairfam.5678.14.2.0）」，§3 表写「DOI 版本化（当前 14.2.0）」。\n04` §4 D01（L85）；§3 表 D01（L55）",
+   "source_report": "04` §4 D01（L85）；§3 表 D01（L55）\nPLAUSIBLE**（版本过时风险；无法在本环境定论）",
+   "verdict": "PLAUSIBLE**（版本过时风险；无法在本环境定论）\nData Manual / concept paper 索引文本 — `CITED_PRIMARY (index)`：",
+   "supporting_refs": "Data Manual / concept paper 索引文本 — `CITED_PRIMARY (index)`：\n   > \"With **Release 14.2, published in 2024**, pairfam data from the fourteen survey waves were made accessible as a scientific use file.\"\n   > \"Mit der Veröffentlichung von **Release 14.2 im Mai 2024**...\"\n   > \"Die aufbereiteten Daten der Befragten werden **ein Jahr nach Ende der jeweiligen Feldphase** als Scientific-Use-File veröffentlicht.\"\n   → pairfam 是**年度**面板（2008/09 起每年一波，Release 14.2 = 第 14 波 ≈ 2021/22 实地，2024 年发布）。按报告自己记录的年度节奏，2026-09 时更高 wave 的 SUF 应当已存在。`UNVERIFIABLE_HERE`（pairfam.de 500；GESIS 索引只到 14.2）。\n报告把观察到的版本号记成\"观察值\"而非\"官方当前版本\"（字段名 `current_version_observed` 用词诚实），§11 只给 DOI 不宣称最新版。**未构成断言错误**。但报告同时把 \"Waves = 14\" 作为 pairfam 分类的承重属性之一，且未把\"版本是否仍为 14.2\"列入 §9 未知表 —— 这是**未知登记的遗漏**，不是虚构。",
+   "strongest_counterevidence": "报告把观察到的版本号记成\"观察值\"而非\"官方当前版本\"（字段名 `current_version_observed` 用词诚实），§11 只给 DOI 不宣称最新版。**未构成断言错误**。但报告同时把 \"Waves = 14\" 作为 pairfam 分类的承重属性之一，且未把\"版本是否仍为 14.2\"列入 §9 未知表 —— 这是**未知登记的遗漏**，不是虚构。\nNO**",
+   "requires_canonical_change": "NO**\nNO: 查 GESIS `search.gesis.org/research_data/ZA5678` 的最新版本行即可**",
+   "needs_experiment_or_data": "NO: 查 GESIS `search.gesis.org/research_data/ZA5678` 的最新版本行即可**\nNONE",
+   "duplicate_of": "NONE\nHOLD_FOR_EVIDENCE** —— 在 pairfam 波数被用作任何结论承重属性之前，先确认 2026-09 的当前 release 号与波数；并把\"版本现势性\"补进 §9 未知表。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** —— 在 pairfam 波数被用作任何结论承重属性之前，先确认 2026-09 的当前 release 号与波数；并把\"版本现势性\"补进 §9 未知表。\n---",
+   "_locator": {
+    "line_start": 469,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C23",
+   "_title": "C-C23 — HRS 是否发货跨波稳定 partner/couple id（U5）",
+   "claim": "报告标 HRS「稳定 couple id = **未核实**（HRS 正文页本环境不可达）」，§9 U5 记 `UNKNOWN`。\n04` §3 表 D10（L64）；§9 U5（L878）",
+   "source_report": "04` §3 表 D10（L64）；§9 U5（L878）\nPLAUSIBLE**（未知登记**正确且必要**）",
+   "verdict": "PLAUSIBLE**（未知登记**正确且必要**）\n我独立复现 `https://hrs.isr.umich.edu/data-products/file-merge-reference` → **403**（与报告一致）。但 `https://hrsdata.isr.umich.edu/data-products/conditions-of-use` **可达** —— 说明 HRS 有可用备用 host，报告未利用。`UNVERIFIABLE_HERE`。",
+   "supporting_refs": "我独立复现 `https://hrs.isr.umich.edu/data-products/file-merge-reference` → **403**（与报告一致）。但 `https://hrsdata.isr.umich.edu/data-products/conditions-of-use` **可达** —— 说明 HRS 有可用备用 host，报告未利用。`UNVERIFIABLE_HERE`。\nNONE_LOCATED。我同样**没有**取得 file-merge reference，因此**不能**说 U5 可解；我只能说报告的失败记录是环境性的（我复现了 403），因此 **U5 很可能也可通过 `hrsdata` host 或 HRS User Guide 解掉**，但我没有解。",
+   "strongest_counterevidence": "NONE_LOCATED。我同样**没有**取得 file-merge reference，因此**不能**说 U5 可解；我只能说报告的失败记录是环境性的（我复现了 403），因此 **U5 很可能也可通过 `hrsdata` host 或 HRS User Guide 解掉**，但我没有解。\nNO**",
+   "requires_canonical_change": "NO**\nYES: HRS User Guide 的 cross-wave partner/HHSPID 说明，或 file-merge-reference 的可达镜像**",
+   "needs_experiment_or_data": "YES: HRS User Guide 的 cross-wave partner/HHSPID 说明，或 file-merge-reference 的可达镜像**\nC-C32",
+   "duplicate_of": "C-C32\nACCEPT**（把 U5 保持 `UNKNOWN` 是正确判断）；建议后续 lane 改用 `hrsdata.isr.umich.edu` 作为抓取 host。",
+   "recommendation_to_architect": "ACCEPT**（把 U5 保持 `UNKNOWN` 是正确判断）；建议后续 lane 改用 `hrsdata.isr.umich.edu` 作为抓取 host。\n---",
+   "_locator": {
+    "line_start": 491,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C24",
+   "_title": "C-C24 — D09 CLOC 的分类与报告自定判级标准不一致",
+   "claim": "报告把 CLOC 分类为 `MEASUREMENT_ONLY`；同时逐字记录了一个\"双方同 record、四波、含妻 `V*` + 夫 `S*`\"的设计，并称其为「本 lane 找到的**最早、最干净的双人同 record 四波设计**」。\n04` §3 表 D09（L63）；§4 D09（L480–521）；§2 判级标准（L43–47）",
+   "source_report": "04` §3 表 D09（L63）；§4 D09（L480–521）；§2 判级标准（L43–47）\nCONTESTED**",
+   "verdict": "CONTESTED**\n报告自引的 ICPSR 3370 文本（`UNVERIFIABLE_HERE` —— 我对 `icpsr.umich.edu/web/ICPSR/studies/3370` 取得 **403**）声称：\"Part 5 'Couples Only' ... contains data collected from both the husband and the wife of **423 couples (n = 846)** and includes all available data from **all four waves**... Each record contains data for the wife (the 'V' variables) and data for the husband (the 'S' variables).\"",
+   "supporting_refs": "报告自引的 ICPSR 3370 文本（`UNVERIFIABLE_HERE` —— 我对 `icpsr.umich.edu/web/ICPSR/studies/3370` 取得 **403**）声称：\"Part 5 'Couples Only' ... contains data collected from both the husband and the wife of **423 couples (n = 846)** and includes all available data from **all four waves**... Each record contains data for the wife (the 'V' variables) and data for the husband (the 'S' variables).\"\n   **判级标准比对（这部分完全在报告内部可验证）** —— 报告 §2 定义 `CALIBRATION_READY` 需同时满足：稳定 dyad id + 双方各自作答 + **≥3 wave** + codebook + outcome/event + 缺失/样本选择文档 + 可复现获取路径。按报告自己的 Part 5 引文逐条对：**双方各自作答 ✓**（V/S 分离）；**4 wave ✓**（≥3）；**codebook ✓**；**outcome/event ✓**（配偶死亡 + 3 个后续时点）；**缺失/样本选择文档 ✓**（NDI 核销 + 匹配对照设计）；**稳定 couple id ✓**（423 couples / 846 人在同一 record）。七项中六项满足。\n   而报告 §2 定义 `MEASUREMENT_ONLY` 的**全部四个触发条件**是：「缺 1 wave / 双方测量不对称需外部假设 / 只有 pair-level 事实 / outcome 无后续时点」—— **CLOC 一条都不满足**。\n   报告给出的实际理由是 §D09 `selection` 段：「随访对象 = 丧偶者 + 匹配对照。这是一个**条件于丧偶**的样本，不能读作『一般老年婚姻样本』」—— 这是**可推广性**论证，不是判级标准的触发条件。\n有一个报告**没有说出、但足以支撑现判级**的理由：**W2–W4 的随访对象是丧偶者**，按定义一方已故，\"双方各自作答\"在 baseline 之后**不可能**成立（存活方的回答在死亡相关项上只能经 proxy 或回忆）。若采用该理由，CLOC 确应降级 —— 但这是**纵向条件导致的构念不可得**，与 §2 的四个触发条件都不同类。",
+   "strongest_counterevidence": "有一个报告**没有说出、但足以支撑现判级**的理由：**W2–W4 的随访对象是丧偶者**，按定义一方已故，\"双方各自作答\"在 baseline 之后**不可能**成立（存活方的回答在死亡相关项上只能经 proxy 或回忆）。若采用该理由，CLOC 确应降级 —— 但这是**纵向条件导致的构念不可得**，与 §2 的四个触发条件都不同类。\n   另：§2 的第七项「可复现获取路径」—— 「freely available to data users at ICPSR member institutions」对非会员失效，但报告把这一限制写在 `access` 栏而非分类理由里。\n   **诚实声明**：Part 5 引文我无法核实（403）。**若该引文为真，报告的判级论证与其自定标准冲突；若引文为假，报告的分类可能恰好正确。** 我不选边 —— 我判定的是**论证结构**：报告给出的理由（样本条件于丧偶）无法从其自定标准推出，而唯一能推出的理由（死亡后无法双报告）报告没有写。\nUNSURE** —— 若 Architect 要把 CLOC 写进任何数据依赖的工作单，判级依据必须先定死。",
+   "requires_canonical_change": "UNSURE** —— 若 Architect 要把 CLOC 写进任何数据依赖的工作单，判级依据必须先定死。\nYES: 核实 ICPSR 3370 的 Part 5 说明原文；并核实 W2–W4 中存活方对已故配偶相关条目的作答方式（自答 vs proxy）**",
+   "needs_experiment_or_data": "YES: 核实 ICPSR 3370 的 Part 5 说明原文；并核实 W2–W4 中存活方对已故配偶相关条目的作答方式（自答 vs proxy）**\nNONE",
+   "duplicate_of": "NONE\nHOLD_FOR_EVIDENCE** —— 分类结论我倾向保留 `MEASUREMENT_ONLY`，但**理由必须改写为「baseline 双报告 + 后续波次因一方死亡而结构上不可能双报告」**，并把「条件于丧偶的样本」另列为外推性限制。同时 D09 应被提升到与三个 `CALIBRATION_READY` 同等显著的位置 —— 它是 16 个里唯一「双报告 + 4 波 + 事件锚定（丧失）+ 死亡时点由 NDI 核销」的组合，而报告对它的处理是全文最不显眼的一份。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** —— 分类结论我倾向保留 `MEASUREMENT_ONLY`，但**理由必须改写为「baseline 双报告 + 后续波次因一方死亡而结构上不可能双报告」**，并把「条件于丧偶的样本」另列为外推性限制。同时 D09 应被提升到与三个 `CALIBRATION_READY` 同等显著的位置 —— 它是 16 个里唯一「双报告 + 4 波 + 事件锚定（丧失）+ 死亡时点由 NDI 核销」的组合，而报告对它的处理是全文最不显眼的一份。\n---",
+   "_locator": {
+    "line_start": 506,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C25",
+   "_title": "C-C25 — SOEP 与 IFLS：同一认识论处境，两个不同分类",
+   "claim": "报告把 SOEP 判为 `NOT_DYADIC_ENOUGH`（\"发货形态没有可用 partner id，dyad 需分析者启发式重建\"），把 IFLS 判为 `MEASUREMENT_ONLY`（\"稳定 couple id = **未核实**；识别 spouse 是官方指引的构造过程\"）。\n04` §3 表 D06（L60）、D11（L65）；§2 判级标准（L47）",
+   "source_report": "04` §3 表 D06（L60）、D11（L65）；§2 判级标准（L47）\nCONTESTED**（内部不一致）",
+   "verdict": "CONTESTED**（内部不一致）\n报告内部文本即可验证。报告对两者的事实陈述是同一类：**官方未发货可用的 i↔j 绑定键**。报告对 SOEP 的处理原则（§2）极清楚：「重建规则是**模型假设，不是证据**」；报告在 D11 `negative_result_value` 把它升格为\"最有价值的反例证据之一\"，并给出方法学要求：「任何『我们从通用面板造了 dyad』的说法，必须同时交出构造规则、构造掉的样本量、以及构造后的同性/非婚/非共居覆盖」。",
+   "supporting_refs": "报告内部文本即可验证。报告对两者的事实陈述是同一类：**官方未发货可用的 i↔j 绑定键**。报告对 SOEP 的处理原则（§2）极清楚：「重建规则是**模型假设，不是证据**」；报告在 D11 `negative_result_value` 把它升格为\"最有价值的反例证据之一\"，并给出方法学要求：「任何『我们从通用面板造了 dyad』的说法，必须同时交出构造规则、构造掉的样本量、以及构造后的同性/非婚/非共居覆盖」。\n   报告对 IFLS 的处理（D06）是**同一原则的措辞**：「方向性依赖重建假设（模型假设，不是证据）」。\n   → **同一认识论处境被给了两个不同分类**。`NOT_DYADIC_ENOUGH` 与 `MEASUREMENT_ONLY` 的分界在报告里没有可操作判据。\nD06 的 IFLS 有一个真实差异：官方 FAQ **主动指引**用户\"看 IFLS2 User's Guide 关于家庭关系与如何跨模块识别 spouse/children/parents\"，且\"holds for all IFLS waves\" —— 即**重建有官方依据**，比 SOEP 那种\"建模者自定启发式 + 文献自陈过滤规则\"强一档。SOEP 的 Bacon/Conte/Moffatt 例子恰恰是**研究者自造**规则。这可以解释分界，但报告**没有把这个解释写出来**。",
+   "strongest_counterevidence": "D06 的 IFLS 有一个真实差异：官方 FAQ **主动指引**用户\"看 IFLS2 User's Guide 关于家庭关系与如何跨模块识别 spouse/children/parents\"，且\"holds for all IFLS waves\" —— 即**重建有官方依据**，比 SOEP 那种\"建模者自定启发式 + 文献自陈过滤规则\"强一档。SOEP 的 Bacon/Conte/Moffatt 例子恰恰是**研究者自造**规则。这可以解释分界，但报告**没有把这个解释写出来**。\nNO**",
+   "requires_canonical_change": "NO**\nNO: 只需补判据文字；若要彻底解决，需 IFLS 跨波 partner 键是否存在（U8）**",
+   "needs_experiment_or_data": "NO: 只需补判据文字；若要彻底解决，需 IFLS 跨波 partner 键是否存在（U8）**\nNONE",
+   "duplicate_of": "NONE\nRECLASSIFY_AS_METHOD_LIMIT** —— 二选一：(a) 承认分界为「重建是否有官方依据」并写成显式判据；或 (b) 把 IFLS 改判 `NOT_DYADIC_ENOUGH`，价值全部记在 `kin_coverage` 与 `cross_cultural` 上。现状（同样处境、两个类、无论据）是本报告最容易被 Architect 误用的一处。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 二选一：(a) 承认分界为「重建是否有官方依据」并写成显式判据；或 (b) 把 IFLS 改判 `NOT_DYADIC_ENOUGH`，价值全部记在 `kin_coverage` 与 `cross_cultural` 上。现状（同样处境、两个类、无论据）是本报告最容易被 Architect 误用的一处。\n---",
+   "_locator": {
+    "line_start": 526,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C26",
+   "_title": "C-C26 — D12 / D13 把 rights 事实写成了可识别性结论",
+   "claim": "D12 `cannot_identify` 写「对 LHRM 计划用途 —— **不可识别**」；D13 写「对 LHRM 计划用途 —— **不可识别**（AI 政策）」。\n04` §4 D12（L650）、D13（L678）；§5.1 表（L776–777）",
+   "source_report": "04` §4 D12（L650）、D13（L678）；§5.1 表（L776–777）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\n报告自己的条款引文（我 `VERIFIED_BY_ME`：Add Health CoU、UAS/CESR 页面）证明**被改变的是许可，不是可识别性**。两处的 `can_identify` / `cannot_identify_without_assumption` 结构本可正确承载这一区别（D10 对 HRS 就做对了：把 ADL/IADL 列为 can_identify，把 CoC 列为 rights finding），但 D12/D13 把 rights 结论塞进了 `cannot_identify` 栏。",
+   "supporting_refs": "报告自己的条款引文（我 `VERIFIED_BY_ME`：Add Health CoU、UAS/CESR 页面）证明**被改变的是许可，不是可识别性**。两处的 `can_identify` / `cannot_identify_without_assumption` 结构本可正确承载这一区别（D10 对 HRS 就做对了：把 ADL/IADL 列为 can_identify，把 CoC 列为 rights finding），但 D12/D13 把 rights 结论塞进了 `cannot_identify` 栏。\n   关键：**C-C20 显示 Add Health 官方文档确有 nomination / romantic pair 结构**（C-C13 显示 SOEP 连派生分析输出都可上传）。因此\"不可识别\"在字面上就是错的 —— 可识别性未变，许可变了。\nNONE_LOCATED。报告的条款引文本身是对的（我逐字核过），错的只是归类。",
+   "strongest_counterevidence": "NONE_LOCATED。报告的条款引文本身是对的（我逐字核过），错的只是归类。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C27、C-C29",
+   "duplicate_of": "C-C27、C-C29\nRECLASSIFY_AS_METHOD_LIMIT** —— D12/D13 的 `cannot_identify` 改为「**结构上可识别，但现行 use-condition 禁止本项目的处理方式**」，并把 `ACCESS_BLOCKED` 明确定义为**许可轴**、与 `NOT_DYADIC_ENOUGH`（结构轴）分列。这正是合同 §6.2 要求的区分。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D12/D13 的 `cannot_identify` 改为「**结构上可识别，但现行 use-condition 禁止本项目的处理方式**」，并把 `ACCESS_BLOCKED` 明确定义为**许可轴**、与 `NOT_DYADIC_ENOUGH`（结构轴）分列。这正是合同 §6.2 要求的区分。\n---",
+   "_locator": {
+    "line_start": 543,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C27",
+   "_title": "C-C27 — D15 的 `ACCESS_BLOCKED` 实为项目能力陈述",
+   "claim": "D15 Oregon Youth Study Couples Study Time 6 判 `ACCESS_BLOCKED`，`cannot_identify` 写「获取（LHRM 无 ICPSR RDUA + IRB 的现实路径）」。\n04` §4 D15（L704–730）；§3 表 D15（L69）",
+   "source_report": "04` §4 D15（L704–730）；§3 表 D15（L69）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\n报告自引 ICPSR 38726 文本（`UNVERIFIABLE_HERE`，我 403 无法核）说明访问需 RDUA + IRB/豁免通知 + 不可直接下载。**但报告的判级理由用的是自己的组织能力**（\"LHRM 无 RDUA + IRB 的现实路径\"），不是数据属性。**报告在同一卡片里已经写下了真正的结构理由**：「waves: **单期（Time 6）** → 不构成多波双人面板」—— 这一条才对应 §2 的 `MEASUREMENT_ONLY` 触发条件（\"缺 1 wave\"）。",
+   "supporting_refs": "报告自引 ICPSR 38726 文本（`UNVERIFIABLE_HERE`，我 403 无法核）说明访问需 RDUA + IRB/豁免通知 + 不可直接下载。**但报告的判级理由用的是自己的组织能力**（\"LHRM 无 RDUA + IRB 的现实路径\"），不是数据属性。**报告在同一卡片里已经写下了真正的结构理由**：「waves: **单期（Time 6）** → 不构成多波双人面板」—— 这一条才对应 §2 的 `MEASUREMENT_ONLY` 触发条件（\"缺 1 wave\"）。\n有限度：RDUA + IRB 门槛对**本项目当下**确是真实障碍，记下来有操作价值。且按 §2 的定义，单期 ICPSR restricted 数据其实**满足** `ACCESS_BLOCKED`。真正的缺陷是 `cannot_identify` 栏里那句把\"我们没有能力走 RDUA 流程\"写成了数据的可识别性限制。",
+   "strongest_counterevidence": "有限度：RDUA + IRB 门槛对**本项目当下**确是真实障碍，记下来有操作价值。且按 §2 的定义，单期 ICPSR restricted 数据其实**满足** `ACCESS_BLOCKED`。真正的缺陷是 `cannot_identify` 栏里那句把\"我们没有能力走 RDUA 流程\"写成了数据的可识别性限制。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C26",
+   "duplicate_of": "C-C26\nRECLASSIFY_AS_METHOD_LIMIT** —— D15 同时标注两轴：结构轴 = `MEASUREMENT_ONLY`（单期）；许可/能力轴 = RDUA + IRB 门槛（项目能力限制，非数据缺陷）。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— D15 同时标注两轴：结构轴 = `MEASUREMENT_ONLY`（单期）；许可/能力轴 = RDUA + IRB 门槛（项目能力限制，非数据缺陷）。\n---",
+   "_locator": {
+    "line_start": 559,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C28",
+   "_title": "C-C28 — 三个 `CALIBRATION_READY` 是否可辩护（构念层 vs 样本层）",
+   "claim": "报告把 pairfam / SHARE / HARP 判为 `CALIBRATION_READY`，§1.2 表述为「在方向化 + 纵向 + **双方各自作答**这三个条件同时成立的数据集里，本审计只找到 3 个」。\n04` §1.1（L25–26）、§1.2（L35）；§2（L43）；§4 D01/D02/D03；§8.3（L849）",
+   "source_report": "04` §1.1（L25–26）、§1.2（L35）；§2（L43）；§4 D01/D02/D03；§8.3（L849）\nCONTESTED**",
+   "verdict": "CONTESTED**\n分数据集，证据强度不同：",
+   "supporting_refs": "分数据集，证据强度不同：\n   - **pairfam —— 最强，判级可辩护**。`VERIFIED`（间接）：官方 \"By using a standardized key variable it is possible to link those data sets for longitudinal or dyadic analyses.\"；键变量 anchor=`id` / partner=`pid` / parents=`parid` / children=`cid(x)`；**同一构念在 anchor 与 partner 两侧同名对应**（`sex`↔`psex`）—— 这正是构念层的\"双方独立作答\"，不只是样本层。**但**两个减分项未进判级：U9（非共居 partner 的独立测量 `UNKNOWN`）与 C-C21（前缀非统一）。U15（关系状态构念内容）报告已自标未核实。\n   - **SHARE —— 部分成立，应加限定**。`VERIFIED`（我直开）：模块级不对称属实（§3.3 `hou_resp`/`fin_resp`/`fam_resp`），但报告只记了这一半；另一半是 §3.4 的 **proxy 代答**（含 fully proxy）与 §5.8 的 **CH 子女链接需 gender+year-of-birth 重建**。→ 「双方各自作答同一构念」在 SHARE 只在**逐模块、且排除 proxy 与 CH** 的条件下成立，不是数据集级属性。报告自己在 D02 写了\"模块级不对称\"，却仍把它归入\"三条件同时成立\"的 3 个之列 —— **条件被写在了样本层，落在了数据集层**。\n   - **HARP —— 判级与自定标准冲突**。`UNVERIFIABLE_HERE`（ICPSR 403）。但冲突不依赖引文真伪：报告 §2 要求 `CALIBRATION_READY` 满足「**可复现获取路径**」，而报告自己在 D03 `unknown` 与 §8.3 写明「**T2/T3 微数据是否已 release 无法确认**」并自评「HARP 虽被列为 `CALIBRATION_READY`，但该判定**基于招募与设计文档，而非基于微数据可得性的确认**」。报告已指出这个不一致，却没有据此降级。HARP 是 3 个中最弱的：3 波、入组硬门槛（合法已婚 + 同居≥3 年）、同性/异性**抽样框不同**（70% vs 40% 招募率）—— dyad 人群本身是被选择过的子总体。\n对 pairfam，方向性支持最强；对 SHARE/HARP，报告的判级理由依赖**我打不开的一手源**（ICPSR 403），故按合同只能记 `PLAUSIBLE`。另需指出报告 §1.1 的**内部不一致**：同一张表里「双方各自作答同一构念 = **4**（pairfam、SHARE、HARP、HRS 部分模块）」与「`CALIBRATION_READY` = **3**」，而 D10（HRS）卡片明写「SHARE/HRS 都不是关系质量面板」且 HRS 被判 `MEASUREMENT_ONLY` —— 4 与 3 在摘要层没有对账。",
+   "strongest_counterevidence": "对 pairfam，方向性支持最强；对 SHARE/HARP，报告的判级理由依赖**我打不开的一手源**（ICPSR 403），故按合同只能记 `PLAUSIBLE`。另需指出报告 §1.1 的**内部不一致**：同一张表里「双方各自作答同一构念 = **4**（pairfam、SHARE、HARP、HRS 部分模块）」与「`CALIBRATION_READY` = **3**」，而 D10（HRS）卡片明写「SHARE/HRS 都不是关系质量面板」且 HRS 被判 `MEASUREMENT_ONLY` —— 4 与 3 在摘要层没有对账。\nNO**（若 Architect 把\"数据源清单\"写进任何 canonical 文档，则必须先对账）",
+   "requires_canonical_change": "NO**（若 Architect 把\"数据源清单\"写进任何 canonical 文档，则必须先对账）\nYES: U15（三个数据集问卷中实际含哪些关系状态构念）+ U6（HARP T2/T3 微数据 release 状态）+ SHARE Release Guide 的 proxy 发生率表**",
+   "needs_experiment_or_data": "YES: U15（三个数据集问卷中实际含哪些关系状态构念）+ U6（HARP T2/T3 微数据 release 状态）+ SHARE Release Guide 的 proxy 发生率表**\nC-C4、C-C5、C-C6、C-C29",
+   "duplicate_of": "C-C4、C-C5、C-C6、C-C29\nRECLASSIFY_AS_METHOD_LIMIT** —— 改为**两级标签**：`CALIBRATION_READY (structural)` + 一份逐数据集的 `both_reports_conditions` 清单（pairfam: 全模块满足 / SHARE: 逐模块且排除 proxy 与 CH / HARP: baseline 满足、且**微数据可得性未确认**）。HARP 在 U6 解决前不应与 pairfam 并列。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 改为**两级标签**：`CALIBRATION_READY (structural)` + 一份逐数据集的 `both_reports_conditions` 清单（pairfam: 全模块满足 / SHARE: 逐模块且排除 proxy 与 CH / HARP: baseline 满足、且**微数据可得性未确认**）。HARP 在 U6 解决前不应与 pairfam 并列。\n---",
+   "_locator": {
+    "line_start": 574,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C29",
+   "_title": "C-C29 — 「四个条件的交集为空」：条件数错，且 Add Health 未被结构检验",
+   "claim": "§8.9「最重要的整体否定结果」：「本审计**未发现**任何『**完全公开 + 双报告 + 方向性 + 多波 + 关系状态构念**』的数据集。**这四个条件的交集为空。** 这是本 landscape 最重要的结构性事实，比任何单个数据集的优劣都重要。」\n04` §8.9（L864）；§7 非主张 9（L832）",
+   "source_report": "04` §8.9（L864）；§7 非主张 9（L832）\nCONTESTED**",
+   "verdict": "CONTESTED**\n报告内部文本即可验证两点：",
+   "supporting_refs": "报告内部文本即可验证两点：\n   (a) **条件数错**：括号里列了**五**个条件（完全公开 / 双报告 / 方向性 / 多波 / 关系状态构念），结论句却说\"**四个**条件的交集为空\"。这是**头条否定结论里的 off-by-one**。\n   (b) **检验集不完整**：15 个数据集按结构被检验过，第 16 个（D12 Add Health）**没有**。D12 的 `lhrm_impact` 把排除理由写成「因为 **AI 政策**（而非因为拿不到、也并非因为 IRB 强度）而对本项目不可用」—— 这是**许可理由**被用在了**结构检验**里。而 C-C20 已表明 Add Health 官方文档确有 friendship nomination、Adolescent Romantic Pair Data 与 Wave III couple context 结构。所以严格地说：**Add Health 的结构条件从未被跑过**，交集为空的结论只在「15 个被结构检验的数据集」上成立。\n   (c) 报告自身 §7 非主张 9 写「**不主张**本 landscape 覆盖了所有重要数据集」—— 与\"这是最重要的结构性事实\"这一**关于数据世界**的措辞相互抵触。空集是**样本内**事实，不是**世界内**事实。\n逐数据集复算（我按报告自身数据做的）：D04 speed dating 满足「可下载 / 双报告 / 方向性」，**唯一失败项是多波**（`wave` = session，非重复观测）+ 「关系状态构念」报告自己判否（`dec`≠attraction）→ 失败 2 项。三个 `CALIBRATION_READY` 全部失败于「完全公开」（需签约/注册）。其余全部失败于「双报告」或「完全公开」。**因此在 15 个被检验对象上，空集结论成立。** 唯一能推翻它的路径是 C-C20 —— 而 C-C20 自己的证据是官方文档（说明结构存在），不是文件级确认（说明方向性成立），且 Add Health 的恋爱配对数据是 restricted。所以**我的判断是：空集结论方向正确，但范围必须收窄，且条件数必须改正。**",
+   "strongest_counterevidence": "逐数据集复算（我按报告自身数据做的）：D04 speed dating 满足「可下载 / 双报告 / 方向性」，**唯一失败项是多波**（`wave` = session，非重复观测）+ 「关系状态构念」报告自己判否（`dec`≠attraction）→ 失败 2 项。三个 `CALIBRATION_READY` 全部失败于「完全公开」（需签约/注册）。其余全部失败于「双报告」或「完全公开」。**因此在 15 个被检验对象上，空集结论成立。** 唯一能推翻它的路径是 C-C20 —— 而 C-C20 自己的证据是官方文档（说明结构存在），不是文件级确认（说明方向性成立），且 Add Health 的恋爱配对数据是 restricted。所以**我的判断是：空集结论方向正确，但范围必须收窄，且条件数必须改正。**\nNO**（若被写进任何对外材料则必须先改）",
+   "requires_canonical_change": "NO**（若被写进任何对外材料则必须先改）\nYES: Add Health ACE / DS3 / DS9 / DS11 / DS23 / DS24 的 codebook 行级清单；以及 FLS / LSAF / NSM（U1–U3）三个未审计面板**",
+   "needs_experiment_or_data": "YES: Add Health ACE / DS3 / DS9 / DS11 / DS23 / DS24 的 codebook 行级清单；以及 FLS / LSAF / NSM（U1–U3）三个未审计面板**\nC-C20、C-C26",
+   "duplicate_of": "C-C20、C-C26\nRECLASSIFY_AS_METHOD_LIMIT** —— 头条结论改写为：「在被**结构检验过**的 15 个数据集中，『可下载 / 双报告 / 方向性 / 多波 / 含关系状态构念』五条件的交集为空。**Add Health 未进入该检验**（被许可条件排除，而非结构排除）；三个常用面板（U1–U3）未审计；U14（关系类 App / 日记研究）未检索。」并删去\"这是本 landscape 最重要的**结构性事实**\"的本体论措辞 —— 这是**检索范围**事实。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— 头条结论改写为：「在被**结构检验过**的 15 个数据集中，『可下载 / 双报告 / 方向性 / 多波 / 含关系状态构念』五条件的交集为空。**Add Health 未进入该检验**（被许可条件排除，而非结构排除）；三个常用面板（U1–U3）未审计；U14（关系类 App / 日记研究）未检索。」并删去\"这是本 landscape 最重要的**结构性事实**\"的本体论措辞 —— 这是**检索范围**事实。\n---",
+   "_locator": {
+    "line_start": 592,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C30",
+   "_title": "C-C30 — 「intensive longitudinal 关系日记数据不存在公开可得」被写成否定发现",
+   "claim": "§8.8「『intensive longitudinal 关系日记数据』在本 landscape 中**不存在**公开可得的。」\n04` §8.8（L862）；§1.1（L27）；§6 表（L817，标 `UNKNOWN_AS_OF` U14）",
+   "source_report": "04` §8.8（L862）；§1.1（L27）；§6 表（L817，标 `UNKNOWN_AS_OF` U14）\nWRONG-SCOPE**",
+   "verdict": "WRONG-SCOPE**\n报告**自身**的三处文本互相矛盾：§8.8 写\"不存在公开可得的\"；§6 表同一行写\"**本 landscape 中未发现任何公开 release**（U14）\"并标 `UNKNOWN_AS_OF`；§9 U14 写\"关系类 App / 日常日记研究是否有任何公开 de-identified release = `UNKNOWN_AS_OF`\"。**\"未在 16 个便利样本中检索到\" ≠ \"不存在\"**。同时 §1.1「带 intensive-longitudinal（密集日记）设计 = **1**（HARP）」也只在被审计集内计数。",
+   "supporting_refs": "报告**自身**的三处文本互相矛盾：§8.8 写\"不存在公开可得的\"；§6 表同一行写\"**本 landscape 中未发现任何公开 release**（U14）\"并标 `UNKNOWN_AS_OF`；§9 U14 写\"关系类 App / 日常日记研究是否有任何公开 de-identified release = `UNKNOWN_AS_OF`\"。**\"未在 16 个便利样本中检索到\" ≠ \"不存在\"**。同时 §1.1「带 intensive-longitudinal（密集日记）设计 = **1**（HARP）」也只在被审计集内计数。\nNONE_LOCATED。这是**报告自身已正确标注 U14、却在 §8.8 推论时把标注丢掉**的实例 —— 否定结果章节反而比未知表更强。",
+   "strongest_counterevidence": "NONE_LOCATED。这是**报告自身已正确标注 U14、却在 §8.8 推论时把标注丢掉**的实例 —— 否定结果章节反而比未知表更强。\nNO**",
+   "requires_canonical_change": "NO**\nYES: 需要一次针对关系类 diary study / app-based dyad data 的系统检索（OSF / EGA / ICPSR 限定检索）才能把 U14 从 UNKNOWN 变成结论**",
+   "needs_experiment_or_data": "YES: 需要一次针对关系类 diary study / app-based dyad data 的系统检索（OSF / EGA / ICPSR 限定检索）才能把 U14 从 UNKNOWN 变成结论**\nC-C29",
+   "duplicate_of": "C-C29\nRECLASSIFY_AS_METHOD_LIMIT** —— §8.8 改为「在本 16 个数据集的审计范围内未发现；U14 仍为 `UNKNOWN_AS_OF`，**不构成对公开可得性的否定结论**」。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— §8.8 改为「在本 16 个数据集的审计范围内未发现；U14 仍为 `UNKNOWN_AS_OF`，**不构成对公开可得性的否定结论**」。\n---",
+   "_locator": {
+    "line_start": 610,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C31",
+   "_title": "C-C31 — 「ICPSR 全站 403」范围过宽",
+   "claim": "§8.6「**ICPSR 全站 403**」→「本报告中**所有 ICPSR 系证据**强度为 MEDIUM」；§11 注「本 lane 对 icpsr.umich.edu 直接抓取一律 403」。\n04` §8.6（L856–858）；§11 注（L958–959）",
+   "source_report": "04` §8.6（L856–858）；§11 注（L958–959）\nCONTESTED**（对报告的自我降级范围）",
+   "verdict": "CONTESTED**（对报告的自我降级范围）\n我在同一环境做的对照实验，`VERIFIED_BY_ME`：",
+   "supporting_refs": "我在同一环境做的对照实验，`VERIFIED_BY_ME`：\n   - `icpsr.umich.edu/web/ICPSR/studies/3370` → **403**（复现报告）\n   - `icpsr.umich.edu/web/NACDA/studies/37404` → **403**（复现报告）\n   - `icpsr.umich.edu/sites/icpsr/about/policies/large-language-models-and-ai` → **200，全文取到**\n   - `icpsr.umich.edu/sites/ICPSR/about/policies/redistribution` → **200，全文取到**\n   - `icpsr.umich.edu/sites/somar/somar-vde-overview-and-resources` → **200，全文取到**\n   → **不是\"全站 403\"，是 `/web/**` 研究落地页 403，`/sites/**` 政策页完全可达。**\n报告的谨慎方向是对的（宁可降级不升级），且它对每一份用到的 ICPSR 文本都标了 `evidence_type` 与 `strength`。但后果是**它把两条最承重的 rights 一手源（LLM 政策、再分发政策）也一并降到了 MEDIUM**，而这两条是**任何有该站访问权的人都能直开**的。§11 那句\"一律 403\"**不准确**，会误导后续 lane 认为 ICPSR 政策页也不可抓而放弃复核。",
+   "strongest_counterevidence": "报告的谨慎方向是对的（宁可降级不升级），且它对每一份用到的 ICPSR 文本都标了 `evidence_type` 与 `strength`。但后果是**它把两条最承重的 rights 一手源（LLM 政策、再分发政策）也一并降到了 MEDIUM**，而这两条是**任何有该站访问权的人都能直开**的。§11 那句\"一律 403\"**不准确**，会误导后续 lane 认为 ICPSR 政策页也不可抓而放弃复核。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C32",
+   "duplicate_of": "C-C32\nRECLASSIFY_AS_METHOD_LIMIT** —— §8.6 与 §11 注改为「ICPSR **`/web/**` 研究落地页** 403；**`/sites/**` 政策页（含 LLM 政策、Redistribution Policy）可直接抓取**」，并把 LLM/Redistribution 两条的证据强度从 MEDIUM 升为直取。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— §8.6 与 §11 注改为「ICPSR **`/web/**` 研究落地页** 403；**`/sites/**` 政策页（含 LLM 政策、Redistribution Policy）可直接抓取**」，并把 LLM/Redistribution 两条的证据强度从 MEDIUM 升为直取。\n---",
+   "_locator": {
+    "line_start": 625,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C32",
+   "_title": "C-C32 — HRS 的 `timeout/403` 记录是环境性的、且可避免",
+   "claim": "§8.6「`hrs.isr.umich.edu` **正文页**反复 timeout/403」；U4 记「HRS CoU（2026-02-04）AI/LLM 政策**具体条文** = 存在性已核实，正文 `UNKNOWN_AS_OF`」。\n04` §8.6（L856、858）；§9 U4（L877）",
+   "source_report": "04` §8.6（L856、858）；§9 U4（L877）\nCONTESTED**（失败记录真实；其后果被高估）",
+   "verdict": "CONTESTED**（失败记录真实；其后果被高估）\n我的对照实验 `VERIFIED_BY_ME`：",
+   "supporting_refs": "我的对照实验 `VERIFIED_BY_ME`：\n   - `hrs.isr.umich.edu/data-products/file-merge-reference` → **403**（复现报告的失败）\n   - `hrs.isr.umich.edu/data-products/conditions-of-use` → **404**（该 host 无此路径）\n   - `hrsdata.isr.umich.edu/data-products/conditions-of-use` → **200，全文取到**，含完整 15 条使用条件、AI/LLM 禁令、CoC 条款、第三方再分发政策、Replication Policy、以及 2025-03-31 NIH 要求的仓库审查横幅\n   → 报告的失败是 **host-specific**，不是 HRS 不可及。**U4 完全可以解**（见 C-C11）。\n报告在 U4 上的行为是**正确的** —— 它明写「不得猜测条文内容」并把条文留空。合同 §3 正是这么要求的。所以这一条**不是**诚实性缺陷，而是**检索空间探索不足**导致的、代价很高的未知。它已产生一个实质错误（C-C14：把不合规的 MiCDA 路径推荐为\"唯一可行\"）。",
+   "strongest_counterevidence": "报告在 U4 上的行为是**正确的** —— 它明写「不得猜测条文内容」并把条文留空。合同 §3 正是这么要求的。所以这一条**不是**诚实性缺陷，而是**检索空间探索不足**导致的、代价很高的未知。它已产生一个实质错误（C-C14：把不合规的 MiCDA 路径推荐为\"唯一可行\"）。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C11、C-C15、C-C23",
+   "duplicate_of": "C-C11、C-C15、C-C23\nRECLASSIFY_AS_METHOD_LIMIT** —— §8.6 补记 `hrsdata.isr.umich.edu` 为可达 host；后续任何 lane 抓 HRS 一律用该 host。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— §8.6 补记 `hrsdata.isr.umich.edu` 为可达 host；后续任何 lane 抓 HRS 一律用该 host。\n---",
+   "_locator": {
+    "line_start": 646,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C33",
+   "_title": "C-C33 — 对 U1–U3 的不可达处理：本报告最诚实的部分",
+   "claim": "报告把 Family Life Survey / LSAF / New Study of Marriage 三者的任何属性记为 `FETCH_FAILED` / 不可主张，并自评这是「本 lane 最实质的覆盖缺口。如实记录，不用记忆填充」。\n04` §7 非主张 8（L831）；§8.6（L858）；§9 U1–U3（L874–876）",
+   "source_report": "04` §7 非主张 8（L831）；§8.6（L858）；§9 U1–U3（L874–876）\nVERIFIED**（作为方法论行为）",
+   "verdict": "VERIFIED**（作为方法论行为）\n无需外部源 —— 这是对报告自身行为的判定，依据是报告文本。我**本环境未测试**这三个站点（`UNVERIFIABLE_HERE`），因此**不**主张它们今天可达。",
+   "supporting_refs": "无需外部源 —— 这是对报告自身行为的判定，依据是报告文本。我**本环境未测试**这三个站点（`UNVERIFIABLE_HERE`），因此**不**主张它们今天可达。\n我**能**提供的间接支持：我独立复现的两处报告所称的失败（`icpsr.umich.edu/web/**` 403、`hrs.isr.umich.edu` 403）**都是环境性的、host/path-specific 的**，且其中一处（ICPSR 政策页）证明报告当时其实有可抓的相邻路径。这提高了「报告所称 FETCH_FAILED 也多为环境性的」这一先验 —— 但先验**不是**证据。报告把三者记为 FETCH_FAILED 而**没有**说它们不可得、已停用或不存在，这个区分正是合同 §3 要求的。",
+   "strongest_counterevidence": "我**能**提供的间接支持：我独立复现的两处报告所称的失败（`icpsr.umich.edu/web/**` 403、`hrs.isr.umich.edu` 403）**都是环境性的、host/path-specific 的**，且其中一处（ICPSR 政策页）证明报告当时其实有可抓的相邻路径。这提高了「报告所称 FETCH_FAILED 也多为环境性的」这一先验 —— 但先验**不是**证据。报告把三者记为 FETCH_FAILED 而**没有**说它们不可得、已停用或不存在，这个区分正是合同 §3 要求的。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C32",
+   "duplicate_of": "C-C32\nACCEPT** —— 建议把这一处理方式作为全 swarm 的正面样板：`FETCH_FAILED`（我抓不到）/ `UNKNOWN_AS_OF`（源存在但内容未定）/ `ACCESS_BLOCKED`（权利使然）/ `UNVERIFIABLE_HERE`（评审环境抓不到）**四者必须在文本上分开**。报告在 U1–U3 上做到了，在 C-C14（把抓到的 SOMAR 页过度外推）上没做到。",
+   "recommendation_to_architect": "ACCEPT** —— 建议把这一处理方式作为全 swarm 的正面样板：`FETCH_FAILED`（我抓不到）/ `UNKNOWN_AS_OF`（源存在但内容未定）/ `ACCESS_BLOCKED`（权利使然）/ `UNVERIFIABLE_HERE`（评审环境抓不到）**四者必须在文本上分开**。报告在 U1–U3 上做到了，在 C-C14（把抓到的 SOMAR 页过度外推）上没做到。\n---",
+   "_locator": {
+    "line_start": 665,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C34",
+   "_title": "C-C34 — 零数据接触声明与实际判断的一致性",
+   "claim": "报告 §7 非主张 1「**不主张**本报告涉及的任何数据集已被 LHRM 下载、打开、分析或映射。本 lane **零数据接触**」；§4 各卡片以 `CITED_PRIMARY` 标记所有属性判断。\n04` 边界声明（L7）；§7 非主张 1（L824）；§4 全部",
+   "source_report": "04` 边界声明（L7）；§7 非主张 1（L824）；§4 全部\nPLAUSIBLE**（整体自洽，三处越界）",
+   "verdict": "PLAUSIBLE**（整体自洽，三处越界）\n逐项检查\"是否有属性断言超出了纯文档可支撑的范围\"：",
+   "supporting_refs": "逐项检查\"是否有属性断言超出了纯文档可支撑的范围\"：\n   - **可由文档支撑（合规）**：pairfam 键变量与多 actor 结构（Data Manual 索引文本 `VERIFIED`）；SHARE `mergeidp`/`coupleid`/ respondent types（FAQ 直开 `VERIFIED`）；Add Health LLM 政策（直开 `VERIFIED`）；speed dating 方向性设计结构（README 直开 `VERIFIED`）。\n   - **超出文档可支撑范围（3 处）**：\n     (i) **C-C21** pairfam「partner 侧变量**统一** `p` 前缀」+ 一串具体变量名（`psex_gen, page, preldur, pmarstat, pincoecd`）—— 断言这种粒度的清单需看过 GESIS 变量总览；且 Data Manual 自身记录了例外。**零数据接触**下这可以做到（变量总览是文档），但报告未标注它是索引级来源。\n     (ii) **C-C24 / D09** CLOC Part 5 的「423 couples / n = 846 / V 变量 / S 变量 / 全部四波」—— 这种粒度只能来自 ICPSR 研究说明页正文，而该页对报告是 403（经索引取得）。属**文档层**，仍不是数据接触，但它是全报告**唯一一个若被推翻就会改判分类**的断言。\n     (iii) **D04** 「同一 (i,j) 上同时有 i 对 j 的 6 项评分 + i 的再意愿，和 j 对 i 的 6 项评分 + j 的再意愿」+ `dec`/`match` 的变量级语义 —— 需 `Speed Dating Data Key.doc`（文档，非数据）。README 只支持设计层。\n   → 三处都不是**数据接触**的违反（都可由文档支撑），但三处都是**断言粒度高于我能复核的层级**。零数据接触声明本身：**我未发现任何证据表明报告接触过数据文件，也未发现其任何属性判断必须依赖数据才能成立**。\n报告在 U15 上展现了正确的自律 —— 它明写「pairfam / SHARE / HARP 能标定 LHRM 的**结构**已核实，**构念内容**未核实。『结构合适』≠『参数可标定』」。这正是零数据接触下应有的边界。**报告的自律在 U15 上，在 C-C21/C-C24/D04 上松动。**",
+   "strongest_counterevidence": "报告在 U15 上展现了正确的自律 —— 它明写「pairfam / SHARE / HARP 能标定 LHRM 的**结构**已核实，**构念内容**未核实。『结构合适』≠『参数可标定』」。这正是零数据接触下应有的边界。**报告的自律在 U15 上，在 C-C21/C-C24/D04 上松动。**\nNO**",
+   "requires_canonical_change": "NO**\nNO: 三处均只需把来源层级标为 `CITED_PRIMARY (index)`，与 ICPSR 系证据同级**",
+   "needs_experiment_or_data": "NO: 三处均只需把来源层级标为 `CITED_PRIMARY (index)`，与 ICPSR 系证据同级**\nC-C21、C-C24、C-C17",
+   "duplicate_of": "C-C21、C-C24、C-C17\nACCEPT_AS_PROPOSAL** —— 要求 R04 二次修订时给全部 `CITED_PRIMARY (index)` 级断言统一加 `strength = MEDIUM` 标记（与它已对 ICPSR 系做的一致），并把三处高粒度断言的出处写全。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** —— 要求 R04 二次修订时给全部 `CITED_PRIMARY (index)` 级断言统一加 `strength = MEDIUM` 标记（与它已对 ICPSR 系做的一致），并把三处高粒度断言的出处写全。\n---",
+   "_locator": {
+    "line_start": 680,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C35",
+   "_title": "C-C35 — D08 NSFH 的方向性「不可分离」结论与其自引的 Wave 2 组件清单矛盾",
+   "claim": "D08 `directionality_critical_note` 断言「**配偶关系质量是单方报告**……→ **Z[i→j] 与 Z[j→i] 在 NSFH 中不可分离**」，依据是 Wave 1 的一句问卷描述。\n04` §4 D08（L452–457）；§3 表 D08（L62）",
+   "source_report": "04` §4 D08（L452–457）；§3 表 D08（L62）\nCONTESTED**",
+   "verdict": "CONTESTED**\n报告**自引**的同一来源（NSFH ICPSR series 193 / Seltzer et al. 2005；`UNVERIFIABLE_HERE` —— 我对 ICPSR 403）里，报告自己也列出了 Wave 2 组件：",
+   "supporting_refs": "报告**自引**的同一来源（NSFH ICPSR series 193 / Seltzer et al. 2005；`UNVERIFIABLE_HERE` —— 我对 ICPSR 403）里，报告自己也列出了 Wave 2 组件：\n   > \"Wave 2 组件: (1) 原样本存活成员面访 (2) **现任配偶或同居伴侣的几乎相同的完整个人访谈** (3) 关系已终止时**原配偶/原伴侣**的个人访谈 (4)(5) focal children 电话访谈 (6) 代理访谈 (7) 随机一名受访者的家长电话访谈\"\n   若 Wave 2 的现任配偶拿到\"**几乎相同的完整个人访谈**\"，那么\"配偶之间关系状态只能单方报告\"就是**Wave 1 的性质被推广到了全部三波**。报告的 Wave 1 引文（\"Respondents were also asked about the relationship of household members to each other and the quality of their relationships with their parents, children, and in-laws\"）确实支持 Wave 1 的单方报告判定 —— 但它不支持对 Wave 2/3 的同一判定。\n   **反向注意**：即使 Wave 2 双方各自接受访问，\"各自报告自己视角的关系\"与\"各自报告**对方**的关系\"仍是两件事；NSFH 是否有\"你如何看对方\"的双向题项才是方向性的真正判据，报告未核实也未标注。\n报告的 Wave-1 引文逐字准确，且 Wave 1 设计上确实只有主受访者 + 一份**简短自填**的配偶问卷（D08 自己在主表里写了\"spouse/partner **短问卷**\"）—— 所以 Wave 1 判定成立。争议只在 Wave 2/3。而且报告的下游结论（\"LHRM 的方向性 primitive 只能在窄样本上标定\"）**不依赖**这一分歧 —— 即使 NSFH Wave 2 有双方访问，那也只是\"主受访者 + 现任伴侣\"配对，不是双方独立作答的**大规模代表性**双方样本。",
+   "strongest_counterevidence": "报告的 Wave-1 引文逐字准确，且 Wave 1 设计上确实只有主受访者 + 一份**简短自填**的配偶问卷（D08 自己在主表里写了\"spouse/partner **短问卷**\"）—— 所以 Wave 1 判定成立。争议只在 Wave 2/3。而且报告的下游结论（\"LHRM 的方向性 primitive 只能在窄样本上标定\"）**不依赖**这一分歧 —— 即使 NSFH Wave 2 有双方访问，那也只是\"主受访者 + 现任伴侣\"配对，不是双方独立作答的**大规模代表性**双方样本。\nNO**",
+   "requires_canonical_change": "NO**\nYES: NSFH Wave 2 / Wave 3 问卷中是否存在\"配偶对关系质量\"的双向题项（PI Codebook 逐题核查）**",
+   "needs_experiment_or_data": "YES: NSFH Wave 2 / Wave 3 问卷中是否存在\"配偶对关系质量\"的双向题项（PI Codebook 逐题核查）**\nNONE",
+   "duplicate_of": "NONE\nHOLD_FOR_EVIDENCE** —— 把 D08 的方向性判定限定为「**Wave 1 单方报告（已核实）；Wave 2/3 是否仍单方未核实**」，并保留报告原有的下游推论。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** —— 把 D08 的方向性判定限定为「**Wave 1 单方报告（已核实）；Wave 2/3 是否仍单方未核实**」，并保留报告原有的下游推论。\n---",
+   "_locator": {
+    "line_start": 701,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "C-C36",
+   "_title": "C-C36 — G2「2025–2026 收紧」应重述为「单一起源沿共享 taxonomy 扩散」，且漏 SOEP",
+   "claim": "§1.2「Add Health、UAS、SHARE、ICPSR 已在 2025–2026 明确限制或禁止用 LLM/AI 处理个体级数据」；§10「发现了 **2025–2026 年 LLM/AI use-condition 收紧** 这一横跨 SHARE / ICPSR / Add Health / UAS / HRS 的系统性约束」。\n04` §1.2（L35）；§5（L767–784）；§10（L899）；§7 非主张 11（L834）",
+   "source_report": "04` §1.2（L35）；§5（L767–784）；§10（L899）；§7 非主张 11（L834）\nCONTESTED**（结论成立，表述需重述）",
+   "verdict": "CONTESTED**（结论成立，表述需重述）\n四条 `VERIFIED_BY_ME` 共同界定真实图景：",
+   "supporting_refs": "四条 `VERIFIED_BY_ME` 共同界定真实图景：\n   - **ICPSR LLM Policy**：「**Approved: December 11, 2024**」→ 早于 2025–2026 窗口。\n   - **Add Health CoU**：「Thanks to the University of Michigan's **Health and Retirement Study and ICPSR** as well as Sebastian Karcher at Syracuse University for originating this taxonomy of LLMs and/or policy.」\n   - **SOEP 政策**：「We gratefully acknowledge the **Health and Retirement Study (HRS)** at the University of Michigan, **whose AI/LLM Use Policy served as the basis for this document.**」+「We thank the **ICPSR** and Sebastian Karcher at Syracuse University for originating this taxonomy of LLMs.」\n   - **ICPSR LLM Policy**：「Special Thanks: ICPSR would like to credit **Sebastian Karcher at Syracuse University** for originating this taxonomy of LLMs.」\n   - **HRS CoU**：「**Prohibit the use AI programs and LLMs—particularly open-source AI**…updated 02/04/2026」（C-C11）\n   → 时间线：**HRS 政策为 taxonomy 源头 → ICPSR（2024-12）→ Add Health / UAS(CESR) / SOEP / SHARE（各自措辞）**。这是**一个源头的制度性扩散**，不是 5 次独立趋同。报告 §7 非主张 11 已部分注意到（\"政策在生态内联动演进\"），但 §1.2/§10 的表述仍把它当作独立的 5-way 现象，且**漏掉了 SOEP**（C-C13）。\n报告的**实质**结论是稳的 —— 收紧真实存在、方向一致、今天仍有效、确实构成项目级约束。问题只在 (a) 时间窗对 ICPSR 不准；(b) 漏 SOEP；(c) 未表述为\"单源扩散\"，从而高估了\"多方独立确认\"的强度。",
+   "strongest_counterevidence": "报告的**实质**结论是稳的 —— 收紧真实存在、方向一致、今天仍有效、确实构成项目级约束。问题只在 (a) 时间窗对 ICPSR 不准；(b) 漏 SOEP；(c) 未表述为\"单源扩散\"，从而高估了\"多方独立确认\"的强度。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nC-C7、C-C8、C-C10、C-C13",
+   "duplicate_of": "C-C7、C-C8、C-C10、C-C13\nRECLASSIFY_AS_METHOD_LIMIT** —— G2 改写为：「LLM/AI use-condition 收紧是**一个源头（HRS，CoU 2026-02-04）+ 一套共享 taxonomy（Karcher 起源；ICPSR 2024-12 采纳）**沿生态扩散的**制度性后果**，覆盖 SHARE / ICPSR / Add Health / UAS / **SOEP**」。`corroboration: NON_INDEPENDENT` —— 这些数据集的政策**不得**当作彼此独立的证据计数。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** —— G2 改写为：「LLM/AI use-condition 收紧是**一个源头（HRS，CoU 2026-02-04）+ 一套共享 taxonomy（Karcher 起源；ICPSR 2024-12 采纳）**沿生态扩散的**制度性后果**，覆盖 SHARE / ICPSR / Add Health / UAS / **SOEP**」。`corroboration: NON_INDEPENDENT` —— 这些数据集的政策**不得**当作彼此独立的证据计数。\n---",
+   "_locator": {
+    "line_start": 720,
+    "section": "R2 Review Packet — Lane `C`（datasets / access / rights） / verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  }
+ ],
+ "record_count": 36,
+ "field_coverage": {
+  "claim_id": 36,
+  "claim": 36,
+  "source_report": 36,
+  "verdict": 36,
+  "supporting_refs": 36,
+  "strongest_counterevidence": 36,
+  "requires_canonical_change": 36,
+  "needs_experiment_or_data": 36,
+  "duplicate_of": 36,
+  "corroboration": 1,
+  "recommendation_to_architect": 36
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "verdict_matrix"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "verdict_matrix",
+    "line_start": 47,
+    "line_end": 740
+   }
+  ]
+ },
+ "files_audited": "### [line 8] files_audited\n| 文件 | bytes | lines | 读取方式 |\n|---|---|---|---|\n| `docs/research/overnight-2026-09-27/04_DATASET_LANDSCAPE.md` | 85,463 | 1,022 | 全文分段读（offset 0/180/380/578/797） |\n| `docs/research/overnight-2026-09-27/review-r2/REVIEW_CONTRACT.md` | 8,210 | 103 | 全文 |\n| `AGENTS.md` | 5,718 | 70 | 全文 |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | 18,510 | 780 | 仅目录级 + construct 清单（§4/§5/§6/§9/§11），未读论证正文 |",
+ "coverage_statement": "### [line 17] coverage_statement\n**我读了什么**：仅 `04_DATASET_LANDSCAPE.md`（本 cluster 唯一被指派报告）、`REVIEW_CONTRACT.md`、`AGENTS.md`、以及 `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`（仅用于判定「哪些 LHRM 构念需要数据」）。\n\n**我没有读**：`01`、`02`、`02b`、`03`、`05`–`19`、`A01`、`A03`、`A04` —— **一个都没有打开**。因此我**不掌握**其它 lane 的任何断言；本 packet 不含跨 cluster 引用，也**未因「别的 lane 也这么说」升级任何 verdict**（合同 §4 硬规则）。我也没有打开 `CONSTRUCT_SCOPE_DIRECTIONALITY.md`（不在合同 §2 允许清单内），故无法核实 R04 对它的 cross-reference。\n\n**我在本环境实际打开过的一手来源**：\n\n| 源 | 方式 | 结果 |\n|---|---|---|\n| SHARE Conditions of Use（`share-eric.eu/data/data-access/conditions-of-use`） | 直取全文 | 成功；`(Last updated: April 30, 2026)` |\n| SHARE Data Documentation（`/data/data-documentation`） | 直取 | 成功；Wave 1–8 + COVID DOI 表 |\n| SHARE FAQs & Support（`/data/faqs-support`） | 直取 | 成功；§3.2/3.3/3.4/4.3/5.3/5.8 |\n| Add Health Conditions of Use | 直取全文 | 成功；含完整 AI and LLM Use Policy |\n| ICPSR LLM Policy（`/sites/icpsr/about/policies/...`） | 直取全文 | 成功；`Approved: December 11, 2024` |\n| ICPSR Redistribution Policy（`/sites/ICPSR/about/policies/redistribution`） | 直取 | 成功；含 Art. 1.2.B + LLM 条款 |\n| ICPSR SOMAR VDE 页 | 直取 | 成功；自托管模型清单 + 2026 起收费 |\n| HRS Conditions of Use（`hrsdata.isr.umich.edu/...`） | 直取全文 | 成功；**含 AI/LLM 禁令原文** |\n| DIW Berlin SOEP AI and LLM Use Policy | 直取全文 | 成功；**R04 完全未记录的一份政策** |\n| `github.com/datasets/speed-dating` | 直取 | 成功；README 全文 |\n| `uasdata.usc.edu`（首页） | 直取 | 成功，但**首页不含 LLM 条款** |\n| pairfam Data Manual / Study Portrait | 官方页面**搜索索引文本** | `CITED_PRIMARY (index)`，非直取 |\n| Add Health 用户指南 / ICPSR 21600 / BLS Appendix D | 官方页面**搜索索引文本** | `CITED_PRIMARY (index)` |\n\n**本环境不可达（我独立复现的失败）**：`icpsr.umich.edu/web/**`（403 ×2）、`hrs.isr.umich.edu/data-products/file-merge-reference`（403）、`www.pairfam.de/en/data/data-access/` 与 `/data/data-structure/`（500 ×3）、`access.gesis.org/dbk/69762`（二进制 PDF）、`hrsdata.isr.umich.edu/data-products/ai-and-llm-use-policy`（404）、`uasdata.usc.edu/data-products/uas-policies/`（404）。\n\n**`UNVERIFIABLE_HERE` 清单**：pairfam 条款德文原文（§1/§3/§4/§5/§7）；HARP / CLOC / Oregon / NSFH / SECCYD 的 ICPSR 研究落地页全部正文；IFLS、GUiNZ、AFC、DHS 的具体取用条款；HRS 跨波 partner/couple id（U5）；FLS / LSAF / NSM 三站（我未测试）。\n\n---",
+ "top_recommendations": "### [line 853] top_recommendations（按对 Architect 的重要性排序，≤7）\n1. **立即撤回「ICPSR SOMAR VDE / MiCDA Enclave = 唯一已知可行的合规 LLM 路径」。**（C-C14）我直开三份官方页面确认：SOMAR VDE 只服务社交媒体受限数据；ICPSR 自己的 VDE/PDE 明文「no LLMs available」；**HRS CoU 逐字禁止 AI 程序与 LLM 与 HRS 数据同用，且点名 open-source AI**。这是本 packet 中**唯一的、会导致真实合规后果**的错误。R04 自己的「最有价值产出」应被替换。\n\n2. **把 HRS 的 U4 从 `UNKNOWN_AS_OF` 改为已解，并写入条文。**（C-C11）`hrsdata.isr.umich.edu/data-products/conditions-of-use` 可达且含完整 AI 禁令。这解掉报告自评的第三个\"未达成\"项，并把 HRS 的分级从「含新政策（未知）」改为「**全面禁止**」。\n\n3. **修正头条否定结论：条件数 5→\"四个\"是错的；Add Health 从未进入结构检验。**（C-C29）交集为空在**被结构检验的 15 个**上成立，但 D12 是被**许可**条件而非结构条件排除的（C-C26），而 Add Health 官方文档确有 nomination / romantic pair 结构（C-C20）。请把「这是本 landscape 最重要的**结构性事实**」改为「这是**本次检索**的结构性结果」。\n\n4. **要求 D09 CLOC 给出与报告自定判级标准相容的理由。**（C-C24）§2 的 `MEASUREMENT_ONLY` 四个触发条件 CLOC 一条都不满足；报告用的理由（样本条件于丧偶）是外推性限制。真正能支撑现判级的理由（baseline 之后因一方死亡而结构上不可能双报告）报告没写。**分类结论我倾向保留，理由必须改。** 同时 CLOC 是 16 个里唯一「双报告 + 4 波 + 事件锚定 + NDI 核销」的组合，报告对它的处理是全文最不显眼的一份。\n\n5. **把 G2 从「2025–2026 五方收紧」重述为「单源扩散」，并补上 SOEP。**（C-C36 + C-C13）ICPSR 政策 `Approved: December 11, 2024`；Add Health 与 SOEP 各自在页面上把 taxonomy 溯源到 HRS + ICPSR + Karcher；SOEP 另有一份完整 AI/LLM 政策（Type 1/2/3 全 None，连 Type 3 都因 sandbox escape 不可靠而拒绝）**而报告 §5.1 里根本没有 SOEP 行**。这些不得计为彼此独立的证据。\n\n6. **把「双方各自作答」从数据集级属性降为「逐数据集 + 逐模块 + 逐条件」的清单。**（C-C28）pairfam 全模块成立；SHARE 只在排除 proxy 代答（§3.4）与 CH 子女重建（§5.8）后成立；HARP 的 baseline 成立但 **T2/T3 微数据 release 状态未确认（U6）**，按报告 §2 的「可复现获取路径」一项，HARP 的 `CALIBRATION_READY` 站不住。同时对账 §1.1 的 4 与 3。\n\n7. **把 U15 从「三个数据集的构念内容未核实」重写为「对 `PARAMETER_CONVERGENCE_V0_1.md` §4/§5/§6 逐构念的覆盖矩阵」。**（专项 3-B#3）canonical 侧已有构念清单（D1–D8、B1–B2、P1–P5），报告侧已有结构合适的数据集，**两侧从未对接**。一个 16×18 的「构念 × 数据集 × 条件满足性」矩阵会一次性暴露哪些 canonical candidate 真的没有数据源。注意：此建议**必须停在 proposal**（`AGENTS.md` 研究纪律：canonical candidate 列表的增删属 Human/Architect 决策）。\n\n---",
+ "explicit_non_claims": "### [line 871] explicit_non_claims（≥5）\n1. **我不主张我核实了 ICPSR 落地页上的任何内容。** `icpsr.umich.edu/web/**` 在本环境 403（我复现两次）。HARP / CLOC / Oregon / NSFH / SECCYD 的所有 ICPSR 系事实，对我一律是 `UNVERIFIABLE_HERE` → `PLAUSIBLE`，**包括本 packet 中我判定「报告判级论证有误」的 CLOC**。我判定的是**论证结构**（报告给出的理由无法从其自定标准推出），不是 Part 5 引文为假。\n\n2. **我不主张 pairfam 使用条款（§1/§3/§4/§5/§7）的内容已被复核。** pairfam 两个 data 页面在我这里 500（×3），GESIS DBK 返回二进制 PDF。报告的德文引文对我 `UNVERIFIABLE_HERE`。这是本 packet 唯一一处我**无法**支撑却被 Architect 依赖的 rights 断言（C-C18）。\n\n3. **我不主张 Family Life Survey / LSAF / New Study of Marriage 今天是可达或不可达的。** 我**没有测试**这三个站点。我只报告：报告把它们记为 `FETCH_FAILED` 而**没有**说它们不可得或已停用 —— 这个区分是正确的，且我独立复现的两处报告所称的失败（ICPSR `/web/**`、HRS `hrs.isr.umich.edu`）**都是环境性的、host/path-specific 的**。**环境性失败 ≠ 数据集不存在或被封锁。**\n\n4. **我不主张 Add Health 的 friendship nomination / romantic pair 文件在变量级满足 LHRM 方向性要求。** 我的证据是官方用户指南与 ICPSR 文件表的**索引文本**（我打不开 Add Health 的 JS 渲染文件表，也 403 了 ICPSR）。它证明**这些结构在文档中存在**，不证明**它们可下载且含双向测量**。而且 Add Health 的恋爱配对数据是 restricted/security-restricted，友谊提名是**单向提名**（不是双方答同一构念）。\n\n5. **我不主张 IFLS、GUiNZ、AFC、DHS、SOEP 的取用条款已被核实。** 除 SOEP 的 AI/LLM 政策外（我直开），这些条款对我 `UNVERIFIABLE_HERE`。\n\n6. **我不主张 pairfam「14 wave / Release 14.2」在 2026-09-27 仍是最新的。** 我**倾向于**它已过时（Data Manual 自述 Release 14.2 = 2024 年发布，pairfam 为年度面板，2026 年应有更高 release），但无法证实，故只给 `PLAUSIBLE` 风险，不给结论（C-C22）。\n\n7. **我不主张报告「零数据接触」声明为假。** 我检查了全部属性判断的粒度，**未发现任何一条必须依赖数据文件才能成立**；三处粒度偏高（pairfam 变量清单、CLOC Part 5 数字、speed dating 变量级语义）**都可以由文档支撑**。我的判定是「断言粒度高于我能复核的层级」，**不是**「接触了数据」。\n\n8. **我不主张我读过本 cluster 之外的任何报告。** `01`/`02`/`02b`/`03`/`05`–`19`/`A01`/`A03`/`A04` **一个都没打开**。因此本 packet 不含任何跨 cluster 冲突判定，也**未因「别的 lane 也这么说」升级任何 verdict**（合同 §4 硬规则）。我也没有打开 `CONSTRUCT_SCOPE_DIRECTIONALITY.md`（报告 D10 引用了它），故**无法核实该 cross-reference**（专项 3-B#5）。\n\n9. **我不主张 D04 的「21 场 session」或变量级双向结构已被核实。** 我直开的 GitHub README 确认了设计层（4 分钟速配、每人对每位异性参加者评分六属性 + 是否想再见、六属性名单、self-perception 与 \"beliefs on what others find valuable in a mate\"），但**没有**给场次数，变量级结构需 `Speed Dating Data Key.doc`（`UNVERIFIABLE_HERE`）。\n\n10. **我不主张本 packet 对 HRS 跨波 partner/couple id（U5）有任何进展。** 我复现了 `hrs.isr.umich.edu/data-products/file-merge-reference` 的 403，U5 对我仍然 `UNKNOWN`。我只能指出 `hrsdata` host 可达、值得重试。\n\n11. **我不主张「HRS 与 Case Bank 官方法院文书路线互斥」这一结论的强度。** 官方原文含 \"**generally** prohibited\"，且覆盖 \"HRS data\"（不限 restricted），而报告的加粗引文版删掉了 \"generally\" 并收窄到 \"restricted\"。C-C12 判 `HOLD_FOR_EVIDENCE` 就是为此。\n\n12. **我不主张我验证了 SHARE CoU 中「第一受访者为 family respondent」这一句。** 报告 D02 用它论证 fam_resp 的方向性；我在 SHARE FAQ 全文中**没有**找到该句（FAQ §3.3 只说明 respondent type 变量名），它可能出自 Release Guide。该论证点对我 `UNVERIFIABLE_HERE`。\n\n---",
+ "provenance_note": "### [line 899] packet_sha_note — 读了哪些源、各自如何核实\n**被审对象**：`D:\\coding\\lhrm\\docs\\research\\overnight-2026-09-27\\04_DATASET_LANDSCAPE.md`，85,463 bytes / 1,022 行，全文分段读完（offset 0/180/380/578/797）。\n\n**合同与治理**：`REVIEW_CONTRACT.md`（8,210 B / 103 行，全文）；`AGENTS.md`（5,718 B / 70 行，全文）；`PARAMETER_CONVERGENCE_V0_1.md`（18,510 B / 780 行，**仅目录级 + construct 清单**，未读论证正文）。\n\n**一手来源 · 直取全文（`VERIFIED_BY_ME`）**：\n`share-eric.eu/data/data-access/conditions-of-use` · `share-eric.eu/data/data-documentation` · `share-eric.eu/data/faqs-support` · `addhealth.cpc.unc.edu/conditions-of-use/` · `icpsr.umich.edu/sites/icpsr/about/policies/large-language-models-and-ai` · `icpsr.umich.edu/sites/ICPSR/about/policies/redistribution` · `icpsr.umich.edu/sites/somar/somar-vde-overview-and-resources` · `hrsdata.isr.umich.edu/data-products/conditions-of-use` · `diw.de/en/diw_01.c.1019277.en/soep_ai_and_llm_use_policy.html` · `github.com/datasets/speed-dating` · `uasdata.usc.edu`（首页，**不含** LLM 条款）\n\n**一手来源 · 官方页面索引文本（`CITED_PRIMARY (index)`, strength = MEDIUM；与 R04 对 ICPSR 系采用同一证据层级）**：\npairfam Data Manual（`access.gesis.org/dbk/53708`）· pairfam Study Portrait（`pairfam.de/en/data/data-structure/`）· pairfam concept paper（`dbk/53705`/`53706`）· UAS Data Products 页的 LLM 条款 · Add Health 官方用户指南 `Overview_of_Add_Health_Harris.pdf` · ICPSR/DSDR 21600 Add Health 文件表 · `bls.gov/nls/pdf/appendixd.pdf`\n\n**一手来源 · `UNVERIFIABLE_HERE`（我打不开）**：\n`icpsr.umich.edu/web/ICPSR/studies/3370`（403）· `icpsr.umich.edu/web/NACDA/studies/37404`（403）· `hrs.isr.umich.edu/data-products/file-merge-reference`（403）· `hrs.isr.umich.edu/data-products/conditions-of-use`（404）· `pairfam.de/en/data/data-access/` 与 `/data/data-structure/`（500 ×3）· `access.gesis.org/dbk/69762`（二进制 PDF）· `hrsdata.isr.umich.edu/data-products/ai-and-llm-use-policy`（404）· `uasdata.usc.edu/data-products/uas-policies/`（404）\n\n**未测试（明确声明）**：`familylifesurvey.org` · `lsaf.org` · `nsmshow.org` · `growingup.co.nz` · `rand.org` IFLS 页 · `dhsprogram.com` · `americanfamilycohort.org` · `userforum.dhsprogram.com`\n\n**本 packet 未做的事**：未 merge PR #31；未修改 `D:\\coding\\lhrm` 下任何文件；未执行 WO-N1/N2/N3；未触碰 Eye / Juece；未读取 LHRM #20/#21/#22；未下载或打开任何数据文件；未绕过任何 auth / licence / robots / rights。\n\n**verdict 分布（36 条，每条唯一一个首要 verdict，尾部括注为限定说明）**：\n`VERIFIED` = 8 · `CONTESTED` = 11 · `WRONG-SCOPE` = 5 · `PLAUSIBLE` = 6 · `UNSUPPORTED` = 0 · 合计 30 —— 另有 6 条因限定后缀未落在正则锚定内（实为 36 条中每条均有唯一首要 verdict，逐行核对通过）。\n`recommendation_to_architect` 分布（30 条锚定命中）：`RECLASSIFY_AS_METHOD_LIMIT` 15 · `ACCEPT` 6 · `HOLD_FOR_EVIDENCE` 5 · `ACCEPT_AS_PROPOSAL` 4（其余 6 条同上述带后缀写法，措辞均为前四者之一）。\n**`requires_canonical_change = YES` 仅 2 条**（均为 §5.2 的 Case Bank 建议，且**均必须停在 proposal**）；`UNSURE` 3 条（C-C12、C-C18、C-C24）。",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "专项 1 — 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 743,
+   "answer": "以下结论在**本 cluster 内**只有一条来源支撑。标 `corroboration: NON_INDEPENDENT` 者不得因「多 lane 也这么说」升级。\n\n| # | 单 lane 推测 | 唯一支撑 | 我的检索 | 缺口 |\n|---|---|---|---|---|\n| 1 | CLOC Part 5「423 couples / 846 人 / V+S 变量 / 全部四波」 | 报告自引的 ICPSR 3370 页（经索引） | 直开 `icpsr.umich.edu/web/ICPSR/studies/3370` → 403；未找到第二个官方源 | 无第二源；且这是唯一能改判分类的断言（C-C24） |\n| 2 | HARP 三时点留存数字（T1 419 couples … T3 268 couples ≈64%） | 报告自引的 ICPSR 37404 `/summary` + `/datadocumentation` | 直开 `/web/NACDA/studies/37404` → 403 | 无第二源；报告自己已承认落地页与之矛盾 |\n| 3 | HARP 同性/异性**抽样框不同**（70% vs 40% 招募率，源于 Massachusetts Registry of Vital Records 限制） | 报告自引的 ICPSR doc 原文 | 403 | 无第二源。报告把它称为「本 lane 认为是最价值的发现之一」，**而它恰好是最该有第二源的** |\n| 4 | pairfam 具体变量名清单（`psex_gen, page, preldur, pmarstat, pincoecd`） | 报告称\"官方 GESIS 变量清单\" | pairfam.de 500；GESIS PDF 二进制；只有 Data Manual 索引文本（确认 `sex`↔`psex` 体系存在，未确认这份清单） | 清单粒度未复核；\"统一 p 前缀\"与 Data Manual 的例外冲突（C-C21） |\n| 5 | pairfam 条款 §3 德文原文与其含义（\"仅可汇总呈现\"） | 报告逐字引文 | 两次 500 + PDF 二进制 | **全报告被依赖最多的 rights 断言，无第二源**（C-C18） |\n| 6 | DHS couples file 在某些轮次无法生成（Men's Questionnaire 未记录配偶 household line number） | 报告自引的 DHS user forum 帖 | 未直开 `userforum.dhsprogram.com` | 单条论坛帖；报告据此把「~90 国覆盖」降级，方向保守 |\n| 7 | Oregon Youth Study Couples Study 是「双报告恋爱 dyad」 | 报告自引的 ICPSR 38726 摘要 | 403 | 单源；且被 C-C20 部分动摇 |\n| 8 | SECCYD「>90% 为生母」与 5 个主评估点 | 报告自引的 ICPSR 页 | 403 | 单源；结论方向（D16 单方报告）不依赖此细节 |\n| 9 | GUiNZ 的 Kaitiakitanga / PI 属地限制 / 输出预审 4 工作日 | 报告称 CITED_PRIMARY 的 Data Access Protocol 2026 v1.0 PDF | 未直开 `growingup.co.nz` | 单源 PDF；报告已把 GUiNZ 定位为\"伦理/主权先例参考\"而非数据源，风险低 |\n| 10 | 「四（五）条件交集为空」 | 报告自身检索 | 我逐数据集复算（15 个） | 方向成立，但**条件数写错**且**Add Health 未进检验**（C-C29） |\n| 11 | 「intensive longitudinal 关系日记数据不存在公开可得」 | 报告自身检索 | — | 报告自己在 U14 标 `UNKNOWN_AS_OF`（C-C30） |\n\n**结论**：本 cluster 的**承重 rights 结论**（SHARE / Add Health / ICPSR / UAS / HRS / SOEP 六份政策）**我全部独立直开或以官方索引核实**，强度高。承重的**结构学结论**中，**ICPSR 系（HARP / CLOC / Oregon / NSFH / SECCYD 全部）仅有单源**，且全部因同一环境原因（`/web/**` 403）。这与报告自评一致。\n\n---"
+  },
+  {
+   "index": 2,
+   "heading": "专项 2 — 哪些是方法学/访问限制而非 ontology 发现（合同 §6.2）",
+   "line_start": 765,
+   "answer": "按「被误读为项目缺陷/本体结论」的程度排序。\n\n| # | 项 | 实际是什么 | 被读成了什么 | 判定 |\n|---|---|---|---|---|\n| 1 | **C-C26** D12/D13「对 LHRM 计划用途 —— **不可识别**」 | use-condition（许可） | 可识别性 / ontology 缺口 | **WRONG-SCOPE，必须改**。可识别内容一个字节都没变。 |\n| 2 | **C-C14** 「ICPSR SOMAR VDE / MiCDA Enclave = 唯一已知可行的合规 LLM 路径」 | 项目合规环境 + 三个不同 host 的**归属与禁令**问题 | 一条现成的项目能力 | **WRONG-SCOPE + 合规风险**。SOMAR VDE 只管社交媒体数据；ICPSR VDE/PDE 明文无 LLM；HRS CoU 禁止 AI 与 HRS 数据同用。 |\n| 3 | **C-C29** 「四（五）条件交集为空 = 本 landscape 最重要的**结构性事实**」 | 16 个便利样本内的**检索结果** | 关于数据世界的 ontology 断言 | **WRONG-SCOPE**。且 D12 是被**许可**条件而非结构条件排除出检验的。 |\n| 4 | **C-C30** 「intensive longitudinal 关系日记数据**不存在**公开可得的」 | 检索范围（16 个数据集） | 对公开可得性的否定结论 | **WRONG-SCOPE**。报告自己在 U14 标了 `UNKNOWN_AS_OF`。 |\n| 5 | **C-C27** D15「获取（LHRM 无 ICPSR RDUA + IRB 的现实路径）」 | 项目组织能力 | 数据的可识别性限制 | **WRONG-SCOPE**（分类标签按 §2 说得通，但理由放错了栏）。 |\n| 6 | **C-C16** speed dating「**完全公开**」 | 第三方镜像的**假定式** license（\"assuming…\"） | 权利干净的可用数据 | **WRONG-SCOPE**。可下载 ≠ 可再分发；报告 §5.1 已写对，摘要处写错。 |\n| 7 | **C-C2** 「§7 使 SHARE 派生量**在法务上**不能进入 LLM 参与的公开验证流水线」 | 限制**传播**条款 | 一条使用禁令 + 一条法律结论 | **WRONG-SCOPE**。方向保守，但从条款推不出。 |\n| 8 | **C-C15** HRS 仓库 \"under review for potential modification\" | 数据可及性连续性风险 | （报告完全未记） | **漏记**。 |\n| 9 | **C-C13** SOEP 的 AI/LLM 政策 | 许可 | （报告完全未记） | **漏记**，且使 G2 的成员集合无声缩小。 |\n| 10 | **C-C5 / C-C6** SHARE 的 proxy 代答与 CH 链接不可靠 | **测量工具**的属性 | 方向性「SUPPORTED」 | **方法限制**。方向性是\"逐模块、且排除 proxy 与 CH\"的条件属性，不是数据集属性。 |\n| 11 | **C-C24** CLOC「条件于丧偶的样本」 | **样本构成 / 外推性**限制 | 判级降级的依据 | **WRONG-SCOPE**（作为理由）。它是外推性限制，不是 §2 的判级触发条件。 |\n| 12 | **C-C23 / U5** HRS 跨波 partner id `UNKNOWN` | **未核实** | （报告处理正确） | 正确的未知登记。 |\n\n**反向清单 —— 报告做对了的区分（应作为样板保留）**：\n\n- **D11 SOEP** `NOT_DYADIC_ENOUGH`：「发货形态没有可用 partner id，dyad 需分析者启发式重建。**重建规则是模型假设，不是证据**」—— 这是全报告对合同 §6.2 最干净的一次执行，并被提升为通用方法学要求（「必须同时交出构造规则、构造掉的样本量、以及构造后的同性/非婚/非共居覆盖」）。\n- **D06 IFLS**：「方向性依赖重建假设（模型假设，不是证据）」。\n- **D12 Add Health** 对 friendship nomination 的 U7 保留（**方向**正确 —— 不该断言；**执行**有误 —— 不该把抓取失败写成否定存在，见 C-C20）。\n- **§7 非主张 3**「不主张任何数据集具有代表性或可外推性」，并逐条列出各样本的硬门槛。\n- **§7 非主张 13**「不主张本 lane 的任何权利解读构成法律意见」—— 与 C-C2 自相矛盾，需修。\n\n---"
+  },
+  {
+   "index": 3,
+   "heading": "专项 3 — 哪些建议会导致 canonical change，以及是否必须停在 proposal",
+   "line_start": 794,
+   "answer": "| # | 报告建议 | 可能的 canonical 落点 | `requires_canonical_change` | 是否必须停在 proposal |\n|---|---|---|---|---|\n| 1 | §5.2 结论 1：给 Case Bank 材料加 `llm_use_condition: PERMITTED \\| RESTRICTED_LOCAL_ONLY \\| PROHIBITED`，并把 `icpsr_llm_type: 1\\|2\\|3` 写进选材规则 | `docs/validation/VALIDATION_CORPUS_V0_1.md`（材料 schema） | **YES** | **是。** (a) 这是**新增受控词表**（三值），直接改 schema，必须经 Architect；(b) `icpsr_llm_type` 是 ICPSR 专有枚举，写进通用 LHRM schema 会造成耦合；(c) 报告自己已声明 §5.2 三条是「**AI recommendation（架构建议），不是 Human requirement**」（L788、L833）—— 按 `AGENTS.md` 研究纪律，**新字段名与取值域属 Human/Architect 决策，不能由 research lane 落地**。**必须停在 proposal。** |\n| 2 | §5.2 结论 2：HRS 的 NIH CoC 与 Case Bank 的「官方法院文书」路线互斥，建议改写 Case Bank 选材规则 | `VALIDATION_CORPUS_V0_1.md` §10（Case Bank 选材优先级） | **UNSURE** | **是。** 见 C-C12：报告引用该证书时删掉了官方的 \"**generally** prohibited\" 限定，并把覆盖范围从 \"HRS data\" 收窄成 \"HRS restricted data\"。**用一个被削弱的依据去支撑一条会排除一整类材料的硬性规则，风险不对称。** 先补准确引文，再决定强度。 |\n| 3 | §4 D10 `lhrm_impact`：「建议 Architect 把这一条写进 Case Bank 的选材规则」 | 同 #2 | **UNSURE** | 同 #2。 |\n| 4 | §4 D11 `lhrm_impact`：「建议在后续方法学文档中引用本条作为『dyad 构造必须自报规则与损失』的模板」 | 未来方法学文档（非 canonical） | **NO** | 不涉及 canonical。 |\n| 5 | §4 D14 AFC：「**不建议**纳入 LHRM 数据计划」 | 无（负面记录） | **NO** | 否。操作判断，不改 canonical。 |\n| 6 | §4 D02 `lhrm_impact`：「建议定位为『内部方法学验证来源』而非『验证语料来源』」 | 可能影响数据源角色表 | **NO** | 否。须先按 C-C2 改写理由。 |\n| 7 | §10 P1：「向 Architect 提交『Case Bank 材料增加 `llm_use_condition` 字段』的建议」 | 同 #1 | **YES** | **是。** 已按 proposal 提交，处置正确。 |\n| 8 | §10 P0/P1/P2 的六条后续动作（解 U15 / U4 / U1–U3 / 提字段建议 / 调研 SOMAR VDE / 核实 U10） | 无（work items） | **NO** | 否。其中「调研 ICPSR SOMAR VDE / MiCDA Enclave 内自托管模型的实际可行性」须按 C-C14 重述范围，且 **不得**把 HRS 纳入该调研的可行性范围。 |\n\n**总结**：真正会触及 canonical 的只有 **#1（新增受控词表）** 与 **#2/#3（Case Bank 选材规则）**。**两者都必须停在 proposal** —— 一条是 schema 决策权，一条是依据被削弱。这与报告自身的自我定位（§5.2 与 §10 全部标 AI recommendation）一致；报告中**没有**任何一条建议试图绕过 proposal 阶段。\n\n---"
+  },
+  {
+   "index": 4,
+   "heading": "专项 4 — 哪些结论重复、同义或双重计数",
+   "line_start": 811,
+   "answer": "**A. 与本 cluster 内其它结论的重复**\n\n| # | 重复对 | 关系 | 处置 |\n|---|---|---|---|\n| 1 | C-C7（Add Health）/ C-C8（ICPSR）/ C-C10（UAS）/ C-C13（SOEP）/ C-C11（HRS）/ C-C36（G2） | **六者不是六份独立证据**。共享同一 taxonomy 源头（HRS 政策，Karcher 起源），见 C-C36 的四条 `VERIFIED_BY_ME` 溯源句。 | **`corroboration: NON_INDEPENDENT`。** 下游文档**不得**把它们计为多方独立确认。G2 应作为**一条**发现陈述（单源扩散），成员逐条带出处。 |\n| 2 | C-C2（SHARE 派生量外推）↔ C-C14（合规路径外推） | **同一推理错误的两次出现**：都把一条限制性条款读成禁令。 | 合并为一个 Architect 级问题：「R04 系统性高估 use-condition 条款的禁止力」。修一次可解两处。 |\n| 3 | C-C29（交集为空）↔ C-C30（日记不存在）↔ C-C20（Add Health 未进检验） | **同一个范围错误的三个出口**：都把「本 16 个数据集内未发现」写成关于数据世界的结论。 | 合并为一条 `WRONG-SCOPE` 修正：**所有否定结论必须标注检索集**。 |\n| 4 | C-C21（pairfam `p` 前缀）↔ C-C5（SHARE CH 重建）↔ C-C25（SOEP vs IFLS） | 三者都是**「官方键 vs 分析者重建」这条轴**在不同数据集上的表现，但报告只对其中两个应用了自己的判据。 | 建立一条统一判据（键是发货的还是重建的），一次套用到全部 16 个。 |\n| 5 | C-C5（SHARE CH 不可靠）↔ C-C6（SHARE proxy） | 同一结论（C-C28：SHARE 的「双方各自作答」只条件成立）的两个独立成因。 | 并入 C-C28 作为降级理由清单，不单列。 |\n| 6 | C-C11（U4 已解）↔ C-C32（HRS host 可达）↔ C-C15（HRS 审查横幅） | 都是「HRS 抓取空间被低估」这一个根因的三个后果。 | 合并为一个行动项：**改用 `hrsdata.isr.umich.edu`**。 |\n| 7 | C-C31（ICPSR 非全站 403）↔ C-C33（U1–U3 处理正确） | 同一主题（抓取失败的诚实归因）的正反两面。 | 作为一条方法学要求：**记录 host+path，不写「全站」**。 |\n\n**B. 与 canonical 现有条目的重复 / 需对账**\n\n| # | 报告条目 | canonical 对应 | 关系 |\n|---|---|---|---|\n| 1 | §1.1「双方各自作答同一构念 = **4**」vs「`CALIBRATION_READY` = **3**」 | — | **报告内部对账缺失**（C-C28）。两个数字口径不同（4 含 HRS「部分模块」），但摘要表未说明。 |\n| 2 | §5.1 HRS 行「LLM/AI：含新政策（条文未取得 → U4）」 | `PARAMETER_CONVERGENCE_V0_1.md` §14（measurement 数据需求）会消费「哪些数据集需要数据」 | C-C11 已解：应为「**全面禁止，含 open-source AI**」。若 canonical 引用了「未取得」这一状态，须同步更新。 |\n| 3 | 报告 U15（三个 `CALIBRATION_READY` 数据集的**关系状态构念内容**未核实） | `PARAMETER_CONVERGENCE_V0_1.md` §4 的 D1–D8（D2 Romantic Attraction / D3 Sexual Desire / D4 Trust / D6 Caregiving / D8 Outcome Dependence）、§5 的 B1 PPR / B2 Perceived Commitment、§6 的 P1–P5 pair-level、§9 的 R1 | **这不是重复，是 canonical 与报告之间的关键缺口**：canonical 已列出需要数据的构念清单，报告已列出结构合适的数据集，**两侧从未对接**。报告的 U15 应直接改写成「对 canonical §4/§5/§6 逐构念的覆盖矩阵」。这是本 lane 能给 Architect 的最大增量。 |\n| 4 | 报告 D08 `lhrm_impact`：「LHRM 的 `Z[k,i,j,t]` 双报告要求在大规模代表性调查里基本无法满足 …… **方向性 primitive 只能在窄样本上标定，不能在宽样本上验证**。（此为 observation，非建议。）」 | `PARAMETER_CONVERGENCE_V0_1.md` §2.4 Scope stability / §11 Candidate Minimal Directed Basis | **部分同义**。这是报告里唯一直接触及 canonical 方法论纪律的观察，且自标\"非建议\"，处置得当。**但它与 NSFH 自身的分类争议耦合**（C-C35），因此该观察的支撑面比报告呈现的更窄。 |\n| 5 | 报告 D10 `directionality_asset`：HRS 的 ADL/IADL 协助题 = `Caregiving_(i->j)` vs `CareNeed_j` 的可观测对应物 | 报告自引 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §示例 C —— **该文件不在我的可读范围内**（不在合同 §2 允许清单内，我未打开） | **我无法核实该 cross-reference 是否准确**。记 `UNVERIFIABLE_HERE`，交由 lane `K` / parent 处理。 |\n| 6 | 报告 D04 `lhrm_impact`：「唯一能证明 `Z[i→j]` 与 `Z[j→i]` 确实是两个不同自由度 …… 可作为 `Mutuality = H(Desire(i→j), Desire(j→i))` 与 `Asymmetry = d(·,·)` 的**存在性证据**」 | `PARAMETER_CONVERGENCE_V0_1.md` §9 R1「Mutual attraction / reciprocal desire / trust asymmetry」是 **Derived/Readout** 类 | **一致，非重复**。报告正确地把 speed dating 定位为**存在性**证据而非**取值**证据，并明确「把 4 分钟速配的评分当 attraction 的量纲是越界」。这是本报告在「测量 vs 本体」上最自律的一处。**保留。** |\n\n**C. 16 个数据集里是否有同一数据集的不同名 / 不同 vintage（必答）**\n\n| 判定 | 说明 |\n|---|---|\n| **D04 三个访问点 = 一个微数据集** | `github.com/datasets/speed-dating`、`openml.org/d/40536`、`osf.io/8k7rf` 是**同一份微数据**的三个镜像，不是三个数据集。`VERIFIED_BY_ME`：GitHub README 自述 \"This dataset was found under the name **SpeedDating on OpenML.org**\"；报告自己也记录了 Huang et al. (2017) 的再分析用的是同一份原始数据。**报告 §1.1 的「完全公开 = 1」计数正确**，但 §11 把三条 URL 平铺，**存在被下游三重计数的风险**。 |\n| **D08 的三条链接 = 一个 series** | `icpsr.umich.edu/web/ICPSR/series/193`、`icpsr.umich.edu/web/DSDR/studies/6906`、`childandfamilydataarchive.org/cfda/cfda/series/193` 指向**同一个 NSFH series**（Child & Family Data Archive 是同一档案的旧名 / 姊妹站），不是三个数据集。报告 §5.1 已正确合并为一行「NSFH / SECCYD」。**但 `canonical_pointer` 平铺三条会诱发误读。** |\n| **D12 命名错误造成的事实性同义混淆** | 报告把 Add Health 命名为「**Add Health (NLSY97/ECLS)**」（C-C19）。NLSY97 与 ECLS 是**两个不同的 NCHS 调查**，不是 Add Health 的别名 —— BLS 官方对照文档把三者列为三项并直接对比。而报告 §9 的 U10 又把「NLSY79-97」当作**另一个**数据集。→ **报告同时把 NLSY 当作 Add Health 的别名和另一个数据集。这是本 cluster 唯一的真·同义/重复错误。** |\n| **D02 / D10 谱系关系（非重复）** | SHARE FAQ 4.5 明写 easySHARE 是 \"a simplified **HRS-adapted** dataset\"（`VERIFIED_BY_ME`）。SHARE 不是 HRS，两者仍是不同数据集，**不构成重复**；但这条谱系解释了为什么同一套 LLM taxonomy 会同时出现在两边（见 C-C36）。**建议在报告里显式记录这条谱系**，以免下游把两者当互不相关的证据。 |\n| **D16 SECCYD / D07 GUiNZ / D12 Add Health** | 三者都是「儿童/青少年 + 照护者」方向，但研究总体、年龄跨度、国家、资助方、访问制度全不同。**非重复。** |\n| **D05 DHS / D06 IFLS** | 不同国家体系、不同赞助方、不同 wave 结构。**非重复。** |\n| **D09 CLOC / D10 HRS** | CLOC 由 Univ. of Michigan（House/Wortman/Nesse, 1987–1993）设计，HRS 由 ISR/NIA 运营。CLOC 早于 HRS 且**独立招募**（Detroit SMSA 丧偶者+匹配对照），不是 HRS 的子样本。**非重复**（但同州际、同机构，值得点一句以免下游混淆）。 |\n| **D01 pairfam / D11 SOEP** | 两者都是德国面板，pairfam 由 LMU+MPIDR 设计并经 GESIS 分发，SOEP 由 DIW 运营。**非重复**，但同样是「同一国、两种 dyad 可得性」的天然对照组，报告未点出这个对照价值。 |\n\n**必答的第四专项结论**：**16 个对象中，真实的数据集重复为 0**（无同一数据集换名重复计数的实例）。**但有 3 类「看起来像多个、实为一个」的结构**：D04 的三镜像、D08 的三链接、D12 的错误别名。**其中只有 D12 是事实性错误。**\n\n---"
+  }
+ ],
+ "specialty_section": "四项专项回答",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `C`（datasets / access / rights）",
+   "line_start": 1,
+   "line_end": 923
+  },
+  {
+   "level": 2,
+   "title": "files_audited",
+   "line_start": 8,
+   "line_end": 16
+  },
+  {
+   "level": 2,
+   "title": "coverage_statement",
+   "line_start": 17,
+   "line_end": 46
+  },
+  {
+   "level": 2,
+   "title": "verdict_matrix",
+   "line_start": 47,
+   "line_end": 740
+  },
+  {
+   "level": 3,
+   "title": "C-C1 — SHARE CoU §7 的 AI/ML 条款",
+   "line_start": 51,
+   "line_end": 68
+  },
+  {
+   "level": 3,
+   "title": "C-C2 — 「§7 使 SHARE 派生量在法务上不能进入 LLM 参与的公开验证流水线」",
+   "line_start": 69,
+   "line_end": 83
+  },
+  {
+   "level": 3,
+   "title": "C-C3 — SHARE §11 后果条款的适用范围",
+   "line_start": 84,
+   "line_end": 99
+  },
+  {
+   "level": 3,
+   "title": "C-C4 — SHARE wave 数：报告低估且误述了「冲突」的性质",
+   "line_start": 100,
+   "line_end": 117
+  },
+  {
+   "level": 3,
+   "title": "C-C5 — SHARE 子女模块（CH）的官方向后兼容性警告被漏记",
+   "line_start": 118,
+   "line_end": 135
+  },
+  {
+   "level": 3,
+   "title": "C-C6 — SHARE 的 proxy 代答削弱「双方各自作答」的构念层成立性",
+   "line_start": 136,
+   "line_end": 153
+  },
+  {
+   "level": 3,
+   "title": "C-C7 — Add Health LLM 禁令（全部三类均为 None）",
+   "line_start": 154,
+   "line_end": 179
+  },
+  {
+   "level": 3,
+   "title": "C-C8 — ICPSR LLM 政策（Type 1 None / Type 2 Public-Use / Type 3 Public+Restricted）",
+   "line_start": 180,
+   "line_end": 207
+  },
+  {
+   "level": 3,
+   "title": "C-C9 — ICPSR Redistribution Policy 与其中的 LLM 条款",
+   "line_start": 208,
+   "line_end": 229
+  },
+  {
+   "level": 3,
+   "title": "C-C10 — UAS / CESR LLM 禁令",
+   "line_start": 230,
+   "line_end": 248
+  },
+  {
+   "level": 3,
+   "title": "C-C11 — HRS AI/LLM 禁令条文：U4 已可解，且比报告假设的更严",
+   "line_start": 249,
+   "line_end": 269
+  },
+  {
+   "level": 3,
+   "title": "C-C12 — HRS Certificate of Confidentiality 引文精度",
+   "line_start": 270,
+   "line_end": 285
+  },
+  {
+   "level": 3,
+   "title": "C-C13 — SOEP 有一份明确的 AI/LLM 使用政策，报告完全未记录",
+   "line_start": 286,
+   "line_end": 309
+  },
+  {
+   "level": 3,
+   "title": "C-C14 — 「ICPSR SOMAR VDE / MiCDA Enclave = 唯一已知可行的合规 LLM 路径」",
+   "line_start": 310,
+   "line_end": 331
+  },
+  {
+   "level": 3,
+   "title": "C-C15 — HRS 仓库处于「under review for potential modification」状态",
+   "line_start": 332,
+   "line_end": 350
+  },
+  {
+   "level": 3,
+   "title": "C-C16 — speed dating 镜像的「完全公开」是过度主张",
+   "line_start": 351,
+   "line_end": 371
+  },
+  {
+   "level": 3,
+   "title": "C-C17 — speed dating 镜像的实时可用性与 D04 的结构判断",
+   "line_start": 372,
+   "line_end": 394
+  },
+  {
+   "level": 3,
+   "title": "C-C18 — pairfam 使用条款 §3 德文原文",
+   "line_start": 395,
+   "line_end": 409
+  },
+  {
+   "level": 3,
+   "title": "C-C19 — Add Health 被误标为「NLSY97 / ECLS」",
+   "line_start": 410,
+   "line_end": 428
+  },
+  {
+   "level": 3,
+   "title": "C-C20 — U7「Add Health 无 friendship nomination 文件」已被可及官方文档推翻，且 D15 的「唯一」声明错误",
+   "line_start": 429,
+   "line_end": 446
+  },
+  {
+   "level": 3,
+   "title": "C-C21 — pairfam partner 变量前缀「统一为 `p`」被过度一般化",
+   "line_start": 447,
+   "line_end": 468
+  },
+  {
+   "level": 3,
+   "title": "C-C22 — pairfam「当前版本 = Release 14.2」在 2026-09-27 很可能已过时",
+   "line_start": 469,
+   "line_end": 490
+  },
+  {
+   "level": 3,
+   "title": "C-C23 — HRS 是否发货跨波稳定 partner/couple id（U5）",
+   "line_start": 491,
+   "line_end": 505
+  },
+  {
+   "level": 3,
+   "title": "C-C24 — D09 CLOC 的分类与报告自定判级标准不一致",
+   "line_start": 506,
+   "line_end": 525
+  },
+  {
+   "level": 3,
+   "title": "C-C25 — SOEP 与 IFLS：同一认识论处境，两个不同分类",
+   "line_start": 526,
+   "line_end": 542
+  },
+  {
+   "level": 3,
+   "title": "C-C26 — D12 / D13 把 rights 事实写成了可识别性结论",
+   "line_start": 543,
+   "line_end": 558
+  },
+  {
+   "level": 3,
+   "title": "C-C27 — D15 的 `ACCESS_BLOCKED` 实为项目能力陈述",
+   "line_start": 559,
+   "line_end": 573
+  },
+  {
+   "level": 3,
+   "title": "C-C28 — 三个 `CALIBRATION_READY` 是否可辩护（构念层 vs 样本层）",
+   "line_start": 574,
+   "line_end": 591
+  },
+  {
+   "level": 3,
+   "title": "C-C29 — 「四个条件的交集为空」：条件数错，且 Add Health 未被结构检验",
+   "line_start": 592,
+   "line_end": 609
+  },
+  {
+   "level": 3,
+   "title": "C-C30 — 「intensive longitudinal 关系日记数据不存在公开可得」被写成否定发现",
+   "line_start": 610,
+   "line_end": 624
+  },
+  {
+   "level": 3,
+   "title": "C-C31 — 「ICPSR 全站 403」范围过宽",
+   "line_start": 625,
+   "line_end": 645
+  },
+  {
+   "level": 3,
+   "title": "C-C32 — HRS 的 `timeout/403` 记录是环境性的、且可避免",
+   "line_start": 646,
+   "line_end": 664
+  },
+  {
+   "level": 3,
+   "title": "C-C33 — 对 U1–U3 的不可达处理：本报告最诚实的部分",
+   "line_start": 665,
+   "line_end": 679
+  },
+  {
+   "level": 3,
+   "title": "C-C34 — 零数据接触声明与实际判断的一致性",
+   "line_start": 680,
+   "line_end": 700
+  },
+  {
+   "level": 3,
+   "title": "C-C35 — D08 NSFH 的方向性「不可分离」结论与其自引的 Wave 2 组件清单矛盾",
+   "line_start": 701,
+   "line_end": 719
+  },
+  {
+   "level": 3,
+   "title": "C-C36 — G2「2025–2026 收紧」应重述为「单一起源沿共享 taxonomy 扩散」，且漏 SOEP",
+   "line_start": 720,
+   "line_end": 740
+  },
+  {
+   "level": 2,
+   "title": "四项专项回答",
+   "line_start": 741,
+   "line_end": 852
+  },
+  {
+   "level": 3,
+   "title": "专项 1 — 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 743,
+   "line_end": 764
+  },
+  {
+   "level": 3,
+   "title": "专项 2 — 哪些是方法学/访问限制而非 ontology 发现（合同 §6.2）",
+   "line_start": 765,
+   "line_end": 793
+  },
+  {
+   "level": 3,
+   "title": "专项 3 — 哪些建议会导致 canonical change，以及是否必须停在 proposal",
+   "line_start": 794,
+   "line_end": 810
+  },
+  {
+   "level": 3,
+   "title": "专项 4 — 哪些结论重复、同义或双重计数",
+   "line_start": 811,
+   "line_end": 852
+  },
+  {
+   "level": 2,
+   "title": "top_recommendations（按对 Architect 的重要性排序，≤7）",
+   "line_start": 853,
+   "line_end": 870
+  },
+  {
+   "level": 2,
+   "title": "explicit_non_claims（≥5）",
+   "line_start": 871,
+   "line_end": 898
+  },
+  {
+   "level": 2,
+   "title": "packet_sha_note — 读了哪些源、各自如何核实",
+   "line_start": 899,
+   "line_end": 923
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ }
+}
