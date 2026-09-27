@@ -23,13 +23,13 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 
 | 结论 | 强度 |
 |---|---|
-| LHRM 的 8 个有向构念**全部是 REUSE**，无一条可主张原创 | 高（逐条有 DOI） |
+| LHRM 的 8 个有向构念**全部是 REUSE**，无一条可主张原创 | **中**（见 §4 Round-3 说明第 4 条：主流构念有 DOI 支撑，但 3 条支撑项仍是 `AGENT_RECALL`）。**本行是 §4 `F-1`/`F-2`/`F-11`/`F-15` 的引用，不计为独立结论** |
 | LHRM 最有希望的贡献方向是**「以 N=1 个体的、逐句可审计的表示完备性为主指标」**，但目前**未形式化**，因此新颖性无法被审稿人识别 | 中 |
 | 现实中 LLM×关系赛道已被 5+ 篇工作占据（RELATE-Sim、Love First Know Later、CogniPair、ConflictLens、Couple Agents） | 高 |
 | 现有关系质量量表已能复现**二阶 quality 因子**（PRQC）与**四维**（IAS），LHRM 8 维从未与它们对照 | 高 |
 | 「方向性」的文献基础比 LHRM 需要的更弱：partner effect 可能存在发表偏倚，且 partner 判断对满意度不增加信息 | 高 |
-| **对 LLM 从文本抽多类关系语义，现有最强实证是 Kappa=.42（单会话文本、28 类）**；Eberhardt 2025 的 ω=.953 是**单维**构念，不可外推 | 高 |
-| 投影到论文：**当前不存在诚实的 LHRM 投稿路径**；最短诚实路径 = M0–M5（5–7 个月单人） | 高 |
+| **对 LLM 从文本抽多类关系语义，现有最强实证是 Kappa=.42（单会话文本、28 类）** —— **但该数字不是上限，它落在该数据集的「人—人标注一致度」区间之内**（详见 §2.5）。因此它**不能**用作禁止性论据；它**必须**改读为：**任何 8×2 方案都会撞上一个与 LLM 无关的人类标注天花板** | 高（原文核实） |
+| 投影到论文：**当前不存在诚实的 LHRM 投稿路径**；最短诚实路径 = M0–M5（**工期估计已撤回，见 §6 Round-3**） | 路径判断：高（不依赖工期） · **工期：无任何可核依据，已撤回** |
 
 ## 2. 明确是复用的（LHRM 不得主张原创）
 
@@ -68,7 +68,22 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 | Ideal Standards | 理想伴侣 3 因子 + 理想关系 2 因子 | Fletcher et al. (1999) |
 | ECR / ECR-RS | anxiety + avoidance 两维；ECR-RS 加**关系特异性**索引 | Brennan, Clark & Shaver (1998)；Fraley, Waller & Brennan (2000) |
 | 依恋分类 | secure / preoccupied / dismissing / fearful（Bartholomew 四类） | Roisman (2009), `10.1111/j.1467-8721.2009.01621.x` |
-| Acitelli & Antonioni | 关系科学的维度化方案（页数/题名待核） | **`AGENT_RECALL` / `UNVERIFIED_DOI` — 最高优先 prior-art** |
+
+> **R14 Round-3 删除一行（2026-09-28）：本表原末行 `Acitelli & Antonioni` 已删除。**
+>
+> 该行原记「关系科学的维度化方案（页数/题名待核）」，分级 `AGENT_RECALL` / `UNVERIFIED_DOI`，并被标为「**最高优先 prior-art**」；它同时出现在 §3 `NC-6`（「Acitelli 三十【未核实】」）、§9 第 1 条（「决定『最小充分基』新颖性判断的最大单一变量」）与 §10 未核实清单，**共 4 处承重、0 条证据**。
+>
+> **删除依据（Round-2 复核，本轮 `NOT_OPENED` 复核）**：该条被记录为 *JPSP* 90(6) 的一篇文章，而 **该文不存在于该 issue/volume**；可能的真实作者姓氏不同。
+>
+> **本轮刻意没有去「验证这两个 DOI」。** 把资源花在校验一条**很可能根本不存在**的引用上，本身就是一次错误排序（它会挤占真正需要做的 prior-art 工作）。**删除即定案。**
+>
+> **重新登记它需要什么（缺一不可）**：
+> 1. **一个可解析的 DOI 或 ISBN**，且解析结果与所声明的期刊/卷/页**逐字段一致**；
+> 2. **作者全名的独立佐证**（不是 `AGENT_RECALL`），并说明「可能的不同姓氏」究竟是哪一个；
+> 3. **该文实际提出的维度清单**（条数、维度名），且能指出其**原文页码**；
+> 4. 满足以上三条后，**才**可恢复为 prior-art 表一行，并重议 §3 `NC-6` 的「已有至少四套互不一致的维度方案」是否变为五套。
+>
+> **在满足之前**：§2.2 的结论「**不存在「无先例」的关系质量复合评分系统**」**不受影响** —— 该结论由 PRQC、IAS、M-QoRS、RQ、DAS、Sternberg、Ideal Standards、ECR 独立支撑，**没有一条依赖被删的这一行**。
 
 **结论：不存在「无先例」的关系质量复合评分系统。** LHRM 唯一可能的差异化是：**拒绝输出分数**，并把「表示是否完备」而不是「分数是否准」当作问题。**这必须被写成明确的设计选择与代价，而不能被写成「更优」。**
 
@@ -107,11 +122,41 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 | Zhang et al. (2024), arXiv `2401.15170` | 9 个社科质性码 | GPT-4 κ：3/9 ≥.79、8/9 ≥.6；GPT-3.5 mean κ=.34 |
 | *Decoding Complexity*, arXiv `2403.06607` | 3 档复杂度编码任务 | 任务越难，人–模型一致性下降越快，且快于人–人 |
 
-**读法：Eberhardt 的 ω=.953 是**单维**构念 + 结构化转录文本的组合。LHRM 要抽的是 **8 维 × 2 方向 = 16 坐标**，且语料是自由叙事。现有最强的多类抽取证据是 **Kappa=.42**。**论文若引用 Eberhardt 的 ω=.953 来暗示「LLM 可以可靠地做关系状态测量」，是把单维结论外推到多维，属于 F-6 类违规。**
+**读法（Round-3 整段重写，2026-09-28）**：本节此前把 Lalk et al. (2025) 当作「LLM 多类抽取天花板 = κ=.42」，并据此支持一条**禁止性**论断。**该读法撤回。** 逐字核实结果如下。
+
+#### 原文实际做了什么（`CITED_PRIMARY`，本轮实读全文）
+
+1. 取一个**公开的 28 类情绪标注数据集**（GoEmotions / Demszky et al.，54k 条 Reddit 评论，**3 名标注者**，27 类 + `neutral`）。
+2. **把该数据集翻译成德语。**
+3. **微调一个预训练 LLM。**
+4. 把微调后的模型**应用到 553 节 / 124 名患者的治疗会谈**语料。
+
+原文结果（逐字）：`F1macro = 0.45, Accuracy = 0.41, Kappa = 0.42`；预测症状严重度 `r = .50`、alliance `r = .20`。
+
+#### 决定性的一句：人—人一致度本身就是 κ = .331–.468
+
+原文逐字：`Interrater agreement was assessed via Cohen's kappa by Demszky et al. (72), ranging between 0.331 (grief) and 0.468 (admiration).`
+
+**即：该数据集本身的「人—人」标注一致度就是 κ ≈ .33–.47。模型的 `.42` 落在该区间之内 —— 是「达到」了天花板，不是「低于」天花板。**
+
+#### 由此得出的两条更正
+
+- **被撤回的论据**：不得再用本条支持「LLM 多类抽取的上限是 .42」或任何以此为前提的**禁止性**主张（`F-6` / `F-16` 中依赖本条的部分随之改写）。**这条引用被反向使用过，方向是错的。**
+- **反向读法（本轮采用，对本项目有利）**：
+  1. **天花板是人类的，不是 LLM 的。** 一个 28 类方案已经把人—人一致度压到 κ ≈ .33–.47。LHRM 要抽的是 **8 维 × 2 方向 = 16 坐标**（外加 `Unknown` / 弃答判定），**类别数与语义粒度都更高**。因此 LHRM 会遇到的第一个天花板是**标注者之间的一致度**，与用不用 LLM 无关。
+  2. **因此「human baseline first」从「好做法」升级为「强制前置」。** 任何在**没有人类基线**的情况下报告的 LHRM 抽取数字，其分母是未知的：读者无法区分「模型弱」与「这个 scheme 本身就不可重复标注」。**这不是可选的加分项，是设计要求。** 这一点已写进 §6 `M2`（人类编码基线）——**`M2` 必须在 `M3` 之前，这是被文献结论强制的，不只是偏好。**
+  3. **附带的好消息**：本条**不再是**一条「LLM 做不到」的证据。此前它被当成对 LHRM 不利的证据；实际上它说明 LHRM 要做的是一个**标注科学问题**优先于**模型能力**的问题。
+
+- **Eberhardt 的 ω=.953 仍然不可外推到多维** —— 这条判断**不受本轮影响，继续成立**（`ω=.953` 是**单维**构念 + 结构化转录文本的组合；`.42` 是 **28 类** + 自由叙事。两个数字测的不是同一件事，不能互相比较，也不构成天花板关系）。
 
 ## 3. 可能新颖的整合（每条含反证方向）
 
 > **警告：这是定位失败最常见的模式。** 每条都同时给出「为什么可能已经存在」。**全部是候选，无一条已被证明。**
+>
+> **Round-3 处置（2026-09-28）：不再重复论证本警告。** Round-2 复核指出，**本警告本身已经足够防止本报告犯 novel-combination 错误** —— 因为每条 `NC-` 都强制配一条反证方向，**结构上**就不允许只报喜。本轮据此**停止在多处重复「这是最常见的失败模式」的论证**（原文在 §2.2、§4、§10 各有一处近似表述），并**只保留这一处**。
+> - **仍然成立**：`NC-1`…`NC-7` 全部是候选；`NC-2` 不可主张为原创。
+> - **仍然成立**：本节末尾的禁止主张清单（§4）**不追求完备**。
+> - **不再重复**：对「为什么本报告不会犯 novel-combination 错误」的进一步辩护。**一次警告 + 每条配反证 + 清单不追求完备，三者已足够。**
 
 ### NC-1 以 N=1 个体、逐句可审计的「表示完备性」为主指标的关系状态表示语言
 
@@ -146,18 +191,21 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 ### NC-6 126 条 proxy 分解词典
 
 - **可能新在哪：** 这种颗粒度、带「重复计数对象」与「最小解耦反例」列的公开词典，尚未见到。
-- **可能已存在在哪：** construct dissection 传统；已有至少四套互不一致的维度方案（Sternberg 三 / Fletcher 理想 3+2 / PRQC 6+二阶 / Neubauer 四 / Acitelli 三十【未核实】）。
+- **可能已存在在哪：** construct dissection 传统；已有至少**四套**互不一致的维度方案（Sternberg 三 / Fletcher 理想 3+2 / PRQC 6+二阶 / Neubauer 四）。
+  > **Round-3 计数更正（2026-09-28）**：原句括号内列了**五**项（含 `Acitelli 三十【未核实】`）而正文写「至少四套」—— **列举与数字不一致**。`Acitelli 三十` 一项**已删除**（该引用为很可能不存在的记录，见 §10 Round-3 删除记录）。**现在列举与数字一致：四套。** 若将来按 §10 的登记条件恢复该条，**必须**同时把「四套」改回「五套」并重议本条置信度。
 - **置信度：MEDIUM-LOW 作为科学新颖；MEDIUM-HIGH 作为工程/知识 artifact。**
 
 ### NC-7 把 LLM 当「自适应访谈器材」（expected information gain 选题、双人双向、维护非对称有向状态）
 
 - **可能新在哪：** 我检索到的 LLM×关系工作里，LLM 角色分别是编码器（Zhang 2024 / QualiGPT）、量表评分器（Eberhardt 2025）、教练/训练器（Rehearsal 2024 / ConflictLens 2025 / Couple Agents 2026）、模拟器（RELATE-Sim / Love First Know Later / CogniPair）。**「LLM = 双人 dyadic 临床式评估器材 + 必须维护两个方向不一致的状态」这一格是空的。**
-- **可能已存在在哪：** (a) 计算机化自适应测验已有 50 年历史，选题数学（IRT/BILT 信息函数）现成；(b) 会话式/动态评估 agent 已存在；(c) 继承 Lin (2025a) 全部批评；(d) **最致命先例反证**：`arXiv:2511.10457` 显示前代模型 state tracking 在若干步后即崩；(e) Lalk et al. 2025 显示 LLM 从文本抽**多类**语义 kappa 仅 .42。
+- **可能已存在在哪：** (a) 计算机化自适应测验已有 50 年历史，选题数学（IRT/BILT 信息函数）现成；(b) 会话式/动态评估 agent 已存在；(c) 继承 Lin (2025a) 全部批评；(d) **最致命先例反证**：`arXiv:2511.10457` 显示前代模型 state tracking 在若干步后即崩；(e) **（Round-3 改写）Lalk et al. 2025 不能用作 LLM 多类抽取的天花板** —— 该数据集的**人—人**一致度本身就是 κ = .331–.468，模型的 `.42` **落在**该区间内，是**达到**而非低于人类天花板（见 §2.5 Round-3 重写）。**天花板在人类一侧**，这使「human baseline 先行」成为**强制前置**而非可选项。
 - **置信度：MEDIUM**（网格中最空的一格），但门槛实验未做。
 
 ## 4. 禁止主张清单（forbidden claims）
 
-> 以下不是「谨慎建议」，而是**若出现在论文/摘要/宣传材料里就构成学术不端或事实错误**的表述。
+> 以下是**已识别的主要**禁止主张，**不是**「谨慎建议」，而是**若出现在论文/摘要/宣传材料里就构成学术不端或事实错误**的表述。
+>
+> **Round-3 完备性声明（2026-09-28）**：**本清单不追求完备，也不得被当作完备清单使用。** 本清单此前带有完备性暗示（「以下是…的表述」），该暗示**撤回**。已识别但漏列的类别至少有两类（坐标的**测量学可比性**主张、以及「适用于中文」这类**弱化的跨文化**主张）——见本节末尾 Round-3 说明第 2 条。**没列在这里的，不等于被允许。**
 
 | # | 禁止主张 | 禁止理由 | 要成立需要 |
 |---|---|---|---|
@@ -165,8 +213,8 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 | F-2 | 「首次区分了 responsiveness 的感知侧与行为侧」 | Reis, Clark & Holmes 2004 已如此定义 PPR 并强调 motivated construal | 不可能成立 |
 | F-3 | 「最小充分基经受了统计/心理测量学验证」 | 零数据。`PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A/B/C **未执行**；`VALIDATION_CORPUS_V0_1.md` 明确「None of the 12 includes any mapping result」 | M2–M6 |
 | F-4 | 「比现有关系质量工具（PRQC / DAS / RQ / M-QoRS）更准确或更少冗余」 | 从未 head-to-head。LHRM 8 维**不是**已发现的因子结构（PRQC 二阶 / IAS 四维 / Sternberg 三成分 / ideal 3+2） | M6 因子等价性研究。**最危险的一条** |
-| F-5 | 「预测关系结局（持续/破裂/满意度/离婚）」 | Joel et al. 2020：actor 自陈解释约 45% 当期满意度，**partner 不增加信息**，**无变量能预测变化方向**。RELATE-Sim 的 64.4% 已是现有 LLM×关系工作上限量级 | N≥数百纵向 dyad + 预注册 + 与 Joel 2020 口径可比。**1–3 年** |
-| F-6 | 「LLM 判定与人类编码一致，故模型被验证」 | Lin (2025a/b)：LLM 输出同时充当测量指标与实验结果是**序列塌缩**；多因子结构会塌成「verbal fluency 单一维度」；Eberhardt 2025 即使 ω=.953 仍需独立效标相关；Lalk 2025 多类抽取仅 κ=.42；Zhang 2024 反对对 interview 级小数据自动编码 | 人类独立编码基线 + IRR + 预注册 + 跨模型族复现 + 外部效标相关。**LLM–LLM 一致度永远不算** |
+| F-5 | 「预测关系结局（持续/破裂/满意度/离婚）」 | Joel et al. 2020：actor 自陈解释约 45% 当期满意度，**partner 不增加信息**，**无变量能预测变化方向**。RELATE-Sim 的 64.4% 已是现有 LLM×关系工作上限量级 | N≥数百纵向 dyad + 预注册 + 与 Joel 2020 口径可比。**NOT_ESTIMATED** |
+| F-6 | 「LLM 判定与人类编码一致，故模型被验证」 | Lin (2025a/b)：LLM 输出同时充当测量指标与实验结果是**序列塌缩**；多因子结构会塌成「verbal fluency 单一维度」；Eberhardt 2025 即使 ω=.953 仍需独立效标相关；Zhang 2024 反对对 interview 级小数据自动编码 | 人类独立编码基线 + IRR + 预注册 + 跨模型族复现 + 外部效标相关。**LLM–LLM 一致度永远不算** |
 | F-7 | 「跨文化有效 / 文化普适 / 可迁移到中文」 | 依恋量表跨文化结构本身是活跃争议（Masopustová 2025 承认 dimensional 证据在英语样本占主导）；dyadic measurement invariance Registered Report 已发现若干常用量表在 dyad 上「concerning levels」noninvariance。LHRM **零 invariance 检验** | 中英双语语料 + 跨文化样本 + invariance / DIF 检验 |
 | F-8 | 「state of the art / 首次 / 首创」 | 任何 first / SOTA 措辞都可被 RELATE-Sim、Love First Know Later、CogniPair、ConflictLens、Couple Agents、ATOMIC 2020、Zhang 2024 逐一反驳。Finkel et al. 2017 已宣称完成跨理论整合 | 禁止 first / novel / unprecedented / SOTA，除非逐条给出「相对哪一具体工作的哪一具体差别」 |
 | F-9 | 「从 Case Bank 个案推断现实概率 / base rate / 人口结论」 | 项目 `AGENTS.md` 与 `CURRENT_ARCHITECTURE.md` §10 已禁止；12 份材料来源等级极不均衡，3 份是极知名公版作品（leakage HIGH–VERY HIGH） | 概率抽样设计。**永远不可能**从本 Case Bank 得到 |
@@ -176,7 +224,20 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 | F-13 | 「覆盖率/完备性高，所以模型好」 | coverage 可被构念膨胀刷高；**弃答率与覆盖率必须一起报告** | M4 trade-off 曲线 |
 | F-14 | 「8 个有向坐标已是最小充分基」 | 「充分性」是关于目标语料的陈述。当前 12 份语料、零人工基线、零 ablation | M4 逐构造删除实验 |
 | F-15 | 「关系质量 / 匹配度 / 真爱不是 primitive」被表述为本模型的发现 | 这是 Sternberg、Fletcher PRQC 二阶、Reis & Shaver 亲密过程模型、Ideal Standards Model 共同持有的立场 | 只能写「与这些理论一致」 |
-| F-16 | 任何暗示 LLM 判断「准确」或「可靠」的表述 | `Decoding Complexity` 复杂度↑则人–模型一致性下降更快；QualiGPT 更新版 IRR **反而降低**；Brook 显示 LLM 生成码 specificity 更低；Lalk 2025 κ=.42 | 只有 F-6 那套证据组合 |
+| F-16 | 任何暗示 LLM 判断「准确」或「可靠」的表述 | `Decoding Complexity` 复杂度↑则人–模型一致性下降更快；QualiGPT 更新版 IRR **反而降低**；Brook 显示 LLM 生成码 specificity 更低 | ~~只有 F-6 那套证据组合~~ → **见下方 Round-3 说明：F-16 不是独立条目** |
+
+> **R14 Round-3：禁止主张清单的完整性与计数更正（2026-09-28）**
+>
+> **1. `F-6` 与 `F-16` 不独立 —— 两条记一条。** `F-16` 的「要成立需要」栏原文写「只有 F-6 那套证据组合」，**这等于自陈它不是独立条目**；其「禁止理由」栏的四条支撑中有三条（`Decoding Complexity`、QualiGPT IRR 反降、Brook specificity）已逐字出现在 `F-6` 或 §5 `B2` 里。**处置**：`F-16` **降级为 `F-6` 的一个子句**，不再是独立编号。**本清单的有效条目数由 20 减为 19。**
+>
+> **2. 清单不是完备的。** 本清单开头写「以下是…**若出现就构成学术不端或事实错误**的表述」——**这个完备性暗示不成立**。已知的两个漏项：
+> - **未列**「本模型的坐标是**测量学上可比的**（即 8 维之间有可检验的因子结构）」这一类 —— 它由 §5 `B3` 覆盖但未进本清单。
+> - **未列**「本模型的坐标**可跨文化/跨语言使用**」的**弱化版**（如「适用于中文场景」）—— `F-7` 只禁了强版本（普适/跨文化有效），**「适用于中文」这种软版本没有对应条目**，而它恰恰是最可能在中文论文里出现的措辞。
+> - **处置**：把清单标题改为**非完备**表述（「已识别的主要禁止主张」），并**显式写明本清单不追求完备**。**不得**因为本清单看起来很全就认为没列的就允许。
+>
+> **3. 「这是复用结论」与本清单是同一条结论，被记了两次。** §1 BLUF 的「LHRM 的 8 个有向构念**全部是 REUSE**」与本清单 `F-1`/`F-2`/`F-11`/`F-15` 主张的是**同一件事**：方向性、responsiveness、APIM/SRM 默认性、关系质量非 primitive 全部已有出处。**处置**：BLUF 的 REUSE 行**降级为对本清单的引用**（「见 §4 `F-1`/`F-2`/`F-11`/`F-15`」），**不作为独立结论计一次**。
+>
+> **4. BLUF 的 REUSE 行本身降级（`R-H1`）。** 该行原写「全部是 REUSE，无一条可主张原创」+ 强度「高（逐条有 DOI）」。**「高」不成立**：§2.1 表中至少有 **3 行是 `AGENT_RECALL`**（`Boyd & Heewer 2007`、Cook & Messick/Messick/Trochim 五检、以及 126 条 proxy 分解词典一脉），**`UNVERIFIED_DOI`**，不是「逐条有 DOI」。**改法**：强度由「高」降为「**中：主流构念的 REUSE 有 DOI 支撑；3 条支撑项仍是 `AGENT_RECALL`，未核实**」。**结论方向（不主张原创）不变。**
 | F-17 | 「power / 互惠由方向性状态自动涌现」被写成结论 | 只写了 `PowerImbalance = f(...)` 签名式**假说**（§9 R2 自标「优先假说」）。且依赖不对称在既有文献里已是可测量的一等构念 | 形式条件 + 实证导出验证 |
 | F-18 | 「信念/观测三分使本模型能刻画欺骗」 | 谎言识别基线准确率接近随机是学界共识。优势空间极小，易被解读为「模型在编」 | 与人类/既有工具对比（且需说明基线本身很弱） |
 | F-19 | 「本模型可作为心理测量工具 / 量表」 | Eberhardt 2025 已展示完整心理测量流程。LHRM 走**结构化表示**而非**评分**，不能借用量表的效度话语 | 先把表示做成可评分量表（这会是新工作） |
@@ -188,7 +249,8 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 
 - **A1「这是又一个无数据的框架论文」— 致命，当前不能应答。** 且 Finkel, Simpson & Eastwick 2017 使这个批评更锋利：关系科学**自己已经**完成跨理论整合、产出 14 条核心原则，并自我批评「the principles afford few of the sorts of conflicting predictions that can be especially helpful in fostering novel theory development」。LHRM 处境更差。
 - **A2「你的 8 个有向坐标能复现已知因子结构吗？」— 致命，但可被纯文档分析回应。** 若 8 维不能承载已验证量表题项，它就只是**另一套平行分类学**。**修法不需要被试**：把既有量表题项作为 mapping target 做形式化覆盖分析（M6）。**这是最有杀伤力也最可修的批评。**
-- **A3「方向性的经验基础可能比你想的弱」— 强，当前不能应答。** Joel et al. 2020：partner 判断对当期满意度不增加信息；Bloomberg/Joel/Eastwick：partner effects 的 p-curve 不符合 → 选择性报告与发表偏倚。LHRM 把「双向有向坐标」当架构基石，恰落在文献中最不可靠的那一半上。
+- **A3「方向性的经验基础可能比你想的弱」— 强，当前不能应答。** Joel et al. 2020：partner 判断对当期满意度不增加信息。LHRM 把「双向有向坐标」当架构基石，恰落在文献中最不可靠的那一半上。
+  > **Round-3 删除一半（2026-09-28）**：本条原写「Joel et al. 2020：partner 判断对当期满意度不增加信息；**Bloomberg/Joel/Eastwick：partner effects 的 p-curve 不符合 → 选择性报告与发表偏倚**」。**后半句所引的 `Bloomberg / Joel / Eastwick` 条目已删除**（Crossref 作者检索该合著者名返回 0 结果；所记期刊/卷/页属于不同作者）。**A3 的攻击力因此下降一档**：它现在只有 Joel et al. 2020 一条支撑，且该条说的是「partner 判断对满意度不增加信息」，**不是**「partner effect 是选择性报告的产物」。**本条仍成立（单条已足够致命），但不得再引用被删的 p-curve 证据。** 恢复条件见 §10 Round-3 删除记录。
 - **A4「你把 attachment 的 general vs relationship-specific 之争当成已解决」— 中强，不能应答。** ECR-RS：关系特异测量对**关系内**结果预测更好，一般性测量对**人格**预测更好；「differentiation … is not related to psychological outcomes independently of mean levels of security」。LHRM 把 B01/B03 分层写成判定结果，这在文献里是**未决问题**。
 - **A5「你的 MSC 判据没有出处」— 中，不能应答。** 与通用构念效度五检同构，报告未引出处。
 - **A6「跨文化主张」— 中，不能应答。**
@@ -242,20 +304,40 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 
 > 单人全职估计；括号内为双人并行乐观估计。**均为本 lane 判断，不是任何 Human 承诺。**
 
+> ### R14 Round-3 工期与依赖更正（2026-09-28）
+>
+> **1. 全部工期估计撤回。** 下表「估计」栏的所有周数/月数/年数，**以及**本节末尾的端到端时间，**均无任何可核依据** —— 它们既不来自历史吞吐率，也不来自 pilot，更不来自任何 Human 承诺。**保留一列具体数字而不附推导，是把猜测伪装成计划。**
+> - **处置**：下表「估计」栏**全部改为 `NOT_ESTIMATED`**，并说明各里程碑的真实工作量**当前未知**。
+> - **同时撤回**：§1 BLUF 的「M0–M5（5–7 个月单人）」、§1 的「4–6 周 human-coding baseline」表述中的数字。
+> - **不主张**任何替代数字。**本报告没有能力估这个工期**；能估的人（Human / 项目 Architect）不在本 lane 内。
+> - **保留的是排序，不是时长。** 下面「阻塞后续？」一栏仍然有意义（它表达依赖关系，不表达时长）。
+>
+> **2. 本表的编号是「呈现顺序」，不是「依赖顺序」。** 原表按 M0…M9 排列，容易被读成可依次执行的流水线。**本轮明确否认这一点。**
+> - **已识别的一处真实依赖倒置**：`M6 覆盖已知因子结构`（把 PRQC / IAS / Sternberg / ECR / Fletcher ideal 的**题项**作为 mapping target）与 `M7 测量学`（reliability + factor structure + measurement invariance）之间存在**方向问题** —— **M7 的因子结构分析应当先于 M6 的因子等价性检验**，因为 M6 是在拿已知量表去比 LHRM 的结构，而 LHRM 自己的结构在 M7 之前**尚未被确定**；把 M6 排在 M7 之前，是把「比什么」排在了「是什么」之前。
+> - **本轮无法断言正确的依赖方向**，因为 M6 的 mapping target 设计本身尚未定稿。**因此处置不是「把 M6 移到 M7 之后」，而是取消顺序含义**：两者的真实依赖待 M0 的 schema 定稿后才能确定。
+>
+> **3. `M8` 的「阻塞后续：否」需要读法说明，不是错误标注。** `M8 纵向 dyad 样本`（原估 1–3 年）被标为「阻塞后续：否」，理由栏写「F-5 永远不能解除」。**这两句是一致的，但只有读全才看得出来**：`M8` 不在关键路径上，**唯一**是因为本文件已把 `F-5`（预测关系结局）宣布为**永久不可解除**。这是一个**范围决定**，不是「这份数据不重要」的判断。
+> - **处置**：保留「否」，但补上读法说明。**若将来 `F-5` 被从永久禁止清单里移出，`M8` 必须立刻改标为阻塞。**
+>
+> **4. `M2 人类编码基线` 的地位升级：从「好做法」升为「强制前置」。** `M2` 原标「当前完全缺失，最被低估」，这仍是准确的描述，但**它同时是一个设计要求，不只是一个风险**。依据见 §2.5 Round-3 重写：Lalk et al. (2025) 所用 28 类数据集的**人—人**一致度本身就是 **κ = .331–.468**（原文逐字）。**含义**：在多类关系语义的抽取上，**天花板是人类的**。因此 `M2` 必须在 `M3` 之前 —— **不是因为顺序偏好，而是因为在缺 `M2` 的情况下，任何 `M3` 的数字都没有可解释的分母**：读者无法区分「模型弱」与「这个 scheme 本身就不可重复标注」。
+> - **这改变了一处防御性主张的性质**：`M2` 此前被写成「若被问到就麻烦」的姿态；它现在是**论文可发表性的必要条件**。`§5 H` 段的「必须有人类基线」因此从建议升级为前提。
+
 | 阶段 | 内容 | 产出判据 | 估计 | 阻塞后续？ |
 |---|---|---|---|---|
-| **M0 形式化** | 定义带类型的坐标代数（interval / ordinal / category / constraint / distribution / Unknown 各自的半序/偏序/区间代数）；给 `Mapping` 一个可判定的判定过程；写清 partial order 完备性条件与不可比较时的处理 | 可机读 schema 规范 + 参考实现（输出 `{coordinate, type, uncertainty, evidence, provenance}` 或 `MAPPING_FAILURE` **并给出失败理由**） | **4–8 周** | **是** |
-| **M1 Case Bank 扩容** | 12 → ≥60 份（法院/官方 25、小说与纪实 15、神话/科幻 10、日常对话/短信 10）+ ≥20 条 adversarial case；每份附 `access_status / licence / leakage_risk / fact-unit 预估` | 公开语料清单 + 抓取清洗日志 + 许可说明 | **6–10 周**（抓取与清洗可并行） | 是 |
-| **M2 人类编码基线**（当前完全缺失，最被低估） | ≥2 名独立人类编码者 + 1 名仲裁；全语料逐句标注；计算 IRR（per-code κ / Gwet AC1）与一致性讨论；记录分歧的**本体层**诊断（ontology / construct / scope / temporal / belief / measurement hole） | 人类基准标注 + 逐 code IRR 表 + 仲裁记录 | **4–6 周 + 被试时间** | **是** |
-| **M3 LLM 映射基准** | ≥3 个模型族（≥2 个架构）× ≥2 个时间点（防止把 2026-09 的模型能力当永久属性）；报告 per-coordinate 覆盖率、**弃答率**、错误分类、与 M2 对照；显式测 **state-tracking 衰减**（`arXiv:2511.10457`） | 可复现脚本 + 完整结果表 + 错误分类法 | **3–4 周** | 是 |
-| **M4 消融与「最小充分性」检验** | 逐个删除 construct k → 记录 `MAPPING_FAILURE` 上升；逐个加入 → 记录弃答率下降。**目标是 coverage–construct-count trade-off 曲线** | 消融矩阵 + trade-off 曲线 + 「最小」主张的正式陈述 | **3–4 周** | 是（否则 F-14 不可解除） |
-| **M5 四路表示对照** | 同一语料四种表示并行编码：(a) SRM/APIM 式双向量表读数；(b) ATOMIC 式 if-then 事件三元组（含 xWant/oWant 分离）；(c) RMT / Interpersonal Circumplex；(d) 纯叙事摘要基线。比较覆盖率、弃答率、错误类型 | 对照矩阵 + 诚实报告（**允许结论是「我们并没有更好」**） | **4–6 周** | 是（否则 F-11 / NC-1 无法辩护） |
-| **M6 覆盖已知因子结构** | 把 PRQC 6+二阶 / IAS 4 / Sternberg 3 / ECR 2 / Fletcher ideal 3+2 的**题项**作为 mapping target，跑 M0 判定过程 | 构念等价性报告 | **3–4 周** | 若要谈测量则阻塞 |
-| **M7 测量学** | reliability 六项（照 `arXiv:2406.17675`）+ factor structure + measurement invariance | 心理测量报告 | **2–4 个月**（需 N≥数百） | 否（除非投 B 组） |
-| **M8 纵向 dyad 样本** | 预注册、≥200–500 对、≥3 时间点、双方独立测量、含 APIM 必需的两方同量表 | 纵向数据集 + 论文 | **1–3 年** | 否（F-5 永远不能解除） |
-| **M9 跨文化 / 跨语言** | 中英双语语料 + invariance 检验 | 跨文化附录 | **3–6 个月** | 否（F-7 永远不能解除） |
+| **M0 形式化** | 定义带类型的坐标代数（interval / ordinal / category / constraint / distribution / Unknown 各自的半序/偏序/区间代数）；给 `Mapping` 一个可判定的判定过程；写清 partial order 完备性条件与不可比较时的处理 | 可机读 schema 规范 + 参考实现（输出 `{coordinate, type, uncertainty, evidence, provenance}` 或 `MAPPING_FAILURE` **并给出失败理由**） | **NOT_ESTIMATED** | **是** |
+| **M1 Case Bank 扩容** | 12 → ≥60 份（法院/官方 25、小说与纪实 15、神话/科幻 10、日常对话/短信 10）+ ≥20 条 adversarial case；每份附 `access_status / licence / leakage_risk / fact-unit 预估` | 公开语料清单 + 抓取清洗日志 + 许可说明 | **NOT_ESTIMATED**（工作量未知） | 是 |
+| **M2 人类编码基线**（当前完全缺失，最被低估） | ≥2 名独立人类编码者 + 1 名仲裁；全语料逐句标注；计算 IRR（per-code κ / Gwet AC1）与一致性讨论；记录分歧的**本体层**诊断（ontology / construct / scope / temporal / belief / measurement hole） | 人类基准标注 + 逐 code IRR 表 + 仲裁记录 | **NOT_ESTIMATED**（含被试招募时间，当前未知） | **是** |
+| **M3 LLM 映射基准** | ≥3 个模型族（≥2 个架构）× ≥2 个时间点（防止把 2026-09 的模型能力当永久属性）；报告 per-coordinate 覆盖率、**弃答率**、错误分类、与 M2 对照；显式测 **state-tracking 衰减**（`arXiv:2511.10457`） | 可复现脚本 + 完整结果表 + 错误分类法 | **NOT_ESTIMATED** | 是 |
+| **M4 消融与「最小充分性」检验** | 逐个删除 construct k → 记录 `MAPPING_FAILURE` 上升；逐个加入 → 记录弃答率下降。**目标是 coverage–construct-count trade-off 曲线** | 消融矩阵 + trade-off 曲线 + 「最小」主张的正式陈述 | **NOT_ESTIMATED** | 是（否则 F-14 不可解除） |
+| **M5 四路表示对照** | 同一语料四种表示并行编码：(a) SRM/APIM 式双向量表读数；(b) ATOMIC 式 if-then 事件三元组（含 xWant/oWant 分离）；(c) RMT / Interpersonal Circumplex；(d) 纯叙事摘要基线。比较覆盖率、弃答率、错误类型 | 对照矩阵 + 诚实报告（**允许结论是「我们并没有更好」**） | **NOT_ESTIMATED** | 是（否则 F-11 / NC-1 无法辩护） |
+| **M6 覆盖已知因子结构** | 把 PRQC 6+二阶 / IAS 4 / Sternberg 3 / ECR 2 / Fletcher ideal 3+2 的**题项**作为 mapping target，跑 M0 判定过程 | 构念等价性报告 | **NOT_ESTIMATED** | 若要谈测量则阻塞 |
+| **M7 测量学** | reliability 六项（照 `arXiv:2406.17675`）+ factor structure + measurement invariance | 心理测量报告 | **NOT_ESTIMATED** | 否（除非投 B 组）。**Round-3：与 `M6` 的真实依赖方向未定，见本节 Round-3 说明第 2 条** |
+| **M8 纵向 dyad 样本** | 预注册、≥200–500 对、≥3 时间点、双方独立测量、含 APIM 必需的两方同量表 | 纵向数据集 + 论文 | **NOT_ESTIMATED** | 否 —— **仅因为 `F-5` 已被本文件宣布为永久不可解除**。这是**范围决定**，不是「这份数据不重要」的判断。**若 `F-5` 移出永久禁止清单，本行必须立刻改标为阻塞。** |
+| **M9 跨文化 / 跨语言** | 中英双语语料 + invariance 检验 | 跨文化附录 | **NOT_ESTIMATED** | 否（F-7 永远不能解除） |
 
-**诚实的端到端时间：M0–M5 ≈ 5–7 个月单人全职（2–3 个月双人并行）。这是可以把 representation 论文写诚实的最短路径下界。没有 M0–M5，任何投稿都是 overclaim。**
+**诚实的端到端时间：`NOT_ESTIMATED`。** ~~M0–M5 ≈ 5–7 个月单人全职（2–3 个月双人并行）~~ —— **该估计已撤回**（Round-3：无任何可核依据；本 lane 无能力给出工期）。**本报告不主张任何替代数字。**
+
+**仍然成立、且不依赖工期的那一半**：M0–M5 是**必要条件**而非充分条件 —— **没有 M0–M5，任何投稿都是 overclaim。** 这条判断与工期估计无关，**保留**。
 
 ## 7. 项目自身文档的 overclaim 位置（研究反馈，不做任何编辑）
 
@@ -263,25 +345,49 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 
 | # | 文件:行 | 项目原话 | 问题 |
 |---|---|---|---|
-| O-1 | `README.md:5` | 「LHRM 是一个用于研究、表达与**仿真**人类二人关系的开放研究项目。」 | 「仿真」被当作**当前能力**陈述。现状：无 transition operator、无参数标定、无仿真结果、无实现。建议改为「表示与（未来的）仿真」，或在「当前阶段」显式列出 `simulation = NOT IMPLEMENTED` |
-| O-2 | `CURRENT_ARCHITECTURE.md:18` | 「建立一套能够在任意时刻……进行结构化、方向化、时间索引、保留 Unknown 与不确定性的**数学**状态表示语言。」 | 「**数学**」暗示已形式化。当前是散文 + markdown 代码块：无类型系统、无公理、无 partial order 代数、无映射判定过程 |
-| O-3 | `CURRENT_ARCHITECTURE.md:203` | 「X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)」 | (a) **括号不匹配**（`X_(t+1)` 缺右括号）——会被审稿人当作粗心证据；(b) 读起来像**已定义的转移律**，实际只是 schema 签名；(c) 紧接 204 行「而走**实时演算**」进一步强化「已实现」的错觉 |
-| O-4 | `CURRENT_ARCHITECTURE.md:232-236` | 「LHRM 的核心产物优先是动态状态轨迹：Gamma_(A,B) = { X_(A,B)(tau) }」 | 「核心产物」被写成**已存在**的对象。当前只有 `tau` 的**记法**设想与一句 lineage DAG 文字描述，无数据结构、无存储、无生成过程 |
-| O-5 | `PARAMETER_CONVERGENCE_V0_1.md:119` | 「以下 construct 在科学研究、游戏形式化、现实反例和**本项目压力测试中均表现出较强的独立性**。」 | **循环论证。** 独立性按 §15 Gate C 才要检验，而 Gate C 明确 `PENDING`；`MAPPING_FAILURE` 尚未跑过任何一份语料。应改为「按 §2 判据的**初步判断**」 |
-| O-6 | `PARAMETER_CONVERGENCE_V0_1.md:45-86` | §2 的 6 条收敛判据 | 判据是**问题形式**（「是否仍可能为额外信息？」），不是**可操作判据**（无阈值、无统计量、无判定程序）。因此 §11 的 8 维 basis 选择过程不可复核 |
-| O-7 | `RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:109-115` | 「候选 `X` 有资格成为 `primitive_state`，需**同时满足五条**」（MSC） | 与通用构念效度检查清单（Cook & Messick 1979 / Messick 1989,1995 / Trochim 1999 五检）结构几乎一一对应，**报告未引任何出处**。审稿人会问「your criteria are Cook & Messick's with new labels; where is the increment?」 |
-| O-8 | 同上 `:28` | 「**真正的最低层关系状态，方向是「每个主体对客体的一条有向边上的少量状态」，且不能靠更底层机制替代**」 | 把 SRM/APIM 的既有结构表述成**发现**。必须改为 REUSE 语态 |
-| O-9 | 同上 `:50` | 「六维里，**真正够「primitive 级」且能独立存活的是 Trust 与 Dependence**」 | 关于关系科学构念结构的**实质经验主张**，无任何数据；且与已发表维度方案不一致。M6 未做前必须降级为 hypothesis |
-| O-10 | 同上 `:1440` | 「采用简标明（author, year）形式；**文献细节请在外部库核对**」 | 全部引用未经 DOI 级核实。本次抽查即发现一处上游引用错误：Fletcher & Simpson (2000) CDPS 把 Fletcher et al. (1999) JPSP 页码写成 **54–71**，Crossref 确认正确为 **72–89**（`10.1037/0022-3514.76.1.72`）。**LHRM 自己的 `STAGE_SUMMARY_2026-09-07.md` §5.6 写 72–89，是对的**——但「请外部库核对」使每条都成为 A04 lane 的攻击面 |
-| O-11 | `RELATIONSHIP_EVALUATION_FOUNDATION.md:13` | 「先固定一套**足够精妙、优雅**、直接且可扩展的底层坐标系。」 | 「精妙/优雅」是不可证伪的价值判断，出现在项目定位句里 |
-| O-12 | `RELATIONSHIP_EVALUATION_FOUNDATION.md:22` | 「**动态但不漂移**：……**基础结构本身尽量不变**。」 | **历史事实与该句冲突**：S/O/D/E 已从「完整世界本体」降级为「query-local view」；`Candidate Minimal Directed Basis` 已经历缩减 |
-| O-13 | `RELATIONSHIP_EVALUATION_FOUNDATION.md:150` | 「同样的 `S + O + D`，在**不同 `E` 下可能形成完全不同的长期关系结果**。」 | 关于 Environment 层因果强度的**实质主张**，无证据。Joel et al. 2020 已证明人口学/客观状态变量几乎无预测力——既是 `E` 层的直接反例 |
-| O-14 | `STAGE_SUMMARY_2026-09-07.md:317` | 「未来若形成论文，优先把贡献写成：问题定义 → 已有理论碎片 → **统一架构** → 构念收敛方法 → **LLM 交互式测量** → **实证/仿真验证**」 | 这是**论文提纲**，但把「LLM 交互式测量」与「实证/仿真验证」写得像已有内容。**LHRM 交互式测量层不存在**（§4 只是「一个重要未来研究方向」）。照此提纲写论文，摘要会自动产生 F-3/F-6/F-12 违规 |
-| O-15 | `STAGE_SUMMARY_2026-09-07.md:327` | 「LHRM 专注于统一状态语义、观测/信念接口、动态更新与**可验证的集成架构**。」 | 暗示已可验证。当前 M0–M5 全部未做，**零验证**。这是 README 层的 overclaim，会被截图传播 |
-| O-16 | `AGENTS.md:21` vs `README.md:5` | `AGENTS.md` 要求「不得把未经验证的公式……表述为已验证预测模型」；`README.md` 写「仿真」 | **项目内部自相矛盾**：最严格的规则与最宽松的对外描述并存。README 是最可能被外部读到的文件，规则应反向约束 README 措辞 |
-| O-17 | `PARAMETER_CONVERGENCE_V0_1.md:497-501` | 「### R4. Relationship Quality / Compatibility / Match Score — 当前：`REJECT as primitive`」 | 措辞正确。**但要警惕**：论文里若写成「we improve on existing quality indices」就瞬间触发 F-4。**措辞陷阱，不是文档错误** |
+| O-1 | `README.md:5` | 「LHRM 是一个用于研究、表达与**仿真**人类二人关系的开放研究项目。」 | **目标句被读成能力句**（**`WRONG-SCOPE`，措辞非能力**）。「仿真」在句法上是项目**用途**的列举，不是**当前能力**的声明；**本文件不能主张这是文档错误**。收窄为：`README.md` 缺一个「当前阶段」标记，使**目标陈述可被读作能力陈述**。建议加 `simulation = NOT IMPLEMENTED` 的显式状态行（不要求改「仿真」这个词） |
+| O-2 | `CURRENT_ARCHITECTURE.md:18` | 「建立一套能够在任意时刻……进行结构化、方向化、时间索引、保留 Unknown 与不确定性的**数学**状态表示语言。」 | **「数学」一词制造**期望风险**，不是 overclaim**（Round-3 收窄，`WRONG-SCOPE`）。该句主语是**目标**（「建立一套」），本文件**不主张它是能力声明**。风险仅在于：读者可能据此**期待**已存在一套形式化对象，而当前只有散文 + markdown 代码块。**处置：加期望管理，不是改写目标句** |
+| O-3 | `CURRENT_ARCHITECTURE.md:203` | 「X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)」 | **(a) 括号不匹配 —— 本轮撤回，此说不成立。** `X_(t+1)` 里的 `_(` 是本项目**统一的记法约定**（下标标记），不是未闭合括号；同文件另有 `X_(S,O,t)`（:86）、`Gamma_(A,B)`（:235）、`X_(A,B)(tau)`（:236）同一形态。**把记法约定读成括号错误，是一个可以在任何会上被当场证伪的错误** —— 教训不是「括号」而是「**引用记法前先读同文件其余记法**」。(b) 读起来像**已定义的转移律**，实际只是 schema 签名：**保留**（这是本行唯一有效的部分）。(c) ~~紧接 204 行「而走**实时演算**」~~ —— **行号更正：实际在 `:200`**，`:204` 是代码块收尾 |
+| O-4 | `CURRENT_ARCHITECTURE.md:232-236` | 「LHRM 的核心产物优先是动态状态轨迹：Gamma_(A,B) = { X_(A,B)(tau) }」 | 「核心产物」被写成**已存在**的对象。当前只有 `tau` 的**记法**设想与一句 lineage DAG 文字描述，无数据结构、无存储、无生成过程。**行号本轮复核：成立**（`:232` 为该句，`:235-236` 为代码块） |
+| O-5 | `PARAMETER_CONVERGENCE_V0_1.md:119` | 「以下 construct 在科学研究、游戏形式化、现实反例和**本项目压力测试中均表现出较强的独立性**。」 | **循环论证。** 独立性按 §15 Gate C 才要检验；`MAPPING_FAILURE` 尚未跑过任何一份语料。应改为「按 §2 判据的**初步判断**」。**Round-3 更正**：原文写「而 Gate C 明确 `PENDING`」—— **该说法不成立**。本轮以 `PENDING` 穷举检索 `docs/foundation/*.md` + `AGENTS.md`，**`docs/foundation/` 中 `PENDING` 出现 0 次**（仅有的 3 个正则命中全部来自单词 `spending` 的子串）。**行号 `:119` 本轮复核：成立**（逐字一致） |
+| O-6 | `PARAMETER_CONVERGENCE_V0_1.md:45-86` | §2 的 6 条收敛判据 | 判据是**问题形式**（「是否仍可能为额外信息？」），不是**可操作判据**（无阈值、无统计量、无判定程序）。因此 §11 的 8 维 basis 选择过程不可复核。**行号本轮复核：成立**（§2.1 起于 `:45`，§2.6 正文止于 `:86`） |
+| O-7 | `RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:109-115` | 「候选 `X` 有资格成为 `primitive_state`，需**同时满足五条**」（MSC） | 与通用构念效度检查清单（Cook & Messick 1979 / Messick 1989,1995 / Trochim 1999 五检）结构几乎一一对应，**报告未引任何出处**。审稿人会问「your criteria are Cook & Messick's with new labels; where is the increment?」**行号本轮复核：成立**（`:109` 为引语句，`:111-115` 为五条）。**注意路径**：该文件在 `docs/research/`，本表原只写文件名，**补全为 `docs/research/…`** |
+| O-8 | 同上 `:28` | 「**真正的最低层关系状态，方向是「每个主体对客体的一条有向边上的少量状态」，且不能靠更底层机制替代**」 | 把 SRM/APIM 的既有结构表述成**发现**。必须改为 REUSE 语态。**行号与引文本轮复核：逐字成立** |
+| O-9 | 同上 `:50` | 「六维里，**真正够「primitive 级」且能独立存活的是 Trust 与 Dependence**」 | 关于关系科学构念结构的**实质经验主张**，无任何数据；且与已发表维度方案不一致。M6 未做前必须降级为 hypothesis。**行号与引文本轮复核：逐字成立** |
+| O-10 | 同上 **`:1438`** | 「采用简标明（author, year）形式；**文献细节请在外部库核对**」 | **保留的部分**：全部引用未经 DOI 级核实，「请外部库核对」使每条都成为 A04 lane 的攻击面。**行号更正：`:1440` → `:1438`**（原文该块引语在 `:1438`，`:1440` 是另一条「附件/PPR」引文）。**撤回的部分**：~~「本次抽查即发现一处上游引用错误：Fletcher & Simpson (2000) CDPS 把 Fletcher et al. (1999) JPSP 页码写成 54–71」~~ —— **本轮不主张这是一条已成立的引用错误**，其著录链本轮 `NOT_OPENED`。**撤回的部分**：~~「LHRM 自己的 `STAGE_SUMMARY_2026-09-07.md` §5.6 写 72–89，是对的」~~ —— **该说法为假**：`STAGE_SUMMARY_2026-09-07.md` **从不记录页码**，本轮全文检索 `72` / `89` / `54` / `71` 仅命中两条 DOI 指针（`:241` Fiske 1992、`:247` Fletcher et al. 1999），**没有任何页码记录**。**修正后的行文**：问题**只是**引用截断规范本身（「请外部库核对」把核对责任外推给读者），不是一个可指认的页码错误 |
+| O-11 | `RELATIONSHIP_EVALUATION_FOUNDATION.md:13` | 「先固定一套**足够精妙、优雅**、直接且可扩展的底层坐标系。」 | 「精妙/优雅」是不可证伪的价值判断，出现在项目定位句里。**行号本轮复核：成立** |
+| O-12 | `RELATIONSHIP_EVALUATION_FOUNDATION.md`**`:23`** | 「**动态但不漂移**：……**基础结构本身尽量不变**。」 | **历史事实与该句冲突**：S/O/D/E 已从「完整世界本体」降级为「query-local view」；`Candidate Minimal Directed Basis` 已经历缩减。**行号更正：`:22` → `:23`**（`:22` 是「4. **角色与状态分离**」；「5. **动态但不漂移**」在 `:23`） |
+| O-13 | `RELATIONSHIP_EVALUATION_FOUNDATION.md:150` | 「同样的 `S + O + D`，在**不同 `E` 下可能形成完全不同的长期关系结果**。」 | 关于 Environment 层因果强度的**实质主张**，无证据。Joel et al. 2020 已证明人口学/客观状态变量几乎无预测力——既是 `E` 层的直接反例。**行号本轮复核：成立** |
+| O-14 | `STAGE_SUMMARY_2026-09-07.md:317` | 「未来若形成论文，优先把贡献写成：问题定义 → 已有理论碎片 → **统一架构** → 构念收敛方法 → **LLM 交互式测量** → **实证/仿真验证**」 | 这是**论文提纲**，但把「LLM 交互式测量」与「实证/仿真验证」写得像已有内容。**LHRM 交互式测量层不存在**（§4 只是「一个重要未来研究方向」）。照此提纲写论文，摘要会自动产生 F-3/F-6/F-12 违规。**行号本轮复核：成立** |
+| O-15 | `STAGE_SUMMARY_2026-09-07.md:327` | 「LHRM 专注于统一状态语义、观测/信念接口、动态更新与**可验证的集成架构**。」 | **目标句被读成验证声明**（**`WRONG-SCOPE`，措辞非验证**；与 `O-1` 同一类）。句中「可验证」是**设计属性描述**，不是「已通过验证」的声明；本文件**不主张这是文档错误**。收窄为：缺一个「当前阶段：零验证」的状态行。**行号本轮复核：成立** |
+| O-16 | `AGENTS.md:21` vs `README.md:5` | `AGENTS.md` 要求「不得把未经验证的公式……表述为已验证预测模型」；`README.md` 写「仿真」 | **Round-3 改判为「规则已存在，缺的是执行」**。这不是「新发现一条矛盾」——`AGENTS.md` **已经有**这条规则，它约束**所有**下游措辞。**因此本行的正确处置是：README 措辞受 `AGENTS.md:21` 约束，这是既有规则的执行问题，不是规则缺失。** 本文件**不主张**需要新增冲突优先级规则。**行号本轮复核：`:21` 成立** |
+| O-17 | `PARAMETER_CONVERGENCE_V0_1.md`**`:497-499`** | 「### R4. Relationship Quality / Compatibility / Match Score — 当前：`REJECT as primitive`」 | **本行的措辞是正确的，不是文档错误**（本文件自标）。**Round-3 两处更正**：(i) **行号更正 `:497-501` → `:497-499`**（`:497` 为 R4 标题，`:499` 为「当前判定：\`REJECT as primitive\`」）；(ii) **性质改判**：本行提出的**优先级冲突，项目已有 canonical 规则** —— `AGENTS.md` 明写 `High-level labels such as "漂亮""贤惠""高价值""真爱""关系质量""匹配度" are not assumed to be primitive variables.` **这正是本行担心的那条规则，已存在。** 处置是**执行该规则**，不是新增规则。**本行是 Round-3 全部 O-行的改写范本** |
 
 **总评：** 项目在**研究纪律层面**（`AGENTS.md`、§15 验证门、VALIDATION_CORPUS 的诚实标注、STAGE_SUMMARY §6 的「只是 novelty hypotheses」）明显高于一般开源项目。overclaim 集中在**三处**：**(a) `README.md` 的「仿真」**；**(b) `CURRENT_ARCHITECTURE.md` 的「数学语言 / 实时演算 / 核心产物」**；**(c) `STAGE_SUMMARY` §8 的论文提纲把规划当内容**。三处都是**措辞层**问题而非**架构层**问题——修掉它们不需要改任何设计决策。
+
+> ### R14 Round-3 自审行改写记录（2026-09-28）
+>
+> **本轮改写/撤回了 9 行中的 7 行，保留 2 行。** 全部 17 行的文件:行引用**本轮逐条复核**（直接读文件、按行号定位、比对引文）。
+>
+> | 行 | 处置 | 本轮发现的具体错误 |
+> |---|---|---|
+> | `O-1` | **收窄** | 「目标句被读成能力句」是**措辞不对称**，不是能力 overclaim |
+> | `O-2` | **收窄** | 「数学」一词**制造期望风险**，不是 overclaim |
+> | `O-3` | **部分撤回 + 行号更正** | **(a) 括号不匹配 —— 不成立**（`_(` 是本项目统一的下标记法，同文件 `:86`/`:235`/`:236` 同形态）；(c) 「紧接 204 行」**实为 `:200`**（`204` 是代码块收尾）= 差四行。**这是全表最危险的一行** —— 它可以在任何会上被当场证伪 |
+> | `O-5` | **部分撤回** | 「Gate C 明确 `PENDING`」—— **该说法不存在**：`docs/foundation/` 中 `PENDING` 出现 **0 次** |
+> | `O-10` | **部分撤回 + 行号更正** | `:1440` → **`:1438`**（差两行）；「`STAGE_SUMMARY` §5.6 写 72–89」—— **为假**，该文件**从不记录页码**；页码错误主张本轮 `NOT_OPENED`，一并撤回 |
+> | `O-12` | **行号更正** | `:22` → **`:23`**（差一行） |
+> | `O-15` | **收窄** | 与 `O-1` 同类：目标句被读成验证声明 |
+> | `O-16` | **改判** | **规则已存在**（`AGENTS.md:21` 本身）—— 是执行问题，不是规则缺失 |
+> | `O-17` | **行号更正 + 性质改判** | `:497-501` → **`:497-499`**；**优先级冲突已有 canonical 规则**（`AGENTS.md` 的「关系质量/匹配度非 primitive」条）。**本行是全部 O-行的改写范本** |
+> | `O-4` `O-6` `O-7` `O-8` `O-9` `O-11` `O-13` `O-14` | **保留** | 行号与引文**本轮逐条复核：成立**。`O-7` 补全了 `docs/research/` 路径前缀 |
+>
+> **范本说明**：**`O-17` 是本报告自己标注「措辞正确，不是文档错误」的那一行**，因此它天然是改写其余各行的模板 —— 它示范了三件事：(1) **先分清「文档错误」与「措辞陷阱」**；(2) **先查项目是否已有规则，再谈新增规则**；(3) **行号必须现场复核**。其余各行按这三步改写后，`O-1`/`O-2`/`O-15` 降为措辞不对称、`O-16`/`O-17` 降为既有规则的执行问题、`O-3`/`O-5`/`O-10` 各有实证不成立的部分被撤回。
+>
+> **本轮保留为 `VERIFIED` 的两条（不收窄）**：
+> - **§5 `E1`「你的 schema 有形式语义吗？…当前是散文 + 表格 + markdown 代码块」** —— **成立**。**并且本报告同时承认：这条批评目前无法应答**（`§5` 已写「不能」）。**「无法应答」本身就是诚实的披露，保留。**
+> - **§5 `F` ML 会议（`NeurIPS` / `ICLR` / `ACL-ML`）「dead end」** —— **成立**（无学习组件、无 benchmark、无理论保证、无规模）。**保留原样，包括它「不要投，不要以此为目标改写定位」的强度。**
+> - **§5 `C3`「`VALIDATION_CORPUS` 已做敏感内容筛选」** —— **`PLAUSIBLE`**，保留分级。**Round-3 补一条本轮核实**：`VALIDATION_CORPUS_V0_1.md:25` 有 `Sensitive-content rule: no minors / sexual-violence material selected`，各条目有 `sensitive_content_note` 字段；**但 `:205` 写 `minors present by age only`** —— 即「无未成年人」是**筛选规则**而非**已完成的清白证明**。**该主张应读作「已声明规则 + 逐条标注」，不是「已验证无风险」。**
 
 ## 8. 明确非主张（本 lane 不主张什么）
 
@@ -298,9 +404,20 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 11. 不对 commercial relationship-assessment 产品的能力做任何评价。
 12. **不把 literature 数量或 LLM 一致度当作 validation。**
 
+**Round-3 新增非主张（2026-09-28）**
+
+13. **不主张**本轮独立核实了两个被删 prior-art 的「不存在」。**删除依据来自 Round-2 复核；本轮刻意未复核**（裁决认定「验证这两个 DOI」本身是错误排序）。**不得**把本轮的删除说成「已独立证伪」。
+14. **不主张**本轮产出了任何替代 prior-art 引用。本轮**未推测**可能的正确作者或题名 —— 推测会产生第二个同样缺陷。
+15. **不主张**任何工期。§6 全部估计已标 `NOT_ESTIMATED`；**本 lane 无能力估工期**。**「M0–M5 是必要条件」这一半仍然成立，但它不含时长。**
+16. **不主张** `M6` 与 `M7` 的正确依赖方向。本轮只**取消了 M0–M9 的顺序含义**，因为正确方向取决于尚未定稿的 `M0` schema 与 `M6` mapping target 设计。
+17. **不主张** `κ=.42` 的反向读法对 LHRM 全部有利。它只说明**天花板在人类一侧**；它**不**说明 LHRM 的 8×2 scheme 一定可标注。**16 坐标的类别数与语义粒度都高于 28 类，方向未知。**
+18. **不主张** §7 剩余 8 个 O-行（`O-4`/`O-6`/`O-7`/`O-8`/`O-9`/`O-11`/`O-13`/`O-14`）的**实质判断**已被本轮验证。本轮只验证了它们的**文件:行引用与引文**成立；实质判断**沿用 Round-1**。
+19. **不主张**禁止主张清单完备。本轮已**撤回**其完备性暗示，并指出两个已知漏项。**没列在 §4 的，不等于被允许。**
+
 ## 9. 剩余未知
 
-1. **Acitelli & Antonioni (2006) 30 维方案的确切题名/卷期/DOI 与内容** —— 决定「最小充分基」新颖性判断的最大单一变量。
+1. **~~Acitelli & Antonioni (2006) 30 维方案的确切题名/卷期/DOI 与内容~~ —— 决定「最小充分基」新颖性判断的最大单一变量。**
+   > **Round-3：本条删除。** 该引用被记录为 *JPSP* 90(6) 的一篇文章，而**该文不存在于该 issue/volume**。**删除即定案**，登记条件见 §10。**本轮不产出替代引用** —— 猜一个「看起来对」的作者名会制造第二个同样的缺陷。**注意**：本条曾被称为「最大单一变量」；**一个不存在的引用不可能是任何判断的最大变量**，该措辞本身即是缺陷，已随之失效。
 2. **Boyd & Heewer (2007) 是否确为 LHRM 立场的来源** —— 决定「representation over prediction」是否可作原创主张。
 3. **LHRM 的 8 个有向坐标能否承载已验证关系量表的题项**（M6）—— 论文可行性的核心未测项。
 4. **`PowerImbalance = f(两方向 OutcomeDependence, alternatives, resources, constraints)` 是否真能稳定导出**。
@@ -319,7 +436,6 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 - Garcia, R. L., Kenny, D. A., & Ledermann, T. (2015). Moderation in the actor–partner interdependence model. *Personal Relationships*. DOI `10.1111/pere.12060`
 - Sakaluk, J. K., Joel, S., Quinn-Nilas, C., Camanto, O. J., Pevie, N. W., Tu, E., & Jorgensen-Wells, M. A. (2025). A Renewal of Dyadic Structural Equation Modeling With Latent Variables. *Social and Personality Psychology Compass*. DOI `10.1111/spc3.70045`
 - Back, M. D., & Kenny, D. A. (2010). The Social Relations Model: How to Understand Dyadic Processes. `CITED_SECONDARY`
-
 ### 互依 / 投资模型
 - Rusbult, C. E. (1980). Commitment and satisfaction in romantic associations. *JESP, 16*(2), 172–186. DOI `10.1016/0022-1031(80)90007-4`
 - Rusbult, C. E., Martz, J. M., & Agnew, C. R. (1998). The Investment Model Scale. *Personal Relationships, 5*(4), 357–387. DOI `10.1111/j.1475-6811.1998.tb00177.x`
@@ -359,7 +475,7 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 - Measuring Relationship Quality in an International Study. `https://pmc.ncbi.nlm.nih.gov/articles/PMC6187488/`
 - Joel, S., Eastwick, P. W., Allison, C. J., Arriaga, X. B., et al. (2020). Machine learning uncovers the most robust self-report predictors of relationship quality across 43 longitudinal couples studies. *PNAS, 117*(32). DOI `10.1073/pnas.1917036117`
 - Joel, S., Eastwick, P. W., & Khera, D. S. (2025). A Credibility Revolution for Relationship Science. *Social and Personality Psychology Compass*. DOI `10.1111/spc3.70042`
-- Bloomberg, J. J., Joel, S., & Eastwick, P. W. Partner Effects May Be Weaker Than We Thought. **`UNVERIFIED_DOI`**
+- ~~`Bloomberg, J. J., Joel, S., & Eastwick, P. W. Partner Effects May Be Weaker Than We Thought.`~~ — **Round-3 从本参考文献表删除**（原分级 `UNVERIFIED_DOI`）。**该条已被判定为很可能不存在的引用**（Crossref 作者检索该合著者名返回 0 结果；所记期刊/卷/页属于不同作者）。**删除即定案**；恢复条件见本节末 Round-3 删除记录。**本轮刻意未验证该条 DOI，也未产出替代引用。**
 
 ### 动态系统
 - Feinberg, M. E., Xia, M., Fosco, G. M., Heyman, R. E., & Chow, S.-M. Dynamical Systems Modeling of Couple Interaction. *Prevention Science*. DOI `10.1007/s11121-017-0803-3`
@@ -406,7 +522,94 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 - Wiggins, G., & Broughton, R. (1991). Interpersonal Circumplex. DOI `10.1002/per.2410050503`
 
 ### 未核实（高优先 prior-art，必须由 A04 补验）
-- Acitelli, A. L., & Antonioni, R. (2006). Twenty dimensions of marriage. *JPSP, 90*(6). **`AGENT_RECALL` / `UNVERIFIED_DOI`**
 - Boyd, J. G., & Heewer, S. C. (2007). Communication as a Modeling Activity. *Communication Theory, 17*(1), 4–25. **`AGENT_RECALL`**
 - Cook, T. E., & Messick, T. E. (1979) / Messick, N. (1989, 1995) / Trochim, W. M. K. (1999). Construct validity checks. **`AGENT_RECALL`**
 - Sternberg, R. J. (1986) triangular theory; Spanier, J. A. (1976) DAS; Lund, M. (1985) investment & commitment scales. **`AGENT_RECALL`**
+
+> **R14 Round-3 删除两条（2026-09-28）：本清单原 5 条，现 3 条。两条被删条目均为「很可能不存在的引用」。**
+>
+> | 被删条目 | 原分级 | 出现处 | 删除依据 |
+> |---|---|---|---|
+> | `Acitelli, A. L., & Antonioni, R. (2006). Twenty dimensions of marriage. *JPSP, 90*(6).` | `AGENT_RECALL` / `UNVERIFIED_DOI` | §2.2 末行、§3 `NC-6`、§9 第 1 条、§10（本行）= **4 处承重** | 被记录为 *JPSP* 90(6) 的一篇文章，而**该文不存在于该 issue/volume**；可能真实作者姓氏不同 |
+> | `Bloomberg, J. J., Joel, S., & Eastwick, P. W. Partner Effects May Be Weaker Than We Thought.` | `UNVERIFIED_DOI` | §10（本行）、§5 `A3` = **2 处承重** | **Crossref 作者检索该合著者名返回 0 结果**；所记**期刊/卷/页属于不同作者**；可能对应的正确条目是一篇知名的 ***Cognition*** 论文，其**作者列表不同** |
+>
+> **两条的共同特征**：都被当作「决定新颖性判断的最大单一变量」，**证据为零**，而**承重 4 处与 2 处**。这是本文件里**风险最集中**的一处：一个不存在或张冠李戴的引用，会在任何一次 prior-art 检查里被一眼看破。
+>
+> **本轮刻意没有去「验证这两个 DOI」。** 那是一次错误排序。**删除即定案。**
+>
+> **重新登记各自需要什么（缺一不可）**：
+> - **`Acitelli & Antonioni`**：(1) 可解析 DOI/ISBN，解析结果与期刊/卷/页**逐字段一致**；(2) 作者全名的独立佐证 + 指出「可能的不同姓氏」是哪一个；(3) 该文实际提出的维度清单（条数、维度名）与**原文页码**。
+> - **`Bloomberg / Joel / Eastwick`**：(1) 可解析 DOI；(2) 一条**能返回非零结果**的作者名交叉检索（Crossref + 至少一个第二来源）；(3) 明确该文究竟是**哪一篇** `Cognition` 论文、**作者列表是什么**、以及原报告想引的那条论断（partner effect 的 p-curve）**出自哪一篇**。
+> - **两者共同**：满足后须重跑 §3 `NC-1` / `NC-6` 的置信度，因为这两条曾被计入「已有方案的数量」与「partner effect 的文献支撑」。
+>
+> **本轮未做的事（明确记录）**：**没有**尝试推测正确条目的作者或题名。本轮只做删除与登记条件，**不产出替代引用** —— 猜一个「看起来对」的作者名会制造第二个同样的缺陷。
+
+---
+
+## 11. Round-3 修复轮记录（2026-09-28；child `A3f`）
+
+**权威**：Architect `ARCHITECT_ADJUDICATION_V1`（`#30` comment `5854920569`）· dispatch `5854930069`。
+**范围**：本文件**只做研究与定位的修复**，**不含任何 canonical 编辑**、**不新建 prior-art 引用**。
+
+### 11.1 逐 hunk 裁决映射
+
+| # | 位置 | 变更 | 依据 |
+|---|---|---|---|
+| 1 | §2.2 末行 | **删除 `Acitelli & Antonioni` 行** + 登记恢复条件 | Round-2 复核（*JPSP* 90(6) 无此文） |
+| 2 | §3 `NC-6` | 「四套」列举去掉第 5 项（原列举 5 项而文字说 4 套） | 随 #1 |
+| 3 | §5 `A3` | **删除 `Bloomberg/Joel/Eastwick` 的 p-curve 半句**；注明 `A3` 攻击力下降一档 | Round-2 复核（Crossref 作者检索 0 结果） |
+| 4 | §9 第 1 条 | 删除该条；并指出「最大单一变量」措辞本身即缺陷 | 随 #1 |
+| 5 | §10 未核实清单 | **删除 2 条**（5 → 3）；逐条写恢复条件 | 随 #1、#3 |
+| 6 | §1 BLUF | REUSE 行强度「高」→「中」；工期数字撤回 | `R-H1` + `R-H5` |
+| 7 | §1 BLUF + §2.5 | **`κ=.42` 的用法撤回并反向** | 本轮实读原文核实 |
+| 8 | §2.5 读法段 | **整段重写**：原文实况 + 决定性一句 + 两条更正 | 同上 |
+| 9 | §3 `NC-7`(e) | 改写（天花板在人类一侧） | 随 #7 |
+| 10 | §4 `F-6` | 删去 `Lalk 2025 κ=.42` 作为禁止理由 | 随 #7 |
+| 11 | §4 `F-16` | **降级为 `F-6` 的子句**（自陈非独立） | `R-H2` |
+| 12 | §4 标题 + 新增说明 | **撤回完备性暗示**；列两个漏项；修正「复用结论 = 禁止清单」的双计 | `R-H2` / `R-H4` |
+| 13 | §3 开头警告 | **停止重复论证**该警告（保留一处） | `R-H2` |
+| 14 | §6 Round-3 块 + 表格 | **全部工期 → `NOT_ESTIMATED`**；端到端合计撤回 | `R-H5` / `H-C36`、`H-C37` |
+| 15 | §6 说明第 2 条 | **依赖倒置**：取消 M0–M9 的顺序含义 | `R-H6` / `H-C38` |
+| 16 | §6 `M8` + 说明第 3 条 | 「阻塞后续：否」补读法说明 | `R-H7` / `H-C39` |
+| 17 | §6 说明第 4 条 | `M2` 升级为**强制前置** | 随 #7 |
+| 18 | §7 `O-1`…`O-17` | **7 行改写/撤回、8 行保留、2 行行号更正** | Round-2 复核 + 本轮逐行复核 |
+| 19 | §7 新增自审行改写记录 | 逐行处置表 + **`O-17` 作范本** + 三条 `VERIFIED` 保留 | 同上 |
+| 20 | §3 `NC-1`…`NC-5` 置信度 | **未改动**（见 11.3） | `R-H3` |
+
+### 11.2 本轮独立核实（只核实**实际改动**的 claim）
+
+| 主张 | 路径 | 结果 |
+|---|---|---|
+| Lalk et al. (2025) 的 `.42` 是否是 LLM 天花板 | 实读 Frontiers 全文（`10.3389/fpsyt.2025.1504306`） | 原文逐字：`Interrater agreement was assessed via Cohen's kappa by Demszky et al. (72), ranging between 0.331 (grief) and 0.468 (admiration).` ⇒ **人—人一致度即 κ≈.33–.47；模型 `.42` 落在其内**。**天花板论撤回成立** |
+| Lalk 的方法学 | 同上（摘要 + Methods） | `We employed a public labeled dataset of 28 emotions and translated the dataset into German. A pre-trained LLM was then fine-tuned…` applied to `553 psychotherapy sessions of 124 patients`；数据集 = **GoEmotions**。**`VERIFIED`** |
+| `PENDING` 是否出现在 `docs/foundation/` | `PENDING` 穷举检索 `docs/foundation/*.md` + `AGENTS.md` | **0 次**。仅有的 3 个正则命中全部是 `spending` 的子串。**`O-5` 的该主张不成立** |
+| `STAGE_SUMMARY_2026-09-07.md` 是否记录 72–89 | 全文检索 `72`/`89`/`54`/`71`/`Fletcher` | **该文件从不记录页码**；仅命中两条 DOI 指针（`:241`、`:247`）。**`O-10` 的该主张为假** |
+| `O-3` 的括号不匹配 | 读 `CURRENT_ARCHITECTURE.md:203` + 同文件 `:86`/`:235`/`:236` | `_(` 是统一的下标记法，**不是未闭合括号**。**该子主张不成立** |
+| `O-3(c)` 的「紧接 204 行」 | 读 `:200`–`:204` | 「而走实时演算：」在 **`:200`**；`:204` 是代码块收尾。**差四行** |
+| `O-10` 的 `:1440` | 读 `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:1438` | 引语在 **`:1438`**。**差两行** |
+| `O-12` 的 `:22` | 读 `RELATIONSHIP_EVALUATION_FOUNDATION.md:22`/`:23` | 「5. **动态但不漂移**」在 **`:23`**；`:22` 是「4. **角色与状态分离**」。**差一行** |
+| `O-17` 的 `497-501` | 读 `PARAMETER_CONVERGENCE_V0_1.md:497`/`:499` | R4 标题 `:497`、「`REJECT as primitive`」`:499`。**应为 497-499** |
+| `O-17` 的冲突是否已有规则 | 读 `AGENTS.md` | **已有**：`High-level labels such as "漂亮""贤惠""高价值""真爱""关系质量""匹配度" are not assumed to be primitive variables.` |
+| `F-3` 引的 VALIDATION_CORPUS 句 | 读 `VALIDATION_CORPUS_V0_1.md:17`/`:377` | `None of the 12 includes any mapping result` **逐字成立**。**`F-3` 保留** |
+| `C3` 的敏感内容筛选 | 读 `VALIDATION_CORPUS_V0_1.md:25`/`:205` 及各条 `sensitive_content_note` | 有规则声明与逐条标注；**但 `:205` 写 `minors present by age only`** ⇒ 该主张为 **`PLAUSIBLE`**，非 `VERIFIED` |
+| 两条被删 prior-art 的「不存在」 | **`NOT_OPENED`（刻意）** | 按裁决「不要把资源花在验证这两个 DOI 上」。删除依据来自 Round-2 复核，**本轮不声称独立复核** |
+| 其余 8 个 O-行的行号 | 逐行读文件比对 | **全部成立** |
+
+### 11.3 本轮**未**做的事（`deliberately_not_applied`）
+
+1. **未验证两个被删 DOI。** 裁决明确指出这是错误排序。**删除即定案。**
+2. **未产出任何替代引用**，也**未推测**可能的正确作者/题名。猜一个「看起来对」的作者名会制造第二个同样缺陷。
+3. **未改 `NC-1`…`NC-5` 的置信度数字。** Round-2 复核的 `CONTESTED` 判定（NC-1 / NC-3 / NC-5）与本文件现有数字**方向一致**（NC-1 窄化后 MEDIUM、按现状 LOW；NC-3 MEDIUM-LOW；NC-4 MEDIUM 且自称最可辩护；NC-5 MEDIUM）。**结构保持：三 contested、一条 verified 但显式 fragile、一条最可辩护。不上调任何一条。**
+4. **未改 §5 `A1`–`A5`、`B1`–`B5`、`C1`–`C5`、`D1`–`D3`、`E1`–`E4`、`G1`–`G2`、`H`。** 不在本轮裁决范围。
+5. **未改 `§2.1` 的 14 行 REUSE 对照表**，除 BLUF 的强度措辞。`AGENT_RECALL` 三项**保留在表内**并如实标注 —— 删掉它们会制造缺口而不是补上出处。
+6. **未给任何工期填入替代数字。** 本 lane 无能力估工期。
+7. **未核实 `§2.3` 五个 LLM×关系竞争工作的 arXiv 记录。** 与本轮改动无关 ⇒ `NOT_OPENED`。
+8. **未动 `13` 的任何内容。**
+
+### 11.4 路由（交回 parent）
+
+| 项 | 路由对象 | 内容 |
+|---|---|---|
+| Fletcher & Simpson (2000) 页码主张 | **parent → A04** | `O-10` 的「54–71 vs 72–89」本轮 `NOT_OPENED` 并已撤回。若 A04 持有 Crossref 核验记录，可据其恢复该行 |
+| `13` 的 arXiv 题名单数化缺陷 | **parent → `A4`** | 不在本 child 白名单，未动 |
+| `UNVERIFIED_DOI` 剩余项 | **parent → `A4`** | §10 尚余 3 条（`Boyd & Heewer 2007`、Cook & Messick/Messick/Trochim、Sternberg/Spanier/Lund）。**本轮不删** —— 它们未被判定为不存在，删掉会丢失真实缺口 |

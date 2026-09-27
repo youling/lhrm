@@ -42,6 +42,21 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 > (2) 任何把本矩阵当作"已验证的跨域稳定性清单"的下游用途（Gate B/C 清单设计、Case Bank 分层抽样、跨类型 pooled 分析的入样规则）都**没有已验证的许可**；
 > (3) 若后续真的执行 §6 `U1` 的不变性序列并出现失败，失败在观测上与"语义其实稳定"不可区分，届时这 69 格必须**重做**，而不是"修正一个系数"；`U1` 因此应先于 Gate C。
 > 本段在修复轮被**加强而非减弱**：原有警告一字未删、未改写、未降级。
+>
+> **R11 Round-3 补记（2026-09-28；依 Architect adjudication V1 `X-14` 的检索范围纪律）· 逐格重算 + 制品的证据状态编码缺陷**
+>
+> **重算方法**：直接解析本文件的 §2 矩阵表（24 行 × 9 列 = 216 格），逐格 tally，**不采用本文件此前自报的合计**。
+>
+> **重算结果（本轮编辑后重跑，全部码，216 格）**：`MP = 69` · `MS = 74` · `NA = 24` · `RD = 22` · `UK = 27`。合计 216 ✓。
+>
+> **重算方法与两个时点**：本次以脚本解析本文件的 §2 矩阵表（24 行 × 9 列 = 216 格），逐格 tally，**不采用本文件此前自报的合计**。**编辑前**基线为 `MP 69 · MS 79 · NA 24 · RD 22 · UK 22`；**编辑后**（§2 `Trust` 行 5 格 `MS` → `UK`）为 `MP 69 · MS 74 · NA 24 · RD 22 · UK 27`。**差值恰为 `MS −5` / `UK` +5，与被改的 5 格一一对应**；`MP`、`NA`、`RD` 三码不受影响。
+>
+> **对既有披露的影响**：
+> - **`216` 与 `69` 两个数字经重算在两个时点均成立**，仍可引用。
+> - **本文件 §6 与 §3.4 此前引用的四个 §6 格统计与两个 D 列统计已被证伪并替换**（见 §12 变更表第 3、4 条）。这是本文件内部的一处**自我证伪**，按 X-14「同一规则适用于格统计」处理。
+> - **`NA` 合计 24 格**现在有了一个新的读法：按 `C-P5`，这 24 格是**适用性判断**（该构念在该 dyad-type 上无独立语义），不是**值**。它们**不得**被读成 `0`、也不得被读成 `Unknown`。
+>
+> **制品的证据状态编码仍是缺陷（`RECLASSIFY_AS_METHOD_LIMIT`）**：披露本身已做到可接受的上限（逐格给码、显式声明零不变性研究、显式声明 69 格不可聚合），**但矩阵没有为每格编码证据状态** —— 读者无法区分「本文件逐条查过文献」与「本文件从未查过」。而本文件内部的证据密度差异极大（例：`Trust` × S 仅由**一个**定性同胞访谈研究支撑；`PPR` × F/S/K/C 是主动检索后的负结果）。**在证据状态编码补上之前，本矩阵的「216 个判定格」应被理解为 216 个**待检**单元，而不是 216 条判定。**
 
 列码：`R` 恋爱伴侣 · `D` 约会陌生人（未成形）· `F` 友谊 · `S` 兄弟姐妹 · `K` 亲子（成年）· `C` 照护 dyad · `X` 前任 · `W` 专业/合作 · `A` 冲突/敌对
 
@@ -54,7 +69,7 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 | `Liking` | MP | MP | MP | MP | MP | MP | MP | MP | MP |
 | `RomanticAttraction` | MP | MP | RD | MS | MS | MS | MP | MS | NA |
 | `SexualDesire` | MP | MP | NA | NA | NA | MS | MP | MS | NA |
-| `Trust` | MP | MS | MP | MS | MS | MS | MP | MS | MS |
+| `Trust` | MP | MS | MP | UK | UK | UK | MP | UK | UK |
 | `AttachmentSecurity` | MP | MP | MP | MS | MS | MP | MP | NA | NA |
 | `Caregiving` | MP | NA | MP | MP | MP | MP | MP | MS | MS |
 | `Dedication` | MP | MS | MS | MS | MS | MS | MS | MS | MS |
@@ -76,44 +91,132 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 | 局部投影 `X_(S,O,t)` | MP | UK | RD | MS | MS | MS | MS | MS | MS |
 | 值类（仅 `Unknown`） | MS | MS | MS | MS | MS | MS | MS | MS | MS |
 
+**R11 Round-3 补记（2026-09-28）· `Trust` 行 5 个 `MEANING_SHIFTS` 格已降级为 `UNKNOWN`，并记录本文件的内部矛盾**
+
+| 列 | 改前 | 改后 | 依据 |
+|---|---|---|---|
+| `S` 兄弟姐妹 | `MS` | `UK` | 唯一支撑是**一个**定性同胞访谈研究（Blake et al. 2022） |
+| `K` 亲子 | `MS` | `UK` | 同上，无独立支撑 |
+| `C` 照护 | `MS` | `UK` | 同上，无独立支撑 |
+| `W` 专业 | `MS` | `UK` | 同上，无独立支撑 |
+| `A` 敌对 | `MS` | `UK` | 同上，无独立支撑 |
+
+- **本文件的内部矛盾（不自辩，逐字记录）**：§2 此前把这 5 格判为「语义改变」（`MEANING_SHIFTS`），而 **§6 第 2 条自己把同一构念的同一类格称为「定义欠定」，不是「数据缺失」**。同一份文件对同一格给了两个不同性质的诊断。**本轮采纳 §6 的诊断**（更弱、也更准确），因此判 `UK`。
+- **降级理由的精确表述（不要读过头）**：不是「文献沉默」。这 5 列**有**文献（Blake et al. 2022 的 estrangement、Rempel 式 trust 三维等）。真正的问题是 §6 指出的那一条：§2 把 `Trust` 定义为「愿意把某类脆弱性暴露给 j」，该定义**内建了披露史前提**；在零披露史 dyad 上，同一量表测到的是别的东西。**这是构念定义未被确定，而非语义跨类型改变。**
+- **`UNKNOWN` 也不是完美标签**：§1 码表把 `UNKNOWN` 定义为「文献真正沉默」，而这里的真实状态是「定义欠定」。**§1 码表缺一个表示「定义欠定」的码。** 本轮不改码表（改码表会波及 216 格的读法），**登记为 Architect 待决项**（见 §12 路由表）。
+- **未被本轮改动、且必须显式记录的残留不一致**：`Trust` × `D`（约会陌生人）此前也判 `MS`，**不在本次降级的 5 格之列**，因此**未改**。但它是同一类无支撑的 `MS`。本文件**不擅自扩大裁决范围**；该格列为 Architect 待决项。
+- **对 §6 的依赖不变**：§6 第 2 条关于 `Trust` 的论证、以及 §6 `U5`（`Trust` 在零披露史 dyad 上「高信任」是否可能存在）**原文一字未改**。降级只影响 §2 的**格码**，不撤销该构念的**问题**。
+
 ---
 
 ## 3. 真正的 primitive 变化（不是 readout 差异）
 
-### 3.1 状态空间缺第三个值类：`ScopeApplicability`
+### 3.1 构念 × dyad 的**适用性**需要一条独立轴（原「值类封闭集逻辑矛盾」主张已撤回）
 
-`PARAMETER_CONVERGENCE_V0_1.md` §14 允许坐标为 `estimate_or_region / uncertainty / evidence / provenance`；`CURRENT_ARCHITECTURE.md` §9 允许 `Unknown`；`AGENTS.md` 规定 `Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values`。
+#### R11 Round-3 裁决落地（2026-09-28；依 Architect adjudication V1 的 **X-5** 与 **C-P5**）
 
-但矩阵里 `SexualDesire × {友谊, 兄弟姐妹, 亲子, 敌对}` = `NOT_APPLICABLE`。对兄弟姐妹的性欲坐标，**正确值既不是 `Unknown`（我们可能高度确信其不存在），也不是 `0`（0 是"被测到的零"，是另一个断言），而是"该构念在此 dyad 类型上结构性不适用"**。现有值类集合里没有这一格，**唯一的合法表示方式就是把不适用填成 0 或 Unknown——正是 `AGENTS.md` 禁止的动作**。
+**本节原有的核心主张是「逻辑矛盾、且不能停在 proposal」。该主张已被裁决为 `REFUTED`，本轮撤回。** 原主张的形态是：某个构念在某些 dyad 类型上的正确值是「结构性不适用」，而现有值类集合里没有这一格，因此**唯一的合法表示方式**就是把不适用填成 `0` 或 `Unknown` —— 正是 `AGENTS.md` 禁止的动作 ⇒ 逻辑矛盾，因此必须 durable 到 canonical 而不能停在 proposal。
 
-这不是"加一个构念"，是给状态空间加一个值类，因此它**不在 8 维 basis 里**，不会被 `Gate C (Redundancy challenge)` 发现。`RomanticAttraction` 在敌对 dyad、`AttachmentSecurity` 在纯合同 dyad、`Cohesion` 与 `OutcomeDependence` 在约会陌生人落到同一问题。
+**撤回依据（三条，均为本次逐字复核）**：
 
-> **Proposal（仅提案）**：坐标值类扩为 `{applicable(estimate/interval/…), structurally_not_applicable, scope_unknown}`；`DyadSnapshot` 顶层增加 `DyadScopeProfile`，声明本次快照的有效坐标子集与每坐标 applicability。
+1. **坐标值清单是许可式，不是封闭枚举。** `CURRENT_ARCHITECTURE.md:284`（§9 原则 4）的措辞是 `category、ordinal、continuous、constraint、probability、Unknown 可以共存于混合状态空间` ——「可以」；`PARAMETER_CONVERGENCE_V0_1.md:339` 的 P4 枚举以 `例如：` 引出。两份 canonical 清单彼此不一致，且**全库无封闭性声明**：本次以 `穷举|closed set|仅限|只允许|exclusive|不适用|not applicable|仅包含|封闭` 穷举检索 `docs/foundation/*.md` + `AGENTS.md`，**唯一命中**是 `PARAMETER_CONVERGENCE_V0_1.md:343` 的 `exclusive romantic partners` —— 一个**关系标签**，不是值类封闭性声明。⇒ 「集合里没有这一格」推不出「不存在合法表示」。
+2. **canonical 已经有一个具名槽位承接该语义**：`PARAMETER_CONVERGENCE_V0_1.md:359-367` 的 **P5 `BoundaryRule_(A,B,domain)`**，当前判定 `KEEP as Constraint/Agreement`，不是 liking/trust/commitment primitive。这是一个 `domain` 索引的通用槽位，不是为性欲量身定制的。
+3. **canonical 已经有一个针对该语义的工作例**：`CURRENT_ARCHITECTURE.md:190` —— 「『订婚前不发生性行为』更接近 Agent boundary / constraint，而不是『性欲为零』」。该例的三个可复用环节是：(i) `constraint` 是合法值类，(ii) 边界/规则类事实归 `Constraint/Agreement` 落点，(iii) 不得写成「欲望为零」。
+
+⇒ **不存在逻辑矛盾。** 本文件此前把「是否存在逻辑矛盾」与「是否缺登记位」当作同一个问题处理，是一次范畴错误；前者已被推翻，后者才是残留项。
+
+#### 真正的残留项（本节留下的东西）
+
+**canonical 缺少一个正式位置来登记「某构念在某 dyad-type / context 上不具独立语义」这条负面知识 —— 目前它只能写在报告正文里。** `EV3` 对该残留判 `PLAUSIBLE`；本轮未取得反证，也未取得正面证据，状态维持。
+
+**Architect 已裁决的落地形态（`C-P5`，`ACCEPT AS SEPARATE AXIS`）**：在一条**与估计/不确定性、与 mapping status 都正交**的**适用性轴**上表达，词表最小集 `APPLICABLE | NOT_APPLICABLE_BY_RULE | APPLICABILITY_UNKNOWN`，并保留 reason / provenance。明确**不是**：不是 `0`；不是 `Unknown`；**不得**加入坐标值域；**不得**并入 Unknown 枚举。
+
+**本文件据此不承担 canonical 落点。** canonical 侧的实现由 R3 的 sibling child（Track R3-D / R3-F 的 measurement-semantics 线）承担；本文件的义务是让本报告与该裁决一致，并指向 owner。**本文件不做 canonical 编辑。**
+
+> **Proposal（仅提案，已按 C-P5 重写）**：`DyadSnapshot` 顶层增加 `DyadScopeProfile`，声明本次快照的有效坐标子集与**每坐标 applicability**（`APPLICABLE | NOT_APPLICABLE_BY_RULE | APPLICABILITY_UNKNOWN` + reason/provenance）。**坐标值域不变。**
+
+#### 本 verdict 最容易被推翻的三处（自陈，逐条写出）
+
+- **(a) canonical 工作例的案例不是 sibling dyad。** `CURRENT_ARCHITECTURE.md:190` 的案例是一个**未婚同居**事实，不是同胞 dyad。本论证**不依赖同构案例**（它依赖上面 (i)(ii)(iii) 三个可复用环节），但「已经有一个例子」这句话的**强度**因此低于「已有一条同形态的先例」。
+- **(b) 若某个 sibling dyad 确实存在被记载的性欲坐标，则 `NA` 判定本身错误。** 那会**同时**推翻本节的 `NA` 论证与 §2 矩阵中全部 `NOT_APPLICABLE` 格 —— 也就是说，**「不适用」这批判断与本节的登记位诉求是同生共死的**，不能只保一个。
+- **(c) 「许可式 ≠ 封闭集」是本 verdict 中最依赖解释力的一环。** **若 Architect 裁定该清单为封闭集，本条必须重审。**（本轮 Architect 已裁定为许可式，见 adjudication V1 X-5 与 §C 第 3 条 `Value domains are permissive`。）
+
+#### 被取代的原文（按本文件 0-删除约束原样保留，以本取代声明为准）
+
+> 以下为 Round-3 前的 §3.1 原文，逐字保留，**已失效**：
+>
+> `PARAMETER_CONVERGENCE_V0_1.md` §14 允许坐标为 `estimate_or_region / uncertainty / evidence / provenance`；`CURRENT_ARCHITECTURE.md` §9 允许 `Unknown`；`AGENTS.md` 规定 `Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values`。
+>
+> 但矩阵里 `SexualDesire × {友谊, 兄弟姐妹, 亲子, 敌对}` = `NOT_APPLICABLE`。对兄弟姐妹的性欲坐标，**正确值既不是 `Unknown`（我们可能高度确信其不存在），也不是 `0`（0 是"被测到的零"，是另一个断言），而是"该构念在此 dyad 类型上结构性不适用"**。现有值类集合里没有这一格，**唯一的合法表示方式就是把不适用填成 0 或 Unknown——正是 `AGENTS.md` 禁止的动作**。
+>
+> 这不是"加一个构念"，是给状态空间加一个值类，因此它**不在 8 维 basis 里**，不会被 `Gate C (Redundancy challenge)` 发现。`RomanticAttraction` 在敌对 dyad、`AttachmentSecurity` 在纯合同 dyad、`Cohesion` 与 `OutcomeDependence` 在约会陌生人落到同一问题。
+>
+> **Proposal（被取代）**：坐标值类扩为 `{applicable(estimate/interval/…), structurally_not_applicable, scope_unknown}`。
+>
+> - **失效点**：「现有值类集合里没有这一格 ⇒ 唯一合法表示是 0/Unknown ⇒ 逻辑矛盾」整条推理链。
+> - **取代依据**：Architect adjudication V1 `X-5`（`DECIDED: PERMISSIVE, NOT CLOSED`）+ `C-P5`（`ACCEPT AS SEPARATE AXIS`）+ §C 第 3 条 `Value domains are permissive`；证据链见上三条复核。
+> - **仍然成立的部分**：「这一批 `NA` 判定不落在 8 维 basis 内，因此不会被 `Gate C (Redundancy challenge)` 发现」—— **保留**（与值类问题无关，是 Gate 覆盖问题）。
+> - **仍然成立但需重新取证的部分**：`NA` 判定**本身**（`SexualDesire` × {友谊, 兄弟姐妹, 亲子, 敌对}）状态为 `PLAUSIBLE`，最强反证见上文 (b)，**`HOLD_FOR_EVIDENCE`**。
+> - **被撤回的框架**：「不能停在 proposal、必须 durable」的措辞。**不成立**。
 
 ### 3.2 缺一个 directed 构念：`Obligation / Duty Orientation`
 
-`Dedication` 的定义是"`主动`希望维持…的`内在`关系性承诺"（affective/voluntary 向量）；`Caregiving` 的定义是"照护…的`关系性动机`"——两者都把 affection 写死。obligation 在 LHRM 中没有坐标，只能溢出到 `ConstraintsAndAgreements`（被写成"约束/协议"的层）或 Agent 层。**五条互相独立的证据线收敛到"obligation 与 affection/attachment 可分离，且在亲属与照护域承重"**：
+`Dedication` 的定义是"`主动`希望维持…的`内在`关系性承诺"（affective/voluntary 向量）；`Caregiving` 的定义是"照护…的`关系性动机`"——两者都把 affection 写死。obligation 在 LHRM 中没有坐标，只能溢出到 `ConstraintsAndAgreements`（被写成"约束/协议"的层）或 Agent 层。**证据线收敛到"obligation 与 affection/attachment 可分离，且在亲属与照护域承重"**：
 
-1. **Cicirelli (1993)**，*Psychology and Aging* 8(2):144–155，doi:10.1037/0882-7974.8.2.144 — 标题即"attachment **and obligation** as daughters' motives for caregiving behavior"，两者被**分开测量**并各自解释 burden。
-2. **Montgomery, Havvey & Kosloski (1997)**，`Profiles in Caregiving: The Unexpected Career` — `Obligation is as potent a motivation for caregiving as affection insofar as some children take on caregiving responsibilities to reverse or overcome longstanding problems with parents`。二者不仅可分离，还可能**反向**。
-3. **`Reciprocity and Social Support in Caregivers' Relationships` (1995)**，doi:10.1177/104973239500500306 — 互惠本身有 4 种变体（reciprocity / generalized / **waived** / constructed），其中 constructed reciprocity **只**在照护对象身上出现；且 `Some caregivers provided care by obligation with no reciprocity.`
-4. **Gehr et al. (2021)**，doi:10.1186/s12877-021-02425-1 — `motivation to care due to feelings of affection` vs. `due to feelings of obligation` 是三型分类的**判别维度之一**。
-5. **Meyer & Allen (1991)**，doi:10.1016/1053-4822(91)90011-z — 承诺研究自身**必须**把 commitment 拆成 affective / **normative** / continuance，说明单一"承诺"坐标**必然欠定**。
+#### 承重证据（本轮分级的依据；**必须在 LHRM 研究域内且著录完整**）
+
+1. **Cicirelli (1993)**，*Psychology and Aging* 8(2):144–155，doi:10.1037/0882-7974.8.2.144 — 标题即"attachment **and obligation** as daughters' motives for caregiving behavior"，两者被**分开测量**并各自解释 burden。**域内 · 著录完整。**
+2. **Neufeld & Harrison (1995)**，*Qualitative Health Research* 5(3):348–365，doi:10.1177/104973239500500306 — 互惠本身有 4 种变体（reciprocity / generalized / **waived** / constructed），其中 constructed reciprocity **只**在照护对象身上出现；且 `Some caregivers provided care by obligation with no reciprocity.` **域内 · 著录完整**（本轮已补齐，见下"著录修复"）。
+3. **Gehr et al. (2021)**，doi:10.1186/s12877-021-02425-1 — `motivation to care due to feelings of affection` vs. `due to feelings of obligation` 是三型分类的**判别维度之一**。**域内 · 著录完整。**
+
+#### 非承重证据（保留，但**不计入**收敛）
+
+- **Montgomery, Havvey & Kosloski (1997)**，`Profiles in Caregiving: The Unexpected Career` — `Obligation is as potent a motivation for caregiving as affection insofar as some children take on caregiving responsibilities to reverse or overcome longstanding problems with parents`。内容域内，但**著录未完成**：本轮仅经**非出版方镜像**读到文本，**需合法渠道复核**。**因此本条不计入承重集**，其引文在承重集中被第 1、3 条承担。
+- **Meyer & Allen (1991)**，doi:10.1016/1053-4822(91)90011-z — 承诺研究自身**必须**把 commitment 拆成 affective / **normative** / continuance，说明单一"承诺"坐标**必然欠定**。**`WRONG-SCOPE`（出域）**：该文的样本是**组织员工**，不是 Human Dyad。它是一个**方法学类比**，不是域内证据，**本轮从承重集中移除**，不删除、不再作为独立支撑计数。
 
 同时 Dykstra 指出代际 obligation 是**法律构成**的：`Laws define the relationships of dependence and interdependence between generations and gender`；`Legal norms and social policies are not neutral. They impose dependencies that limit the autonomy of men and women, or on the contrary, support the choice to assume intergenerational obligations`。→ `impose` 与 `choice` 两种情形在 LHRM 中无法区分。
 
-> **Proposal（仅提案）**：`Obligation_(i->j)` 作为第九个 directed candidate；`Dedication` 相应收窄为 affective dedication，并显式记录二者相关性而非合并。
+> **Proposal（仅提案，本轮再次确认 `MUST_STAY_PROPOSAL`）**：`Obligation_(i->j)` 作为第九个 directed candidate；`Dedication` 相应收窄为 affective dedication，并显式记录二者相关性而非合并。
+>
+> **为什么必须停在 proposal（不升级为 canonical change）**：(a) 承重集已从 5 条降为 **3 条**，且缺 U6（kin/care dyad 上 obligatory vs affectionate 的**权重**）的实测；(b) 1 条著录不完整（Montgomery et al. 1997）；(c) 原第 5 条出域（Meyer & Allen 1991）。**三条中任何一条被补上，本条才可重议。**
+
+#### 著录修复（Round-3）
+
+- **原第 3 条的著录不完整已修复**：原以**无作者名**的题名条目录入（`Reciprocity and Social Support in Caregivers' Relationships (1995)`，注「作者名未取得」）。本轮经 Crossref（`10.1177/104973239500500306`）解析为 **Neufeld, A., & Harrison, M. J. (1995). *Qualitative Health Research*, 5(3), 348–365**。两处引文（`Constructed reciprocity was used only with the care recipient.` / `Some caregivers provided care by obligation with no reciprocity.`）经该记录摘要**逐字复核通过**。
+- **证据计数更正**：本节此前称「**五条互相独立**的证据线」。按上表，**域内且著录完整的只有 3 条**。「五条互相独立」的措辞**已失效**（独立性主张本身亦未被检验，见 §1 的零不变性警告）。
+
+#### 与 §3.7、§4 `L-10` 的合并（**三重计数 → 一条**）
+
+本节（`Obligation` directed construct）、§3.7（`RoleContract_(A,B)` pair fact）、§4 `L-10`（`family obligations` 放在 Agent 层是层级错置）**三项最终主张同一件事：义务/契约性内容属于 pair-institutional 层**。本轮按 **R-G7** 合并为**一条** canonical 候选：
+
+> **合并候选 CAND-OBLIG（唯一一条，proposal only）**：义务/契约性内容归 **pair-institutional 层**。三个落点分别是它的三个面 ——
+> - **定向面**：§3.2 的 `Obligation_(i->j)`（谁对谁有义务）。
+> - **契约面**：§3.7 的 `RoleContract_(A,B)`（角色、期限、权限、scope of practice、单方终止权）。
+> - **归属修正**：§4 `L-10`（`family obligations` 从 Agent 层移到 pair-institutional 层）。
+>
+> **计数更正**：此前是 **3 条** canonical 候选；本轮起是 **1 条**。下游引用请按 **1** 计，不要按 3 计。
 
 ### 3.3 缺一个 per-edge 结构性构念：`Constrainedness / Control-Asymmetry`
 
-`CURRENT_ARCHITECTURE.md` §3 的顶层容器是 `ConstraintsAndAgreements`，`PARAMETER_CONVERGENCE` §6 的 P5 是 `Boundary / Exclusivity Rules` —— **二者都内建了"同意/consent"**。但 §2 已把 `违法或违反社会规范` 的关系写入域。非自愿约束（coercive control、人身控制、勒索、囚禁）既不是 agreement，也不是 `Environment`，也不是 `Agent`。`AGENTS.md` 规定"违法性是与关系状态分离的轴"——违法性有轴，但**约束能力本身没有坐标**。
+> **R11 Round-3 主论据置换（2026-09-28）**：本节此前的排序让两条外部引用承担了主要支撑。**本轮把主论据换成结构性论证**（可独立于任何文献成立、直接由 canonical 文本推出），外部引用降为**佐证**。理由：这两条引用的**著录质量与本节的安全权重不匹配** —— 一条是同行评议期刊论文（可用），另一条是**无年份、无 DOI 的研究总报告**（不可作为承重支撑）。§5 排序把本条标为「**安全价值最高**」，因此主论据必须站在最硬的证据上。
 
-- **Johnson (2006)**，doi:10.1177/1077801206293328：有害 dyad 的**定义性变量是 control context**，`the distinctions among the types are based entirely on control context, not frequency or severity of violence`。
-- **Dutton, Goodman & Schmidt**：`measurement of control tactics alone does not capture the capacity to control or the function of control`。LHRM 把一切 conflict 降级为 Action/Event（§8）之后，**capacity 无处安放**。
+#### 主论据（结构性，不依赖任何外部引用；`PLAUSIBLE`，可证伪）
+
+`CURRENT_ARCHITECTURE.md` §3 的顶层容器是 `ConstraintsAndAgreements`，`PARAMETER_CONVERGENCE` §6 的 P5 是 `Boundary / Exclusivity Rules` —— **二者都内建了"同意/consent"**。但 §2 已把 `违法或违反社会规范` 的关系写入域。非自愿约束（coercive control、人身控制、勒索、囚禁）既不是 agreement，也不是 `Environment`，也不是 `Agent`。`AGENTS.md` 规定"违法性是与关系状态分离的轴"——**违法性有轴，但约束能力本身没有坐标**。
+
+这条论证只依赖三件已在库内可查的事：(i) `ConstraintsAndAgreements` 的容器名与 P5 的判定都假定"约束来自协议"；(ii) `CURRENT_ARCHITECTURE.md:54` 已把 `违法或违反社会规范` 写入研究域；(iii) `AGENTS.md` 把合法性/道德性/伤害与关系状态分层。**(i) 与 (ii) 的并存是一个规范层缺口，不是一个经验缺口。**
 
 **可证伪主张**：当前 basis **无法区分"互惠的敌意"与"单向的控制"** —— 二者都表现为双向低 Liking + 大量 conflict action。Johnson 的四型正是靠 control context 才能分开。
 
-> **Proposal（仅提案）**：`Constraints` 与 `Agreements` 拆为两容器；`Constraint` 为 per-edge，带 `source` / `scope` / `consent_status ∈ {consensual, imposed, unknown}` / `degree`；派生 `ConstraintAsymmetry(A,B)`。
+#### 佐证（`NOT_LOAD_BEARING`，保留但不承重）
+
+- **Johnson (2006)**，doi:10.1177/1077801206293328：有害 dyad 的**定义性变量是 control context**，`the distinctions among the types are based entirely on control context, not frequency or severity of violence`。**著录完整、可用**；但它是 IPV 域内的经验结果，不承担本条提案的成立。
+- **Dutton, Goodman & Schmidt**，*Development and Validation of a Coercive Control Measure for Intimate Partner Violence*（NIWAP 开放 PDF 研究总报告）：`measurement of control tactics alone does not capture the capacity to control or the function of control`。**著录不完整（无年份、无 DOI、非同行评议）**，本轮**明确不计为承重引用**。它提示的缺口是真的（LHRM 把一切 conflict 降级为 Action/Event 之后，**capacity 无处安放**），但该提示已由上面的主论据独立承担。
+- **Hardesty et al. (2015)**，doi:10.1111/jomf.12201 —— 同样作为佐证，不承重。
+
+> **Proposal（仅提案，本轮确认 `MUST_STAY_PROPOSAL`）**：`Constraints` 与 `Agreements` 拆为两容器；`Constraint` 为 per-edge，带 `source` / `scope` / `consent_status ∈ {consensual, imposed, unknown}` / `degree`；派生 `ConstraintAsymmetry(A,B)`。
+>
+> **注意与 §3.1 的区别**：`consent_status` 是**值**（一个 per-edge 事实有三种取值），**不是**适用性元数据；不要与 `C-P5` 的 `APPLICABLE | NOT_APPLICABLE_BY_RULE | APPLICABILITY_UNKNOWN` 混用。两条轴正交。
 
 ### 3.4 `PairExistence` / `TerminationStatus`：dyad 这个对象本身存在方式不同
 
@@ -121,7 +224,8 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 
 - **前任**：Tan et al. (2014)，doi:10.1177/0265407514536293 指出 `the tradition has been to measure relationship dissolution as a dichotomous end state (i.e., intact or dissolved)`，而其自身结果表明 pre-breakup commitment **中介** post-breakup closeness，结论是 `the termination of a romance does not signal the complete termination of a relationship`。→ "已终止"不是 pair 的一个状态，而是**双方不一致 + 单方持续维护 + 各自法律状态**三件事。Hardesty et al. (2015) 更把 `harassment and violence after separation` 列为区分 coercive-control 类型的关键变量。
 - **兄弟姐妹**：Blake et al. (2022, n=291) 受访者自陈 `I don't really know my brother`（like a stranger），作者结论 `confirming that they are not necessarily or always life-long, significant or supportive`。→ **基因上完整的同胞 dyad 可以完全惰性/不存在。**
-- **约会陌生人**：矩阵 D 列有 4 个 `NA` + 1 个 `RD` + 2 个 `UK`，根源在此 —— **成形前的 dyad 不是一个有状态坐标的 pair，而是一个"提议"**。目前只能靠 `Unknown` 兜，会把"还没发生"与"发生了但我不知道"混为一谈。
+- **约会陌生人**：矩阵 D 列共 24 格，按码分布为 **`NA` = 6 · `UK` = 8 · `MP` = 5 · `MS` = 4 · `RD` = 1**（本轮逐格重算，2026-09-28）—— 其中 6 个 `NA` 的根源在此：**成形前的 dyad 不是一个有状态坐标的 pair，而是一个"提议"**。目前只能靠 `Unknown` 兜，会把"还没发生"与"发生了但我不知道"混为一谈。
+  - **被取代的原文**：「矩阵 D 列有 4 个 `NA` + 1 个 `RD` + 2 个 `UK`」。**其中 `NA` 与 `UK` 两个数字均错误**（4→6、2→8）；`RD = 1` 正确。**取代依据**：Round-3 对 §2 矩阵表的机械重算（`X-14`：格统计同样不得照抄自报合计）。
 
 > **Proposal（仅提案）**：`Relationship_ij.existence ∈ {not_formed, proposed_unilateral, proposed_mutual_unknown, formed, formed_contested, terminated_unilateral, terminated_mutual, terminated_with_continuing_maintenance, inert_estranged}`；`RelationshipIdentity` 拆为 `{relational_role, legal_status, functional_arrangement, termination_status}` 四轴。
 
@@ -163,17 +267,31 @@ family science 不把"又爱又怨"当作低分合成：
 > 修复不是给 P1 加语义，而是承认 **`PairState` 按定义是 pair 级容器，而敌对/合作/kin 三类 dyad 的 "we" 的自然归属是 group 级**。
 > **Proposal（仅提案）**：允许 `CohesionScope ∈ {pair, subgroup, coalition}`。
 
-### 3.7 `Role / Institution` 目前是 query lens，但对 ≥3 类 dyad 它是**状态成分**
+### 3.7 `Role / Institution`：保留 query lens，但在 ≥3 类 dyad 上它是**承重**的（本 audit 不再主张 `AGENTS.md` 第 3 条不成立）
 
-`AGENTS.md`「Current architecture direction」第 3 条：`Keep Role explicit as a query/evaluation lens; it does not replace world state.` 本 audit 认为这条在**专业 / 亲属 / 照护**三类 dyad 上不成立 —— 约束、依赖、行动空间都是 role 决定的：
+> **R11 Round-3 更正（2026-09-28）**：本节此前的标题与首句主张 `AGENTS.md`「Current architecture direction」第 3 条 —— `Keep Role explicit as a query/evaluation lens; it does not replace world state.` —— **在专业 / 亲属 / 照护三类 dyad 上不成立**。
+>
+> **这一步被判定为 `WRONG-SCOPE`（对结论这一步），本轮撤回。** 从「在专业 dyad 上 role 是承重变量」推到「因此 `AGENTS.md` 第 3 条不成立」是**两件事**，第二步是一次范畴跳跃：
+> - 第 3 条说的是 **`Role` 不取代 world state**（它是 query lens）。即使 role 在某类 dyad 上**承重**，也不等于它**取代**了 world state —— 一个承重的 query lens 仍然可以是 query lens。
+> - 本文件**没有**任何证据表明 role 承重会**取代** world state；恰恰相反，本节下面引的每一条都说明 role **增加**了一个需要表示的维度，而不是消解了别的维度。
+>
+> **因此：`Role` 保留为 query lens（`AGENTS.md` 第 3 条不作修改）。** 本节改为提一条**新的 pair fact**，而不是挑战现有裁决。
+>
+> **可信的部分（保留）**：`Role` 在**专业 / 亲属 / 照护**三类 dyad 上是**承重**的 —— 这一步 `PLAUSIBLE`，逐条依据见下。
+>
+> **被取代的原文**：「本 audit 认为这条在**专业 / 亲属 / 照护**三类 dyad 上不成立 —— 约束、依赖、行动空间都是 role 决定的」+「> 这是对**现有架构裁决的挑战**，不是变更提案。」
+> **取代依据**：Round-3 对该推理第二步的 `WRONG-SCOPE` 裁定。**「不成立」与「对现有架构裁决的挑战」两句均已失效。**
+
+`AGENTS.md` 第 3 条仍然成立。以下是**另一半**——role 在三类 dyad 上承重的具体依据：
 
 - Dykstra：代际 dependence 由**法律与政策**构成（pair/institutional fact，不是 query lens）。
 - Meyer & Allen (1991)：role-based commitment 必须在三成分间拆分，否则欠定。
 - Horvath & Symonds (1991) / Flückiger et al. (2018)：专业治疗 dyad 中与结果最稳健相关的 dyad 变量是 **working alliance**（共同目标 + 协作纽带 + 共情理解）—— **任务/角色**构念，不是 affective dyadic state。
 - Olson, Russell & Sprenkle (1983)：家庭/婚姻系统研究主坐标是 cohesion + adaptability + communication，**不是 love 模型** → 家庭 dyad 领域实际已用 role-结构坐标替代 affective 坐标。
 
-> 这是对**现有架构裁决的挑战**，不是变更提案。
-> **Proposal（仅提案）**：保留 `Role` 作为 query lens，新增 `RoleContract_(A,B)` pair fact（角色、期限、权限、scope of practice、单方终止权），并让 `Dedication`/`OutcomeDependence` 的读法显式声明依赖它的哪一成分。
+> **Proposal（仅提案）**：保留 `Role` 作为 query lens（**不改 `AGENTS.md` 第 3 条**），新增 `RoleContract_(A,B)` pair fact（角色、期限、权限、scope of practice、单方终止权），并让 `Dedication`/`OutcomeDependence` 的读法显式声明依赖它的哪一成分。
+>
+> **计数提示**：`RoleContract_(A,B)` **不另计**为一条 canonical 候选 —— 它是 §3.2 合并候选 **CAND-OBLIG** 的**契约面**（见 §3.2「与 §3.7、§4 `L-10` 的合并」）。本节此前与 §3.2、§4 `L-10` 合计被算作 **3 条**，现为 **1 条**。
 
 ### 3.8 `source / target / edge` facet 方案在亲属 dyad 上不可识别
 
@@ -224,11 +342,25 @@ SRM 式分解的可识别性要求两条隐含条件：**(a) target 的属性与
 | 照护 | dependence 是**被设计的**定义特征；受照护者的 dependence 部分由照护者造成 → S/T 不可分离（与 §3.8 同源） |
 | 前任 | Hardesty et al. 显示 post-separation 承重变量仍在 → **neutral 读法在这里是安全隐患** |
 | 专业 | dependence 由 role / org / license 定义，**不是 person-to-person**；directed 状态强制了人的读法 |
-| 敌对 | dependence 可以是**被强加的**（人身控制、勒索、囚禁）。措辞读起来是关于 i 的 option set 的中性事实，**而它实际是伤害结构本身** |
+| 敌对 | dependence 可以是**被强加的**（人身控制、勒索、囚禁）。**这一行不是关于 i 的 option set 的中性事实 —— 它就是伤害结构本身。** `D8` 的措辞在敌对列读起来像中性的"选择集窄"，而它实际测的是"对方能否限制 i 的人生选项" |
 
-**并带出一个 readout 中立性缺陷（不是 primitive 缺陷）**：`R2 PowerImbalance = f(Dependence_A→B, Dependence_B→A, alternatives, resources, constraints)`。一个**健康的高照护 dyad**（受照护者高度依赖、方向不对称、替代方案少）与一个**胁迫 dyad**（intimate terrorism）在 D8 上**数值结构相同**，R2 会打成同一类，而它们在伤害上相反。`AGENTS.md` 说 readout 是下游产物，但**被命名的 readout 会被当成发现**。
+**并带出一个 readout 中立性缺陷（不是 primitive 缺陷）**：`R2 PowerImbalance = f(Dependence_A→B, Dependence_B→A, alternatives, resources, constraints)`。一个**健康的高照护 dyad**（受照护者高度依赖、方向不对称、替代方案少）与一个**胁迫 dyad**（intimate terrorism）在 D8 上**数值结构相同**，R2 会打成同一类，**而它们在伤害上相反**。
+
+> **R11 Round-3 措辞更正（2026-09-28；本 cluster 安全价值最高的一条措辞缺陷）**
+>
+> **被取代的原文**：「措辞读起来是关于 i 的 option set 的中性事实，**而它实际是伤害结构本身**」——这句**只在敌对列**成立，报告此前把它放在一张覆盖 7 类 dyad 的表的末行，读起来像是对 D8 **整体**的定性。
+>
+> **更正后的表述（本条以此为准）**：
+> 1. **D8 的定义本身不含伤害判断。** 「i 的重要结果、福利、机会或生活状态在多大程度上依赖于 j」是一句中性的结构描述，**在健康照护 dyad 上同样成立且同样正确**。
+> 2. **但 D8 的数值在两种 dyad 上不可作同样的解释。** 同一组数值（高度依赖 + 方向不对称 + 替代方案少）在**健康高照护 dyad** 上意味着"照护关系在结构上不对称"；在**胁迫 dyad** 上意味着"对方在限制 i 的人生选项"。**数值结构相同，伤害结构相反。**
+> 3. **因此危害不在 D8 的定义，在"坐标 + readout"这一对东西被当成可解释的**。`R2 PowerImbalance` 会把两者打成同一类，而它是一个**被命名的 readout** —— `AGENTS.md` 说 readout 是下游产物，但**被命名的 readout 会被当成发现**，并会进入任何按它排序的资源分配/保护决策。
+> 4. **这不是措辞洁癖。** 一句读起来是中性的定义，配上一个会被当成发现的 readout，在胁迫 dyad 上会导致**把保护性资源分配到错误的一侧**。这是本文件里后果最重的一处表达缺陷。
+>
+> **取代依据**：Round-3 `R-G6` / `G-C9` 裁定（`VERIFIED`，`G` 独立用 canonical 文本复现，未依赖本文件的外部引用）。
 
 > **Proposal（仅提案）**：所有 readout 携带 `dyad_type_scope` 与 `valence_not_defined_here` 标记；`D8` 定义显式声明其 `alternatives` 项的 `reference_class`。
+>
+> **路由给 Architect（本条的设计后果不在本文件职权内）**：上表第 4 点指出的问题**不是** `D8` 措辞能解决的，它是**坐标设计**问题 —— 同一个 dependence 数值在两种 dyad 上承载相反的伤害语义，而当前 basis 里**没有任何第二个轴**能把它们分开。可考虑的方向（**均为候选，本文件不主张**）：给 `OutcomeDependence` 一个与坐标正交的**来源/施加方式**标记（consensual / imposed / unknown，与 §3.3 的 `consent_status` 同族），或让 `R2` 的分类在输入该标记前不可计算。**本文件不实施、不提案 canonical 变更**；登记为 Architect 待决项（见 §12 路由表）。
 
 ### L-2 · `ConstraintsAndAgreements` / `Boundary / Exclusivity Rules` 内建 consent，且示例集是纯性/婚恋
 
@@ -338,6 +470,8 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 
 代际 obligation 由**法律**构成（Dykstra），是 pair/institutional 层事实。放在 Agent 层会导致 (a) 同一家庭两个成员得到不同值、(b) 无法表示"法律上存在但本人不承认"、(c) 方向性丢失（谁对谁有义务）。
 
+> **R11 Round-3 计数更正（2026-09-28）**：本条与 §3.2（`Obligation` directed construct）、§3.7（`RoleContract_(A,B)` pair fact）**是同一个主张的三次计数**：义务/契约性内容属于 pair-institutional 层。本条**不再单独计为一条 canonical 候选**，改记为 §3.2 合并候选 **CAND-OBLIG** 的**归属修正面**。本条的分析文字**原文保留、未删**。
+
 ### L-11（次要）· `Satisfaction` / `GoalAlignment` 的**跨域极性不稳定**
 
 - 照护域：双方报告一致度调节几乎所有结果；low-agreement 家庭中大多数关系不显著 → 任何建立在双方报告上的 readout 都需先声明一致性。
@@ -379,7 +513,20 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 
 这不是"注意一下"，是一条会**静默出错**的推论。
 
-1. **共享坐标 schema + 构念的条件存在性 = 同一个向量在不同 dyad 类型上语义不同。** 任何把恋爱样本与同胞样本拼在一起的 pooled 分析比较的是**不可比的量**，偏误方向由**过采样哪种 dyad 类型**决定。矩阵中 `RomanticAttraction` 有 2 个 `NA`+3 个 `MS`、`SexualDesire` 有 4 个 `NA`、`OutcomeDependence` 有 1 个 `NA`+5 个 `MS`、facet 方案有 5 个 `MS` —— pooled 估计在这些行上**没有定义**。
+1. **共享坐标 schema + 构念的条件存在性 = 同一个向量在不同 dyad 类型上语义不同。** 任何把恋爱样本与同胞样本拼在一起的 pooled 分析比较的是**不可比的量**，偏误方向由**过采样哪种 dyad 类型**决定。矩阵中 `RomanticAttraction`、`SexualDesire`、`OutcomeDependence`、facet 方案四行都有 `NA` 格 —— pooled 估计在这些行上**没有定义**。
+
+   > **R11 Round-3 逐格重算（2026-09-28；取代本条原有的四个格统计）**
+   >
+   > 原句为：「矩阵中 `RomanticAttraction` 有 2 个 `NA`+3 个 `MS`、`SexualDesire` 有 4 个 `NA`、`OutcomeDependence` 有 1 个 `NA`+5 个 `MS`、facet 方案有 5 个 `MS`」。**四个统计里两个错误。** 重算方法：解析 §2 矩阵表逐格 tally，不采用自报合计。
+   >
+   > | 行 | 原报告 | **重算值** | 判定 |
+   > |---|---|---|---|
+   > | `RomanticAttraction` | 2 `NA` + 3 `MS` | **1 `NA` + 4 `MS`** | **错**（两个数字都错） |
+   > | `SexualDesire` | 4 `NA` | **4 `NA`** | 对 |
+   > | `OutcomeDependence` | 1 `NA` + 5 `MS` | **1 `NA` + 6 `MS`** | **错**（`MS` 数错） |
+   > | facet 方案 `source/target/edge` | 5 `MS` | **5 `MS`** | 对 |
+   >
+   > **取代依据**：Round-3 `R-G` / `G-C3`（`UNSUPPORTED`，对**这五个具体数字**）。**注意：结论方向不变** —— 四行都含 `NA` 格，pooled 估计在这些行上仍然**没有定义**。**被证伪的是数字，不是推论。**
 
 2. **同一份 instrument 在不同 dyad 类型上测的不是同一个构念。**
    - **`Dedication` 的 Investment Model 三件套**（satisfaction / investment / **alternatives**）不能直接搬到友谊/亲属/专业：`alternatives` 在友谊上近乎无定义（Silver），在亲属上为空（ascriptive），在专业上被 role contract 替代（Meyer & Allen）。
@@ -410,7 +557,8 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 | X-2 | "不预设异性、陌生起点、婚恋目标" vs. P5 示例集全是性/婚恋、Agent 层 `baseline libido`、Gate B 的 `unilateral attraction` |
 | X-3 | `AGENTS.md` "never silently coerce missing information into neutral values" vs. `Unknown` 是唯一非数值值类 → 结构性不适用**必然**被 coerce 成 0 |
 | X-4 | §2 "允许…违法或违反社会规范…关系结构" vs. 约束层被类型化为 `ConstraintsAndAgreements` |
-| X-5 | `AGENTS.md` "Role is a query lens; it does not replace world state" vs. Dykstra / Horvath / Meyer & Allen / Olson 显示 role/contract 在 ≥3 类 dyad 上是**状态**成分 |
+| X-5 | ~~`AGENTS.md` "Role is a query lens; it does not replace world state" vs. Dykstra / Horvath / Meyer & Allen / Olson 显示 role/contract 在 ≥3 类 dyad 上是**状态**成分~~ **（Round-3 撤回：推理第二步 `WRONG-SCOPE`。`AGENTS.md` 第 3 条不作修改，`Role` 保留 query lens。存活的部分只有「role/contract 在 ≥3 类 dyad 上是承重的」这一条，见 §3.7。）** |
+| X-9 | **（Round-3 新增）** 坐标值域是**许可式而非封闭集**（`CURRENT_ARCHITECTURE.md:284`「可以」；`PARAMETER:339`「例如：」；全库无封闭性声明） ⇒ 「某构念在此 dyad 无独立语义」**不是逻辑矛盾**，但 canonical **无正式位置登记这条负面知识**。依 `C-P5` 落在**独立适用性轴**上（`APPLICABLE \| NOT_APPLICABLE_BY_RULE \| APPLICABILITY_UNKNOWN` + reason/provenance），**不是** `0`、**不是** `Unknown`、不入坐标值域、不并入 Unknown 枚举。**canonical 落点由 sibling child 承担，本文件不做 canonical 编辑。** |
 | X-6 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §1 的加法示意分解 vs. §6 "不预先承诺线性叠加"；本 audit 给出可证伪推论说 dyad 类型本身是交互项的函数 |
 | X-7 | 三处 cross-context / Gate B 清单互不相同，且漏 5 类 dyad |
 | X-8 | `Cohesion` 是 pair 级容器，但敌对 / 合作 / kin 三类 dyad 的 "we" 归属是 group 级 |
@@ -484,10 +632,10 @@ Laurenceau, J.-P., Barrett, L. F., & Pietromonaco, P. R. (1998). Intimacy as an 
 Meyer, J. W., & Allen, N. R. (1991). A three-component conceptualization of organizational commitment. *Human Resource Management Review*, 1(1), 61–89. doi:10.1016/1053-4822(91)90011-z
 Montgomery, A. W., Havvey, J. E., & Kosloski, R. L. (1997). Profiles in caregiving: The unexpected career. In R. D. Miller & S. M. Gillies (Eds.), *Making Hard Decisions*. Oxford University Press. (本次经非出版方镜像读到文本，需合法渠道复核)
 Nolan, M., Keady, J., & Grant, G. (1996). Developing a typology of family care. *Journal of Advanced Nursing*, 23, 950–961.
-Olson, D. H., Russell, D. R., & Sprenkle, D. H. (1983). Circumplex model of marital and family systems: VI. Theoretical update. *Family Process*, 22(1), 69–83. doi:10.1111/j.1545-5300.1983.00069.x
+Olson, D. H., Russell, C. S., & Sprenkle, D. H. (1983). Circumplex model of marital and family systems: VI. Theoretical update. *Family Process*, 22(1), 69–83. doi:10.1111/j.1545-5300.1983.00069.x — **著录更正（Round-3）**：中间作者名的首字母**原作 `D. R.`，实为 `C. S.`**（Crossref 记为 `CANDYCE S. RUSSELL`）。**DOI 本身可解析，不更正。** 本轮经两条独立路径核实：Crossref `works/10.1111/j.1545-5300.1983.00069.x` 返回完整记录（*Family Process* 22(1):69–83, 1983-03, `is-referenced-by-count: 630`）；DOI handle 系统 `https://doi.org/api/handles/10.1111/j.1545-5300.1983.00069.x` 返回 `responseCode: 1`（存在），指向 `https://onlinelibrary.wiley.com/doi/10.1111/j.1545-5300.1983.00069.x`。**Round-2 复核所称「该 DOI 不可解析」本轮未能复现，判定为 `NOT_REPRODUCED`，故不作更正**（见 §12 路由表）。
 Pietromonaco, P. R., & Perry-Jenkins, E. (2014). Marriage in whose America? What the suffocation model misses. *Psychological Inquiry*, 25(1), 108–113. doi:10.1080/1047840x.2014.876909
 Pruchno, R. A., Burant, C. J., & Peters, N. D. (1997). Typologies of caregiving families: Family congruence and individual well-being. *Family Relations*. (DOI 未核)
-"Reciprocity and Social Support in Caregivers' Relationships: Variations and Consequences" (1995). *Home Health Care Services in Aging*. doi:10.1177/104973239500500306 (作者名未取得)
+Neufeld, A., & Harrison, M. J. (1995). Reciprocity and Social Support in Caregivers' Relationships: Variations and Consequences. *Qualitative Health Research*, 5(3), 348–365. doi:10.1177/104973239500500306 — **Round-3 著录修复**：本条目原以**无作者名**的题名条目录入（注「作者名未取得」），且期刊名误作 *Home Health Care Services in Aging*。经 Crossref（`10.1177/104973239500500306`）解析，**正确期刊为 *Qualitative Health Research* 5(3):348–365，作者 Neufeld, A., & Harrison, M. J.**（摘要另记样本为 20 位早产儿母亲 + 20 位照护认知障碍长者者）。正文两处引文经该摘要逐字复核通过。
 Reis, H. T. (Ed.). *Handbook of Relationship Science*. (章节前言 "Close relationships", publisher preview)
 Rodriguez, L. M., Øverup, C. S., Wickham, R. E., Knee, C. R., & Amspoker, A. B. (2016). Communication with former romantic partners and current relationship outcomes among college students. *Personal Relationships*, 23(3), 409–424. doi:10.1111/pere.12133
 Silver, A. Friendship and trust as moral ideals: An historical approach. (开放 PDF: `voidnetwork.gr`)
@@ -530,6 +678,19 @@ Gilligan / Kleemans / Rodriguez (2017), *American Sociological Review* — `RECO
 - 不主张 Parsons & Bales (1955) 被本文件用作论据；它只是被**解析**了，正文未读、零引用。
 - **取代声明（必读）**：上一行区中 `不主张 therapeutic alliance 是单向知觉构念（未取得原文）` 一条，其括注 `（未取得原文）` 在修复轮**已失效** —— 原文已于本次取得（全文实读）。该条的**前半句仍然成立且更强**：`alliance` **确实不是**单向知觉构念，但这不再是"未取得原文所以不断言"，而是**已被原文反驳**（`REFUTED`，见 §4 L-7 修复轮补记与 §8 自我更正）。该旧行按 0-删除约束**原样保留**，以本取代声明为准。
 
+**Round-3 新增非主张（2026-09-28）**
+
+- **不主张**存在「值类封闭集 / 逻辑矛盾」。该主张本轮**已撤回**（`REFUTED`，依 Architect adjudication V1 `X-5`）。本文件此前把它写成「不能停在 proposal 的唯一 canonical 落点」，那是**错误定位**。
+- **不主张** canonical 已有的 `BoundaryRule_(A,B,domain)` 与 `CURRENT_ARCHITECTURE.md:190` 的工作例**完全同构于** sibling dyad 的性欲坐标。案例是**未婚同居**事实；本论证不依赖同构，但「已有先例」这句话的强度因此较弱。
+- **不主张** `SexualDesire × {友谊, 兄弟姐妹, 亲子, 敌对}` 的 `NA` 判定已被证实。该判定维持 `PLAUSIBLE` / `HOLD_FOR_EVIDENCE`；**若某 sibling dyad 确实存在被记载的性欲坐标，该判定本身错误**，会同时推翻本节的 `NA` 论证与 §2 矩阵中全部 `NOT_APPLICABLE` 格。
+- **不主张**「许可式 ≠ 封闭集」这一步无争议。它是本 verdict 中**最依赖解释力**的一环；**若 Architect 改判为封闭集，§3.1 必须重审**。
+- **不主张**本文件对 canonical 做过任何修改。`C-P5` 的 canonical 落点由 sibling child 承担；本文件只做定位与一致性。
+- **不主张** `Trust` 行 5 个格的 `MS` → `UK` 降级等于「文献对 Trust 在这些 dyad 上沉默」。真实诊断是**定义欠定**（§6 第 2 条），而 §1 码表**没有**表示「定义欠定」的码。
+- **不主张** `Trust` × `D` 已被复核。该格也判 `MS`、也不在裁决覆盖范围内，**本轮未改**，登记为 Architect 待决项。
+- **不主张** §3.2 的 `Obligation` 已可落到 canonical。承重证据本轮由 5 条降为 **3 条**，仍缺 U6 实测、1 条著录不完整、1 条出域。
+- **不主张** Olson/Russell/Sprenkel (1983) 的 DOI 需要更正。本轮两条独立路径均判定其**可解析**；Round-2 的相反复核结论判定为 `NOT_REPRODUCED`。本轮只更正了作者名首字母（`D. R.` → `C. S.`）。
+- **不主张** `L-1` 的 harm 结构问题是措辞问题。它是**坐标设计**问题；本文件只改措辞并把设计后果路由给 Architect。
+
 ---
 
 ## 11. 状态建议（修复轮定案）
@@ -556,3 +717,77 @@ Gilligan / Kleemans / Rodriguez (2017), *American Sociological Review* — `RECO
 4. **第三条重试解析了一个零引用来源**：P&B 解析后**对任何判定无影响**，不构成升级理由。
 
 **交付建议**：按 `PARTIAL` 交付。下游若引用本文件，**必须**同时引用 §1 的测量不变性警告与 §10 的非主张清单。`U1` 建议作为 Gate C 的**前置门**（而非 Gate C 内部项），其余 11 条 `U` 项按 §6 表执行；§7 的 8 条矛盾项可并行交给 Architect，**不依赖本文件升级**。
+
+---
+
+## 12. Round-3 修复轮记录（2026-09-28；child `A3f`）
+
+**权威**：Architect `ARCHITECT_ADJUDICATION_V1`（`#30` comment `5854920569`）· dispatch `5854930069`。
+**范围**：本文件**只做研究与定位的修复**，**不含任何 canonical 编辑**。
+
+### 12.1 本轮重算的数值（全部为本次重跑，**不采用任何自报合计**）
+
+| # | 位置 | 原报告值 | **重算值** | 方法 | 判定 |
+|---|---|---|---|---|---|
+| 1 | §1 披露 | 216 格 / 69 `MP` | **216 / 69（成立）** | 解析 §2 矩阵表逐格 tally | ✅ 可继续引用 |
+| 2 | §1 全码分布 | （本文件此前未给出） | 编辑前 `MP` 69 · `MS` 79 · `NA` 24 · `RD` 22 · `UK` 22<br>**编辑后** `MP` 69 · `MS` 74 · `NA` 24 · `RD` 22 · `UK` 27 | 同上，编辑前后各跑一次 | ✅ 两时点合计均 = 216；差值 `MS −5`/`UK` +5 与被改的 5 格对应 |
+| 3 | §6 第 1 条 · `RomanticAttraction` | 2 `NA` + 3 `MS` | **1 `NA` + 4 `MS`** | 同上 | ❌ **错** |
+| 4 | §6 第 1 条 · `SexualDesire` | 4 `NA` | **4 `NA`** | 同上 | ✅ 对 |
+| 5 | §6 第 1 条 · `OutcomeDependence` | 1 `NA` + 5 `MS` | **1 `NA` + 6 `MS`** | 同上 | ❌ **错**（`MS` 数） |
+| 6 | §6 第 1 条 · facet 方案 | 5 `MS` | **5 `MS`** | 同上 | ✅ 对 |
+| 7 | §3.4 · D 列 | 4 `NA` + 1 `RD` + 2 `UK` | **6 `NA` + 1 `RD` + 8 `UK`** | 同上 | ❌ **2 个数字错**（`NA`、`UK`） |
+
+⇒ §6 原引用的**四个格统计里两个错**；§3.4 的 D 列统计**两个都错**。**被证伪的是数字，不是推论方向** —— 四行仍含 `NA` 格，pooled 估计在这些行上仍无定义。
+
+### 12.2 逐 hunk 裁决映射
+
+| # | 位置 | 变更 | 依据 |
+|---|---|---|---|
+| 1 | §3.1 整节重写 | **撤回「值类封闭集逻辑矛盾」与「不能停在 proposal」**；记录残留项与 `C-P5` 落地形态；原全文按 0-删除约束逐字保留 | `X-5` `DECIDED: PERMISSIVE, NOT CLOSED` + `C-P5` + §C 第 3 条 |
+| 2 | §2 矩阵 `Trust` 行 | 5 格 `MS` → `UK` | `R-G5` / `G-C10` `REJECT` |
+| 3 | §1 披露块 | 加重算的全码分布；点明**证据状态编码**是制品缺陷 | `X-14` + `G-C2` `RECLASSIFY_AS_METHOD_LIMIT` |
+| 4 | §6 第 1 条 | 替换 4 个格统计为重算值 + 原/新对照表 | `R-G` / `G-C3` `UNSUPPORTED` |
+| 5 | §3.4 | 替换 D 列统计为重算值 | 同上 |
+| 6 | §3.2 | 承重集 5 → 3 条；补齐 Neufeld & Harrison 著录；Meyer & Allen 移出承重集；`MUST_STAY_PROPOSAL` | `R-G` 段 + `G-C6` |
+| 7 | §3.2 / §3.7 / §4 `L-10` | **三重计数合并为 1 条** `CAND-OBLIG` | `R-G7` `RECLASSIFY_AS_METHOD_LIMIT` |
+| 8 | §3.3 | **主论据换为结构性论证**；外部引用降为 `NOT_LOAD_BEARING` | `R-G8` `ACCEPT_AS_PROPOSAL` 但换主论据 |
+| 9 | §3.7 | **撤回「`AGENTS.md` 第 3 条不成立」**；保留 `Role` 为 query lens；改提 pair fact | `R-G9` / `G-C14` `HOLD_FOR_EVIDENCE` |
+| 10 | §4 `L-1` | **措辞重写**（区分「D8 定义中性」与「数值不可同样解释」）；设计后果路由 Architect | `R-G6` / `G-C9` `VERIFIED` |
+| 11 | §7 `X-5` / 新增 `X-9` | 标注撤回；新增适用性轴矛盾项 | `G-C14` + `C-P5` |
+| 12 | §9 | Olson 等 (1983) 作者名首字母 `D. R.` → `C. S.`；**DOI 不更正** | 本轮独立核实 |
+| 13 | §9 | 互惠研究条目补全为 Neufeld & Harrison (1995) | 本轮独立核实 |
+| 14 | §10 | 新增 10 条 Round-3 非主张 | 契约 §3.9 |
+
+### 12.3 本轮独立核实（只核实**实际改动**的claim）
+
+| 主张 | 路径 | 结果 |
+|---|---|---|
+| 坐标值清单无封闭性声明 | `穷举\|closed set\|仅限\|只允许\|exclusive\|不适用\|not applicable\|仅包含\|封闭` 穷举检索 `docs/foundation/*.md` + `AGENTS.md` | **唯一命中** `PARAMETER_CONVERGENCE_V0_1.md:343` `exclusive romantic partners`（关系**标签**，非封闭性声明）。**`VERIFIED`** |
+| 值域措辞是许可式 | `CURRENT_ARCHITECTURE.md:284` | `category、ordinal、continuous、constraint、probability、Unknown **可以**共存于混合状态空间`。**`VERIFIED`** |
+| P4 枚举是许可式 | `PARAMETER_CONVERGENCE_V0_1.md:339` | 以 `例如：` 引出。**`VERIFIED`** |
+| `BoundaryRule_(A,B,domain)` 存在 | `PARAMETER_CONVERGENCE_V0_1.md:359-367` | 存在，`KEEP as Constraint/Agreement`。**`VERIFIED`** |
+| 性欲工作例存在 | `CURRENT_ARCHITECTURE.md:190` | 存在。**`VERIFIED`**（但案例是**未婚同居**，非 sibling） |
+| Olson 等 (1983) DOI 不可解析 | Crossref `works/…` + DOI handle API | **两条路径均判定可解析** ⇒ **`NOT_REPRODUCED`，不作更正** |
+| 互惠研究作者/期刊 | Crossref `works/10.1177/104973239500500306` | **Neufeld, A., & Harrison, M. J. (1995), *Qualitative Health Research* 5(3):348–365**；两处引文逐字复核通过。**`VERIFIED`** |
+| `Gate B`/`§2.4`/§7.6 三清单 | `11` §4 `L-8` | 未改动，本轮不重跑（`NOT_OPENED`） |
+
+### 12.4 本轮**未**做的事（`deliberately_not_applied`）
+
+1. **未做任何 canonical 编辑。** `C-P5` 的落点由 sibling child（measurement-semantics 线）承担。
+2. **未改 §1 码表。** 新增「定义欠定」码会波及 216 格的读法，超出本轮授权。
+3. **未改 `Trust` × `D` 格。** 裁决覆盖的是 5 格；擅自扩大范围是越权。已登记。
+4. **未改 §3.3 的 `consent_status` 词汇。** 它是**值**，与 `C-P5` 适用性轴正交，不得混用（已在正文写明）。
+5. **未核实 `§3.4` 的 `P-4`、`§4 L-8` 的三清单、`§6 U*` 各项。** 与本轮改动无关 ⇒ `NOT_OPENED`。
+6. **未补 `Dutton, Goodman & Schmidt` 的年份/DOI。** 不在本轮三处著录缺陷清单内，且**不可凭空补**；已在正文标为著录不完整且不计为承重。
+7. **未改 §7 其余矛盾项**（`X-1`…`X-8`）—— 不在本轮裁决范围。
+
+### 12.5 路由与待决项（交回 parent / Architect）
+
+| 项 | 路由对象 | 内容 |
+|---|---|---|
+| `C-P5` canonical 落点 | **measurement-semantics sibling child** | 适用性轴的 schema 形状、reason/provenance 字段、与 `Unknown`/mapping status 的正交性 |
+| `Trust` × `D` 残留 `MS` | Architect | 是否把同裁决扩到第 6 格 |
+| §1 码表缺「定义欠定」码 | Architect | 是否新增该码；新增会波及 216 格读法 |
+| `L-1` 坐标设计后果 | Architect | dependence 坐标是否需要与坐标正交的「施加方式」标记（consensual/imposed/unknown），或 `R2` 在缺该标记前不可计算 |
+| Olson DOI 的 `NOT_REPRODUCED` | **parent** | Round-2 `G-C24(a)` 所称「DOI 不可解析」本轮无法复现；该复核结论应标 `SUPERSEDED_BY_REPAIR` 或 `NOT_REPRODUCED` |
+| `13` 的 arXiv 题名单数化缺陷 | **parent → `A4`** | 不在本 child 白名单内，未动 |

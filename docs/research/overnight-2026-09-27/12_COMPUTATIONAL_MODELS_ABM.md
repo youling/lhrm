@@ -12,7 +12,18 @@
 
 ## 0. TL;DR（先读这一段）
 
-1. **本 lane 最重要的发现是一个否证**：不存在可与 LHRM 对象直接比较的既有关系 ABM。现有工作分成三堆——**配对人口学**、**网络 tie 动力学**、**可读行为生成**——**没有一堆的对象是"关系内部的、方向化的、保留 Unknown 的时间索引状态"**。LHRM 在这个维度上不是落后，而是**孤立**。
+1. **本 lane 最重要的发现是一个否证**：**在本 lane 已检索的场所内**，未找到可与 LHRM 对象直接比较的既有关系 ABM。现有工作分成三堆——**配对人口学**、**网络 tie 动力学**、**可读行为生成**——**在本次检索覆盖的样本内没有一堆的对象是"关系内部的、方向化的、保留 Unknown 的时间索引状态"**。LHRM 在这个维度上不是落后。
+   > **R12 Round-3 检索范围更正（2026-09-28；依 Architect adjudication V1 `X-14` 与 §C 第 6 条 `Search failure/access restriction is not ontology evidence`）**
+   >
+   > **被取代的原文**：「**不存在**可与 LHRM 对象直接比较的既有关系 ABM … LHRM 在这个维度上不是落后，而是**孤立**」。
+   >
+   > **两处修正**：
+   > 1. **「不存在」→ 检索范围命题。** 本报告的采样框架是 §2 清单（GitHub / JOSS / CRAN / JASSS / CoMSES / arXiv / Crossref / 公开项目页），**没有任何一项是领域总体抽样**。`X-14` 明确：除非抽样支持总体不存在，字段级存在性主张必须改写为**检索范围主张**。合规表述是「**在本 lane 已审计的检索场所内未找到**」，不是「不存在」。
+   > 2. **「孤立」这一措辞撤回。** 「孤立」是一个**总体断言**（它断言整个领域的状态），同样超出采样框架。而且它**低配了本报告自己的正面证据**（见 §4.2 与 §10 的 Round-3 补记）。**本报告没有资格断言一个领域的状态。**
+   >
+   > **对照 §1 的自陈**：§1 写的是「通过 C5 的：**本 lane 未找到任何一个**」——**这才是本报告证据所能支撑的形式**。§0 的 headline 与 §1 自相矛盾，本轮以 §1 为准。
+   >
+   > **不主张**：这不改变 §10 的裁决方向，也不主张存在这样的 ABM。**「未找到」与「不存在」之间的距离，正是本报告不能跨越的那一段。**
 2. **校准最扎实的关系 ABM 里没有"关系状态"**。Hills & Todd (2008) 的 MADAM 匹配了美国初婚年龄曲线并成功预测了 5 年后的离婚统计，但它的一对"关系"只是"共享 trait 数 + 时长"，**没有 attraction / trust / belief，方向性完全不存在**。
 3. **最成熟的有向二人统计模型（SAOM/RSiena）在原理上排除 LHRM 的对象**，而且是作者自己在正文里写明的排除性判据：tie 的存在被假定为**处于发送方单边控制之下**，因此"排除大多数需要协商才能成立的关系类型"。
 4. **LHRM 方向性分解真正的统计学祖宗是 Social Relations Model（actor / partner / relationship 三分量方差成分）**，但它是**横截面**的、需要 **round-robin** 设计（Case Bank 的单一 dyad 深度材料结构上不满足），且把 residual 混在"relationship"里、不区分共享事实与测量误差。**所以它能回答"我的 8 个坐标是否可分离"，不能回答"我的转移对不对"。**
@@ -34,7 +45,9 @@
 | C4 | **存在可指认的 calibration / validation 动作** | 用于区分「机制演示」与「经验验证」 |
 | C5 | **状态可以有 Unknown / 不确定性 / 观测限制** | 对齐 §3 `Reality != Observation != Belief` 与 §9 `ProvenanceAndUncertainty` |
 
-**通过 C1–C3 的极少。** 通过 C4 的更少。通过 C5 的：**本 lane 未找到任何一个**。
+**通过 C1–C3 的极少。** 通过 C4 的更少。通过 C5 的：**在本 lane 已检索的场所内未找到任何一个。**
+
+> **检索范围声明（`X-14` 要求，与上句同生共死）**：上句是一个**检索结果**，不是**领域总体**结论。本报告的采样框架是 §2 的开放框架清单与 §3 的具名模型清单；**未做**领域总体抽样、未做系统综述、未检索付费库。因此合规的引用形式是「**在本 lane 已审计的检索场所内未找到通过 C5 的模型**」。**禁止**改写为「没有模型通过 C5」或「该维度不存在」。
 
 ---
 
@@ -108,8 +121,11 @@
   3. 常见误用：把 `M_ij` 当成"关系质量"读数。**它不是**，它只是没被 actor/partner 解释掉的部分。
 
 #### C-SAOM · Stochastic Actor-Oriented Model / RSiena
-- **状态表示**：邻接矩阵。`x_ij ∈ {0,1}`，**严格二值**（"Weighted networks are not allowed"）；可多模、可与行为共演化；actor/dyadic covariates。
-- **转移规则**：把所有网络变化分解为 **ministeps**，每一步一个 actor 创建或终止一条出边。目标函数分三个函数：**evaluation**（无边时的变化）/ **creation**（新边）/ **endowment**（既有边）。三者在统计上是**多项选择**（不是二元），参数解释为 log-probability ratio。**关键限制：三者不可同时出现在同一模型中（完美共线）。**
+- **状态表示**：邻接矩阵。`x_ij ∈ {0,1}`，**严格二值**（"Weighted networks are not allowed"）；可多模、可与行为共演化；actor/dyadic covariates。**证据等级 `VERIFIED`。**
+  > **Round-3 限定（重要）**：「严格二值」这一表述**在 SAOM 的主体设定内成立，但同页存在例外条款**（Round-2 复核在同页定位到例外句）。本轮**未打开该页原文**，例外句的准确内容与范围记为 `NOT_OPENED`。**因此**下方由「严格二值」推出的任何 LHRM 侧结论**均不成立**（见 Round-3 推论更正）。
+- **转移规则**：把所有网络变化分解为 **ministeps**，每一步一个 actor 创建或终止一条出边。目标函数分三个函数：**evaluation**（无边时的变化）/ **creation**（新边）/ **endowment**（既有边）。三者在统计上是**多项选择**（不是二元），参数解释为 log-probability ratio。**关键限制：三者不可同时出现在同一模型中（完美共线）。证据等级 `PLAUSIBLE` —— 本轮未定位到出处。**
+  > **Round-3 证据降级**：「三函数不可同时出现（完美共线）」此前以与「严格二值」相同的确定语气写出。Round-2 复核判定该条 **`PLAUSIBLE`（未找到出处）**。本轮**未打开 RSiena manual 或 Snijders et al. 2010 正文复核该句**（`NOT_OPENED`）。该限制在 §8 `I2` 里被用作「三者的更新律不可合并」的支撑 ⇒ **`I2` 相应降级**，见 §8 Round-3 补记。
+
 - **结构效应清单**（可复用于 LHRM）：out-degree effect、**reciprocity effect**、transitive triplets / balance / transitive ties / distance-two、three-cycles、in/out-degree popularity & activity。**balance 效应的定义值得单独抄**："a preference for ties to those others who have a **similar set of outgoing ties**"，且**同时计算同向选择与同向不选择**（`x_ih = x_jh = 1` 与 `x_ih = x_jh = 0`）——这是处理"结构等价"而非"结构相似"的正确形式。
 - **校准来源**：真实**网络面板数据**（≥2 wave）。
 - **方向性**：**完全支持。** `i→j` 与 `j→i` 是两个独立变量。整篇入门文献的主线就是"如何估计有向网络的动力学"。
@@ -120,8 +136,18 @@
   Snijders, van de Bunt & Steglich (2010) 原文：
   > "Ties are supposed to be, in principle, **under control of the sending actor** (although this will be subject to constraints), **which will exclude most types of relations where negotiations are required for a tie to come into existence**."
 
-  伴侣、亲属、照护、合作都属于"tie 的存在需要双方协商"的类型。**SAOM 的成功前提（单边 tie 控制）与 LHRM 的对象前提（双方共同构成的关系）互斥。** 同时二值化也直接违反 LHRM 的混合态表示。
+  伴侣、亲属、照护、合作都属于"tie 的存在需要双方协商"的类型。**SAOM 的成功前提（单边 tie 控制）与 LHRM 的对象前提（双方共同构成的关系）互斥。**（引语与 DOI 均 `VERIFIED`。）
   另：该文献明确批评早期纯 ABM 网络模型"lack an **explicit estimation theory**… they cannot be used for purposes of theory testing in a statistical model"。**这句话同样适用于 LHRM：没有估计理论的模拟模型不是理论检验工具。**
+
+  > **Round-3 推论更正（撤回，2026-09-28）**
+  >
+  > **被取代的原文（接上句）**：「同时二值化也**直接违反** LHRM 的混合态表示。」
+  >
+  > **撤回依据**（`WRONG-SCOPE`，Round-2 `R-G3` / `G-C16` 复核）：该推论**遗漏了同页的例外句**，因此是**不完整引用上的推论**。`X-14` 的精神同样适用于此 —— 拿一段被截断的来源陈述去推 LHRM 侧的结论，与把检索失败写成领域不存在是同一类错误。
+  >
+  > **本轮未打开该页原文**，例外句内容记为 `NOT_OPENED`；**因此本轮既不主张「二值化不违反混合态表示」，也不主张它违反。** 只声明：**该推论在当前证据状态下不成立。**
+  >
+  > **仍然成立的部分（不依赖被撤回的推论）**：上文的**单边 tie 控制 / 需协商的关系类型被排除**这一条**独立成立**（引语逐字、DOI 已核实），它是本报告对 SAOM 的**结构性**排除判据（§11 非主张 10、`§8 I4`）。**SAOM 被排除的理由是「对象前提互斥」，不是「二值化」。**
 
 #### C-APIM · Actor–Partner Interdependence Model
 - **状态**：`UNKNOWN`。本 lane 未检索。这是与 SRM 并列的二人方法学重要分支，**很可能是本报告的真实缺口**。见 §12。
@@ -225,10 +251,25 @@
 | **模型鉴别型** | C-CoupleSimulation | 要求模型重建**真实个体**并据此区分模型 |
 | **随机实验型** | Centola (2010) *Science* 329(5996):1194–1197, DOI `10.1126/science.1185231`（**本次仅核实著录，未读正文，细节 `UNKNOWN`**） | 真实 RCT + 显式模型比较 |
 
-### 4.2 三条硬证据（支持"整个 ABM 社会仿真文献默认是机制演示"这一判断）
+### 4.2 硬证据与元证据（支持"整个 ABM 社会仿真文献默认是机制演示"这一判断）
+
+> **Round-3 分级总表（2026-09-28；三条的证据状态不同，不得并列为「三条硬证据」）**
+>
+> | # | 内容 | **Round-3 证据状态** | 本轮是否打开原文 |
+> |---|---|---|---|
+> | 1 | Lustick (2000) 领域内部自认 | **`VERIFIED`**（本报告 §3.3 逐字引文） | 是（Round-1 已实读） |
+> | 2a | Angus & Hassani-Mahmooei (2015) 的 TS 建模稀少的转述 | **`PLAUSIBLE`** | **否（`NOT_OPENED`）** |
+> | 2b | Grazzini & Richiardi (2015) 的**依赖图**部分 | **`VERIFIED`**（Round-2 复核）；**方向与本报告所述相反（对本项目有利）** | **否（`NOT_OPENED`）** |
+> | 3 | Windrum et al. (2007) 领域诊断 | **`VERIFIED`**（§7 C1/C6/C8/C9 逐字引文） | 是（Round-1 已实读） |
+>
+> **对 §4.2 标题的修正**：本节标题此前称「三条**硬证据**」。**只有第 1、3 条是硬证据**；第 2 条是 `PLAUSIBLE` 转述 + 一条方向相反的 `VERIFIED` 结论。
 
 1. **来自领域内部的自认**：Lustick (2000, §2.5) 把 ABM 的方法论交易明确写成"接受发现的近乎完全的人造性"，并因此专门撰文批评 Axelrod 等人用 folk theorem 造 agent 规则。**这不是外部批评者的攻击，是一个领域内 leader 对默认状态的承认。**
 2. **元证据**：Grazzini & Richiardi (2015) *JASSS* 18(4)4 报告，Angus & Hassani-Mahmooei (2015) 扫描 100+ 篇 JASSS ABM 论文，"found **very few instances** of additional (statistical) modelling of TS data"。即：ABM 输出几乎不被当作随机过程再做统计推断。
+   > **Round-3 证据分级更正（2026-09-28）**：本条此前与第 1、3 条并列为「三条硬证据」，语气相同。**实际证据状态不同**：
+   > - **Angus & Hassani-Mahmooei (2015) 那条 = `PLAUSIBLE`，本轮 `NOT_OPENED`。** 本报告**未核实该文原文**，只经 Grazzini & Richiardi 转述。**其「100+ 篇」与「very few instances」两个数字不得作为已核实数字引用。**
+   > - **依赖图部分 = `VERIFIED`，且方向与本报告所述相反。** Round-2 复核独立判定 Grazzini & Richiardi 的依赖图部分成立，**且其方向对本项目有利**（见 §4.2 补记与 §10 Round-3 补记）。本轮**未打开该文原文复核该部分**（`NOT_OPENED`），故按复核结论记录并标注来源。
+   > - **本条不得再被并列为「三条硬证据」中的等同一条。** 它现在是一条 `PLAUSIBLE` 转述 + 一条 `VERIFIED` 依赖图结论。
 3. **领域诊断**：Windrum, Fagiolo & Moneta (2007) *JASSS* 10(2)8 —— "AB modellers tend to deal with **in-sample** data (i.e., their prime aim is to replicate statistical properties of past data). **Out-of-sample exercises… are less frequently carried out** by AB economists"；并指出该领域 "an excess of heterogeneity with respect to the range of competing models and a **lack of consensus on core methodological questions**"，且 "orthodox economists have not been moved" 的原因之一是 "a perceived lack of robustness in AB modelling"。
 
 ### 4.3 唯一的"正确交易条件"被写下来了
@@ -306,14 +347,19 @@ Lawson & Park (2000) *JASSS* 3(1)2 记录了一次**可复现性失败**并定�
 | # | 想法 | 出处 | 落点（假设，不是结论） | 风险 |
 |---|---|---|---|---|
 | I1 | 指数松弛的期望下调 `j_t = j_0·λ^t`，`λ ~ N(μ,σ)` 个体异质 | Hills & Todd 2008 | `Dedication` / `OutcomeDependence` 的期望随时间下调 | 需 longitudinal panel 估 `μ,σ`；无数据即退化为 hand-tuned |
-| I2 | **creation / endowment / evaluation** 三分 | RSiena manual | LHRM §6：`Action/Event` 落在哪一类决定它如何更新 `X`。**三者的更新律不可合并**（SAOM 已证明共线） | 分类本身是模型假设，不是观察事实 |
-| I3 | **reciprocity effect** 与 **balance effect**（同时计同向选与同向不选） | RSiena manual | `Mutuality_k = H(Z[k,i,j], Z[k,j,i])` 的可计算版本；处理不对称 | 仅适用于"结构等价"，不覆盖 dyad 内部语义 |
+| I2 | **creation / endowment / evaluation** 三分 | RSiena manual | LHRM §6：`Action/Event` 落在哪一类决定它如何更新 `X`。**三者的更新律不可合并**（SAOM 已证明共线） | 分类本身是模型假设，不是观察事实 || I3 | **reciprocity effect** 与 **balance effect**（同时计同向选与同向不选） | RSiena manual | `Mutuality_k = H(Z[k,i,j], Z[k,j,i])` 的可计算版本；处理不对称 | 仅适用于"结构等价"，不覆盖 dyad 内部语义 |
 | I4 | **"tie 在单边控制之下"作为适用性判据** | Snijders et al. 2010 | 反向用作 LHRM 的**适用性测试**：本质需要双方协商的关系，不能只用单边 edge 语义建模 → 支持 LHRM 保留独立 `PairState` 层 | 这是一条**排除性**证据，不是支持性证据 |
 | I5 | core / accessory assumption 二分 + artefact 检出活动集 | Galán et al. 2009 | LHRM 动力学层的 verification protocol 骨架 | 活动本身有成本，需要先决定哪些 accessory assumption 值得测 |
 | I6 | **iterative replanning / 对目标分布最小化成本** | MATSim | **替代 hand-tuned 增量律**的唯一现成路线：让 `X_(t+1)` 由"在约束下重解一个与观测目标对齐的优化"产生 | MATSim 的目标分布来自移动调查；LHRM 缺对应目标分布 → 目前不可用 |
 | I7 | Wald–Wolfowitz 非参数平稳性/遍历性检验 | Grazzini 2012 | 解读 `Γ_(A,B)` 之前的必要前置检验 | 对 LHRM 的小样本 dyad，检验功效可能不足 |
 | I8 | GM / player 分离 | Concordia | 让 LLM 只跑 Belief 层；`Reality` 层由非 LLM 组件持有 | 纯架构类比，无经验支持 |
 | I9 | 拆分 evaluation 与 creation/endowment | RSiena（引 Cheadle et al. 2013：split 可产生 insight，但会降低统计功效） | "保持"和"新建"在关系状态更新中可能确实不同 | 功效代价在小样本上不可接受 |
+
+> **R12 Round-3 `I2` 降级（2026-09-28）**：`I2` 的落点写「**三者的更新律不可合并（SAOM 已证明共线）**」。「SAOM 已证明共线」这一支撑本轮降为 **`PLAUSIBLE`（未定位到出处）**（见 §3.1 `C-SAOM` 的 Round-3 限定）。因此 `I2` 的落点改为：
+> - **不再主张**「三者的更新律不可合并」已被证明。
+> - **仍主张**（`PLAUSIBLE`）：creation / endowment / evaluation 的三分**可以**映射到 LHRM §6 的 `Action/Event` 落点，**且这个映射本身是模型假设**。
+> - **新增一个更强的、本文件不依赖 SAOM 的理由**：即便三者可共线于一个模型，**LHRM 也不需要这个共线性**——LHRM 的 `Action/Event` 落点是**语义**分类（这一动作更新哪个坐标），不是**统计**参数化。**把 SAOM 的统计限制搬成 LHRM 的语义限制是一次范畴错误。**
+> - `I2` 仍为 `MODEL_HYPOTHESIS`。
 | I10 | SRM 三分量分解 | Malloy & Kenny 1986 | 对 `Candidate Minimal Directed Basis v0.1` 的 8 个 construct 做 actor/partner/relationship 分解，回答 §2.1/§2.3 | **要求 round-robin 设计；Case Bank 单一 dyad 材料不满足**（见 §3.1 C-SRM） |
 
 ---
@@ -393,6 +439,22 @@ LHRM §4 要求 `i→j` 与 `j->i` 独立。因此任何 LHRM 模型必须能演
 > **它什么时候不再是隐喻生成器：当你手里有一个 Gate 1 级的 dyad 级纵向校准数据集，并且愿意让 Conroy-Beam 协议在 held-out 真实 couple 上否掉你的模型的时候。**
 > 在那之前，正确的用法是：**把它当作发现 ontology hole 的机器，而不是发现机制的机器。**
 
+> **R12 Round-3 定位诚实性补记（2026-09-28）—— 结论方向不变，但停止低配自己的正面证据**
+>
+> **不撤回本裁决的方向。** 「当前第一阶段目标下 ABM 主要产出隐喻」这个判断**继续成立**，它由第 1、3 条 `VERIFIED` 证据支撑。
+>
+> **但本报告此前把它写得比自己的证据更负面，三处需修正**：
+>
+> 1. **「ABM 不是正确工具」这一措辞本身要收窄，尽管限定词已经就位。** 复核确认：§10.1 标题、§0 第 6 条、§11 非主张 3 **三处都带了「第一阶段目标」这个限定词**（本报告的限定纪律是好的，此处不撤销）。**问题出在主语**：这些句子把判断挂在「ABM 是什么」上（「不是**正确**的工具」），而不是挂在「ABM 对**哪个目标**产出什么」上。**限定词管不住主语。** 合规的改法是把主语也换成目标化表述。
+> 2. **依赖图部分对本项目有利，本报告此前把它算在否定面。** §4.2 第 2 条的依赖图结论（`VERIFIED`，方向与本报告所述**相反**）应当被计入**正面**证据，而不是被当作又一条"ABM 有问题"。**方向更正**：它说明的是「ABM 输出缺少被当作随机过程再做统计推断的习惯」——这对**依赖 ABM 输出做二次推断**的项目是风险，但对**不复用 ABM 输出、只借其工程纪律**的项目**几乎无损失**。LHRM 属于后者。
+> 3. **C1/C2/C6 三条失败模式对本项目有利，本报告把它们写成了负债。** `C1`（hand-tuned 参数被表述为发现）、`C2`（在模拟数据上做验证）、`C6`（没有 out-of-sample test）**全部是 LHRM 尚未犯的错误**（`§11` 非主张 5：本报告明确写「LHRM 当前还没有写任何转移律」）。**一份还没建转移律的项目，引用一份关于「别在模拟数据上做验证」的目录，是在给自己上保险，不是在给自己记过。** 这三条**保留在 §7 目录中**（作为 Gate 5 的直接输入），但**在证据盘点中应计为对本项目有利的方向性确认**。
+>
+> **修正后的定位（以此为准）**：
+> - **A. 阶段限定**：ABM 对**表示完备性 / Case Bank 逐句映射**这一第一阶段目标**不产出价值**，且**主动增加**伪影面（`C7`/`C8`/`C10`/`C11`/`C12`/`C15`）。**这条成立。**
+> - **B. 纪律可借**：ABM 文献对本项目最有价值的产出**不是模型，是失败目录**（`C1`–`C15`）与 artefact 检出协议（Galán et al. 2009）。**这三项 C1/C2/C6 与依赖图结论都指向同一件事：这个领域自己已经把「怎么骗自己」写清楚了，LHRM 可以直接抄这份清单。**
+> - **C. 转移律层有条件可用**（§10.2 不变），且 Conroy-Beam 协议仍是 LHRM 若要谈转移律时**唯一有先例的现成协议**。
+> - **不主张**：ABM 对 LHRM 是「正确工具」，也不主张它「不是正确工具」——**在第一阶段它不相关，在转移律层它有条件可用。** 这两句话必须一起说。
+
 ### 10.4 给 LHRM 的具体建议（`AI_RECOMMENDATION`，非 `Human_requirement`）
 
 1. **不要**在 `docs/foundation/` 里引入 ABM 依赖。任何 ABM 依赖应留在 `docs/research/` 与未来的实验分支。
@@ -427,10 +489,10 @@ LHRM §4 要求 `i→j` 与 `j->i` 独立。因此任何 LHRM 模型必须能演
 
 | 项 | 状态 | 备注 |
 |---|---|---|
-| **是否存在用真实纵向二人关系数据校准的关系状态转移模型** | **本 lane 最重要未知，倾向"不存在 / 极少"** | **必须由 R04（dataset landscape）与 R16（validation protocol）交叉确认。若 R04 找到此类模型，本报告 §10 裁决需修正。** |
+| **是否存在用真实纵向二人关系数据校准的关系状态转移模型** | **本 lane 最重要未知** | **在本次检索场所内未找到；本报告无资格判定「不存在」或「极少」。** **必须由 R04（dataset landscape）与 R16（validation protocol）交叉确认。若 R04 找到此类模型，本报告 §10 裁决需修正。** |
 | `APIM`（Barry 等）分支 | 未检索 | 本报告最大缺口 |
-| `Timms & Griffiths (2007)` | `UNVERIFIED_AS_OF_2026-09-27` | 4 路检索 0 命中 |
-| `Kuran & Miller (2000)` | `UNVERIFIED_AS_OF_2026-09-27` | Crossref / JASSS / DDG 均 0 命中 |
+| `Timms & Griffiths (2007)` | `UNVERIFIED_AS_OF_2026-09-27` | 4 路检索 0 命中。**这是检索结果，不是「不存在」** |
+| `Kuran & Miller (2000)` | `UNVERIFIED_AS_OF_2026-09-27` | Crossref / JASSS / DDG 均 0 命中。同上 |
 | `Guizzetti (2011) Is the modelbuilder schizophrenic?` | `AGENT_RECALL` | 未核实 |
 | `ten Brooke et al. (2016)` 敏感性分析选择 | `AGENT_RECALL` | 未核实 |
 | `SOTOPIA` 的 ground-truth 设计 | `UNKNOWN` | 仅核实存在性 |
@@ -467,7 +529,7 @@ LHRM §4 要求 `i→j` 与 `j->i` 独立。因此任何 LHRM 模型必须能演
 - Lawson, B. G., & Park, S. (2000). Asynchronous Time Evolution in an Artificial Society Model. *JASSS* 3(1)2. <https://www.jasss.org/3/1/2.html>
 - Grimm, V., Revilla, E., Berger, U., Jeltsch, F., Mooij, W. M., Railsback, S. F., et al. (2005). Pattern-oriented modeling of agent-based complex systems: Lessons from ecology. *Science* 310(5750):987–991. DOI `10.1126/science.1116681`（`CITED_SECONDARY`）
 - Centola, D. (2010). The Spread of Behavior in an Online Social Network Experiment. *Science* 329(5996):1194–1197. DOI `10.1126/science.1185231`
-- Edwards, C., & Moss, S. (2005). — **转述于 Windrum et al. 2007 §4.3；确切著录 `UNKNOWN`**
+- **Edmonds, C., & Moss, S. (2005).** — **转述于 Windrum et al. 2007 §4.3；确切著录 `UNKNOWN`** — **Round-3 姓名更正**：本条目原作 **`Edwards, C., & Moss, S.`**，姓氏**误作 `Edwards`**。**更正为 `Edmonds`**，理由是本报告正文三处（§4.3、§7 `C15`、§12）**一致使用 `Edmonds & Moss 2005`**，且 Round-2 复核以 `Edmonds` 为正字。**本文件此前在正文与附录之间存在姓氏不一致，本轮统一为 `Edmonds`。** 姓名更正**不等于该文已被定位**：确切出处仍标 `UNKNOWN`（本轮 `NOT_OPENED`，未核实原文）
 - Brock, W. A. (1999). — **转述于 Windrum et al. 2007 §5.2；确切著录 `UNKNOWN`**
 
 **已发表的 named 关系 / 二人 ABM 与 microsimulation**
@@ -505,3 +567,54 @@ LHRM §4 要求 `i→j` 与 `j->i` 独立。因此任何 LHRM 模型必须能演
 - Dukart, J., … Lotter, L., et al. (2021). JuSpace: A tool for spatial correlation analyses of magnetic resonance imaging data with nuclear imaging derived neurotransmitter maps. *Human Brain Mapping*. DOI `10.1002/hbm.25244`；代码 <https://github.com/juryxy/JuSpace>；官网 <https://www.fz-juelich.de/en/inm/inm-7/resources/tools/juspace>
 - `smallslm`：GitHub Search API `q=smallslm&in:name` → 0（2026-09-27）；arXiv / Crossref / DuckDuckGo 均 0
 - `ASON`：GitHub Search API 两种查询均 0（2026-09-27）；DuckDuckGo 0
+
+---
+
+## 14. Round-3 修复轮记录（2026-09-28；child `A3f`）
+
+**权威**：Architect `ARCHITECT_ADJUDICATION_V1`（`#30` comment `5854920569`）· dispatch `5854930069`。
+**范围**：本文件**只做研究与定位的修复**，**不含任何 canonical 编辑**。
+
+### 14.1 逐 hunk 裁决映射
+
+| # | 位置 | 变更 | 依据 |
+|---|---|---|---|
+| 1 | §0 第 1 条（headline） | **「不存在」→ 检索范围命题；撤回「孤立」** | `X-14` + §C 第 6 条 `Search failure/access restriction is not ontology evidence` |
+| 2 | §1 末句 + 新增检索范围声明 | 「本 lane 未找到」补上采样框架边界 | `X-14` |
+| 3 | §3.1 `C-SAOM` 状态表示 | 保留「严格二值」并标 `VERIFIED`；**加注同页存在例外条款** | `R-G3` / `G-C16` |
+| 4 | §3.1 `C-SAOM` 转移规则 | 「三函数不可共线」降级为 **`PLAUSIBLE`（未定位到出处）** | `R-G3` / `G-C16` |
+| 5 | §3.1 `C-SAOM` 收尾 | **撤回「二值化直接违反 LHRM 混合态表示」**；保留「对象前提互斥」为唯一排除判据 | `R-G3` / `G-C16` `WRONG-SCOPE` |
+| 6 | §4.2 标题 + 新增分级总表 | 「三条硬证据」→ 分级；`2a` `PLAUSIBLE`/`NOT_OPENED`、`2b` `VERIFIED` 且方向相反 | `R-G12` / `G-C27` |
+| 7 | §8 `I2` | 「SAOM 已证明共线」降级；补一个不依赖 SAOM 的理由 | 随 #4 连带 |
+| 8 | §10.3 | **定位诚实性升级**：主语目标化；依赖图与 `C1`/`C2`/`C6` 方向更正为**对本项目有利** | `R-G4` / `G-C18` `HOLD_FOR_EVIDENCE` |
+| 9 | §12 第 1 行 + 两行工具名 | 「倾向不存在 / 极少」→ 检索范围表述 | `X-14` |
+| 10 | 附录 A | **`Edwards` → `Edmonds`**（与正文三处统一） | `R-G13` / `G-C24(b)` |
+| 11 | §2.3 / §11 非主张 7 | **未改动**（见 14.3） | — |
+
+### 14.2 本轮独立核实（只核实**实际改动**的 claim）
+
+| 主张 | 结果 |
+|---|---|
+| `Edmonds` vs `Edwards` 哪一个是本文件正文所用 | **正文三处（§4.3、§7 `C15`、§12）全部为 `Edmonds`**；附录为 `Edwards`。**内部不一致成立**，已统一为 `Edmonds`。**本轮未核实该文确切出处**（`NOT_OPENED`），故仍标 `UNKNOWN` |
+| `JuSpace` / `smallslm` / `ASON` 三个名字的否证 | **未重跑**。`X-14` 提醒「检索失败 ≠ 不存在」，但 Round-2 判定为 `VERIFIED`，且本报告已用 `NEGATIVE` 而非 `DISPROVEN` 分级、§11 非主张 7 已写明「只主张本次在指定渠道内未能核实」。**分级与限定均已到位，保留原文** |
+| `Angus & Hassani-Mahmooei (2015)` | **`NOT_OPENED`**（按裁决要求不追）。标 `PLAUSIBLE` |
+| Grazzini & Richiardi (2015) 依赖图部分 | **`NOT_OPENED`**。按 Round-2 复核记录为 `VERIFIED` + 方向相反，并标注来源 |
+| SAOM 同页例外句 | **`NOT_OPENED`**。只记录「存在例外条款」这一事实，不复述其内容 |
+
+### 14.3 本轮**未**做的事（`deliberately_not_applied`）
+
+1. **未重跑 `JuSpace` / `smallslm` / `ASON` 的四路检索。** 它们的 `NEGATIVE` 分级与「非 `DISPROVEN`」限定已合规；重跑会把一个已裁决的 `VERIFIED` 项变成新的检索活动，无收益。
+2. **未打开 `RSiena manual` / `Snijders et al. 2010` 正文。** 撤回一条推论不需要新来源。
+3. **未打开 `Angus & Hassani-Mahmooei (2015)`、`Grazzini & Richiardi (2015)` 原文。** 按裁决要求分级标注即可。
+4. **未改 §7 `C1`–`C15` 失败目录的任何一条。** 方向性更正只改**证据盘点与 §10 定位**，不改目录本体。
+5. **未改 §9 Gate 1–7。** 不在本轮裁决范围。
+6. **未动 `CF-xx` 与 `UNKNOWN_AS_OF` 的全局计数。** 这两项的账本属于 `18`（见 14.4）。本文件内的 `UNKNOWN_AS_OF` 出现次数**本轮刻意未重算**。
+
+### 14.4 路由（交回 parent / 其它 child）
+
+| 项 | 路由对象 | 内容 |
+|---|---|---|
+| `CF-xx` 代码空间 | **parent → `18` 的 owner** | 本轮全目录检索确认 `CF-[0-9]` **只出现在 `18_CROSS_LANE_CONFLICT_AUDIT.md`**（47 处），**不**出现在本文件。代码空间归属 `18`，本 child 未动 |
+| `UNKNOWN_AS_OF` 全局计数 | **parent → `18` 的 owner** | 该码在 11 个文件出现（含本文件 2 处）。**跨文件计数与账本属于 `18`**，本 child 只在文件内保持自洽，不出全局数 |
+| §4.2 依赖图结论的原文定位 | **parent（可选后续 lane）** | 若要把 §4.2 第 2 条从「复核判定」升为「本报告自核实」，需打开 `Grazzini & Richiardi (2015) *JASSS* 18(4)4` 与 `Angus & Hassani-Mahmooei (2015)` 原文。**本轮按裁决不做** |
+| SAOM 三函数共线的出处 | **parent（可选后续 lane）** | 同上，`C-SAOM` 转移规则的 `PLAUSIBLE` 需原文才能升 `VERIFIED` |
