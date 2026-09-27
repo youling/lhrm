@@ -5,6 +5,7 @@
 **Parent:** `youling/lhrm#30` overnight exploration swarm, Wave 1, lane R01
 **Scope:** Human–Human Dyad 的 directed relationship-state candidate 构念
 **审计对象:** `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` §11 `Candidate Minimal Directed Basis v0.1` 的 8 项 + §4 / §5 / §6 / §9 的 contested / derived / belief 项
+**Round-3 repair:** 2026-09-27，lane child `A3a`。依 Architect adjudication V1（`X-1` / `X-2` / `X-3` / `X-4` / `X-13` / `X-14`；`C-P3` / `C-P5` / `C-P8`；`C-W3` / `C-W4`）与 `review-r2` 修订。**本次修复改变了：`domain` 的地位（强制字段 → `FACET_RECOMMENDED_NOT_REQUIRED`）、`§3.8` / `§6 Delta #3` 的「内部不一致 / 需二选一」措辞（依 `X-3` 撤回）、`§6` 增列「相对 canonical?」并新增 2 行、§6.2 跨文件数值冲突登记、§2.6（`X-2` 的层位主张驳回 + 两条竞争经验假设）。** 全部改动逐条落在 §3.4 / §3.5 / §3.8 / §3.9 / §4 / §6 / §2.6；被取代的原文**逐字保留在各行删除线内**并附取代依据。**本文件不含任何 canonical 改动。**
 
 > 本文不修改 canonical ontology，不冻结任何数值、权重、距离、概率或转移函数。
 > 每一个「裁决」单元格都是研究建议，不是决定。
@@ -18,7 +19,8 @@
 - `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` — 当前 candidate construct 清单；
 - `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` — 构念跨域作用与方向性原则；
 - `docs/foundation/CURRENT_ARCHITECTURE.md` — 当前 canonical 架构快照；
-- `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md` — prior evidence（62 构念语义边界审计）。本文**复用**其结构与大部分结论，只在 §7 记录 12 处需要收紧、改层或加限定的 Delta。
+- `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md` — prior evidence（62 构念语义边界审计）。本文**复用**其结构与大部分结论，只在 **§6** 记录需要收紧、改层或加限定的 Delta。
+  **Round-3 更正两处内部指向**：(a) 原写「§7 记录 12 处」——**Delta 表在 §6，不在 §7**（§7 是「明确不主张什么」）；(b) 原写「12 处」——Round-3 后为 **14 行**（新增第 13 行 `PowerLevel_(i->j)`、第 14 行 `Trust` facet 降级，均见 §6 表末与 §6 前的增列说明）。
 
 ---
 
@@ -109,6 +111,33 @@ z[k, i, j, t] = { edge_estimate, person_prior_i, target_attr_j, uncertainty, evi
 
 详见 §6.1。这是本次审计最重要的单条发现。
 
+### 2.6 「文献把层序反过来了」——作为**架构主张**已驳回，作为 dynamics evidence 保留（Round-3，`A3a`）
+
+依 adjudication `X-2`（`REJECT AS ARCHITECTURE CLAIM / KEEP AS DYNAMICS EVIDENCE`）：
+
+**（a）被驳回的架构主张，其前提为假。** 该主张的形式是：「canonical 把 `Belief` 当成 state 的下游 / `PPR` 应升为一个状态而 `Satisfaction` 应降为 Derived」。
+**前提不成立**：`CURRENT_ARCHITECTURE.md` §6「State / Action / Belief / Constraint 分离」已把 `Belief` 列为转移算子的**一等共输入**：
+
+```text
+X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)
+```
+
+⇒ canonical **并不**把 `Belief` 当作纯下游。**该前提的文本证据在 `docs/foundation/` 中不存在。**
+**本文件自身也从未写下该前提**（机械核对：本文件与 `02b` 全文中「下游」一词的 6 处出现全部与 `Belief` 的层位无关——分别是 `Satisfaction` 的「可被下游转移引用」（2 处）、本节自述、`02b` §4.2 的「会向下游传播」、`01` 的「对下游执行者偏宽松」）。
+**该前提的所在地（本 lane 逐行核对过）**：`17_RED_TEAM_FALSIFIERS.md:100` 逐字写「**失败的是优先序**：LHRM 把 Belief 当成 state 的下游，实证说 Belief 常常是**因果最近端**（§3 F3）」；`:373` 的 `A14` 行把 `Reality ≠ Observation ≠ Belief` 的**排序**标为被推翻。`review-r2` `X-2` 另列出 `17` 的 §3 `F3` / §1.3(1) / §5 `R2` / §11 表第 1 条——**这四处本 lane 未逐条复核**（`X-2` 为 `ADJ1` 转述）。**`17` 不属本 lane 白名单** ⇒ 文本修正在 `17` 的 owner 侧完成；本文件只登记裁决。
+**`X-2` 同时要求**：关闭这些位置上的**层位**措辞，标 `WRONG-SCOPE` + `UNVERIFIABLE_AS_WRITTEN`；并**禁止**在层归属被单独重裁前，把 `Belief < DirectedRelationshipState < Derived` 的层排序改动排入任何 work order。**本 lane 未实施、也不主张实施该层排序改动。**
+
+**（b）保留为 dynamics evidence。** Segal & Fraley 等的因果发现（belief / 解释倾向影响关系结果）**不因 (a) 而失效**——它们是关于**持续性与预测作用**的经验发现，不是关于**层归属**的架构论断。
+
+**（c）改写为两条可证伪的竞争经验假设**（这是 `X-2` 要求的「recast」形态）：
+
+| id | 假设 | 若成立 | 若不成立 | 判别设计 |
+|---|---|---|---|---|
+| **H-persist** | `PPR` 具有**跨 wave 的稳定特异残留**（在已知 `ResponsiveAction` 之后） | `PPR` 的 belief 层地位**不**因其持续性而改变（`X-1` 已定），但它**值得**作为独立预测变量被单独测量 | `PPR` 的波动可由行为层完全解释 ⇒ belief 层是冗余索引 | 21 天日记 RI-CLPM：`PPR` 与 `ResponsiveAction` 双向跨滞后，控制 relationship satisfaction |
+| **H-predict** | `PPR` 在已知 `AttachmentSecurity` + `Trust` + `ResponsiveAction` 之后仍**增量预测**关系结果 | 支持保留 `PPR` 为**独立测量坐标**（`X-1` 的层位不变） | `PPR` 无条件增量 ⇒ 它的信息已在别处被计入 | 同一批样本的层级回归 / 交叉滞后模型，报 ΔR² 与 Δχ² |
+
+**（d）明确不主张**：不主张 `PPR` 应当升为 `Reality` / `DirectedRelationshipState` 坐标；不主张 `Satisfaction` 应当离开 Derived；**不主张**上述两条假设中任何一条成立——`H-persist` / `H-predict` 在本审计中**均为 `UNTESTED`**，本文件**未打开** Segal & Fraley 或其任一承接来源的原文。
+
 ---
 
 ## 3. 逐构念 row-set
@@ -155,13 +184,13 @@ z[k, i, j, t] = { edge_estimate, person_prior_i, target_attr_j, uncertainty, evi
 
 | 维度 | 结论 |
 |---|---|
-| 1 语义边界 | **是**：i 在具体领域上对 j「愿承担被辜负的风险」的结构性意愿 + 对 j 善意 / 能力 / 正直的认知前提。**显式不是**情绪安全感、credibility、predictability、caregiving、PPR、承诺。**必须有 domain 索引**——domain-specificity 是理论内生的（[S10] 原文：可以信任同事做研究合作项目，但不信任他代自己的课），不是可选 facet。 |
+| 1 语义边界 | **是**：i 在具体领域上对 j「愿承担被辜负的风险」的结构性意愿 + 对 j 善意 / 能力 / 正直的认知前提。**显式不是**情绪安全感、credibility、predictability、caregiving、PPR、承诺。~~**必须有 domain 索引**——domain-specificity 是理论内生的（[S10] 原文：可以信任同事做研究合作项目，但不信任他代自己的课），不是可选 facet。~~ **Round-3（`A3a`）依 adjudication `X-4` / `C-P3` 改述（逐字取代上句删除线部分）**：`domain` = **`FACET_RECOMMENDED_NOT_REQUIRED`** —— **推荐 facet + 上下文索引 + 记录缺省值**，**不是** signature 必需字段；「必需与否待 measurement invariance」。[S10] 的 domain-specificity 观察**本身不撤回**（它是理论命题），但**从「架构强制条件」降为「facet 建议 + 待不变性检验」**。 |
 | 2 最近邻构念 | AttachmentSecurity（被托底感 vs 愿交出脆弱性）；Predictability（Rempel 三维量表成分，`10.1037/0022-3514.49.1.95` [S08]）；Credibility / dependability / faith（`NO_DOI_VERIFIED`）；Betrayal history（事件）。 |
 | 3 反例解耦 | **A 高 B 低**：依恋焦虑者理智上完全信任伴侣，但情感上仍觉不被托底 [S33]。**B 高 A 低**：长期酗酒伴侣——情绪上「这就是我的家」很安全，但关键领域绝不交出。 |
 | 4 测量族 | Rempel 三维 Trust Scale [S08]；Mayer et al. willingness to be vulnerable 4–10 题（alpha 在 .59–.84 间波动，作者自承偏低并援引 Kline 的辩护 [S10]）；Investment Model Scale 中作为相关变量 [S03]。**partner-reported trust 跨伴侣一致性 r = .11（ns）**[S15]——直接反驳「trust 是共享 pair 属性」。 |
 | 5 时间行为 | 惯性中等偏高、衰减慢、崩塌快。信任依赖 strain test 累积 [S33]，因此**在零 / 短程边上 trust 主要是 `Unknown` 而非低值**——**「相处多年」只推出「有机会累积 strain test」，不推出 trust 高**。这是 Case Bank court-fact 映射的关键约束。 |
-| 6 范围 / 方向性 | 严格 dyad-directed **且 domain-indexed**。跨形态高度稳定。 |
-| 7 裁决 | **`KEEP`**（13 个候选中最稳的一个），**强制条件**：`Trust` 的 signature 必须含 `domain`（至少：财务 / 身体与健康 / 育儿 / 情感脆弱 / 决策委托）。理由：把 domain 做成可选 facet 会让单标量变成四个不兼容标量的平均。domain 索引同时解释了为什么 `OutcomeDependence` 必须另立且独立带 domain。 |
+| 6 范围 / 方向性 | 严格 dyad-directed ~~且 domain-indexed~~。**Round-3**：`domain` 为推荐 facet（`FACET_RECOMMENDED_NOT_REQUIRED`）。跨形态高度稳定。 |
+| 7 裁决 | **`KEEP`**（13 个候选中最稳的一个）。~~**强制条件**：`Trust` 的 signature 必须含 `domain`（至少：财务 / 身体与健康 / 育儿 / 情感脆弱 / 决策委托）。理由：把 domain 做成可选 facet 会让单标量变成四个不兼容标量的平均。domain 索引同时解释了为什么 `OutcomeDependence` 必须另立且独立带 domain。~~ **Round-3 改述（依 `X-4` `DECIDED` + `C-P3` `PARTIAL ACCEPT`）**：<br>· **裁决本身 `KEEP` 不变。**<br>· **删除「强制条件」**：`Trust` 的 signature **不**必须含 `domain`。`domain` 登记为 **`FACET_RECOMMENDED_NOT_REQUIRED`**，并**记录缺省值**；是否升为必需，**待 measurement invariance 证据**。<br>· 原「把 domain 做成可选 facet 会让单标量变成四个不兼容标量的平均」这条**设计顾虑本身不撤回**——它是**建模注意**，不是**架构强制**：若实现选择单标量，则必须显式声明在 `domain` 上的投影规则（与 §5.2 对 security 标量的要求同型）。<br>· 原「domain 索引同时解释了为什么 `OutcomeDependence` 必须另立且独立带 domain」**降为观察**：`OutcomeDependence` 需另立，主要依据是 §3.9 的方向性 / 不可逆性，不是 domain 索引。<br>· **`Trust` 与 `AttachmentSecurity` 保留为两个分开的 candidate**（`X-4`）；**不在本节新增 `FeltSecurity` 槽位**（canonical §4 `D5. Attachment Security / Felt Security` 已占有该措辞）。更窄的 facet 切点（`02b` `U4`）待 M2 式证据。<br>**被取代的原文逐字保留在本行删除线内。** |
 
 ### 3.5 `Distrust`（争议项）
 
@@ -172,8 +201,8 @@ z[k, i, j, t] = { edge_estimate, person_prior_i, target_attr_j, uncertainty, evi
 | 3 反例解耦 | **A 高 B 低**：对财务极度不信任、对情感高度信任的同一关系。**A 低 B 低**：零信息新关系——既不信任也不怀疑。**方法学警告**：许多 distrust 操作化是信任题的反向计分，而反向计分在因子分析中天然分离出第二因子（[S09] 论证中即引用了 Wrightsman 哲学量表两因子的例子）-> 部分「trust / distrust 二维」证据可能是 artifact。 |
 | 4 测量族 | Lewicki-McAllister-Bies 双维评分；McKnight et al. (2001) 单篇章节（`CITED_SECONDARY`，元数据未独立核验）；亲密关系研究多用就地编写的负向措辞题目。**不存在一个被广泛接受、跨实验室可比的 close-relationship distrust scale**——这是本构念最大的硬伤。 |
 | 5 时间行为 | 若独立应为慢变量、崩塌慢、恢复极慢。**该时间剖面无直接经验支持（`UNVERIFIED`）。** |
-| 6 范围 / 方向性 | 严格 dyad-directed + domain-indexed（同 Trust）。 |
-| 7 裁决 | **`OPEN`（强烈倾向 `DERIVED`）**。这是本文对 prior report 的**最主要分歧**。理由：(a) 同刊同档正面对撞已持续 30+ 年 [S09 vs S10]；(b) Schoorman et al. (2007) 的对应论断（`CITED_SECONDARY`）；(c) **决定性实验尚未见成规模执行**——用非反向措辞的独立题目在同一 dyad 上同时测 trust 与 distrust、检查是否真能同 domain 内同时高。**建议**：先按 domain 索引的 Trust 建模，在观测不确定区（低信度、近中性）允许显式 `ambivalent` 标记；只有当纵向数据能稳定复现「同 domain 内 trust 高而 distrust 也高」时，才立独立坐标。 |
+| 6 范围 / 方向性 | 严格 dyad-directed ~~+ domain-indexed（同 Trust）~~。**Round-3**：`domain` 与 `Trust` 同为 `FACET_RECOMMENDED_NOT_REQUIRED`（`X-4` / `C-P3`）。 |
+| 7 裁决 | **`OPEN`（强烈倾向 `DERIVED`）**。这是本文对 prior report 的**最主要分歧**。理由：(a) 同刊同档正面对撞已持续 30+ 年 [S09 vs S10]；(b) Schoorman et al. (2007) 的对应论断（`CITED_SECONDARY`）；(c) **决定性实验尚未见成规模执行**——用非反向措辞的独立题目在同一 dyad 上同时测 trust 与 distrust、检查是否真能同 domain 内同时高。**建议**：~~先按 domain 索引的 Trust 建模~~ **Round-3 改述**：先按 `domain` 作为**推荐 facet** 的 `Trust` 建模，在观测不确定区（低信度、近中性）允许显式 `ambivalent` 标记；只有当纵向数据能稳定复现「同 domain 内 trust 高而 distrust 也高」时，才立独立坐标。 |
 
 ### 3.6 `AttachmentSecurity`
 
@@ -209,19 +238,19 @@ z[k, i, j, t] = { edge_estimate, person_prior_i, target_attr_j, uncertainty, evi
 | 4 测量族 | Investment Model Scale（4 因子）[S03]；Commitment Inventory / Revised Commitment Inventory（dedication + 6 constraint；320 对未婚伴侣 dyadic CFA 拟合良好）[S06]；Dimensions of Commitment Inventory（6 studies, N=1,787）[S05]。 |
 | 5 时间行为 | 惯性中等；受沉没成本单向抬升（constraint 的作用）。`commitment <-> 后续 stay/leave` r = .47 [S01]。 |
 | 6 范围 / 方向性 | 严格 dyad-directed。跨形态同构（[S02] 报告性别 / 族裔 / 性取向 / 时长的影响很小，但承认部分条件下会改变关联强度）。在「无法解除」的关系（法定亲子）中 constraint 极高而 dedication 极低——LHRM 必须能表达。 |
-| 7 裁决 | **`KEEP`（定义为 `Dedication`）**。**但附一条 prior report 与 `PARAMETER_CONVERGENCE_V0_1.md` 都未处理的要求**：attraction-based 维度**包含 satisfaction**。这意味着若 §9 R3 把 Satisfaction 定为 DERIVED，则 Dedication 的一个组成落在 DERIVED 层 -> **同一语义被两个层级同时占用**。**必须由 Architect 裁决的内部不一致**（见 §7 Delta #3）。 |
+| 7 裁决 | **`KEEP`（定义为 `Dedication`）**。**但附一条 prior report 与 `PARAMETER_CONVERGENCE_V0_1.md` 都未处理的要求**：attraction-based 维度**包含 satisfaction**。~~这意味着若 §9 R3 把 Satisfaction 定为 DERIVED，则 Dedication 的一个组成落在 DERIVED 层 -> **同一语义被两个层级同时占用**。**必须由 Architect 裁决的内部不一致**（见 §7 Delta #3）。~~ **Round-3 依 adjudication `X-3`（`NO LOGICAL CONTRADICTION`）+ `C-P8`（`ACCEPT NARROWLY`）逐字取代删除线部分**：<br>· **撤回「内部不一致」与「需二选一」**。`§4 D7`（`Dedication` = `KEEP_CANDIDATE`）与 `§9 R3`（`Satisfaction` = `DERIVED / evaluation-state candidate`）**可以同时成立**：`Satisfaction` 留在 Derived 层**不**使 `Dedication` 的层位失效。<br>· **不主张** `D7` 现在有错；**不主张** `Satisfaction` 应被提升；**不主张**二者当前存在逻辑矛盾。<br>· **只登记 conditional consequence pre-registration（`C-P8` 原文口径）**：「**若**本判据（`R3`：`已知底层状态后 satisfaction 仍携带稳定独立动态信息`）成立并提升 Satisfaction，**则** `§4 D7` 的 basis 地位与 `PARAMETER_CONVERGENCE_V0_1.md` §11 的 8 项 basis 需重新审议；**本条只登记后果，不预设结论。**」<br>· **本节采用本报告 §4 裁决速览表第 8 行的版本**（「必须声明是否含 satisfaction 成分」），即**声明义务**，**不是二选一**。<br>· 事实前提登记：`[S05]`（Overall / Fletcher / Simpson 2010, `10.1177/0146167210383045`）**本审计未打开原文** ⇒ 该 claim 的事实前提 `NOT_OPENED`（`review-r2` `ADJ1` Q3 同判）。<br>**被取代的原文逐字保留在本行删除线内。** |
 
 ### 3.9 `OutcomeDependence`
 
 | 维度 | 结论 |
 |---|---|
-| 1 语义边界 | **是**：i 的重要结果 / 福利 / 机会 / 生活状态在多大程度上取决于 j **以及这段关系的存续**。**显式不是** Attachment dependency（复合 reliance + trustworthiness [S17]）、Constraint commitment（退出成本，是 dependence 的后果 / 成分）、Power（派生）、Need / Loneliness（person 层）、Emotional reliance（临床构念）。**必须 domain-indexed**（同 Trust）。 |
+| 1 语义边界 | **是**：i 的重要结果 / 福利 / 机会 / 生活状态在多大程度上取决于 j **以及这段关系的存续**。**显式不是** Attachment dependency（复合 reliance + trustworthiness [S17]）、Constraint commitment（退出成本，是 dependence 的后果 / 成分）、Power（派生）、Need / Loneliness（person 层）、Emotional reliance（临床构念）。~~**必须 domain-indexed**（同 Trust）。~~ **Round-3（`A3a`）改述**：`domain` 登记为 **`FACET_RECOMMENDED_NOT_REQUIRED`**，与 `Trust` 同级。**注意「同 Trust」这句在原稿里是 scope 缺陷的传播链**：`Trust` 与 `OutcomeDependence` 的 domain 要求**依据的是同一条 organizational 来源**（`[S10]`，其原文例子是「可以信任同事做研究合作项目，但不信任他代自己的课」——**工作场所信任**），把一个 organizational-trust 的观察套到 `OutcomeDependence` 上**超出该来源的范围**（`review-r2` `A-C21` + `ADJ1` Q4 判 `WRONG-SCOPE`）。 |
 | 2 最近邻构念 | Interdependence Theory [S30]；Situational Interdependence Scale（[S28] 的 mutual dependence / power / conflict / future interdependence / information certainty 五维）；Erber & Fiske (1984)（`10.1037/0022-3514.47.4.709` [S29]）；Attachment dependency [S13]；Power。 |
 | 3 反例解耦 | **A 高 B 低**：经济完全依附但关系痛苦。**B 高 A 低**：两个经济独立的人选择在一起。**A 高 B 低（Dependence 高、Dedication 低）**：「没能力离开」。**额外反例** [S28]：人们**无法可靠知觉**互依理论中的 coordination 一维（题项交叉载荷、含反向题也正相关）——这是「我以为我很依赖」与「我确实很依赖」之间的**结构性知觉鸿沟**，不是噪声。 |
 | 4 测量族 | **关系级无被广泛接受、可比、验证过的 outcome dependence 量表。** 存在的是：(a) **情境级** SIS [S28]（30 题 5 维，跨实验室游戏情境验证：Dictator game vs Prisoner's Dilemma 的知觉区分正确；但**不是关系级**）；(b) Investment Model 的 satisfaction + alternatives（**是代理，不是 dependence 本身**；[S01] / [S02] / [S03] 均只测那四个）；(c) 早期实验室操纵范式 [S29]。**[S28] 原文明确**：已有 mutual dependence / conflict / power 的量表，但 no instrument has been [developed to measure all sub-dimensions of interdependence]——同时该研究发现 coordination 维不可可靠知觉。 |
 | 5 时间行为 | 结构上慢、变化上可慢可快（法律 / 移民 / 健康 / 育儿结构 vs 失业 / 生病 / 被捕 / 被家暴）。**`CITED_SECONDARY`**：转述 [S28] 引述的日常情境 ESM 证据称浪漫伴侣在互依知觉上 strongly agree，作者据此认为这些知觉 rooted in an interpersonal reality（**Columbus et al. 2019 原文献本轮未直接核验**）。若成立，这是全部 13 个候选中**唯一一条**把「这是共享现实结构而非个人建构」说清楚的证据。 |
-| 6 范围 / 方向性 | 严格 dyad-directed + **domain-indexed + 近似不可逆**。power = dependence 的不对称，但 **power != dependence**。 |
-| 7 裁决 | **`KEEP`，但必须标 `MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`**。这是本文最重要的判定。理论地位最硬（是 Rusbult 体系的理论地基），结构方向性最清晰，且是**唯一有可能支撑 `Power` 派生的候选**（若降级，§9 R2 的 `PowerImbalance = f(...)` 就失去全部输入）。但测量现状是：关系级无验证量表；情境级量表存在且其中一维不可知觉；两次 meta 都不测它。**建议的处理不是「删」**：(i) 保留为候选，但明确当前只能**结构化估计**（Agent 资源 / 替代 / 制度约束 + 事件证据）而非问卷估计；(ii) 引入 `domain` 索引；(iii) 显式登记 coordination 不可知觉为该坐标的**已知系统误差源**；(iv) 在 Case Bank 中把「我对你的依赖」与「我以为我依赖你」分列为两种 provenance，不得互替。 |
+| 6 范围 / 方向性 | 严格 dyad-directed ~~+ **domain-indexed** + 近似不可逆~~。**Round-3**：`domain` = `FACET_RECOMMENDED_NOT_REQUIRED`（`X-4` / `C-P3`）；**近似不可逆** 不撤回。power = dependence 的不对称，但 **power != dependence**。 |
+| 7 裁决 | **`KEEP`，但必须标 `MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`**。这是本文最重要的判定。理论地位最硬（是 Rusbult 体系的理论地基），结构方向性最清晰，且是**唯一有可能支撑 `Power` 派生的候选**（若降级，§9 R2 的 `PowerImbalance = f(...)` 就失去全部输入）。但测量现状是：关系级无验证量表；情境级量表存在且其中一维不可知觉；两次 meta 都不测它。**建议的处理不是「删」**：(i) 保留为候选，但明确当前只能**结构化估计**（Agent 资源 / 替代 / 制度约束 + 事件证据）而非问卷估计；(ii) ~~引入 `domain` 索引~~ **Round-3 改述**：引入 `domain` 作为**推荐 facet + 上下文索引并记录缺省值**（`FACET_RECOMMENDED_NOT_REQUIRED`，依 `X-4` / `C-P3`；**不是**必需 signature 字段）；(iii) 显式登记 coordination 不可知觉为该坐标的**已知系统误差源**；(iv) 在 Case Bank 中把「我对你的依赖」与「我以为我依赖你」分列为两种 provenance，不得互替。 |
 
 ### 3.10 `Satisfaction`（争议项）
 
@@ -267,16 +296,16 @@ z[k, i, j, t] = { edge_estimate, person_prior_i, target_attr_j, uncertainty, evi
 |---|---|---|---|---|
 | 1 | `Liking` | `KEEP` | 必须三分解（person / target / edge） | [S40] relationship variance 最大 |
 | 2 | `RomanticAttraction` | `KEEP` + 边界 `OPEN` | Fisher 三系统降级为 mechanism_evidence；登记 Bode (2023) 拆分提议 | [S21] [S26] |
-| 3 | `SexualDesire` | `KEEP` | 强制 `measurement_channel` 字段；与 PhysiologicalArousal 分坐标 | [S23] 男 .66 / 女 .26 |
-| 4 | `Trust` | `KEEP` | 强制 `domain` 索引；零/短程边为 `Unknown` 而非低值 | [S10] domain-specificity |
-| 5 | `Distrust` | **`OPEN`**（强烈倾向 `DERIVED`） | 先做 domain 索引 Trust + `ambivalent` 标记 | [S09] vs [S10]；反向计分 artifact |
-| 6 | `AttachmentSecurity` | `KEEP` + `CONTESTED` | person / edge 双层；**保留 (anxiety, avoidance) 原始二维** | [S12] 30–40% vs 5–15%；[S11] r=.09；[S39] [S44] |
+| 3 | `SexualDesire` | `KEEP` | 强制 `measurement_channel` 字段；与 PhysiologicalArousal 分坐标 | [S23] 男 .66 / 女 .26 —— **Round-3：`.26` 与 `02b` 的 `.25` 存在文件间冲突，两侧来源均 `NOT_OPENED`，本 lane 不选赢家**（见 §6.2） |
+| 4 | `Trust` | `KEEP` | ~~强制 `domain` 索引~~ → **`FACET_RECOMMENDED_NOT_REQUIRED`**（`X-4` / `C-P3`）；零/短程边为 `Unknown` 而非低值 | [S10] domain-specificity（**观察保留，强制条件已删**） |
+| 5 | `Distrust` | **`OPEN`**（强烈倾向 `DERIVED`） | 先做 `domain` **推荐 facet** 的 Trust + `ambivalent` 标记 | [S09] vs [S10]；反向计分 artifact |
+| 6 | `AttachmentSecurity` | `KEEP` + `CONTESTED` | person / edge 双层；**保留 (anxiety, avoidance) 原始二维**。**Round-3（`X-4` `DECIDED`）**：与 `Trust` **保留为两个分开的 candidate**；**不在此处新增 `FeltSecurity` 槽位**（canonical §4 `D5. Attachment Security / Felt Security` 已占有该措辞） | [S12] 30–40% vs 5–15%；[S11] r=.09；[S39] [S44] |
 | 7 | `Caregiving` | `KEEP` | 动机 / 行为双层；不得把 4 个 specific 当独立状态读出 | [S15] 7 维动机；[S18] bifactor |
-| 8 | `Dedication` | `KEEP` | 必须声明是否含 satisfaction 成分（否则与 §9 R3 冲突） | [S05] 三来源；[S01] [S02] 两次 meta |
-| 9 | `OutcomeDependence` | `KEEP` + **`MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`** | domain 索引；登记 coordination 不可知觉为系统误差源；两种 provenance 不得互替 | [S28] 关系级无工具 |
-| 10 | `Satisfaction` | `DERIVED`（`DerivedEvaluation`） | 保留时序能力（可被下游转移引用）；不进 primitive 集合 | [S30] 差值定义；[S36] projection .77–.90 |
+| 8 | `Dedication` | `KEEP` | 必须声明是否含 satisfaction 成分。**Round-3（`X-3`）**：本行**不**要求二选一；改为**声明义务** + conditional consequence pre-registration（`C-P8`，见 §3.8 裁决行） | [S05] 三来源（**`NOT_OPENED`**）；[S01] [S02] 两次 meta |
+| 9 | `OutcomeDependence` | `KEEP` + **`MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`** | `domain` **推荐 facet**（原写「domain 索引」，强制条件已删）；登记 coordination 不可知觉为系统误差源；两种 provenance 不得互替 | [S28] 关系级无工具 |
+| 10 | `Satisfaction` | `DERIVED`（`DerivedEvaluation`）—— **`X-1` `DECIDED`：留在 Derived / evaluation candidate，不升为 primitive** | 保留时序能力（可被下游转移引用）；不进 primitive 集合 | [S30] 差值定义；[S36] projection .77–.90 |
 | 11 | `Cohesion / We-ness` | **`BELIEF_ONLY`** | 采纳 §6 P1 的 `PerceivedWeNess_A / _B`；设升级条件 | [S19] IoS 单题；[S36]；[S20] RCI 含 interdependence |
-| 12 | `PPR` | **`BELIEF_ONLY`** | 禁止作为任何有向状态的 proxy | [S34] 感知 vs 实际只中度相关 |
+| 12 | `PPR` | **`BELIEF_ONLY`** —— **`X-1` `DECIDED`：`PPR_(i about j,t)` 留在 `BeliefState` / relationship-specific perception**。**时间持续性与因果重要性不蕴含 Reality-state 归属** | 禁止作为任何有向状态的 proxy | [S34] 感知 vs 实际只中度相关。**`X-2` 附记见 §2.6** |
 | 13 | `Perceived Commitment` | **`BELIEF_ONLY`** | 用 `Belief_i(Dedication_(j->i))`，不新建构念 | `PARAMETER_CONVERGENCE_V0_1.md` §5 B2 |
 
 ---
@@ -348,22 +377,42 @@ relationship satisfaction 被批评 too individualistic、inappropriately unidim
 
 ## 6. 对 prior report 的 audit delta（复核而非重做）
 
-| # | prior report 判定 | 本审计判定 | 变化 | 依据 |
-|---|---|---|---|---|
-| 1 | C02 `Distrust` = `KEEP（与信任分离）`，E2 | **`OPEN`（强烈倾向 DERIVED）** | **降级** | [S09] vs [S10]；反向计分方法学隐忧 |
-| 2 | C04 `PPR` = `KEEP（作 PS）` | **`BELIEF_ONLY`** | **改层** | [S34] + [S33] |
-| 3 | §9.2 `Satisfaction = DERIVED` + §7.4 `Commitment = dedication（含 satisfaction 成分）` | 两者并存 -> **内部不一致**，需二选一 | **发现冲突** | [S05] |
-| 4 | B01 `Attachment security` = `KEEP`，E1 | **`KEEP` + `CONTESTED`**，要求 person / edge 双层且保留原始二维 | **加限定** | [S11] [S44] [S39]；支持侧 [S12] |
-| 5 | C13 `Outcome dependence` = `KEEP`，E1 | **`KEEP` + `MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`** | **加限定** | [S28]；[S01] [S02] [S03] 均未测 dependence |
-| 6 | A02 `Romantic/Lustful attraction` = KEEP，标 C contested | **`KEEP` + 边界 `OPEN`**，Fisher 三系统降级为 mechanism_evidence | **降级机制地位** | [S26] |
-| 7 | B05 `Cohesion/we-ness` = `KEEP（作 PS）` | **`BELIEF_ONLY`（当前阶段）** | **改层** | [S19] + [S14]；[S36]；[S20] |
-| 8 | A01 `Sexual desire` = KEEP | **`KEEP` + 强制 `measurement_channel`** | **加条件** | [S23] |
-| 9 | B04 `Caregiving` = KEEP，E2 | **`KEEP`**（+ 动机 / 行为双层） | **维持 + 细化** | [S15] [S18] |
-| 10 | C01 `Trust` = KEEP | **`KEEP` + 强制 `domain` 索引** | **加条件** | [S10] |
-| 11 | 全文无 DOI，§11 声明「文献细节请在外部库核对」 | 建议改为：**无 DOI 或未核验 DOI 的指针不得作为裁决依据** | **流程修订** | §5.11 |
-| 12 | 用 `E1/E2/E3/C/M` 分级，无机制记录「是否读到原文」 | 建议叠加 `CITED_PRIMARY / CITED_SECONDARY / AGENT_RECALL / NO_DOI_VERIFIED` 正交标记 | **流程修订** | §1.2 |
+> **Round-3 增列说明（`A3a`）**：原表只有 4 列，**「变化」列相对的是 prior report，不是 canonical**。本 lane 核对了 `PARAMETER_CONVERGENCE_V0_1.md`（`@ee393ca` main，文件 `2fe7f52`）的 §4 `D1`–`D8` / §5 `B1`–`B2` / §6 `P1`–`P5` / §9 `R1`–`R5` / §11 之后，新增第 6 列 **`相对 canonical?`**。
+> **为什么必须加**：原表 12 行里有 **6 行**的「变化」**不是相对 canonical 的变化**——canonical 早就站在本审计这一侧（或两边都不动）。把它们和真正的 canonical 冲突混在一列，会让 join 误算「与 canonical 的分歧数」。
+> **逐行核对结论：只有 2 行是真正与当前 canonical 的冲突**（`#3` 与新增的 `#13`）。
+
+| # | prior report 判定 | 本审计判定 | 变化（相对 prior report） | 依据 | **相对 canonical?（Round-3 新增）** |
+|---|---|---|---|---|---|
+| 1 | C02 `Distrust` = `KEEP（与信任分离）`，E2 | **`OPEN`（强烈倾向 DERIVED）** | **降级** | [S09] vs [S10]；反向计分方法学隐忧 | **`ALREADY_ALIGNED`** —— canonical §4 `D4` 已写「**Open question:** `Distrust` 是否应作为独立 construct，而不是 `1 - Trust`，保留待测」。**本审计的「降级」不是对 canonical 的改动**，只是与 canonical 同侧 |
+| 2 | C04 `PPR` = `KEEP（作 PS）` | **`BELIEF_ONLY`** | **改层** | [S34] + [S33] | **`ALREADY_ALIGNED`** —— canonical §5 `B1` 已判 `KEEP / layer = Belief / relationship-specific perception`。**adjudication `X-1` `DECIDED` 维持该层位** |
+| 3 | §9.2 `Satisfaction = DERIVED` + §7.4 `Commitment = dedication（含 satisfaction 成分）` | 两者并存 ~~-> **内部不一致**，需二选一~~ → **无逻辑矛盾、不作二选一；登记 conditional consequence pre-registration** | ~~**发现冲突**~~ → **登记条件后果** | [S05]（**`NOT_OPENED`**） | **✅ `GENUINE_CONFLICT_WITH_CANONICAL`（条件式）** —— 冲突不在 canonical **内部**，而在 **canonical §4 `D7` × canonical §9 `R3` × 本审计 §3.8 的 attraction-based 分解**三者之间。`X-3` 裁定：**当前无逻辑矛盾**；`C-P8` 只追加一句后果预登记，`D7` 本体不改 |
+| 4 | B01 `Attachment security` = `KEEP`，E1 | **`KEEP` + `CONTESTED`**，要求 person / edge 双层且保留原始二维 | **加限定** | [S11] [S44] [S39]；支持侧 [S12] | **`PARTIAL_ADDITION`** —— canonical §4 `D5` 已是 `KEEP` 且已有 Open question（「attachment security 是否应拆成更细 facet，暂不做」）。本审计的**加限定**（`CONTESTED` + person/edge 双层 + 保留原始二维）在 canonical 中**无对应文本** ⇒ 属**新增限定**，非层位冲突。`X-4` 判 `Trust` / `AttachmentSecurity` **各自保留为 candidate** ⇒ 本行**不构成**降级压力 |
+| 5 | C13 `Outcome dependence` = `KEEP`，E1 | **`KEEP` + `MEASUREMENT_INFEASIBLE_AT_RELATION_LEVEL`** | **加限定** | [S28]；[S01] [S02] [S03] 均未测 dependence | **`ALREADY_ALIGNED`（方向相反但结论同侧）** —— canonical §4 `D8` 已写「**Open question:** 某些 dependence 是否应完全由 Agent resources / alternatives / institutional constraints 推导……交给 redundancy test」。本审计的 `MEASUREMENT_INFEASIBLE` 是**同一疑虑的更具体表述**，不是新冲突 |
+| 6 | A02 `Romantic/Lustful attraction` = KEEP，标 C contested | **`KEEP` + 边界 `OPEN`**，Fisher 三系统降级为 mechanism_evidence | **降级机制地位** | [S26] | **`ALREADY_ALIGNED`** —— canonical §4 `D2` 已把 `RomanticAttraction` 列为 `KEEP_CANDIDATE` 且 canonical 通篇**未**把 Fisher 三系统当机制依据；`CURRENT_ARCHITECTURE.md` §6 亦只把「机制 != 状态」写进 §7 段落 |
+| 7 | B05 `Cohesion/we-ness` = `KEEP（作 PS）` | **`BELIEF_ONLY`（当前阶段）** | **改层** | [S19] + [S14]；[S36]；[S20] | **`LAYER_TENSION_NOT_RESOLVED`** —— canonical §6 `P1` 判 `KEEP_CANDIDATE / contested scope` 并**同时**允许 `PerceivedWeNess_(A about pair)` / `_(B about pair)`，**把「是否再需要一个 shared latent `Cohesion_(A,B)`」明确留给 Case Bank / longitudinal 判定**。本审计的 `BELIEF_ONLY` 落在 canonical **尚未决定**的那半边 ⇒ **不是与 canonical 的冲突，是替 canonical 提前作答**。本 lane **不**据此主张 canonical 应改 |
+| 8 | A01 `Sexual desire` = KEEP | **`KEEP` + 强制 `measurement_channel`** | **加条件** | [S23] | **`GENUINE_ADDITION`** —— canonical §4 `D3` 有「desire 与 behavior、identity、orientation 必须分离」，但**无 `measurement_channel` 字段要求**。本审计的字段要求在 canonical 中**无对应文本** ⇒ 新增。**注意**：其数值依据 `[S23]` 的女性 `r` **存在文件间冲突**（§6.2） |
+| 9 | B04 `Caregiving` = KEEP，E2 | **`KEEP`**（+ 动机 / 行为双层） | **维持 + 细化** | [S15] [S18] | **`ALREADY_ALIGNED`** —— canonical §4 `D6` 已是 `KEEP`，且已写「**边界：** 做饭、陪诊、接送、转账是 Action/Observation」。本审计的细化与 canonical 边界**同向** |
+| 10 | C01 `Trust` = KEEP | ~~**`KEEP` + 强制 `domain` 索引**~~ → **`KEEP` + `domain` = `FACET_RECOMMENDED_NOT_REQUIRED`** | ~~**加条件**~~ → **撤回强制条件** | [S10] | **`WITHDRAWN`** —— 依 adjudication `X-4` `DECIDED` + `C-P3` `PARTIAL ACCEPT`：**canonical §4 `D4` 本轮不新增 `domain` 必需字段**（canonical `D4` 现文本中本就**没有** `domain` 必需字段）⇒ 本审计原来的「强制 `domain`」是**与 canonical 现状相冲突的加码**，现已撤回。**`[S10]` 的 domain-specificity 观察保留为 facet 建议** |
+| 11 | 全文无 DOI，§11 声明「文献细节请在外部库核对」 | 建议改为：**无 DOI 或未核验 DOI 的指针不得作为裁决依据** | **流程修订** | §5.11 | **`PROCESS_ONLY`** —— 与 canonical 无冲突 |
+| 12 | 用 `E1/E2/E3/C/M` 分级，无机制记录「是否读到原文」 | 建议叠加 `CITED_PRIMARY / CITED_SECONDARY / AGENT_RECALL / NO_DOI_VERIFIED` 正交标记 | **流程修订** | §1.2 | **`PROCESS_ONLY`** —— 与 canonical 无冲突 |
+| 13 | （新增行，Round-3）`02b` §5.3 提出 `PowerLevel_(i->j)` 作为新增候选节点 | **不进入候选列表**，`HOLD_FOR_EVIDENCE` | —— | adjudication `C-W3` | **✅ `GENUINE_CONFLICT_WITH_CANONICAL`（被驳回方向）** —— 该节点在语义上是 canonical §9 `R2`（`:487`）「**不先设一个独立"权力值"**」的**反面**。`X-13` 亦裁定 **无独立 universal Power primitive**，`TotalDependence/TotalPower` 为**对称派生聚合**、`RelativePower/PowerImbalance` 为**方向性派生读出**。⇒ 本行是**本审计与 canonical 的第二处真实冲突**，且**已被 `C-W3` 判为不采纳** |
+| 14 | （新增行，Round-3）`02b` §5.1 + MGS-C 判 `Trust` 降为 `AttachmentSecurity` 的 facet | **不采纳为结论**；`Trust` 与 `AttachmentSecurity` 各自保留为 candidate | —— | adjudication `X-4` / `C-W4` | **`NO_CONFLICT`** —— canonical §4 `D4` / `D5` **并列** `Trust` 与 `AttachmentSecurity`，与本轮结论**一致**。`C-W4` 另指出 `02b` 的降级唯一依据是**从未定义的边标签 `E4a`** ⇒ 该降级**不得**被引为 `02b` 的结论 |
 
 **未发现需推翻 prior report 的项**：C08 commitment 的 `KEEP/REDEFINE` 方向正确（但需换独立性论证理由，见 §2.4）；C14 power 作为 dependence 不对称的派生、B02 felt security 并入 B01、B07/C07 降为 proxy、Alignment 拆为 value / goal congruence 三项均站得住。
+
+### 6.2 跨文件数值冲突登记（Round-3，`A3a`）—— 不选赢家
+
+| 冲突项 | 本文件 | 另一处 | 处置 |
+|---|---|---|---|
+| 主观–生殖唤起一致性（女性） | **`r = .26`** —— §3.3（`:146`）、§4 第 3 行、§5.6（`:320`）；单一来源 `[S23]` = Chivers et al. 2010, `10.1007/s10508-009-9556-9` | **`r = .25`** —— `02b_CONSTRUCT_REDUNDANCY_AUDIT.md` §6 `RES-2` 与 §8 `C6`；**挂在两个来源上**（Chivers et al. 2010 **+** Meston & Stanton 2018） | **两值并列，均标 `NOT_OPENED`。本 lane 不选赢家。** |
+
+**为什么不能在本 lane 裁定**（三条，均可复核）：
+1. **两侧引的来源集合不同。** 本文件挂**一个** meta 分析；`02b` 挂**两个**。若 `.25` 出自 Meston & Stanton 2018（该条在 `02b` 里**无 DOI**，只有一个 `labs.la.utexas.edu` PDF 链接），则二者**未必矛盾**——可能是两份文献被并置进同一格。
+2. **本 lane 只重开了 Chivers et al. 2010 的 Crossref 题录**（*Archives of Sexual Behavior* 39(1):5–56，作者串与卷期页**全部相符**），**未打开正文与表格**。Chivers 报告的 agreement correlation 的具体系数在正文表格层，题录层拿不到。
+3. **`.25` vs `.26` 足以改变一条 Gate B 结论的强度**：§5.6 据此论证「`SexualDesire` 坐标必须携带 `measurement_channel`」。若两个值都成立，论证不受影响；但**只有一个值成立**时，论证的量化强度会变。**因此不能靠「差不多」放过。**
+
+**什么能定它**：① 打开 Chivers et al. 2010 正文取 female agreement 系数与 CI；② 打开 Meston & Stanton 2018 确认 `.25` 是其自有统计量还是对 Chivers 的转述（若是转述，则 `02b` 是把 `.26` 误记成 `.25`）；③ 核对本文件 `[S23]` 与 `02b` ref 20 是否同一 DOI（**本 lane 已核对：都是 `10.1007/s10508-009-9556-9`** ⇒ 若 `.25` 被证实出自 Meston & Stanton，则这是**一个来源、两个转录值**，属转录错误）。
+⇒ 在此之前，**两处表述都不得**作为 Gate B / Gate C 的定量输入；§4 第 3 行的「强制 `measurement_channel`」应读作**由一个待定的量级差异支撑的设计建议**，不是由已核实数值支撑的硬性要求。
 
 ---
 

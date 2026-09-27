@@ -6,6 +6,7 @@
 **Base:** `youling/lhrm@main = ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a`（2026-09-27 live recheck）
 **Governance at recheck:** `youling/ai-use@main = 64018d80443c1889c8aaf4a6d27ffe78f3e6dd90`
 **Work branch:** `research/opencode-overnight-2026-09-27 @ ce1a774d4ca678346b2cccdd600fa19f4d30c534`（相对 main ahead 1 / behind 0）
+**Round-3 repair:** 2026-09-27，lane child `A3a`（base `8adcf0bacc45c0feb5c14e65e2a45346dd488b43`）。依 Architect adjudication V1（`X-1` / `X-2` / `X-4` / `X-8` / `X-10` / `X-12`；`C-P3` / `C-P5`；`review-r2` R-A2）修订。**本次修复改了 4 处自指/分类缺陷**：§9.1 的不可执行交接（`F-09` 悬空指针）、§4.2 的两处误标 `SUPERSEDED`、§4.3 `G-22` 的双分类混写 + 已完成 lane 被记为 `ACTIVE_DEPENDENCY`、§4.3 `G-17` 的同一处悬空指针。被取代的原文**逐字保留**在各行删除线内。**本文件不含任何 canonical 改动，不含任何架构裁决。**
 
 > 本文件严格遵守 `#30` 的边界：不改 canonical ontology / foundation / 公式 SSOT / schema / 权重 / 阈值；不 merge；不写 Eye / Juece；不污染独立 verifier lane。
 > 本文件的分类标签是**映射结果**，不是**裁决结果**。任何 lane 读到 `OPEN_GAP` 时不得据此推断「应该新增 construct」；任何 lane 读到 `SUPERSEDED` 时不得据此删除历史证据。
@@ -109,6 +110,18 @@
 | `HISTORICAL_EVIDENCE` | 已 merge 的研究证据 / provenance；可引用、可审计，但不自动成为架构。 |
 | `ACTIVE_DEPENDENCY` | 未完成但由其它 lane / 外部项目拥有；本项目只能等待或对接，不能自行推进。 |
 | `OPEN_GAP` | 属于 LHRM 自身、当前无 durable 答案、且是明确记录的待办。 |
+| `CONTESTED` | 存在**两个以上仍未冻结的**来源给出不相容的结论；本文件只记录分歧，**不裁决**。**Round-3 新增**。 |
+| `EXTERNAL_GAP` | **Round-3 新增**。所属 lane **已关闭 / 已交付完毕**，但 LHRM 侧**从未拿到**其产物 ⇒ **等不到**，只能换路径、补做或重新派工。**依 `X-12`：这不是 blocker**（负结果 / 访问限制不是 blocker）。 |
+
+> **`ACTIVE_DEPENDENCY` 的 Round-3 收紧（`A3a`）**：原定义「未完成但由其它 lane / 外部项目拥有」把**「仍在进行」**与**「已完成待消费」**混为一谈。本轮在 §4.3 的 `G-19`…`G-22` 四行加了一个**正交的状态标注**（不新增分类值，避免破坏「恰好一个」的互斥分配）：
+
+| 状态标注 | 含义 | 仍可推进吗 |
+|---|---|---|
+| `进行中` | 外部 lane 仍在跑 | 只能等 |
+| `已交付待消费` | 外部 lane **已完成并有交付物**，LHRM 尚未消费 | **可推进**（去接那份交付物） |
+| `已关闭且无 durable 交付` | 外部 lane 已结束且明确未交付 | **不可等**（须换路径） |
+
+> **`SUPERSEDED` 的 Round-3 收紧**：原判定规则要求「已被更新的 durable 裁决或事实取代」。§4.2 的 `S-I` / `S-J` **两侧均自述非冻结**，本文件也只记录分歧 ⇒ **不满足该规则**，本轮改标。**「Architect 已裁决 X 条」不等于「原文本已被取代」**：裁决可以与一份未冻结的旧报告并存。
 
 ---
 
@@ -138,46 +151,57 @@
 
 ### 4.2 已显式被取代的东西（`SUPERSEDED` 明细）
 
-| id | 被取代对象 | 取代者 | 指针 |
-|---|---|---|---|
-| S-A | 「参数低相关 / 零统计相关」为收敛目标 | 「低语义/条件冗余，而非动态独立」 | `#2` comment `5567353344`；`CURRENT_ARCHITECTURE.md` §7；`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §4 |
-| S-B | `S/O/D/E` 是完整世界本体 | `S/O/D/E` 是 query-local evaluation view；世界层 = `Agents + Relationships + Environment` + `Reality != Observation != Belief` | `#2` comment `5565245810`；`CURRENT_ARCHITECTURE.md` §3；`STAGE_SUMMARY` §2.1–2.2 |
-| S-C | 「先算出一个 0..1 分数/距离」为第一目标 | `Representation before scalarization. State-space before score.` | `#2` comment `5606209093`（`ARCHITECT_REPRESENTATION_FIRST_RULING`）；`AGENTS.md` Representation-first invariant |
-| S-D | 时间是单一线性标量 `t` | `tau = (history_id, local_time)`，历史可 fork；dream/plan/counterfactual 为 nested Belief 内模拟世界 | `#2` comment `5606838728`；`CURRENT_ARCHITECTURE.md` §8 |
-| S-E | 关系演化由预写状态机驱动 | `X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)` | `CURRENT_ARCHITECTURE.md` §6；`AGENTS.md` Current architecture direction #9 |
-| S-F | 「一个 verifier 自行选材 + 清洗 + 映射」的验证设计 | 三 verifier 同冻结输入的受控实验 | `#15` comment `5638300950`（`ARCHITECT_PROTOCOL_SUPERSESSION_V2`，明示 `SUPERSEDED BEFORE EXECUTION`） |
-| S-G | LGSCO（`L0-002`）作为首个可执行 fixture | OGL Carty Employment Tribunal（`L0-001`） | `#19` `ARCHITECT_SOURCE_SWITCH`；`#15` comment `5655058405` |
-| S-H | corpus 推荐的 fixture 顺序（001=LGSCO / 003=Carty） | main 实际冻结 001=Carty / 002=Magi / 003=StoryCorps | `git log`（`e26a8da` / `f237784` / `d54779a`+`9580577`）；`#23` comment `5660916430`、`5668514104` |
-| S-I | `SCIENTIFIC` §7.8 把 PPR 列入有向最小核心 | `PARAMETER_CONVERGENCE_V0_1.md` §5 `B1` 把 PPR 判为 Belief layer | 两侧均自述非冻结；本文件只记录分歧，不裁决 |
-| S-J | `SCIENTIFIC` §7.7 裁决 Trust KEEP 并保留 `C02 distrust` | `PARAMETER_CONVERGENCE_V0_1.md` §4 `D4` 把 Distrust 降为 Open question | 同上 |
+> **Round-3 分类更正（`A3a`，2026-09-27）**：本节原标题把全部 10 行都归为「已显式被取代 / `SUPERSEDED`」。逐行核对后，**最后两行（`S-I` / `S-J`）不满足该分类**，本轮已改标并逐条注明理由。`S-A`…`S-H`（8 行）**不撤回**——它们各自都有一个**单一明确的取代者**（issue comment / `ARCHITECT_*_SUPERSESSION` / main 实际冻结集），属真正的 supersession。
+
+| id | 被取代对象 | 取代者 | 指针 | 分类 |
+|---|---|---|---|---|
+| S-A | 「参数低相关 / 零统计相关」为收敛目标 | 「低语义/条件冗余，而非动态独立」 | `#2` comment `5567353344`；`CURRENT_ARCHITECTURE.md` §7；`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §4 | `SUPERSEDED` |
+| S-B | `S/O/D/E` 是完整世界本体 | `S/O/D/E` 是 query-local evaluation view；世界层 = `Agents + Relationships + Environment` + `Reality != Observation != Belief` | `#2` comment `5565245810`；`CURRENT_ARCHITECTURE.md` §3；`STAGE_SUMMARY` §2.1–2.2 | `SUPERSEDED` |
+| S-C | 「先算出一个 0..1 分数/距离」为第一目标 | `Representation before scalarization. State-space before score.` | `#2` comment `5606209093`（`ARCHITECT_REPRESENTATION_FIRST_RULING`）；`AGENTS.md` Representation-first invariant | `SUPERSEDED` |
+| S-D | 时间是单一线性标量 `t` | `tau = (history_id, local_time)`，历史可 fork；dream/plan/counterfactual 为 nested Belief 内模拟世界 | `#2` comment `5606838728`；`CURRENT_ARCHITECTURE.md` §8 | `SUPERSEDED` |
+| S-E | 关系演化由预写状态机驱动 | `X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)` | `CURRENT_ARCHITECTURE.md` §6；`AGENTS.md` Current architecture direction #9 | `SUPERSEDED` |
+| S-F | 「一个 verifier 自行选材 + 清洗 + 映射」的验证设计 | 三 verifier 同冻结输入的受控实验 | `#15` comment `5638300950`（`ARCHITECT_PROTOCOL_SUPERSESSION_V2`，明示 `SUPERSEDED BEFORE EXECUTION`） | `SUPERSEDED` |
+| S-G | LGSCO（`L0-002`）作为首个可执行 fixture | OGL Carty Employment Tribunal（`L0-001`） | `#19` `ARCHITECT_SOURCE_SWITCH`；`#15` comment `5655058405` | `SUPERSEDED` |
+| S-H | corpus 推荐的 fixture 顺序（001=LGSCO / 003=Carty） | main 实际冻结 001=Carty / 002=Magi / 003=StoryCorps | `git log`（`e26a8da` / `f237784` / `d54779a`+`9580577`）；`#23` comment `5660916430`、`5668514104` | `SUPERSEDED` |
+| S-I | `SCIENTIFIC` §7.8 把 PPR 列入有向最小核心 | `PARAMETER_CONVERGENCE_V0_1.md` §5 `B1` 把 PPR 判为 Belief layer | 同上 | **`CONTESTED`（Round-3 改标）** —— **两侧均自述非冻结**（`SCIENTIFIC` §7.8 与 `PARAMETER_CONVERGENCE` header `CANDIDATE / NOT FROZEN`）；**本文件只记录分歧，不裁决**。`SUPERSEDED` 要求存在一个**已生效的取代者**，此处不存在。⇒ 本行是**记录在案的层位分歧**，不是取代。**Round-3 附记**：adjudication `X-1` 已 `DECIDED` —— `PPR` 留在 `BeliefState` / relationship-specific perception；`X-2` 把「层序被文献反转」作为**架构主张**驳回（前提不成立：`CURRENT_ARCHITECTURE.md` §6 已把 `Belief` 列为转移算子一等共输入），但保留为 dynamics evidence。**该裁决属 `X-1`，不使本行变成 `SUPERSEDED`**——`SCIENTIFIC` §7.8 的文本仍在，两侧仍未冻结。 |
+| S-J | `SCIENTIFIC` §7.7 裁决 Trust KEEP 并保留 `C02 distrust` | `PARAMETER_CONVERGENCE_V0_1.md` §4 `D4` 把 Distrust 降为 Open question | 同上 | **`OPEN_GAP`（Round-3 改标）** —— 同 `S-I`：**两侧均自述非冻结，本文件只记录分歧**。另：adjudication `X-4` `DECIDED` —— `Trust` 与 `AttachmentSecurity` **保留为两个分开的 candidate**，`domain` 为**可选 facet / 上下文索引，不是必需 signature 字段**。该裁决**同样不**把本行变成 `SUPERSEDED`：`SCIENTIFIC` §7.7 的文本仍在。 |
+
+**⇒ 分类计数更正**：本节 `SUPERSEDED` = **8**（`S-A`…`S-H`）；`CONTESTED` = **1**（`S-I`）；`OPEN_GAP` = **1**（`S-J`）。**Round-3 前本节把 10 行全记为 `SUPERSEDED`。**
+**本文件 §4.3 的 `G-17` 仍把这四处分歧列为 `OPEN_GAP`（见该行），与本节改标后的口径一致。**
 
 ### 4.3 开放研究项（`OPEN_GAP` 与 `ACTIVE_DEPENDENCY`）
+
+> **Round-3 分类更正（`A3a`）**：本节原表把 `ACTIVE_DEPENDENCY` 记在若干**其指针所指的外部 lane 已被记录为 completed / closed**的行上，并把两种分类混写在同一行（`G-22`）。本轮：(i) 拆开 `G-22` 为 `G-22a`…`G-22d`；(ii) 在 `G-19`…`G-22c` 的**分类格内**补一个**正交的状态标注**（`进行中` / `已交付待消费` / `已关闭且无 durable 交付`，定义见 §3 表后）——**本轮刻意不新增表格列**，以免再次制造「表头声明与实际列数不符」的问题；(iii) 修掉 `G-17` 的**悬空指针**（见下）。
+> **`ACTIVE_DEPENDENCY` 的定义（本轮写明）**：**LHRM 侧尚缺、且只能由 LHRM 之外的东西补上的输入。** 它**不是**「未完成」的同义词——一个外部 lane **已完成**而 LHRM 仍缺其产物时，分类应是 `ACTIVE_DEPENDENCY` + `已交付待消费`；一个外部 lane **已关闭且未交付**时，分类应是 `EXTERNAL_GAP`（见 `G-19`）。**负结果不是 blocker。**
 
 | id | 开放项 | 隐含研究问题 | 分类 | 指针 |
 |---|---|---|---|---|
 | G-01 | **Gate A**：court-fact 逐句 representation coverage | 当前 candidate schema 能否在不新增 ad-hoc primitive 的前提下映射真实事实句？失败集中在哪里？ | `OPEN_GAP` | `PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A；main tree 中无任何 mapping 产出 |
 | G-02 | **Gate B**：跨语境反例（11 类） | 8 个 directed construct 在 same-sex / opposite-sex / kin / non-kin / friendship / romance / caregiving / conflict / unilateral attraction / high-dependence-low-liking / high-attraction-low-trust 下语义是否稳定？ | `OPEN_GAP` | §15 Gate B；最接近的既有材料：`GAME` §9、`DATING_APP` §7（研究证据层，非对当前 basis 的执行） |
-| G-03 | **Gate C**：冗余挑战（6 组指定攻击面） | Liking vs RomanticAttraction；Trust vs AttachmentSecurity；Caregiving vs Dedication；AttachmentSecurity vs Cohesion；OutcomeDependence vs structural derivation；PPR vs Trust/Care/Attachment | `OPEN_GAP` | §15 Gate C；最接近：`REAL_WORLD` §6 + §8、`SCIENTIFIC` §6 + §7 |
-| G-04 | Q-1 `Distrust` 是否独立 construct | 二元（trust/distrust）还是单极（trust 强度 + 否定）？ | `OPEN_GAP` | `PARAMETER_CONVERGENCE_V0_1.md` §4 D4；既有立场 `SCIENTIFIC` §7.7、§10.1(2)、§10.3(2) |
-| G-05 | Q-2 attachment security 是否拆 facet | anxiety / avoidance 是 dyad facet 还是 Agent 属性？ | `OPEN_GAP` | §4 D5；既有立场 `SCIENTIFIC` §3.1 依恋理论行、§9.3 |
+| G-03 | **Gate C**：冗余挑战（6 组指定攻击面） | Liking vs RomanticAttraction；Trust vs AttachmentSecurity；Caregiving vs Dedication；AttachmentSecurity vs Cohesion；OutcomeDependence vs structural derivation；PPR vs Trust/Care/Attachment | `OPEN_GAP` | §15 Gate C；最接近：`REAL_WORLD` §6 + §8、`SCIENTIFIC` §6 + §7、`02b`（**Round-3 附注**：`02b` §4 判定列已降级为**作者判断、不可由其规则导出**，其 `INDEPENDENT` 标签**不得**作 Gate C 证据） |
+| G-04 | Q-1 `Distrust` 是否独立 construct | 二元（trust/distrust）还是单极（trust 强度 + 否定）？ | `OPEN_GAP` | `PARAMETER_CONVERGENCE_V0_1.md` §4 D4；既有立场 `SCIENTIFIC` §7.7、§10.1(2)、§10.3(2)。**Round-3 附注**：`X-4` 已把 `Trust` / `AttachmentSecurity` 判为各自保留的 candidate，`domain` 为可选 facet ⇒ **本行的范围收窄为「`Trust` vs `Distrust`」本身**，不再与 facet 切点混谈 |
+| G-05 | Q-2 attachment security 是否拆 facet | anxiety / avoidance 是 dyad facet 还是 Agent 属性？ | `OPEN_GAP` | §4 D5；既有立场 `SCIENTIFIC` §3.1 依恋理论行、§9.3。**Round-3 附记**：`X-4` 把 `Trust` 侧更窄的 facet 切点列为**待 M2 式证据**，并**拒绝**新增 `FeltSecurity` 槽位（canonical D5 已占有该措辞） |
 | G-06 | Q-3 `OutcomeDependence` 是否可由结构性量完全导出 | 若可由 resources / alternatives / constraints 完全推出，则不应是独立 latent state | `OPEN_GAP` | §4 D8；既有立场 `SCIENTIFIC` §3.1 互依理论行、§5.2、§7.6 |
 | G-07 | Q-4 是否需要 shared latent `Cohesion_(A,B)` | 「我们感」是真实 pair process，还是双方 perception 的组合？ | `OPEN_GAP` | §6 P1；既有立场 `SCIENTIFIC` §6.18、§7.2（`B05`） |
-| G-08 | Q-5 `Satisfaction` 是 derived 还是 primitive | 已知底层状态后 satisfaction 是否仍携带稳定独立动态信息？ | `OPEN_GAP` | §9 R3；既有立场 `SCIENTIFIC` §6.14、`C12` |
+| G-08 | Q-5 `Satisfaction` 是 derived 还是 primitive | 已知底层状态后 satisfaction 是否仍携带稳定独立动态信息？ | `OPEN_GAP` | §9 R3；既有立场 `SCIENTIFIC` §6.14、`C12`。**Round-3 附记**：`X-1` `DECIDED` —— `Satisfaction` **留在 Derived / evaluation candidate**；`C-P8` 只追加**条件后果预登记**（若该判据成立并提升 `Satisfaction`，则 `§4 D7` 的 basis 地位与 `§11` 的 8 项 basis 需重新审议）。⇒ **本行仍是 `OPEN_GAP`**，但**不再是一个待二选一的冲突** |
 | G-09 | Q-6 `ValueCongruence` / `GoalAlignment` 的「量度」归属 | pair 属性、慢状态，还是 belief？ | `OPEN_GAP` | §6 P2/P3；`SCIENTIFIC` §10.3(3) |
 | G-10 | Measurement & Canonicalization（工程顺序第 4 步） | 观测变量/行为代理如何稳定映射到 latent construct family，且保留 uncertainty？ | `OPEN_GAP` | `CURRENT_ARCHITECTURE.md` §9、§12；`PARAMETER_CONVERGENCE_V0_1.md` §14；`#29` 分层验证 C |
 | G-11 | State transition / dynamics（工程顺序第 5 步） | 哪些状态/行为/环境变量对后续状态变化提供增量解释？ | `OPEN_GAP` | `CURRENT_ARCHITECTURE.md` §6、§12；`#29` 分层验证 D |
 | G-12 | Longitudinal parameter estimation（工程顺序第 6 步） | 参数估计、holdout、跨数据集泛化、uncertainty calibration | `OPEN_GAP` | `CURRENT_ARCHITECTURE.md` §12；`#29` 分层验证 F |
-| G-13 | validated measurement instrument 目录 | 每个 candidate construct 的成熟量表/行为测量家族、方向性、state vs trait、跨文化不变性证据 | `OPEN_GAP` | `PARAMETER_CONVERGENCE_V0_1.md` §2.6、§14；仓库内**无** instrument 目录（`REAL_WORLD` §5 只列 prior/base-rate 用途的数据源） |
+| G-13 | validated measurement instrument 目录 | 每个 candidate construct 的成熟量表/行为测量家族、方向性、state vs trait、跨文化不变性证据 | `OPEN_GAP` | `PARAMETER_CONVERGENCE_V0_1.md` §2.6、§14；仓库内**无** instrument 目录（`REAL_WORLD` §5 只列 prior/base-rate 用途的数据源）。**Round-3 附注**：canonical §2 的**六条**判据中只有 §2.6 用了删除框架、§2.2/§2.5 用了降级框架、**三条（§2.1/§2.3/§2.4）连后果句都没有**，且**六条全部无 procedure / required evidence / output field / threshold / designated executor**（`review-r2` R-A2）⇒ 本行的难度**不只是「目录不存在」**，还有「即使建成也无处写入结论」 |
 | G-14 | 严肃 quantitative dyadic dataset 审计（`#29` 数据要求：dyad id + 两方可区分 + ≥2 wave + codebook + outcome/event + missingness 文档 + rights 可复现） | 哪些 dataset 满足 LHRM 需要的 dyadic 测量形态？ | `OPEN_GAP` | `#29`「数据要求」段；`REAL_WORLD` §5 的 20 个源**主要是 person/household 级 panel**，不满足 dyad 形态要求 |
-| G-15 | Case Bank 从 3 份扩到 sampling frame | 下一批覆盖 ordinary / cross-cultural / non-romantic / kin / caregiving / longitudinal / repair 等 | `OPEN_GAP` | `#13`「最低覆盖维度」；`#15`；corpus「Readiness for next-round verification」 |
+| G-15 | Case Bank 从 3 份扩到 sampling frame | 下一批覆盖 ordinary / cross-cultural / non-romantic / kin / caregiving / longitudinal / repair 等 | `OPEN_GAP` | `#13`「最低覆盖维度」；`#15`；corpus「Readiness for next-round verification」。**Round-3 附注**：`X-10` `DECIDED` —— Human-dyad domain **已**含 kin / ex / professional / cooperative / adversarial 类；真实缺口是 (1) canonical 清单对齐 (2) 经验语料覆盖。**domain 声明不是 representation 证据** |
 | G-16 | `Dataset-to-LHRM Mapping Spec` 实体 | 仓库内不存在该 schema 的任何实例 | `OPEN_GAP` | `#29` 定义了字段清单；main tree 内无实例 |
-| G-17 | PPR / OutcomeDependence / Cohesion 的层归属分歧收敛 | 见 §7 S-9/F-09 | `OPEN_GAP` | `SCIENTIFIC` §7.8 vs `PARAMETER_CONVERGENCE` §4/§5/§6 |
+| G-17 | PPR / OutcomeDependence / Cohesion 的层归属分歧收敛 | 见 §4.2 `S-I`（PPR）、本表 `G-06`（OutcomeDependence）、`G-07`（Cohesion）；Distrust 见 `G-04` | `OPEN_GAP` | `SCIENTIFIC` §7.8 vs `PARAMETER_CONVERGENCE` §4/§5/§6。**Round-3 修掉悬空指针**：原写「见 §7 S-9/**F-09**」——**本文件没有任何 `F-xx` 条目**（§7 只有 `S-1`…`S-13`），而 §7 的 `S-9` 讲的是 `#23` body 的 Juece surface 与 fixture 001 描述过期，**与层归属分歧无关**。已改为指向本表与 §4.2 的实际条目 |
 | G-18 | 三套 corpus 分级轴（L0–L3 难度 / P0–P4 provenance / Level 0–6 curriculum）对齐 | 下一批采样按哪套轴？corpus 未填 `source_grade` | `OPEN_GAP` | 见 §7 S-13 |
-| G-19 | 隔离 verifier lane 的 durable 结果 | 是否已有任何 representation coverage 结果可 join | `ACTIVE_DEPENDENCY`（对 LHRM 为外部门） | `#15` comment `5655058405`；`#23` comment `5813587483`（2026-09-24 复核：无 durable delivery） |
-| G-20 | Eye 侧 LHRM consumer MVP / dyadic dataset 供给 | `LHRM_CONSUMER_MVP_READY` 之后的 dataset access | `ACTIVE_DEPENDENCY` | `#13` comment `5638240071`（`youling/eye#54` ACCEPT）；`#23` comment `5813587483`（`eye#57` completed/closed） |
-| G-21 | Juece thin-adapter compatibility 结论 | 三 fixture 的 `KEEP/ADAPTER/GENERIC_EXTEND_CANDIDATE/REJECT` 矩阵 | `ACTIVE_DEPENDENCY` | `#23` comment `5668514104`（`THREE_FIXTURE_GATE = CLEARED`，`ACTIVE_EXECUTION = youling/juece#30`） |
-| G-22 | `#29` 第一阶段 Gate 的 4 个前置条件 | (1) 隔离 lane durable 结果；(2) Juece smoke 完成；(3) Eye 至少 2 个可取得 dataset 或明确 access gate；(4) 选定 ≤3–5 条可证伪候选关系与 outcome 定义 | `ACTIVE_DEPENDENCY`（1/2/3）+ `OPEN_GAP`（4） | `#29`「第一阶段 Gate」段 |
-| G-23 | 本次 overnight swarm 的 18 条 Wave 1 lane | 见 §8 | `ACTIVE_DEPENDENCY`（对 R00 而言） | `00_MANIFEST.md` §2 lane 表 |
+| G-19 | 隔离 verifier lane 的 durable 结果 | 是否已有任何 representation coverage 结果可 join | **`EXTERNAL_GAP`**（Round-3 由 `ACTIVE_DEPENDENCY` 改标）+ 外部状态：**已关闭且无 durable 交付** | `#15` comment `5655058405`（解除封锁）；`#23` comment `5813587483`（2026-09-24 复核：**无 durable delivery**）。**Round-3 理由**：该 lane **已关闭**且**明确未交付** ⇒ 这不是「还在进行中的依赖」，而是一个**外部空缺**。按 `X-12`，它也**不是 blocker**（负结果 / 访问限制不是 blocker） |
+| G-20 | Eye 侧 LHRM consumer MVP / **≥2 个可取得 dyadic dataset 或明确 access gate** | `LHRM_CONSUMER_MVP_READY` 之后的 dataset access | `ACTIVE_DEPENDENCY` + 外部状态：**`youling/eye#54` ACCEPT（consumer 侧已交付）；`youling/eye#57` completed/closed** ⇒ **依赖的「consumer 侧」已完成，缺的是 dataset / access gate 本身** | `#13` comment `5638240071`；`#23` comment `5813587483`。**Round-3 理由**：原表把本行整行记为 `ACTIVE_DEPENDENCY`，而其指针里的 `eye#57` 已 `completed/closed`；**「已交付待消费」与「仍在进行」必须分开记**，否则 join 会把一个已完成的外部 lane 算成活跃依赖。**未打开 `eye#57`，本行状态为经 LHRM issue comment 的转述（`TRANSCRIBED_NOT_OPENED`）** |
+| G-21 | Juece thin-adapter compatibility 结论 | 三 fixture 的 `KEEP/ADAPTER/GENERIC_EXTEND_CANDIDATE/REJECT` 矩阵 | `ACTIVE_DEPENDENCY` + 外部状态：**`THREE_FIXTURE_GATE = CLEARED`（`#23` comment `5668514104`）；`ACTIVE_EXECUTION = youling/juece#30`** | `#23` comment `5668514104`。**Round-3 理由**：门**已 clear**，执行**已派发**到 `youling/juece#30`。本行应读作「**等一份已派发的执行结果**」，不是「等一个尚未开始的前置条件」。**本 lane 未打开、未执行、也未推断 `youling/juece#30` 的内容**（契约禁止项） |
+| G-22a | `#29` 第一阶段 Gate 条件 (1)：隔离 lane durable 结果 | 是否已有可 join 的 coverage 结果 | **`EXTERNAL_GAP`**（**Round-3 新拆出**） | 见 `G-19`：**已关闭且无 durable 交付** ⇒ 条件 (1) 当前**不满足**，且**不能**靠等待满足 |
+| G-22b | `#29` 第一阶段 Gate 条件 (2)：Juece smoke 完成 | thin-adapter smoke 是否已跑完 | `ACTIVE_DEPENDENCY` — **已交付待消费**（**Round-3 新拆出**） | 见 `G-21`：`THREE_FIXTURE_GATE = CLEARED`。**状态未经本 lane 独立核实** |
+| G-22c | `#29` 第一阶段 Gate 条件 (3)：Eye 至少 2 个可取得 dataset 或明确 access gate | 是否已有可取得的 dyadic/longitudinal 数据 | `ACTIVE_DEPENDENCY` — **consumer 侧已交付，dataset 侧仍缺**（**Round-3 新拆出**） | 见 `G-20`。本行亦是 §11 `U-2` 的同一未知 |
+| G-22d | `#29` 第一阶段 Gate 条件 (4)：选定 ≤3–5 条可证伪候选关系与 outcome 定义 | 哪 3–5 条关系值得先被证伪？ | `OPEN_GAP`（**Round-3 新拆出；原与 (1)(2)(3) 混在同一行**） | `#29`「第一阶段 Gate」段。**这是四条里唯一 LHRM 侧自己能做的一条** |
+| G-23 | 本次 overnight swarm 的 18 条 Wave 1 lane | 见 §8 | `ACTIVE_DEPENDENCY`（对 R00 而言） | `00_MANIFEST.md` §2 lane 表。**Round-3 附记**：adjudication `X-8` 要求把「12 robust agreements」换成审计过的 `N-A1…N-A12` 独立来源记账，`00_MANIFEST` 由 sibling `A2` 负责 |
 | G-24 | 治理 ref 的持续锁定 | 本 attempt 起点 `64018d…`；下一次 attempt 必须 live recheck | `CURRENT`（可执行约束） | `AGENTS.md` Governance；`#30` body「Execution start MUST live-recheck」 |
 
 ---
@@ -359,13 +383,17 @@ corpus 实际只填了 `level`，**没有填 `source_grade`**；`#13` body 的 1
 
 ## 9. 给后续 lane 的操作性映射（不是裁决）
 
-1. **R01 / R02**：从 §7 的 S-9（F-09 表）开始，而不是从「重新审计 8 个 construct」开始。至少要处理 PPR、OutcomeDependence、Cohesion、Distrust 四处分歧。注意 `PARAMETER_CONVERGENCE` §4/§6/§9 已经给了每项的**降级理由**，`SCIENTIFIC` §6/§7 已经给了**成对比较与裁决**，两者结合才是完整起点。
+1. **R01 / R02**：**Round-3 更正——本条原为不可执行**。原文写「从 §7 的 **S-9（F-09 表）**开始」。**两处指针都不成立**：(i) **本文件没有任何 `F-xx` 条目**（§7 只有 `S-1`…`S-13`；机械核对：全文 `F-09` 只出现在本行与 §4.3 `G-17` 行内，**无任何定义**）；(ii) §7 的 `S-9` 讲的是「`#23` body 的 Juece surface 与 fixture 001 描述过期」，**与构念层归属分歧无关**。**原样保留在此供 grep**：
+   > ~~从 §7 的 S-9（F-09 表）开始，而不是从「重新审计 8 个 construct」开始。~~
+   **改指（可执行）**：从 §4.3 的 **`G-17`**（层归属分歧，指向已改为 §4.2 `S-I` + `G-04`/`G-06`/`G-07`）与 **§4.3 的 `G-01`–`G-03`**（Gate A/B/C）开始。至少要处理 PPR、OutcomeDependence、Cohesion、Distrust 四处分歧——**但注意 Round-3 已裁决其中一处**：`X-1` `DECIDED`（`PPR` 留在 `BeliefState`）、`X-4` `DECIDED`（`Trust` 与 `AttachmentSecurity` 各自保留为 candidate，`domain` 为可选 facet），故后两处的可执行范围是 **`OutcomeDependence` 与 `Cohesion`**，以及 **`Trust` vs `AttachmentSecurity` 的 facet 切点（待 M2 式证据）**。
+   注意 `PARAMETER_CONVERGENCE` §4/§6/§9 已经给了每项的**降级理由**，`SCIENTIFIC` §6/§7 已经给了**成对比较与裁决**，两者结合才是完整起点。**另注**：canonical §2 的六条判据**全部无 procedure / required evidence / output field / threshold / designated executor**，且只有 §2.6 用删除框架、§2.2/§2.5 用降级框架、**三条（§2.1/§2.3/§2.4）没有后果句**（`review-r2` R-A2）⇒ 「从判据开始」本身也不可直接执行。
 2. **R03**：仓库内**没有** instrument 目录（G-13）。可以从 §6 的映射表反推「哪些 construct 已被反复拆过」，但 scale/item/信度/效度/不变性必须新建。
 3. **R04**：`REAL_WORLD` §5 是 prior/base-rate 清单，**不是** dyadic 测量清单。不要把它当成 20 个 dataset 候选交差（G-14）。
 4. **R05**：`STAGE_SUMMARY` §5.2 的 APIM 指针是仓库内唯一已登记的 dyadic 统计方法锚点，可直接继承。
 5. **R15**：先解决三套分级轴的对齐（G-18 / S-13），否则下一批 fixture 会重复 corpus 的轴不一致。同时注意 S-11：当前 romance/kin/caregiving 的表示覆盖证据为 0。
 6. **R16**：`#29` 已给全部字段；缺的是实例与 leakage/outcome 切分规则。
 7. **R17**：本文件 §4.3 的 G-01…G-18 全部是**尚未被证伪也尚未被证实**的项，可直接作为 falsifier 搜索靶点。但请注意独立性约束：R17 首稿不得读 R01–R16 输出，也不应把本文件当作「已确认的漏洞清单」——本文件只做了**映射**，没有做**判断**。
+   **Round-3 附注**：`X-8` 要求「12 robust agreements」换成审计过的 `N-A1…N-A12` 独立来源 × 方法记账（`00_MANIFEST` / `19` 由 sibling `A2` 负责）；`X-12` 要求移除「唯一真 blocker」并把**负结果移出 blocker 列表**——本节 `G-19` 已按此改标为 `EXTERNAL_GAP`（见 §4.3 表前定义）。
 8. **Parent（join 时）**：
    - `#2` 建议补一条 status 收口 comment（不必改 body）；
    - `#3/#4/#5/#6` 建议在 `#2` join 已交付（`18cd72c`）的前提下由 Architect 收口；
@@ -378,14 +406,16 @@ corpus 实际只填了 `level`，**没有填 `source_grade`**；`#13` body 的 1
 
 本文件**不主张**：
 
-1. 不主张任何架构 verdict、参数裁决、层级归属；§4.3 G-17 的四处分歧只被记录，未被裁决。
+1. 不主张任何架构 verdict、参数裁决、层级归属；§4.3 G-17 的四处分歧只被记录，未被裁决。**Round-3 附注**：`X-1` / `X-4` 已**由 Architect 裁决**其中两处（`PPR` 留 `BeliefState`；`Trust` / `AttachmentSecurity` 各自保留、`domain` 为可选 facet）。本文件记录该裁决**已被签发**，**不主张**本文件有权裁决其余两处（`OutcomeDependence` / `Cohesion`）。
 2. 不主张 `#2/#3/#4/#5/#6/#15` 应当关闭，也不主张任何 issue body 应当被改写。
 3. 不主张 `VALIDATION_CORPUS_V0_1.md` 的任何素材指针在 2026-09-27 仍 live 可访问（其 verification log 记于 2026-09-11；已知 `L1-001` 旧址在 2026-09-14 已 404）。
 4. 不主张四份 `RESEARCH_REPORT_*` 的外部引用正确——`UNVERIFIED_AS_OF_2026-09-27`；`SCIENTIFIC` §11 为 author-year 简引无 DOI；`REAL_WORLD` §5 的统计数字未给逐条 URL/DOI。
-5. 不主张 Eye / Juece 当前状态；相关陈述全部为经 LHRM issue comment 的转述。
+5. 不主张 Eye / Juece 当前状态；相关陈述全部为经 LHRM issue comment 的转述。**Round-3 追加**：`G-20` / `G-21` / `G-22b` / `G-22c` 新增的外部状态（`eye#54` ACCEPT、`eye#57` completed/closed、`THREE_FIXTURE_GATE = CLEARED`）**同样只是转述**（`TRANSCRIBED_NOT_OPENED`）——本 lane **未打开** `youling/eye` 或 `youling/juece` 的任何 issue。**Round-3 追加**：`X-7` 裁定 rights fail closed；`G-19` 的「已关闭且无 durable 交付」同样只是转述。
 6. 不主张任何 construct、量表、transition 形式、统计数字已被验证。
 7. 不主张「多份报告互相一致」构成 validation。
 8. 不主张 sibling lane 的任何结论；本文件与其它 lane 相互独立产出。
+9. **Round-3 新增**：不主张 `G-20` / `G-21` / `G-22b` / `G-22c` 的外部状态为**当前**状态——它们是 2026-09-24 / 本 attempt 起点时的转述快照，需 live recheck。
+10. **Round-3 新增**：不主张 §4.2 的 `S-I` / `S-J` 是 `SUPERSEDED`（本轮已改标为 `CONTESTED` / `OPEN_GAP`），也**不主张**它们已被 `X-1` / `X-4` 取代——`SCIENTIFIC` §7.8 / §7.7 的文本仍在，两侧仍未冻结。
 
 ---
 
