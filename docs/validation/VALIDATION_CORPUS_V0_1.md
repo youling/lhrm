@@ -16,6 +16,36 @@ Materials were selected for discriminative power, including potential to produce
 `PARTIAL_MAPPING / MULTI_MAPPING / MAPPING_FAILURE` under the frozen schema.
 All representational-challenge notes below are pre-mapping hypotheses, not mapping results.
 
+---
+
+## AMENDMENT 2026-09-28 — two document-level repairs (C-P6, ACCEPT IMMEDIATE REPAIR)
+
+Authority: `youling/lhrm#30` `ARCHITECT_ADJUDICATION_V1`（comment `5854920569`）C-P6。
+本节**追加**，不替换上面的独立性声明——该声明描述的是 2026-09-11 的采集行为，仍然为真。
+
+### A-1 泄漏列拆分为两列
+
+原单一字段 `future_leakage_risk` 把**两种互不相同的泄漏**合并为一列，因此**互相遮蔽**：
+
+| 新字段 | 含义 | 典型信号 |
+|---|---|---|
+| `outcome_document_internal_leakage_risk` | **文档内 / 结局泄漏**：同一文档内被清洗掉的部分（判决主文、裁定、结论、后续章节）仍在文本中 | 判决书的主文与裁定量；临床报告的 Discussion/Conclusion；后续章节 |
+| `pretraining_memorization_leakage_risk` | **预训练记忆泄漏**：模型可能已记住该材料，因而能「猜中」未被文本授权的内容 | 名作 / 高引用 / 被大量爬取；结局广为人知；可被复述 |
+
+**约定（诚实优先于补齐）：**
+
+- 原字段若只给出**一种**泄漏的陈述，另一列记 `NOT_STATED_IN_2026-09-11_HARVEST`——**不补写新判断**。
+- 原字段的**等级标签**（`HIGH` / `MEDIUM-HIGH` / `LOW`）随其陈述归属到对应列；两列各自独立成级。
+- **两列都不得**被当作 `docs/foundation/VALIDATION_GATES_V0_2.md` 任何门的阈值（见该文件 §8-10）：
+  它们是 2026-09-11 采集期的**策展启发式**，不是门判据。
+- **权利 / 访问不是泄漏维度。** 它记在 `access_status` 与 fixture 层的 `rights_policy`，
+  **不得**被折算进任何一列（X-7 / rights fail-closed 继续有效）。
+
+### A-2 「Recommended Fixture 001–003」已被实际冻结取代
+
+**这是一次已经发生过的文档级冲突，不是假设。** 两份审计报告都靠**读文件而非读索引**躲过了它
+（`HIGH_CONFIDENCE_FINDINGS.md` H-F28）。取代关系与原文见文末该节的 `SUPERSEDED` 块。
+
 ## Selection method
 
 - Priority: official / public-domain / open-access / stable-source with a stable pointer
@@ -29,8 +59,10 @@ All representational-challenge notes below are pre-mapping hypotheses, not mappi
 - Required per-material fields follow the `#16` contract: `material_id / level /
   title / source_family / jurisdiction-culture-period / canonical pointer /
   access_status / copyright-license / approx_length / core_dyad / why_this_level /
-  representational_challenges / future_leakage_risk / recommended_cleaning /
+  representational_challenges / recommended_cleaning /
   recommended_fact_unit_count / sensitive_content_note`.
+- **AMENDED 2026-09-28（C-P6）：** 原 `future_leakage_risk` 字段已拆为
+  `outcome_document_internal_leakage_risk` + `pretraining_memorization_leakage_risk`（见上文 A-1）。
 
 ---
 
@@ -56,7 +88,8 @@ approx_length: 9 pages PDF; ~3500-4500 words incl. law/remedy boilerplate; factu
 core_dyad: Miss Z. Carty (claimant employee) <-> Mr M. Kaye, Development Operations Manager (employer side)
 why_this_level: Two-adult employment dyad, linear observable timeline (employed -> Covid closure early 2021 -> no clear dismissal communication -> CAB May 2021 -> claim -> hearing). Facts are explicit actions (shop closed/reopened, wages/holiday unpaid, no contact). Minimal interiority in facts section.
 representational_challenges: employment dates, closure/reopening events, payment/non-payment facts, who-said-what-when, CAB visit as timestamp anchor; must separate unfair-dismissal / wrongful-dismissal / redundancy-pay holdings from facts
-future_leakage_risk: HIGH if uncleaned — operative judgment (paras 1-8, GBP 2719.64 award, recoupment/interest notices) leaks outcome/trajectory
+outcome_document_internal_leakage_risk: HIGH if uncleaned — operative judgment (paras 1-8, GBP 2719.64 award, recoupment/interest notices) leaks outcome/trajectory
+pretraining_memorization_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
 recommended_cleaning: strip orders 1-8, award calculation, recoupment/interest notices, legal-tests section, post-hearing procedure; keep Introduction + employment/closure/non-payment/CAB/claim chronology; optionally role-label names
 recommended_fact_unit_count: 22
 sensitive_content_note: none — wage/employment dispute only; Covid context
@@ -77,7 +110,8 @@ approx_length: 23 numbered paras; ~1300-1600 words
 core_dyad: Mrs X (daughter/representative cancelling care) <-> office manager of care agency (counterparty via text/phone)
 why_this_level: Strictly linear dated message behavior (24 Jul admission -> suspension + 2-day fee -> manager text "terminate by 9 Aug" -> 3 Aug cancel text -> GBP 1330.83 invoice -> Nov-Dec complaint stages). Contract clause quoted verbatim. Even the disputed phone call is two reported-speech claims, no metaphor.
 representational_challenges: date arithmetic (3 Aug -> 9 Aug = 6 days vs 5-day vs 14-day clause), speech acts (suspend vs cancel vs terminate), invoice chain (GBP 1330.83 -> GBP 441 -> refund), three-stage complaint escalation; explicit obligation/notice-period reasoning
-future_leakage_risk: MEDIUM-HIGH — Analysis (paras 19-20) + Agreed action (GBP 500 + apology + refund) + Final decision leak evaluation/trajectory
+outcome_document_internal_leakage_risk: MEDIUM-HIGH — Analysis (paras 19-20) + Agreed action (GBP 500 + apology + refund) + Final decision leak evaluation/trajectory
+pretraining_memorization_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
 recommended_cleaning: strip role/powers boilerplate (paras 2-3), law/Reg-19 (paras 5-6), Analysis (19-20), Agreed action (21-22), Final decision (23); keep complaint summary (para 1) + What happened (paras 7-18); optionally strip mother's-death sentence (para 10) or keep as single timestamp with care flag; source anonymisation already done
 recommended_fact_unit_count: 20
 sensitive_content_note: low — bereavement context (Mrs A died September; invoice addressed to deceased mother "upsetting"); flag for annotator care, not exclusion; no minors, no sexual violence
@@ -99,7 +133,8 @@ approx_length: full article ~5000-6000 words + Fig.1/Fig.2 timelines + Tables 1-
 core_dyad: Mr. Jonas (white Lithuanian man, 41 at 1998 diagnosis -> 65 in 2021, chief executive) <-> GP / primary-care practice (longitudinal prescriber)
 why_this_level: Explicit dated linear prescribing/visit behavior (1998 BP 150/110 + atenolol -> 2000 dry mouth/thirst 160/100 obese glucose 5.9 -> Mar 2001 nebivolol + nitrendipine -> mono->triple switches -> from 2010 fixed-dose combos -> 2007-08 fenofibrate/atorvastatin/rilmenidine windows -> 2010 thyroidectomy/levothyroxine -> 2019 T2D/metformin; 207 GP visits ~9/year). Minimal metaphor; interiority confined to Table 2 interview (strippable).
 representational_challenges: medication start/stop/switch events, BP readings as measurements, comorbidity onsets, OTC concomitants, adherence gaps (20-40-day gaps 2004-05); long span requires windowing to 10-40 units without inventing causality
-future_leakage_risk: HIGH if uncleaned — Sec.3-5 (PCNE classifications, Table 3, Discussion/Conclusion "never reached target BP", pharmacist-intervention judgments) leak clinical judgment and future-risk trajectory
+outcome_document_internal_leakage_risk: HIGH if uncleaned — Sec.3-5 (PCNE classifications, Table 3, Discussion/Conclusion "never reached target BP", pharmacist-intervention judgments) leak clinical judgment and future-risk trajectory
+pretraining_memorization_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
 recommended_cleaning: keep Sec.2 Case presentation + Fig.1/Fig.2 + Table 1 end-state meds; strip Abstract, Background, Sec.3 PCNE Table 3, Sec.4 Discussion, Sec.5 Conclusion, Funding/COI, References; strip Table 2 interview OR keep max 2-3 explicit adherence-behavior rows flagged; RECOMMENDED window 1998-2008 initiation phase (~20 units); do not use full 23-year span as single L0 item
 recommended_fact_unit_count: 28 (full Sec.2) or 20 (1998-2008 window, preferred for L0)
 sensitive_content_note: none — adult only; pseudonym "Mr. Jonas" with written consent stated; routine primary-care data handling
@@ -127,7 +162,10 @@ approx_length: transcript ~950 words + intro ~200 words; usable core ~950 words
 core_dyad: Danny Perasa (husband, OTB clerk) <-> Annie Perasa (wife, nurse); arc: first date/proposal (1978) -> married ritual (daily love notes) -> terminal diagnosis Jan 2006 -> final home interview -> death one week later + remembrance
 why_this_level: Everyday domestic ritual (kitchen-table notes, ice-cream/water prompts), single dyad, linear timeline, heavy first-person evaluation ("shelter", "color TV", "busted old radio") and direct reported speech / letters read aloud. Ideal Observation vs Belief split (note-on-table vs "she loves me / marriage is shelter" vs latent devotion / anticipatory grief).
 representational_challenges: metaphor ("color television", "beautiful song from a busted old radio"), nested quotes (Danny quoting himself, Annie reading Valentine letter), belief vs observation ("she'll do well after I pass", "never another Annie", "hope not that I'll live"), retrospective (2004 memory of 1978) retold under 2006 terminal illness; interviewer framing must stay attributed
-future_leakage_risk: MEDIUM-HIGH — famous StoryCorps/NPR staple + animation, widely quoted; high pretraining likelihood; mitigate with excerpt + paraphrase probe, not verbatim-recall test
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: MEDIUM-HIGH — famous StoryCorps/NPR staple + animation, widely quoted; high pretraining likelihood; mitigate with excerpt + paraphrase probe, not verbatim-recall test
+  note: 原单一等级标签 MEDIUM-HIGH 归属到本列；原字段未作任何文档内泄漏陈述
+  access/rights 维度（本材料特有，不属任一泄漏列）: 见 `access_status` 与 Fixture 003 的 `rights_policy=HUMAN_REVIEW_REQUIRED` / pointer-only fail-closed；禁止把 rights 折算为泄漏等级
 recommended_cleaning: transcript block only (DP/AP); strip header/share UI, Recent Stories footer, photo captions, 2013-update link text, editorial intro except 2-sentence provenance; keep speaker attribution; target ~700-900 words
 recommended_fact_unit_count: 48
 sensitive_content_note: terminal pancreatic cancer, dying, funeral/casket planning, grief; Annie died 2021 of COVID-19 (page note); bereavement handling, no graphic medical detail; no minors, no sexual violence
@@ -148,7 +186,8 @@ approx_length: full page ~850-950 words; core Margaret-Peter thread ~550-650 wor
 core_dyad: Margaret Murphy (wife, Education Officer Royal College of Surgeons, London) <-> Peter (husband, former full-time doctor, Brisbane family home); arc: Australia family life + 4 children -> Margaret age 57 PhD applied linguistics -> children leave -> London move 15 years ago -> 1 visit per 12-18 months + phone disclosure
 why_this_level: Everyday mild ambiguity. No crime/investigation. Central tension is subjective: "happily married" despite 15-year intercontinental separation; loneliness vs fulfillment co-exist. Belief statements ("fulfilling marriage", "another dimension") vs observables (separate flats, visit frequency, "I tell Peter everything"). Tests co-residence-absent != relationship-absent.
 representational_challenges: subjective language ("wonderful experience", "smooth sailing", "lonely", "love vs like"), multi-source quotes (Margaret / listener Kerry / counsellor Ammanda Major — must not merge), belief-vs-observation on fidelity/happiness/causality ("talking regularly" as cause), generic-vs-specific (3% ONS stat + celebrity LAT examples must not attach to dyad)
-future_leakage_risk: LOW — recent Sep 2025 human-interest, non-viral, low verbatim-memorization risk
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: LOW — recent Sep 2025 human-interest, non-viral, low verbatim-memorization risk
 recommended_cleaning: keep headline/dek, Margaret biography, decision, disadvantages, communication routine, airport photo caption as provenance; remove 3% stat box (unless needed), all celebrity paragraphs, related-links, Kerry anecdote, Relate bullet list (or keep 1 line as excluded non-dyad context); target ~550 words
 recommended_fact_unit_count: 42
 sensitive_content_note: none as subjects (four children referenced as now-adult, left home); themes: ageing, late-career change, loneliness, chosen marital separation; no graphic content; no minors, no sexual violence
@@ -169,7 +208,8 @@ approx_length: full story ~2100 words
 core_dyad: Della (wife) <-> Jim (husband, James Dillingham Young); <24h Christmas Eve arc in $8/week flat: Della sells long hair ($20) for platinum fob chain for Jim's gold watch; Jim sells watch for tortoise-shell combs for Della's hair; evening mutual revelation
 why_this_level: Canonical L1 — everyday domestic economy ($1.87, pennies, grocer), single timeline, single dyad + narrator; narratorial subjectivity + interiority + dialogue; each acts on false belief the other still holds the treasured object; belief-revision at reveal
 representational_challenges: narrator moralizing ("wisest gifts", "magi") vs character belief; Della pride/shame; direct dialogue at reveal + self-talk vs narrator summary; pre-reveal beliefs vs post-reveal observations; counterfactual wishes
-future_leakage_risk: HIGH — extremely famous, ubiquitous in pretraining, twist widely known; do NOT test ending prediction; use for belief-tracking / quote attribution / observation-belief split; consider held-out paraphrase or sentence-order probe
+outcome_document_internal_leakage_risk: NOT_APPLICABLE_BY_DESIGN — the reveal is retained intentionally (see `recommended_cleaning`: keep full story, twist required for belief-revision test); the structural consequence is recorded in `future_leakage_note` as `do NOT test ending prediction`, not a stripping risk
+pretraining_memorization_leakage_risk: HIGH — extremely famous, ubiquitous in pretraining, twist widely known; do NOT test ending prediction; use for belief-tracking / quote attribution / observation-belief split; consider held-out paraphrase or sentence-order probe
 recommended_cleaning: TXT/HTML body between Gutenberg START/END markers; strip license header/footer; keep full story (twist required for belief-revision test); target ~2000 words
 recommended_fact_unit_count: 60
 sensitive_content_note: none — poverty theme, non-graphic hair-cutting, mild religious framing (Magi/Christ); no minors, no sexual violence
@@ -199,7 +239,8 @@ core_dyad: Alison Sharland (wife/appellant) <-> Charles Sharland (husband/respon
 key_third_parties: 3 children (17/15/12 at trial; elder son severe autism); Goldman Sachs / AppSense Holdings Ltd / invited IPO banks; rival valuation experts; Sir Hugh Bennett (trial judge); Court of Protection proceedings; solicitors; Moore-Bick / Macur / Briggs LJJ
 why_this_level: Dyad + family/org context; fraud/concealment central; multi-year history + valuation dispute + resumed hearing + appeal chain = nonlinear reconstruction needing 50-150 units
 representational_challenges: knowledge-time divergence (Jul 2012 consent order on "no IPO on cards" vs Jan-Aug 2012 IPO planning in full swing, pre-sealing press leak, no IPO by Apr 2013); dishonest evidence / undisclosed bank pitches misleading both valuers; disputed belief (majority vs Briggs LJ dissent on materiality; Livesey warning reading); nonlinear time (marriage/separation/trial/agreement/press/Jan-2013 affidavit/Apr-2013/EWCA/UKSC); counterfactual judicial reasoning ("what would I have done") as belief, not fact
-future_leakage_risk: HIGH — leading authority, heavily cited, textbooks/summaries, likely in pretraining; mitigate with National Archives neutral text only, own segmentation, holdout split
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: HIGH — leading authority, heavily cited, textbooks/summaries, likely in pretraining; mitigate with National Archives neutral text only, own segmentation, holdout split
 recommended_cleaning: UKSC judgment only; exclude press/commentary; redact children to roles (Child-1/2/3, Elder Son), minimize health detail; split procedural dicta (fresh action vs appeal, s.31F(6), FPR) from factual narrative; flag counterfactual reasoning as belief
 recommended_fact_unit_count: 95
 sensitive_content_note: minors present by age only; severe autism + Court of Protection context — minimize medical detail to judgment wording; no sexual content/violence
@@ -221,7 +262,8 @@ core_dyad: Harriet Hardy Taylor Mill (1807-1858) <-> John Stuart Mill
 key_third_parties: John Taylor (first husband 1826-1849); children Herbert, Algernon ("Haji"), Helen ("Lily"); Rev W. J. Fox; Mill family estrangement; Carlyles, Bain, Eliza Flower, Louis Blanc, Morley/Laski network; East India Company / Unitarian circle
 why_this_level: Dyad + dense third-party context; concealment/disputed-belief core (nightly visits facilitated by husband's club absence, separate residence from 1833, forbidden dedication pasted only in gifted Principles copies, radically conflicting ability reports, disputed co-authorship of Principles / On Liberty / Enfranchisement); multi-year + flashback via Autobiography/letters/retrospective assessments
 representational_challenges: knowledge-time divergence (what each knew 1830-1849 vs Autobiography/On Liberty dedication claims vs later stylometric re-attribution); socially concealed intimacy while married; hidden dedication; destroyed/missing letters as absent evidence; disputed belief (Mill "deification" vs Carlyle/Bain/Borchard/Laski detraction vs balanced middle; minimalist vs maximalist influence schools); nonlinear time (1826 marriage, 1830 meeting, 1833 separation, 1841 illness, 1848 dedication refusal, 1849 widowhood, 1851 remarriage, 1858 Avignon death, posthumous 1859 On Liberty + later scholarship)
-future_leakage_risk: HIGH — SEP widely crawled, stable IDs, likely in training; mitigate with 2022-revision snapshot, own fact-writing, avoid Wikipedia/Hayek/Jacobs sprawl
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: HIGH — SEP widely crawled, stable IDs, likely in training; mitigate with 2022-revision snapshot, own fact-writing, avoid Wikipedia/Hayek/Jacobs sprawl
 recommended_cleaning: SEP entry only; do not ingest linked Complete/Collected Works full text; separate (a) dated life events, (b) contemporaries' quotes as attributed beliefs, (c) authorship evidence as disputed; minimize children to roles; flag Schmidt-Petri et al. 2022 stylometry as method-contested, not ground truth
 recommended_fact_unit_count: 105
 sensitive_content_note: adult non-monogamous/adulterous relationship by Victorian standards, chronic illness/tuberculosis, death, bereavement; factual, non-salacious; no graphic medical content; no minors / sexual violence
@@ -243,7 +285,8 @@ core_dyad (for LHRM use): unnamed narrator-lodger (Aspern scholar/biographer) <-
 key_third_parties: Jeffrey Aspern (deceased poet, absent centre); Miss Tita; Mrs Prest (introducer/confidante); Venetian household (servants/gardener/gondolier); publisher/biographer milieu
 why_this_level: Sustained bilateral concealment (false name, lodger/flower-garden pretext, considered feigned courtship of Tita; Juliana rations access to letters/past); disputed belief (Aspern affair nature, papers' value/authenticity, narrator reliability/ethics); decades-old past intruding via letters/relics = flashback + confrontation beats
 representational_challenges: knowledge-time divergence (what narrator knows vs what Juliana/Tita know he wants; gradual motive reveal); withheld letters as hidden objects; ambiguous marriage/sale offer; disputed belief on liaison and paper fate; nonlinear time (present quest intercut with reconstructed decades-old past via memory/gossip/letters; final reversal reframes earlier scenes); unreliable narration
-future_leakage_risk: VERY HIGH — canonical James, widely crawled, adaptations/summaries; mitigate by segmenting from primary text only, avoiding introductions/SparkNotes, own paraphrase units
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: VERY HIGH — canonical James, widely crawled, adaptations/summaries; mitigate by segmenting from primary text only, avoiding introductions/SparkNotes, own paraphrase units
 recommended_cleaning: Gutenberg plain text only; chapter-wise chunking; tag each unit as observed-action vs reported-memory vs letter-content vs narrator-inference; do not import Wikipedia note beyond provenance; keep romance/coercion-pressure beats factual and non-graphic (source has no sexual explicitness)
 recommended_fact_unit_count: 100
 sensitive_content_note: no minors, no sexual violence; adult themes: deceptive courtship proposal, elderly vulnerability, death/mourning, privacy violation / biographical predation; minimize romantic-pressure detail to concealment modelling needs
@@ -274,7 +317,8 @@ approx_length: ~6000 words / 51KB plain text
 core_dyad: Narrator (unnamed wife / new mother / secret diarist) <-> John (husband / physician / rest-cure enforcer); trajectory: care/control -> prohibition of work/writing -> nursery confinement (barred windows) -> concealment -> obsession -> final inversion
 why_this_level: Canonical unreliable narration — first-person secret journal, hallucination vs perception, dream-like wallpaper figures, metaphor-rich nonlinear prose, plan vs reported fact diverge; still one identifiable marital dyad
 representational_challenges: belief vs perception vs hallucination (wallpaper woman, smell, creeping); reliability (claims John loving/caring while describing coercive confinement); nested worlds (remembered house / described room / wallpaper world / inferred motive); counterfactual branching (what John says will happen vs what narrator does secretly)
-future_leakage_risk: HIGH — ending widely known; model may inject final creeping / fainted John without textual warrant if windowed; enforce blind forward windowing
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: HIGH — ending widely known; model may inject final creeping / fainted John without textual warrant if windowed; enforce blind forward windowing
 recommended_cleaning: plain text; strip Gutenberg header/footer + illustration captions; keep full story intact (do not excerpt); normalize wall-paper/wallpaper; keep Jennie/Mary/baby as supporting, not core dyad
 recommended_fact_unit_count: 35-45
 sensitive_content_note: postpartum distress, coercive medical control, confinement, deteriorating mental health; no erotic detail; mental-health framing care; no minors / sexual violence
@@ -296,7 +340,8 @@ approx_length: full novel ~75000-80000 words / 456KB plain text — TOO LARGE fo
 core_dyad: Julian West (1887 Bostonian, time-sleeper) <-> Edith Leete (2000 host's daughter / love interest); shadow dyad: Julian <-> Edith Bartlett (1887 fiancee, Edith Leete's great-grandmother, same first name); romance + memory reconstruction across 113-year sleep
 why_this_level: Time-displacement + alternate-timeline + memory/dream branching — hypnotic sleep 1887->2000, explanatory utopia dialogues, Ch.27-28 dream-return where 2000 reads as dream, identity confusion between two Ediths; same person across reality/memory/dream/plan/hypothetical while dyad persists
 representational_challenges: nested time layers (birth narrative / 1887 Boston / 2000 Boston / dream-1887-return); belief vs dream vs plan (characters debate mad vs dreaming vs displaced); same-name conflation (Edith Bartlett vs Edith Leete — entity-merge risk); hypothetical exposition in present tense as fact
-future_leakage_risk: MEDIUM-HIGH — utopian system + Edith-descendant twist + dream-return resolution may be known; window chapters, do not feed synopsis
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+pretraining_memorization_leakage_risk: MEDIUM-HIGH — utopian system + Edith-descendant twist + dream-return resolution may be known; window chapters, do not feed synopsis
 recommended_cleaning: DO NOT use full novel. L3 slice: Ch.1-4 (sleep + awakening) + Ch.13-14 / Ch.25-26 (Edith romance reveal) + Ch.27-28 (nightmare return + awakening); strip Author's Preface, Gutenberg header/footer, Marxist-archive mirrors; keep Dr. Leete as facilitator only
 recommended_fact_unit_count: 45-60 for recommended slice (350+ if full novel — not recommended)
 sensitive_content_note: outdated 19th-c gender / paternalist utopian views, class polemic, anxiety/dream distress; no erotic detail; no minors / sexual violence
@@ -317,7 +362,9 @@ approx_length: target episode ~2500-3000 words English (full Book X page 10000+ 
 core_dyad: Orpheus (Thracian bard / husband) <-> Eurydice (bride / Naiad companion / shade); trajectory: wedding -> snakebite death -> katabasis plea -> conditional release -> backward-look violation -> second loss -> mourning; gods/Hades are grantors, not core dyad
 why_this_level: Mythic/fantasy branching — living world / Hades / return road as nested worlds, divine conditional "do not look back" as counterfactual branch, metaphor-rich archaic prose, song-within-story suspending Hell; same two persons across alive / shade / revived / re-lost states
 representational_challenges: world-switching (upper air / Tenarian road / Stygian shore / ascent; dyad changes ontological status); belief vs performative song vs granted fact (Orpheus argument moving Furies/Tantalus/Ixion/Sisyphus as causal); counterfactual condition (if look back then void — leakage-prone); archaic metaphor (saffron robe, hissing torch, bloodless shades — must not literalize as separate entities)
-future_leakage_risk: HIGH — myth ending universally known; model may assert second death before ascent text warrants it; cut window before backward-look passage in annotation
+outcome_document_internal_leakage_risk: NOT_STATED_IN_2026-09-11_HARVEST
+  note: the episode excerpt + cut-window control is a document-internal constraint recorded in `recommended_cleaning`, not a graded leakage risk in the original field
+pretraining_memorization_leakage_risk: HIGH — myth ending universally known; model may assert second death before ascent text warrants it; cut window before backward-look passage in annotation
 recommended_cleaning: CRITICAL — excerpt ONLY "Thence, in his saffron robe..." through "...incessant he complains, And Hell's inexorable Gods arraigns." + 7-days shore mourning. EXCLUDE remainder of same URL: Cyparissus, Ganymede, Hyacinthus, Pygmalion, Cinyras/Myrrha, Venus/Adonis, Atalanta (incest / non-consensual / erotic content, out of dyad scope). Strip TOC nav, Commentary links, Download footer.
 recommended_fact_unit_count: 22-30 for Orpheus-Eurydice episode only
 sensitive_content_note: target episode only: sudden viper-bite death, grief, underworld imagery, double death; no sexual violence in target episode; risk ONLY if scrolled past episode into Myrrha/Cinyras incest + Adonis/Venus erotic tales — excluded above; no minors in target episode
@@ -327,25 +374,49 @@ sensitive_content_note: target episode only: sudden viper-bite death, grief, und
 
 ## Cross-level coverage map
 
-| level | material | source family | est. units | leakage | readiness |
-|---|---|---|---|---|---|
-| L0 | L0-001 Carty tribunal | court | 22 | high (outcome) | needs cleaning (strip orders/remedy) |
-| L0 | L0-002 LGSCO care | inquiry/summary | 20 | med-high | needs cleaning (strip analysis/action) |
-| L0 | L0-003 Mr. Jonas | OA clinical | 20-28 | high (judgment) | needs cleaning + windowing (1998-2008) |
-| L1 | L1-001 StoryCorps | oral history | 48 | med-high | needs cleaning (transcript only) |
-| L1 | L1-002 BBC LAT | journalism | 42 | low | needs cleaning (core thread only) |
-| L1 | L1-003 Magi | public-domain fiction | 60 | high (fame) | direct-use (full story) |
-| L2 | L2-001 Sharland | family-law record | 95 | high | needs cleaning (facts vs dicta) |
-| L2 | L2-002 Harriet Mill | biography/SEP | 105 | high | needs cleaning (events vs quotes vs disputed) |
-| L2 | L2-003 Aspern Papers | novella PD | 100 | very high | needs cleaning (chapter chunk + tag) |
-| L3 | L3-001 Yellow Wallpaper | unreliable PD | 35-45 | high | direct-use (full story) |
-| L3 | L3-002 Looking Backward | SF time-travel PD | 45-60 slice | med-high | needs cleaning (chapter slice only) |
-| L3 | L3-003 Orpheus/Eurydice | myth PD | 22-30 episode | high | needs cleaning (episode excerpt only) |
+| level | material | source family | est. units | leakage: outcome/doc-internal | leakage: pretraining | readiness |
+|---|---|---|---|---|---|---|
+| L0 | L0-001 Carty tribunal | court | 22 | high (outcome) | not stated | needs cleaning (strip orders/remedy) |
+| L0 | L0-002 LGSCO care | inquiry/summary | 20 | med-high | not stated | needs cleaning (strip analysis/action) |
+| L0 | L0-003 Mr. Jonas | OA clinical | 20-28 | high (judgment) | not stated | needs cleaning + windowing (1998-2008) |
+| L1 | L1-001 StoryCorps | oral history | 48 | not stated | med-high | needs cleaning (transcript only) |
+| L1 | L1-002 BBC LAT | journalism | 42 | not stated | low | needs cleaning (core thread only) |
+| L1 | L1-003 Magi | public-domain fiction | 60 | n/a by design | high (fame) | direct-use (full story) |
+| L2 | L2-001 Sharland | family-law record | 95 | not stated | high | needs cleaning (facts vs dicta) |
+| L2 | L2-002 Harriet Mill | biography/SEP | 105 | not stated | high | needs cleaning (events vs quotes vs disputed) |
+| L2 | L2-003 Aspern Papers | novella PD | 100 | not stated | very high | needs cleaning (chapter chunk + tag) |
+| L3 | L3-001 Yellow Wallpaper | unreliable PD | 35-45 | not stated | high | direct-use (full story) |
+| L3 | L3-002 Looking Backward | SF time-travel PD | 45-60 slice | not stated | med-high | needs cleaning (chapter slice only) |
+| L3 | L3-003 Orpheus/Eurydice | myth PD | 22-30 episode | not stated | high | needs cleaning (episode excerpt only) |
+
+`not stated` = 该轴在 2026-09-11 采集期**无陈述**（`NOT_STATED_IN_2026-09-11_HARVEST`），
+**不是**等级 0，也**不是**「已排除」。两列等级各自独立，不由原单列标签平移。
 
 Style spread per level: satisfied (court / inquiry / clinical; oral-history /
 journalism / fiction; family-law / biography / novella; unreliable / SF / myth).
 
-## Recommended Fixture 001–003 (start here)
+## SUPERSEDED (2026-09-28) — Recommended Fixture 001–003
+
+> **本节已被实际冻结的三个 fixture 取代。** Authority: `youling/lhrm#30`
+> `ARCHITECT_ADJUDICATION_V1` C-P6（ACCEPT IMMEDIATE REPAIR）。逐字替换见下文 `ORIGINAL TEXT`。
+>
+> **这是已经发生过的文档级冲突，不是假设的变更。** `HIGH_CONFIDENCE_FINDINGS.md` H-F28
+> （`I-C12`，`VERIFIED`，自做 git + SHA + grep）核实了取代关系；**两份审计报告都靠读文件而非读索引
+> 躲过了它。** 逐条对照（`docs/validation/fixtures/` 三个文件的 header 可复核）：
+
+| 槽位 | 本节原推荐（2026-09-11） | 实际冻结 | 对应？ |
+|---|---|---|---|
+| Fixture 001 | `L0-002`（LGSCO Midshires Care） | `FIXTURE_001_L0_001_CARTY_FACT_PACKAGE.md` = `L0-001` Carty（源自 `#19`） | **否**（材料不同） |
+| Fixture 002 | `L1-003`（Gift of the Magi） | `FIXTURE_002_L1_003_MAGI_PACKAGE.md` = `L1-003`（源自 `#24`） | 是 |
+| Fixture 003 | `L0-001`（Carty tribunal） | `FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md` = `L1-001` StoryCorps（源自 `#25`） | **否**（材料不同） |
+
+**取代者**：`youling/lhrm#19`（Fixture 001）、`#24`（Fixture 002）、`#25`（Fixture 003）。
+**三者是 canonical 冻结物，本节的推荐不具规范力。** 保留下文原文作 provenance。
+
+> 另注：本节的 LGSCO 材料（`L0-002`）**没有**成为任何 fixture；它仍是本语料中一个可用的
+> 未冻结候选，读本文件的人不应据本节认为它已被采纳或已被排除。
+
+### ORIGINAL TEXT (2026-09-11, 逐字保留, 已被取代)
 
 Per dispatch ("recommend which 3 to start with as Fixture 001–003") and `#15`
 (one short official-court fixture first, 10–30 units, two adults, minimal sensitivity):

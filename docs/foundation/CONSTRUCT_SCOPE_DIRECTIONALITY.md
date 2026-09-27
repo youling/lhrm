@@ -6,6 +6,9 @@
 **Purpose:** 固化“同一构念可在 Agent / Target / Directed Dyad / Pair 等不同位置出现，但其语义侧重点不同”的当前架构判断，并明确方向性、互惠/非互惠、动态耦合与低冗余之间的关系。
 
 > 本文件冻结的是**表示原则**，不是最终参数表、权重或数值模型。
+>
+> 本文的原则**如何被检验**在 `docs/foundation/VALIDATION_GATES_V0_2.md`（四门 + 终局处置枚举）。
+> 本文件不重复门、阈值或逐 cell 判据。
 
 ---
 
@@ -261,7 +264,25 @@ RelevantEnvironment
 3. `mutuality derivation test`：pair mutuality 是否可由双向量派生，避免重复 primitive；
 4. `semantic redundancy test`：是否与已有构念重复描述同一 latent state；
 5. `dynamic coupling test`：若相互影响，明确影响路径，而不是因为相关便合并；
-6. `cross-context test`：same-sex / opposite-sex / kin / non-kin / stranger / established relationship 是否保持语义稳定。
+6. `cross-context test`：在 `HD-ST-1` 抽样框下（Table A 逐 cell = `HD-A01`…`HD-A15`）语义是否保持稳定。
+
+**执行规格不在本文。** 上述 6 项的输出字段、阈值、指定执行者与程序，
+以 `docs/foundation/VALIDATION_GATES_V0_2.md` 为 SSOT；逐 cell 判据在同文件 §6.3。
+
+**抽样框与经验覆盖分账（C-P7 / X-10）。** 分类法 `HD-ST-1` **只声明抽样框**，
+**不**声称任何语境可被表示；经验语料覆盖是**独立的** benchmark matrix
+（当前 SSOT = `VALIDATION_GATES_V0_2` §6.3.2 的 `coverage` 一列）。
+**域声明不是表示证据**：研究域早已包含亲属 / 前任 / 同事+合作 / 敌对等类，
+真实缺口是 (1) 清单对齐、(2) 经验语料覆盖——不是研究域。
+`gender_composition` 的「不适用」语义归属 applicability 轴，本文不复制该轴定义。
+
+> **SUPERSEDED（2026-09-28，被 C-P7 取代；原文逐字保留）：** 本节第 6 项原内联清单为
+> 「`cross-context test`：same-sex / opposite-sex / kin / non-kin / stranger / established relationship
+> 是否保持语义稳定。」
+> 取代依据 = `youling/lhrm#30` `ARCHITECT_ADJUDICATION_V1` C-P7（ACCEPT）。
+> 理由：该 6 项清单与 `PARAMETER_CONVERGENCE_V0_1.md` §2.4 的 8 项、§15 Gate B 的 11 项
+> 三者互不相同，且都不含 `sibling` / `parent–adult-child` / `ex-partner` / `professional` / `adversarial`；
+> 其中后两类已被 `CURRENT_ARCHITECTURE` §2 逐一列为在域。
 
 ---
 
