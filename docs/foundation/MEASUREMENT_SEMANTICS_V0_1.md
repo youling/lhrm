@@ -86,7 +86,8 @@ applicability_provenance # 指向支配该构念的 Boundary/Constraint 落点�
 ### 2.6 与兄弟轨 `F` 的接口契约
 
 - 本轨**只**定义 schema 与规范词表；逐项内容与「全部既有竞争词表 → 本词表」的
-  **conversion table** 由兄弟轨 `F`（Track R3-F，delivery packet `lanes/R3_F.md`）交付。
+  **conversion table** 由兄弟轨 `F`（Track R3-F；branch `architect/unknown-applicability-taxonomy-v0.1`，
+  delivery packet `lanes/R3_F.md`）交付。
 - `F` **必须**使用本文的**逐字**字段名 `applicability` / `applicability_reason` / `applicability_provenance`
   与枚举 `APPLICABLE` / `NOT_APPLICABLE_BY_RULE` / `APPLICABILITY_UNKNOWN`。
 - `F` **不得**另立第二份 applicability 词表。既有竞争词表**只能**出现在 conversion table 中作为**被转换的源列**。
