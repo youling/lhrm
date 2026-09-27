@@ -1,0 +1,361 @@
+{
+ "child_id": "R2_EV1",
+ "lane": "EV1",
+ "cluster": "independent evidence check: Gate A/B/C headline",
+ "role": "evidence_check",
+ "record_unit": "verification_subclaim",
+ "layout_variant": "table_wide",
+ "source": {
+  "file": "R2_EV1.md",
+  "sha256": "7e3552baad7341e3897b2d234b22f9960f44077172ea385e6ecf900e5f31f83a",
+  "bytes": 41456,
+  "lines": 272
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 45,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(a)",
+   "claim": "Gate A 无阈值 / 无 `若…则否决` 句",
+   "verdict": "**SUSTAINED**",
+   "supporting_refs": "Gate A 全文 = `:707` 标题、`:709` 选择材料、`:711-715` 五个步骤：<br>`711: 1. 去掉法律条款、裁判理由、判决结果；`<br>`713: 3. 独立 Agent 逐句映射；`<br>`714: 4. 记录所有 PARTIAL_MAPPING / MULTI_MAPPING / MAPPING_FAILURE；`<br>`715: 5. Architect 只分析 failure，不允许 Agent 为了通过测试现场发明变量。`<br>`748: 通过后，才有资格把 v0.1 candidate 推向 Minimal Sufficient State v0.1。`",
+   "strongest_counterevidence": "Gate A 的 5 个步骤里没有一个是「否决」。第 5 步的动词是「**只**分析 failure」——`只` 字本身就是把 outcome 排除在外的显式标记。全章唯一的后果句在 `:748`，且方向是 **KEEP**。",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 46,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(b)",
+   "claim": "Gate B 无 pass criterion",
+   "verdict": "**SUSTAINED**",
+   "supporting_refs": "`:717: ### Gate B — Cross-context counterexamples`<br>`719: 至少测试：`<br>`721-732: same-sex / opposite-sex / kin / non-kin / friendship / romance / caregiving / conflict / unilateral attraction / high-dependence/low-liking / high-attraction/low-trust`",
+   "strongest_counterevidence": "Gate B 只有一份 context 清单，没有「通过」的定义、没有计数要求、没有 severity 门槛。对比：它所对应的 §2.4（`:61`）确实问了「语义是否保持稳定？」，但 §2.4 的答案在 Gate B 里没有落点。**Gate B 是一份待测清单，不是一个判定。**",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 47,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(c)",
+   "claim": "Gate C 无 pass criterion",
+   "verdict": "**SUSTAINED**",
+   "supporting_refs": "`:735: ### Gate C — Redundancy challenge`<br>`737: 重点攻击：`<br>`740-746: Liking vs RomanticAttraction / Trust vs AttachmentSecurity / Caregiving vs Dedication / AttachmentSecurity vs Cohesion/We-ness / OutcomeDependence vs structural derivation / PPR vs Trust/Care/Attachment`",
+   "strongest_counterevidence": "Gate C 攻击的 6 对里，有 5 对是 §11 的 basis 成员与其它 basis 成员的对（`Trust vs AttachmentSecurity`、`Caregiving vs Dedication`、`Liking vs RomanticAttraction`）。**如果** Gate C 判定其中任一对冗余，全文找不到任何一句授权把其中一个从 `:554-567` 的 basis 中拿掉。Gate C 是全文最接近「否决程序」的段落，却仍然只有攻击目标、没有判决动词。",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 48,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(d)",
+   "claim": "basis 只能增（无 delete-arm 可触发）",
+   "verdict": "**SUSTAINED**（对 §11 的 8 项）",
+   "supporting_refs": "basis 定义 `:554-567`；`:569: 这 8 项不是宣称\"人类关系只有八维\"，而是当前四源收敛后最值得先拿去被真实文本击穿的 relation-state basis。`；`:703: Candidate Minimal Directed Basis v0.1 不因写进本文自动升级为 validated ontology。`；`AGENTS.md:54: Candidate relation-state parameters remain candidates until representation coverage and redundancy tests pass;`",
+   "strongest_counterevidence": "我逐条走完 §2.1–§2.6 与 §15 A/B/C，找不到任何一条以 §11 的 8 项为对象的 delete 句。**但请注意这不是「不存在 delete 机制」，而是「不存在针对这 8 项的 delete 机制」**——见 §5 steelman 与 §6。更准确的说法是：8 项 basis 只能**增长或保持惰性**，无法**收缩**。",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 49,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(e)",
+   "claim": "`MERGE` / `REJECT` 在**项目中**从未被签发过一次",
+   "verdict": "**REFUTED**",
+   "supporting_refs": "**同一份被审文件内：**<br>`PARAMETER_CONVERGENCE_V0_1.md:499: 当前：REJECT as primitive。`（R4 Relationship Quality / Compatibility / Match Score）<br>`:505: 当前：REJECT as single primitive。`（R5 Alignment）<br>**项目其它 canonical：** `docs/ARCHITECT_RECONNAISSANCE_REPORT.md:45: - Numerical compatibility score as project core: **REJECT**.`<br>`docs/foundation/PROJECT_HISTORY_2026-09-10.md:594: ## 15. 到 2026-09-10，哪些东西已被否决或降级` + `:598-608` 共 11 条已否决/降级项<br>**Round 1 之前的研究报告（MERGE 亦然）：** `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:144: B02 Felt security / secure base & safe haven（被托底感）→ MERGE into B01`、`:1371-1375` 共 5 条 MERGE、`:1213: ### 7.5 Alignment → **REJECT 作为 primitive**`<br>**PR #31 自身：** `08b_BELIEF_DECEPTION_KNOWLEDGE.md:227,240,267,279,296,318,337`（≥3 项明写 REJECT）、`10_MUTUALITY_POWER_DEPENDENCE.md:441,621,622`（`REJECT Cohesion_(A,B) as a scalar primitive`）、`02b_CONSTRUCT_REDUNDANCY_AUDIT.md:520: RelationshipQuality, # 继续 REJECT` | 决定性检验是对全仓做 `\\bMERGE\\b\\",
+   "strongest_counterevidence": "\\bREJECT\\b` 字面 grep，**63 处命中**。真实存在的窄命题是：「在 R01（`02_CONSTRUCT_CONVERGENCE.md`）这一份报告内部，声明的 7 值裁决词表只实际用了 4 个值，`MERGE` 与 `REJECT` 出现 0 次」——`A03:194,268,409,748`。**那是一个单报告的词汇使用率统计，被 `00_MANIFEST.md:128` / `19_SYNTHESIS_CANDIDATE.md:32,185` 措辞升级成了「项目中从未签发」，属于 scope 提升。**",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 50,
+    "section": "R2_EV1 — 独立证据核查 child（对抗性 refute lane） / 2. `per_subclaim_table`",
+    "table_header": "# | 子命题 | verdict | 精确引用（行号可复算） | 决定性检验"
+   },
+   "claim_id": "EV1-(f)",
+   "claim": "`MAPPING_FAILURE` 是 type-unreachable",
+   "verdict": "**PARTLY_REFUTED**",
+   "supporting_refs": "类型在 **5 处**被声明且完全合法可发：`:631-635`（`若一句话不能合法落入任何一类，标：MAPPING_FAILURE`）、`:714`、`AGENTS.md:62`、`README.md:113`、`FIXTURE_001:79` / `FIXTURE_002:128` / `FIXTURE_003:152-153`<br>但逃生舱有 4 层：`:619-629` 的 10 类（其中 `628: 10. Derived/Narrative-only` 是万能筐）、`:679: 因此第一轮 Case Bank test 只要求 语义有合法落点，不要求每句话产生精确数值变化。`、三个 fixture 都把 `PARTIAL_MAPPING / MULTI_MAPPING / UNKNOWN` 列为合法结果",
+   "strongest_counterevidence": "「type-unreachable」字面为假：类型有声明、有触发条件、有 5 个声明点、Gate A `:714` 明确要求记录它。成立的是弱形式：**该类型被 4 层逃生舱严重稀释，且 `:714` 把 PARTIAL / MULTI / FAILURE 并列记录而不分 severity，因此最省力的合法结果是 PARTIAL 而非 FAILURE。**<br>**最强反证（我自己的）**：`PROJECT_HISTORY_2026-09-10.md:679: - Case Bank 的 MAPPING_FAILURE;` 被列为「对未来论文最重要的 provenance」——说明项目**预期**它会发生。这削弱「近不可达」的强度。",
+   "source_report": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 6,
+ "field_coverage": {
+  "claim_id": 6,
+  "claim": 6,
+  "source_report": 0,
+  "verdict": 6,
+  "supporting_refs": 6,
+  "strongest_counterevidence": 6,
+  "requires_canonical_change": 0,
+  "needs_experiment_or_data": 0,
+  "duplicate_of": 0,
+  "corroboration": 0,
+  "recommendation_to_architect": 0
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "tables_accepted": 1,
+  "rows_with_cell_repair": 1,
+  "rows_with_cell_repair_ids": [
+   "EV1-(e)"
+  ],
+  "composite_columns_split": 0,
+  "composite_columns_unparsed": 0,
+  "in_scope_sections": [
+   "2. `per_subclaim_table`"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "2. `per_subclaim_table`",
+    "line_start": 41,
+    "line_end": 53
+   }
+  ]
+ },
+ "files_audited": "",
+ "coverage_statement": "",
+ "top_recommendations": "",
+ "explicit_non_claims": "### [line 227] 11. `explicit_non_claims`（≥5）\n1. **我不主张 Gate A/B/C 的存在是缺陷。** 三个 fixture 冻结包（26/61/42 个原子单位、显式 knowledge boundary、显式 `MAPPING_FAILURE` 合法性、三 verifier 同版本要求）是本项目验证纪律的高点，与本 finding 无关，也不受本 finding 影响。\n2. **我不主张 §2.6 应当被删除或重写为新章节。** 我的补丁主张是**在现有 §2.6 上追加后果句**，不是替换。\n3. **我不主张 8 项 basis 中有任何一项应当被移除。** 本 finding 与「`Caregiving` 是否应拆分」「`Trust` vs `AttachmentSecurity` 是否冗余」「`OutcomeDependence` 是否可完全派生」这些实体问题**完全无关**——那些是 Gate C 的工作项，需要新证据，不是一句文档编辑能解决的。\n4. **我不主张项目缺少 delete 意图或 delete 词汇。** 恰恰相反：`PARAMETER:499,505`、`PROJECT_HISTORY:598-608`、`08b`/`10_*`/`02b` 的 REJECT、以及 `SCIENTIFIC:144,1371-1375` 的 MERGE 证明词汇**已在用**。我的 finding 是「词汇没有接到 gate 上」。\n5. **我不主张 §12 的 6 项排除一定是错的。** `爱`/`亲密` 作为 composite 被排除在 representation-first 下是**可辩护的**。我只主张它们**没有 re-entry criterion**，这是一个可核查的缺口，不是一个已证为假的事实。\n6. **我不主张 MAPPING_FAILURE 不可达。** 我明确**反驳**子命题 (f) 的字面形式：该类型在 5 处被声明、Gate A `:714` 明确要求记录它，`PROJECT_HISTORY:679` 甚至把它列为预期 provenance。我只主张它被 4 层逃生舱（尤其 `:628: 10. Derived/Narrative-only`）严重稀释。\n7. **我不读 A03 全文，因此不对 A03 的原始措辞负责。** 我对子命题 (e) 的反驳**完全建立在 canonical 文本自身的 `:499,505` 上**，不依赖 A03。若 A03 原文其实带了「in R01」限定语，则错在合成层（`00_MANIFEST.md:128` / `19_SYNTHESIS_CANDIDATE.md:32,185`），不在 A03——但这需要有人去核对，我**未核对**。\n8. **我不主张 `MAPPING_FAILURE` 应当被删除或不应被计入覆盖度指标。** 我没有做覆盖度方法学判断。\n9. **我不主张本 finding 需要 WO-N1/N2/N3 中的任何一项被执行。** 契约禁止实施，我也没有评估其必要性——那属于 lane `L`。\n10. **我不主张 canonical patch 「不需要做」。** 我的主张是它的**规模被高估**（5–8 句，而非 19_SYNTHESIS 所设想的「删 3 个 catch-all + 重跑 Fixture 001」）。缺陷是**真的**，仍然应当修。\n\n---",
+ "provenance_note": "### [line 242] 12. `packet_sha_note`（读了什么 / 怎么核实的）\n| 源 | 方式 |\n|---|---|\n| `docs/research/overnight-2026-09-27/review-r2/REVIEW_CONTRACT.md` | 全文 103 行 |\n| `AGENTS.md` | 全文 70 行 |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | **全文 780 行**（被审文件，逐行核对） |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 全文 361 行 |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 全文 270 行 |\n| `README.md` | 全文 121 行 |\n| `docs/validation/VALIDATION_CORPUS_V0_1.md` | 全文 394 行 |\n| `docs/validation/fixtures/FIXTURE_001_L0_001_CARTY_FACT_PACKAGE.md` | 全文 79 行（11,981 bytes） |\n| `docs/validation/fixtures/FIXTURE_002_L1_003_MAGI_PACKAGE.md` | 全文 128 行（16,169 bytes） |\n| `docs/validation/fixtures/FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md` | 全文 160 行（26,779 bytes） |\n| `docs/foundation/PROJECT_HISTORY_2026-09-10.md` | **仅** `:585-694`（未全文读） |\n| `docs/foundation/STAGE_SUMMARY_2026-09-07.md` | **仅** `:295-324`（未全文读） |\n| `docs/foundation/RELATIONSHIP_EVALUATION_FOUNDATION.md` | **仅** grep 命中（未读） |\n| `docs/ARCHITECT_RECONNAISSANCE_REPORT.md` | **仅** grep 命中 `:45`（未读） |\n| PR#31 报告（`A03` / `08b` / `10_*` / `02b` / `01_*` / `19_*` / `00_MANIFEST`） | **仅** 全仓 grep 片段，在形成独立判决之后；**未读任何 `R2_*.md` review packet** |\n| LHRM `#20` / `#21` / `#22` | **未读**（契约禁止）→ 保持 UNKNOWN |\n| `youling/juece#30` / `#31` | **未读、未碰**（契约禁止）→ 保持 UNKNOWN |\n| 联网 | **零次**（本 lane 无需抽样复核：所有判决均基于仓内 canonical 文本） |\n\n**未覆盖声明（coverage_statement）：** 我**未**全文读 `PROJECT_HISTORY` / `STAGE_SUMMARY` / `RELATIONSHIP_EVALUATION_FOUNDATION` / `ARCHITECT_RECONNAISSANCE_REPORT`；我**未**读任何 `docs/research/RESEARCH_REPORT_*` 全文（仅 grep）；我**未**读任何 `R2_*.md`；我**未**读 PR#31 报告全文（仅 grep 片段）。因此本 packet 对「A03 原文是否带 in-R01 限定语」与「Gate outcome 规格是否存在于仓外 durable ruling」这两点明确标 UNKNOWN。\n\n---",
+ "specialty_answers": [],
+ "specialty_section": null,
+ "specialty_answers_note": "not applicable: contract §6's four specialty answers bind cluster-isolated review children, not phase-2 adjudication or evidence-check children",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "§3-§13 narrative sections",
+    "captured as `narrative_sections` verbatim so nothing is lost; not part of the record set"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2_EV1 — 独立证据核查 child（对抗性 refute lane）",
+   "line_start": 1,
+   "line_end": 272
+  },
+  {
+   "level": 2,
+   "title": "0. method / independence statement（先声明，因为它影响可信度）",
+   "line_start": 10,
+   "line_end": 26
+  },
+  {
+   "level": 2,
+   "title": "1. `verdict_on_headline_claim`",
+   "line_start": 27,
+   "line_end": 40
+  },
+  {
+   "level": 2,
+   "title": "2. `per_subclaim_table`",
+   "line_start": 41,
+   "line_end": 53
+  },
+  {
+   "level": 2,
+   "title": "3. `section_2_1_to_2_6_classification`",
+   "line_start": 54,
+   "line_end": 78
+  },
+  {
+   "level": 2,
+   "title": "4. `every_rejection_branch_found`",
+   "line_start": 79,
+   "line_end": 122
+  },
+  {
+   "level": 3,
+   "title": "A 类：真否决判据（trigger + consequence 齐备）— 4 条",
+   "line_start": 83,
+   "line_end": 91
+  },
+  {
+   "level": 3,
+   "title": "B 类：已签发的否决/降级裁决（无触发条件，是既成事实）— 3 组",
+   "line_start": 92,
+   "line_end": 99
+  },
+  {
+   "level": 3,
+   "title": "C 类：禁止/纪律注记 — **不构成否决分支** — 7 条",
+   "line_start": 100,
+   "line_end": 111
+  },
+  {
+   "level": 3,
+   "title": "D 类：唯一的程序后果句 — keep-end",
+   "line_start": 112,
+   "line_end": 122
+  },
+  {
+   "level": 2,
+   "title": "5. `steelman`（我能为项目构造的最强抗辩：头条是错的）",
+   "line_start": 123,
+   "line_end": 136
+  },
+  {
+   "level": 2,
+   "title": "6. `refutation_of_steelman`",
+   "line_start": 137,
+   "line_end": 160
+  },
+  {
+   "level": 2,
+   "title": "7. `what_the_defect_actually_is`（最小准确描述）",
+   "line_start": 161,
+   "line_end": 172
+  },
+  {
+   "level": 2,
+   "title": "8. `minimum_canonical_patch_that_would_fix_it`（描述，非 diff；**本次不修改任何文件**）",
+   "line_start": 173,
+   "line_end": 187
+  },
+  {
+   "level": 2,
+   "title": "9. `whether_a_fresh_experiment_or_only_a_document_edit_is_needed`",
+   "line_start": 188,
+   "line_end": 201
+  },
+  {
+   "level": 2,
+   "title": "10. `confidence` + `what_would_change_my_mind`",
+   "line_start": 202,
+   "line_end": 226
+  },
+  {
+   "level": 2,
+   "title": "11. `explicit_non_claims`（≥5）",
+   "line_start": 227,
+   "line_end": 241
+  },
+  {
+   "level": 2,
+   "title": "12. `packet_sha_note`（读了什么 / 怎么核实的）",
+   "line_start": 242,
+   "line_end": 268
+  },
+  {
+   "level": 2,
+   "title": "13. 给 Architect 的一句话",
+   "line_start": 269,
+   "line_end": 272
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "§3-§13 narrative sections",
+    "captured as `narrative_sections` verbatim so nothing is lost; not part of the record set"
+   ]
+  ]
+ }
+}

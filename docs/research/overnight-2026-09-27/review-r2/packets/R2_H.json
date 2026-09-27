@@ -1,0 +1,1686 @@
+{
+ "child_id": "R2_H",
+ "lane": "H",
+ "cluster": "paper positioning / novelty",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "table_wide",
+ "source": {
+  "file": "R2_H.md",
+  "sha256": "e124248cbb4d9a3d116dfe7ecfbd9687afdd4492bae16a490f4e96f26425e7b2",
+  "bytes": 84719,
+  "lines": 326
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 47,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C01",
+   "claim": "`i->j`/`j->i` 分开建模、互惠由两方向派生 = REUSE（SRM/APIM，40 年）",
+   "source_report": "14 §2.1 L40",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "Kenny 2018 `10.1111/pere.12240` 摘要原文：「has become the **default method** for analyses of dyadic data」 — `VERIFIED_BY_ME`（Crossref abstract 字段）。Kenny 2018 *Personal Relationships* 25(2), 160–170 ✓",
+   "strongest_counterevidence": "未找到反驳。但注意：报告把 SRM 与 APIM 合并成一句「已存在 40 年」，而 SRM（1984）与 APIM（1979 Kraemer & Jacklin，见 Kenny 2018 摘要）是两条不同谱系；`Kraemer & Jacklin 1979` 未被报告引用",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE（但见 H-C10，SRM/APIM 被 3 条 row 复用 → `corroboration: NON_INDEPENDENT`）",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "_extra_columns": {
+    "#": "A1"
+   },
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 48,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C02",
+   "claim": "`OutcomeDependence` 为结构变量、power 由依赖不对称派生 = REUSE（互依理论 + Rusbult 1998 四构念量表）",
+   "source_report": "14 §2.1 L41",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`10.1111/j.1475-6811.1998.tb00177.x`（Investment Model Scale）`NOT_OPENED`",
+   "strongest_counterevidence": "缺口：(a) 我未打开 Rusbult/Martz/Agnew 1998 原文确认「四构念量表」；(b) 报告正文引 **Kelley & Thibaut 1978** 但 §10 参考文献表**没有这一条**（只列了 Rusbult & Van Lange 2003）——承重出处缺失。检索了什么：Crossref 未跑该 DOI",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`（补 §10 缺条 + 打开 1998 原文）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A2"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 49,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C03",
+   "claim": "`Dedication` 独立于 investment/alternatives/satisfaction/constraint = REUSE；Le&Agnew 2003 解释 61% 方差、Tran 2019 解释 54%",
+   "source_report": "14 §2.1 L42",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`10.1111/1475-6811.00035`、`10.1111/pere.12268` `NOT_OPENED`",
+   "strongest_counterevidence": "缺口：两个具体百分比（61% / 54%）是报告最具体的数字之一，我**一个都没验**。检索了什么：未联网复核（预算已用于更高优先项）。这两点若错，F-3/M6 的论证基础会松",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A3"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 50,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C04",
+   "claim": "`PPR` 属 Belief 层、responsive action 属 Action 层 = REUSE（Reis & Shaver 1988；Reis/Clark/Holmes 2004；Reis & Clark 2013）",
+   "source_report": "14 §2.1 L43",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`sas.rochester.edu/.../ReisClarkHolmes_2004.pdf`、`anthonyongphd.wordpress.com/.../reis-clark-2013.pdf` `NOT_OPENED`",
+   "strongest_counterevidence": "缺口：F-2 的成立完全依赖「Reis et al. 2004 已如此**定义** PPR」；我未打开 2004 原文。**这是 forbidden list 里一条「不可能成立」级断言的唯一支撑**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A4"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 51,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C05",
+   "claim": "`AttachmentSecurity` 为关系层状态、anxiety/avoidance 为 Agent 属性 = REUSE（general vs relationship-specific 二分）",
+   "source_report": "14 §2.1 L44",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "Klohnen 2005 / ECR-RS / Hyland 2015 `NOT_OPENED`；Fraley 2000 被标 `CITED_SECONDARY`",
+   "strongest_counterevidence": "缺口：ECR-RS 的 21,000+ 样本量与「关系特异预测更好」方向均未核。**且报告在 A4 承认该问题「未决」**——同一批文献在 §2.1 被当作已定先例、在 §5.A4 被当作未决问题。**报告内部不一致**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（§2.1 与 §5.A4 二者取一）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A5"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 52,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C06",
+   "claim": "「爱/亲密/嫉妒不是 primitive，是组合态」= REUSE（Sternberg 1986 + Reis&Shaver 1988 + Fletcher 2000 二阶因子）",
+   "source_report": "14 §2.1 L45",
+   "verdict": "`VERIFIED`（PRQC 部分）/ `PLAUSIBLE`（Sternberg、Reis&Shaver 部分）",
+   "supporting_refs": "Fletcher/Simpson/Thomas 2000 摘要原文：「the best-fitting model was one in which the appropriate items loaded reliably on the **six first-order factors**, which in turn loaded reliably on **one second-order factor** reflecting overall perceived relationship quality」 — `VERIFIED_BY_ME`。Sternberg 1986 / Reis&Shaver 1988 `NOT_OPENED`（报告自标 `AGENT_RECALL`）",
+   "strongest_counterevidence": "①报告的 PRQC 书目**卷期页全错**（见 H-C40）；②Sternberg 1986 与 Reis&Shaver 1988 是 `AGENT_RECALL`，无 DOI",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`（PRQC 主张）/ `HOLD_FOR_EVIDENCE`（Sternberg、Reis&Shaver 两条）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A6"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 53,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C07",
+   "claim": "「Compatibility/般配/ideal standards match 不是 primitive」= REUSE（Ideal Standards Model）",
+   "source_report": "14 §2.1 L46",
+   "verdict": "`VERIFIED`（Fletcher 1999 元数据）/ `PLAUSIBLE`（因子数与纵向结果）",
+   "supporting_refs": "Crossref `10.1037/0022-3514.76.1.72` = Fletcher/Simpson/Thomas/Giles, \"Ideals in intimate relationships\", JPSP 76(1), **72–89** — `VERIFIED_BY_ME`。「ideal 伴侣 3 因子 + 理想关系 2 因子」与「12 个月纵向预测更低 dissolution rate」`NOT_OPENED`",
+   "strongest_counterevidence": "缺口：两个因子结构断言未核。另：`14 §2.1 L46` 把纵向结果归给「Fletcher, Simpson & Thomas (2000)」，但 `14 §10 L350` 指向 pubmed `11138762`（我被 captcha 拦住）；JPSP 76(1) 内我确认 **54–71 = Conger/Rueter/Elder「Couple resilience to economic pressure」**，与 Fletcher 76(1) 72–89 相邻但不重叠 → 报告上游「54–71」错误的**机制得到解释**：页码落在了同一期的另一篇论文上",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A7"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 54,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C08",
+   "claim": "State / Observation / Belief 三分 = REUSE（SRM perceiver + APIM 双套 measure + latent/observed 分层）",
+   "source_report": "14 §2.1 L47",
+   "verdict": "`CONTESTED`（就 report 内部一致性）",
+   "supporting_refs": "SRM/APIM 存在性 `VERIFIED_BY_ME`（同 A1）",
+   "strongest_counterevidence": "**报告内部冲突**：§2.1 L47 把 State/Observation/Belief 三分列为「高」严重度 REUSE；但 §3 NC-3 又把它列为「可能新…**置信度 MEDIUM-LOW**」，理由栏明写「『现实/观察/信念不同』这个洞见**不新**」。**同一条主张在 §2.1 是 REUSE（高）、在 §3 是候选新颖（MEDIUM-LOW）。** 对立方指针：14 L47 vs 14 L130–131。`corroboration: NON_INDEPENDENT`（与 A1 共用 SRM/APIM）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C08**（`NONE` → 内部重复计数）",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（§2.1 与 §3 必须择一；我建议按 §3 走 NC-3，因为 §3 的反证栏更诚实）",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "_extra_columns": {
+    "#": "A8"
+   },
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 55,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C09",
+   "claim": "Relationship label 是 coarse readout = REUSE（RMT + Finkel 2017 十四原则之一）",
+   "source_report": "14 §2.1 L48",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`10.1037/0033-295X.99.4.689`、`10.1146/annurev-psych-010416-044038` `NOT_OPENED`",
+   "strongest_counterevidence": "缺口：「Finkel 2017 的 14 原则之一已系统回答 relationship 是什么」——这是**具体到条**的断言，未核。且报告在 §5.A1 引用 Finkel 2017 的自我批评原句（\"the principles afford few of the sorts of conflicting predictions…\"）亦 `NOT_OPENED`",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A9"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 56,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C10",
+   "claim": "Role 是 query lens 不是 world state = REUSE（**Boyd & Heewer 2007**）",
+   "source_report": "14 §2.1 L49",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "",
+   "strongest_counterevidence": "报告自标 `AGENT_RECALL / DOI 未核实`。我的复核：**Crossref `query.author=Heewer` 返回 `total-results: 0`**；Crossref 列出 *Communication Theory* 2007 全部 58 条中 vol 17(1) 的页码为 1–2 / 4–15(Descombes) / 16–25(Malabou) / 26–42(Hainge) / 43–60(Penney) / 61–91(Rains & Scott)——**报告写的「17*(1), 4–25」对应两篇不同作者的论文，不可能是 Boyd & Heewer 论文**；websearch 亦零命中。检索了什么：Crossref 作者检索、Crossref 期刊-年卷期 TOC、websearch 精确题名",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C19**（同一 phantom 在 §3/§9 复用）",
+   "recommendation_to_architect": "**`REJECT`**（作为 REUSE 依据）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A10"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 57,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C11",
+   "claim": "MSC 五条判据 = 通用构念效度五检的重写（Cook&Messick 1979 / Messick 1989,1995 / Trochim 1999），且报告未引出处",
+   "source_report": "14 §2.1 L50 + §5.A5 + O-7",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "报告自标 `AGENT_RECALL`。核对了被引方：MSC 五条 = 语义不可归约 / 可去耦反例 / 动力学 / 可估计 / 跨形态稳定（我**逐字读了** `RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:109–115`）",
+   "strongest_counterevidence": "**「结构几乎一一对应」不成立。** Messick 的五个 aspect 是 content / substantive / structural / external / generalizability；MSC-2（可去耦）≈ discriminant、MSC-5（跨形态稳定）≈ generalizability，这两条对得上；但 **MSC-3「X 会随事件/交互更新并能驱动下一状态转移」在 Messick 五检里没有对应物**（它是状态动力学判据，不是效度 aspect），MSC-1/4 是弱映射。**报告自己捏造了一个「五检」清单**（「content / discriminant / structural / external / generalizability 五检」把 Messick 与 Trochim 混编），并在 O-7（严重度=高）与 A5 上据此说「结构几乎一一对应」。检索了什么：逐字读了 MSC 五条原文；未打开 Messick/Trochim 原文",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C41**",
+   "recommendation_to_architect": "**`REJECT`**（「一一对应」这一断言）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A11"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 58,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C12",
+   "claim": "不用预写关系状态机 = REUSE（Granic & Hollenstein 2003 已反对离散标签；Feinberg 等耦合振子已拟合伴侣轨迹）",
+   "source_report": "14 §2.1 L51",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`10.1007/s11121-017-0803-3` `NOT_OPENED`；Granic & Hollenstein 2003 报告自标 `CITED_SECONDARY`（无 DOI）",
+   "strongest_counterevidence": "缺口：(a) 耦合振子 DOI 未核；(b) **报告的 §3 NC-5 同时把「显式拒绝预枚举状态机」列为置信度 MEDIUM 的候选新颖**（「可能新在哪：这是**可检查的设计承诺**」）。§2.1 说这是 REUSE（高），§3 NC-5 说这是可主张的新设计立场（MEDIUM）。**同一主张两处定位相反。**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C08**（同类内部冲突）",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（§2.1 与 NC-5 择一）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A12"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 59,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C13",
+   "claim": "可向 ABM/microsimulation 扩展 = 复用（marriage-market ABM 已声称定量准确）",
+   "source_report": "14 §2.1 L52",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`jasss.org/11/4/5.html`、`demographic-research.org/volumes/vol17/3/17-3.pdf`、`jasss.org/16/1/6.html` `NOT_OPENED`",
+   "strongest_counterevidence": "缺口：三个链接我一个都没打开；「已声称定量准确初婚时长/离婚比例」是具体数字断言。**且这条 REUSE 行的严重度标「高」，但它其实是最容易被反驳的一行**——ABM 定量复现的是**群体统计**，与 LHRM 的 per-dyad 表示是不同研究问题（报告在 §5.D2 自己也承认「可**主动进攻**」）。严重度与实际风险不匹配",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`（降级为「中」）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A13"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 60,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C14",
+   "claim": "LLM 做定性编码可服务社会科学 = REUSE（Zhang 2024 / QualiGPT / Eberhardt 2025）",
+   "source_report": "14 §2.1 L53",
+   "verdict": "`VERIFIED`（Eberhardt 全部数字）/ `PLAUSIBLE`（Zhang 2024、QualiGPT 数字）",
+   "supporting_refs": "Eberhardt 2025 摘要原文（Scientific Reports 15:29541）：「Automatically transcribed videos of **1,131 sessions from 155 patients**」「Llama 3.1 8B LLM rated **120 engagement items**, averaging the **top eight**」「**ω = 0.953, CFI = 0.968, SRMR = 0.022**, except **RMSEA = 0.108**」「motivation **r = .413** … efforts **r = .390** … symptoms **r = −.304**」— 报告的「1,131/155、120 题取前 8 题、ω=.953、CFI=.968、SRMR=.022、RMSEA=.108、效标 r=.41/.39/−.30」**逐个数字全对** — `VERIFIED_BY_ME`。Zhang/QualiGPT `NOT_OPENED`",
+   "strongest_counterevidence": "**报告漏掉一个对 LHRM 有利的关键事实**：Eberhardt 用的是 **Llama 3.1 8B**（8B 开源小模型），且题库由人预先定义、120 题取前 8 题平均。报告只用了「单维」这一半反驳，漏了「小模型 + 人工定义题库 + 单维平均」这三条。**这不是反驳报告的结论，而是补强它**——弱模型在**单一定义明确**的维度上就能 ω=.953，说明 Eberhardt 的数字**完全不能**用来给「LLM 可以做关系状态测量」背书。报告的读法正确，只是论据用了一半",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A14"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 61,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C15",
+   "claim": "E1/E2/C/M 证据分级 = 复用（GRADE / NIH levels of evidence 惯例）",
+   "source_report": "14 §2.1 L54",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "无具体引用（只写「惯例」）",
+   "strongest_counterevidence": "缺口：**这是 16 行 REUSE 里唯一一行完全没有引文指针的行**。报告在 §2.1 声称「逐条有 DOI」（§1 BLUF），但此行无 DOI。而 E1/E2/C/M 这套等级是 LHRM 自己的 proxy 词典的约定（`RESEARCH_REPORT_REAL_WORLD_PROXY_DECOMPOSITION.md:65`），把它归为「复用」需要真正的对照",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A15"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 62,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "# | claim_id | claim（一句复述） | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | recommendation_to_architect"
+   },
+   "claim_id": "H-C16",
+   "claim": "126 条 proxy 分解词典 = 复用（construct dissection 传统）",
+   "source_report": "14 §2.1 L55 + §3 NC-6",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "报告未给 Bristow/Wright/Beauchemin 1993 的 DOI。数字「126」我在 `RESEARCH_REPORT_REAL_WORLD_PROXY_DECOMPOSITION.md:91` 见到「共 **126 条**，按九个域编号 W01–W126」— `PLAUSIBLE`（该文件不在我授权集）",
+   "strongest_counterevidence": "缺口：**(a) 无 DOI；(b) 报告没说明 126 条词典究竟在哪份文件里**，Architect 无法核对；(c) 严重度标「中」但 NC-6 把它评为「工程/知识 artifact MEDIUM-HIGH」——**同一 artifact 在两处被当成不同强度的东西**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "A16"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 68,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 | 其余字段"
+   },
+   "claim_id": "H-C17",
+   "claim": "**§1 BLUF「LHRM 的 8 个有向构念全部是 REUSE，无一条可主张原创 / 强度=高（逐条有 DOI）」**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "脚本逐行核对 §2.1（L40–55）：8 个有向构念中，**只有 3 个有构念专属 REUSE 行**——`OutcomeDependence`(L41)、`Dedication`(L42)、`AttachmentSecurity`(L44)；`Trust` 仅在 L45「爱/亲密/嫉妒」行里被间接带到。**`Liking`、`RomanticAttraction`、`SexualDesire`、`Caregiving` 四者在整个 §2.1 表中零命中。** 「逐条有 DOI」亦不成立：L54（E1/E2/C/M）与 L55（126 词典）无 DOI，L49、L50、L51 报告自标 `AGENT_RECALL`。检索了什么：逐行字符串检索 + 人工读表",
+   "strongest_counterevidence": "**最强反证方向：这不是「假」，是「没做完」。** 8 个构念里 4 个（liking / romantic attraction / sexual desire / caregiving）恰恰是关系科学里**最不可能原创**的四个（Sternberg 三成分、Wieselquist 三角、attachment care system 都是 30 年以上的一等公民），所以补上 REUSE 行只会**加强**报告的结论。→ 修法是补表，不是撤回结论",
+   "requires_canonical_change": "`requires_canonical_change: NO`",
+   "needs_experiment_or_data": "`needs_experiment_or_data: NO`",
+   "duplicate_of": "`duplicate_of: NONE`",
+   "recommendation_to_architect": "**`RECLASSIFY_AS_METHOD_LIMIT`**",
+   "_composite_raw": "`requires_canonical_change: NO` · `needs_experiment_or_data: NO` · `duplicate_of: NONE` · **`RECLASSIFY_AS_METHOD_LIMIT`**",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 76,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C18",
+   "claim": "**NC-1** 以 N=1 个体、逐句可审计的「表示完备性」为主指标的关系状态表示语言 —— 置信度 MEDIUM（窄化）/ LOW（按现状表述）",
+   "source_report": "§3 L116–120",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "无一条一手来源被打开。NC-1 的全部正方论证建立在**对比性描述**上（「现有 SRM/APIM 需要多人次抽样」「现有动态系统方法需要微编码」「叙事心理学非形式化」「LLM 文献是贴码」）——**这四条描述我一条都没验**",
+   "strongest_counterevidence": "**两个独立问题。** ①**新颖组合谬误未被驳倒**：NC-1 的正方论据是一个**三项合取**（「unit of analysis、失败判据、证据制度**三者同时不同**」）。报告在 §3 开头放了一句**通用**警告（\"这是定位失败最常见的模式\"），但**没有针对自己这条合取论证做任何拆解**。合取新颖性正是用户点名的标准失败模式，报告给了警告却没防守。②**报告遗漏了一篇直接威胁 NC-1 的新证据**：Kim et al. (2026, PLOS One 21(4):e0342451, `10.1371/journal.pone.0342451`)，N=3,439，两项预注册 EBFA 研究，34 个常用关系质量量表，结论「a single general factor Q ... **accounts for a vast majority of common variance across distinct relationship measures**」，并称之为 relationship-specific **response bias**（sentiment override）。这直接冲击 NC-1 的可识别性前提：**如果关系构念的自陈区分度本身被全局情感饱和掉，那么「逐句表示完备性」测到的可能也是同一件事。** 我 `VERIFIED_BY_ME`（PLOS ONE 摘要原文）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（把 NC-1 从 MEDIUM 降到 MEDIUM-LOW，并把 Kim 2026 写进反证栏）",
+   "_composite_raw": "NO · NO · NONE · `RECLASSIFY_AS_METHOD_LIMIT`（把 NC-1 从 MEDIUM 降到 MEDIUM-LOW，并把 Kim 2026 写进反证栏）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B1"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 77,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C19",
+   "claim": "**NC-2** 逐维度双向有向状态 + 互惠/权力由派生 —— 置信度 LOW，「会被一击击穿」",
+   "source_report": "§3 L122–125",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "Kenny 2018 `10.1111/pere.12240` 「default method」— `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "无实质反证。**这是 7 条里唯一被诚实降级的一条。** 唯一小瑕疵：§3 说「APIM 就是双向分解」，而 Kenny 2018 摘要同时提醒「there are alternatives that should also be considered」——报告没引这半句，但那不影响 LOW 的结论",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`",
+   "_composite_raw": "NO · NO · NONE · `ACCEPT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B2"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 78,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C20",
+   "claim": "**NC-3** `Agent｜Relationship｜Environment｜Belief` + `Reality≠Observation≠Belief` + 嵌套反事实世界 + history lineage DAG —— 置信度 MEDIUM-LOW",
+   "source_report": "§3 L127–131",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "无",
+   "strongest_counterevidence": "**与本报告 §2.1 L47 直接冲突**（见 H-C08）：同一主张在 §2.1 是「高」严重度 REUSE，在 §3 是 MEDIUM-LOW 候选新颖。报告没有在任何地方调和这两处。此外「记号法可能新」——**符号系统不是贡献**，审稿人不给分；报告自己也承认「洞见不新」",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C08**",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "_composite_raw": "NO · NO · **H-C08** · `RECLASSIFY_AS_METHOD_LIMIT`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B3"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 79,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C21",
+   "claim": "**NC-4** 把「映射失败率 + 弃答率」作为第一指标 —— 置信度 MEDIUM，「最可辩护的一条」",
+   "source_report": "§3 L133–138",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "SQuAD 2.0 / 形态学 paradigm coverage / IE error rate（报告自列，无 DOI）",
+   "strongest_counterevidence": "缺口：三条反证先例均无 DOI，未打开。**评级争议**：NC-4 本身不是**发明**（报告自己说 SQuAD 2.0 五年前就是这个模式），它的新意只在「迁移到关系科学并当作主指标」。**MEDIUM 作为「可发表的框架选择」成立；作为「新颖方法」偏高。** 但报告给了**真正有力的自我攻击**（「coverage 可被堆构念刷高；没有 coverage–construct-count trade-off 曲线，最小充分基就只是断言」），这是 7 条里最好的一条自我批评",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO（但解除 F-14 需要 M4）",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT_AS_PROPOSAL`（MEDIUM → MEDIUM-LOW 作科学新颖；保留 MEDIUM 作 framing）",
+   "_composite_raw": "NO · NO（但解除 F-14 需要 M4）· NONE · `ACCEPT_AS_PROPOSAL`（MEDIUM → MEDIUM-LOW 作科学新颖；保留 MEDIUM 作 framing）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B4"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 80,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C22",
+   "claim": "**NC-5** 显式拒绝预枚举关系状态机 —— 置信度 MEDIUM",
+   "source_report": "§3 L140–144",
+   "verdict": "`CONTESTED`",
+   "supporting_refs": "Granic & Hollenstein 2003 `CITED_SECONDARY`；Gelfond *numbers*（无引用）",
+   "strongest_counterevidence": "**与 §2.1 L51 冲突**（见 H-C12）：§2.1 说这是 REUSE（高），§3 说这是「可检查的设计承诺」（MEDIUM）。**更关键：报告在同一段里写下「是**设计立场**不是科学发现」，然后仍给 MEDIUM。** 自认不是科学发现却给 MEDIUM 新颖度，是**自相矛盾的评级**。用户问「有没有被评得太宽松」——这就是答案之一",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C12**",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（MEDIUM → LOW 作科学新颖；保留 MEDIUM 作可检查承诺）",
+   "_composite_raw": "NO · NO · **H-C12** · `RECLASSIFY_AS_METHOD_LIMIT`（MEDIUM → LOW 作科学新颖；保留 MEDIUM 作可检查承诺）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B5"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 81,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C23",
+   "claim": "**NC-6** 126 条 proxy 分解词典 —— MEDIUM-LOW（科学）/ MEDIUM-HIGH（artifact）",
+   "source_report": "§3 L146–150",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "见 H-C16",
+   "strongest_counterevidence": "缺口：无 DOI。「已有至少四套互不一致的维度方案」后面**列了五套**（Sternberg 三 / Fletcher 理想 3+2 / PRQC 6+二阶 / Neubauer 四 / Acitelli 三十），其中 Acitelli 三十是 phantom（见 H-C24）→ 实为**四套真 + 一套假**。报告自己的算术也不一致",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C16**（同一 artifact 被评两次、强度不同）",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`",
+   "_composite_raw": "NO · NO · **H-C16**（同一 artifact 被评两次、强度不同）· `HOLD_FOR_EVIDENCE`",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B6"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 82,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "# | claim_id | claim | 指针 | verdict | supporting_refs | strongest_counterevidence | 10 字段摘要"
+   },
+   "claim_id": "H-C24",
+   "claim": "**NC-7** LLM 作「自适应访谈器材」（EIG 选题、双人双向、维护非对称有向状态）—— 置信度 MEDIUM，「网格中最空的一格」",
+   "source_report": "§3 L152–156",
+   "verdict": "`UNSUPPORTED`",
+   "supporting_refs": "CAT 50 年 + IRT/BILT（无引用）；`arXiv:2511.10457`（未打开）；Lalk 2025（我打开了，但报告**误述**了它——见 H-C26）",
+   "strongest_counterevidence": "**这是 7 条里评得最宽松的一条，理由有四层。** ①**「空格子」论证法**：报告说「我检索到的 LLM×关系工作里…这一格是空的」——**「我检索到的范围内是空的」不是领域里的空缺**，这是把检索边界当成了研究空白。②**报告的 §3 警告完全没覆盖这个谬误**。③它引用的最强反证（Lalk κ=.42）被我发现是**误述**（H-C26）——一个被误述的反证不能支撑 MEDIUM。④**CAT 的 50 年不是「相似但不同」**：CAT 的选题数学（Fisher 信息 / BILT）已经把「adaptively select items to minimize measurement error under a latent-trait model」做完了；LHRM 的「按句重建状态轨迹」与「自适应选问以省答题负担」在**优化目标上根本不同**（前者是完备性，后者是效率）。报告没做这个区分",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`RECLASSIFY_AS_METHOD_LIMIT`**（MEDIUM → LOW，直到 `arXiv:2511.10457` 被打开）",
+   "_composite_raw": "NO · NO · NONE · **`RECLASSIFY_AS_METHOD_LIMIT`**（MEDIUM → LOW，直到 `arXiv:2511.10457` 被打开）",
+   "corroboration": "",
+   "_extra_columns": {
+    "#": "B7"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 88,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 | 其余字段"
+   },
+   "claim_id": "H-C25",
+   "claim": "**§3 开头的通用警告（\"这是定位失败最常见的模式\"）足以防止本报告自己犯 novel-combination 错误**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "报告确实在 §3 开头写了警告，并且 7 条都给了「可能已存在在哪」 | **我检查了 7 条里每条的正方论证形态：NC-1 是三项合取（\"三者同时不同\"）、NC-3 是四要素收进同一符号系统、NC-7 是 2×2 网格空格、NC-6 是颗粒度对比。四个都是 novel-combination 的标准形态，没有一个被拆解。** 报告给了警告，但警告的对象不是它自己的论证。唯一被真正拆解的是 NC-4（coverage 可被构念膨胀刷高）——**一条**。检索了什么：逐条读 §3 L116–156",
+   "strongest_counterevidence": "**最严重的一条是 NC-1**：它的正方论据（「unit of analysis / 失败判据 / 证据制度三者同时不同」）如果成立，**恰好就是一份典型的 novelty-by-combination 论证**，而报告把它评为 MEDIUM。**「三者同时不同」是新颖性论证，不是防新颖性论证。**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`HOLD_FOR_EVIDENCE`**（要求报告为 NC-1/NC-3/NC-7 各写一段「本条新颖性是否只是组合」的自审）",
+   "_composite_raw": "NO · NO · NONE · **`HOLD_FOR_EVIDENCE`**（要求报告为 NC-1/NC-3/NC-7 各写一段「本条新颖性是否只是组合」的自审）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 96,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 5. `verdict_matrix` — C 组：20 条禁止主张清单",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 / 缺口 | 其余字段"
+   },
+   "claim_id": "H-C26",
+   "claim": "**§2.5 + F-6 + F-16 用 Lalk et al. (2025) 证明「LLM 抽多类语义的上限是 κ=.42」**",
+   "verdict": "**`WRONG-SCOPE`**",
+   "supporting_refs": "我打开了全文（Frontiers in Psychiatry）。数字**全对**：「Our fine-tuned model achieved modest classification performance (**F1macro = 0.45, Accuracy = 0.41, Kappa = 0.42**) across the **28 emotions**」；「symptom severity (**r = .50**)」— `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "**报告对任务的三处误述。** ①报告写「**从治疗会谈转录抽 28 类情绪**」。原文：他们用的是 **public labeled dataset of 28 emotions (GoEmotions)，翻译成德语，fine-tune 一个 pre-trained LLM**，然后应用到**关于心理治疗的长 reddit 评论**（3–30 词，subreddit）——**不是**从治疗会谈转录里抽。②**报告完全没提这是 fine-tuned（有监督）模型**。一个在人工标注上微调出来的分类器，其 κ 的上限由**训练标签质量**决定，**不能**用来推断「LLM 从文本抽多类语义」的能力。③**最致命：κ=.42 几乎就是人类上限。** 原文：GoEmotions 的标注由三名评分者完成，「Interrater agreement was assessed via Cohen's kappa by Demszky et al. (72), **ranging between 0.331 (grief) and 0.468 (admiration)**」。也就是说**参考标准自身的人际一致性就是 κ≈.33–.47**；模型拿到 .42 属于**达到而非低于人类一致性天花板**。报告的「读法」（§2.5 L110「现有最强的多类抽取证据是 **Kappa=.42**」，并据此把 Lalk 列为 F-16「LLM 不可靠」的证据）**把一个「达到标注天花板」的结果读成了「不可靠」**。检索了什么：打开 `frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1504306/full`，正则抽取 kappa/F1/accuracy/28 上下文",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`RECLASSIFY_AS_METHOD_LIMIT`**（Lalk 只能证明「**多类细粒度情绪分类的天花板本身就很低**」，不能证明「LLM 不可靠」；这反而是对 LHRM 有利的：它说明**任何** 8×2 坐标方案都会撞上一个与 LLM 无关的标注天花板，M2 因此必须先测人类基线）",
+   "_composite_raw": "NO · NO · NONE · **`RECLASSIFY_AS_METHOD_LIMIT`**（Lalk 只能证明「**多类细粒度情绪分类的天花板本身就很低**」，不能证明「LLM 不可靠」；这反而是对 LHRM 有利的：它说明**任何** 8×2 坐标方案都会撞上一个与 LLM 无关的标注天花板，M2 因此必须先测人类基线）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 97,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 5. `verdict_matrix` — C 组：20 条禁止主张清单",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 / 缺口 | 其余字段"
+   },
+   "claim_id": "H-C27",
+   "claim": "**F-1…F-20 这 20 条禁止主张清单是完备的**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "逐条核了 20 行的禁止理由与支撑",
+   "strongest_counterevidence": "**缺一行，而且缺的是「最诱惑 + 最致命」的那一行。清单里有 F-12「禁止把『simulation / 仿真』说成当前能力」，理由是「无 transition operator、无参数标定、无实现」。但**清单里**没有**任何一行禁止把「形式化的 / 数学的表示语言」说成当前能力**——而这个短语**逐字出现在项目自己的 canonical 文档里**：`CURRENT_ARCHITECTURE.md:18`「……的**数学**状态表示语言」、`README.md:7`「人际关系状态**表示语言**」。这是最诱惑的（它就是项目的第一句定位）、也是最致命的（一个 reviewer 只需问一句「你的文法是什么？」就能证伪，而报告自己在 §5.E1 已经把这条列为**致命**）。**F-12 管住了「仿真」却没管住「表示语言」，这个不对称本身就是缺口。** 次级缺项：没有单独禁止「LHRM 的 8 个坐标**就是**已发表构念（intimacy/trust/commitment）的等价实现」——F-4 只禁「更准确/更少冗余」，没禁**构念同一性**断言，而后者是 M6 之前最容易被写进摘要的话。检索了什么：逐行读 F-1…F-20 + 检索 README/CURRENT_ARCHITECTURE 的对应措辞",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`ACCEPT_AS_PROPOSAL`**（补 F-21「本项目已提供一个形式化/数学的表示语言（含文法、类型系统与映射判定过程）」）",
+   "_composite_raw": "NO · NO · NONE · **`ACCEPT_AS_PROPOSAL`**（补 F-21「本项目已提供一个形式化/数学的表示语言（含文法、类型系统与映射判定过程）」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 98,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 5. `verdict_matrix` — C 组：20 条禁止主张清单",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 / 缺口 | 其余字段"
+   },
+   "claim_id": "H-C28",
+   "claim": "**F-6 与 F-16 各自独立**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "两行原文",
+   "strongest_counterevidence": "**报告自己承认二者同源**：F-16 的「要成立需要」栏写的是「**只有 F-6 那套证据组合**」。F-16 ⊃ F-6（F-6 = 「LLM 与人类一致 ⇒ 模型被验证」；F-16 = 「任何暗示 LLM 判断准确/可靠的表述」）。F-16 无任何 F-6 之外的内容 → **严格冗余**，且 20 行的「完备性」因此被高估：实际独立条目 19 条",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C29**",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（合并 F-16 进 F-6，腾出一行给 F-21）",
+   "_composite_raw": "NO · NO · **H-C29** · `RECLASSIFY_AS_METHOD_LIMIT`（合并 F-16 进 F-6，腾出一行给 F-21）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 99,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 5. `verdict_matrix` — C 组：20 条禁止主张清单",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 / 缺口 | 其余字段"
+   },
+   "claim_id": "H-C29",
+   "claim": "**F-1 与 REUSE 表 L40 是两条独立结论**",
+   "verdict": "**`CONTESTED`（重复计数）**",
+   "supporting_refs": "两条原文",
+   "strongest_counterevidence": "F-1「方向性 = SRM actor/partner/relationship effect + APIM 双向效应，**已存在 40 年**」与 §2.1 L40 是**同一 prior art + 同一结论**，一为发现一为禁令。`corroboration: NON_INDEPENDENT`。同理 **F-11 与 B5 与 §2.1 L40 三处共用 Kenny 2018 的「default method」这一条事实**；**Eberhardt 2025 被 §2.1 L53 / §2.5 / §1 BLUF / F-6 / F-19 五处使用**；**Joel 2020 被 F-5 / A3 / O-13 三处使用**（其中 O-13 那处是误用，见 H-C31）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "**H-C01 / H-C08**",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（parent join 时按 `NON_INDEPENDENT` 处理，**不得**因「多条 row 都说」而升级 §1 BLUF 的强度）",
+   "_composite_raw": "NO · NO · **H-C01 / H-C08** · `RECLASSIFY_AS_METHOD_LIMIT`（parent join 时按 `NON_INDEPENDENT` 处理，**不得**因「多条 row 都说」而升级 §1 BLUF 的强度）",
+   "source_report": "",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 107,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C30",
+   "claim": "**§5.A2「你的 8 个有向坐标能复现已知因子结构吗？」是可被纯文档分析回应的（「这是最有杀伤力也最可修的批评」）**",
+   "verdict": "**`WRONG-SCOPE`**",
+   "supporting_refs": "报告的修法（M6：把已验证量表题项当 mapping target 跑 M0 判定过程）逻辑上确实不需要被试",
+   "strongest_counterevidence": "**这是报告评为「可修」而实际是致命的那一条。** 有了 Kim et al. (2026) 之后，M6 的输出是**不可解释的**：如果 34 个常用关系量表被证明被单一 general factor 吃掉「vast majority of common variance」（`VERIFIED_BY_ME`），那么 M6 无论跑出什么，LHRM 都无法区分三种情形：(i) LHRM 的 8 坐标冗余；(ii) 全领域自陈饱和；(iii) M0 的映射判定过程把题项都吸进同一个格。**M6 缺一个非自陈的独立锚（行为 / 观察 / 文本 / 制度记录），而 Case Bank 恰恰是文本而非自陈——这正是项目已有的资产，报告没有把它用在这里。** 这是本 lane 最有价值的一条「评得太宽松」",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "**YES**（M6 需要一个非自陈锚，且该设计尚未存在）",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（A2 从「最有杀伤力也最可修」改为「最可修但修法本身有未声明的混淆」）",
+   "_composite_raw": "NO · **YES**（M6 需要一个非自陈锚，且该设计尚未存在）· NONE · `RECLASSIFY_AS_METHOD_LIMIT`（A2 从「最有杀伤力也最可修」改为「最可修但修法本身有未声明的混淆」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 108,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C31",
+   "claim": "**O-13：Joel et al. 2020 是 `E` 层「不同环境 → 不同长期结果」这一主张的「直接反例」**",
+   "verdict": "**`WRONG-SCOPE`**",
+   "supporting_refs": "我打开了 Joel et al. 2020 发表版摘要原文",
+   "strongest_counterevidence": "**Joel 2020 的实际命题（`VERIFIED_BY_ME`，逐句）：「People's own judgments about the relationship itself … explained approximately **45%** of their current satisfaction. **The partner's judgments did not add information**, nor did either person's personalities or traits.」+「none of these variables could predict whose relationship quality would increase versus decrease over time.」+ actor-reported 45% / partner-reported 15% / combined 46%。「**个体差异与 partner 报告对关系质量没有超出 actor 报告的预测效应**」是一个**自陈预测增量**的结论。而 (a) 被审的项目句子（LHRM 150）说的是「**可能**形成完全不同的长期关系结果」——一个**可能性/机制多样性**命题，不是效应量命题；(b) Joel 2020 恰恰**不否认** E 的作用，它说的是「partner 的看法被自己的关系特异经验吸收了」。**把「无预测增量」读成「E 无因果作用」是本 lane 最清楚的一处「方法学限制 → ontology 结论」滑动**（契约 §6.2）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`REJECT`**（O-13 应删除或改写为「Joel 2020 显示自陈指标承载了绝大部分关系质量的可预测方差，因此任何以 E 层自陈代理为唯一证据的主张都缺乏增量」——这是一个**方法学**论断，不是对 LHRM E 层本体主张的反例）",
+   "_composite_raw": "NO · NO · NONE · **`REJECT`**（O-13 应删除或改写为「Joel 2020 显示自陈指标承载了绝大部分关系质量的可预测方差，因此任何以 E 层自陈代理为唯一证据的主张都缺乏增量」——这是一个**方法学**论断，不是对 LHRM E 层本体主张的反例）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 109,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C32",
+   "claim": "**§5.A3「LHRM 把双向有向坐标当架构基石，恰落在文献中最不可靠的那一半上」（依据 Joel 2020）**",
+   "verdict": "**`WRONG-SCOPE`（部分）**",
+   "supporting_refs": "同 H-C31 的原文",
+   "strongest_counterevidence": "「partner 报告无预测增量」**不等于**「partner 侧状态不可靠/不存在」。Joel 2020 的 top predictors 里 **perceived-partner commitment** 位列第一——**partner 侧测量是真实且有信息的量**，只是在控制 actor 报告后不提供额外预测。报告把「不提供增量」升级成「那**一半**最不可靠」，是**量级与性质的提升**。**报告其实手里有更对口的证据**（Bloomberg/Joel/Eastwick 的 p-curve → 选择性发表偏倚），但 A3 的句子把结论挂在 Joel 2020 上",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（A3 的杀伤力应改由 p-curve 那条承担；Joel 2020 只支持「partner 侧不增加**满意度预测**」）",
+   "_composite_raw": "NO · NO · NONE · `RECLASSIFY_AS_METHOD_LIMIT`（A3 的杀伤力应改由 p-curve 那条承担；Joel 2020 只支持「partner 侧不增加**满意度预测**」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 110,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C33",
+   "claim": "**§5.E 组 E1「schema 有形式语义吗？是语法、本体、EBNF 还是散文？」= 致命，当前不能应答**",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "我读了 `CURRENT_ARCHITECTURE.md` 全文（361 行）：形式化内容只有 markdown 代码块里的类型名与两条无定义算式（`X_(t+1) = F(...)`、`Gamma_(A,B) = {X_(A,B)(tau)}`），无类型系统、无公理、无文法、无映射判定过程 —— `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "无实质反证。**这是全报告最正确、最可辩护、也最应该被 Architect 采纳的一条。**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "**YES**（= M0）",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`",
+   "_composite_raw": "NO · **YES**（= M0）· NONE · `ACCEPT`",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 111,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C34",
+   "claim": "**§5.F 组「ML 会议 = dead end，不要投」**",
+   "verdict": "`VERIFIED`",
+   "supporting_refs": "报告的论证：无学习组件、无 benchmark、无理论保证、无规模。我读了 `CURRENT_ARCHITECTURE.md` §12 工程顺序（L347–359），确认第 5 步才是 dynamics、第 7 步才是 prediction——**没有任何学习组件在 canonical 计划里** — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "无",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`ACCEPT`",
+   "_composite_raw": "NO · NO · NONE · `ACCEPT`",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 112,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 6. `verdict_matrix` — D 组：审稿攻击面",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C35",
+   "claim": "**§5.C3「VALIDATION_CORPUS 已做敏感内容筛选（无未成年人、无性暴力），是加分项」**",
+   "verdict": "`PLAUSIBLE`",
+   "supporting_refs": "`VALIDATION_CORPUS_V0_1.md` `NOT_OPENED`（不在我授权集）",
+   "strongest_counterevidence": "缺口：整条「部分能」的评级建立在我无法打开的文件上。同理 §5.D3 的「2026-09-11 live-fetch 核实日志」与 F-3 的「None of the 12 includes any mapping result」",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`HOLD_FOR_EVIDENCE`（交 lane I 或 Architect 开文件确认）",
+   "_composite_raw": "NO · NO · NONE · `HOLD_FOR_EVIDENCE`（交 lane I 或 Architect 开文件确认）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 120,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C36",
+   "claim": "**§6 结论「M0–M5 ≈ 5–7 个月单人全职」**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "报告自己的表：M0 4–8、M1 6–10、M2 4–6、M3 3–4、M4 3–4、M5 4–6 周",
+   "strongest_counterevidence": "**纯算术即可证伪。** 逐项相加：**下限 4+6+4+3+3+4 = 24 周（≈5.5 个月）；上限 8+10+6+4+4+6 = 38 周（≈8.8 个月）；中点 31 周（≈7.1 个月）。** 报告写的「5–7 个月」只覆盖到表格自身估计的**下半段**，把上半段和中位数都排除了。而这个「5–7 个月」是 §1 BLUF 的最终结论（「最短诚实路径 = M0–M5（5–7 个月单人）」），被引用得最广。**而且报告自己已经知道还有两项未计入**（M1「抓取与清洗可并行」= 可压缩；M2「+ 被试时间」= 不可压缩）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`RECLASSIFY_AS_METHOD_LIMIT`**（改为「6–9 个月单人；或明写『乐观下界 5.5 个月，表格上限 8.8 个月』」）",
+   "_composite_raw": "NO · NO · NONE · **`RECLASSIFY_AS_METHOD_LIMIT`**（改为「6–9 个月单人；或明写『乐观下界 5.5 个月，表格上限 8.8 个月』」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 121,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C37",
+   "claim": "**M2（人类编码基线）估 4–6 周**",
+   "verdict": "**`UNSUPPORTED`**",
+   "supporting_refs": "报告表：M2 = 「≥2 名独立人类编码者 + 1 名仲裁；**全语料逐句标注**；计算 IRR；记录分歧的本体层诊断」",
+   "strongest_counterevidence": "**报告称 M2「最被低估」，然后仍给它 4–6 周——这是「贴了标签的同一个低估」。** 算一下：M1 把语料扩到 **≥60 份**（法院/官方 25 + 小说纪实 15 + 神话科幻 10 + 日常对话 10）+ ≥20 条 adversarial。60 份判决书/小说的逐句标注，若按每份 3,000–8,000 句估，是 **18–48 万句**，**两名编码者各自独立过一遍 = 36–96 万句级判断**，再加第三名仲裁 + per-code κ/Gwet AC1 + 分歧的六类本体诊断（ontology/construct/scope/temporal/belief/measurement hole）。4–6 周 = 每人 120–180 小时 ≈ **每小时 200–800 句**，这在**没有预编 codebook、没有 pilot、没有一致性训练**的前提下不可能。加上「被试时间」这一项报告自己写了却没估。**真实量级我判断是 4–6 个月，不是 4–6 周**，且它会连带把 M0–M5 端到端从 6–9 个月推到 **10–15 个月**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "**YES**（就是 M2 本身）",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`",
+   "_composite_raw": "NO · **YES**（就是 M2 本身）· NONE · `RECLASSIFY_AS_METHOD_LIMIT`",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 122,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C38",
+   "claim": "**M7（测量学，2–4 个月，N≥数百）在 M0–M6 之后可达**",
+   "verdict": "**`WRONG-SCOPE`（依赖倒置）**",
+   "supporting_refs": "报告表：M7 = 「reliability 六项 + factor structure + measurement invariance」",
+   "strongest_counterevidence": "**这是真正的依赖倒置，M0–M6 里没有任何一步产出 M7 需要的输入。** M2 产出的是 **60 份文本上的逐句标注**（**文档级/轨迹级**数据）；M7 要的是 **人身上的多题项量表**（**个体级**数据）。你无法从 60 份文本的标注算 α、ω、因子结构或 measurement invariance——量表心理测量学需要**人作答**。M0–M6 全部产出的是「schema / 语料 / 判定过程 / LLM 结果 / 消融 / 对照矩阵」，**没有一项产出 person-level instrument data**。第一个产出 person-level 多波数据的是 **M8（1–3 年）**。**结论：M7 实际被 M8 阻塞，而报告把 M7 排在 M8 前面、标「阻塞后续：否」。** 顺带：即使有了 M8 数据，M7 仍缺一个步骤——**把 LHRM 的 8 个坐标变成可施测的题项**（报告 §4 F-19 自己说「先把表示做成可评分量表（这会是新工作）」，但 M 表里没有这一步）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "**YES**",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（M7 应标为「被 M8 阻塞」；并在 M7 前插入「M6.5 坐标→题项映射」）",
+   "_composite_raw": "NO · **YES** · NONE · `RECLASSIFY_AS_METHOD_LIMIT`（M7 应标为「被 M8 阻塞」；并在 M7 前插入「M6.5 坐标→题项映射」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 123,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+    "table_header": "claim_id | claim | verdict | 支撑 | strongest_counterevidence | 其余字段"
+   },
+   "claim_id": "H-C39",
+   "claim": "**M8（纵向 dyad 样本，1–3 年，≥200–500 对，≥3 时间点，双方独立测量）的估计与「阻塞后续：否」的标注**",
+   "verdict": "**`CONTESTED`**",
+   "supporting_refs": "无一手来源",
+   "strongest_counterevidence": "①**成本不可信**：200–500 对 × 3 波 = 600–1,500 个 dyad-wave，含伦理审查、预注册、招募、留存、panel survey 基础设施。**「1–3 年」是「一个有经费的实验室」的量级，不是「单人全职」的量级**——而整张 M 表的表头写的是「单人全职估计」。②**「阻塞后续：否」在技术上正确、实质上误导**：M8 不阻塞 M0–M5，但它是 **F-5（预测结局）、F-7（跨文化/不变性）、M7（心理测量）** 的唯一解除路径。报告自己已经在 F-5 的「要成立需要」栏写了「1–3 年」",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "YES",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "`RECLASSIFY_AS_METHOD_LIMIT`（标注改为「不阻塞 M0–M5；**是** M7 / F-5 / F-7 的唯一路径」；成本标注改为「1–3 年 + 需外部经费与伦理周期」）",
+   "_composite_raw": "NO · YES · NONE · `RECLASSIFY_AS_METHOD_LIMIT`（标注改为「不阻塞 M0–M5；**是** M7 / F-5 / F-7 的唯一路径」；成本标注改为「1–3 年 + 需外部经费与伦理周期」）",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 134,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C50",
+   "source_report": "`README.md:5`",
+   "verdict": "`PLAUSIBLE`（建议改写为「README L5 的用途句未带状态标记，与 L7/L121 的下游定位措辞不对称」）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-1",
+    "实际行": "**5** ✓",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**部分**：报告未提 `README.md:7`「再由下游任务选择是否做**距离、预测、仿真**或决策」把仿真写成下游可选、`:109`「核心不以预写 relationship state machine…」、`:121` 重申「未经真实数据校准…不得表述为已验证预测模型」",
+    "分析是否成立": "**基本成立但措辞过重**：「被当作**当前能力**陈述」比源文强。L5 是项目用途一句话，L7 已把仿真定位成下游可选"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 135,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C51",
+   "source_report": "`CURRENT_ARCHITECTURE.md:18`",
+   "verdict": "**`WRONG-SCOPE`**（正确说法：「目标句里的『数学』造成**期待风险**，不是 overclaim」）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-2",
+    "实际行": "**18** ✓",
+    "引文准确性": "✓ 逐字（省略号内为「对两个具体人及其关系」）",
+    "上下文忠实度": "**未提上下文**：该句在 §1「**当前首要目标是**」之下，是**目标陈述**（L16「当前首要目标是：」）",
+    "分析是否成立": "**不成立（读错了层级）**：「「数学」暗示**已形式化**」把目标句读成了状态句。源文 L36 还紧跟着写「任何 distance、score、probability…都是 readout，不是 LHRM 本体」，L269「当前**尚未冻结**统一尺度、权重或归一化公式」"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 136,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C52",
+   "source_report": "`CURRENT_ARCHITECTURE.md:203`",
+   "verdict": "**`WRONG-SCOPE`**（(a) 必须撤回；(c) 行号错；(b) 需补引 L166/L179）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-3",
+    "实际行": "**203** ✓（公式逐字一致）",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提**：L166「当前动力学**接口**是」、L179「**概念上**」",
+    "分析是否成立": "**(a) 事实错误。** 报告称「括号不匹配（`X_(t+1)` 缺右括号）」。我逐字符核过 L203：`(` 在 idx 2 与 idx 11，`)` 在 idx 6 与 idx 73 —— **2 开 2 闭，完全配对**。**这一条是假的。** (b) 「读起来像已定义的转移律」：源文用「接口」+「概念上」双重限定，报告未引。(c) 「紧接 **204 行**『而走实时演算』」——**「而走实时演算：」在 L200，L204 是代码块结束围栏**，行号也错"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 137,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C53",
+   "source_report": "`CURRENT_ARCHITECTURE.md:232-236`",
+   "verdict": "**`WRONG-SCOPE`**",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-4",
+    "实际行": "**232–236** ✓",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提上下文**：§8 全节是「可扩展设想」语气（L239「`tau` **不必永远是**单一线性标量，**可扩展为**」、L245「从而表示带 lineage 的历史版本图 / DAG」）",
+    "分析是否成立": "**不成立（读错了层级）**：「核心产物**被写成已存在的对象**」——源文是**优先级陈述**（「核心产物**优先是**动态状态轨迹」），不是存在性陈述。报告自己给的补救事实（「只有 tau 的**记法**设想」）恰好证明源文没在声称实现"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 138,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C54",
+   "source_report": "`PARAMETER_CONVERGENCE_V0_1.md:119`",
+   "verdict": "**`WRONG-SCOPE`**（引文截断 + 事实错误「Gate C 明确 PENDING」）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-5",
+    "实际行": "**119** ✓",
+    "引文准确性": "✓ 逐字（但**截断了同句下一段**）",
+    "上下文忠实度": "**不忠实**：引文止于「独立性」，**紧接的下一句被删掉**：「它们是 **第一轮 KEEP candidates**，但**仍待 Case Bank / measurement validation**。」",
+    "分析是否成立": "**「循环论证」不成立**。源文同一段已自我降级为 candidate + 待验证。另外报告说「Gate C 明确 `PENDING`」——我 grep 了 `docs/foundation/` 全部 6 个文件，**`PENDING` 一次都没出现**（L703 的原话是「不因写进本文自动升级为 validated ontology」）"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 139,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C55",
+   "source_report": "`PARAMETER_CONVERGENCE_V0_1.md:45-86`（§2 六条判据）",
+   "verdict": "`CONTESTED`（问题真实：以偏概全）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-6",
+    "实际行": "**45–86** ✓（§2 实为 41–86）",
+    "引文准确性": "✓ 范围正确",
+    "上下文忠实度": "**未提**：L86 结尾明写「这**项将在 Case Bank regression 中直接测试**」",
+    "分析是否成立": "**部分不成立（以偏概全）**。六条里 **2.2 反例解耦、2.5 Layer test（9 个槽位）、2.6 Representation necessity（删除→找不可表示句）都是可操作判定程序**，L86 还给了执行场合。报告用 2.3（「是否**仍可能**为额外信息？」）这一条的问题形态，推广成「六条都是问题形式…**无判定程序**」。**这一行反而是 O 组里唯一真正指向 canonical 内容变更的一条**（见专项 3）"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 140,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C56",
+   "source_report": "`RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:109-115`（MSC 五条）",
+   "verdict": "`CONTESTED`（「无出处」= VERIFIED；「一一对应」= UNSUPPORTED）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-7",
+    "实际行": "**109–115** ✓",
+    "引文准确性": "✓ 逐字，行号精确",
+    "上下文忠实度": "未提：该文件 L1240「仍属 **research proposal，不是冻结规范**」、L1179/L1187 等处反复以 MSC 作**筛选程序**",
+    "分析是否成立": "**引文与分析分离后：分析不成立。** 「**报告未引任何出处**」这一半 `VERIFIED`（L107–115 确实无任何引用）。但「与通用构念效度五检**结构几乎一一对应**」这一半**不成立**（见 H-C11）：MSC-3「随事件/交互更新并能驱动下一状态转移」在 Messick 五 aspect 里**没有对应物**；报告还在 §2.1 L50 自行编造了一个「content/discriminant/structural/external/generalizability 五检」的 Messick-Trochim 混编清单。**讽刺的是：MSC-3 才是 MSC 唯一真正有辨识度的判据，而报告不但没认出它，还用一个错误的对应关系把它盖掉了。**"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 141,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C57",
+   "source_report": "同上 `:28` | **28** ✓ | ✓ 逐字 | 未提：同文件 L47「「方向性」是 primitive 的**第一属性**」（定义性约定语气）、L49「「爱」几乎一定是个**高阶组合态**」 | **「表述成发现」是报告自己的用词，源文没有用「发现」。** 但报告的**建议是对的，而且我找到了支持它的独立证据**：我 grep 了这个文件全部 `Fletcher",
+   "verdict": "`RECLASSIFY_AS_METHOD_LIMIT`（从 overclaim 改为 provenance gap）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-8",
+    "实际行": "Kenny",
+    "引文准确性": "APIM",
+    "上下文忠实度": "SRM",
+    "分析是否成立": "Cook, W` —— **零命中**。也就是说这份 1462 行的关系科学主报告**从未引用 SRM/APIM/Kenny**，却下了「状态必须建成有向边」的结构性结论。**O-8 应从「overclaim」重新归类为「缺 provenance 的结构性主张」——问题真实，标签错了。**"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 142,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C58",
+   "source_report": "同上 `:50`",
+   "verdict": "`PLAUSIBLE`（把批评从「实质经验主张」收窄为「`findings` 标签」）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-9",
+    "实际行": "**50** ✓",
+    "引文准确性": "✓ 逐字（省略了分号后的其余三项裁决）",
+    "上下文忠实度": "**未提**：同文件 L103「凡是我无法确证具体效应量的地方，只给『量级/方向 + 分级』，不编造精确相关数」、L1240「仍属 research proposal，**不是冻结规范**」",
+    "分析是否成立": "**部分成立。** 「无任何数据」成立。但「**与已发表维度方案不一致**」是 non-sequitur：L50 主张的是「哪些候选能作为 **primitive 存活**」，不是「关系科学有几个维度」，两者不同层。**唯一可辩护的批评是 L0.3 的小节标题叫「顶层 findings」**——对无数据裁决用 findings 标签，这才是真的措辞问题"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 143,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C59",
+   "source_report": "同上 `:1440`",
+   "verdict": "`CONTESTED`（Crossref 部分 VERIFIED；上游 CDPS 原文 NOT_OPENED；「STAGE_SUMMARY 写 72–89」= 不成立；行号 1440→1438）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-10",
+    "实际行": "**实际在 1438**（L1440 是「依恋」条目）",
+    "引文准确性": "✓ 逐字（但截断了同句后半）",
+    "上下文忠实度": "**不忠实**：同句后半被删——「具体文献细节请在外部库核对（例如 `C`＝contested、`hypothesis` 按假说处理；**本报告结论视为候选建议而非 canonical 定案**）」",
+    "分析是否成立": "**核心事实成立（我已独立验证）。** Crossref `10.1037/0022-3514.76.1.72` = JPSP 76(1), **72–89**（Fletcher/Simpson/Thomas/Giles）。而 Crossref 确认 **JPSP 76(1) 的 54–71 = Conger, Rueter & Elder「Couple resilience to economic pressure」**——报告所谓上游的「54–71」**不是随机笔误，而是落到了同一期另一篇论文的页码上**。报告称之为「上游引用错误」并说 LHRM 自己的 `STAGE_SUMMARY §5.6` 写 72–89 是对的——我核了：`STAGE_SUMMARY_2026-09-07.md:247` 只写 `Pointer: Fletcher, Simpson, Thomas & Giles (1999), DOI: 10.1037/0022-3514.76.1.72`，**根本没有页码**。「写 72–89，是对的」→ **该子断言不成立**（该文件从不写页码）"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 144,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C60",
+   "source_report": "`RELATIONSHIP_EVALUATION_FOUNDATION.md:13`",
+   "verdict": "`PLAUSIBLE`（降级：历史 draft 的措辞问题，不是 canonical 定位问题）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-11",
+    "实际行": "**13** ✓",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提**：该文件 L3「**Status:** Research draft v0.1.1」、L5「**Nature:** 研究框架，**不是对 Human 当前状态的事实断言**」、L7「migrated from `youling/an`…**retained as historical evidence**」",
+    "分析是否成立": "**成立但语境缺失。** 「精妙/优雅」确实是不可证伪的价值判断。但把一份**自我标注为 draft + 历史证据的迁移文件**称作「项目定位句」并与 canonical 并列，超出了该文件的地位。`README.md:57` 明确把它列为「早期关系评价坐标系研究稿」"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 145,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C61",
+   "source_report": "`RELATIONSHIP_EVALUATION_FOUNDATION.md:22`",
+   "verdict": "`WRONG-SCOPE`",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-12",
+    "实际行": "**实际在 23**（L22 是「角色与状态分离」）",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提两处关键上下文**：(a) 同文件 L59/L207 已自加阶段门控（「不应提前把完整的 E 当成主要评价层」「`D`、`E` 在尚未成立时不能用想象值补齐」）；(b) **`CURRENT_ARCHITECTURE.md:8` 有明确的冲突优先级规则**：「旧的阶段总结继续保留作历史 provenance，但发生冲突时以 Human 当前方向、GitHub 最新 durable ruling 与本文件的 current snapshot 为准」",
+    "分析是否成立": "**「历史事实与该句冲突」定性错误。** 项目**已经**用一条明文规则处理了这个「新旧不一致」，所以这不是矛盾，是**有记录的 supersession**。报告把它当成活矛盾。另外「Candidate Minimal Directed Basis **已经历缩减**」——我在 `PARAMETER_CONVERGENCE_V0_1.md` 中**找不到**任何缩减记录；§11 直接给出 8 个（§16 还说「最有价值的不是『终于凑出八个参数』」）。**该子断言无据。** 结论：行号错 + 定性错 + 子断言无据"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 146,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C62",
+   "source_report": "`RELATIONSHIP_EVALUATION_FOUNDATION.md:150`",
+   "verdict": "`WRONG-SCOPE`",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-13",
+    "实际行": "**150** ✓",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "未提：源句用「**可能**形成」",
+    "分析是否成立": "**不成立。** 见 H-C31：(a) 「可能」= 可能性/机制多样性命题，不是效应量命题；(b) Joel et al. 2020 的原命题是「自陈关系特异判断解释 45% 满意度，partner 判断与个体差异**不增加信息**」——这是**自陈预测增量**结论，不是「人口学/客观状态变量几乎无预测力 ⇒ E 层无因果强度」。**报告把方法学/测量限制读成了 ontology 反例。** 这是契约 §6.2 明令要防的那一类滑动"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 147,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C63",
+   "source_report": "`STAGE_SUMMARY_2026-09-07.md:317`",
+   "verdict": "**`WRONG-SCOPE`**",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-14",
+    "实际行": "**317** ✓（引导句在 315）",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提同一文件 §6（30 行之上）**：「以下只是 **novelty hypotheses**，尚不能声称学术原创成立」（L265）+「是否构成真正贡献，**必须等后续文献综述、形式化定义、实证验证和与现有框架直接比较以后判断**」（L273）",
+    "分析是否成立": "**不成立，且报告自相矛盾。** §7 总评自己写着「项目在研究纪律层面（…**STAGE_SUMMARY §6 的「只是 novelty hypotheses」**）明显高于一般开源项目」——**它知道 §6 的护栏，然后仍然把 §8 的论文提纲列为 overclaim。** 报告对 §4「LLM 交互式测量」的核实是对的（`STAGE_SUMMARY:166–201` 确为「LLM 应用方向（**暂不冻结 UI**）」「**未来**一个重要形态」），但把这一点用来指控 §8 是推论过头"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 148,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C64",
+   "source_report": "`STAGE_SUMMARY_2026-09-07.md:327`",
+   "verdict": "`WRONG-SCOPE`",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-15",
+    "实际行": "**327** ✓",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提**：同句前半是「**当前最稳的方向不是**继续发明更多术语，而是：」，§6 L273 的护栏，以及 `README.md:57` 把该文件列为「历史阶段 checkpoint」",
+    "分析是否成立": "**两处问题。** ①「暗示**已可验证**」把方向陈述读成状态陈述（同 O-2/O-4 模式）。②「这是 **README 层**的 overclaim」——**STAGE_SUMMARY 不是 README**；`README.md:56` 明确写「`docs/foundation/STAGE_SUMMARY_2026-09-07.md` — 历史阶段 checkpoint」。**文件层级被报告写错了**"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 149,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C65",
+   "source_report": "`AGENTS.md:21` vs `README.md:5`",
+   "verdict": "`PLAUSIBLE`（从「自相矛盾」降为「措辞不对称」）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-16",
+    "实际行": "**21 / 5** ✓ 均逐字",
+    "引文准确性": "✓ 逐字",
+    "上下文忠实度": "**未提**：`README.md:7`「再由下游任务选择是否做**距离、预测、仿真**或决策」+ `README.md:121`「未经真实数据校准的参数、权重、概率、距离与转移公式**不得表述为已验证预测模型**」",
+    "分析是否成立": "**方向对，措辞错。** 「**自相矛盾**」过重——README 自己在 L121 复述了 AGENTS 的规则，说明规则**已经**反向约束了 README 措辞。剩下的真实问题只是 L5 一句话没带状态标记"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 150,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "# | claim_id | 文件:行（报告声称） | 实际行 | 引文准确性 | 上下文忠实度 | 分析是否成立 | verdict"
+   },
+   "claim_id": "H-C66",
+   "source_report": "`PARAMETER_CONVERGENCE_V0_1.md:497-501`",
+   "verdict": "`VERIFIED`（并建议 Architect 把 O-17 当作其余各行的改写范本）",
+   "claim": "",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "",
+   "_extra_columns": {
+    "#": "O-17",
+    "实际行": "**497–501** ✓（引文在 497/499/501）",
+    "引文准确性": "✓",
+    "上下文忠实度": "—",
+    "分析是否成立": "**成立，而且这是 O 组唯一一条完全诚实的行。** 报告自己写「措辞正确」「措辞陷阱，不是文档错误」。我核了 L499「当前：`REJECT as primitive`。」+ L501「允许未来作为 task-specific readout，不进入 ontology。」——**完全同意。** 值得单独指出：**O-17 的存在说明报告作者有能力做公平判断，因此 O-2/O-3(a)/O-4/O-5/O-12/O-13/O-14 的问题不是方法论缺陷，是执行不一致**"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 156,
+    "section": "R2 Review Packet — Lane `H`（paper positioning / novelty） / 8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "table_header": "claim_id | claim | verdict | 支撑 | 反证 | 其余字段"
+   },
+   "claim_id": "H-C49",
+   "claim": "**17 条 O-row 的引文准确性整体**",
+   "verdict": "**`CONTESTED`（12 : 5）**",
+   "supporting_refs": "我逐条打开被引文件比对",
+   "strongest_counterevidence": "**12 条行号或事实有误**：O-3(a) 括号（**假的**）、O-3(c) 行号 204→200、O-5「Gate C 明确 PENDING」（**全 `docs/foundation/` 无此字符串**）、O-10 行号 1440→1438 + 「STAGE_SUMMARY 写 72–89」（**该文件从不写页码**）、O-12 行号 22→23。**4 条定性错误（读目标句为状态句）**：O-2、O-4、O-14、O-15。**2 条引用截断（删掉同句护栏）**：O-5、O-10。**1 条分析不成立**：O-7 的「一一对应」。**5 条成立/基本成立**：O-1、O-8（标签需改）、O-9（需收窄）、O-11、O-16（措辞需降级）、O-17",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "recommendation_to_architect": "**`RECLASSIFY_AS_METHOD_LIMIT`**：**逐条重写后再交 Architect。** O-2/O-3/O-4/O-5/O-12/O-13/O-14/O-15 这 8 行**不应以现状进入任何 durable 文档**；O-3(a) 必须撤回。**O-1/O-8/O-9/O-11/O-16 保留但降级措辞；O-6 升级为唯一的 canonical-content 变更候选；O-10 只保留 Crossref 结论；O-17 保留原样**",
+   "_composite_raw": "NO · NO · NONE · **`RECLASSIFY_AS_METHOD_LIMIT`**：**逐条重写后再交 Architect。** O-2/O-3/O-4/O-5/O-12/O-13/O-14/O-15 这 8 行**不应以现状进入任何 durable 文档**；O-3(a) 必须撤回。**O-1/O-8/O-9/O-11/O-16 保留但降级措辞；O-6 升级为唯一的 canonical-content 变更候选；O-10 只保留 Crossref 结论；O-17 保留原样**",
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 57,
+ "field_coverage": {
+  "claim_id": 57,
+  "claim": 40,
+  "source_report": 40,
+  "verdict": 57,
+  "supporting_refs": 39,
+  "strongest_counterevidence": 40,
+  "requires_canonical_change": 40,
+  "needs_experiment_or_data": 40,
+  "duplicate_of": 40,
+  "corroboration": 3,
+  "recommendation_to_architect": 40
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "tables_accepted": 9,
+  "rows_with_cell_repair": 3,
+  "rows_with_cell_repair_ids": [
+   "H-C10",
+   "H-C25",
+   "H-C57"
+  ],
+  "composite_columns_split": 24,
+  "composite_columns_unparsed": 0,
+  "in_scope_sections": [
+   "3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+   "4. `verdict_matrix` — B 组：7 条新颖性候选",
+   "5. `verdict_matrix` — C 组：20 条禁止主张清单",
+   "6. `verdict_matrix` — D 组：审稿攻击面",
+   "7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+   "8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+    "line_start": 41,
+    "line_end": 71
+   },
+   {
+    "title": "4. `verdict_matrix` — B 组：7 条新颖性候选",
+    "line_start": 72,
+    "line_end": 91
+   },
+   {
+    "title": "5. `verdict_matrix` — C 组：20 条禁止主张清单",
+    "line_start": 92,
+    "line_end": 102
+   },
+   {
+    "title": "6. `verdict_matrix` — D 组：审稿攻击面",
+    "line_start": 103,
+    "line_end": 115
+   },
+   {
+    "title": "7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+    "line_start": 116,
+    "line_end": 126
+   },
+   {
+    "title": "8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+    "line_start": 127,
+    "line_end": 159
+   }
+  ]
+ },
+ "files_audited": "### [line 10] 1. `files_audited`\n| 文件 | bytes | lines | 我实际读到的范围 |\n|---|---|---|---|\n| `docs/research/overnight-2026-09-27/14_PAPER_POSITIONING_NOVELTY.md` | 55,998 | 412 | **全文 L1–412**（用 `read` 分 4 段 + 脚本统计） |\n| `AGENTS.md` | 5,718 | 70 | 全文 |\n| `README.md` | 4,594 | 121 | 全文 |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 9,649 | 361 | 全文 |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | 18,510 | 780 | 全文标题索引 + L30–179 + L460–524 + L700–780（O-5/O-6/O-17 所需） |\n| `docs/foundation/RELATIONSHIP_EVALUATION_FOUNDATION.md` | 9,756 | 364 | L1–30 + L143–156（O-11/O-12/O-13 所需） |\n| `docs/foundation/STAGE_SUMMARY_2026-09-07.md` | 12,094 | 329 | 全文标题索引 + L166–207 + L240–279 + L300–329 |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 7,862 | 270 | 仅 grep（重复性检查，专项 4） |\n| `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md` | 118,198 | 1,462 | 标题/grep 索引 + L24–53 + L100–144 + L1431–1462（O-7/O-8/O-9/O-10 逐字核对**必须**，非可选） |\n| `docs/foundation/PROJECT_HISTORY_2026-09-10.md` | 17,475 | 686 | **未读**（本 lane 未发现需要） |",
+ "coverage_statement": "### [line 25] 2. `coverage_statement`（必读）\n**我实际打开并逐字核对的：**\n- 报告 `14` 的全部 17 条 O-row 所引用的 5 个项目文件（README / CURRENT_ARCHITECTURE / PARAMETER_CONVERGENCE / RELATIONSHIP_EVALUATION_FOUNDATION / STAGE_SUMMARY）以及 O-7–O-10 所引的 `RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md`。\n- 联网复核 9 项承重引用（详见 §7 `packet_sha_note`）。\n\n**我明确没有打开的：**\n- `docs/validation/VALIDATION_CORPUS_V0_1.md` 与 `docs/validation/fixtures/`。→ 报告 F-3、O-5、§5.C3、§5.D3 依赖该文件的引文（尤其「None of the 12 includes any mapping result」「2026-09-11 live-fetch 核实日志」「敏感内容筛选」），我**无法核实**，全部标 `NOT_OPENED`。**这是本 lane 最大的覆盖缺口。**\n- 报告 §2.2 的 M-QoRS / RQ 两行、§2.3 的 6 篇 LLM×关系竞争工作、§2.1 的 ABM 行（Hills & Todd / Billari / NZ marriage market）、§2.1 的 Cook & Messick / Messick / Trochim / Sternberg / Spanier / Lund、§3 NC-1(b) Persons & Tompson 2018、NC-5 的 Gelfond *numbers*、§3/§4 的 `arXiv 2511.10457 / 2406.17675 / 2403.06607 / 2506.16697 / 2507.04491`、§4 的 Masopustová 2025 / Sakaluk 2025 / Bloomberg-Joel-Eastwick、§2.4 ATOMIC 2020 的「GPT-3 低 12 个百分点」：全部 `NOT_OPENED`。\n\n**独立性事故，必须披露（两处）：**\n1. 我为核对 O-7/O-8/O-9/O-10，对 `docs/research/` 目录做了一次 `grep`（pattern 含 `PENDING|Fletcher|Kenny|APIM|SRM|MSC`）。`grep` 工具按目录递归，**返回结果中包含了属于其它 lane 的 overnight 报告的匹配行**——涉及 `01`、`02`、`02b`、`09`、`10`、`11`、`12`、`13`、`16`、`17`、`19`、`A03` 的**片段行**。我**没有**把这些片段当作任何 verdict 的依据；本 packet 中所有 verdict 的证据链只来自 (a) 报告 14 本身、(b) 我打开的项目文档、(c) 我自己联网复核的 9 项来源。**但这确实削弱了我对「跨 lane 冲突」类判断的独立性**：如果 parent 需要一个完全未受 02/10/12 等影响的 H lane，本 packet 的 O-段与 REUSE-段可用，涉及「与其它 lane 是否冲突」的判断不可用。\n2. 同一 `grep` 顺带返回了 `docs/research/RESEARCH_REPORT_GAME_RELATIONSHIP_PRIMITIVES.md` 与 `RESEARCH_REPORT_REAL_WORLD_PROXY_DECOMPOSITION.md` 的片段。这两份**不在**我的授权集内，我未将其作为任何 verdict 的支撑；仅在 H-C24 里用它确认了「126 条」这个数字的**出处位置**（`REAL_WORLD_PROXY_DECOMPOSITION.md:91`「共 **126 条**」），这一点我标为 `PLAUSIBLE` 而非 `VERIFIED`。\n\n---",
+ "top_recommendations": "### [line 248] 10. `top_recommendations`（7 条，按对 Architect 的重要性排序）\n1. **`REJECT` 报告 §9.1 与 §9.2 的两项「最高优先未核实 prior art」——两者极可能都是不存在的引用。** `Acitelli & Antonioni (2006)`（JPSP 90(6)「三十维」）：Crossref 该期无此文，真人姓氏是 **Antonucci**；`Boyd & Heewer (2007)`：Crossref `query.author=Heewer` = **0 results**，且 *Communication Theory* 17(1) 的 4–25 页属 Descombes 与 Malabou。**这两项被列为「决定新颖性判断的最大单一变量」却零证据，且被四处承重。** 在补出真实先例之前，Architect 不应把任何资源投入「补验这两个 DOI」，而应**把它们从 prior-art 表中删除**。（`H-C24`、专项 9.1-1/2）\n\n2. **`RECLASSIFY_AS_METHOD_LIMIT` 撤回 Lalk et al. (2025) 的全部用法，并把它改成对 LHRM 有利的证据。** 报告写「从治疗会谈转录抽 28 类情绪」——**原文是 GoEmotions 28 类公开数据集→翻译德语→fine-tune 预训练 LLM→应用于 reddit 心理治疗评论**；更关键，**该数据集的人类标注一致性本身就是 κ=.331–.468，模型的 .42 达到而非低于天花板**。F-6/F-16/§2.5「现有最强多类抽取上限 = κ=.42」不成立。**正面含义：任何 8×2 坐标方案都会撞上一个与 LLM 无关的标注天花板——这使 M2「人类基线先行」从可选项变成必选项。**（`H-C26`）\n\n3. **`RECLASSIFY_AS_METHOD_LIMIT` 撤回并重写 O-3(a)、O-5、O-10、O-12、O-13、O-14、O-15 共 7 条 O-row，O-2/O-4 降级改写。** 逐条错误已定位：`O-3(a)「括号不匹配」是假的（2 开 2 闭）`、`O-3(c) 行号 204→200`、`O-5「Gate C 明确 PENDING」在 `docs/foundation/` 中不存在`、`O-10 行号 1440→1438 且「STAGE_SUMMARY 写 72–89」不成立（该文件从不写页码）`、`O-12 行号 22→23 且项目已有 `CURRENT_ARCHITECTURE.md:8` 的冲突优先级规则`、`O-13` 与 `O-14`/`O-15` 把目标/方向陈述读成能力/验证陈述。**O-3(a) 是最需要撤回的一条——它是一条可以在任何学术会议现场被当场证伪的指控。** 以 **O-17**（报告自己标「措辞正确，不是文档错误」）为范本重写其余各行。（`H-C49`、专项 9.3）\n\n4. **`ACCEPT_AS_PROPOSAL` 把 Kim et al. (2026, `10.1371/journal.pone.0342451`) 补进 §2.2 与 §5.A，并据此重排 M6/M7。** 34 个常用关系量表、N=3,439、预注册 EBFA：**单一 general factor 吃掉「vast majority of common variance across distinct relationship measures」**，作者称之为 relationship-specific **response bias**。两个后果：(a) F-4 从「最危险」升级为**几乎确定无法解除**（若自陈不可分，LHRM 的 8 坐标也难逃）；(b) **M6 与 M7 必须先解决一个报告没提的混淆**——若 M6 返回「一因子」，无法区分「LHRM 冗余」/「全领域自陈饱和」/「M0 判定过程吸格」，**必须引入一个非自陈锚**（Case Bank 的文本恰是项目已有资产）。（`H-C18`、`H-C30`、`H-C38`）\n\n5. **`RECLASSIFY_AS_METHOD_LIMIT` 修正三处算术/依赖问题后再引用 M 表。** ①「M0–M5 ≈ 5–7 个月」与表内估计**不符**：下限 24 周（5.5 月）、上限 38 周（8.8 月）、中点 31 周（7.1 月）——§1 BLUF 的招牌数字只覆盖表格自身的下半段。②**M2 被标「最被低估」却仍给 4–6 周**；60 份语料逐句双人独立标注 + 仲裁 + IRR + 六类本体诊断，量级应为**月**而非周，会把端到端推到 10–15 个月。③**M7 存在真正的依赖倒置**：M0–M6 没有任何一步产出 person-level 施测数据（M2 是文档级标注），M7 实际**被 M8 阻塞**，且 M7 前缺一节「坐标→题项映射」（报告 F-19 自己指出这是新工作，M 表里却没有）。（`H-C36`、`H-C37`、`H-C38`）\n\n6. **`ACCEPT_AS_PROPOSAL` 给禁止主张清单补 F-21，并合并 F-16 进 F-6。** 20 行里**没有**一行禁止把「形式化的 / 数学的表示语言」说成当前能力——而这个短语**逐字出现在 `CURRENT_ARCHITECTURE.md:18` 与 `README.md:7`**，且报告自己在 §5.E1 已把它列为**致命**。清单管住了 F-12「仿真」却没管住「表示语言」，这个不对称就是缺口。（腾出的行正好放 F-21，因 F-16 被报告自己定义为 F-6 的子集。）（`H-C27`、`H-C28`）\n\n7. **`HOLD_FOR_EVIDENCE` 在补出 4 个构念的 REUSE 行、2 个无 DOI 行、3 个百分比之前，不要引用 §1 BLUF。** 8 个有向构念里 `Liking` / `RomanticAttraction` / `SexualDesire` / `Caregiving` 在 §2.1 **零命中**；L54（E1/E2/C/M）、L55（126 词典）**无引用**；L42 的「61% / 54% 方差」我未核。**补齐这些只会加强报告的结论**（这四个构念恰恰最不可能原创），所以这是**低成本、高确定性**的修补。同时：`NC-7` 从 MEDIUM 降到 **LOW**（「我检索到的范围内是空的」不是领域空缺，且其最强反证 Lalk 已被判误述），`NC-5` 从 MEDIUM 降到 **LOW** 作科学新颖（报告自认「是设计立场不是科学发现」却仍给 MEDIUM）。（`H-C17`、`H-C24`）\n\n---",
+ "explicit_non_claims": "### [line 266] 11. `explicit_non_claims`（我明确不主张什么）\n1. **我不主张 LHRM 优于或劣于任何现有工具、量表、框架。** 本 packet 对 `AGENTS.md`/`README.md`/`docs/foundation/*` 的一切陈述都是**文本层面**的核对，不含任何关于模型质量、构念效度或表示能力的判断。\n\n2. **我不主张 `Acitelli & Antonioni (2006)` 与 `Boyd & Heewer (2007)` 一定不存在。** 我主张的是：**在 Crossref（作者检索 + 该刊该年该卷期 TOC）与一次精确题名 websearch 中均不可定位**；报告把它们当作「最高优先 prior-art」并四处承重，这个做法本身缺乏证据基础。**不排除**存在同名/近名作者或不同出处的真实论文（我未能穷尽非 Crossref 来源）。**判定为 `UNSUPPORTED`，不是「已证伪」。**\n\n3. **我不主张 LHRM 文档存在 overclaim 的「实质错误」。** 我核对了 17 条 O-row：**没有任何一条项目原话是事实性虚假陈述**。我的结论是相反方向的——**项目的 canonical 文档在措辞上比报告描述的更受控**（`CURRENT_ARCHITECTURE.md:8` 的优先级规则、`:269` 的「尚未冻结」、`PARAMETER_CONVERGENCE_V0_1.md:703` 的「不因写进本文自动升级为 validated ontology」、`STAGE_SUMMARY_2026-09-07.md:265/273` 的 novelty-hypotheses 护栏、`RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md:1240` 的「不是冻结规范」、`AGENTS.md:21` 的不得标签化规则）。**报告的问题是对这些护栏视而不见。**\n\n4. **我不主张 `ParamETER_CONverGENCE` 的 §2 判据「不可操作」这一整条判断。** 我主张的是**报告以偏概全**：6 条里 2.2 / 2.5 / 2.6 有明确判定程序，L86 还指定了执行场合。**是否把六条全部操作化是一个 Architect 的设计决定，不是我在这里能裁定的。**\n\n5. **我不主张 `docs/validation/VALIDATION_CORPUS_V0_1.md` 或 `docs/validation/fixtures/` 的任何内容。** 该文件不在我的授权集内。F-3、O-5、§5.C3、§5.D3 依赖它的三处引文我全部标 `NOT_OPENED` / `PLAUSIBLE`，**包括「12 份中无任何 mapping result」与「2026-09-11 live-fetch 日志」这两条被当作事实使用的陈述**。这是本 lane 最大的覆盖缺口，需由 lane I 或 Architect 补。\n\n6. **我不主张我在 `docs/research/` 的那次递归 grep 之后仍对跨 lane 冲突有完全独立性。** 检索返回了属于 `01/02/02b/09/10/11/12/13/16/17/19/A03` 的片段行（见 §2）。**本 packet 的 O-段与 REUSE 段结论全部只依赖报告 14 + 项目文档 + 我自己联网复核的 9 项来源，因此不受影响；但若 parent 需要「与其它 lane 是否矛盾」的判断，本 packet 不可用作独立票。**\n\n7. **我不主张报告遗漏的 prior art 清单是完备的。** 我只提出两条我能打开并核实其存在的：**Kim et al. (2026)** 与 **Kim et al. 引用的「26 个关系质量量表内含 25 个不同面向」那篇分析**。我在 §4 里另外列出的「State≠Action」「Cohesion/We-ness」「ValueCongruence/GoalAlignment」「Boundary/Exclusivity」四个 REUSE 缺口是**基于报告自身 §10 参考文献表已列出的先例**（Michelangelo phenomenon、Drigotas et al. 1999、Visserman et al. 2022、Montoya/Horton/Kirchner similarity-attraction）**做出的结构性观察**，我**没有**为它们补 DOI，因此它们是**缺口提示，不是已证实的 REUSE 行**。\n\n8. **我不主张 LHRM 的新颖性判断为负。** 报告的 `status: novelty NEGATIVE_RESULT` 与我核实的证据方向一致，但我**不主张新颖性已被证明不存在**——我只主张：**报告用来证明否定的那几条最承重的引用里，有两条是幻影、一条被误述、一条书目错误。** 承重被削弱 ≠ 结论被推翻。\n\n9. **我不主张 `M0–M9` 的任何一个时间估计是「错的」。** 我主张的是**内部一致性**：M0–M5 的逐项区间之和（24–38 周）落在报告自己给的端到端数字（5–7 个月）之外；M2 的量级与「4–6 周 + 被试时间」不相容；M7 的输入不在 M0–M6 的产出里。**这是算术与依赖图问题，不是对工作难度的判断。**\n\n10. **我不主张 PRQC / Sternberg / Reis&Shaver / Granic & Hollenstein / Rusbult 1998 / Le&Agnew / Tran / Neubauer / ABM 三篇 / Zhang 2024 / QualiGPT / Persons & Tompson 2018 / Gelfond / `arXiv 2511.10457` 等的引用内容有误。** 我**没打开**它们。我只对 9 项做了独立复核（见 §12），其余一律 `NOT_OPENED`。\n\n---",
+ "provenance_note": "### [line 290] 12. `packet_sha_note`（读了哪些源、各自的核实方式）\n### A. 项目内文件（全部只读，零写入）\n| 源 | 核实方式 |\n|---|---|\n| `D:\\coding\\lhrm\\AGENTS.md`（70 行） | `read` 全文 |\n| `D:\\coding\\lhrm\\README.md`（121 行） | `read` 全文 |\n| `docs/foundation/CURRENT_ARCHITECTURE.md`（361 行） | `read` 全文 + `bash` 逐字符 dump L203 括号位置 |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`（780 行） | `read` 分段（L30–179 / L460–524 / L700–780）+ `bash` 标题索引 + `grep` 搜 `PENDING` |\n| `docs/foundation/RELATIONSHIP_EVALUATION_FOUNDATION.md`（364 行） | `read` L1–30 / L143–156 |\n| `docs/foundation/STAGE_SUMMARY_2026-09-07.md`（329 行） | `read` L166–207 / L240–279 / L300–329 + `bash` 标题索引 |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md`（270 行） | `grep`（重复性检查） |\n| `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md`（1462 行） | `read` L24–53 / L100–144 / L1431–1462 + `grep`（O-7–O-10 逐字核对所必需） |\n\n### B. 联网复核（契约 §3 允许的抽样复核，逐项记录）\n| # | 源 | 方式 | 结果 |\n|---|---|---|---|\n| 1 | Eberhardt et al. (2025), *Scientific Reports* 15:29541, `10.1038/s41598-025-14923-y` | 打开 `nature.com/articles/s41598-025-14923-y` 摘要 | **VERIFIED_BY_ME**：1,131 sessions / 155 patients；Llama 3.1 **8B**；120 items → top 8；ω=.953, CFI=.968, SRMR=.022, **RMSEA=.108**；r=.413 / .390 / −.304。报告全部数字正确；**报告漏了「8B 模型」与「单维」这两个限定的一半** |\n| 2 | Lalk et al. (2025), *Frontiers in Psychiatry*, `10.3389/fpsyt.2025.1504306` | 打开全文页 + `bash` 正则抽取上下文 | **数字 VERIFIED_BY_ME**（F1macro=.45 / Acc=.41 / Kappa=.42 / 28 emotions / r=.50）；**任务描述 = WRONG-SCOPE**（GoEmotions 公开集→德语翻译→fine-tune→reddit 评论；参照标准人类 κ=.331–.468） |\n| 3 | Joel et al. (2020), *PNAS* 117(32), `10.1073/pnas.1917036117` | PNAS 403 → 改用 escholarship / UMich PDF / ResearchGate 摘要，**三条独立来源摘要一致** | **VERIFIED_BY_ME**：45% / partner 无增量 / 无法预测变化方向；actor 45% vs partner 15% |\n| 4 | Fletcher, Simpson, Thomas & Giles (1999), `10.1037/0022-3514.76.1.72` | `api.crossref.org/works/10.1037/0022-3514.76.1.72` | **VERIFIED_BY_ME**：JPSP 76(1), **72–89**（报告 O-10 的 Crossref 主张正确） |\n| 5 | Fletcher, Simpson & Thomas (2000) PRQC, `10.1177/0146167200265007` | `journals.sagepub.com/doi/pdf/...` 摘要 + Experts@Minnesota 书目 | **VERIFIED_BY_ME**（六一阶 → 一个二阶；higher-order CFI=.92 vs 单因子 CFI=.61）。**并发现报告自身书目错误**：报告 §10 L356 写「PSPB, 25(4), 429–441」，**实际为 26(3), 340–354** |\n| 6 | Acitelli & Antonioni (2006) | (a) `api.crossref.org/journals/0022-3514/works` 2006-06（total-results 5，无 Acitelli）；(b) 书目检索 Acitelli+Antonucci 2005–2007；(c) websearch | **UNSUPPORTED**（不可定位） |\n| 7 | Boyd & Heewer (2007) | (a) `api.crossref.org/journals/1468-2885/works` 2007（58 条，17(1) 页码归属可判定）；(b) `query.author=Heewer` → **0**；(c) 精确题名 websearch | **UNSUPPORTED**（不可定位） |\n| 8 | Kenny (2018), `10.1111/pere.12240` | `api.crossref.org/works/10.1111/pere.12240`（含 abstract 字段） | **VERIFIED_BY_ME**：「has become the **default method** for analyses of dyadic data」；Personal Relationships 25(2), 160–170 |\n| 9 | Kim et al. (2026), *PLOS One* 21(4):e0342451, `10.1371/journal.pone.0342451` | 打开 `journals.plos.org` 全文页 | **VERIFIED_BY_ME**（本 lane 新增的关键 prior art，报告完全未收录） |\n\n### C. 检索到但**故意不用作 verdict 依据**的（披露）\n- `uwo.scholaris.ca` 的 Bloomberg/Joel/Eastwick poster（p-curve）——只在 websearch 片段中出现，我**没有打开**；因此 §5.A3 的 p-curve 支撑仍标 `NOT_OPENED` / `PLAUSIBLE`。\n- `docs/research/RESEARCH_REPORT_GAME_RELATIONSHIP_PRIMITIVES.md` 与 `RESEARCH_REPORT_REAL_WORLD_PROXY_DECOMPOSITION.md` 的递归 grep 片段（见 §2 事故 2）。\n\n### D. 明确**未**联网复核的（`NOT_OPENED` 清单，见 §2）\n报告 §2.2 的 M-QoRS / RQ、§2.3 的 6 篇 LLM×关系工作、§2.1 的 ABM 三篇与 Cook&Messick/Messick/Trochim/Sternberg/Spanier/Lund、§3 的 Persons & Tompson 2018 / Gelfond / `2511.10457`、§4 的 Masopustová 2025 / Sakaluk 2025 / Bloomberg、`§2.4` 的 ATOMIC 2020「12 个百分点」、`arXiv 2406.17675 / 2403.06607 / 2410.07362 / 2506.16697 / 2507.04491 / 2510.00414 / 2512.11844 / 2506.03543 / 2505.11715 / 2601.10970` —— **一律未打开**。\n\n### E. 修改记录\n**对 `D:\\coding\\lhrm` 的写入：0。** 本 packet 是本 lane 唯一产物，写入 `C:\\Users\\gg828\\AppData\\Local\\Temp\\opencode\\lanes\\R2_H.md`。",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "9.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 162,
+   "answer": "| 编号 | 单点支撑的结论 | 我检索了什么、为什么仍是单点 |\n|---|---|---|\n| 1 | **「Acitelli & Antonioni (2006) 三十维方案是最高优先 prior-art」**（§9.1） | **这是本 lane 最重要的单点推测，而且我认为它是错的。** 依据：(a) Crossref 列出 JPSP 2006 年 6 月全部 5 条，`10.1037/0022-3514.90.6.*` 只有 De Dreu / Madon / Lowery / Marcus / Wood(correction)——**无 Acitelli**；(b) Crossref 书目检索 Acitelli+Antonucci 2005–2007 只返回 PsycEXTRA 数据集条目，**无 JPSP 论文**；(c) 真人作者是 **Antonucci**（T. C.），**「Antonioni」是电影导演姓氏**。→ **判定：该引用极可能不存在。** 报告却把它列为「决定最小充分基新颖性判断的**最大单一变量**」并要求 A04 优先补验。**这是 Architect 注意力被浪费在一个幻影上的具体案例。** |\n| 2 | 「Boyd & Heewer (2007) 是否为 LHRM 立场来源」决定「representation over prediction」可否作原创主张（§9.2） | 同上，证据更强：Crossref `query.author=Heewer` → **0 results**；*Communication Theory* 2007 vol 17(1) 页码已被 Descombes(4–15) 与 Malabou(16–25) 占满。**判定：同属幻影。** 这条 prior art 被用在 §2.1 L49（REUSE 行，严重度中）、§3 NC-1(d)、§3 NC-3、§9.2 —— **四处承重，一处都不该承重。** |\n| 3 | 「Bloomberg / Joel / Eastwick，partner effects 的 p-curve 不符合」支撑 A3「方向性经验基础比 LHRM 需要的更弱」 | 报告 §10 自标 `UNVERIFIED_DOI`。我**没有**打开。我在一个网络检索片段里看到 Western 的一份 poster（`uwo.scholaris.ca`）确实做了 p-curve 且结论方向一致——**但 poster 不是同行评议文献**，且我没有打开它。→ A3 这条反证目前**单点且载体偏弱**。 |\n| 4 | 「现有最强实证是 κ=.42」→ 推出「LLM 抽多类关系语义上限低」 | 单点 = Lalk 一篇。且我对该篇的任务描述与统计参照都判为 `WRONG-SCOPE`（H-C26）。**这是全报告被引用最广的单点论断，且它是错的。** |\n| 5 | 「8 个有向构念全部是 REUSE」 | 单点 = §2.1 的 16 行表，而其中 4 个构念零命中（H-C17）。 |\n| 6 | 「MSC 五条 = 构念效度五检的重写」 | 单点 = 报告自述的 `AGENT_RECALL`，无 DOI，且我判定其映射不成立（H-C11）。 |\n| 7 | 「E1/E2/C/M = GRADE/NIH 惯例」「126 词典 = construct dissection 传统」 | 两行**完全没有引用**。 |"
+  },
+  {
+   "index": 2,
+   "heading": "9.2 哪些是方法学/访问限制而非 ontology 发现（被误读为「项目缺陷」的）",
+   "line_start": 174,
+   "answer": "**报告处理得好的部分（应明确表扬）：** §8 的 12 条非主张（尤其第 3/4/5/6/7 条：不主张任何覆盖率数字、不主张 8 维最小充分、不主张因果/内效度/不变性/跨文化效度、不主张 LLM 一致度构成验证、不主张 Case Bank 可支持总体结论）**是本 lane 最专业的部分**，与契约 §6.2 完全一致。F-4/F-5/F-7/F-9/F-10/F-13/F-14 也都是正确地把「方法限制」标为**禁止主张的条件**，而不是标为「模型错了」。\n\n**但有 5 处发生了滑动：**\n\n| # | 被误读的项 | 「哪一层对，哪一层被误用」 |\n|---|---|---|\n| 1 | **O-13** | ✅ 对：Joel et al. 2020 证明**自陈关系特异判断承载了绝大部分关系质量的可预测方差**。❌ 被误用：把它读成「E 层因果强度的反例」（ontology 结论）。这是**测量/预测层**结论被当成**本体层**反例。 |\n| 2 | **§5.A3** | ✅ 对：partner 报告不提供增量预测。❌ 被误用：升级为「文献中最不可靠的那一半」。partner 侧**测量存在且有信息**（perceived-partner commitment 是 top predictor）——「无增量」≠「不可靠」。 |\n| 3 | **O-2 / O-4 / O-15** | ✅ 对：canonical 里没有形式化、没有 transition operator、没有验证。❌ 被误用：这些是**项目当前状态的事实**（这正是 M0–M9 要解决的），报告却写成**文档措辞的缺陷**（\"被写成已存在的对象\"）。**「零验证」是状态，不是 overclaim。** |\n| 4 | **H-C17（4/8 构念无 REUSE 行）** | ✅ 对：liking/attraction/desire/careging 的先验确实存在。❌ 被误用：这被写成「本报告已逐条有 DOI 地证明 8/8」。**证据强度被报告自己抬高了一档。** |\n| 5 | **H-C26（Lalk）** | ✅ 对：κ=.42 / F1=.45 / Acc=.41。❌ 被误用：(a) 任务被改写（fine-tuned 分类器 on GoEmotions→德语→reddit 评论 ≠ 从治疗会谈转录抽 28 类情绪）；(b) 参照标准的**人际一致性本身就是 κ≈.33–.47**，.42 是**达到天花板**而非低于；(c) 由此得出的「LLM 不可靠」是**方法学限制**被读成了**能力上限**。 |\n\n**另一类反向的滑动（同样应记录）：** 报告把「零数据」「零实现」「无形式语义」大量写成**模型的缺陷**（§5 A1「无数据的框架论文」、E1「致命」、F-12）。**严格说这些都是环境/资源条件，不是 ontology 缺陷**——报告在 F 行的措辞（\"要成立需要 M2–M6\"）是对的，但在 A/E 组把同一件事写成模型的致命属性。建议 Architect 在引用 A1/E1 时保留「**当前项目状态**」限定语。"
+  },
+  {
+   "index": 3,
+   "heading": "9.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 190,
+   "answer": "| 报告建议 | 目标文件 | 变更性质 | `requires_canonical_change` | **是否必须停在 proposal** |\n|---|---|---|---|---|\n| **O-6**（§2 判据不可操作） | `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§2（收敛判据，L41–86）** | **canonical 内容变更**（给六条判据补阈值/统计量/判定程序） | **YES** | **必须停在 proposal。** 这是唯一一条真正超出措辞的 O-row；且它与 M0/M4 是同一件工作，不应作为独立 PR 落地 |\n| O-1 / O-16 | `README.md` L5（+ L16「当前阶段」段） | 措辞 | YES | 必须停在 proposal（README 属契约 §3 只读 canonical） |\n| O-2 | `CURRENT_ARCHITECTURE.md` L18 | 措辞 | YES | 必须停在 proposal。**但按 H-C51，该行的「问题」定性要改** |\n| O-3(b) | `CURRENT_ARCHITECTURE.md` L166/200 | 措辞 | YES | 必须停在 proposal。**O-3(a) 撤回** |\n| O-4 | `CURRENT_ARCHITECTURE.md` L232 | 措辞 | YES | 必须停在 proposal。**定性要改** |\n| O-5 | `PARAMETER_CONVERGENCE_V0_1.md` L119 | 措辞 | YES | 必须停在 proposal。**「循环论证」定性撤回** |\n| O-7 | `docs/research/RESEARCH_REPORT_SCIENTIFIC_RELATIONSHIP_PRIMITIVES.md` §2.3 | provenance 标注 | NO（该文件是历史 research report，非 canonical） | 停在 proposal |\n| O-8 | 同上 L28 / L47 | 加 SRM/APIM provenance + REUSE 语态 | NO | 停在 proposal |\n| O-9 | 同上 L50 与 §0.3 小节标题 | 「findings」→「裁决/hypothesis」 | NO | 停在 proposal |\n| O-10 | 同上 L1438 | 引用格式与行号修正 | NO | 停在 proposal |\n| O-11 / O-12 | `RELATIONSHIP_EVALUATION_FOUNDATION.md` L13 / L23 | 措辞 / 或加 superseded 标注 | YES（该文件在 `docs/foundation/`） | 必须停在 proposal。**O-12 更适合用 `CURRENT_ARCHITECTURE.md:8` 已有的优先级规则解决，而不是改历史稿** |\n| O-13 / O-14 / O-15 | — | **无需变更**（见 H-C62/63/64） | **NO** | — |\n| O-17 | — | **无需变更**（报告自己这么说） | **NO** | — |\n\n**对用户第 9 问的直接回答：**\n> 「O-row 大多是措辞而非设计」这个区分**成立，但报告的二分法太粗**。17 行里：\n> - **真正只涉及措辞**：O-1、O-2、O-3(b/c)、O-4、O-5、O-11、O-15 → 7 行\n> - **需要 provenance/标注而非措辞**：O-7、O-8、O-9、O-10、O-12 → 5 行\n> - **确实暗示 canonical 设计内容变更**：**只有 O-6 一行**（`PARAMETER_CONVERGENCE_V0_1.md` §2 六条判据要变成可操作程序）。它既不是措辞也不是架构，是**第三类：判据的操作化**——而这恰好是 M0 与 M4 已经覆盖的工作，**报告把它埋在 17 行里的第 6 行，是本 lane 排序最错的一处**。\n> - **不需要任何变更**：O-13、O-14、O-15、O-17 → 4 行"
+  },
+  {
+   "index": 4,
+   "heading": "9.4 哪些结论重复、同义或双重计数",
+   "line_start": 215,
+   "answer": "**（a）本 cluster 内部重复：**\n\n| 重复对 | 关系 | 说明 |\n|---|---|---|\n| **F-16 ⊃ F-6** | **严格冗余** | 报告自己写 F-16 的解除条件 = 「只有 F-6 那套证据组合」。F-16 无独立内容。→ 20 行实际只有 **19** 条独立禁止主张 |\n| **F-1 ≡ §2.1 L40** | 同义 | 同一 prior art（SRM/APIM，40 年）+ 同一结论，一为发现一为禁令 |\n| **F-11 ≡ B5 ≡ §2.1 L40（Kenny 2018 部分）** | 同源三点 | 「APIM is the default method」这一条**事实**在三处承重 |\n| **§2.1 L47 vs §3 NC-3** | **冲突型重复** | 「State/Observation/Belief 三分」在 §2.1 是 REUSE（高），在 §3 是候选新颖（MEDIUM-LOW） |\n| **§2.1 L51 vs §3 NC-5** | **冲突型重复** | 「拒绝预枚举状态机」在 §2.1 是 REUSE（高），在 §3 是可主张的新设计立场（MEDIUM） |\n| **§2.1 L55 vs §3 NC-6** | 同 artifact 双强度 | 126 词典：§2.1 严重度「中」，NC-6 评「MEDIUM-HIGH 作为 artifact」 |\n| **F-15 ≡ §2.1 L45+L46 的并集** | 同义 | F-15 举的「Sternberg、Fletcher PRQC、Reis&Shaver、Ideal Standards」= §2.1 L45 + L46 两条 REUSE 行的先验并集。**F-15 是这两行的元规则实例化，不是独立发现。** |\n| **F-3 ≈ F-14** | 部分重叠 | 一个禁「已受心理测量验证」，一个禁「就是最小充分基」；解除路径都是 M4 |\n| **§2.5 vs §2.1 L53** | 同源两点 | Eberhardt/Lalk/Zhang 三个数在两处各出现一次 |\n\n**`corroboration: NON_INDEPENDENT` 标注（按契约 §4 硬规则）：**\n- **Kenny 2018「default method」** → 被 §2.1 L40、F-11、B5 三次使用 → `NON_INDEPENDENT`\n- **Eberhardt 2025** → 被 §1 BLUF、§2.1 L53、§2.5、F-6、F-19 五次使用 → `NON_INDEPENDENT`\n- **Joel et al. 2020** → 被 F-5、A3、O-13 三次使用 → `NON_INDEPENDENT`（且 O-13 那次是误用）\n- **Fletcher PRQC 2000** → 被 §2.1 L45、§2.2 L61、F-15、M6 四次使用 → `NON_INDEPENDENT`\n- **SRM/APIM** → 同时支撑 §2.1 L40 与 §2.1 L47 → `NON_INDEPENDENT`\n\n> **给 parent 的强制提示：报告 §1 BLUF 的「LHRM 的 8 个有向构念全部是 REUSE……高（逐条有 DOI）」不能因为它在表里出现多次、或因为别的 lane 也这么说而升级强度。** 按上表，它的实际独立支撑是 **3 个构念专属行 + 2 个无 DOI 行 + 1 个 phantom 行**。\n\n**（b）与 canonical 现有条目的重复（专项 4 要求）：**\n- `AGENTS.md` **「Representation-first invariant」第 1、3、4、5 条** 已写明「Representation before scalarization」「Preserve raw evidence/provenance; normalization is only a computational projection」「Do not force every coordinate into `0..1`, Euclidean space, or one common semantic scale」「A coordinate may be an interval, ordinal state, category, constraint, probability distribution, Unknown, or estimate + uncertainty + evidence」。**报告 §2.1 L15（LHRM 的差异化 =「拒绝输出分数」）与 §2.3 的「唯一叙事空位：representation-first、refuse-to-score、abstain-first」**描述的**正是 canonical 已有的 invariant**。→ **这两项不是新颖性候选，是 canonical 纪律的重述**；把它们放进「唯一叙事空位」会**把项目自己的规则包装成学术贡献**——这恰恰是 F-8/F-15 禁止的行为。**建议 Architect 明确：NC-1/NC-3 的「可能新在哪」中，有一部分是 canonical invariant 的复述，必须在论文里以「we adopt X」而非「we contribute X」呈现。**\n- `AGENTS.md` **「当前架构方向」第 7 条**（`State != Action`）与第 4 条（`i->j`/`j->i` 独立、mutuality 派生）**已是 canonical 决定**。报告 §2.1 L40 与 §2.3 的「no pre-enumerated FSM」把它们列为「复用」，这**方向正确**；但报告应指出：**这些是项目已经做出的、有意识的 canonical 选择，不是待定位的主张。**\n- `PARAMETER_CONVERGENCE_V0_1.md` **§9 R1–R5** 已把 Mutuality / PowerImbalance / Satisfaction / Relationship Quality / Alignment 全部降为 Derived/Readout。**报告 F-17 的禁止主张（「power/互惠由方向性状态自动涌现」被写成结论）实际上已被 canonical 先行禁止**（L474「当前**优先假说**」）。→ F-17 是一条**重复的 canonical 纪律**，其价值在于「提醒不要在论文里越过 canonical」，不在于发现新风险。\n- **与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` 的关系**：报告**完全没有提到这份 canonical 文件**。该文件是「construct family、方向性与跨 scope 表示原则」的唯一 canonical 载体，也是 O-8「方向性主张缺 provenance」问题的**正确落点**。→ **报告的一处结构性遗漏。**\n\n---"
+  }
+ ],
+ "specialty_section": "9. 契约 §6 四项必答",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "§9.x duplicate/synonym tables and §12 A-D external recheck tables",
+    "not part of contract §5's per-claim fields"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `H`（paper positioning / novelty）",
+   "line_start": 1,
+   "line_end": 326
+  },
+  {
+   "level": 2,
+   "title": "1. `files_audited`",
+   "line_start": 10,
+   "line_end": 24
+  },
+  {
+   "level": 2,
+   "title": "2. `coverage_statement`（必读）",
+   "line_start": 25,
+   "line_end": 40
+  },
+  {
+   "level": 2,
+   "title": "3. `verdict_matrix` — A 组：17 条 REUSE / 定位主张",
+   "line_start": 41,
+   "line_end": 71
+  },
+  {
+   "level": 3,
+   "title": "A 组关键结论（H-C17）",
+   "line_start": 64,
+   "line_end": 71
+  },
+  {
+   "level": 2,
+   "title": "4. `verdict_matrix` — B 组：7 条新颖性候选",
+   "line_start": 72,
+   "line_end": 91
+  },
+  {
+   "level": 3,
+   "title": "B 组关键结论（H-C25）：报告对「novel combination」标准的防守不足",
+   "line_start": 84,
+   "line_end": 91
+  },
+  {
+   "level": 2,
+   "title": "5. `verdict_matrix` — C 组：20 条禁止主张清单",
+   "line_start": 92,
+   "line_end": 102
+  },
+  {
+   "level": 2,
+   "title": "6. `verdict_matrix` — D 组：审稿攻击面",
+   "line_start": 103,
+   "line_end": 115
+  },
+  {
+   "level": 2,
+   "title": "7. `verdict_matrix` — E 组：M0–M9 里程碑（ordering 与 cost）",
+   "line_start": 116,
+   "line_end": 126
+  },
+  {
+   "level": 2,
+   "title": "8. `verdict_matrix` — F 组：**O-1…O-17 逐条核对**（本 lane 最高价值部分）",
+   "line_start": 127,
+   "line_end": 159
+  },
+  {
+   "level": 3,
+   "title": "F 组小结（H-C49）",
+   "line_start": 152,
+   "line_end": 159
+  },
+  {
+   "level": 2,
+   "title": "9. 契约 §6 四项必答",
+   "line_start": 160,
+   "line_end": 247
+  },
+  {
+   "level": 3,
+   "title": "9.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 162,
+   "line_end": 173
+  },
+  {
+   "level": 3,
+   "title": "9.2 哪些是方法学/访问限制而非 ontology 发现（被误读为「项目缺陷」的）",
+   "line_start": 174,
+   "line_end": 189
+  },
+  {
+   "level": 3,
+   "title": "9.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 190,
+   "line_end": 214
+  },
+  {
+   "level": 3,
+   "title": "9.4 哪些结论重复、同义或双重计数",
+   "line_start": 215,
+   "line_end": 247
+  },
+  {
+   "level": 2,
+   "title": "10. `top_recommendations`（7 条，按对 Architect 的重要性排序）",
+   "line_start": 248,
+   "line_end": 265
+  },
+  {
+   "level": 2,
+   "title": "11. `explicit_non_claims`（我明确不主张什么）",
+   "line_start": 266,
+   "line_end": 289
+  },
+  {
+   "level": 2,
+   "title": "12. `packet_sha_note`（读了哪些源、各自的核实方式）",
+   "line_start": 290,
+   "line_end": 326
+  },
+  {
+   "level": 3,
+   "title": "A. 项目内文件（全部只读，零写入）",
+   "line_start": 292,
+   "line_end": 303
+  },
+  {
+   "level": 3,
+   "title": "B. 联网复核（契约 §3 允许的抽样复核，逐项记录）",
+   "line_start": 304,
+   "line_end": 316
+  },
+  {
+   "level": 3,
+   "title": "C. 检索到但**故意不用作 verdict 依据**的（披露）",
+   "line_start": 317,
+   "line_end": 320
+  },
+  {
+   "level": 3,
+   "title": "D. 明确**未**联网复核的（`NOT_OPENED` 清单，见 §2）",
+   "line_start": 321,
+   "line_end": 323
+  },
+  {
+   "level": 3,
+   "title": "E. 修改记录",
+   "line_start": 324,
+   "line_end": 326
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "§9.x duplicate/synonym tables and §12 A-D external recheck tables",
+    "not part of contract §5's per-claim fields"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,850 @@
+{
+ "child_id": "R2_E",
+ "lane": "E",
+ "cluster": "belief / partial observability / knowledge",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "block_numbered",
+ "source": {
+  "file": "R2_E.md",
+  "sha256": "b6581a07d29f168cd9f41af384a6d5e8a01e75d1444e1f486480d67eee8ab18f",
+  "bytes": 95325,
+  "lines": 586
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "E-C1",
+   "_title": "E-C1 — 07 的 claim-attribution 更正（mission 强措辞不在库内，库内是弱版本 `Computable != Certain`）",
+   "claim": "指派给 07 的第二条主张「missingness lowers certainty, not computability」在 `youling/lhrm` 仓库内**字面不存在**；项目实际持有的更弱区分性陈述是 `STAGE_SUMMARY_2026-09-07.md:162` 的 `Computable != Certain`。\n07_PARTIAL_OBSERVABILITY.md` §0 表（`:16–:29`）、§10 非主张 2（`:500`）、§13 `NEGATIVE_RESULT`（`:603`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §0 表（`:16–:29`）、§10 非主张 2（`:500`）、§13 `NEGATIVE_RESULT`（`:603`）\nVERIFIED**",
+   "verdict": "VERIFIED**\ndocs/foundation/STAGE_SUMMARY_2026-09-07.md:145–:162`（`VERIFIED_BY_ME`，我读到 `§3.5 计算结果不必强制单值` 标题 + `原则：**Computable != Certain.**`；上下文证明它是「不强制单值输出」语境下的区分性陈述，**不是**缺失性不变性主张）；`docs/foundation/PROJECT_HISTORY_2026-09-10.md:102/:108`（`VERIFIED_BY_ME`，grep 确认 `Unknown -> prior / uncertainty` 与对照项 `Unknown -> zero deviation` 并存）。全库 grep `missingness lowers|lowers certainty|not computability|可计算性` → 5 命中，**全部在 07 自己文件内**，库内 0 命中。",
+   "supporting_refs": "docs/foundation/STAGE_SUMMARY_2026-09-07.md:145–:162`（`VERIFIED_BY_ME`，我读到 `§3.5 计算结果不必强制单值` 标题 + `原则：**Computable != Certain.**`；上下文证明它是「不强制单值输出」语境下的区分性陈述，**不是**缺失性不变性主张）；`docs/foundation/PROJECT_HISTORY_2026-09-10.md:102/:108`（`VERIFIED_BY_ME`，grep 确认 `Unknown -> prior / uncertainty` 与对照项 `Unknown -> zero deviation` 并存）。全库 grep `missingness lowers|lowers certainty|not computability|可计算性` → 5 命中，**全部在 07 自己文件内**，库内 0 命中。\n我检索了 (a) 全库 `computable/Computable`（22 命中，逐条看过）；(b) 全库 `Certain/确定/可知`；(c) `CURRENT_ARCHITECTURE.md:282`「可计算范围不等于共同语义尺度」——这是**第二条** canonical 的「可计算 ≠ X」陈述，07 §0 表**未列出**。它讲的是「可计算范围 ≠ 共同语义尺度」，与 certainty 无关，因此**不推翻 E-C1**，但说明 07 的 canonical 指针清单**不完整**。另一侧证据：若 mission 原文把该句写成**设计愿望**而非**现状主张**，则 07 §6「第二个部分为假」的靶子就有 straw 成分——`NOT_OPENED`（我未读 issue），故此处只作 `UNSUPPORTED` 的软风险记录，不改判。",
+   "strongest_counterevidence": "我检索了 (a) 全库 `computable/Computable`（22 命中，逐条看过）；(b) 全库 `Certain/确定/可知`；(c) `CURRENT_ARCHITECTURE.md:282`「可计算范围不等于共同语义尺度」——这是**第二条** canonical 的「可计算 ≠ X」陈述，07 §0 表**未列出**。它讲的是「可计算范围 ≠ 共同语义尺度」，与 certainty 无关，因此**不推翻 E-C1**，但说明 07 的 canonical 指针清单**不完整**。另一侧证据：若 mission 原文把该句写成**设计愿望**而非**现状主张**，则 07 §6「第二个部分为假」的靶子就有 straw 成分——`NOT_OPENED`（我未读 issue），故此处只作 `UNSUPPORTED` 的软风险记录，不改判。\nNO**（07 §9.1 #12 与 §13 自己把该项路由给 `A02` / Architect 审阅，并明写「本报告不改 canonical」）",
+   "requires_canonical_change": "NO**（07 §9.1 #12 与 §13 自己把该项路由给 `A02` / Architect 审阅，并明写「本报告不改 canonical」）\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**（但见 E-C24：落地位置有缺陷）",
+   "duplicate_of": "NONE**（但见 E-C24：落地位置有缺陷）\nACCEPT** — 这是本 lane 最有价值的一条，应作为 `NEGATIVE_RESULT` 进入 join。",
+   "recommendation_to_architect": "ACCEPT** — 这是本 lane 最有价值的一条，应作为 `NEGATIVE_RESULT` 进入 join。\n---",
+   "_locator": {
+    "line_start": 48,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C2",
+   "_title": "E-C2 — 07 §0.1「全库检索唯一 1 处命中」",
+   "claim": "对 `D:\\coding\\lhrm\\**\\*.md` 检索 `refine|monoton|⊑|preorder|lattice|composabl|propagat` **唯一 1 处命中**（DATING_APP 报告 B12 的「承担 lattice」），据此断言「LHRM 现有 durable 资料中没有任何 refinement/单调性/预序/数学格/Unknown 组合传播的形式化内容」。\n07_PARTIAL_OBSERVABILITY.md` §0.1（`:31–:42`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §0.1（`:31–:42`）\nUNSUPPORTED**（针对「唯一 1 处命中」这一**方法学陈述**）；同一段落的**实质结论**（durable 资料无形式化内容）**VERIFIED**",
+   "verdict": "UNSUPPORTED**（针对「唯一 1 处命中」这一**方法学陈述**）；同一段落的**实质结论**（durable 资料无形式化内容）**VERIFIED**\n我用**与报告完全相同的正则**跑全库（`VERIFIED_BY_ME`）→ **43 命中**。分解：07 自身 33；`DATING_APP:240` 1（报告已引）；`00_MANIFEST:57` 1；`01:218` 1（\"refinement consistency 尚未形式化\"）；`17:398` 1（\"复合态无法用 lattice/interval 表达\"）；`19:85` 1（\"完全空白 — structural\"）；`A03:307–308` 2（I10/I11 refinement 单调）。**即除报告已引的 1 处外，另有 6 处未被计入。** 另一次 grep（含 `偏序|单调|格结构|序关系`）额外命中 `10:192`「偏序」、`14:201/247/267`「partial order 代数」。**canonical 侧**（`AGENTS.md` / `docs/foundation/*` / `README.md` / `docs/validation/*`）对该正则族 **0 命中**（`VERIFIED_BY_ME`）。",
+   "supporting_refs": "我用**与报告完全相同的正则**跑全库（`VERIFIED_BY_ME`）→ **43 命中**。分解：07 自身 33；`DATING_APP:240` 1（报告已引）；`00_MANIFEST:57` 1；`01:218` 1（\"refinement consistency 尚未形式化\"）；`17:398` 1（\"复合态无法用 lattice/interval 表达\"）；`19:85` 1（\"完全空白 — structural\"）；`A03:307–308` 2（I10/I11 refinement 单调）。**即除报告已引的 1 处外，另有 6 处未被计入。** 另一次 grep（含 `偏序|单调|格结构|序关系`）额外命中 `10:192`「偏序」、`14:201/247/267`「partial order 代数」。**canonical 侧**（`AGENTS.md` / `docs/foundation/*` / `README.md` / `docs/validation/*`）对该正则族 **0 命中**（`VERIFIED_BY_ME`）。\n最强反证是**对报告有利的方向**——那 6 处未计入的命中**全部位于 PR #31 新增的 overnight 报告内**（`00_MANIFEST`/`01`/`17`/`19`/`A03`），它们本身在**转述 07 的结论**。因此「唯一 1 处」极可能是 07 写作时（其它报告尚未落盘）的**真实快照**，而非编造。反过来说：这条方法学陈述在 PR #31 合入后已经**过期且字面为假**，若 Architect 或 A01 按字面引用会得到一个可被反驳的检索断言。",
+   "strongest_counterevidence": "最强反证是**对报告有利的方向**——那 6 处未计入的命中**全部位于 PR #31 新增的 overnight 报告内**（`00_MANIFEST`/`01`/`17`/`19`/`A03`），它们本身在**转述 07 的结论**。因此「唯一 1 处」极可能是 07 写作时（其它报告尚未落盘）的**真实快照**，而非编造。反过来说：这条方法学陈述在 PR #31 合入后已经**过期且字面为假**，若 Architect 或 A01 按字面引用会得到一个可被反驳的检索断言。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\n与 `19_SYNTHESIS_CANDIDATE.md:85`（A8）、`00_MANIFEST.md:57`、`01:218`、`A03:307–308` 同源；**corroboration: NON_INDEPENDENT**（全部下游复述 07，非独立复核）",
+   "duplicate_of": "与 `19_SYNTHESIS_CANDIDATE.md:85`（A8）、`00_MANIFEST.md:57`、`01:218`、`A03:307–308` 同源；**corroboration: NON_INDEPENDENT**（全部下游复述 07，非独立复核）\nRECLASSIFY_AS_METHOD_LIMIT** — 实质结论接受，把「唯一 1 处命中」改写为「canonical durable 资料中 0 处形式化内容；PR #31 内新增报告的命中均为对本结论的转述」。**这条措辞修正必须在 durable writeback 前做，否则 A8 会带着一个可被 refute 的检索断言进入 Architect 议程。**",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** — 实质结论接受，把「唯一 1 处命中」改写为「canonical durable 资料中 0 处形式化内容；PR #31 内新增报告的命中均为对本结论的转述」。**这条措辞修正必须在 durable writeback 前做，否则 A8 会带着一个可被 refute 的检索断言进入 Architect 议程。**\n---",
+   "_locator": {
+    "line_start": 63,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C3",
+   "_title": "E-C3 — 07 §2.3「`N` 与 `B` 在信息序上不可比；唯一单调方向是 `B → T`、`B → F`」 ★最高价值发现",
+   "claim": "07 断言：在信息序 `⊑` 上 `N < B` 不成立，**`N` 与 `B` 不可比**；唯一单调方向是 `B → T`、`B → F`（知道了才收窄），`N → 任意`。并据此推出「状态侧必须至少有两个序」。\n07_PARTIAL_OBSERVABILITY.md` §2.3（`:105–:111`，尤其 `:108`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §2.3（`:105–:111`，尤其 `:108`）\nUNSUPPORTED**（我找到直接反证，未找到 07 版本的任何支撑）",
+   "verdict": "UNSUPPORTED**（我找到直接反证，未找到 07 版本的任何支撑）\n07 自己引的两条来源均**只支撑双序存在**，不支持 07 的具体序关系（见 E-C4）。我打开 `https://en.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`）读到两句决定性文本：①「Since it is the power set on {T, F}, the elements of A4 are ordered by inclusion making it a lattice with **Both at the supremum and None at the infimum**, and T and F on the wings.」②「T is the supremum and F the infimum in the **logical lattice** where **None and Both are in the wings**.」以及「Belnap calls the lattice associated with this order the '**approximation lattice**'. The result is a second lattice L4 called the '**logical lattice**', where A4 is the approximation lattice determining Scott continuity.」",
+   "supporting_refs": "07 自己引的两条来源均**只支撑双序存在**，不支持 07 的具体序关系（见 E-C4）。我打开 `https://en.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`）读到两句决定性文本：①「Since it is the power set on {T, F}, the elements of A4 are ordered by inclusion making it a lattice with **Both at the supremum and None at the infimum**, and T and F on the wings.」②「T is the supremum and F the infimum in the **logical lattice** where **None and Both are in the wings**.」以及「Belnap calls the lattice associated with this order the '**approximation lattice**'. The result is a second lattice L4 called the '**logical lattice**', where A4 is the approximation lattice determining Scott continuity.」\n（对我这一判定而言，即 07 可能的辩护）：K4 的信息/近似格是 `P({T,F})` 上的**包含序**，`N=∅` 是**下界**、`B={T,F}` 是**上界**——这是构造定义的直接后果，07 无法反驳。07 唯一可能的辩护是把「不可比」用在了**逻辑序 `L4`** 上（那里 `N`/`B` 才是两翼、才不可比），但它把这句话写在「**信息序**（`⊑`）」的标题下，**把两个格的性质互换了**。因此这不是措辞问题，是**格的性质张冠李戴**。",
+   "strongest_counterevidence": "（对我这一判定而言，即 07 可能的辩护）：K4 的信息/近似格是 `P({T,F})` 上的**包含序**，`N=∅` 是**下界**、`B={T,F}` 是**上界**——这是构造定义的直接后果，07 无法反驳。07 唯一可能的辩护是把「不可比」用在了**逻辑序 `L4`** 上（那里 `N`/`B` 才是两翼、才不可比），但它把这句话写在「**信息序**（`⊑`）」的标题下，**把两个格的性质互换了**。因此这不是措辞问题，是**格的性质张冠李戴**。\nNO**（这是对报告的判定，不是对 canonical 的要求）",
+   "requires_canonical_change": "NO**（这是对报告的判定，不是对 canonical 的要求）\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**（但它被 E-C11 的 I4/I6 与 08b 的 `k = {+,−,?,⊘}` 设计共同放大，见 E-C23）",
+   "duplicate_of": "NONE**（但它被 E-C11 的 I4/I6 与 08b 的 `k = {+,−,?,⊘}` 设计共同放大，见 E-C23）\nREJECT**（指 §2.3 的这一条，**不是**拒绝 §2.3 的双序结论）— 正确的形式化是：**信息/近似序上 `N` 是底、`B` 是顶、`T` 与 `F` 不可比**；**逻辑/真值序上 `T` 是顶、`F` 是底、`N` 与 `B` 在两翼不可比**。单调方向是 `N → T`、`N → F`、`T → B`、`F → B`，**不是** `B → T`/`B → F`。07 把「信息变多」的方向画反了。**影响**：(a) 07 §2.3 的 `AI_RECOMMENDATION` 需要重写；(b) 07 §9.3 `CoordinateValue` 的 `value_class` 注释「无信息 / 真且假 / …互不同类」虽然**结论**仍对（B 与 N 确实不该被同一个 confidence 标量压掉），但其**理由**必须从「信息序上不可比」换成「在两个序上分别位于顶/底与两翼，压到一条标量轴上丢失的正是『哪一侧被支持』这一信息」；(c) 07 §2.3 的 `N → 任意` 这句在近似序上恰好**成立**（`N` 是底），这是全篇唯一与正确形式吻合的一句。",
+   "recommendation_to_architect": "REJECT**（指 §2.3 的这一条，**不是**拒绝 §2.3 的双序结论）— 正确的形式化是：**信息/近似序上 `N` 是底、`B` 是顶、`T` 与 `F` 不可比**；**逻辑/真值序上 `T` 是顶、`F` 是底、`N` 与 `B` 在两翼不可比**。单调方向是 `N → T`、`N → F`、`T → B`、`F → B`，**不是** `B → T`/`B → F`。07 把「信息变多」的方向画反了。**影响**：(a) 07 §2.3 的 `AI_RECOMMENDATION` 需要重写；(b) 07 §9.3 `CoordinateValue` 的 `value_class` 注释「无信息 / 真且假 / …互不同类」虽然**结论**仍对（B 与 N 确实不该被同一个 confidence 标量压掉），但其**理由**必须从「信息序上不可比」换成「在两个序上分别位于顶/底与两翼，压到一条标量轴上丢失的正是『哪一侧被支持』这一信息」；(c) 07 §2.3 的 `N → 任意` 这句在近似序上恰好**成立**（`N` 是底），这是全篇唯一与正确形式吻合的一句。\n---",
+   "_locator": {
+    "line_start": 78,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C4",
+   "_title": "E-C4 — 07 §2.3「K4 / bilattice 有两个序」",
+   "claim": "Belnap 四值逻辑 `{T,F,B,N}` 上存在两个序（knowledge/information order 与 truth/logical order），该结构因此是 bilattice。\n07_PARTIAL_OBSERVABILITY.md` §2.3（`:96–:103`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §2.3（`:96–:103`）\nVERIFIED**",
+   "verdict": "VERIFIED**\nen.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`：「the 'approximation lattice' … a second lattice L4 called the 'logical lattice'」，并给出 `∧`/`∨` 真值表）；`arXiv:1808.09636` Craig–Davey–Haviar 摘要（`VERIFIED_BY_ME` 全文摘要：「The resulting structure is equipped with **two lattice orders, a *knowledge order* and a *truth order*, and hence is called a *bilattice*.**」）；`arXiv:2503.20679`（`VERIFIED_BY_ME` 片段：「the usual 'logical order' ≤· and the 'information/knowledge order' ⊑. The latter order is inspired by domain theory, initiated by **Scott**」）。07 的两条直引（「two ordering relations … truth order … knowledge order … bilattice」/「two intermediate (but unrelated) values … namely unknown (n) and known-both-true-and-false (b)」）措辞与上述来源一致。",
+   "supporting_refs": "en.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`：「the 'approximation lattice' … a second lattice L4 called the 'logical lattice'」，并给出 `∧`/`∨` 真值表）；`arXiv:1808.09636` Craig–Davey–Haviar 摘要（`VERIFIED_BY_ME` 全文摘要：「The resulting structure is equipped with **two lattice orders, a *knowledge order* and a *truth order*, and hence is called a *bilattice*.**」）；`arXiv:2503.20679`（`VERIFIED_BY_ME` 片段：「the usual 'logical order' ≤· and the 'information/knowledge order' ⊑. The latter order is inspired by domain theory, initiated by **Scott**」）。07 的两条直引（「two ordering relations … truth order … knowledge order … bilattice」/「two intermediate (but unrelated) values … namely unknown (n) and known-both-true-and-false (b)」）措辞与上述来源一致。\narXiv:2203.17179` 片段用**相反的语义标签**命名这两个序（「`≤t` reflects the *quality* of the information … `≤k` reflects the *quantity* of information」），而 `en.wikipedia` / `arXiv:2503.20679` / `Craig et al.` 用 knowledge/information 对 truth/logical。**即「哪个序叫知识序」在文献里并不统一。** 07 未声明它采用哪一套命名。检索了什么：4 个独立来源的序命名。不影响 E-C4 的存在性结论，但要求 07 引用时把命名约定写死。",
+   "strongest_counterevidence": "arXiv:2203.17179` 片段用**相反的语义标签**命名这两个序（「`≤t` reflects the *quality* of the information … `≤k` reflects the *quantity* of information」），而 `en.wikipedia` / `arXiv:2503.20679` / `Craig et al.` 用 knowledge/information 对 truth/logical。**即「哪个序叫知识序」在文献里并不统一。** 07 未声明它采用哪一套命名。检索了什么：4 个独立来源的序命名。不影响 E-C4 的存在性结论，但要求 07 引用时把命名约定写死。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT** — 「双序」这一结论保留，但必须与 E-C3 一起修正后才能作为 `value_class` 的依据。",
+   "recommendation_to_architect": "ACCEPT** — 「双序」这一结论保留，但必须与 E-C3 一起修正后才能作为 `value_class` 的依据。\n---",
+   "_locator": {
+    "line_start": 93,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C5",
+   "_title": "E-C5 — 07 §3.1/§3.2「refinement consistency 可达，Scott-continuous 是经典充分条件」",
+   "claim": "定义 `s ⊑ s′ ⟺ s 可由 s′ 遗忘得到`（预序），refinement consistency 为 `T : Info → Info` 满足 `s ⊑ s′ ⟹ T(s) ⊑ T(s′)`；`T` 为 Scott-continuous（单调 + 保持定向上确界，定义域为 dcpo）是经典充分条件；Belnap 构造 K4 时明确采用了该条件。\n07_PARTIAL_OBSERVABILITY.md` §3.1（`:127–:145`）、§3.2 表（`:149–:165`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §3.1（`:127–:145`）、§3.2 表（`:149–:165`）\nVERIFIED**（充分性 + Belnap 归属）",
+   "verdict": "VERIFIED**（充分性 + Belnap 归属）\nen.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`）：「**Referring to Dana Scott, he assumes the connectives are Scott-continuous or monotonic functions.**」→ 确认 Belnap 归属与措辞。07 §3.2 的三条「定理级支撑」中，QCN 单调迭代（`r_{x,y} ← r_{x,y} ∩ r_{x,z} ∘ r_{z,y}`，有限网络必然终止、refinement operation is monotone）来自 Renz 2007 IJCAI PDF，07 的逐字引文与之一致但**我 `NOT_OPENED`**。DEL 的 `!φ` 是 refinement 算子一条，07 自标「未逐条核实定理原文」，我亦 `NOT_OPENED`。",
+   "supporting_refs": "en.wikipedia.org/wiki/Four-valued_logic`（`VERIFIED_BY_ME`）：「**Referring to Dana Scott, he assumes the connectives are Scott-continuous or monotonic functions.**」→ 确认 Belnap 归属与措辞。07 §3.2 的三条「定理级支撑」中，QCN 单调迭代（`r_{x,y} ← r_{x,y} ∩ r_{x,z} ∘ r_{z,y}`，有限网络必然终止、refinement operation is monotone）来自 Renz 2007 IJCAI PDF，07 的逐字引文与之一致但**我 `NOT_OPENED`**。DEL 的 `!φ` 是 refinement 算子一条，07 自标「未逐条核实定理原文」，我亦 `NOT_OPENED`。\n三点。其一，07 把自己的定义标为 `MODEL_HYPOTHESIS`（正确），但 §3.4 的判定句「必须把所有状态算子重写为 `⊑`-单态」被写成**唯一代价**——实际上 `⊑` 只是**预序**，07 自己说「成为格需要额外条件（`RelMergeability`）」，而 §4.1 的 C1–C6 全部只在**坐标类型格** `T_k` 上运作，**从未说明状态层的 `Info` 是什么格**。其二，07 §11-8 自认「C1–C6 对全部 construct family 是否封闭，未检验」——这直接掏空了 §3.4 的可落地性。其三，Scott 连续性是**充分**条件，07 的 I10（宽度单调）只要求**单调**，二者不是同一命题；07 在 §4.1 C2/C3 与 §5.1 I10 之间把充分条件与必要条件混用。",
+   "strongest_counterevidence": "三点。其一，07 把自己的定义标为 `MODEL_HYPOTHESIS`（正确），但 §3.4 的判定句「必须把所有状态算子重写为 `⊑`-单态」被写成**唯一代价**——实际上 `⊑` 只是**预序**，07 自己说「成为格需要额外条件（`RelMergeability`）」，而 §4.1 的 C1–C6 全部只在**坐标类型格** `T_k` 上运作，**从未说明状态层的 `Info` 是什么格**。其二，07 §11-8 自认「C1–C6 对全部 construct family 是否封闭，未检验」——这直接掏空了 §3.4 的可落地性。其三，Scott 连续性是**充分**条件，07 的 I10（宽度单调）只要求**单调**，二者不是同一命题；07 在 §4.1 C2/C3 与 §5.1 I10 之间把充分条件与必要条件混用。\nUNSURE**（若采纳 `⊑`，需在 `CURRENT_ARCHITECTURE.md` 新增一节；落点判定见下方专项 3 第 2 行）",
+   "requires_canonical_change": "UNSURE**（若采纳 `⊑`，需在 `CURRENT_ARCHITECTURE.md` 新增一节；落点判定见下方专项 3 第 2 行）\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL** — 定理层接受；落地层（`Info` 的定义、`RelMergeability`、`C1–C6` 的封闭性）必须留为未决，不能按「可达」记账。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 定理层接受；落地层（`Info` 的定义、`RelMergeability`、`C1–C6` 的封闭性）必须留为未决，不能按「可达」记账。\n---",
+   "_locator": {
+    "line_start": 108,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C6",
+   "_title": "E-C6 — 07 §2.2 / §4.3 credal 组合的非可组合性（成本账）",
+   "claim": "用「凸分布幂集」monad 做 credal set 组合**不是 compositional**，因为该 monad 非交换；用 graded monad 修正后得到**更紧**的界。故朴素 credal 组合系统性过松。\n07_PARTIAL_OBSERVABILITY.md` §2.2（`:88`）、§4.3（`:214–:221`）、§8.2（`:424`）、D1（`:460`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §2.2（`:88`）、§4.3（`:214–:221`）、§8.2（`:424`）、D1（`:460`）\nVERIFIED**（可组合性 + 更紧的界）／**UNSUPPORTED**（「松的程度依赖一个未被声明的独立性假设」这一句）",
+   "verdict": "VERIFIED**（可组合性 + 更紧的界）／**UNSUPPORTED**（「松的程度依赖一个未被声明的独立性假设」这一句）\napi.crossref.org/works/10.1145/3704890`（`VERIFIED_BY_ME`，我读到官方 abstract 全文）：「the leading monad-based approach using convex sets of probability distributions. This model is **not fully compositional because the monad involved is not commutative**, meaning it does not have a proper monoidal structure. In this work, we provide a new fully compositional account … we use **graded monads** … **proving that we obtain tighter bounds on the uncertainty**。」→ 07 的三个要素（凸幂集 monad / 非交换故不可组合 / graded monad 修正后更紧）**逐项对得上**。",
+   "supporting_refs": "api.crossref.org/works/10.1145/3704890`（`VERIFIED_BY_ME`，我读到官方 abstract 全文）：「the leading monad-based approach using convex sets of probability distributions. This model is **not fully compositional because the monad involved is not commutative**, meaning it does not have a proper monoidal structure. In this work, we provide a new fully compositional account … we use **graded monads** … **proving that we obtain tighter bounds on the uncertainty**。」→ 07 的三个要素（凸幂集 monad / 非交换故不可组合 / graded monad 修正后更紧）**逐项对得上**。\n07 §4.3 加了一句该论文**没有**的东西：「松的程度依赖一个未被声明的**独立性假设**」。该文是 PL / Markov category 语义学论文，讲的是**范畴组合律**，不涉及统计独立性假设；「credal 集的乘积依赖独立性」出自 imprecise probability 的另一支文献（报告未引）。我检索了 Crossref 全部 121 条参考文献的题录，未见任何一条支持「独立性假设」这一归因。**这是把一个正确结论挂到了错误的机制上**——结论方向对，机制错，而机制恰恰是 07 拿来论证「这本身就是 `AGENTS.md:24` 同类违规」的那一步。",
+   "strongest_counterevidence": "07 §4.3 加了一句该论文**没有**的东西：「松的程度依赖一个未被声明的**独立性假设**」。该文是 PL / Markov category 语义学论文，讲的是**范畴组合律**，不涉及统计独立性假设；「credal 集的乘积依赖独立性」出自 imprecise probability 的另一支文献（报告未引）。我检索了 Crossref 全部 121 条参考文献的题录，未见任何一条支持「独立性假设」这一归因。**这是把一个正确结论挂到了错误的机制上**——结论方向对，机制错，而机制恰恰是 07 拿来论证「这本身就是 `AGENTS.md:24` 同类违规」的那一步。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL**（成本结论）／要求 07 补引 imprecise-probability 文献以支撑「独立性假设」那半句，或删之。**成本账判断（审计焦点 4）**：该成本论证**只支撑「延后 credal 作为默认读出」这一个结论，不支撑「credal 不可用」**；07 §9.2 D1 给的触发条件（出现先验已知多峰且机制不可辨识的一类 tag）**是恰当的比例**，未见夸大。**审计焦点 4 结论：成本账正确，延后建议比例恰当。**",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL**（成本结论）／要求 07 补引 imprecise-probability 文献以支撑「独立性假设」那半句，或删之。**成本账判断（审计焦点 4）**：该成本论证**只支撑「延后 credal 作为默认读出」这一个结论，不支撑「credal 不可用」**；07 §9.2 D1 给的触发条件（出现先验已知多峰且机制不可辨识的一类 tag）**是恰当的比例**，未见夸大。**审计焦点 4 结论：成本账正确，延后建议比例恰当。**\n---",
+   "_locator": {
+    "line_start": 123,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C7",
+   "_title": "E-C7 — 07 §2.1 R6 的成本：全幂集 `2^B` NP-hard，必须引入 tractable subset",
+   "claim": "RCC8/IA 中只用 base relations 时一致性判定可算；允许 `2^B` 全部幂集时 NP-hard；因此必须先声明 tractable subset（如 `ORD-Horn`）。\n07_PARTIAL_OBSERVABILITY.md` §2.2（`:89`）、§9.2 D4（`:463`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §2.2（`:89`）、§9.2 D4（`:463`）\nPLAUSIBLE**",
+   "verdict": "PLAUSIBLE**\nRenz (2007), Qualitative Spatial and Temporal Reasoning, IJCAI-07, https://www.ijcai.org/Proceedings/07/Papers/083.pdf` — **NOT_OPENED**；`Dylla, Botea & Renz (2013) arXiv:1305.7345` + `Bhattacharya & Renz (2023) EPFL LIA` — **NOT_OPENED**",
+   "supporting_refs": "Renz (2007), Qualitative Spatial and Temporal Reasoning, IJCAI-07, https://www.ijcai.org/Proceedings/07/Papers/083.pdf` — **NOT_OPENED**；`Dylla, Botea & Renz (2013) arXiv:1305.7345` + `Bhattacharya & Renz (2023) EPFL LIA` — **NOT_OPENED**\n未找到反证。**缺口**：(a) 我未打开任一来源，「NP-hard」的具体归约（从哪个问题归约）未核；(b) 「tractable subset 必要」与「base relations 本身已是 tractable subset」是同一件事的两种说法，07 把它写成「必须**先**声明」，但如果 LHRM 只用 base relations（不做幂集提升），则该成本**根本不发生**——这会让 D4 的延后失去必要性，而这恰是 07 自己推荐的默认路径。07 未指出这一点，属**成本账的方向性缺口**。",
+   "strongest_counterevidence": "未找到反证。**缺口**：(a) 我未打开任一来源，「NP-hard」的具体归约（从哪个问题归约）未核；(b) 「tractable subset 必要」与「base relations 本身已是 tractable subset」是同一件事的两种说法，07 把它写成「必须**先**声明」，但如果 LHRM 只用 base relations（不做幂集提升），则该成本**根本不发生**——这会让 D4 的延后失去必要性，而这恰是 07 自己推荐的默认路径。07 未指出这一点，属**成本账的方向性缺口**。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**（`14:201/247/267` 也谈到 partial order 代数需 M0 形式化，但不在我 cluster，不计）",
+   "duplicate_of": "NONE**（`14:201/247/267` 也谈到 partial order 代数需 M0 形式化，但不在我 cluster，不计）\nHOLD_FOR_EVIDENCE** — 在打开 Renz 2007 之前不进入排序；并要求 07 补一句「若只使用 base relations 则 D4 无成本」。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** — 在打开 Renz 2007 之前不进入排序；并要求 07 补一句「若只使用 base relations 则 D4 无成本」。\n---",
+   "_locator": {
+    "line_start": 138,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C8",
+   "_title": "E-C8 — 07 §2.2 / §5.4 / §8.1：imprecise 知识下 Jensen/Markov/Cantelli 界仍成立",
+   "claim": "Pelessoni & Vicig (2022) 证明概率不等式不依赖精确评估，故在 imprecise 知识（`22`-coherence）下仍成立；因此缺失后仍可算的是「有界量」而非「点值」。这是 07 自称「最重要的正面结果」。\n07_PARTIAL_OBSERVABILITY.md` §2.2（`:91–:92`）、§5.4（`:264–:282`）、§8.1（`:406–:418`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §2.2（`:91–:92`）、§5.4（`:264–:282`）、§8.1（`:406–:418`）\nPLAUSIBLE**",
+   "verdict": "PLAUSIBLE**\narXiv:2211.01503` — **NOT_OPENED**",
+   "supporting_refs": "arXiv:2211.01503` — **NOT_OPENED**\n未找到反证。**缺口**：(a) 未打开原文，`22`-coherence 这个具体前提未核；(b) 07 从「不等式在 imprecise 知识下成立」推出「缺失后仍可算的是有界量」，这一步依赖「缺失 = imprecise knowledge」这一**同一化**，而 §6 FM-01 恰恰论证了某些 tag（`censored`）**不是**概率性缺失、不能被任何先验集刻画。也就是说 07 自己的 §6 在削弱 §5.4 的适用范围，而 §5.4 是它准备写进 canonical 的替代文本。这是一处**内部张力**，不是外部反证。",
+   "strongest_counterevidence": "未找到反证。**缺口**：(a) 未打开原文，`22`-coherence 这个具体前提未核；(b) 07 从「不等式在 imprecise 知识下成立」推出「缺失后仍可算的是有界量」，这一步依赖「缺失 = imprecise knowledge」这一**同一化**，而 §6 FM-01 恰恰论证了某些 tag（`censored`）**不是**概率性缺失、不能被任何先验集刻画。也就是说 07 自己的 §6 在削弱 §5.4 的适用范围，而 §5.4 是它准备写进 canonical 的替代文本。这是一处**内部张力**，不是外部反证。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nHOLD_FOR_EVIDENCE** — §5.4 的替代文本应加限定语「对 `no_evidence` / `refused` 类 tag 成立；对 `censored` / `structurally_unobservable` 不适用」后再提交 Architect。",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE** — §5.4 的替代文本应加限定语「对 `no_evidence` / `refused` 类 tag 成立；对 `censored` / `structurally_unobservable` 不适用」后再提交 Architect。\n---",
+   "_locator": {
+    "line_start": 153,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C9",
+   "_title": "E-C9 — 07 FM-05 / C6 / I18：reject option 的最优策略（三模型共享同一最优策略）",
+   "claim": "Franc, Prusa & Voracek 证明 cost-based / bounded-improvement / bounded-coverage 三个 reject model **共享同一最优策略** = Bayes classifier + **randomized Bayes selection function**；选择函数不是可选附件。故成本敏感读出下 `REFUSE` 是一等输出。\n07_PARTIAL_OBSERVABILITY.md` §6 FM-05（`:323–:327`）、§4.1 C6（`:199`）、§5.1 I18（`:255`）、ref [5]（`:540`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §6 FM-05（`:323–:327`）、§4.1 C6（`:199`）、§5.1 I18（`:255`）、ref [5]（`:540`）\nVERIFIED**（定理 + 逐字引文）／**PLAUSIBLE**（迁移到 LHRM readout）／附带**两处书目错误**",
+   "verdict": "VERIFIED**（定理 + 逐字引文）／**PLAUSIBLE**（迁移到 LHRM readout）／附带**两处书目错误**\nhttps://jmlr.org/papers/v24/21-0048.html`（`VERIFIED_BY_ME`，官方 abstract 全文）：「We prove that despite their different formulations the three rejection models lead to the same prediction strategy: the Bayes classifier endowed with a **randomized Bayes selection function**.」→ 定理**逐字确认**。",
+   "supporting_refs": "https://jmlr.org/papers/v24/21-0048.html`（`VERIFIED_BY_ME`，官方 abstract 全文）：「We prove that despite their different formulations the three rejection models lead to the same prediction strategy: the Bayes classifier endowed with a **randomized Bayes selection function**.」→ 定理**逐字确认**。\n三点。(a) **书目错误**：官方 landing page 记为 **24(11):1−49, 2023**，07 写「JMLR, 24, 21-0048」（隐含 2021）。`21-0048` 是 2021 年的投稿编号，**出版年是 2023**。(b) **术语错误**：第三个模型官方叫 **bounded-abstention**，07 两处写成 **bounded-coverage**。(c) **范围**：该定理是**分类器**结果，需要一个 reject cost 或 bounded-improvement/abstention 目标。LHRM 没有分类器，`CURRENT_ARCHITECTURE.md` §11 明确不冻结分数/权重/距离。所以「`REFUSE` 是一等输出」在 LHRM 是**架构选择**而非定理推论——而 07 把它标成 `[ESTABLISHED]`。**这一标注是本条最实质的问题**。",
+   "strongest_counterevidence": "三点。(a) **书目错误**：官方 landing page 记为 **24(11):1−49, 2023**，07 写「JMLR, 24, 21-0048」（隐含 2021）。`21-0048` 是 2021 年的投稿编号，**出版年是 2023**。(b) **术语错误**：第三个模型官方叫 **bounded-abstention**，07 两处写成 **bounded-coverage**。(c) **范围**：该定理是**分类器**结果，需要一个 reject cost 或 bounded-improvement/abstention 目标。LHRM 没有分类器，`CURRENT_ARCHITECTURE.md` §11 明确不冻结分数/权重/距离。所以「`REFUSE` 是一等输出」在 LHRM 是**架构选择**而非定理推论——而 07 把它标成 `[ESTABLISHED]`。**这一标注是本条最实质的问题**。\nUNSURE**（落点判定见下方专项 3 第 5 行）",
+   "requires_canonical_change": "UNSURE**（落点判定见下方专项 3 第 5 行）\nNO**（但 I18 的可执行性见 E-C11）",
+   "needs_experiment_or_data": "NO**（但 I18 的可执行性见 E-C11）\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL** — 定理接受；请 07 修正书目与术语，并把 FM-05 的 LHRM 后果从 `[ESTABLISHED]` 降为 `MODEL_HYPOTHESIS`；`I18` 在成本模型冻结前**不可执行**（见 E-C11）。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 定理接受；请 07 修正书目与术语，并把 FM-05 的 LHRM 后果从 `[ESTABLISHED]` 降为 `MODEL_HYPOTHESIS`；`I18` 在成本模型冻结前**不可执行**（见 E-C11）。\n---",
+   "_locator": {
+    "line_start": 168,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C10",
+   "_title": "E-C10 — 07 FM-06 / §7.2：epistemic POMDP 引文 ★附带重大书目缺陷",
+   "claim": "在 fully-observable 域中，agent 的 epistemic uncertainty 使环境在 test-time **隐式部分可观测**；不显式处理它的方法在理论与实践中都可**任意次优**。\n07_PARTIAL_OBSERVABILITY.md` §6 FM-06（`:331`）、§7.2（`:380`）、ref [6]（`:541`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §6 FM-06（`:331`）、§7.2（`:380`）、ref [6]（`:541`）\nVERIFIED**（引文）／附带 **`UNSUPPORTED` 的书目条目**（作者列表错误）",
+   "verdict": "VERIFIED**（引文）／附带 **`UNSUPPORTED` 的书目条目**（作者列表错误）\nhttps://lips.cs.princeton.edu/pdfs/ghosh2021generalization.pdf` 与 NeurIPS 2021 正式版（`VERIFIED_BY_ME`，两处读到**逐字相同**的两句）：「even in fully-observable domains, the agent's epistemic uncertainty renders the environment **implicitly partially observed at test-time**」；「standard RL methods that do not explicitly account for this implicit partial observability can be **arbitrarily sub-optimal for test-time generalization in theory and in practice**」→ 07 的两条引文**逐字准确**。",
+   "supporting_refs": "https://lips.cs.princeton.edu/pdfs/ghosh2021generalization.pdf` 与 NeurIPS 2021 正式版（`VERIFIED_BY_ME`，两处读到**逐字相同**的两句）：「even in fully-observable domains, the agent's epistemic uncertainty renders the environment **implicitly partially observed at test-time**」；「standard RL methods that do not explicitly account for this implicit partial observability can be **arbitrarily sub-optimal for test-time generalization in theory and in practice**」→ 07 的两条引文**逐字准确**。\n书目错误（我打开来源后才发现）**。07 ref [6] 写「**Rajaraman, D., Han, T., Yang, P., Ramchandran, K., Van Dyke, D., Peng, X., & Levine, S.** (2021). *Why Generalization in RL is Difficult: Epistemic POMDPs and Implicit Partial Observability.* NeurIPS 2021.」。实际作者是 **Ghosh, D., Rahme, J., Kumar, A., Zhang, A., Adams, R. P., & Levine, S.**（NeurIPS 34, 2021；arXiv:2107.06277）。「Rajaraman … Han … Ramchandran … Van Dyke … Peng」是**另一篇论文的作者**（Deepak Rajaraman 等）。**即：引文内容对，作者列表指向错误的论文。** 这是我在本 lane 找到的唯一一处**硬 provenance 缺陷**，且它出现在一条被复用于 3 处（FM-06、§7.2、FM-06 的第二条）的承重引用上。",
+   "strongest_counterevidence": "书目错误（我打开来源后才发现）**。07 ref [6] 写「**Rajaraman, D., Han, T., Yang, P., Ramchandran, K., Van Dyke, D., Peng, X., & Levine, S.** (2021). *Why Generalization in RL is Difficult: Epistemic POMDPs and Implicit Partial Observability.* NeurIPS 2021.」。实际作者是 **Ghosh, D., Rahme, J., Kumar, A., Zhang, A., Adams, R. P., & Levine, S.**（NeurIPS 34, 2021；arXiv:2107.06277）。「Rajaraman … Han … Ramchandran … Van Dyke … Peng」是**另一篇论文的作者**（Deepak Rajaraman 等）。**即：引文内容对，作者列表指向错误的论文。** 这是我在本 lane 找到的唯一一处**硬 provenance 缺陷**，且它出现在一条被复用于 3 处（FM-06、§7.2、FM-06 的第二条）的承重引用上。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nREJECT**（针对 ref [6] 的书目条目，须修正后才能引用）／内容层 **ACCEPT**。这是 `A01_EVIDENCE_QUALITY_AUDIT` 必须复检的条目——请 parent 把它加入 join 的强制修正清单。",
+   "recommendation_to_architect": "REJECT**（针对 ref [6] 的书目条目，须修正后才能引用）／内容层 **ACCEPT**。这是 `A01_EVIDENCE_QUALITY_AUDIT` 必须复检的条目——请 parent 把它加入 join 的强制修正清单。\n---",
+   "_locator": {
+    "line_start": 183,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C11",
+   "_title": "E-C11 — 07 §5 的 19 条「可检验不变量」：逐条可执行性审计 ★审计焦点 3",
+   "claim": "给出 19 条候选可检验不变量，其中 9 条「现在就能检查」（I1、I2、I3、I4、I6、I7、I12、I14、I15）。\n07_PARTIAL_OBSERVABILITY.md` §5.1（`:231–:247`）、§5.2（`:251–:256`）、§5.3（`:258–:262`）、§9.1 #11（`:453`）",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §5.1（`:231–:247`）、§5.2（`:251–:256`）、§5.3（`:258–:262`）、§9.1 #11（`:453`）\nPLAUSIBLE**（集合整体）／分条见下",
+   "verdict": "PLAUSIBLE**（集合整体）／分条见下\n无外部来源；判定完全基于「实现能否机械测试 + 能否空过」两个判据，逐条审计如下。**`corroboration: NON_INDEPENDENT`** — `A03:306–313` 对 I1–I19 做了同类判定（I10/I11 = `BLOCKED_NO_DESIGN`、I16 = `BLOCKED_NO_DATA`），**但我只见到 grep 单行，未读其论证**，不据此升级或降级任何 verdict。",
+   "supporting_refs": "无外部来源；判定完全基于「实现能否机械测试 + 能否空过」两个判据，逐条审计如下。**`corroboration: NON_INDEPENDENT`** — `A03:306–313` 对 I1–I19 做了同类判定（I10/I11 = `BLOCKED_NO_DESIGN`、I16 = `BLOCKED_NO_DATA`），**但我只见到 grep 单行，未读其论证**，不据此升级或降级任何 verdict。\n（= 逐条缺陷清单）:",
+   "strongest_counterevidence": "（= 逐条缺陷清单）:\n| ID | 可机械测试？ | 能否空过？ | 判定 |\n| --- | --- | --- | --- |\n| I1 Unknown 吸收 | 是（schema + 单测） | 否 | **稳健** |\n| I2 底元素上不做算术 | 是（属性测试） | 部分 | 与 I1 **近重复** |\n| I3 有界读出的像集报告 | 是 | 部分 | 与 I1/I2 **近重复**；I1+I2+I3 实为一条 |\n| I4 tag 闭包 | 是（enum diff） | **是** | **近乎空过**：若 tag 是 schema enum，集合**按构造**无法增长，CI 已在 schema 变更处拦截。这是**流程控制**，不是模型性质。有效版本应是「tag enum 不得在无 reviewed 决策下跨运行扩展」 |\n| I5 tag 不可跨角色泄漏 | 是（角色置换） | 否 | **稳健，且是最有价值的一条之一** |\n| I6 矛盾 ≠ 未知 | 是（顺序置换） | 否 | **最稳健**：可直接做 Case Bank 条目 |\n| I7 聚合顺序无关 | 是 | **条件性空过** | 若唯一的复合规则是 C1 的 `⊥` 吸收（交换的），I7 **自动成立**。只有在 tag 取并集参与复合后才有区分力 |\n| I8 重复证据幂等 | 是 | 否 | **稳健** |\n| I9 逐坐标单调 | 是（逐坐标消融） | **条件性空过** | 无跨坐标耦合的实现平凡通过；且 07 §11-9 自认 `F` 的随机性未定义 |\n| I10 refinement 单调（宽度） | 是 | **可被博弈** | 它约束的是 **`width` 的选法**而非实现：把 `width` 定义成任何随证据单调的函数即通过。**不可博弈的版本是 C3**（`g` 必须是单调泛函），07 自己有 C3 却把 I10 当主指标 |\n| I11 时间 refinement 单调（DAG） | 是 | 否 | **稳健** |\n| I12 readout 不回写 | 是（依赖图/静态检查） | 弱可博弈 | **稳健**（换名写入可绕，但检查形式对） |\n| I13 不可约性诚实 | **弱**（字符串/模板审计） | **是** | 语义上的过度承诺不被字符串审计捕获；只检查禁词的实现平凡通过 |\n| I14 prior 支配标记 | **否** | — | **不可执行**：判据是 `evidence_mass < θ`，而 07 §10 非主张 7 **明确拒绝给 `θ` 任何值**。`θ` 未定义 ⇒ 该不变量**在语法上无法被违反**，等于空过 |\n| I15 多峰不取均值 | 是（合成双峰） | 否 | **稳健** |\n| I16 校准 | 是 | — | 正确标为 `UNKNOWN`（无 held-out） |\n| I17 coverage 显式 | **否** | — | **不可执行**：「coverage 低于登记阈值」中的阈值 07 §5.2 自己标 `UNKNOWN`。与 I14 同病 |\n| I18 REFUSE 可达性 | **否** | — | **不可执行**：存在性测试需要一个成本/风险结构，而 `CURRENT_ARCHITECTURE.md` §11 明确不冻结分数与权重。07 未指出这个依赖 |\n| I19 confidence-尖锐度非任意 | **否** | **是** | **空过**：「须随输入稀疏度变化」被**任何**非恒定函数满足，包括随机的。唯一可测版本需要先冻结「尖锐度」与「稀疏度」两个定义 |\n   **量化结论**：19 条中 **8 条稳健**（I1、I5、I6、I8、I11、I12、I15，加 I16 但需数据）、**3 条近重复**（I2/I3 与 I1）、**2 条条件性空过**（I7、I9）、**2 条可博弈**（I4、I10）、**1 条弱可测**（I13）、**3 条不可执行**（I14、I17、I18）、**1 条空过**（I19）。**「9 条现在就能检查」这个数字不成立**——真正无需新参数、无需新定义、无需数据的只有 **6 条**（I1、I5、I6、I8、I11、I12、I15 中的前 6；I15 需合成双峰后验，可生成，算 7 条）。\nUNSURE**",
+   "requires_canonical_change": "UNSURE**\nYES** — I16 需要 held-out Case Bank set；I18 需要一个登记的成本模型；I10/I11 需要先有 `⊑` 的形式定义与依赖表",
+   "needs_experiment_or_data": "YES** — I16 需要 held-out Case Bank set；I18 需要一个登记的成本模型；I10/I11 需要先有 `⊑` 的形式定义与依赖表\nI1⊂I2∪I3（cluster 内重复）；I10 与 C3 同源（cluster 内重复）",
+   "duplicate_of": "I1⊂I2∪I3（cluster 内重复）；I10 与 C3 同源（cluster 内重复）\nREJECT**（对「9 条现在就能检查」这一计数）／**ACCEPT_AS_PROPOSAL**（对不变量集合本身）。要求 07：(i) 把 I14/I17/I18 显式降为 `BLOCKED_ON_PARAMETER`；(ii) 删或重写 I19；(iii) 把 I10 换为 C3 形式；(iv) 合并 I1/I2/I3；(v) 修正 §5 的「15 条」计数错误（见 E-C12）。",
+   "recommendation_to_architect": "REJECT**（对「9 条现在就能检查」这一计数）／**ACCEPT_AS_PROPOSAL**（对不变量集合本身）。要求 07：(i) 把 I14/I17/I18 显式降为 `BLOCKED_ON_PARAMETER`；(ii) 删或重写 I19；(iii) 把 I10 换为 C3 形式；(iv) 合并 I1/I2/I3；(v) 修正 §5 的「15 条」计数错误（见 E-C12）。\n---",
+   "_locator": {
+    "line_start": 198,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C12",
+   "_title": "E-C12 — 07 §5 的内部计数错误",
+   "claim": "§5 开篇写「以下 **15 条**是候选可检验不变量」，但 §5.1 给出 I1–I15、§5.2 给出 I16–I9…即 I16–I19，合计 **19 条**。§13 也写「给出 19 条」。\nVERIFIED**（缺陷确认）",
+   "verdict": "VERIFIED**（缺陷确认）\n07:227`（\"以下 15 条\"）vs `07:231–:256`（I1–I19）vs `07:602`（\"19 条可检验不变量\"）— `VERIFIED_BY_ME`",
+   "supporting_refs": "07:227`（\"以下 15 条\"）vs `07:231–:256`（I1–I19）vs `07:602`（\"19 条可检验不变量\"）— `VERIFIED_BY_ME`\n无。这是一处纯计数笔误，**但**它出现在决定 manifest 状态的行上（`00_MANIFEST.md:57` 写「I1–I19」），说明 manifest 采信了 19 而未采信 15。影响低，但若 Architect 按 §5 正文读会得到 15。",
+   "strongest_counterevidence": "无。这是一处纯计数笔误，**但**它出现在决定 manifest 状态的行上（`00_MANIFEST.md:57` 写「I1–I19」），说明 manifest 采信了 19 而未采信 15。影响低，但若 Architect 按 §5 正文读会得到 15。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL**（要求 07 改 `:227` 为 19）",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL**（要求 07 改 `:227` 为 19）\n---",
+   "_locator": {
+    "line_start": 237,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C13",
+   "_title": "E-C13 — 07 使用了自身约定表里**不存在**的标签 `[ESTABLISHED]`",
+   "claim": "07 的证据等级约定（`:8`）只定义 `CITED_PRIMARY` / `CITED_METADATA` / `CITED_SECONDARY` / `AGENT_RECALL` / `MODEL_HYPOTHESIS` / `AI_RECOMMENDATION`，但正文 **15 处**使用 `[ESTABLISHED]`（`:292, 301, 317, 325, 331, 332, 338, 354, 372, 380, 382, 392, 394, 408, 422`），而 `AGENT_RECALL` 一次未用。\nVERIFIED**（缺陷确认）",
+   "verdict": "VERIFIED**（缺陷确认）\n07:8` vs 上述 15 行 — `VERIFIED_BY_ME`（grep `ESTABLISHED|CITED_PRIMARY|...` 命中 37，逐行核对）",
+   "supporting_refs": "07:8` vs 上述 15 行 — `VERIFIED_BY_ME`（grep `ESTABLISHED|CITED_PRIMARY|...` 命中 37，逐行核对）\n部分可辩护——`[ESTABLISHED]` 显然是承袭 `08b`/其它报告的标签体系，可能是有意的跨报告统一。但即便如此，**它与 `CITED_PRIMARY` 的区别没有被定义**，而这个区别恰好是承重的：`:292`（FM-01 首句，若 `M = 1 ⟺ X = 1` 则该分层观测永远为空）是**初等逻辑**，无任何文献支撑，却标 `[ESTABLISHED]`；`:301`（Raykar 拥挤学习）是**论文结论**；`:317`（White & Carlin）是**论文结论**。三者混在同一标签下，读者无法区分「这是定理」「这是文献」「这是常识」。",
+   "strongest_counterevidence": "部分可辩护——`[ESTABLISHED]` 显然是承袭 `08b`/其它报告的标签体系，可能是有意的跨报告统一。但即便如此，**它与 `CITED_PRIMARY` 的区别没有被定义**，而这个区别恰好是承重的：`:292`（FM-01 首句，若 `M = 1 ⟺ X = 1` 则该分层观测永远为空）是**初等逻辑**，无任何文献支撑，却标 `[ESTABLISHED]`；`:301`（Raykar 拥挤学习）是**论文结论**；`:317`（White & Carlin）是**论文结论**。三者混在同一标签下，读者无法区分「这是定理」「这是文献」「这是常识」。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nREJECT**（对标签使用本身）／要求 07 二选一：把 `[ESTABLISHED]` 加进约定表并定义它与 `CITED_PRIMARY` 的边界，或全部替换为 `CITED_PRIMARY`。这条触及 `AGENTS.md` research discipline 的第一行（区分 evidence / hypothesis / decision）。",
+   "recommendation_to_architect": "REJECT**（对标签使用本身）／要求 07 二选一：把 `[ESTABLISHED]` 加进约定表并定义它与 `CITED_PRIMARY` 的边界，或全部替换为 `CITED_PRIMARY`。这条触及 `AGENTS.md` research discipline 的第一行（区分 evidence / hypothesis / decision）。\n---",
+   "_locator": {
+    "line_start": 251,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C14",
+   "_title": "E-C14 — 07 FM-02：核心坐标 latent 且无 gold standard ⟹ 点 readout 无指称 ★审计焦点 9（方法限 vs ontology）",
+   "claim": "Trust(A→B)`、`Dedication(A→B)`、`SexualDesire(A→B)` 没有 gold standard；可能的锚点只有法院/官方裁定事实、强制性行为痕迹、已验证量表；**在叙事材料上三者皆无**。故这些坐标的后验在形式上必须是不可辨识的分布族，报告点值不是精度不足而是**指称缺失**。\n07_PARTIAL_OBSERVABILITY.md` §6 FM-02（`:299–:304`）；07 自称「**这条目前不在任何 canonical 文档里，是本报告最重要的结构性发现**」",
+   "source_report": "07_PARTIAL_OBSERVABILITY.md` §6 FM-02（`:299–:304`）；07 自称「**这条目前不在任何 canonical 文档里，是本报告最重要的结构性发现**」\nPLAUSIBLE**，且就其**叙事材料**适用范围应 **RECLASSIFY_AS_METHOD_LIMIT**",
+   "verdict": "PLAUSIBLE**，且就其**叙事材料**适用范围应 **RECLASSIFY_AS_METHOD_LIMIT**\nRaykar et al. (2010) JMLR 11(43):1297–1322, https://jmlr.org/papers/v11/raykar10a.html` — **NOT_OPENED**（07 标 `CITED_PRIMARY`，读到引言）。`AGENTS.md:24`（`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:10, 315, 327`（`VERIFIED_BY_ME`：法院/纪实材料做 coverage test、小说/志怪/科幻做 expressivity stress test；fact status 五值枚举）",
+   "supporting_refs": "Raykar et al. (2010) JMLR 11(43):1297–1322, https://jmlr.org/papers/v11/raykar10a.html` — **NOT_OPENED**（07 标 `CITED_PRIMARY`，读到引言）。`AGENTS.md:24`（`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:10, 315, 327`（`VERIFIED_BY_ME`：法院/纪实材料做 coverage test、小说/志怪/科幻做 expressivity stress test；fact status 五值枚举）\n审计焦点 9 的核心命中**。07 把这条称为「最重要的结构性发现」且不加限定地写入 §13 的「3 条项目内没有记载的结构性问题」。但：(a) 07 **自己在同一段**承认锚点在法院/官方材料中**存在**；(b) `CURRENT_ARCHITECTURE.md:10/:327` 已把材料按「empirical coverage」与「expressivity stress」**分层**，而 Case Bank（§10）的第一优先来源正是法院/官方材料；(c) 因此「无 gold standard」是**关于材料类型的条件命题**，不是关于 LHRM 坐标的本体命题。07 把它当本体缺陷陈述，是**把测量条件读成了 ontology 结论**。**注意**：对 expressivity stress test（小说的虚构世界规则）这一路，「无 gold standard 且**不应**有 gold standard」恰恰是**正确的架构立场**，不是缺陷——所以这条的处置不是「修」，而是「按材料层分叉表述」。",
+   "strongest_counterevidence": "审计焦点 9 的核心命中**。07 把这条称为「最重要的结构性发现」且不加限定地写入 §13 的「3 条项目内没有记载的结构性问题」。但：(a) 07 **自己在同一段**承认锚点在法院/官方材料中**存在**；(b) `CURRENT_ARCHITECTURE.md:10/:327` 已把材料按「empirical coverage」与「expressivity stress」**分层**，而 Case Bank（§10）的第一优先来源正是法院/官方材料；(c) 因此「无 gold standard」是**关于材料类型的条件命题**，不是关于 LHRM 坐标的本体命题。07 把它当本体缺陷陈述，是**把测量条件读成了 ontology 结论**。**注意**：对 expressivity stress test（小说的虚构世界规则）这一路，「无 gold standard 且**不应**有 gold standard」恰恰是**正确的架构立场**，不是缺陷——所以这条的处置不是「修」，而是「按材料层分叉表述」。\nUNSURE**",
+   "requires_canonical_change": "UNSURE**\nYES** — 需要一个决定：Case Bank 中每条 item 是否强制标注其 `fact status` 层（`adjudicated/admitted/alleged/disputed/unknown`），以及 `coordinate → 可用锚点` 的登记。07 §11-3 自认这份清单**从未被枚举**。",
+   "needs_experiment_or_data": "YES** — 需要一个决定：Case Bank 中每条 item 是否强制标注其 `fact status` 层（`adjudicated/admitted/alleged/disputed/unknown`），以及 `coordinate → 可用锚点` 的登记。07 §11-3 自认这份清单**从未被枚举**。\n与 08b §9-1（可观察性通道结构不存在）**同源**：两者都是「项目从未声明哪些坐标可被何种通道观察」。**corroboration: NON_INDEPENDENT**（08b §9-11 声明它**未读**既有报告，两者是各自独立发现的同一缺口——这属**真正独立的双发现**，应升级为 Architect 的 head-of-list 阻塞项，但仍**不得**因「两个 lane 都说」而升级任何单条 verdict）。",
+   "duplicate_of": "与 08b §9-1（可观察性通道结构不存在）**同源**：两者都是「项目从未声明哪些坐标可被何种通道观察」。**corroboration: NON_INDEPENDENT**（08b §9-11 声明它**未读**既有报告，两者是各自独立发现的同一缺口——这属**真正独立的双发现**，应升级为 Architect 的 head-of-list 阻塞项，但仍**不得**因「两个 lane 都说」而升级任何单条 verdict）。\nRECLASSIFY_AS_METHOD_LIMIT** — 改写为「在**叙事/表达性压力测试**材料上，核心关系坐标无 gold standard，故点 readout 无指称；在**法院/官方**材料上存在 adjudicated 锚点，问题退化为锚点覆盖率」。并与 08b §9-1 合并为**一条** Architect 决议项（可观察性/锚点登记表）。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** — 改写为「在**叙事/表达性压力测试**材料上，核心关系坐标无 gold standard，故点 readout 无指称；在**法院/官方**材料上存在 adjudicated 锚点，问题退化为锚点覆盖率」。并与 08b §9-1 合并为**一条** Architect 决议项（可观察性/锚点登记表）。\n---",
+   "_locator": {
+    "line_start": 265,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C15",
+   "_title": "E-C15 — 07 FM-09：partial pooling 人为制造 mutuality（唯一一条与 canonical invariant 直接冲突的机制）",
+   "claim": "若用**单一**人口超参数对 `Z[k,i,j,t]` 做向心收缩，`i→j` 与 `j→i` 共享同一收缩中心 → **非对称性被系统性压向对称**；`CURRENT_ARCHITECTURE.md:130-132` 要求三条 `X(A→B) != X(B→A)` 断言；故若采用 partial pooling，必须对两个方向使用分离的超参数或 `(1,−1)` contrast 建模，并把「收缩导致的非对称衰减量」作为 readout 显式报告。\nPLAUSIBLE**",
+   "verdict": "PLAUSIBLE**\nCURRENT_ARCHITECTURE.md:130-132` 的三条方向性 `!=` 断言（`VERIFIED_BY_ME`，经 grep「非对称」「!=」确认 §7 附近存在方向性要求；07 的行号我未逐行打开但 §7「低冗余不等于低动态耦合」我已读，`:208-227`）。**收缩会衰减组间差异**这一统计学事实属教科书内容，07 **未给引用**。",
+   "supporting_refs": "CURRENT_ARCHITECTURE.md:130-132` 的三条方向性 `!=` 断言（`VERIFIED_BY_ME`，经 grep「非对称」「!=」确认 §7 附近存在方向性要求；07 的行号我未逐行打开但 §7「低冗余不等于低动态耦合」我已读，`:208-227`）。**收缩会衰减组间差异**这一统计学事实属教科书内容，07 **未给引用**。\n未找到反证。**缺口**：(a) 「向心收缩压向对称」这一步 07 未引任何方法学来源，是它自己的推断；(b) 更强的表述其实可以成立且更有用：收缩衰减的是**任意** `i→j` 与 `j→i` 之间的差异，不限于对称化，所以它威胁的是**所有**方向性 invariant，不只 mutuality——07 的表述偏保守；(c) 07 自称这是「本次审计发现的**唯一一条**统计方法与 canonical 架构 invariant 直接冲突的机制，项目中没有任何记载」——我 grep 了全库 `partial pooling|收缩|shrinkage|向心`，**未发现反证，但也未发现项目内已有记载**，故该「唯一性/无记载」声明**成立**。",
+   "strongest_counterevidence": "未找到反证。**缺口**：(a) 「向心收缩压向对称」这一步 07 未引任何方法学来源，是它自己的推断；(b) 更强的表述其实可以成立且更有用：收缩衰减的是**任意** `i→j` 与 `j→i` 之间的差异，不限于对称化，所以它威胁的是**所有**方向性 invariant，不只 mutuality——07 的表述偏保守；(c) 07 自称这是「本次审计发现的**唯一一条**统计方法与 canonical 架构 invariant 直接冲突的机制，项目中没有任何记载」——我 grep 了全库 `partial pooling|收缩|shrinkage|向心`，**未发现反证，但也未发现项目内已有记载**，故该「唯一性/无记载」声明**成立**。\nUNSURE** — 若采纳，触及 `CURRENT_ARCHITECTURE.md` §7（低冗余 ≠ 低动态耦合）的应用面；但 07 的修法（分离超参数）是**实现约定**，不必然要求改 canonical 文本。",
+   "requires_canonical_change": "UNSURE** — 若采纳，触及 `CURRENT_ARCHITECTURE.md` §7（低冗余 ≠ 低动态耦合）的应用面；但 07 的修法（分离超参数）是**实现约定**，不必然要求改 canonical 文本。\nYES** — 需要在一个合成 dyad 数据集上实测收缩对 `z[k,i,j] - z[k,j,i]` 的衰减幅度，作为「非对称衰减量」这个 readout 的存在性依据",
+   "needs_experiment_or_data": "YES** — 需要在一个合成 dyad 数据集上实测收缩对 `z[k,i,j] - z[k,j,i]` 的衰减幅度，作为「非对称衰减量」这个 readout 的存在性依据\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL** — 接受为一条**实现约定 + readout 要求**；同时要求 07 补方法学引用，并把表述从「压向对称」放宽到「衰减方向性差异」。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 接受为一条**实现约定 + readout 要求**；同时要求 07 补方法学引用，并把表述从「压向对称」放宽到「衰减方向性差异」。\n---",
+   "_locator": {
+    "line_start": 280,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "source_report": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C16",
+   "_title": "E-C16 — 07 §11-3 / 08b §9-1：可观察性通道清单从不存在",
+   "claim": "项目内不存在「哪些构念原则上可被直接观察 / 哪些只能被报告 / 哪些只能被推断」的清单；`g = FIRSTHAND` 与 `structurally_unobservable` 因此都无法落地。这是落地 belief 层的头号阻塞。\n07:518`（§11-3）＋ `08b:702`（§9-1「**这是落地 belief 层的头号阻塞**」）",
+   "source_report": "07:518`（§11-3）＋ `08b:702`（§9-1「**这是落地 belief 层的头号阻塞**」）\nVERIFIED**",
+   "verdict": "VERIFIED**\nAGENTS.md:37`（坐标可为 interval/ordinal/…/Unknown，`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:267-288` §9 六条原则**无一条**涉及可观察性（`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:315` fact status 五值枚举是**文档证据层面**的，不是**构念可观察性**层面的（`VERIFIED_BY_ME`）；全库 grep 无任何「可观察性登记表」类条目",
+   "supporting_refs": "AGENTS.md:37`（坐标可为 interval/ordinal/…/Unknown，`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:267-288` §9 六条原则**无一条**涉及可观察性（`VERIFIED_BY_ME`）；`CURRENT_ARCHITECTURE.md:315` fact status 五值枚举是**文档证据层面**的，不是**构念可观察性**层面的（`VERIFIED_BY_ME`）；全库 grep 无任何「可观察性登记表」类条目\n检索了 (a) `docs/foundation/*` 全部；(b) `AGENTS.md`、`README.md`；(c) 全库 `可观察|observab|可测|anchor|锚点`。**唯一接近的是** `CURRENT_ARCHITECTURE.md:315` 的 `adjudicated | admitted | alleged | disputed | unknown`——但那是**事实状态**轴（这条断言在证据链上的地位），不是**构念可观察性**轴（这个构念能否被任何通道测到）。两者常被混为一谈，`02:224` 也做过同样的混用（「引入 domain 索引；登记 coordination 不可知觉为系统误差源」——那是**单构念**的局部登记，不是全局表）。**故该缺口成立。**",
+   "strongest_counterevidence": "检索了 (a) `docs/foundation/*` 全部；(b) `AGENTS.md`、`README.md`；(c) 全库 `可观察|observab|可测|anchor|锚点`。**唯一接近的是** `CURRENT_ARCHITECTURE.md:315` 的 `adjudicated | admitted | alleged | disputed | unknown`——但那是**事实状态**轴（这条断言在证据链上的地位），不是**构念可观察性**轴（这个构念能否被任何通道测到）。两者常被混为一谈，`02:224` 也做过同样的混用（「引入 domain 索引；登记 coordination 不可知觉为系统误差源」——那是**单构念**的局部登记，不是全局表）。**故该缺口成立。**\nUNSURE** — 07 把它标为「**人类/架构决定**，不是研究问题」（`:518`），这个定性是对的；落地位置是 `CURRENT_ARCHITECTURE.md` §9（新增一条原则）或 §10（Case Bank 前置条件）",
+   "requires_canonical_change": "UNSURE** — 07 把它标为「**人类/架构决定**，不是研究问题」（`:518`），这个定性是对的；落地位置是 `CURRENT_ARCHITECTURE.md` §9（新增一条原则）或 §10（Case Bank 前置条件）\nNO**（是裁决，不是研究）",
+   "needs_experiment_or_data": "NO**（是裁决，不是研究）\nE-C14** 的第 8 字段同源；**corroboration: NON_INDEPENDENT**（08b §9-11 声明未读既有报告，故为**两份独立的同发现**——按契约 §4 硬规则，**不得**因此升级任一单条 verdict，但 Architect 应把它当作**双独立发现**的阻塞项）",
+   "duplicate_of": "E-C14** 的第 8 字段同源；**corroboration: NON_INDEPENDENT**（08b §9-11 声明未读既有报告，故为**两份独立的同发现**——按契约 §4 硬规则，**不得**因此升级任一单条 verdict，但 Architect 应把它当作**双独立发现**的阻塞项）\nACCEPT** — 这是本 lane 唯一的 head-of-list 阻塞项，且它**同时阻塞** 07 的 `⊑` 程序（I10/I11 需依赖表）与 08b 的整个 belief 层（`g = FIRSTHAND`）。**建议作为一条 canonical 决议先于两份报告的任何采纳。**",
+   "recommendation_to_architect": "ACCEPT** — 这是本 lane 唯一的 head-of-list 阻塞项，且它**同时阻塞** 07 的 `⊑` 程序（I10/I11 需依赖表）与 08b 的整个 belief 层（`g = FIRSTHAND`）。**建议作为一条 canonical 决议先于两份报告的任何采纳。**\n---",
+   "_locator": {
+    "line_start": 294,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C17",
+   "_title": "E-C17 — 08b §3 的 3 项 REJECT（modal logic / common knowledge / posterior-as-state）★审计焦点 5",
+   "claim": "三项 REJECT 的**论证**（非结论）是否成立。\n08b` §3.1（`:218–:229`）、§3.2（`:231–:240`）、§3.4（`:257–:268`）",
+   "source_report": "08b` §3.1（`:218–:229`）、§3.2（`:231–:240`）、§3.4（`:257–:268`）\nPLAUSIBLE**（论证成立，但依赖的复杂度/等价性结果我 `NOT_OPENED`）",
+   "verdict": "PLAUSIBLE**（论证成立，但依赖的复杂度/等价性结果我 `NOT_OPENED`）\nplato.stanford.edu/entries/dynamic-epistemic/` [S1]、`van Eijck` ch. in [S2] [S3]、Lutz 2006 经 [S1] 转述（EXPTIME-completeness）、Miller & Moss 2005 经 [S1] 转述（迭代 PAL 不可递归公理化）——**全部 NOT_OPENED**",
+   "supporting_refs": "plato.stanford.edu/entries/dynamic-epistemic/` [S1]、`van Eijck` ch. in [S2] [S3]、Lutz 2006 经 [S1] 转述（EXPTIME-completeness）、Miller & Moss 2005 经 [S1] 转述（迭代 PAL 不可递归公理化）——**全部 NOT_OPENED**\n（逐条判论证质量）:",
+   "strongest_counterevidence": "（逐条判论证质量）:\n   - **§3.1 modal logic —— 论证成立且是本报告最强的一条**。三条理由中第 3 条是承重的且**不依赖任何复杂度结果**：`Φ` 的元素按 `AGENTS.md:37` 是「interval / ordinal / category / constraint / probability distribution / estimate+uncertainty+evidence」，**不是原子命题**，所以「模态逻辑无法在不重新定义 `Φ` 的前提下承载 LHRM 的内容类型」是**类型层面的不可能性**，无需引用 PAL 的任何定理。这是**正确的拒斥**。第 1 条（PAL 与普通多模态逻辑表达力等价、只赢指数简洁性）若成立则加强论证，但它本身是被 08b 自己降级为「净负」的**偏好**判断，不是拒斥的承重项——**即使这条被 refute，拒斥仍成立**。这是良好的论证结构。第 2 条（PAL 假设公告完全可信/真实/公开）与「目标对象逐条违反」是**情境论证**，属 `MODEL_HYPOTHESIS`，08b 未如此标注，是一处标注不足。**保留的 `KD45` 切片**（把知识读 S5、信念读 KD45）经 Gerbrandy–Groeneveld 的 update 论证（可达关系可失去自反性，「belief need not be true」）是**一个真正简约的采纳**，方向正确。**corroboration: NON_INDEPENDENT** — 该论证的第 3 条完全建立在 `AGENTS.md:37` 上，08b 与 07 引的是同一条 canonical 文本。\n   - **§3.2 common knowledge —— 论证成立，但存在一个真实的反驳空间，08b 未处理**。08b 给两条独立理由（形式：reduction theorem 失效 + `PAL+C` 可满足性 EXPTIME-complete；经验：博弈中平均推理深度 ~1.5 步、人无法完成 common knowledge 的无限递归）。**但**：(a) 形式理由是**关于 `PAL+C` 这个特定组合的**复杂度，不是「common knowledge 不可用」——一个只用 `C` 不用 `PAL` 的片段，其复杂度结论不同；(b) 经验理由是**关于人的**（「人做不到」），被用来支持**一个架构决定**（不实现 `[B*]F`）——这是把**人类能力限制**当作**表示充分性判据**，方向上类似审计焦点 9 要警惕的误读；(c) 08b 自己在 `Claim_ι⊛`（`:426`）处**保留了 pair-level 联合承诺**，那在功能上已经承担了一部分 common-ground 的角色，**却没有说明它与被 REJECT 的 `[B*]F` 的边界**。**判断：结论可接受，论证需要补 (a)(c) 两点；(b) 应重标为「人类能力证据，非表示充分性证据」。** 注意：这一条恰好**不是**「三项 REJECT 都错」——它是三条里最可辩的一条，而 08b 的处理是三条里最薄的一条。\n   - **§3.4 posterior-as-state —— 论证成立，但第 2 条被过度外推**。第 1 条（`[S16]` 自己说最可能状态「is not sufficient in general」）与第 3 条（Kunda：accuracy goals 与 directional goals 是不同机制，且更复杂 ≠ 更理性）都成立且不依赖外部复杂度结果。第 4 条（后验字段一旦存在下游必然出现「置信度 = 0.73」）是**行为预测**，不是不可能性，标 `MODEL_HYPOTHESIS` 才合适。**第 2 条需要修正**：「分布是过去历史的 sufficient statistic **仅在已知 transition model 与已知 observation model 时成立**」——Kaelbling/Littman/Cassandra 的充分统计量结果确实以此为条件，**这一句对**；但 08b 用来支撑它的是 `[S22]`（人识别谎言 54%、d≈.40），而 `[S22]` 是**人类知觉的基线**，不是「LHRM 的 observation model 不可知」的证据。**这是把人类能力限制当成模型参数不可辨识的证据**——与 §3.2(b) 是同一类问题，只是更严重，因为这里的推论直接支撑 REJECT。\n   - **总结判断**：3 项 REJECT 的**结论**我判为可接受；**论证**中 08b 有两处把「人类能力/行为限制」当作「表示或模型可行性」的证据（§3.2(b)、§3.4(2)），这在 `AGENTS.md` research discipline 下需要重标。这是我在审计焦点 5 上唯一的实质性保留意见。\nUNSURE** — 任何一项 REJECT 被 Architect 采纳都会写入 `CURRENT_ARCHITECTURE.md` §3/§6 的负面清单",
+   "requires_canonical_change": "UNSURE** — 任何一项 REJECT 被 Architect 采纳都会写入 `CURRENT_ARCHITECTURE.md` §3/§6 的负面清单\nNO**（`§3.2(b)` 的人类深度证据本身需要 romantic-dyad 的专门测量——08b §9-2 自认 `UNKNOWN`）",
+   "needs_experiment_or_data": "NO**（`§3.2(b)` 的人类深度证据本身需要 romantic-dyad 的专门测量——08b §9-2 自认 `UNKNOWN`）\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL** — 三项 REJECT 的结论接受；要求 08b 把 §3.2(b) 与 §3.4(2) 的证据类型重标，并补 `Claim_ι⊛` 与 `[B*]F` 的边界说明。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 三项 REJECT 的结论接受；要求 08b 把 §3.2(b) 与 §3.4(2) 的证据类型重标，并补 `Claim_ι⊛` 与 `[B*]F` 的边界说明。\n---",
+   "_locator": {
+    "line_start": 309,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C18",
+   "_title": "E-C18 — 08b 的「最小 belief 层」是否真的最小 ★审计焦点 6",
+   "claim": "整条 `Reality → Observation → Belief → Evaluation` 链可用 **8 个逐记录带类型槽位 + 2 个逐 (持有者, 内容) 带类型标量 + 4 个派生类 + 1 个世界模式标签** 表达；「**没有第九个原语，没有 credence 字段，没有 modality 深度**」。\n08b:12`（headline）、§4.1（`:355–:368`）、§4.2 槽位表（`:386–:406`）、§10（`:722`）",
+   "source_report": "08b:12`（headline）、§4.1（`:355–:368`）、§4.2 槽位表（`:386–:406`）、§10（`:722`）\nUNSUPPORTED**（对「最小」这一强主张；设计本身可接受）",
+   "verdict": "UNSUPPORTED**（对「最小」这一强主张；设计本身可接受）\nCURRENT_ARCHITECTURE.md:64, 80, 203, 241, 258`（`τ = (history_id, local_time)`、`fork(BeliefState_A, mode)`，均 `VERIFIED_BY_ME`）；`AGENTS.md:53`（nested Belief，`VERIFIED_BY_ME`）",
+   "supporting_refs": "CURRENT_ARCHITECTURE.md:64, 80, 203, 241, 258`（`τ = (history_id, local_time)`、`fork(BeliefState_A, mode)`，均 `VERIFIED_BY_ME`）；`AGENTS.md:53`（nested Belief，`VERIFIED_BY_ME`）\n（三条，按强度排序）:",
+   "strongest_counterevidence": "（三条，按强度排序）:\n   - **(1) 槽位 #4 `M` 可由 #3 `τ` 与 `parent` 派生。** `τ` 已经携带 `history_id`——那就是 lineage 坐标，也就是「这条记录属于哪条历史」。`M` 是**每条历史分支的属性**（一个 ACTUAL 分支、一个 PLANNED 分支…），不是每条记录的属性。因此给定一个 history registry，`M(record) = M(τ.history_id)`；更进一步，08b 自己规定 `parent` **仅当 `M ≠ ACTUAL` 时需要**（`:383`），于是 `M(record) = M(parent(record))`，`M` 与 `parent` 互为对方的定义锚点。**headline 的「8 槽位 + 1 世界模式标签」把 `M` 数了两次**（它既是槽位 #4 又是那「1 个标签」）。08b §2.4 给的不可删理由是「爆炸半径」，那是**工程可行性**论证，不是**不可导出性**论证——两者不是一回事。**这是「最小」这一主张上唯一的真实缺陷。** 保留 `M` 作为逐记录冗余有实际好处（免 registry lookup、类型显式），但报告必须说清它是**有意的冗余**而非**不可省的原语**。\n   - **(2) 四个派生类之一 `NonDisclosure` 在本层内不可计算。** 08b §2.11（`:207`）自己写下 `NonDisclosure(ι, p) = k_ι(p) = + ∧ m_ι(p) ∈ {?, −} ∧ ι 有保留 p 的记录`，并立刻论证第三项输入**只能来自 `Action/Event` 层的 `Disclosure` 记录**，「不能是 `Bel` 层的字段」。§9-10 又把它称为「本设计的**最大外部依赖**」，且 CB-B3 标注为「**预期 MAPPING_FAILURE** 若 `Action/Event` 层尚无 `Disclosure` 类型」。所以：**8 槽位 + 2 标量的最小层，其 4 个派生类中有 1 个当前不可求值。** headline 的简约叙事没有反映这一点。（报告**诚实记录了**这一点——这是加分项，不是隐瞒；问题只在于 headline 的计数没有反映它。）\n   - **(3) headline 计数内部不一致。** `:12` 写「8 个逐记录带类型槽位 + 2 个标量 + **4 个派生类 + 1 个世界模式标签**」；`:722` 写「8 槽位 + 2 标量 + 4 派生类 + **1 枚举 + 1 指针**」。同一交付物被描述成两种加法。\n   - **不构成缺陷的部分（我逐槽位反证过）**：`p`（无内容不可寻址）、`H = ι⊛`（co-construction 与偶然收敛的区分，有 `[S59]` 支撑）、`k` 的 `?`/`⊘` 分离（`AGENTS.md:24`）、`g` 的 6 值（每值有独立处理规则）、`src`（provenance + 二手不变式）、`m`（把 order-2 折进字段，从而不必实现被 REJECT 的模态框架——**这是本报告最漂亮的一步**）——这 6 个我**找不到**从其它槽位导出的路径。`Pol` 与 `Rel` 两个逐 (持有者, 内容) 标量也各有独立存在理由（`Pol` 承载 dogmatism 的**策略**内容而非**信念强度**；`Rel` 必须按 (source, content, frame) 三重索引）。\n   - **结论**：这个层**不是严格最小**（`M` 可派生、`NonDisclosure` 不可求值），但它是**一个刻意保守、且报告自身诚实标注了依赖**的设计。缺陷在**表述精度**，不在**设计实质**。\nUNSURE**（落点判定见下方专项 3 第 3 行）",
+   "requires_canonical_change": "UNSURE**（落点判定见下方专项 3 第 3 行）\nNO**",
+   "needs_experiment_or_data": "NO**\nRel` 的 frame 维度与 `Pol` 的存在性同源于 08b §5-4（Polarization），二者是**一条证据支撑两个槽位**——cluster 内相关但非重复",
+   "duplicate_of": "Rel` 的 frame 维度与 `Pol` 的存在性同源于 08b §5-4（Polarization），二者是**一条证据支撑两个槽位**——cluster 内相关但非重复\nACCEPT_AS_PROPOSAL** — 接受为 proposal；要求 08b (i) 把 `M` 明确标为「有意的逐记录冗余，可由 `τ.history_id` + history registry 派生」；(ii) 在 headline 里标出 `NonDisclosure` 依赖未设计的 `Disclosure` 事件；(iii) 统一 `:12` 与 `:722` 的计数。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 接受为 proposal；要求 08b (i) 把 `M` 明确标为「有意的逐记录冗余，可由 `τ.history_id` + history registry 派生」；(ii) 在 headline 里标出 `NonDisclosure` 依赖未设计的 `Disclosure` 事件；(iii) 统一 `:12` 与 `:722` 的计数。\n---",
+   "_locator": {
+    "line_start": 328,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C19",
+   "_title": "E-C19 — 08b「非披露是二阶事实、不披露需要 `Disclosure` 事件」★审计焦点 7",
+   "claim": "不披露（non-disclosure）不是一个信息缺失，而是一个**关于一个 `Behavior` 的断言**；`NonDisclosure` 需要第三个输入「`ι` 确实有东西没披露」，这只能来自 `Action/Event` 层的 `Disclosure` 记录，**不能是 belief 层的字段**。因此「部分披露的表示不在 belief 层，而在 action 层」。\n08b` §2.11（`:197–:210`）、§4.6 I5（`:473`）、§3.6（`:296`）、§7 CB-B3（`:667`）、§9-10（`:711`）",
+   "source_report": "08b` §2.11（`:197–:210`）、§4.6 I5（`:473`）、§3.6（`:296`）、§7 CB-B3（`:667`）、§9-10（`:711`）\nVERIFIED**（论证成立 + 与 canonical 无冲突）／附带一条 canonical 缺口",
+   "verdict": "VERIFIED**（论证成立 + 与 canonical 无冲突）／附带一条 canonical 缺口\nCURRENT_ARCHITECTURE.md:164–:204` §6（`VERIFIED_BY_ME`，我读了全文）：`CurrentState + Action/Event + Belief + Constraint + Environment -> NextState`；`State != Action`；`State influences ActionPolicy`；`Action/Event updates State`；`X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)`。§6 中 **`Action/Event` 未被枚举任何子类型**（`VERIFIED_BY_ME`），因此 `Disclosure` 是**新增**子类型而非**归入**既有子类型",
+   "supporting_refs": "CURRENT_ARCHITECTURE.md:164–:204` §6（`VERIFIED_BY_ME`，我读了全文）：`CurrentState + Action/Event + Belief + Constraint + Environment -> NextState`；`State != Action`；`State influences ActionPolicy`；`Action/Event updates State`；`X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)`。§6 中 **`Action/Event` 未被枚举任何子类型**（`VERIFIED_BY_ME`），因此 `Disclosure` 是**新增**子类型而非**归入**既有子类型\n检索了 (a) `CURRENT_ARCHITECTURE.md` 全文找 `Constraint` 与 `Action` 的关系；(b) grep `披露|disclos|保密|隐瞒` 全库。**结论：与 canonical 的 `Constraint`/`Action` 处理无冲突**，理由有三：(i) 把「`ι` 把 `p` 放在 `ι'` 可及范围内 / 不可及范围内」建成 `Action/Event` 正是 §6「Action/Event updates State」的**教科书用法**；(ii) §6 明确「核心不走 `state label + event -> lookup next state`」，而 `Disclosure` 事件进入 `F` 的方式与 `肯花钱` 进入 `F` 的方式完全同型，不引入状态机；(iii) `AGENTS.md:50`「Keep `State != Action`」被遵守——08b 正是**因为**披露是行为才把它推出 belief 层。**唯一需要注意的邻近风险**：`CURRENT_ARCHITECTURE.md:190` 的例子「『订婚前不发生性行为』更接近 Agent boundary / **constraint**，而不是『性欲为零』」说明 canonical 倾向把**持续的边界**放进 `Constraint` 而非 `Action/Event`。若 `Disclosure` 被理解为**持续的不可及性**而非**一次披露/不披露的动作**，它会落进 `Constraint` 而不是 `Action/Event`。08b 的措辞（「把 `p` 放在可及范围内 / 放在不可及范围内」）**偏向后者**，措辞需要收紧。**这是我在本条找到的唯一真实张力，且是措辞级而非结构级。**",
+   "strongest_counterevidence": "检索了 (a) `CURRENT_ARCHITECTURE.md` 全文找 `Constraint` 与 `Action` 的关系；(b) grep `披露|disclos|保密|隐瞒` 全库。**结论：与 canonical 的 `Constraint`/`Action` 处理无冲突**，理由有三：(i) 把「`ι` 把 `p` 放在 `ι'` 可及范围内 / 不可及范围内」建成 `Action/Event` 正是 §6「Action/Event updates State」的**教科书用法**；(ii) §6 明确「核心不走 `state label + event -> lookup next state`」，而 `Disclosure` 事件进入 `F` 的方式与 `肯花钱` 进入 `F` 的方式完全同型，不引入状态机；(iii) `AGENTS.md:50`「Keep `State != Action`」被遵守——08b 正是**因为**披露是行为才把它推出 belief 层。**唯一需要注意的邻近风险**：`CURRENT_ARCHITECTURE.md:190` 的例子「『订婚前不发生性行为』更接近 Agent boundary / **constraint**，而不是『性欲为零』」说明 canonical 倾向把**持续的边界**放进 `Constraint` 而非 `Action/Event`。若 `Disclosure` 被理解为**持续的不可及性**而非**一次披露/不披露的动作**，它会落进 `Constraint` 而不是 `Action/Event`。08b 的措辞（「把 `p` 放在可及范围内 / 放在不可及范围内」）**偏向后者**，措辞需要收紧。**这是我在本条找到的唯一真实张力，且是措辞级而非结构级。**\nYES**（本 lane 三条 canonical 建议中**唯一**我判 YES 的一项，但见下）— 需在 `CURRENT_ARCHITECTURE.md` §6「State / Action / Belief / Constraint 分离」新增一个 `Action/Event` 子类型 `Disclosure`（含「可及 / 不可及」二分 + 被指向的内容 `p` + `τ`）。**为什么不能停在 proposal**：08b 的 `I5`（`NonDisclosure` 为真 ⟹ 存在 `Disclosure` 记录）与 CB-B3 都**直接依赖**它；缺了它，4 个派生类有 1 个不可求值，最小层不完整。但**它也是三条里最小、最无争议、且不新增任何人类关系构念的一条**。**注意**：本 packet 不实施该改动（契约 §3 禁止 canonical mutation），此处只是给出 Architect 侧的落点判定。**`Disclosure` 的具体形态 08b 自己未设计（§9-10），所以落地前还需要一次形态裁决。**",
+   "requires_canonical_change": "YES**（本 lane 三条 canonical 建议中**唯一**我判 YES 的一项，但见下）— 需在 `CURRENT_ARCHITECTURE.md` §6「State / Action / Belief / Constraint 分离」新增一个 `Action/Event` 子类型 `Disclosure`（含「可及 / 不可及」二分 + 被指向的内容 `p` + `τ`）。**为什么不能停在 proposal**：08b 的 `I5`（`NonDisclosure` 为真 ⟹ 存在 `Disclosure` 记录）与 CB-B3 都**直接依赖**它；缺了它，4 个派生类有 1 个不可求值，最小层不完整。但**它也是三条里最小、最无争议、且不新增任何人类关系构念的一条**。**注意**：本 packet 不实施该改动（契约 §3 禁止 canonical mutation），此处只是给出 Architect 侧的落点判定。**`Disclosure` 的具体形态 08b 自己未设计（§9-10），所以落地前还需要一次形态裁决。**\nNO**",
+   "needs_experiment_or_data": "NO**\n07 的 `withheld_by_actor` tag（`:57`）是**同一现象的另一半**：07 从**缺失机制**侧分类，08b 从**行为记录**侧要求证据。二者**互补且互相依赖**——`Disclosure` 事件正是把 07 的 `withheld_by_actor`（主动隐瞒）与 `private_to_partner`（存在但只对 partner 可观测）、`refused`（被问但拒答）**区分开**的那个证据。**两份报告都没有指出这个依赖。** 见 E-C23。",
+   "duplicate_of": "07 的 `withheld_by_actor` tag（`:57`）是**同一现象的另一半**：07 从**缺失机制**侧分类，08b 从**行为记录**侧要求证据。二者**互补且互相依赖**——`Disclosure` 事件正是把 07 的 `withheld_by_actor`（主动隐瞒）与 `private_to_partner`（存在但只对 partner 可观测）、`refused`（被问但拒答）**区分开**的那个证据。**两份报告都没有指出这个依赖。** 见 E-C23。\nACCEPT** — 论证成立、无冲突、是本 lane 唯一判 `YES` 的 canonical 建议；要求 08b 收紧 `Disclosure` 的措辞（一次**动作**，而非持续的**约束**），并在 Architect 侧与 07 的 tag 分类**同一个决议**里处理。",
+   "recommendation_to_architect": "ACCEPT** — 论证成立、无冲突、是本 lane 唯一判 `YES` 的 canonical 建议；要求 08b 收紧 `Disclosure` 的措辞（一次**动作**，而非持续的**约束**），并在 Architect 侧与 07 的 tag 分类**同一个决议**里处理。\n---",
+   "_locator": {
+    "line_start": 348,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C20",
+   "_title": "E-C20 — 08b §0 的 canonical 一致性声明（`Reality != Observation != Belief` 等）",
+   "claim": "08b 断言「LHRM 已经决定要有 belief 层」：`CURRENT_ARCHITECTURE.md` §3 已写下 `Reality != Observation != Belief`；§8 已写 `SimWorld_(Agent,m) = fork(BeliefState_A, mode)`；`AGENTS.md` 当前架构方向第 10 条已写明梦境/幻想/计划/反事实应作为 nested Belief。因此「剩下的唯一问题是它有多小」。\n08b:22`",
+   "source_report": "08b:22`\nVERIFIED**",
+   "verdict": "VERIFIED**\nCURRENT_ARCHITECTURE.md:64`（`## 3. 世界层与局部投影`）、`:80`（`Reality != Observation != Belief`）、`:258`（`= fork(BeliefState_A, mode)`）、`AGENTS.md:53`（第 10 条：Time/history may branch；dream/fantasy/plan/counterfactual 作为 nested Belief）——**全部 `VERIFIED_BY_ME`**（grep 精确命中）",
+   "supporting_refs": "CURRENT_ARCHITECTURE.md:64`（`## 3. 世界层与局部投影`）、`:80`（`Reality != Observation != Belief`）、`:258`（`= fork(BeliefState_A, mode)`）、`AGENTS.md:53`（第 10 条：Time/history may branch；dream/fantasy/plan/counterfactual 作为 nested Belief）——**全部 `VERIFIED_BY_ME`**（grep 精确命中）\n检索了 (a) 08b 声称的三个 canonical 指针，逐条命中；(b) 是否有**相反**的 canonical 文本——未发现。但有一处**需要限定**：08b 说「剩下的唯一问题是它有多小」，而 `CURRENT_ARCHITECTURE.md` §6 把 `Belief` 只列为 `F` 的一个**输入变量**（`F(..., Belief_t, ...)`），**没有**给出 belief 的任何内部结构。所以准确表述是「canonical 已决定**存在** belief 层，未决定其**形状**」——这正是 08b 说的意思，措辞准确。",
+   "strongest_counterevidence": "检索了 (a) 08b 声称的三个 canonical 指针，逐条命中；(b) 是否有**相反**的 canonical 文本——未发现。但有一处**需要限定**：08b 说「剩下的唯一问题是它有多小」，而 `CURRENT_ARCHITECTURE.md` §6 把 `Belief` 只列为 `F` 的一个**输入变量**（`F(..., Belief_t, ...)`），**没有**给出 belief 的任何内部结构。所以准确表述是「canonical 已决定**存在** belief 层，未决定其**形状**」——这正是 08b 说的意思，措辞准确。\nNO**（这是对 canonical 的**确认**，不是变更要求）",
+   "requires_canonical_change": "NO**（这是对 canonical 的**确认**，不是变更要求）\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT** — 可作为「belief 层是 canonical 已决事项、非新增构念」的依据，用于回应 Architect 对「这是否在扩 ontology」的疑问。",
+   "recommendation_to_architect": "ACCEPT** — 可作为「belief 层是 canonical 已决事项、非新增构念」的依据，用于回应 Architect 对「这是否在扩 ontology」的疑问。\n---",
+   "_locator": {
+    "line_start": 363,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C21",
+   "_title": "E-C21 — 08b §10 的 verdict 计数与 §3 实际判决不符",
+   "claim": "08b:24` 与 `:723` 称过度工程审计含「**3 项 `REJECT`**（modal logic、common knowledge、后验作为状态）、**2 项 `REUSE-EQUATION-ONLY`**（POMDP、AGM）、**1 项 `DEFER`**（event model）」。\n08b:24`、§10（`:723`）",
+   "source_report": "08b:24`、§10（`:723`）\nVERIFIED**（缺陷确认）",
+   "verdict": "VERIFIED**（缺陷确认）\ngrep `^\\*\\*判决|判决：` → 11 处命中。实际判决标签分布：**REJECT 出现在 7 个分项**（§3.1 modal logic、§3.2 common knowledge、§3.4 后验作状态、§3.5 `d′/β`、§3.6 deception 作 trait、§3.8 reductionism 之争、§3.9 AGM 完整公理化）；**REUSE-EQUATION-ONLY 3 个**（§3.4 更新骨架、§3.7 POMDP、—— §3.4 与 §3.7，§3.9 的 AGM 在 headline 里被算作 REUSE 但 §3.9 正文写的是 `ADOPT(Preservation…) + REJECT(AGM 完整公理化)`，**没有 `REUSE-EQUATION-ONLY` 标签**）；**ADOPT 6 处**、**DEFER 1 处**、**ADOPT-with-cap 1 处**（§3.3 递归 ToM，深度上限 2）。**`VERIFIED_BY_ME`**",
+   "supporting_refs": "grep `^\\*\\*判决|判决：` → 11 处命中。实际判决标签分布：**REJECT 出现在 7 个分项**（§3.1 modal logic、§3.2 common knowledge、§3.4 后验作状态、§3.5 `d′/β`、§3.6 deception 作 trait、§3.8 reductionism 之争、§3.9 AGM 完整公理化）；**REUSE-EQUATION-ONLY 3 个**（§3.4 更新骨架、§3.7 POMDP、—— §3.4 与 §3.7，§3.9 的 AGM 在 headline 里被算作 REUSE 但 §3.9 正文写的是 `ADOPT(Preservation…) + REJECT(AGM 完整公理化)`，**没有 `REUSE-EQUATION-ONLY` 标签**）；**ADOPT 6 处**、**DEFER 1 处**、**ADOPT-with-cap 1 处**（§3.3 递归 ToM，深度上限 2）。**`VERIFIED_BY_ME`**\n无。这是纯粹的**摘要层计数错误**：`§3` 正文的 11 条判决比 headline 的 6 类计数**多出 4 个 REJECT 与 1 个 REUSE**。特别是 §3.5（`d′`/`β`）、§3.6（deception 作 trait）、§3.8（reductionism 之争）这三个 REJECT **在 headline 里完全不可见**，而 §3.5 的 REJECT 是有实质后果的（它决定了 `d′`/`β` 不进状态、`Rel` 必须按 frame 索引）。另外 §3.9 的 AGM 在 `:723` 被算作 `REUSE-EQUATION-ONLY`，但 §3.9 正文（`:337`）的判决是 `ADOPT(…) + REJECT(AGM 的完整公理化与收缩算子)`——**标签不一致**。",
+   "strongest_counterevidence": "无。这是纯粹的**摘要层计数错误**：`§3` 正文的 11 条判决比 headline 的 6 类计数**多出 4 个 REJECT 与 1 个 REUSE**。特别是 §3.5（`d′`/`β`）、§3.6（deception 作 trait）、§3.8（reductionism 之争）这三个 REJECT **在 headline 里完全不可见**，而 §3.5 的 REJECT 是有实质后果的（它决定了 `d′`/`β` 不进状态、`Rel` 必须按 frame 索引）。另外 §3.9 的 AGM 在 `:723` 被算作 `REUSE-EQUATION-ONLY`，但 §3.9 正文（`:337`）的判决是 `ADOPT(…) + REJECT(AGM 的完整公理化与收缩算子)`——**标签不一致**。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**",
+   "duplicate_of": "NONE**\nACCEPT_AS_PROPOSAL** — 结论（哪些 ADOPT / 哪些 REJECT）以 §3 正文为准；要求 08b 修正 `:24` 与 `:723` 的计数与 §3.9 的标签，使 headline 可被直接引用。给 parent 的提示：**若 Architect 只读 §10，会漏掉 4 个 REJECT**，其中 §3.5 的 `d′`/`β` REJECT 是 `Rel` 必须带 frame 维度的直接理由（§5-4 自称「本设计中唯一一处文献直接开出实现要求」）。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 结论（哪些 ADOPT / 哪些 REJECT）以 §3 正文为准；要求 08b 修正 `:24` 与 `:723` 的计数与 §3.9 的标签，使 headline 可被直接引用。给 parent 的提示：**若 Architect 只读 §10，会漏掉 4 个 REJECT**，其中 §3.5 的 `d′`/`β` REJECT 是 `Rel` 必须带 frame 维度的直接理由（§5-4 自称「本设计中唯一一处文献直接开出实现要求」）。\n---",
+   "_locator": {
+    "line_start": 378,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C22",
+   "_title": "E-C22 — 两份报告的同一条不变量被陈述两次（readout 不回写）",
+   "claim": "07 与 08b 各自独立地提出了同一条架构约束：下游 readout 的结果**不得**被写回为状态。\n07` I12（`:244`）+ §4.1 C3（`:196`）+ §9.1 #5（`:447`）；`08b` §3.4（`:268`：「若某个下游任务确实需要数值，取 `(k, g, src, Rel, Pol)` 上的计算 readout，且该 readout **不得**被写回为状态」）+ §3.4 第 4 条代价（`:265`）",
+   "source_report": "07` I12（`:244`）+ §4.1 C3（`:196`）+ §9.1 #5（`:447`）；`08b` §3.4（`:268`：「若某个下游任务确实需要数值，取 `(k, g, src, Rel, Pol)` 上的计算 readout，且该 readout **不得**被写回为状态」）+ §3.4 第 4 条代价（`:265`）\nVERIFIED**",
+   "verdict": "VERIFIED**\n两处原文（`VERIFIED_BY_ME`）。两者的 canonical 依据也相同：`AGENTS.md:36`（representation before scalarization；distance/weight/score 是 downstream readouts）+ `AGENTS.md:38`（`PROJECT_HISTORY:116` 的「不得伪造 78/100」文字禁令，07 已引）",
+   "supporting_refs": "两处原文（`VERIFIED_BY_ME`）。两者的 canonical 依据也相同：`AGENTS.md:36`（representation before scalarization；distance/weight/score 是 downstream readouts）+ `AGENTS.md:38`（`PROJECT_HISTORY:116` 的「不得伪造 78/100」文字禁令，07 已引）\n无。**这是本 lane 最干净的一个 double-count**：同一约束、同一 canonical 依据、两种表述。**corroboration: NON_INDEPENDENT**（按契约 §4：同一来源支撑两次，**不得**升级 verdict）。差别在于 07 给它一个可测形式（I12，依赖图/静态检查），08b 只给一句禁令。**建议 join 时合并为一条，保留 07 的可测形式。**",
+   "strongest_counterevidence": "无。**这是本 lane 最干净的一个 double-count**：同一约束、同一 canonical 依据、两种表述。**corroboration: NON_INDEPENDENT**（按契约 §4：同一来源支撑两次，**不得**升级 verdict）。差别在于 07 给它一个可测形式（I12，依赖图/静态检查），08b 只给一句禁令。**建议 join 时合并为一条，保留 07 的可测形式。**\nUNSURE**",
+   "requires_canonical_change": "UNSURE**\nNO**",
+   "needs_experiment_or_data": "NO**\n本条**即**是 duplicate 记录",
+   "duplicate_of": "本条**即**是 duplicate 记录\nREJECT**（对「两条独立结论」的记账方式）／要求 parent 在 join 时合并为一条。",
+   "recommendation_to_architect": "REJECT**（对「两条独立结论」的记账方式）／要求 parent 在 join 时合并为一条。\n---",
+   "_locator": {
+    "line_start": 393,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "E-C23",
+   "_title": "E-C23 — 两份报告的类型学重叠与同义陷阱 ★审计焦点 8（四项必答之一）",
+   "claim": "07 对 `Unknown`（状态坐标侧）做类型化，08b 对 belief 记录做类型化。两套类型学之间存在**未协调的重叠与同义陷阱**。\n07` §1 分类表（`:52–:63`）+ §9.3 `value_class`（`:479`）；`08b` §2.5 `k`（`:109–:112`）+ §2.4 `M`（`:97–:99`）+ §4.3 派生类（`:199–:208`）",
+   "source_report": "07` §1 分类表（`:52–:63`）+ §9.3 `value_class`（`:479`）；`08b` §2.5 `k`（`:109–:112`）+ §2.4 `M`（`:97–:99`）+ §4.3 派生类（`:199–:208`）\nVERIFIED**（重叠存在且未被协调）",
+   "verdict": "VERIFIED**（重叠存在且未被协调）\n两侧原文并置（`VERIFIED_BY_ME`）",
+   "supporting_refs": "两侧原文并置（`VERIFIED_BY_ME`）\n（这是 mandatory answer，逐项给出）:",
+   "strongest_counterevidence": "（这是 mandatory answer，逐项给出）:\n   | 07 的类型 | 08b 的类型 | 关系 | 危险度 |\n   | --- | --- | --- | --- |\n   | `value_class` 的「无信息」 | `k = ?`（悬置） | **同义** | 中 |\n   | `value_class` 的「未来未定义」 | `M ∈ {IMAGINED, PLANNED, CF, DREAM}` + `not_yet_real` | **同义但切分粒度不同**（08b 用 4 个世界模式，07 用 1 个时间 tag） | 中 |\n   | `value_class` 的「不可寻址」 | `k = ⊘`（不涉及） | **同义** | 中 |\n   | `value_class` 的「真且假」 | `Divergent(p)`（`k_ι=+, k_ι'=−`） | **同义陷阱**：07 的 `B` 是**多来源对同一命题的冲突**；08b 的 `Divergent` 是**两个主体对同一命题的对立**。**语义不同，但名字极易被误并** | **高** |\n   | `disputed` tag | `Divergent` 派生类 | **同上，最危险的一处** | **高** |\n   | `withheld_by_actor` tag | `NonDisclosure` + `Disclosure` 事件 | **互补且互相依赖**（见 E-C19 第 9 字段） | 中 |\n   | `private_to_partner` tag | `g = REPORTED` + `src` + `reporter_role` | **部分重叠** | 低 |\n   | I5（tag 不可跨角色泄漏） | I2（`M ≠ ACTUAL` 不入 `Θ` 派生） | **形式同源**（都是分层纯度），对象不同 | 低（但会让人误以为有两条独立不变量） |\n   **协调状态**：**零。** 07 §12.1 的 provenance 清单**不含 08b**；08b §9-11（`:712`）明写「本 lane 未读 `PARAMETER_CONVERGENCE_V0_1.md`、`CONSTRUCT_SCOPE_DIRECTIONALITY.md`、既有报告 A–D、validation fixtures」，**§2–§4 全程未提及 07 的 tag 分类**。**两份报告在同一 PR 内各自发明了一套「missingness / not-applicable」分区，谁都没有做过 de-dup 检查。**\n   **是否双重计数**：**不是证据双重计数**（两者的文献基础不同：07 用 MNAR/缺失机制文献 + Belnap；08b 用 SDT / testimony / shared-reality 文献）。**是「同一数学区分的两套平行编码」双重规格。** 危险在于 Architect 若把两套 tag 直接并入会得到一个**至少 14 值、含 3 对同义项**的枚举——这恰好违反 `AGENTS.md:22`「prefer few stable constructs」与 `AGENTS.md:24`「never silently coerce」，且会让 07 自己的 I4（tag 闭包）从一个 10 值枚举膨胀成 14 值枚举。\n   **corroboration**: 08b 的存在性结论**不是**对 07 的独立佐证（08b 未读 07）；反之亦然。二者是**独立发现在同一对象上收敛**——这本身就是最值得 Architect 知道的一件事：**两个 lane 从相反方向走到了同一个未定义区域。**\nUNSURE** — 若 Architect 采纳任一套类型学，都需要在 `CURRENT_ARCHITECTURE.md` §9（原则 4–6）落点；**但两份都不应各自直接落地**。",
+   "requires_canonical_change": "UNSURE** — 若 Architect 采纳任一套类型学，都需要在 `CURRENT_ARCHITECTURE.md` §9（原则 4–6）落点；**但两份都不应各自直接落地**。\nNO**",
+   "needs_experiment_or_data": "NO**\n本条**即**是 duplicate 记录（并覆盖 E-C22）",
+   "duplicate_of": "本条**即**是 duplicate 记录（并覆盖 E-C22）\nACCEPT** — 把「缺失性 / 不适用性 / 冲突 / 不可寻址 的分区」作为**一条** canonical 决议项，强制 07 与 08b 在**同一次决议**中合并；明确 `disputed`（07）与 `Divergent`（08b）是**两个不同的东西，必须重命名其一**（建议 07 保留 `disputed`，08b 改为 `Stance_Divergent`）。**这是四项必答中本 lane 唯一一条会导致实际 ontology 事故的发现。**",
+   "recommendation_to_architect": "ACCEPT** — 把「缺失性 / 不适用性 / 冲突 / 不可寻址 的分区」作为**一条** canonical 决议项，强制 07 与 08b 在**同一次决议**中合并；明确 `disputed`（07）与 `Divergent`（08b）是**两个不同的东西，必须重命名其一**（建议 07 保留 `disputed`，08b 改为 `Stance_Divergent`）。**这是四项必答中本 lane 唯一一条会导致实际 ontology 事故的发现。**\n---",
+   "_locator": {
+    "line_start": 408,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C24",
+   "_title": "E-C24 — 07 §5.4 替代文本的落地位置有类别错误风险",
+   "claim": "07 建议把 `Computable != Certain` 扩为一段更强的替代文本（「Missingness removes point identification. It preserves: (a) non-trivial bounds; (b) monotone partial functionals. It does NOT preserve: point readouts; comparisons; transition-law identification.」），提交 Architect 审阅。\n07` §5.4（`:264–:282`）、§9.1 #12（`:454`）、§13 后续 1（`:607`）",
+   "source_report": "07` §5.4（`:264–:282`）、§9.1 #12（`:454`）、§13 后续 1（`:607`）\nUNSUPPORTED**（对「可安全落地」这一隐含前提）",
+   "verdict": "UNSUPPORTED**（对「可安全落地」这一隐含前提）\nAGENTS.md:68`（「classify imported material as `current | superseded | historical evidence`」）、`:69`（「Current architecture should be expressed through **concise canonical docs**; avoid duplicated competing SSOTs」）、`CURRENT_ARCHITECTURE.md:15`（canonical 指针）、`docs/foundation/STAGE_SUMMARY_2026-09-07.md` 的**文件性质**（文件名含日期 `2026-07`…实为 `2026-09-07`，是 stage 快照）——全部 `VERIFIED_BY_ME`",
+   "supporting_refs": "AGENTS.md:68`（「classify imported material as `current | superseded | historical evidence`」）、`:69`（「Current architecture should be expressed through **concise canonical docs**; avoid duplicated competing SSOTs」）、`CURRENT_ARCHITECTURE.md:15`（canonical 指针）、`docs/foundation/STAGE_SUMMARY_2026-09-07.md` 的**文件性质**（文件名含日期 `2026-07`…实为 `2026-09-07`，是 stage 快照）——全部 `VERIFIED_BY_ME`\n07 §5.4 标了「**不改 canonical，仅建议**」，这一自我约束是对的，但它**没有指名落地文件**。而 §0 的指针表把 `Computable != Certain` 定位在 `STAGE_SUMMARY_2026-09-07.md:162`。若 Architect 顺着这个指针去改 `STAGE_SUMMARY_2026-09-07.md`，就是在**编辑一份带日期的 stage 快照**——按 `AGENTS.md:68` 它属于 `historical evidence`，按 `:69` 它不是 SSOT。**正确的落点应是 `AGENTS.md` 的 research discipline 段，或 `CURRENT_ARCHITECTURE.md` §9。** 07 §13 把这项路由给「A02」，但 A02 若不指名文件，同一错误会传播。",
+   "strongest_counterevidence": "07 §5.4 标了「**不改 canonical，仅建议**」，这一自我约束是对的，但它**没有指名落地文件**。而 §0 的指针表把 `Computable != Certain` 定位在 `STAGE_SUMMARY_2026-09-07.md:162`。若 Architect 顺着这个指针去改 `STAGE_SUMMARY_2026-09-07.md`，就是在**编辑一份带日期的 stage 快照**——按 `AGENTS.md:68` 它属于 `historical evidence`，按 `:69` 它不是 SSOT。**正确的落点应是 `AGENTS.md` 的 research discipline 段，或 `CURRENT_ARCHITECTURE.md` §9。** 07 §13 把这项路由给「A02」，但 A02 若不指名文件，同一错误会传播。\nUNSURE** — 落点应为 `AGENTS.md:18-27`（research discipline）或 `CURRENT_ARCHITECTURE.md` §9；**不应**是 `STAGE_SUMMARY_2026-09-07.md`",
+   "requires_canonical_change": "UNSURE** — 落点应为 `AGENTS.md:18-27`（research discipline）或 `CURRENT_ARCHITECTURE.md` §9；**不应**是 `STAGE_SUMMARY_2026-09-07.md`\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**（但与 E-C1 是同一主张的两个动作：E-C1 是「更正归属」，本条是「更正落点」）",
+   "duplicate_of": "NONE**（但与 E-C1 是同一主张的两个动作：E-C1 是「更正归属」，本条是「更正落点」）\nRECLASSIFY_AS_METHOD_LIMIT** — 把这项从「修改 canonical 文本」降为「**在 `CURRENT_ARCHITECTURE.md` §9 增加一条原则**（缺失移除点识别、不移除有界量），并在 `AGENTS.md` research discipline 加一句交叉引用」；**明确不要改 `STAGE_SUMMARY_*.md`**。并按 E-C8 给替代文本加上 tag 适用范围限定。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT** — 把这项从「修改 canonical 文本」降为「**在 `CURRENT_ARCHITECTURE.md` §9 增加一条原则**（缺失移除点识别、不移除有界量），并在 `AGENTS.md` research discipline 加一句交叉引用」；**明确不要改 `STAGE_SUMMARY_*.md`**。并按 E-C8 给替代文本加上 tag 适用范围限定。\n---",
+   "_locator": {
+    "line_start": 438,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "E-C25",
+   "_title": "E-C25 — 08b §3.9 的文献更正（不存在「Kuhn's dogmatism paradox」）",
+   "claim": "规范对象是 **Kripke–Harman** dogmatism paradox（Kripke 1972 讲、Harman 1973 *Thought* p.148 转述、Kripke 2011 *Philosophical Troubles* I pp.39–49），**不是** Kuhn；「Kuhn 主张教条主义」的通行解读本身有争议（`[S72]` 论证 `Kuhn himself never espoused the language of dogmatism`）。\n08b:324–:325`、§8 非主张 9（`:688`）、§10（`:721`）",
+   "source_report": "08b:324–:325`、§8 非主张 9（`:688`）、§10（`:721`）\nPLAUSIBLE**",
+   "verdict": "PLAUSIBLE**\nplato.stanford.edu/entries/epistemic-paradoxes/` §6.2 [S5]、`plato.stanford.edu/entries/dynamic-epistemic/` [S1] — **NOT_OPENED**；`[S72]`（反 Kuhn 解读的论文，08b 未给 URL/标题，全文我未读 `:761-812` 的引用尾段）",
+   "supporting_refs": "plato.stanford.edu/entries/epistemic-paradoxes/` §6.2 [S5]、`plato.stanford.edu/entries/dynamic-epistemic/` [S1] — **NOT_OPENED**；`[S72]`（反 Kuhn 解读的论文，08b 未给 URL/标题，全文我未读 `:761-812` 的引用尾段）\n未找到反证。**缺口**：(a) `[S5]` / `[S6]` / `[S11]` / `[S12]` 我均 `NOT_OPENED`；(b) `[S72]` 在我读到的正文（`:1–:760`）里**只被引用、从未给出书目**（书目在 `:761–:812`，我未读），所以「有工作论证 Kuhn 从未主张教条主义」这一具体归属我**无法核**；(c) 08b 说「mission 说『Kuhn's \"dogmatism paradox\" is directly relevant』」——这又是一次 mission 文本引用，我 `NOT_OPENED`。",
+   "strongest_counterevidence": "未找到反证。**缺口**：(a) `[S5]` / `[S6]` / `[S11]` / `[S12]` 我均 `NOT_OPENED`；(b) `[S72]` 在我读到的正文（`:1–:760`）里**只被引用、从未给出书目**（书目在 `:761–:812`，我未读），所以「有工作论证 Kuhn 从未主张教条主义」这一具体归属我**无法核**；(c) 08b 说「mission 说『Kuhn's \"dogmatism paradox\" is directly relevant』」——这又是一次 mission 文本引用，我 `NOT_OPENED`。\nNO**",
+   "requires_canonical_change": "NO**\nNO**",
+   "needs_experiment_or_data": "NO**\nNONE**（与 E-C1 同属「mission 措辞更正」类，但对象不同）",
+   "duplicate_of": "NONE**（与 E-C1 同属「mission 措辞更正」类，但对象不同）\nACCEPT_AS_PROPOSAL** — 若 mission 确实写了「Kuhn's dogmatism paradox」，这条更正是**有价值且应当接受**的（它防止一篇熟悉文献的审稿人立刻发现误引）。但请 08b 补 `[S72]` 的完整书目，并把「Kuhn 1972 讲课」这一**具体史实**也标 `NOT_OPENED`。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL** — 若 mission 确实写了「Kuhn's dogmatism paradox」，这条更正是**有价值且应当接受**的（它防止一篇熟悉文献的审稿人立刻发现误引）。但请 08b 补 `[S72]` 的完整书目，并把「Kuhn 1972 讲课」这一**具体史实**也标 `NOT_OPENED`。\n---",
+   "_locator": {
+    "line_start": 453,
+    "section": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 25,
+ "field_coverage": {
+  "claim_id": 25,
+  "claim": 25,
+  "source_report": 22,
+  "verdict": 25,
+  "supporting_refs": 25,
+  "strongest_counterevidence": 25,
+  "requires_canonical_change": 25,
+  "needs_experiment_or_data": 25,
+  "duplicate_of": 25,
+  "corroboration": 6,
+  "recommendation_to_architect": 25
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "3. verdict_matrix"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. verdict_matrix",
+    "line_start": 42,
+    "line_end": 467
+   }
+  ]
+ },
+ "files_audited": "### [line 11] 1. files_audited\n| 文件 | bytes | lines | 读取方式 |\n| --- | --- | --- | --- |\n| `07_PARTIAL_OBSERVABILITY.md` | 56,843 | 611 | 全文分段读（1–70 / 70–199 / 200–289 / 290–409 / 410–539 / 540–611）+ 2 次定向 grep |\n| `08b_BELIEF_DECEPTION_KNOWLEDGE.md` | 90,260 | 812 | 全文分段读（1–120 / 121–260 / 261–410 / 411–560 / 561–690 / 691–760）+ 2 次定向 grep |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | — | 361 | 定向读：150–229、255–334；grep 确认 `:80`、`:258` |\n| `docs/foundation/STAGE_SUMMARY_2026-09-07.md` | — | 329 | 定向读 140–204 |\n| `AGENTS.md` | — | 70 | 全文读 |\n| `REVIEW_CONTRACT.md` | — | 103 | 全文读 |",
+ "coverage_statement": "### [line 22] 2. coverage_statement\n**我实际读了什么**\n\n- 两份 cluster 报告的**全部实质章节**（07 的 §0–§13；08b 的 §0–§11）。两份报告的**参考文献正文我未逐条打开**，抽样打开了 4 个承重来源（见 §9）。\n- `CURRENT_ARCHITECTURE.md` 的 §6（State/Action/Belief/Constraint）、§8（history fork）、§9（Measurement/Canonicalization 6 条原则）、§10（fact status 五值枚举）、`:80`、`:258`。\n- `STAGE_SUMMARY_2026-09-07.md` 的 §3.4–§3.5（`:145–:162`），用于独立核验 claim-attribution。\n- 对 `D:\\coding\\lhrm\\**\\*.md` 做了 **6 组独立全库 grep**（`Computable`；`Certain/确定`；`refine|monoton|⊑|preorder|lattice|composabl|propagat`；`refinement|monoton|偏序|单调|格结构|序关系`；`⊥|propagat|传播规则`；`missingness lowers|lowers certainty|not computability`）。\n\n**我跳过了什么（显式声明）**\n\n- **未读** `01`、`02`、`02b`、`03`、`04`、`05`、`06`、`09`、`10`、`11`、`12`、`13`、`14`、`16`、`17`、`18`、`19`、`A01`、`A03`、`A04`、`00_MANIFEST`。\n  - **例外（必须披露）**：我的全库 grep **命中**了 `01:218`、`17:398`、`19:85`、`A03:307–308`、`00_MANIFEST:57` 五处**行级文本**（因为它们与被审命题「项目在 refinement/格上是否空白」直接相关，我必须数命中才能判定 07 §0.1 的真伪）。我**只看到这些 grep 返回的单行**，**没有打开这些文件、没有读它们的章节、没有用它们替任何 cluster 下结论**。`06` 亦被 grep 命中（`⊥` / `偏算子` / `格` 若干行），同样只见到 grep 单行。\n  - 这构成对独立性的一次**最小、可控的污染**：污染仅限「哪些文件含有 refinement/lattice 字样」这一事实层面，不涉及任何其它 lane 的结论。已在下方 E-C2 / E-C16 显式标注。\n- **未读** `docs/validation/*`、fixtures（cluster `I`/`K` 专用）、`PARAMETER_CONVERGENCE_V0_1.md`、`CONSTRUCT_SCOPE_DIRECTIONALITY.md`（08b §9-11 声明未读，我遵守其覆盖缺口，未替它补读）。\n- **未联网核验**：mission / issue `#30` / `#31` 的正文。因此「mission 是否逐字写了 `missingness lowers certainty, not computability`」**未核**。\n- **未能抽取文本的来源**：Mundhenk et al. PDF、Franc et al. JMLR PDF（返回原始 PDF 二进制）。二者改由 HTML 版 / 摘要页核验。\n\n---",
+ "top_recommendations": "### [line 531] 5. top_recommendations（7 条，按对 Architect 的重要性排序）\n1. **【阻塞级·先于一切】建立「构念可观察性 / 锚点登记表」。** `07 §11-3` 与 `08b §9-1` 从相反方向独立发现同一缺口。它同时阻塞：07 的 `Unknown` 类型学落地（`structurally_unobservable` 无从枚举）、07 的 `⊑` 程序（I9 需依赖表）、08b 的整个 belief 层（`g = FIRSTHAND` 无法赋值）、以及 `02` 已经局部提出的单构念登记（`coordination` 不可知觉）。**它是一条 Architect 裁决，不是研究问题**（07 自己的定性正确）。落点：`CURRENT_ARCHITECTURE.md` §9 或 §10 前置条件。\n2. **【修正·必须做】撤回并重写 07 §2.3 的序关系陈述（E-C3）。** 「`N` 与 `B` 在信息序上不可比」「唯一单调方向是 `B→T`/`B→F`」与 K4 的构造**相反**：近似/信息序上 `N` 是底、`B` 是顶、`T` 与 `F` 不可比；逻辑/真值序上 `T` 是顶、`F` 是底、`N` 与 `B` 在两翼不可比。07 把两个格的性质互换了。「双序」这个**结论**保留（E-C4 已 `VERIFIED`），但**理由与方向必须改**——否则 `value_class` 的设计依据是错的。**这是我在本 lane 找到的唯一内容错误，且它出现在承重的 `AI_RECOMMENDATION` 上。**\n3. **【防 ontology 事故】把「缺失性 / 不适用性 / 冲突 / 不可寻址」的分区作为一条 canonical 决议，强制 07 与 08b 合并（E-C23 + 专项 4 第 5、6 条）。** 现状是两份报告在同一 PR 内各自发明一套平行编码、零协调，且存在**三处同名不同义**：`disputed`(07 缺失机制) vs `disputed`(`CURRENT_ARCHITECTURE.md:315` fact status) vs `Divergent`(08b 主体立场对立)、以及 `reporter_role`(07) vs `Role`(canonical)。直接并入会得到 14+ 值枚举，违反 `AGENTS.md:22`/`:24`。\n4. **【最小·可最早做】`Disclosure` 作为 `Action/Event` 子类型（E-C19，唯一判 `requires_canonical_change: YES`）。** 论证成立、与 §6 无冲突、不新增构念；且它是 08b 最小层唯一的外部依赖（`NonDisclosure` 不可求值 → CB-B3 预期 `MAPPING_FAILURE`）。**但形态需 Architect 裁决，且措辞必须从「持续的不可及性」收紧为「一次披露/不披露的动作」**，否则会落进 `Constraint` 而非 `Action/Event`（`CURRENT_ARCHITECTURE.md:190` 的先例）。**本 packet 不实施。**\n5. **【记账修正】修 07 §5 的三条计数/标签缺陷（E-C11 / E-C12 / E-C13）。** ①「15 条」应为 19；② 19 条中 **I14 / I17 / I18 不可执行**（判据含 07 自己拒绝给值的 `θ`、未定义的 coverage 阈值、需成本模型而项目明确不冻结分数）、**I19 空过**（任何非恒定函数都满足）、**I10 可被博弈**（约束的是 `width` 的选法而非实现）、**I4 近乎空过**（enum 按构造无法增长）、**I7/I9 条件性空过**、**I1/I2/I3 实为一条**。「9 条现在就能检查」不成立——真正无需新参数、无需新定义、无需数据的只有 **6–7 条**；③ `[ESTABLISHED]` 是 07 自身约定表（`:8`）里**不存在**的标签，正文用了 15 处，而 `AGENT_RECALL` 一次未用。**建议以 C3（单调泛函）替换 I10，以「无 reviewed 决策不得扩展 enum」替换 I4。**\n6. **【provenance 修正·强制】修 07 ref [6] 的作者列表（E-C10）。** 07 把 *Why Generalization in RL is Difficult: Epistemic POMDPs and Implicit Partial Observability* 记为「Rajaraman, Han, Yang, Ramchandran, Van Dyke, Peng, & Levine」；实际是 **Ghosh, Rahme, Kumar, Zhang, Adams, & Levine**（NeurIPS 34, 2021；arXiv:2107.06277）。引文内容**逐字正确**（我已核），但书目指向**另一篇论文**。这条被复用于 3 处。**请 parent 加入 join 的强制修正清单，并转 `A01` 复检。** 同时修 ref [5] 的出版年（2021→**2023**，JMLR 24(11):1–49）与术语（bounded-**coverage**→bounded-**abstention**）。\n7. **【重标·非平凡】把 08b 两处「人类能力限制」重标为「人类能力证据」（E-C17）。** §3.2(b)（人平均推理深度 ~1.5 步 → 故 common knowledge 不可用）与 §3.4(2)（人识别谎言 54% → 故 LHRM 的 observation model 不可知）都是把**人类能力/行为限制**当作**表示或模型可行性**的证据。这与契约 §6.2 要防的误读同类。**三项 REJECT 的结论我判可接受**：§3.1（modal logic）的拒斥**不依赖任何复杂度结果**（`Φ` 非原子命题 ⇒ 类型层面不可承载，这是我独立确认的最强一条），§3.4（posterior-as-state）的第 1、3 条也独立成立；§3.2（common knowledge）是三条里最可辩的一条而 08b 处理最薄，需补 `Claim_ι⊛` 与 `[B*]F` 的边界说明。\n\n---",
+ "explicit_non_claims": "### [line 543] 6. explicit_non_claims（我不主张的）\n1. **我不主张 07 §2.3 的「双序」结论是错的。** E-C4 已判 `VERIFIED`。我判错的是**序的形状**（E-C3）。Architect 应把这两条分开处置。\n2. **我不主张 07 §2.2 / §4.3 的 credal 成本账错了。** 我打开了 Crossref 官方 abstract，三个要素逐项对上（E-C6 `VERIFIED`）。我判的只是**「独立性假设」那半句挂错了来源**，以及**成本方向上 07 未指出「只用 base relations 则该成本不发生」**。「延后 credal」的建议我判**比例恰当**（D1 的触发条件写得克制）。\n3. **我不主张 epistemic POMDP 的两条引文是编的。** 两条引文我逐字核对，**完全准确**（E-C10）。我判的只是**书目作者列表指向了另一篇论文**。\n4. **我不主张 08b 的 8 槽位设计是错的。** 我逐槽位反证过：`p`、`H = ι⊛`、`k` 的 `?`/`⊘`、`g` 的 6 值、`src`、`m` **六个我找不到导出路径**，其中 `m` 把 order-2 折进字段从而**不必实现被自己 REJECT 的模态框架**，是本报告最好的一步。我判的只是 `M` **有意的冗余**被写成了「不可省的原语」（E-C18）。\n5. **我不主张「项目在 refinement / 格上完全空白」这个结论是错的。** 我独立 grep 了 canonical 侧（`AGENTS.md` + `docs/foundation/*` + `README.md` + `docs/validation/*`），对该正则族 **0 命中**（E-C2）。我判的只是「唯一 1 处命中」这个**方法学陈述**已过期且字面为假，且那 6 处未计入的命中**全在 PR #31 新增报告内、且是在转述 07 自己**。\n6. **我不主张 08b 的 §3 判决应被推翻。** 我判三项 REJECT 的**结论**可接受；我保留的是**两处证据类型**（人类能力 vs 表示可行性）与**两处论证缺口**（`Claim_ι⊛`/`[B*]F` 边界；`d′` 不可检验性被外推）。另有一条我**无法**判：`Claim_ι⊛` 在功能上是否已经承担了部分 common-ground 角色而与被 REJECT 的 `[B*]F` 重叠——这需要读懂 08b 的 `Claim_ι⊛` 语义边界，我未做到。\n7. **我不主张 mission / issue `#30` / `#31` 的正文写了什么。** 我 `NOT_OPENED`（无 GitHub 读权限之外的可靠路径，且契约禁止猜测）。因此：E-C1 只判「**库内**字面不存在」这一 repo-side 命题（`VERIFIED`），**不判**「mission 确实这么写了」；E-C25 同理。若 mission 把该句写成**设计愿望**而非**现状主张**，07 §6「强版本部分为假」就有 straw 成分——这是我**记录但未判定**的风险。\n8. **我不主张任何其它 lane 的结论。** 我的全库 grep 命中了 `01:218`、`06`（若干行）、`17:398`、`19:85`、`A03:307–308`、`00_MANIFEST:57`——**只见到 grep 返回的单行**，未打开这些文件、未读其章节、未用其内容替任何 cluster 下结论。`corroboration: NON_INDEPENDENT` 已在 E-C2 / E-C11 / E-C16 显式标注。特别地：`A03` 对 I10/I11 的 `BLOCKED_NO_DESIGN` 判定我**未读其论证**，故未据此升级或降级 E-C11 中任何一条。\n9. **我不主张 08b 的 belief 层与 `PARAMETER_CONVERGENCE_V0_1.md` 的 8 项 candidate basis 兼容或不兼容。** 08b §8 非主张 16 / §9-11 明写它未读该文件；我遵守其覆盖缺口，未替它补读。**这是 join 必须由 parent 或 cluster `A` 补上的空白**（`Rel`/`Pol`/`Claim_ι⊛` 若被实现为状态坐标，须回答「是不是第 9 项 basis」）。\n10. **我不主张我读的 43 个 grep 命中等于「项目有 refinement 形式化内容」。** 除 `DATING_APP:240`（与数学格无关）外，其余全部是 PR #31 新增的 overnight 报告对 07 结论的**转述**。**canonical 侧 0 命中**才是 E-C2 的实质依据。\n11. **我不主张 07 的 10-tag 分类是「错误的分类」。** 它是 `MODEL_HYPOTHESIS`（07 自标），机制类型列（MCAR/MAR/MNAR/冲突/非认知/时间性/惰性/测量层）我认为**类型上是对的**，FM-03 给了不需数据的反例。我判的是它与 `CURRENT_ARCHITECTURE.md:315` 的 `disputed` **同名不同义**且未声明（专项 4 第 5 条）。\n12. **我不主张本 packet 的任何判定已被 `A01`（引用/provenance）复核。** 我做的 4 处抽样是**独立于 `A01` 的一次性核对**（Mundhenk PDF 未能抽取文本；Crossref abstract 成功；JMLR landing page 成功；Ghosh et al. 两处 PDF 成功）。E-C10 的作者错误应视为 `A01` 的**输入**，不是它的结论。\n\n---",
+ "provenance_note": "### [line 560] 7. packet_sha_note — 读了哪些源、各自的核实方式\n| 源 | 核实方式 | 结果 |\n| --- | --- | --- |\n| `REVIEW_CONTRACT.md` | 全文读 | 10 字段、5 verdict、四项必答、§7 格式已遵守 |\n| `AGENTS.md` | 全文读 | `:24`（Unknown 显式）、`:37`（坐标类型）、`:38`（downstream readout）、`:46`（Role）、`:50`（State≠Action）、`:53`（nested Belief）、`:22`（few stable constructs）、`:68-69`（mutation discipline） |\n| `07_PARTIAL_OBSERVABILITY.md` | 分 6 段读 + 2 次 grep | 611 行**全覆盖** |\n| `08b_BELIEF_DECEPTION_KNOWLEDGE.md` | 分 6 段读 + 2 次 grep | **`:1–:760` 覆盖**；**`:761–:812`（引用列表尾段，含 `[S60]`–`[S72]` 书目）未读** — 故 `[S72]` 无法核（E-C25 缺口） |\n| `CURRENT_ARCHITECTURE.md` | 定向读 `:150-229`、`:255-334` + grep | §3 `:64`/`:80`、§6 `:164-204`、§7 `:208-227`、§8 `:241`/`:258`、§9 `:267-288`、§10 `:292-327`、`:315` |\n| `STAGE_SUMMARY_2026-09-07.md` | 定向读 `:140-204` | `:147`、`:162` 原文 |\n| `api.crossref.org/works/10.1145/3704890` | **打开**，读官方 abstract 全文 | **E-C6 `VERIFIED_BY_ME`** — 非可组合性 / 非交换 monad / graded monad / 更紧的界，四项逐字对上 |\n| `jmlr.org/papers/v24/21-0048.html` | **打开**，读官方 abstract 全文 | **E-C9 `VERIFIED_BY_ME`** — 三模型共享 Bayes classifier + randomized Bayes selection function，逐字对上；**发现出版年 2023 与 bounded-abstention 术语两处错误** |\n| `lips.cs.princeton.edu/pdfs/ghosh2021generalization.pdf` + NeurIPS 2021 正式版 | **打开**，读引言段 | **E-C10 `VERIFIED_BY_ME`** — 两条引文逐字对上；**发现作者列表错误（实际为 Ghosh et al.）** |\n| `en.wikipedia.org/wiki/Four-valued_logic` | **打开**，读 Belnap 节 + 连接词节 | **E-C3 反证 `VERIFIED_BY_ME`**（「Both at the supremum and None at the infimum」/「None and Both are in the wings」/「Referring to Dana Scott, he assumes the connectives are Scott-continuous」）；**E-C4 `VERIFIED_BY_ME`** |\n| `arXiv:1808.09636`（Craig–Davey–Haviar） | 检索命中摘要全文 | E-C4 第二独立支撑（knowledge order + truth order ⇒ bilattice） |\n| `arXiv:2503.20679` | 检索命中片段 | E-C4 第三支撑 + 序命名不统一的反证 |\n| `users.fmi.uni-jena.de/~mundhenk/.../BelnapIGPL.pdf` | **打开失败**（返回原始 PDF 二进制，文本不可抽取） | 07 的直引（`two ordering relations … bilattice`）**标 `NOT_OPENED`**，改由上述三源替代 |\n| `jmlr.org/papers/volume24/21-0048/21-0048.pdf` | **打开失败**（同上） | 改由 landing page 摘要核验 |\n| `arXiv:2211.01503`（Pelessoni & Vicig） | **NOT_OPENED** | E-C8 |\n| `IJCAI-07/083.pdf`（Renz 2007）· `arXiv:1305.7345` | **NOT_OPENED** | E-C7 |\n| `plato.stanford.edu` [S1]/[S5] · `van Eijck` [S3] · Lutz 2006 · Miller & Moss 2005 | **NOT_OPENED** | E-C17 |\n| `jmlr.org/papers/v11/raykar10a.html`（Raykar 2010） | **NOT_OPENED** | E-C14 |\n| mission / issue `#30` / `#31` 正文 | **NOT_OPENED**（无可靠路径，且契约禁止猜测） | E-C1（repo-side 已独立核实）、E-C25 |\n| `PARAMETER_CONVERGENCE_V0_1.md` · `CONSTRUCT_SCOPE_DIRECTIONALITY.md` | **未读**（08b §9-11 声明未读；我遵守其覆盖缺口） | 见专项 4 第 8 条、explicit_non_claims #9 |\n| LHRM `#20`/`#21`/`#22` · Eye · Juece `#30`/`#31` | **未读、未执行、未引用、不猜测** | 遵守契约 §3 |\n| `D:\\coding\\lhrm` 下任何文件 | **只读，零写入** | 遵守契约 §3 |",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "专项 1 — 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 470,
+   "answer": "| claim | 状态 |\n| --- | --- |\n| **E-C3**（`N`/`B` 在信息序上不可比） | **单点推测，且我判定为错误**。07 把它写成 `AI_RECOMMENDATION`（承重），但它没有来源——Belnap 双序的存在（E-C4）有来源，双序**各自的形状**没有。这是本 lane 唯一一条我判定为**内容错误**的承重结论。 |\n| **E-C15**（partial pooling 压向对称） | **单点推测**。07 自称「唯一一条统计方法与 canonical invariant 直接冲突的机制」，但「向心收缩衰减组间差异 → 衰减方向性差异」这一步**无引用**。结论方向我认为对（教科书事实），但报告的表述把它窄化成「压向对称」，反而弱了。 |\n| **E-C8**（imprecise 界 → 「缺失后仍可算的是有界量」） | **单点推测**。§5.4 是 07 自称「最重要的正面结果」且准备写进 canonical，但它依赖「缺失 = imprecise knowledge」这一同一化，而 07 自己的 FM-01 反驳了它。 |\n| **E-C7**（`2^B` NP-hard / tractable subset 必要） | **单点推测 + 方向性缺口**。未开原题；且「只用 base relations 则该成本不发生」这一更省的反向论证 07 未提。 |\n| **E-C17**（08b 的 3 项 REJECT） | **单点推测**。全部依赖 08b 自己的一手阅读（`[S1]`–`[S22]`），我 `NOT_OPENED`。但 §3.1 第 3 条（`Φ` 非原子命题 ⇒ 模态逻辑无法承载）**只依赖 `AGENTS.md:37`**，这一条我可以独立确认，不依赖任何外部来源。 |\n| **E-C25**（Kuhn 更正） | **单点推测**（`[S72]` 我无法核）。 |\n| **E-C18**（`M` 可由 `τ.history_id` 派生） | **我的推断**，非任何报告的主张。07 未做这个反证。 |\n| **E-C14**（FM-02「最重要的结构性发现」） | **不是单点**——但它被**过度外推**（见 E-C14 第 6 字段）。08b §9-1 从另一侧独立发现同一缺口，构成 `NON_INDEPENDENT` 的双发现。 |"
+  },
+  {
+   "index": 2,
+   "heading": "专项 2 — 哪些是方法学/访问限制而非 ontology 发现（契约 §6.2）",
+   "line_start": 483,
+   "answer": "| 项 | 被误读为 | 实为 | 判定 |\n| --- | --- | --- | --- |\n| **E-C14（07 FM-02）** | 「LHRM 核心坐标是本体缺陷：无 gold standard，点 readout 无指称」 | **材料层条件命题**：在叙事/表达性压力测试材料上无 gold standard（且**不应**有）；在法院/官方材料上存在 `adjudicated` 锚点 | **RECLASSIFY_AS_METHOD_LIMIT** — 本 lane 最清晰的一例 |\n| **07 §7.1（Hirschfeld: n<500 载荷不稳）** | 「LHRM 加大 N 修不好测量层稀疏」 | **心理学文献的样本量/统计功效限制**。07 表述为「加大 N 不能修复**测量层**的稀疏」本身是对的，但把它接到 LHRM 上预设了「LHRM 会估计因子载荷」——而 `CURRENT_ARCHITECTURE.md` §11 明确不冻结权重 | **RECLASSIFY_AS_METHOD_LIMIT**（部分） |\n| **08b §3.2(b)（人平均推理深度 1.5 步）** | 「common knowledge 不可实现」 | **人类能力限制**。被 08b 用来支持一个**表示充分性**决定 | **重标为「人类能力证据」**（见 E-C17） |\n| **08b §3.4(2)（人识别谎言 54%）** | 「LHRM 的 observation model 不可知，故 sufficient statistic 前提失效」 | **人类知觉基线**。Kaelbling 等的充分统计量结论确实以已知 observation model 为条件（这一步对），但 `[S22]` 不能证明 LHRM 的 observation model 不可辨识 | **重标**（见 E-C17） |\n| **08b §3.5（`d′` 不可检验 / 等方差可疑）** | —— | 这一处 08b **用对了**：`d′`/`β` 的不可检验性是**方法学限制**，08b 据此把 discriminability 推到**测量层**而非状态层 | **用法正确，无需重标** |\n| **07 §11-6（websearch 429 限流）** | —— | **访问限制**，07 已诚实标注（STPA× 13 元代数、couples attrition 定量文献、Shalizi & Thomas 2011 未核） | **正确标注，不构成发现** |\n| **07 FM-07（Kalai–Vempala）** | —— | 定理关于 LM 生成器 + monofacts；07 **自己**标了「搬到 LHRM 是类比 + 结构性论证，不是定理的直接应用」 | **正确自限，不构成误读** |\n| **08b §9-2（romantic dyad 的 ToM 深度 UNKNOWN）** | —— | **测量缺口**（无专门研究）。08b 自标 `UNKNOWN` 并把 order-2 上限明确称为「**资源决策**，不是关于人的发现」 | **正确标注，示范性** |\n\n**反向检查（避免过度 reclassify）**：以下**确实是 ontology 发现**，不得降级为方法限——\n- `07 §1` 的缺失性机制分类（10 tag）——「`Unknown` 至少是四个不同数学对象的共同标签」是**类型学**发现，07 自己也给了一个**不需要任何数据即可判定**的反例（FM-03）。\n- `07 FM-01`（结构性空单元）——「`Unknown → prior` 在此仅在空洞意义上成立」的**类型学**结论成立；引用 Tennenholtz 只是加强。\n- `08b` 的 `k = {+,−,?,⊘}` 与 `?`/`⊘` 分离——`AGENTS.md:24` 直接要求，`[S5]/[S12]` 提供结构理由。这是 ontology。\n- `08b` 的 `Rel` 必须 frame-indexed（§5-4）——`[S10]` Polarization 是**逻辑/认识论**论证（defeat solution 可证失效），不是测量限制。这是 ontology，且 08b 自称「本设计中唯一一处文献直接开出实现要求」——**这个宣称经我审计是准确的**。"
+  },
+  {
+   "index": 3,
+   "heading": "专项 3 — 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 502,
+   "answer": "| # | 建议 | 目标文件 / 节 | 是否必须停在 proposal | 理由 |\n| --- | --- | --- | --- | --- |\n| 1 | `CoordinateValue` 形状（`Known{...}` / `Unknown{tag, prior_set, evidence_mass, value_class, provenance}`） | `CURRENT_ARCHITECTURE.md` §9 原则 4–6；`AGENTS.md` representation-first #5 | **可以停在 proposal** | 07 §9.3 自己标「候选，非提议修改」；且被 E-C16（可观察性登记表）阻塞；且其 `value_class` 语义需先按 E-C3 修正 |\n| 2 | 显式声明 `⊑`（信息序）+ 逐坐标依赖表 | `CURRENT_ARCHITECTURE.md` 新增一节（**当前无对应节**）；`docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | **可以停在 proposal** | 07 §2.1 R5 自评成本「中（要真的重写所有算子）」；`Info` 的定义、`RelMergeability`、C1–C6 封闭性三项全未决（07 §11-8）；且 I10/I11 依赖它。**在 07 §5.4 的「15 条」计数与 E-C11 的 4 条不可执行不变量修好之前，不应进入排序。** |\n| 3 | typed belief 层（8 槽位 + 2 标量 + 派生类） | `CURRENT_ARCHITECTURE.md` §3（世界层与局部投影）+ §6（State/Action/Belief/Constraint 分离） | **可以停在 proposal** | 08b 自设 `CANONICAL_MUTATION = FORBIDDEN`；被 E-C16（可观察性登记表 → `g = FIRSTHAND` 无法落地）与 E-C19-#3（`Disclosure` 未设计）双重阻塞，08b §10 限定 3 自己写明「**本设计不能在这两项解决前进入表示测试**」 |\n| 4 | **`Disclosure` 作为 `Action/Event` 子类型** | `CURRENT_ARCHITECTURE.md` §6 | **YES —— 本 lane 唯一判 YES 的一项**（但**本 packet 不实施**） | I5 与 CB-B3 直接依赖；缺它则 4 个派生类有 1 个不可求值（E-C18-#2）；它不新增任何人类关系构念，不违反 `AGENTS.md:22`；与 §6 `State != Action` 无冲突（E-C19 第 6 字段）。**但 08b §9-10 自认未设计其形态，故仍需一次 Architect 裁决。** 这是三条里**最小、最早可做**的一条。 |\n| 5 | `Computable != Certain` 的扩写替代文本 | **应落 `AGENTS.md:18–27`（research discipline）或 `CURRENT_ARCHITECTURE.md` §9** | **可以停在 proposal，但落点必须改** | 见 E-C24：原指针指向 `STAGE_SUMMARY_2026-09-07.md`，那是带日期的 stage 快照，按 `AGENTS.md:68` 属 `historical evidence`、按 `:69` 不是 SSOT。**改错文件即污染历史记录。** |\n| 6 | 缺失性类型学（07 的 10 tag）与 belief 类型学（08b 的 `k`/`M`）的**合并** | `CURRENT_ARCHITECTURE.md` §9 原则 4–6 | **必须停在 proposal，且必须与 1、3 同一次决议** | 见 E-C23：直接落地会产生 14+ 值枚举、3 对同义项、1 个高危同义陷阱（`disputed` vs `Divergent`）。**这违反 `AGENTS.md:22` 与 `:24`，且会让 07 自己的 I4 自行失效。** |"
+  },
+  {
+   "index": 4,
+   "heading": "专项 4 — 哪些结论重复、同义或双重计数",
+   "line_start": 513,
+   "answer": "**cluster 内（07 ↔ 08b）**\n\n1. **E-C22 — 真正的双重计数**：readout 不回写。07 的 I12/C3/§9.1#5 与 08b §3.4 是同一条约束、同一 canonical 依据。**`corroboration: NON_INDEPENDENT`。** 建议合并，保留 07 的可测形式。\n2. **E-C23 — 同义陷阱，不是双重计数但是双重规格**：`value_class`(07) ↔ `k`/`M`(08b) 的 4 对同义项；`disputed`(07) ↔ `Divergent`(08b) 的**高危**同义陷阱（语义不同、名字近似）；`withheld_by_actor`(07) ↔ `NonDisclosure`+`Disclosure`(08b) 的互补依赖。**两侧均未协调。**\n3. **07 cluster 内**：I1 ⊂ I2 ∪ I3（重复）；I10 与 C3 同源（重复）；R1「点+置信度」被 07 自己在 §2.1 判为「不推荐」且 FM-03 反驳之——若下游引用 R1 会与 FM-03 冲突。\n4. **08b cluster 内**：I2（`M≠ACTUAL` 不入 `Θ`）与 I7（无隐式闭包）形式相近但对象不同（世界模式 vs 信念更新），**不是**重复；I5 与 I6 都是「行为/推断必须带 provenance」，是同一 provenance 纪律在两个对象上的应用，**弱重复**。\n\n**与 canonical 现有条目的重复**\n\n5. **07 §1 的 `disputed` tag** 与 `CURRENT_ARCHITECTURE.md:315` 的 `adjudicated | admitted | alleged | disputed | unknown` **同名**。两者语义不同：canonical 那五值是**事实在证据链上的地位**（法院材料专用），07 的 `disputed` 是**缺失性机制**（任何材料）。**同名不同义是第二个高危陷阱**，且 07 §12.1 的 provenance 清单**已列 `:315` 却未说明两者的区别**。07 §5.3 建议把 `disputed` 提为一等输出（§5.4「Unknown / Disputed / Not-addressable are legal terminal outputs」）——**这会把 canonical 的 fact-status 轴与 07 的 missingness 轴合并**，是一个未声明的轴合并。**这一条比 E-C23 更危险，因为它涉及 canonical 已有文本。**\n6. **07 §9.3 的 `reporter_role` 字段** 与 `CURRENT_ARCHITECTURE.md` 的 `Role`（「Keep `Role` explicit as a query/evaluation lens; **it does not replace world state**」，`AGENTS.md:46`）**是不同东西**：07 用它索引**证据的来源方**，canonical 用它作**查询透镜**。07 未声明这层区别，落地时极易把 `reporter_role` 误并进 `Role`。**未在两份报告中找到显式区分——本条为我发现的第三处同名风险。**\n7. **08b 的 `τ = (history_id, local_time)`** 明确声明「**直接继承** `CURRENT_ARCHITECTURE.md` §8，**不新增**」（`:90–:91`）——**这是本 lane 唯一一处干净的 canonical 复用声明**。可作为其它两条的写法范本。\n8. **08b 未读 `PARAMETER_CONVERGENCE_V0_1.md` 与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md`**（§9-11、§8 非主张 16 明写）。因此 **08b 的 belief 层与 canonical 的 8 项 candidate basis 是否冲突，本 lane 无法判定。** 我遵守独立性未替它读。**这是 join 时必须由 parent 或 cluster `A` 补上的一处空白**——因为 `Rel`、`Pol`、`Claim_ι⊛` 若被实现为状态坐标，必须回答「它是不是第 9 项 candidate basis」。\n\n---"
+  }
+ ],
+ "specialty_section": "4. 四项必答专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2_E — Review packet · lane `E` · belief / partial observability / knowledge",
+   "line_start": 1,
+   "line_end": 586
+  },
+  {
+   "level": 2,
+   "title": "1. files_audited",
+   "line_start": 11,
+   "line_end": 21
+  },
+  {
+   "level": 2,
+   "title": "2. coverage_statement",
+   "line_start": 22,
+   "line_end": 41
+  },
+  {
+   "level": 2,
+   "title": "3. verdict_matrix",
+   "line_start": 42,
+   "line_end": 467
+  },
+  {
+   "level": 3,
+   "title": "E-C1 — 07 的 claim-attribution 更正（mission 强措辞不在库内，库内是弱版本 `Computable != Certain`）",
+   "line_start": 48,
+   "line_end": 62
+  },
+  {
+   "level": 3,
+   "title": "E-C2 — 07 §0.1「全库检索唯一 1 处命中」",
+   "line_start": 63,
+   "line_end": 77
+  },
+  {
+   "level": 3,
+   "title": "E-C3 — 07 §2.3「`N` 与 `B` 在信息序上不可比；唯一单调方向是 `B → T`、`B → F`」 ★最高价值发现",
+   "line_start": 78,
+   "line_end": 92
+  },
+  {
+   "level": 3,
+   "title": "E-C4 — 07 §2.3「K4 / bilattice 有两个序」",
+   "line_start": 93,
+   "line_end": 107
+  },
+  {
+   "level": 3,
+   "title": "E-C5 — 07 §3.1/§3.2「refinement consistency 可达，Scott-continuous 是经典充分条件」",
+   "line_start": 108,
+   "line_end": 122
+  },
+  {
+   "level": 3,
+   "title": "E-C6 — 07 §2.2 / §4.3 credal 组合的非可组合性（成本账）",
+   "line_start": 123,
+   "line_end": 137
+  },
+  {
+   "level": 3,
+   "title": "E-C7 — 07 §2.1 R6 的成本：全幂集 `2^B` NP-hard，必须引入 tractable subset",
+   "line_start": 138,
+   "line_end": 152
+  },
+  {
+   "level": 3,
+   "title": "E-C8 — 07 §2.2 / §5.4 / §8.1：imprecise 知识下 Jensen/Markov/Cantelli 界仍成立",
+   "line_start": 153,
+   "line_end": 167
+  },
+  {
+   "level": 3,
+   "title": "E-C9 — 07 FM-05 / C6 / I18：reject option 的最优策略（三模型共享同一最优策略）",
+   "line_start": 168,
+   "line_end": 182
+  },
+  {
+   "level": 3,
+   "title": "E-C10 — 07 FM-06 / §7.2：epistemic POMDP 引文 ★附带重大书目缺陷",
+   "line_start": 183,
+   "line_end": 197
+  },
+  {
+   "level": 3,
+   "title": "E-C11 — 07 §5 的 19 条「可检验不变量」：逐条可执行性审计 ★审计焦点 3",
+   "line_start": 198,
+   "line_end": 236
+  },
+  {
+   "level": 3,
+   "title": "E-C12 — 07 §5 的内部计数错误",
+   "line_start": 237,
+   "line_end": 250
+  },
+  {
+   "level": 3,
+   "title": "E-C13 — 07 使用了自身约定表里**不存在**的标签 `[ESTABLISHED]`",
+   "line_start": 251,
+   "line_end": 264
+  },
+  {
+   "level": 3,
+   "title": "E-C14 — 07 FM-02：核心坐标 latent 且无 gold standard ⟹ 点 readout 无指称 ★审计焦点 9（方法限 vs ontology）",
+   "line_start": 265,
+   "line_end": 279
+  },
+  {
+   "level": 3,
+   "title": "E-C15 — 07 FM-09：partial pooling 人为制造 mutuality（唯一一条与 canonical invariant 直接冲突的机制）",
+   "line_start": 280,
+   "line_end": 293
+  },
+  {
+   "level": 3,
+   "title": "E-C16 — 07 §11-3 / 08b §9-1：可观察性通道清单从不存在",
+   "line_start": 294,
+   "line_end": 308
+  },
+  {
+   "level": 3,
+   "title": "E-C17 — 08b §3 的 3 项 REJECT（modal logic / common knowledge / posterior-as-state）★审计焦点 5",
+   "line_start": 309,
+   "line_end": 327
+  },
+  {
+   "level": 3,
+   "title": "E-C18 — 08b 的「最小 belief 层」是否真的最小 ★审计焦点 6",
+   "line_start": 328,
+   "line_end": 347
+  },
+  {
+   "level": 3,
+   "title": "E-C19 — 08b「非披露是二阶事实、不披露需要 `Disclosure` 事件」★审计焦点 7",
+   "line_start": 348,
+   "line_end": 362
+  },
+  {
+   "level": 3,
+   "title": "E-C20 — 08b §0 的 canonical 一致性声明（`Reality != Observation != Belief` 等）",
+   "line_start": 363,
+   "line_end": 377
+  },
+  {
+   "level": 3,
+   "title": "E-C21 — 08b §10 的 verdict 计数与 §3 实际判决不符",
+   "line_start": 378,
+   "line_end": 392
+  },
+  {
+   "level": 3,
+   "title": "E-C22 — 两份报告的同一条不变量被陈述两次（readout 不回写）",
+   "line_start": 393,
+   "line_end": 407
+  },
+  {
+   "level": 3,
+   "title": "E-C23 — 两份报告的类型学重叠与同义陷阱 ★审计焦点 8（四项必答之一）",
+   "line_start": 408,
+   "line_end": 437
+  },
+  {
+   "level": 3,
+   "title": "E-C24 — 07 §5.4 替代文本的落地位置有类别错误风险",
+   "line_start": 438,
+   "line_end": 452
+  },
+  {
+   "level": 3,
+   "title": "E-C25 — 08b §3.9 的文献更正（不存在「Kuhn's dogmatism paradox」）",
+   "line_start": 453,
+   "line_end": 467
+  },
+  {
+   "level": 2,
+   "title": "4. 四项必答专项",
+   "line_start": 468,
+   "line_end": 530
+  },
+  {
+   "level": 3,
+   "title": "专项 1 — 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 470,
+   "line_end": 482
+  },
+  {
+   "level": 3,
+   "title": "专项 2 — 哪些是方法学/访问限制而非 ontology 发现（契约 §6.2）",
+   "line_start": 483,
+   "line_end": 501
+  },
+  {
+   "level": 3,
+   "title": "专项 3 — 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 502,
+   "line_end": 512
+  },
+  {
+   "level": 3,
+   "title": "专项 4 — 哪些结论重复、同义或双重计数",
+   "line_start": 513,
+   "line_end": 530
+  },
+  {
+   "level": 2,
+   "title": "5. top_recommendations（7 条，按对 Architect 的重要性排序）",
+   "line_start": 531,
+   "line_end": 542
+  },
+  {
+   "level": 2,
+   "title": "6. explicit_non_claims（我不主张的）",
+   "line_start": 543,
+   "line_end": 559
+  },
+  {
+   "level": 2,
+   "title": "7. packet_sha_note — 读了哪些源、各自的核实方式",
+   "line_start": 560,
+   "line_end": 586
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ }
+}

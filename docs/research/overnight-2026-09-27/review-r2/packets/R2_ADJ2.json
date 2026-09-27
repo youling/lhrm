@@ -1,0 +1,386 @@
+{
+ "child_id": "R2_ADJ2",
+ "lane": "ADJ2",
+ "cluster": "transition-law / null / geometry / freeze adjudication",
+ "role": "adjudication",
+ "record_unit": "adjudication_question",
+ "layout_variant": "qblock_bold",
+ "source": {
+  "file": "R2_ADJ2.md",
+  "sha256": "d80e32b6dd83ec2a9138e588bc913eaf1bb7afb4a486a8eb26e5259640d3433f",
+  "bytes": 75366,
+  "lines": 471
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "ADJ2-Q1",
+   "_title": "五条候选律：冻结 / 保留 / 现在就撤下？",
+   "claim_source": "record_heading",
+   "claim": "五条候选律：冻结 / 保留 / 现在就撤下？",
+   "source_report": "",
+   "verdict": "**我推翻 lane L 的 `L-C15`，采纳 lane D 的\"不撤除\"结论，但**给出**与 D 不同的理由**——D 的理由（措辞强于来源）在 L3 上不成立，真实理由是 **L3 的判据根本没被触发，而触发它的那句 `19` 的话本身是 scope 错误**。\n`19:208`（L3 行）写的不是证伪判据，是一个**注记**：「**注意**：最佳可得证据**逆向**于本律的增量通道。冻结前必须先解释这一冲突」。而 `06:535-540` 的**判 G**（DVA 唯一的真证伪判据）要求 `Level` 独解释的人内变化方差 **不少于** `Level+Slope` 才拒绝。判 G **未被触发**。\n`19:210`（L5 行）写「性别不对称的耦合被检出（**当前最佳证据反对**）⇒ 律族须重写」。判据是「**检出**不对称」。但 `06:809` 逐字写：`性别不对称` = **「明确不预测」**，依据「S09 两方向近乎相等；S03 无性别差异」（`06:805` 给 r = .380 vs .392）。**即：不对称没有检出。判据未触发。** `19` 的括号「当前最佳证据反对」把「证据不支持本律的某个预测」写成了「kill criterion 已开火」——**方向反了**。\n⇒ **`L-C15` 为 `WRONG-SCOPE`（不是 `VERIFIED`）。** lane L 在这一点上是**单 lane 且错误的**：它读的是 `19` 自己的表格，而 `19` 那一格与 `06` 的实际内容不一致，L 没有回到 `06` 核对。",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`NO`（全部六条都落在 `docs/research/overnight-2026-09-27/*`，不是 canonical）。**例外**：`D-C32` 若 Architect 认定 Gate A 的归因推理按算子组合实现，则需在 `PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A 加一条前置条件——**但现在不能写进 canonical，因为 U4 本身是 `UNKNOWN`**（`06:68`）。停 proposal。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "1. **不要以\"律已被证据否决\"为由撤下任何一条。** 五条全部仍是 `RESEARCH_CANDIDATE`；`19:199-212` 的\"5 条平等可冻结\"在**授权**层面成立，在**可执行性**层面不成立（Q6）。\n2. **改 `19:208` 与 `19:210` 两格**：`L3` 行的注记改为「Lavner 2012 支持 level-conditional slope（Table 5），限制的是**预测变量**的增量变化模型；妻子侧 null。**判 G 未触发**」；`L5` 行删掉「当前最佳证据反对 ⇒ 律族须重写」，改为「性别不对称**未检出**（`06:809`）；判据未触发；真实问题是证据为 outcome 层，与转移函数不同层」。\n3. **`RT` 不冻结**（Q5），`BMR` **只冻结单向版本**（Q1 表），`APES` / `RGM` 冻结顺序排在 D8 工具裁决之后。\n4. **`D-C32` 优先提交**，但作为 **Gate A 的工程前置检查项**落地（不需新证据），形式化选择由 Architect 裁决。`06:991-994` 本身就是这个请求。\n5. **`F-C14` 的 K9 判定为 `VERIFIED`**，且必须**在 09 的修订里换掉 K9**（换成数据条件，如「在满足 §4-O4 密度的 dyad 面板上，双吸引域能否被估计出」），否则 `09` §9 的「四层皆非引擎」判决**不可被证据撤销**。同时把 `F-C11` 的 ESM/IL/EMA escape clause 补进 `09` §4.4——**这一条同时是 `RT` 的唯一可行数据 regime 的入口**（律 E 需要事件内顺序 = 密集设计）。",
+   "_extra_fields": {
+    "question": "`BMR` / `APES` / `DVA` / `RGM` / `RT` 各自的处置，以及 L 与 D 从不同证据指向同一方向时谁对。",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| 5 条平等可冻结 | `19:199-212`（`Lanes` 自己的自陈） | 「全部为 `RESEARCH_CANDIDATE`…冻结需 Human 授权的独立 Work Order」 |\n| 3 条 `HOLD` + 2 条撤下 | lane L `L-C15` + Q5 表（L518 / L520） | L3 `DVA` 与 L5 `RT` 的**自预注册 kill criterion 已被同一行所引证据触发** ⇒ 不是候选 |\n| 保留全部，只重写措辞 | lane D `D-C16`（§8 表）+ `D-C18`（判 `CONTESTED`）+ `D-C17` | 五族全部仍是 `RESEARCH_CANDIDATE`；`D-C18` 建议 `ACCEPT_AS_PROPOSAL`，**不撤除** DVA |\n| `⊥` 偏算子是本 lane 唯一本体产出 | lane D `D-C32` | U4 未证但指出 Gate A 归因推理的形式前置条件 |\n| K9 是确认偏误机器 | lane F `F-C14` | K9 问「是否**存在**已发表的双吸引域估计」，其否定分支 = 肯定本节结论 |\n| O1–O5 从不点名逃逸 regime | lane F `F-C11` + Q7-7 | `09` 的密度条件是 regime 条件化的，但全文未点名 ESM / IL / EMA |",
+    "decisive_evidence": "1. **Lavner 2012 全文（PMC3513382），Table 5「Satisfaction Trajectory Parameter Estimates」，脚注逐字「All parameter estimates significant at p < .001」**：\n   - Husbands：Low（13%）intercept 86.24 / linear **−1.31**；Medium（29%）94.19 / **−0.20**；High（58%）98.83 / 斜率不显著异于 0。\n   - Wives：Low（10%）86.58 / **−1.05**；Medium（21%）93.66 / **−0.27**；High（69%）100.88 / 斜率不显著异于 0。\n   - 正文逐字：「although the average marital trajectory was one of declining satisfaction, the majority of spouses actually exhibited stable satisfaction… **Changes in satisfaction were isolated among the subset of spouses who started with lower levels of satisfaction, with the greatest declines occurring among those spouses who started with the lowest satisfaction.**」\n   - **这一张表就是 DVA 的 `Level → Slope` 交互（`06:501` 标 `SUPPORTED（存在性）`）的直接证据，而且是 outcome 层的人内斜率，不是预测变量的斜率。**\n2. **Lavner 2012 Discussion 逐字**：「**Limited evidence was found to support an incremental change model in which differences in patterns of change in these predictor variables distinguished among trajectory groups.**」——「limited evidence」修饰的是 **predictor variables 的变化模式**。\n3. **Lavner 2012 Results（husbands）逐字**：「**Consistent with the incremental change model**, relationship problems and negative attributions increased for spouses in the low satisfaction group at a greater rate than husbands in the moderate satisfaction group, whereas they remained stable for husbands in the high satisfaction group (confirmed through post-hoc analyses).」\n4. **Lavner 2012 Results（wives）逐字**：「trajectory group membership did **not** significantly moderate the pattern of change over time for **any** of the risk variables (Table 6)」。\n5. `06:502` 把 (2) 标为 **`DIRECTION_NOT_SUPPORTED`（明确反证）** —— **这也标过头了**：来源自己说的是 limited evidence + 妻子侧 null，不是 explicit refutation；而丈夫侧 (3) 明确「Consistent with the incremental change model」。\n6. `06:810`：`s` 由 dyadic state 决定 = **`MODEL_HYPOTHESIS`**，「无来源直接检验」——**律 E 的实质内容零直接支持**。\n7. `06:856-861` 判 M 用 **AND 门**：(i) 与 (ii) 必须同时成立才拒绝。\n8. `06:542-545` 判 H、**`06:864-869` 判 N**：空结果**不触发**（判 H 只在 slope 为正时触发；判 N 只在 person 常数**显著大于** dyadic-state 解释时触发）。\n9. `06:911-916` U-1：律 A 的**判别部分**在只有自陈的设计下**不可证伪**；`16:393` F-05 同。\n10. `18` 逐律可执行性表：律 A 判别部分 ❌ 不可满足（`06:911-916`；`16:393`）；律 E ❌ 不可满足（`06:830-833` + C-A）；律 C ⚠️「三个数据集都没有『关系起点』波次（HARP 的 T1 已是合法婚姻 + 同居 ≥3 年）」；律 B ⚠️「需 ≥4 wave；HARP 只有 3 → HARP 不可用于律 B」。",
+    "residual_uncertainty": "- 我**没有**打开 Lavner & Bradbury 2010 的正文（只拿到 Crossref 官方摘要）。摘要明确写「5 trajectory groups, including patterns defined by high intercepts and **no declines** in satisfaction, moderate intercepts and **minimal declines**, and low intercepts and **substantial declines**」——**两篇都存在显著下降组**，故平 null 在两篇里都被拒。这一点靠摘要已足够，但我**不**主张我核过 2010 的 Table。\n- Joel et al. 2020（`S04`，`06:504` 据此标「人内变化幅度随时间 = `DIRECTION_NOT_SUPPORTED`」）我只读到 `16:560` 的转述「**书目已核实；五条实证结论为转述**」，**未开原文**。若 S04 的\"变化不可预测\"被误述，则 DVA 的最大外部限制也要重估。**这是本包最需要 Architect 指定的下一处取样复核。**\n- `03:253-254` 的 `D7/D8 = NOT_IDENTIFIABLE` 我**接受为报告自陈**，但 lane B 的 `B-C4` 指出一处真实的方法学瑕疵：`03:1.2` 把 `NOT_IDENTIFIABLE` 定义为「不因为『还没人做』，而是因为『这样做不了』」，而报告对自己 9 个 `NOT_IDENTIFIABLE` 行的说明多为「是 Agent 层 trait / 抽样框错」——层级错配被塞进了\"结构上不可测\"。**因此 `APES` 的工具阻塞点应写成\"未定位到已验证的关系层 dependence 工具；且经典互依工具文献未被检索\"，不能写成\"结构上不可测\"。**",
+    "settleable_by": "`ADJ-2 / Architect`。**不需要**新证据：全部六组冲突的判定只用到已在一手文本里的字面内容 + Lavner 两篇的一手数据。**唯一需要外部取样复核的**是 `S04`（Joel 2020）的转述状态，见 `residual_uncertainty`。\n---"
+   },
+   "_locator": {
+    "line_start": 32,
+    "section": "Q1 — 五条候选律：冻结 / 保留 / 现在就撤下？"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "ADJ2-Q2",
+   "_title": "`B2` null 争议",
+   "claim_source": "record_heading",
+   "claim": "`B2` null 争议",
+   "source_report": "",
+   "verdict": "**`D-C19` = `VERIFIED`（三处全对），且 D 低估了严重性。** 我再加第四处、并且要**修正 D 的重定义方案**。",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`NO`。若这些内容随 `#29` 落地，则需 issue 变更。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "`REJECT` 现状 / `ACCEPT` 上述修正。**这是全 PR 最便宜的一处修复**：改一张表的两个 id、一个 rationale 单元格、三处措辞。不需要新数据、不需要新文献、不触碰任何权利判定。",
+   "_extra_fields": {
+    "question": "D 说 `B2` 被 `B1` 严格支配、且不是 Lavner 检验过的那个 null、因此「最重要」+「已击败过一个候选」两处措辞都错。`B2` 应重定义成什么？",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| `B2 = SELECTION_ONLY`，是**最重要**的 null，「**已击败过一个候选**」 | `16:197` + `16:203`（协议正文） | 稳定 per-dyad 随机截距、无 wave-to-wave 增量；R06 F6 说 S19「initial-differences 击败了 incremental-change」，R06 N1 记为「对律 C 的**已核实证伪**」 |\n| `06 §6.3` 的 `SELECTION-ONLY` | `06:488-489` | 「`E(τ) = Level(τ₀) + **随机游走** + 误差`。**这是本律最强、最危险的对手。S19 正是它赢了。**」 |\n| `B2` 与 `06 §6.3` 同名不同模；`B2` 被 `B1` 支配；不是 Lavner 测过的模型 | lane D `D-C19`（`WRONG-SCOPE`） | 三重缺陷 |\n| `B2 ≈ 06 §4.8 判 C`（`AR-ONLY`） | lane D `D-C20` | 「**同名不同 estimand**：16 是 outcome persistence，06 是 state autoregression」 |",
+    "decisive_evidence": "1. **`16:203` 逐字**：「`B2` | `SELECTION_ONLY`（稳定 per-dyad 截距，**无增量**） | 每 dyad 一个随机截距（估计自 calibration），无 wave-to-wave 增量 | **本协议认为最重要的一条 null，因为它已经击败过一个候选。**」\n2. **`16:202` 逐字**：`B1` = 「只用 `Y(t)`（或该 dyad 的历史均值）预测 `Y(t+h)`；不含任何 partner 侧或环境侧信息」。\n   ⇒ `B1 ⊇ B2`。任何击败 `B1` 的候选**自动**击败 `B2`。`16:197` 的主判定规则「**配对地**击败 `B1` 与 `B2`」中，`B2` 那一半**恒真**。这是我在同一份文件内做的纯逻辑复核，**不依赖 lane D**。\n3. **`06:488` 逐字**：`SELECTION-ONLY` = `Level(τ₀) + 随机游走 + 误差`。⇒ 与 `16:203` 的\"平 per-dyad 截距\"**不是同一个模型**（随机游走有 wave-to-wave 增量、方差随 `t` 增长；平截距两者皆无）。**同一名字在 PR 内指两个模型。**\n4. **Lavner 2012 Table 5（本裁决亲开）**：Low 组 linear slope = **−1.31（husbands）/ −1.05（wives）**，脚注「All parameter estimates significant at p < .001」。⇒ **平 null 在 outcome 侧被这份来源直接反驳。** `16:203` 说「它已经击败过一个候选」——**它击败的那个候选就是它自己援引的这份文献所否定的东西**。三重错：错模型（平截距 ≠ Lavner 的对照）、错方向（Lavner 赢的那一侧带 slope）、错后果（\"已核实证伪\"是对来源的误述）。\n5. **Lavner 2010 官方摘要（本裁决亲开）**：「patterns defined by high intercepts and **no declines** in satisfaction, moderate intercepts and **minimal declines**, and low intercepts and **substantial declines**」⇒ 第二篇同样拒绝平 null。\n6. **Lavner 2012 讨论段逐字**：「Consistent with an initial differences model, moderate-to-large **intercept** differences were found between trajectory groups in each of the domains examined here…」+「Across all predictor variables, initial values afforded **stronger discrimination** of outcome groups than did rates of change」。\n**B2 应当重定义成什么（裁定，不是问卷）**\n| 动作 | 内容 |\n|---|---|\n| **改名 + 拆名** | `B2` → **`B2_LEVEL_PLUS_RW`**，定义逐字采用 `06:488`：`E(τ) = Level(τ₀) + 随机游走 + 误差`。**改名是必须的**：现名 `SELECTION_ONLY` 同时出现在 `16:203`（平）与 `06:488`（随机游走），是 PR 内最危险的一处同名异义。 |\n| **降级出主判定清单** | 从 `16:197` 的「配对击败 `B1` 与 `B2`」中**删除** `B2`（被 `B1` 支配 ⇒ 冗余），改标 `B2_DIAGNOSTIC`。 |\n| **改写 rationale** | 删「本协议认为最重要的一条 null」与「已经击败过一个候选」与「已核实证伪」。替换为 Lavner 的**实际**发现逐字：「**起点值对轨迹组的区分力强于所测风险变量的变化率**（Across all predictor variables, initial values afforded stronger discrimination of outcome groups than did rates of change in these variables）」，并注明该发现的适用边界：**它讲的是 predictor 变量，不是 outcome 的人内斜率**。 |\n| **新增 `N8_LEVEL_CONDITIONAL_SLOPE`** | Lavner 真正赢下的结构 = `06` 判 G 的形状。**这是唯一能真正测 DVA 交互的模型，必须在 null 集里**，否则 DVA 的判 G 无参照物。 |\n| **新增 `N7_UNDIRECTED_SCORE`** | 把 `Z[k,i→j]` 与 `Z[k,j→i]` 合成单一无向分数。它是**唯一直接测本项目中心表示主张**的 null。独立支撑：`19:62`「在 16 个已审计数据集中，**只有 1 个**（速配）提供无外部假设的 `DIRECTED_EDGE` 双分量，而它**没有第二个时间点**」。 |\n| **删除的三处措辞** | `16:203`；`06:489`（「S19 正是它赢了」）；`06:901`（§9 表「概率最高的结局：被拒绝（初始差异胜）」——应改为「被重写为 level-conditional slope」）。 |",
+    "residual_uncertainty": "「随机游走」与「平截距」在 LMM 表述下并非不可互相重参数化（两者都是零漂移 martingale）。我**不**主张它们在**统计上**是可区分的模型；我主张的是它们在**语义与可得信息量上**不同（随机游走的方差随 `t` 增长，因此它在 holdout 上给出一个**依赖 horizon 的**预测，平截距不给），且**同名**是必须消除的记账缺陷。如果 Architect 认为二者应合并，那么合并后的正确名字是 `B2_NO_MECHANISTIC_DRIFT`——但**\"最重要\"与\"已击败过一个候选\"仍然必须删掉**，因为这两处与 Lavner 无关，是独立的记账错误。",
+    "settleable_by": "`ADJ-2`（已完成）。**不需要**外部取样复核——`16:202/203/197` 与 `06:488/489/901` 都在仓内，Lavner 已开。\n---"
+   },
+   "_locator": {
+    "line_start": 104,
+    "section": "Q2 — `B2` null 争议"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "ADJ2-Q3",
+   "_title": "默认 split 几何",
+   "claim_source": "record_heading",
+   "claim": "默认 split 几何",
+   "source_report": "",
+   "verdict": "**是真缺陷，且比 D 说的更严重；但 D 给的修法（\"新增 `G0` 并设为默认\"）会引入一个 D 没看见的新错误。**",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`NO`。若随 `#29` 落地则需 issue 变更。**注意**：不得因此改 `CURRENT_ARCHITECTURE.md:203` 的 `F` 接口——`F` 的 6 个槽位是**架构决定**（D `D-C36` 已指出这是 canonical 承诺但三份报告都没记录），与 split 几何无关。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "`REJECT` 现状（`G1` 作为\"满足 §6.1 理由的默认\"）。`ACCEPT` 上表五项修正。**纯设计修正，不需新数据、不需新文献。** 但它必须与 Q2 的 null 重定义**一起**提交——因为 `16:197` 的主判定规则同时依赖几何与 null 集，单独改一个会留下新的不一致。",
+   "_extra_fields": {
+    "question": "D 说协议自己的默认 `G1` 逐字意义上就是 §6.1 自称「最危险的一种」。这是真缺陷吗？正确的默认是什么？",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| 默认 = `G1_BLOCKED_FORWARD`（首选默认） | `16:166` + `16:173` | 「⇒ 默认几何 = dyad 分组 × 时间前向，二维同时施加」；G1「**首选默认**」 |\n| 最危险 = 只切 time 不切 dyad | `16:159-164` | 「同一 dyad 的 `t` 期在 calibration、`t+k` 期在 holdout → **这是最危险的一种：它把『这个 dyad 本身』当成了泛化测试**」 |\n| `G1` 就是那一种 | lane D `D-C24` | `UNSUPPORTED`（作为满足 §6.1 理由的默认几何） |\n| 「唯一在原则上可用的是 `G1`」 | `16:191` | 「在 2026-09 这个时间点，`G1/G2/G3` 中只有 `G1` 在原则上对 pairfam / SHARE / HARP 可用」 |",
+    "decisive_evidence": "1. `16:159-161`：「只切 time、不切 dyad → 同一 dyad 的 `t` 期在 calibration、`t+k` 期在 holdout → **这是最危险的一种**」。\n2. `16:173` `G1`：「按 `dyad_id` 分组做 holdout 组；每组内 holdout 时刻固定为**最后一个有观测的 wave**；calibration 侧 = **该 dyad 的全部 `≤ t_last-1` wave**」。\n   ⇒ **逐字后果**：每个 holdout dyad **同时**贡献 calibration wave 与 holdout wave。**这正是 `16:159-161` 所描述的那一种。**「按 `dyad_id` 分组」只决定**哪些** dyad 被留出，不使被留出的 dyad 只出现在一侧。**D 在这一点上完全正确。**\n3. **我新增的一处、D 没说的**：`16:177`「**明确不采纳**：随机 k-fold over（dyad × wave）行（命中 L3 + L4）；只按 wave 随机切分 wave 内记录（命中 L3）；**用 time 切分但把同一 dyad 固定在两侧**。」\n   ⇒ **`G1` 的定义逐字落在协议自己的\"明确不采纳\"清单最后一项上。** 这比 D 的\"内部矛盾\"更硬：不是两个条款打架，是**同一节里几何表采用了下一段明文不采纳的配置并把它设为首选默认**。\n4. `16:175` `G3` = 「逐个留出 dyad，每个留出 dyad 内部再做时间前向切」= `G1` 每 fold 一个 dyad ⇒ **结构相同**。⇒ **`G1/G2/G3` 三者中没有任何一种实现 §6.1 要求的「dyad 永不跨侧」。**\n5. `16:183`（§6.3 降级表第一行）：「仅 dyad | 只能主张 **cross-dyad generalization**，且只能主张 `t` 恒定下的截面表现 | `NO_TEMPORAL_AXIS`」——**这正是缺失的第四种几何**（整 dyad + 全部 wave 留出）。**协议把它写进了降级表，却没写进几何表，也没给它 id，也没设为默认。**\n6. `16:422`（`FREEZE_RECORD` 字段 7）：`split_geometry` 只允许「`G1/G2/G3` 之一 + 参数」。⇒ **正确的几何在协议里无法被登记。**\n**正确的默认是什么 —— 这里我不同意 D**\nD 的建议是「新增 `G0_WHOLE_DYAD_OUT` 并设为**默认**」。**这会把另一个 estimand 变成默认。** 理由：\n- `CURRENT_ARCHITECTURE.md:203` 逐字：`X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)`。**测 `F` 需要同一个 dyad 的 ≥2 个时点。** 在 `G0`（整 dyad 留出）下，holdout 侧**没有任何 `t→t+1` 对**，因此**五条律的转移结构一个都估不出来**。把 `G0` 设为默认，等于把协议变成「默认什么都测不了」。\n- 反过来，在 `G1` 下，holdout 侧的 estimand 是 **within-dyad 时间外推**——这对测 `F` **是正确的**，代价是不能主张 cross-dyad 泛化（`16:184` 的降级标签 `NO_DYAD_AXIS` 语义相反，此处需新标签）。\n⇒ **真正的缺陷不是\"默认值选错了\"，是协议把两个不同的 estimand 用一张几何表处理。** 正确修法：\n| 动作 | 内容 |\n|---|---|\n| **拆 §6** | §6a **dynamics estimand**：默认 `G1`（保留为首选默认），但**必须**标注 `ESTIMAND_WITHIN_DYAD_TEMPORAL` + 新降级标签 `NO_CROSS_DYAD_GENERALIZATION`，并写明「此时 `19:235` 的跨数据集泛化在结构上不可执行」这一句必须出现在主判定规则旁。 |\n| | §6b **representation estimand**：`G0_WHOLE_DYAD_OUT`（整 dyad + 全部 wave 留出），estimand = cross-dyad 截面表现，降级标签 `NO_TEMPORAL_AXIS`（复用 `16:183` 已有标签）。**它测的是「双有向坐标是否比无向分数 / 制度事实多提供了什么」——即 `N7` / `B5` / `B4` 这三个 null。** |\n| **修 `16:177`** | 把「用 time 切分但把同一 dyad 固定在两侧」从\"明确不采纳\"改写为「**`G1`/`G3` 在 dynamics estimand 下合法，但只能主张 within-dyad 时间外推**」——否则现状是几何表与不采纳清单直接冲突。 |\n| **修 `16:197`** | 主判定规则必须**按 estimand 分开陈述**：「在 dynamics estimand 下，候选须在同一 holdout 上配对击败 `B1` 与 `N8`；在 representation estimand 下，须击败 `B5` 与 `N7`」。现状把 8 个 null 混在一句里，而在 `G1` 下 `B5`/`N7`（截面与无向比较）**没有可估的对应物**。 |\n| **修 `16:422`** | 字段 7 的枚举必须含 `G0_WHOLE_DYAD_OUT`，并新增一个字段（或扩字段 7）记录 `estimand_class`（复用 `16:139` `R16-OC02` 已有词表）。 |",
+    "residual_uncertainty": "`16:191` 说「只有 `G1` 在原则上对 pairfam / SHARE / HARP 可用」——这句本身也依赖 `G1` 的合法性；若按 `16:177` 的字面不采纳清单执行，则**三个 `CALIBRATION_READY` 数据集一个都不能用**。这是同一个缺陷的更深一层后果，我把它写进 `explicit_non_claims`，因为我无法判定 `16:191` 是笔误还是有额外假设。",
+    "settleable_by": "`ADJ-2`（已完成）。\n---"
+   },
+   "_locator": {
+    "line_start": 152,
+    "section": "Q3 — 默认 split 几何"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "ADJ2-Q4",
+   "_title": "冻结漏洞",
+   "claim_source": "record_heading",
+   "claim": "冻结漏洞",
+   "source_report": "",
+   "verdict": "**冻结按现在的写法不可执行（`NOT_ENFORCEABLE_AS_WRITTEN`）。D 的路径真实存在但不是最致命的那条；A03 的理由 1 才是最致命的，而 lane D 与 lane L 都没点出它。**",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`UNSURE` — 见上。**倾向 `NO`**（可全部停在 `16` + `19 §4` 的 proposal 层）。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "`REJECT` 现状 freeze。`ACCEPT` 上表 1–3（纯文档，零新数据）。原因 4 提交 Human/Architect 作制度决定。**优先级：高**——因为 `FREEZE_RECORD` 是 `16` 唯一的执行面；它不成立，Q2 与 Q3 的修正也无处落地。",
+   "_extra_fields": {
+    "question": "D 说 `TBD_AT_FZ1` 字段 + `FZ-0` 创造了一条合规路径在看 holdout 数据之后再定主 estimand。冻结按现在的写法可执行吗？",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| `16:408` 的 `FZ-0` 定义 + 字段 12 允许 `TBD_AT_FZ1` ⇒ 存在合规路径 | lane D `D-C25` | `UNSUPPORTED`（作为\"能防止 L7 触发\"的机制） |\n| `06:1008` 明确建议「**不要在 R16 之前冻结任何转移律的函数形式**」⇒ 与 `16` 合谋打开这个洞 | lane D `D-C25`（duplicate_of 栏） | 两份报告的规定合起来**结构性**产生可被合规利用的漏洞 |\n| `L7` 是 aspirational 的，只有措辞没有机制 | lane D `D-C26` | `16:466` F-SELF11 自评「中」；`16:381` `R16-ID11` 使第三方无法复核 |\n| `FZ-0` = **`NOT_ENFORCEABLE_AS_WRITTEN`**，四条理由 | `A03:710-722`（lane I 审计对象，我直读） | 理由 1 = **必填字段不可从文档导出**（字段 4/7/8/14）；理由 2 = 字段 12 允许占位符；理由 3 = \"不可变\"由 Git 承担而 Git 给持久性非不可变性；理由 4 = `R16-ID11` 主动放弃第三方复核 |",
+    "decisive_evidence": "1. **`16:408` 逐字**：「在**任何 holdout 行被读取之前**（不是『在看到 holdout 结果之前』），下列 16 字段必须被写入一份不可变的 `FREEZE_RECORD`…`FREEZE_RECORD` 一旦生成，holdout 才解锁。」\n2. **`16:427` 逐字（字段 12）**：「`estimator_family` | 方法族 + 随机效应结构的**完整**规格…**若 R06 的律族形式尚未被 Architect 裁决，写 `TBD_AT_FZ1`**」。\n   ⇒ **我对 D 的两处修正：**\n   - **`FZ-1` 在 `16` 里根本没有定义。** 我 grep 了全文：`FZ-1` 只以 `TBD_AT_FZ1` 这个字符串出现在 `16:427` 与 `16:605`（`:605` 逐字：「本报告不冻结 `F` 的函数形式；但 `FREEZE_RECORD` 需要该字段，故要么等 R06 的裁决，要么接受 `TBD_AT_FZ1` 占位」）。**协议允许填一个指向不存在时点的值，而那个时点既无定义也无解锁规则。** 这比 D 的「合规路径」表述更硬。\n   - **D 说的路径比实际窄。** 字段 10 `primary_estimand` 写的是「**一个**，及其 `estimand_class`」——**没有占位符**。真正开着的口子不是\"看数据后定主 estimand\"，而是\"**看数据后定估计量族**\"。而 `16:431` 字段 16 逐字：「任何一条记录了『看了 holdout 之后改了 X』→ 该结果自动为 `EXPLORATORY`」⇒ **D 描述的路径已被 deviation log 自动降级机制部分堵住。** 剩下的真实漏洞是：在 holdout 上做**模型选择**（选 estimator family）而不被记录为\"改了 X\"。\n3. **`06:1008` 逐字**：「**明确不建议的动作：** 不要在 R16 之前冻结任何转移律的函数形式」——**确认存在**。`06:991-994` 同时请求 Architect 裁决 MH1 与 RGM，而 `16:605` 承认 R16 尚未得到该裁决。⇒ **两份报告的规定在结构上互相拆台，`D-C25` 的 `duplicate_of` 栏正确。**\n4. **A03 理由 1（我直读 `A03:714`）——这才是致命的**：「字段 4 要求『`dyad_id`/`side`/`wave_id` 的**确切变量名及其发货状态**』；字段 8 要求『**完整 assignment 列表 + 其 hash**』；字段 14 要求…推出最小可检测效应。**生成 assignment 列表必须知道 `dyad_id` 清单，而清单在数据文件里** ⇒ **§11.1 的时点前提与 §11.2 的必填清单自相矛盾，或该前提不可证**」。\n   ⇒ **`FREEZE_RECORD` 要求的字段本身必须先接触数据才能填。因此「在任何 holdout 行被读取之前」这个承诺，在结构上无法兑现，也无法事后审计。** 改字段 12 修不了这条。\n5. A03 理由 3（`A03:716`）：「§11.1 要求 Architect durable writeback；`AGENTS.md` Mutation discipline 规定 material semantic changes 走 branch + PR —— **但没有任何一处说 `FREEZE_RECORD` 必须走 PR 审查**。同一位分析者既有写权限、又有 commit 权限、又有把偏离记为 `EXPLORATORY` 的裁量权。」我核对 `AGENTS.md` 全文：**确实没有任何一条要求 `FREEZE_RECORD` 走 PR。**\n6. A03 理由 4（`A03:717`）：`16` 自己的 `R16-ID11` 禁止 `FREEZE_RECORD` 含个体级数据行 ⇒ **外部第三方无法独立复核映射行**。`16:381` 自己承认这个取舍。\n**freeze 按现在的写法可执行吗 —— 裁定：不可执行**，四条原因按严重度排序：\n| # | 原因 | 能否靠改 `16` 修 | 独立于 D 的发现？ |\n|---|---|---|---|\n| 1 | **必填字段（4/7/8/14）不可在无数据接触下填写** ⇒ 时点前提与必填清单自相矛盾，或不可事后审计 | **能**，但须改结构（两级冻结） | **是**（`A03:714`；我直读并核对 `16:419/422/423/429`） |\n| 2 | `TBD_AT_FZ1` 指向**不存在的 `FZ-1`** | 能（删占位符） | **是**（我 grep `16` 全文发现 `FZ-1` 无定义） |\n| 3 | 字段 12 允许 estimator family 留空 ⇒ holdout 上的模型选择无对应防线 | 能 | 否（= `D-C25`，A03 理由 2 同源） |\n| 4 | `FREEZE_RECORD` 无 PR 审查 + 第三方不可复核 ⇒ 唯一执行者是分析者本人 | **不能靠改文档**，需制度决定 | 部分（`D-C26` 触及 L7，A03 触及 PR 与不可变性；PR 那一半是新的） |\n**正确修法（裁定）**\n1. **两级冻结，替代\"一级\"**：\n   - **`FZ-A`（数据接触前）**：字段 1/2/3/5/6/9/10/11/12/13/15/16。其中字段 3（`mapping_table_ref`）允许指向**尚未**在个体级数据上验证的映射规格，并**必须**附带 `16:389 F-01` 的免责（「§8 的 5 行里有 3 行的变量级 codebook 未核实」）。\n   - **`FZ-B`（读 holdout 行之前）**：字段 4/7/8/14。此时**已完成** §6 几何与 §8 映射在**一个不用于确认性主张的 dry-run 分片**上的核对；`FZ-B` 完成后 holdout 才解锁。`FZ-A → FZ-B` 之间只允许接触**指定的 non-holdout 分片**，且该分片必须在 `FZ-A` 里登记其 id。\n2. **删除 `TBD_AT_FZ1`**：字段 12 若未定，则 **`FZ-B` 不成立，holdout 不解锁**。这与 A03 改写 5(c) 一致（`A03:689`）。\n3. **补 `FZ-A` 的对偶条款**：`16:429` 字段 14 的 `min_detectable_effect` 若因 `R16-OC05` 事件率不可估而算不出，**必须在 `FZ-B` 之前**从 calibration 集估出（`16:142` `R16-OC05` 已经这么要求）——现状是这条要求与 `16:397 F-09`（\"power 分析做不出来\"）冲突，需要 Architect 显式裁决是\"必须估出\"还是\"允许写成不可检出声明\"。\n4. **制度条款**：`FREEZE_RECORD` 必须以 PR 形式 durable writeback，且 **`AGENTS.md` 需要一句**要求它走 PR 审查。这是本组六问里**唯一一条可能触及 canonical 的**（`AGENTS.md` Mutation discipline）——但我判 `requires_canonical_change: UNSURE`：它可以只作为 `16` 的一条规则存在（\"FREEZE_RECORD 必须以 PR 形式提交\"），**不必改 `AGENTS.md`**，因此**可以停在 proposal**。",
+    "residual_uncertainty": "我**没有**打开 `16:381`（`R16-ID11` 的完整条文）与 `16:444-446`（§11.4 签名）的全文，只读到 A03 与 lane D 的转述 + `16:381` 一段。若 §11.4 另有我未读到的第三方见证条款，原因 4 的严重度会下降。`16 §11.4` 我**未打开**——列入 `explicit_non_claims`。",
+    "settleable_by": "`ADJ-2` + Architect 制度决定。**不需要**新证据。\n---"
+   },
+   "_locator": {
+    "line_start": 207,
+    "section": "Q4 — 冻结漏洞"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "ADJ2-Q5",
+   "_title": "律 E（`RT`）具体处置",
+   "claim_source": "record_heading",
+   "claim": "律 E（`RT`）具体处置",
+   "source_report": "",
+   "verdict": "**律 E 作为候选**存活，但**必须重写判 M、重写两条 `SUPPORTED` 行、并显式标 `UNTESTABLE_WITH_CURRENT_DATA`**。**现在不得冻结。** 支撑这个裁定的**不是** F 的 K1–K9（见下），而是 `06` 自己的三处文本 + 一处可执行性事实。",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`NO`。**但**若 Architect 接受 `RT` 长期不可执行，应把「密集 / 事件内分辨率设计是转移律验证的硬性前置」写入 `CURRENT_ARCHITECTURE.md` §11「当前非目标」——**这是本组六问里我认为最值得动 canonical 的一处，且是纯文档**（`UNSURE` → 倾向 `YES`，因为不写进去，下一轮 Work Order 会再次把它当待攻克项）。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "1. **`RT` 保留在候选表，但状态改为 `MODEL_HYPOTHESIS / UNTESTABLE_WITH_CURRENT_DATA`。不冻结。**\n2. **`06:806` 与 `06:807` 改标**：`SUPPORTED（作为 outcome 相关）`，理由栏写明「来源测的是行为之后的**结果**（正性情感/幸福感；满意度/承诺/投入/中心性），**不是**『下一 episode 行为被放大或抑制』这一滞后转移函数」。`06:734` 的自陈保留（它是诚实披露）。\n3. **重写判 M（拆掉 AND 门）**：`判 M-i`（`Λ⁺`/`Λ⁻` 无 episode 内增量预测力）**单独即可**触发「降级为律 A 的强化版」；`判 M-ii`（`s ≡ 中性`）保留为**独立的第二条**判据。⇒ 任何一条成立即降级。\n4. **重写判 N 使其可被空结果推翻**：`person` 常数部分**不显著小于** dyadic-state 解释部分（含两者均不可分离的情形）⇒ 拒绝\"状态依赖\"。**这一条与 D-C16 的建议（判 H / 判 N 移入 `06 §10` 不可证伪清单）**二选一**：我选**重写**，因为 `06 §10` 的 U 清单是\"当前数据下不可检验\"，而判 N 的问题是\"结构上无失败路径\"，性质不同，塞进 U 清单会掩盖它。\n5. **把 `06:847-849` 的编码手册 + 信度要求提升为 `RT` 的准入前置**，并在 `03` 补一行事件内有序行为编码工具（或显式登记 `G11` 为架构级缺口）。\n6. **把 `F-C11` 的 ESM/IL/EMA escape clause 补进 `09 §4.4`**，并**在 `16 §6.2` 增设第三类几何 `G4_DENSE_EVENT_SPLIT`**（按 episode 而非 wave 切）作为律 E 的唯一可行路径——**若不做这一条，律 E 永远不可执行**。\n7. **`06:761-775` 的 `s = ⊥ ⇒ 不得默认中性`** 须与 `D-C32` 一并提交 Architect（`06:991` 裁决请求 1）。",
+   "_extra_fields": {
+    "question": "D 说两条分支的 `SUPPORTED` 是 outcome 层证据（scope 错位）；F 说其撤退条件部分循环。律 E 是否作为候选存活？正确证据状态是什么？",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| 两条分支标 `SUPPORTED` 是 `WRONG-SCOPE`；建议 `RECLASSIFY_AS_METHOD_LIMIT`，两行改标 `MODEL_HYPOTHESIS` | lane D `D-C17` | 「律 E 是五族中唯一以**分支的存在**而非幅度为实质主张」「用结果相关去支持转移结构的存在性，是把 outcome 层证据抬到 transition 层」 |\n| `K9` 结构性循环；`K1` 的析取句使其近乎不可触发；O1–O5 从不点名逃逸 regime | lane F `F-C14` / `F-C11` | 这两条**关于 `09`**，不是关于 `06` |\n| L5 `RT` 的 kill criterion 已触发 ⇒ 撤下 | lane L `L-C15`（L520） | 「性别不对称的耦合被检出（当前最佳证据反对）⇒ 律族须重写」 |",
+    "decisive_evidence": "1. **`06:734` 逐字**：「**这是本 lane 中唯一以『分支的存在』而非『幅度』作为实质主张的律族。**」——**这确立了主张本体**。\n2. **`06:741-750` 定义**：`A_{i→j}(n+1) = ψ(Z^k_{i→j}(n), Z^k_{j→i}(n), Env, Con) ⊕ γ_up ⊗ Λ⁺(a^n_{j→i}, R_i(n)) ⊕ γ_dn ⊗ Λ⁻(a^n_{j→i}, R_i(n)) ⊕ ν_n`，分支选择器 `∂A_{i→j}(n+1)/∂Z^k_{i→j}(n) = s(n) ∈ {放大, 中性, 抑制}`。**这是一个关于「下一 episode 行为被放大/抑制」的滞后转移函数。**\n3. **`06:806` 逐字**：「**存在一条独立的正向（趋近）分支** | **SUPPORTED** | S21：分享正面事件带来**超出事件本身的日间正性情感与幸福感**（4 项研究）」。\n4. **`06:807` 逐字**：「**存在一条独立的抑制/修复分支** | **SUPPORTED** | S10：accommodation（抑制破坏性回击、改为建设性回应）与**更高满意度、承诺、投入、关系中心性、视角采择、较差替代品相关**；承诺起中介作用…」\n   ⇒ **(3)(4) 全部是行为之后的 outcome。** (3) 是**正性情感/幸福感**；(4) 是**满意度/承诺/投入/中心性/替代品**。**没有一条测 `a^n_{j→i} → a^{n+1}_{i→j}` 这一对行为。** **D-C17 的 `WRONG-SCOPE` 判定成立。** 我加一条 lane D 没说的：`10.1037/0022-3514.60.1.53` 的官方标题逐字是 \"Theory and **preliminary** empirical evidence\"——**来源自己标了 preliminary，而 `06` 标的是无修饰的 `SUPPORTED`。**\n5. **`06:810` 逐字**：「`s` 由 dyadic state（而非 person 常数）决定 | **`MODEL_HYPOTHESIS`** | **无来源直接检验。**S15 给出『高 commitment + 恶劣情形下仍承诺』的**个例提示**，属定性支持，非证据」\n   ⇒ **律 E 的实质内容（分支由 dyadic state 决定）零直接支持。** 这比 D-C17 的两点更重：D 说\"证据层错位\"，我说\"**核心内容根本没有证据**\"。\n6. **`06:844-846` 逐字**：「`s` 与 `Z` 的循环性。`s` 由 `Z` 决定，`Z` 由行为更新；同时 `Z` 又是行为的输出。这是**真正的内生循环**，C-B 的 trait–state 分离在这里**不足以**解决。」\n   ⇒ **这是 F 说的\"循环\"的真正所在——但它在 `06` 自己文本里，不在 F 的 K1–K9。**\n7. **`06:856-861` 判 M 用 AND 门**：(i) `Λ⁺` 无 episode 内增量预测力 **且** (ii) `s(n)` 在等价性检验下恒等于「中性」→ 拒绝。⇒ **任一不成立本律即存活 ⇒ 实际近乎不可证伪。**\n8. **`06:864-869` 判 N**：`person` 常数部分**显著大于** dyadic-state 解释部分 → 拒绝。**空结果（全空）不触发。** ⇒ 律 E 的第二条实质主张**只能被正结果推翻**。\n9. **可执行性**：`06 §8.6` 逐字要求「**事件触发式（event-contingent）记录，含事件内顺序。这是律 E 的硬性要求**」+「**分辨率由约束 C-A 强制**（需能区分 lag-0 与 lag-1）」。`16` 的三种几何全部建立在 `dyad_id`/`wave_id` 的 **wave 级**切分上（`16:173-175`），**结构上不能提供事件内顺序**。`04:862` 逐字：「『intensive longitudinal 关系日记数据』在本 landscape 中**不存在公开可得的**」。`18` 逐律表：律 E ❌ 不可满足。\n   ⇒ **`判 M` 在当前任何数据上都无法执行。**\n10. **律 E 的工具缺口（我新增的，D 与 L 都没点出）**：`03:107` `C5`（Gable 2004 Perceived Responses to Capitalization Attempts）是 `03` 里最接近律 E 的行，分类 `DIRECT_PROXY`，但它测的是「**i 感知 j 的回应**」——**单侧感知，不是有序行为对**。`03:306 U18` 逐字：observer-report 那一项「**仅有一个实践者，且该实践者为单个个体**」。`03` 中**没有** SPAFF 类观察编码工具、**没有**编码者信度规范。而 `06:847-849` 要求「**必须在登记时公布编码手册与其信度**，否则 `s(n)` 不可复制」。\n    ⇒ **律 E 的中心构念在 `03` 里没有对应的已分类工具行。**（我检索了 `03` 的 `C` 系列 `C1`–`C7`、`X` 系列 `X1`–`X16`、`D` 系列 `D1`–`D3`，未见事件内有序行为编码工具。）\n**推翻 lane L 的 L5 部分**\n`19:210` 的判据是「性别不对称的耦合被**检出**」。`06:809` 逐字：`性别不对称（谁在升级 / 谁在撤退）` = 「**明确不预测**」，依据「S09 两方向近乎相等；S03 无性别差异」，而 `06:805` 给出 r = .380（wife-demand）vs .392（husband-demand）。**不对称没有被检出。判据未触发。`19` 的括号\"当前最佳证据反对\"方向写反了。**\n⇒ 律 E 的问题**不是** `NEGATIVE_RESULT`（已被证据否决），而是 **`MODEL_HYPOTHESIS` + `UNTESTABLE_WITH_CURRENT_DATA`**（有假设、零直接证据、当前不可执行）。**这两种状态在治理上完全不同**：前者应关闭，后者应保留并标注数据条件。**lane L 把它们混为一谈。**\n**F 的 K1–K9 对律 E 的独立性 —— 明确声明不可用作佐证**\nlane F 的 cluster 是 `09` / `10`（`REVIEW_CONTRACT §2` lane F 行）。**律 E 在 `06`，不在 F 的 cluster 内。** 因此：\n- `F-C14`（K9 结构性循环、K1 的析取句使其近乎不可触发、K5 永久锁、K7 被不充分证据预先回答、K8 键控在 `FETCH_FAILED` 的引用上）**全部是关于 `09` 的撤退条件表，与律 E 的判 M/N/O 无关**。\n- 任务书把 F 的 K1–K9 与「律 E 的循环性」并置，**这个并置在证据上是错的**。我按 `REVIEW_CONTRACT §4` 标注：**`F-C14` 对律 E 的支持度 = `corroboration: NON_INDEPENDENT`（严格说是 `NOT_APPLICABLE`）。**\n- F 唯一对律 E 有间接价值的一条是 `F-C11` 的 **escape clause 缺口**：`09` 的 O1–O5 全是 regime 条件化（波密度 / 关系年限 / `r≈.76` / 单条读数），但全文**从不点名**那个开放 regime（ESM / IL / EMA / daily-diary）。**而密集设计正是律 E 的唯一可行 regime。** ⇒ **F 的这一条独立于 D，指向律 E 的数据路径；但它是一条方法学要求，不是一条关于律 E 的证据判定。**",
+    "residual_uncertainty": "我**未打开** `10.1037/0022-3514.60.1.53`（Rusbult 1991）与 `10.1037/0022-3514.87.2.228`（Gable 2004）的正文。`06:807` 对 S10 的转述是否准确（尤其\"4 项研究\"与\"自我调节耗竭降低 accommodation\"）我**只能按 `06` 的转述接受**。若 Rusbult 1991 的 diary 设计实际含**有序行为编码**（SPAFF 类的构造性回应 vs 破坏性回应确实需要一个编码者），那么 S10 **可能**提供了 `Λ⁻` 的行为侧证据——**但那仍然不是 `a^n_{j→i} → a^{n+1}_{i→j}` 的滞后转移函数**。⇒ **即使 S10 被完整核实，scope 错位仍然成立**，只是证据量更大。这一点我认为是稳的。列入 `explicit_non_claims`。",
+    "settleable_by": "`ADJ-2`（已完成）。第 3–5 项不需新证据；第 6 项需 Architect 裁决是否值得做一次密集设计的可行性调查。\n---"
+   },
+   "_locator": {
+    "line_start": 265,
+    "section": "Q5 — 律 E（`RT`）具体处置"
+   },
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "ADJ2-Q6",
+   "_title": "「0 / 5 条律有可及的法律识别数据集」是否正确？",
+   "claim_source": "record_heading",
+   "claim": "「0 / 5 条律有可及的法律识别数据集」是否正确？",
+   "source_report": "",
+   "verdict": "`PLAUSIBLE` 成立，但**表述必须改**。它作为**实践判断**正确；作为**诊断**不完整，而且它掩盖了两件更要紧的事。",
+   "supporting_refs": "",
+   "strongest_counterevidence": "",
+   "requires_canonical_change": "`YES`（第 2 项）——若采纳，`CURRENT_ARCHITECTURE.md` §11「当前非目标」需要新增一条「跨数据集泛化在当前数据通道下结构上不可执行」。**必须停在 proposal**：措辞是文档一致性，不改变任何架构方向；但它**不能停在 proposal 之外**，因为若不写进去，`19 §8` 的 blocker register 会继续把它当待攻克项，而它是**永久** `PARTIAL` 的。",
+   "needs_experiment_or_data": "",
+   "duplicate_of": "",
+   "corroboration": "",
+   "recommendation_to_architect": "1. **明确宣告：阻塞点是基础设施 + rights + egress，不是授权。** `19:202` 的「冻结需 Human 授权的独立 Work Order」应**降级为三个前置门之一**，另两个是 (i) 合规处理环境（enclave / 自托管 + CoU 逐条裁定），(ii) 一个含**真实起点波次**或**事件内顺序**的数据设计。**这三条律（`BMR` 判别部分、`DVA`、`RT`）的阻塞点与授权完全无关。**\n2. **不要把「交集为空」写成 ontology 结论。** `04:864` 是关于**数据可得性**的结构性事实，**不是**关于「人类关系不可测量」或「LHRM 不可验证」的结论。它应进 `CURRENT_ARCHITECTURE.md` §11「当前非目标」（与 lane L Q6 建议一致），措辞用「在当前数据通道下不可执行」而非「不可执行」。\n3. **把「0 / 5」替换成逐律表**（见上）。现在的统一表述会让 Architect 误以为「拿到数据就能跑 5 条律」——而 `BMR` 判别部分与 `RT` **即使拿到完美的 dataset 也跑不了**。\n4. **`04:864` 的「四个条件」改为「五个条件」**，并把第五项 `关系状态构念` 与 `16:389 F-01` / `04:389 U15` 的 `UNVERIFIED` 状态**显式连起来**。\n5. **立刻可做的两件事（都不是研究 Work Order）**：(a) 取得 D01 user contract 的 LLM 条款；(b) 取得 D02 CoU §7 全文。**这两件事可能把 D01 / D02 从「不可及」变成「通道待批」，是本组六问里投入产出比最高的两项。**\n6. **补 ESM / IL / EMA / daily-diary 的检索**（`04:862` 缺的正是这一路；`F-C11` 已指出 `09` 从不点名这个 regime）。**这是律 E 唯一的可行路径。**",
+   "_extra_fields": {
+    "question": "这条断言对吗？对照 `04` 的分类与 `03` 的工具。**如果对，请明确说清阻塞点是数据而不是授权。**",
+    "competing_readings": "| 立场 | 来源 | 断言 |\n|---|---|---|\n| 5 条律 0 条有可执行数据路径；**「需 Human 授权」不是它们的阻塞点**，真实主门槛是**数据** | lane L `L-C14`（`PLAUSIBLE`） | D02 CoU §7 禁 LLM 处理个体级数据；D01 需 user contract；D03 本环境 403；D04 单时点；D07 单方报告 |\n| 「完全公开 + 双报告 + 方向性 + 多波 + 关系状态构念」的**交集为空** | `04:864` / `16:189` / `19:65 A5` | 「这是本 landscape 最重要的结构性事实」 |\n| 三个 `CALIBRATION_READY` 全部需自托管才可能合规 | `16:379` E4 | 「若走 enclave，则 `code_commit` 必须能在一个**离线可复现**的镜像中复现」 |\n| `NOT_IDENTIFIABLE` 被系统性误用为\"层级不对 / 尚未检索\" | lane B `B-C4` | `03:1.2` 定义 vs 报告自身各行说明冲突 |\n| 逐律阻塞点不同 | `18` 逐律可执行性表 | 律 A 判别 ❌ / 律 B ⚠️ HARP 不可用 / 律 C ⚠️ 三数据集均无起点波次 / 律 E ❌ |",
+    "decisive_evidence": "1. **`04:864` 逐字**：「本审计**未发现**任何「完全公开 + 双报告 + 方向性 + 多波 + 关系状态构念」的数据集。**这四个条件的交集为空。**」\n   ⇒ **我发现的第二处缺陷**：这句列举了**五个**条件（完全公开 / 双报告 / 方向性 / 多波 / 关系状态构念）却写「这**四**个条件」。**PR 内被引用最多的单句自带一个计数错误。** 而被漏计的第五项 `关系状态构念` **恰恰是对五条律最关键的那一项**——因为 `16:389 F-01` 逐字承认「§8 的 5 行里有 3 行的**变量级 codebook 未核实**」，`04:389` 把 pairfam / SHARE / HARP 问卷里实际有哪些「关系状态」构念列为 `U15 = UNVERIFIED`，并警告「**这直接决定它们到底能不能标定 LHRM 的关系状态参数**」。⇒ **即使 rights 与 egress 全部解决，三个 `CALIBRATION_READY` 数据集是否含五条律需要的关系状态构念，目前是 `UNVERIFIED`。**\n2. **结构 vs 通道的分离（这是 lane L 没做的关键一步）**：\n   - **结构合格**（双报告 + 方向性 + 多波）：D01 pairfam（14 wave，`anchor$`+`partner$`）、D02 SHARE（≥8 wave，`mergeidp*w`+`coupleid*w`）、D03 HARP（3 时点，明令 spouses 分开作答）。`04:55-57` 逐字。\n   - **通道不合格**：D03 ICPSR **本环境 403**（`04:856`「ICPSR 全站 403」）；D01 需签署 user contract（**其是否允许 LLM 处理，`19` 与 `04` 均未记载** —— lane L 指出的缺口，我核对后**成立**）；D02 CoU §7 禁止非 fully self-administered 应用，且 **AI/ML 派生量受与原始数据相同的限制**（`16:376` E1、`19:68`）。\n   - **因此正确表述是**：「**没有数据集同时满足（a）在本环境可 LLM 处理 与（b）结构合格**」。**「完全公开 + …交集为空」是关于数据集**属性**的陈述；真正拦住律的是**处理环境**。** `16:379` E4 讲得最准：「三个 `CALIBRATION_READY` 全部需要**自托管**才可能合规。」\n3. **逐律阻塞点各不相同 —— 关键裁决**：\n| 律 | 结构性通道合格的数据集 | **真正的阻塞点** | 类别 |\n|---|---|---|---|\n| **`BMR`** | D01 / D02（需 ≥3 wave，双方+双方信息源） | **判别部分**（`06:198` = `MODEL_HYPOTHESIS`；`06:911-916` U-1 = 用现有公开数据**不可证伪**；`16:393` F-05 = 结构性）。`∂ΔZ/∂PPR > 0` 单向部分可执行 | **设计不可满足**（rights / egress 修不好） |\n| **`APES`** | D01（14 wave）/ D02（≥8）可满足「≥4 wave」；**D03 只有 3 wave → 不可用**（`06:900` + `04:57`） | **工具**：核心变量 `D^d` 累积 dependence 存量 = `19:247 G1` = `03:254 D8 = NOT_IDENTIFIABLE`；且 `03:115 D1 IMS` 是 `DERIVED`（定义层就合并了 dedication / outcome dependence / constraint） | **工具**（+ rights） |\n| **`DVA`** | 结构上无一个合格 | **真实起点波次 `τ₀`**：`06:517-518` 逐字「若 `τ₀` 是事后回溯指定的，整个分解**不可识别**」；`18` 逐律表逐字「三个数据集都没有『关系起点』波次（HARP 的 T1 已是合法婚姻 + 同居 ≥3 年）」 | **设计**（可由新设计解决） |\n| **`RGM`** | D01 / D02 可满足「双方各自测 Actual 与 Ideal + ≥3 wave」 | **工具**：`03` 中**没有** `Ideal` / 比较标准 / want-actual 的已分类工具行（我检索 `C`/`X`/`D` 三系列；`03:151 X14` 的 \"Idealization\" 是 `NOT_IDENTIFIABLE` 的浪漫主义**意识形态**量表，不是对特定 j 的标准）。**加上** `06:679-680` 自利偏差 / common-method（同一自陈同时构造 Actual 与 Ideal） | **工具 + 方法学** |\n| **`RT`** | **无** | **分辨率**：`06 §8.6` + C-A 需事件内顺序；`16` 三种几何全在 wave 级；`04:862` 无公开 intensive-longitudinal 关系日记；且 `03` 无事件内有序行为编码工具行 | **设计不可满足**（当前） |\n4. **lane B 的 `B-C4` 成立**：`03:1.2` 把 `NOT_IDENTIFIABLE` 定义为「现有工具在**结构上**无法支撑…（**不因为'还没人做'，而是因为'这样做不了'**）」，而报告对自己 9 个 `NOT_IDENTIFIABLE` 行的说明是「是 Agent 层 trait / 抽样框错 / 已在别处有替代」——**层级错配被塞进了\"结构上不可测\"**。⇒ `APES` / `RGM` 的工具阻塞点**不能**写成\"科学上不可测\"，必须写成「未定位到已验证工具；且 `03` 缺一个 `WRONG_LAYER` / `AGENT_LEVEL_PROXY` 类目，缺了它才会把层级错配硬塞进 `NOT_IDENTIFIABLE`」。",
+    "residual_uncertainty": "- 我**没有**打开 D01（pairfam）的 user contract 与 D02（SHARE）的 CoU 全文。`19` 与 `04` 都只给转述。⇒ **「D01 的 user contract 是否允许 LLM 处理」 = `UNKNOWN`（两条报告都未记载）。** 这是唯一一个**成本极低、收益极高**的下一步：一次邮件或一次 CoU 全文抓取就能把 `D01` 从「不可及」变成「可能可及」。\n- 我**没有**核实 D01 / D02 / D03 的问卷里实际有哪些关系状态构念（`04:389 F-01` / U15 = `UNVERIFIED`）。这需要变量级 codebook，属**新工作**，不是裁决。\n- `04:862` 说「intensive longitudinal 关系日记数据**在本 landscape 中不存在公开可得的**」——我**未**独立复核这条（`04` 自陈 Family Life Survey / LSAF / NSM 三次 `FETCH_FAILED`，见 `04:874-876`）。⇒ 这是一个**已知有覆盖缺口**的负结果。**它恰好是律 E 的唯一希望所在的领域，因此这个缺口必须先补。**",
+    "settleable_by": "`ADJ-2`（第 1、3、4 项已完成）+ Architect 决定（第 2 项）+ 一次**基础设施请求**（第 5 项，不是研究 Work Order）+ 一次**文献检索补缺**（第 6 项）。\n---"
+   },
+   "_locator": {
+    "line_start": 340,
+    "section": "Q6 — 「0 / 5 条律有可及的法律识别数据集」是否正确？"
+   },
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 6,
+ "field_coverage": {
+  "claim_id": 6,
+  "claim": 6,
+  "source_report": 0,
+  "verdict": 6,
+  "supporting_refs": 0,
+  "strongest_counterevidence": 0,
+  "requires_canonical_change": 6,
+  "needs_experiment_or_data": 0,
+  "duplicate_of": 0,
+  "corroboration": 0,
+  "recommendation_to_architect": 6
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "Q1 — 五条候选律：冻结 / 保留 / 现在就撤下？",
+   "Q2 — `B2` null 争议",
+   "Q3 — 默认 split 几何",
+   "Q4 — 冻结漏洞",
+   "Q5 — 律 E（`RT`）具体处置",
+   "Q6 — 「0 / 5 条律有可及的法律识别数据集」是否正确？"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "Q1 — 五条候选律：冻结 / 保留 / 现在就撤下？",
+    "line_start": 32,
+    "line_end": 103
+   },
+   {
+    "title": "Q2 — `B2` null 争议",
+    "line_start": 104,
+    "line_end": 151
+   },
+   {
+    "title": "Q3 — 默认 split 几何",
+    "line_start": 152,
+    "line_end": 206
+   },
+   {
+    "title": "Q4 — 冻结漏洞",
+    "line_start": 207,
+    "line_end": 264
+   },
+   {
+    "title": "Q5 — 律 E（`RT`）具体处置",
+    "line_start": 265,
+    "line_end": 339
+   },
+   {
+    "title": "Q6 — 「0 / 5 条律有可及的法律识别数据集」是否正确？",
+    "line_start": 340,
+    "line_end": 406
+   }
+  ]
+ },
+ "files_audited": "",
+ "coverage_statement": "",
+ "top_recommendations": "### [line 421] top_recommendations（6 条，按对 Architect 的重要性排序）\n1. **【最高，零成本】修 `16` 的 null 集与主判定规则。** 把 `B2` 改名 `B2_LEVEL_PLUS_RW` 并采用 `06:488` 的定义（消除 PR 内同名异义）、从 `16:197` 的「配对击败」清单中删除（被 `B1` 支配）、删掉「最重要」「已击败过一个候选」「已核实证伪」三处措辞；新增 `N8_LEVEL_CONDITIONAL_SLOPE`（Lavner 真正赢下的结构 = `06` 判 G 的形状）与 `N7_UNDIRECTED_SCORE`（唯一直接测本项目中心表示主张的 null）。**纯文档，零新数据，且它是 `06` 判 G 唯一的参照物。**（Q2）\n2. **【高，零成本】把 `16 §6` 按 estimand 拆成两节。** §6a dynamics（默认 `G1`，标 `ESTIMAND_WITHIN_DYAD_TEMPORAL` + 新标签 `NO_CROSS_DYAD_GENERALIZATION`）；§6b representation（`G0_WHOLE_DYAD_OUT`，复用 `16:183` 的 `NO_TEMPORAL_AXIS`）。同时修 `16:177`（`G1` 的定义逐字落在「明确不采纳」清单上）、`16:197`（主判定规则按 estimand 分开陈述）、`16:422`（字段 7 枚举加 `G0`）。**纯设计修正。**（Q3）\n3. **【高，纯文档】重写 `FZ-0` 为两级冻结，并删 `TBD_AT_FZ1`。** 致命项不是字段 12，是**字段 4/7/8/14 不可在无数据接触下填写** ⇒ `16:408` 的时点前提与 `16:412-431` 的必填清单自相矛盾或不可事后审计。修法：`FZ-A`（文档与设计字段）/ `FZ-B`（数据依赖字段，holdout 仍锁）；字段 12 若为 `TBD` 则 **`FZ-B` 不成立、holdout 不解锁**。（Q4）\n4. **【高，零成本】重写 `19:208` / `19:210` 两格，把\"5 条平等可冻结\"改成\"5 条全部 `BLOCKED`，逐条写阻塞类别\"。** 依据：判 G 未触发（Lavner Table 5 支持 level-conditional slope）；判 L5 未触发（性别不对称**未检出**）；判 M/判 N 需重写。**这直接推翻 lane L 的 `L-C15` 撤下建议。**（Q1、Q5）\n5. **【中，零成本】修 `06` 的三条通用条款 + 两条 `RT` 行。** (a) 把 `06:852` 的功效护栏**提升为跨律通用**（现在只给了律 E，律 A/B/C/D 都没有 → 会把\"没测出来\"当\"不存在\"）；(b) 判 M 拆成两条去掉 AND 门；(c) 判 N 重写使空结果可推翻；(d) `06:806/807` 改标 `SUPPORTED（作为 outcome 相关）` 并写明为何不是转移函数证据；(e) 修 `04:864` 的「四个条件」（实为五个）。**（D-C16、D-C17、Q5）**\n6. **【中，一次基础设施请求 + 一次检索补缺，不是研究 Work Order】** (a) 取得 D01 pairfam user contract 的 LLM 条款与 D02 SHARE CoU §7 全文——**这可能把两个数据集从\"不可及\"变成\"通道待批\"，是全表投入产出比最高的两项**；(b) 补 ESM / IL / EMA / daily-diary 的检索（`04:862` 缺的正是这一路，而这是 `RT` 的唯一可行 regime，同时是 `F-C11` 要求的 escape clause）。**（Q6）**\n\n---",
+ "explicit_non_claims": "### [line 432] explicit_non_claims（10 条）\n1. **不主张任何一条转移律族为假。** 五条全部仍是 `RESEARCH_CANDIDATE`。本包判定的是**判据的可失败性、证据层级、措辞强度与可执行性**，不是律族的真伪。\n2. **不主张 Lavner 2012 被误引。** `06:502` 对 S19 的引用是**逐字准确**的（Discussion 原句 \"Limited evidence was found to support an incremental change model…\"）。被误述的是 `06:489` / `06:901` / `16:203` **三处结论性表述**，它们强于来源所能支撑的范围。**逐字引用正确 ≠ 结论正确。**\n3. **不主张 `06:502` 的 `DIRECTION_NOT_SUPPORTED` 标注本身过强**（我核对了 Discussion 与 Results 两段，见 Q1 decisive_evidence 3/4）——但我也**不**据此主张 DVA 的机制归因版成立。正确状态是 `WEAKLY_SUPPORTED_HUSBANDS / NULL_WIVES`，介于两者之间。\n4. **不主张 `16:191`（\"只有 `G1` 在原则上对 pairfam/SHARE/HARP 可用\"）是笔误。** 我**未**判定它是有额外未声明假设还是错误。若 `16:177` 的「明确不采纳」清单按字面执行，则三个 `CALIBRATION_READY` 数据集**一个都不能用**——这与 `16:191` 直接冲突。**我把这条冲突记为 `UNRESOLVED`，不替 Architect 选。**\n5. **未打开 `Rusbult et al. (1991)` `10.1037/0022-3514.60.1.53` 与 `Gable et al. (2004)` `10.1037/0022-3514.87.2.228` 的正文。** 我只拿到 Crossref 题录（Gable 标题逐字含 \"Intrapersonal and Interpersonal Benefits of Sharing Positive Events\"；Rusbult 标题逐字含 \"Theory and **preliminary** empirical evidence\"）。因此 `06:807` 对 S10 的转述是否完整（尤其\"4 项研究\"与\"自我调节耗竭降低 accommodation\"）**我只按 `06` 的转述接受**。即使完整核实，Q5 的 scope 错位判定仍然成立（见 Q5 residual_uncertainty）。\n6. **未打开 `Joel et al. (2020)` `10.1073/pnas.1917036117`（`S04`）。** `16:560` 自陈「**书目已核实；五条实证结论为转述**」。`06:504` 据此把「人内变化幅度随时间」标 `DIRECTION_NOT_SUPPORTED`——**这是 DVA 最大的外部限制，也是全 PR 对\"变化可预测性\"最承重的一条引用。** 它是本包**最需要 Architect 指定的下一处取样复核**。\n7. **未打开 D01 user contract 与 D02 CoU 全文。** 「D01 的 user contract 是否允许 LLM 处理个体级数据」= `UNKNOWN`（`19` 与 `04` 均未记载）。`04:389 U15`（三个 `CALIBRATION_READY` 数据集是否含五条律需要的关系状态构念）= `UNVERIFIED`。\n8. **未打开 `16 §11.4`（签名）全文。** 只读到 `16:444` 的标题与 A03 / lane D 的转述（`16:381` 自陈\"本协议也不主张'由分析者自己签'是充分的\"）。若 §11.4 另有我未读到的第三方见证条款，Q4 原因 4 的严重度会下降。\n9. **未打开 `05_IDENTIFICATION_AND_STATISTICS.md`。** 因此我**不**对 `05` 的任何 `I*` / `SD*` 判据作独立判定，只在 `16` / `06` / `18` 的转述层面引用它们。**方向性分解在纯 dyad 数据下不可识别**这条（`16:395` F-07 引 `05 I4/I14`）我**接受为转述，未独立复核**。\n10. **不主张 `09` 的「四层皆非 `F` 的引擎」结论是错的。** 我同意 lane F `F-C12` 的判断：**问题在论证类型（从 warrant 滑到 ontology），不在结论。** 我只判定 **K9 使该判决当前不可被证据撤销**（`F-C14`，`VERIFIED`）。同时**不**用 `F-C14` / `F-C11` 支撑任何关于律 E 的判定——**F 的 cluster 不含 `06`**。\n11. **不主张任何 LHRM 构念、层归属或 ontology 应当改变。** `D-C32` 是关于**形式化正确性**的自审（且 `06:68` 自标 U4 为 `UNKNOWN`），不是关于 ontology 的发现；`D-C34` 的 `Ideal` schema 变更 `HOLD_FOR_EVIDENCE`。\n12. **不读、不执行、不引用 LHRM `#20`/`#21`/`#22`。** 按隔离契约本 swarm 不查，因此这三项保持 `UNKNOWN`。**不猜测其内容。**\n\n---",
+ "provenance_note": "### [line 449] packet_sha_note（我读了哪些源、各自的核实方式）\n| 源 | 核实方式 | 状态 |\n|---|---|---|\n| `REVIEW_CONTRACT.md` · `AGENTS.md` | 全文读 | `VERIFIED_BY_ME` |\n| `16_EMPIRICAL_VALIDATION_PROTOCOL.md` | §4 / §5 / **§6.1–§6.3** / **§7 + §7.1** / §9.2 / §10 / **§11.1–§11.4** / §13 / §17 逐段读；`FZ-1` 全文 grep | `VERIFIED_BY_ME`（文本层） |\n| `06_TRANSITION_LAWS.md` | §1 / §2 / §4 / §5 / **§6 全节** / §7 / **§8 全节** / §9 / §10 / §11 / **§12** / §13 逐段读 | `VERIFIED_BY_ME`（文本层） |\n| `19_SYNTHESIS_CANDIDATE.md` | §1 A1–A5 / **§4 五条律表** / **§5 八数据集表** / §6 逐段读 | `VERIFIED_BY_ME` |\n| `04_DATASET_LANDSCAPE.md` | §3 D01–D16 明细 / §8 矛盾 1–10 / §9 U1–U8 | `VERIFIED_BY_ME`（表格与矛盾条目；未核实任何 CoU 原文） |\n| `03_MEASUREMENT_INSTRUMENTS.md` | §2.3 缺口表 / §2.4 X1–X16 / §2.7 / §2.8 / §3.2–§3.4 / `:253-254` / `:306`；按 `Ideal|理想|Want|比较标准|PPR|编码|观察|SPAFF` 全文检索 | `VERIFIED_BY_ME`（**含一处否定性结论：未找到 `Ideal` 与事件内行为编码工具行，检索式已列**） |\n| `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` | **§6 四条理由** / §7.1 X-6 / `:342` | `VERIFIED_BY_ME`（作为**被审对象的论据**使用；其判定我独立复核，不代为背书） |\n| `18_CROSS_LANE_CONFLICT_AUDIT.md` | CF-11 / N-09 / N-17 / N-18 / **逐律可执行性表** | `VERIFIED_BY_ME`；**按 lane K 授权跨 cluster 读**，已标注 |\n| `CURRENT_ARCHITECTURE.md` | **§6 逐字** / §7 / §11 标签层 | `VERIFIED_BY_ME` |\n| `PARAMETER_CONVERGENCE_V0_1.md` | §4 D4/D7/D8 / §9 R2/R3 / **§15 Gate A/B/C 逐字** | `VERIFIED_BY_ME` |\n| `CONSTRUCT_SCOPE_DIRECTIONALITY.md` | §1 分解式 | `VERIFIED_BY_ME` |\n| `Lavner, Bradbury & Karney (2012)` `10.1037/a0029052` | **PMC3513382 全文打开**：摘要、Methods、Table 2/3/5、Results、Discussion | **`VERIFIED_BY_ME`（含 Table 5 数值与脚注）** |\n| `Lavner & Bradbury (2010)` `10.1111/j.1741-3737.2010.00757.x` | **Crossref 记录 + 出版方官方摘要全文** | `VERIFIED_BY_ME`（摘要层；**正文未开**） |\n| `Rusbult et al. (1991)` `10.1037/0022-3514.60.1.53` · `Gable et al. (2004)` `10.1037/0022-3514.87.2.228` | 书目级（`a01_cr.csv` 中 `RESOLVED` 行） | `NOT_OPENED`（正文未开） |\n| lane packets `R2_D.md` / `R2_L.md` / `R2_F.md` / `R2_B.md` | **只读任务书点名的条目** | `VERIFIED_BY_ME`（转述层） |\n| `lanes/R2_A,E,G,H,I,J,K.md` · 全部 `R0*/R1*/A0*` packet | **未读** | — |\n\n**我**未**写入 `D:\\coding\\lhrm` 下任何文件；未 merge PR #31；未执行 WO-N1/N2/N3；未触碰 Eye / Juece。",
+ "specialty_answers": [],
+ "specialty_section": null,
+ "specialty_answers_note": "not applicable: contract §6's four specialty answers bind cluster-isolated review children, not phase-2 adjudication or evidence-check children",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "# per_law_disposition_table",
+    "a summary table of the six Q verdicts; the per-law detail lives inside the captured Q blocks"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 ADJ-2 — 裁决包（Round 2 Review Swarm / PR #31）",
+   "line_start": 1,
+   "line_end": 31
+  },
+  {
+   "level": 1,
+   "title": "Q1 — 五条候选律：冻结 / 保留 / 现在就撤下？",
+   "line_start": 32,
+   "line_end": 103
+  },
+  {
+   "level": 1,
+   "title": "Q2 — `B2` null 争议",
+   "line_start": 104,
+   "line_end": 151
+  },
+  {
+   "level": 1,
+   "title": "Q3 — 默认 split 几何",
+   "line_start": 152,
+   "line_end": 206
+  },
+  {
+   "level": 1,
+   "title": "Q4 — 冻结漏洞",
+   "line_start": 207,
+   "line_end": 264
+  },
+  {
+   "level": 1,
+   "title": "Q5 — 律 E（`RT`）具体处置",
+   "line_start": 265,
+   "line_end": 339
+  },
+  {
+   "level": 1,
+   "title": "Q6 — 「0 / 5 条律有可及的法律识别数据集」是否正确？",
+   "line_start": 340,
+   "line_end": 406
+  },
+  {
+   "level": 1,
+   "title": "per_law_disposition_table",
+   "line_start": 407,
+   "line_end": 420
+  },
+  {
+   "level": 1,
+   "title": "top_recommendations（6 条，按对 Architect 的重要性排序）",
+   "line_start": 421,
+   "line_end": 431
+  },
+  {
+   "level": 1,
+   "title": "explicit_non_claims（10 条）",
+   "line_start": 432,
+   "line_end": 448
+  },
+  {
+   "level": 1,
+   "title": "packet_sha_note（我读了哪些源、各自的核实方式）",
+   "line_start": 449,
+   "line_end": 471
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [
+   {
+    "rule": "PCOT-2",
+    "detects": "first-person authorial-action subject",
+    "matched": "我推翻",
+    "disposition": "retained_as_conclusion_text",
+    "why": "The proposition itself is the child's verdict on which side prevails. That is a conclusion, not private reasoning; contract §4 requires the child's own wording to be preserved."
+   }
+  ],
+  "excluded_regions": [
+   [
+    "# per_law_disposition_table",
+    "a summary table of the six Q verdicts; the per-law detail lives inside the captured Q blocks"
+   ]
+  ]
+ }
+}

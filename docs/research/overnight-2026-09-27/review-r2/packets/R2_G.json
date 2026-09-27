@@ -1,0 +1,990 @@
+{
+ "child_id": "R2_G",
+ "lane": "G",
+ "cluster": "general dyad scope / ABM / LLM layer",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "block_numbered",
+ "source": {
+  "file": "R2_G.md",
+  "sha256": "30bdebe7b17ea4f484a0ee20696add8c9216e2c3fe32ecd118586486d0c2b9a5",
+  "bytes": 153723,
+  "lines": 797
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "G-C1",
+   "_title": "G-C1 — 216 格矩阵的自我计数（216 格 / 69 格 MP / 0 项不变性研究）",
+   "claim": "11` §1 修订块自报：24 行 × 9 类 dyad = **216 个判定格**，其中 **69 格**为 `MEANING_PRESERVED`，其背后有**零**项跨 dyad-type 测量不变性研究；这 69 格「是同一个未检验假设的 69 次重述，不是 69 条发现」，不可计数、不可聚合、不可当作相互独立的证据。\n11` §1 引用块（行 40–44）、§8（行 425）、§10（行 517）、§11（行 544）",
+   "source_report": "11` §1 引用块（行 40–44）、§8（行 425）、§10（行 517）、§11（行 544）\nVERIFIED`（对**算术**与**披露充分性**两项）",
+   "verdict": "VERIFIED`（对**算术**与**披露充分性**两项）\n我用 PowerShell 逐格解析 `11` 行 54–77：`ROWS=24`，`TOTAL=216`，`MP=69`／`MS=79`／`RD=22`／`NA=24`／`UK=22`，`SUM=216` — **`VERIFIED_BY_ME`**。分列复核：`R` MP=20、`D` MP=5、`F` MP=12、`S` MP=5、`K` MP=7、`C` MP=6、`X` MP=11、`W` MP=2、`A` MP=1，合计 69。披露位置共**四处正文内**：§1 矩阵正上方标「必读」的引用块、§8 标「这是本文件最重要的单一空白」、§10 非主张、§11 变更清单第 2 项；§11 更含一次显式「显著性复核」，逐条确认三处未被折叠或降级 — `VERIFIED_BY_ME`（行 429）。",
+   "supporting_refs": "我用 PowerShell 逐格解析 `11` 行 54–77：`ROWS=24`，`TOTAL=216`，`MP=69`／`MS=79`／`RD=22`／`NA=24`／`UK=22`，`SUM=216` — **`VERIFIED_BY_ME`**。分列复核：`R` MP=20、`D` MP=5、`F` MP=12、`S` MP=5、`K` MP=7、`C` MP=6、`X` MP=11、`W` MP=2、`A` MP=1，合计 69。披露位置共**四处正文内**：§1 矩阵正上方标「必读」的引用块、§8 标「这是本文件最重要的单一空白」、§10 非主张、§11 变更清单第 2 项；§11 更含一次显式「显著性复核」，逐条确认三处未被折叠或降级 — `VERIFIED_BY_ME`（行 429）。\n报告披露了计数，但**矩阵本身没有任何 evidence-tier 列**。216 格在制品层面呈现为 216 条**等权**点判定，恰好是报告自己禁止的用法。机器可读、可排序、可聚合的 verdict 码表是**为被禁止的用途优化的格式**。最强反证不是文献性的，是**制品性的**：披露强度无法修复编码缺陷。检索了什么：无外部反证需求；这是格式审计，我逐格解析了全表。",
+   "strongest_counterevidence": "报告披露了计数，但**矩阵本身没有任何 evidence-tier 列**。216 格在制品层面呈现为 216 条**等权**点判定，恰好是报告自己禁止的用法。机器可读、可排序、可聚合的 verdict 码表是**为被禁止的用途优化的格式**。最强反证不是文献性的，是**制品性的**：披露强度无法修复编码缺陷。检索了什么：无外部反证需求；这是格式审计，我逐格解析了全表。\nNO` — 研究制品的自我限定问题，不涉及 canonical。",
+   "requires_canonical_change": "NO` — 研究制品的自我限定问题，不涉及 canonical。\nYES:U1 — 4 组多组 CFA/invariance 序列（configural → metric → scalar），每组 ≥300 dyad，两个方向分别估计；报告自主张 U1 应先于 Gate C`",
+   "needs_experiment_or_data": "YES:U1 — 4 组多组 CFA/invariance 序列（configural → metric → scalar），每组 ≥300 dyad，两个方向分别估计；报告自主张 U1 应先于 Gate C`\nNONE`（`§11`「为什么不能升级」第 1 项是同一事实的复述，非独立结论）",
+   "duplicate_of": "NONE`（`§11`「为什么不能升级」第 1 项是同一事实的复述，非独立结论）\nACCEPT` — 接受 69/216 与零不变性研究这两个数字、接受四处披露的充分性；**但**要求把矩阵逐行重标为 `UNTESTED_SEMANTIC_JUDGEMENT`，或加一列 evidence tier，使制品本身不可能被误用。",
+   "recommendation_to_architect": "ACCEPT` — 接受 69/216 与零不变性研究这两个数字、接受四处披露的充分性；**但**要求把矩阵逐行重标为 `UNTESTED_SEMANTIC_JUDGEMENT`，或加一列 evidence tier，使制品本身不可能被误用。\n---",
+   "_locator": {
+    "line_start": 54,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C2",
+   "_title": "G-C2 — 69 格 MP 的加权：披露够，编码不够",
+   "claim": "216 格矩阵呈现 216 条等权点判定，其中 69 条（31.9%）是零证据支撑的语义判断；披露已做到可接受的上限，但**制品的证据状态编码**仍是缺陷。\n11` §1（行 39–44）、§2（行 52–77）",
+   "source_report": "11` §1（行 39–44）、§2（行 52–77）\nPLAUSIBLE` — 披露充分性 `VERIFIED_BY_ME`（见 `G-C1`）；缺陷定位是审计判断。",
+   "verdict": "PLAUSIBLE` — 披露充分性 `VERIFIED_BY_ME`（见 `G-C1`）；缺陷定位是审计判断。\n11` §1 原文「所有 `MEANING_PRESERVED` 都是**语义判断**，不是**心理测量判断**」— `VERIFIED_BY_ME`（行 39）。`AGENTS.md` 研究纪律段「Do not label an unvalidated … as scientifically established」— `VERIFIED_BY_ME`。",
+   "supporting_refs": "11` §1 原文「所有 `MEANING_PRESERVED` 都是**语义判断**，不是**心理测量判断**」— `VERIFIED_BY_ME`（行 39）。`AGENTS.md` 研究纪律段「Do not label an unvalidated … as scientifically established」— `VERIFIED_BY_ME`。\n反方最强论点：矩阵的价值**不在**格子本身，而在它**逼出了 §3.1–§3.8 的八条结构性问题**；若 69 格全判 `UNKNOWN`，报告的核心发现（§4 L-1…L-11、§7 X-1…X-8）一条都不会少。我逐一核对了 §2 与 §3 的驱动关系：§3.1 由 `SexualDesire × {F,S,K,A}=NA` 驱动、§3.4 由 D 列驱动、§3.8 由 facet 行驱动 —— **这些驱动格都不在 69 格 MP 之内。** 所以 69 格对结论的边际贡献接近零，而这个事实反而支持保留矩阵作为「提问清单」、反对保留为「判定表」。",
+   "strongest_counterevidence": "反方最强论点：矩阵的价值**不在**格子本身，而在它**逼出了 §3.1–§3.8 的八条结构性问题**；若 69 格全判 `UNKNOWN`，报告的核心发现（§4 L-1…L-11、§7 X-1…X-8）一条都不会少。我逐一核对了 §2 与 §3 的驱动关系：§3.1 由 `SexualDesire × {F,S,K,A}=NA` 驱动、§3.4 由 D 列驱动、§3.8 由 facet 行驱动 —— **这些驱动格都不在 69 格 MP 之内。** 所以 69 格对结论的边际贡献接近零，而这个事实反而支持保留矩阵作为「提问清单」、反对保留为「判定表」。\nNO`",
+   "requires_canonical_change": "NO`\nYES:U1`",
+   "needs_experiment_or_data": "YES:U1`\nG-C1`",
+   "duplicate_of": "G-C1`\nRECLASSIFY_AS_METHOD_LIMIT` — 把「216 格兼容性矩阵」整体降级重标为「216 个**待检验**语义问题」，禁用「判定/verdict」一词，保留为 Gate B/C 的提问清单。这是本 lane 成本最低、收益最高的一次重写。",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT` — 把「216 格兼容性矩阵」整体降级重标为「216 个**待检验**语义问题」，禁用「判定/verdict」一词，保留为 Gate B/C 的提问清单。这是本 lane 成本最低、收益最高的一次重写。\n---",
+   "_locator": {
+    "line_start": 69,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C3",
+   "_title": "G-C3 — §3 与 §6 引用了 5 个矩阵格统计，其中 3 个算错（本 lane 唯一的自证伪发现）",
+   "claim": "11` §6.1（采样框架后果，全报告最承重的一节）引用了四个矩阵格统计，其中两个错误；§3.4 引用的 D 列统计两个都错。\n11` §6.1（行 382）、§3.4（行 124）",
+   "source_report": "11` §6.1（行 382）、§3.4（行 124）\nUNSUPPORTED`（对这五个具体数字）— 我逐格重算后证伪。",
+   "verdict": "UNSUPPORTED`（对这五个具体数字）— 我逐格重算后证伪。\n逐格重算 `VERIFIED_BY_ME`：",
+   "supporting_refs": "逐格重算 `VERIFIED_BY_ME`：\n   - §3.4 称「矩阵 D 列有 **4 个 `NA` + 1 个 `RD` + 2 个 `UK`**」。实际 D 列（24 行）：`NA=6`、`RD=1`、`UK=8`。**NA 与 UK 均错**。\n   - §6.1 称 `RomanticAttraction` 有「**2 个 NA + 3 个 MS**」。实际 `NA=1`（A 列）、`MS=4`（D/S/K/C/W）。**两个都错**。\n   - §6.1 称 `SexualDesire` 有「4 个 NA」。实际 `NA=4`（F/S/K/A）。**正确**。\n   - §6.1 称 `OutcomeDependence` 有「**1 个 NA + 5 个 MS**」。实际 `NA=1`、`MS=6`（F/S/K/C/W/A）。**MS 差 1**。\n   - §6.1 称 facet 方案有「5 个 MS」。实际 `MS=5`（D/S/K/C/A）。**正确**。\n   → **5 个引用，3 个错。**\n这些是**计数误差，不是判定误差** —— 被引用的格子内容本身正确，方向性论证（pooled 估计在这些行上「没有定义」）不因计数偏差而失效。最强反方论点：§6.1 的论证只需要「这些行存在多个 `NA`/`MS`」这一存在命题，精确计数不是承重的。**但反方论点不能救以下事实**：`11` 专门新增了 §1 修订块来精确陈述 69/216 这类计数，说明作者把「精确计数」当作论据强度的一部分；一份把计数当论据的报告，其计数必须可被复核 —— 而 `11` 提供了 216 格表却不提供任何可复算的 evidence 列，读者**无法**发现这些错误，除非逐格重算（我做了）。这正是 `11` 自己在 §1 担心的「被下游当既成前提」的一个实例。",
+   "strongest_counterevidence": "这些是**计数误差，不是判定误差** —— 被引用的格子内容本身正确，方向性论证（pooled 估计在这些行上「没有定义」）不因计数偏差而失效。最强反方论点：§6.1 的论证只需要「这些行存在多个 `NA`/`MS`」这一存在命题，精确计数不是承重的。**但反方论点不能救以下事实**：`11` 专门新增了 §1 修订块来精确陈述 69/216 这类计数，说明作者把「精确计数」当作论据强度的一部分；一份把计数当论据的报告，其计数必须可被复核 —— 而 `11` 提供了 216 格表却不提供任何可复算的 evidence 列，读者**无法**发现这些错误，除非逐格重算（我做了）。这正是 `11` 自己在 §1 担心的「被下游当既成前提」的一个实例。\nNO`",
+   "requires_canonical_change": "NO`\nNO`（纯文档可核对）",
+   "needs_experiment_or_data": "NO`（纯文档可核对）\nNONE`",
+   "duplicate_of": "NONE`\nREJECT` — 拒绝以现有形式引用 §6.1 的格统计。要求 parent 在 synthesis 中**只**引用 §6.1 的定性论证（构念的条件存在性 → pooled 比较不可定义），**不**引用任何具体格计数；并把 `11` 的矩阵从可数制品降级为提问清单（同 `G-C2`）。",
+   "recommendation_to_architect": "REJECT` — 拒绝以现有形式引用 §6.1 的格统计。要求 parent 在 synthesis 中**只**引用 §6.1 的定性论证（构念的条件存在性 → pooled 比较不可定义），**不**引用任何具体格计数；并把 `11` 的矩阵从可数制品降级为提问清单（同 `G-C2`）。\n---",
+   "_locator": {
+    "line_start": 84,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C4",
+   "_title": "G-C4 — §2 把 representation 问题记进了 semantic 通道（报告自认）",
+   "claim": "11` §3.1 正确论证 `SexualDesire × {友谊,兄弟姐妹,亲子,敌对} = NA` 是**值类缺口**（b 类），报告原文写「这不是『加一个构念』，是给状态空间加一个值类，因此它**不在 8 维 basis 里**，不会被 `Gate C` 发现」；但 §2 仍把它记为语义矩阵里的 `NOT_APPLICABLE` 码，且 §1 码表里没有这个值类名。\n11` §1 码表（行 36）、§2（行 56）、§3.1（行 83–91）、§10 非主张第 3 条（行 518）",
+   "source_report": "11` §1 码表（行 36）、§2（行 56）、§3.1（行 83–91）、§10 非主张第 3 条（行 518）\nVERIFIED`（报告确实这样自述）→ 判定为**报告内部类目错误**，`RECLASSIFY` 目标",
+   "verdict": "VERIFIED`（报告确实这样自述）→ 判定为**报告内部类目错误**，`RECLASSIFY` 目标\n11` §3.1 原文「这不是『加一个构念』，是给状态空间加一个值类」— `VERIFIED_BY_ME`（行 87–89）。`11` §1 码表把 `NOT_APPLICABLE` 定义为「**结构性**不适用（不是『未知』，不是『零』）」— `VERIFIED_BY_ME`（行 36）。`AGENTS.md`：「Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values」— `VERIFIED_BY_ME`。",
+   "supporting_refs": "11` §3.1 原文「这不是『加一个构念』，是给状态空间加一个值类」— `VERIFIED_BY_ME`（行 87–89）。`11` §1 码表把 `NOT_APPLICABLE` 定义为「**结构性**不适用（不是『未知』，不是『零』）」— `VERIFIED_BY_ME`（行 36）。`AGENTS.md`：「Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values」— `VERIFIED_BY_ME`。\nNOT_APPLICABLE` 这个码**可以**被读作对 §2 语义问题（「这个构念在兄弟姐妹上谈的是什么？」）的诚实回答，而把它的**理由**放在 §3.1。最强反方论点：矩阵是**判定表**，`NA` 是对「这里有一个不能靠 MP/MS/RD 表达的空洞」的标记；值类分析是**另一层**的论证，§2/§3 分开写并非矛盾。**我接受这个反方论点的一半**：§2 的码是**判定**，§3.1 的分析是**机制**，分层是正确的。但反方论点无法解释：为什么 `structurally_not_applicable` 这个**值类**名（`11` 自己造的）没有出现在 §1 的码表里？码表是产物接口；值类名不进码表，抽取层（`13`）就永远看不到它。",
+   "strongest_counterevidence": "NOT_APPLICABLE` 这个码**可以**被读作对 §2 语义问题（「这个构念在兄弟姐妹上谈的是什么？」）的诚实回答，而把它的**理由**放在 §3.1。最强反方论点：矩阵是**判定表**，`NA` 是对「这里有一个不能靠 MP/MS/RD 表达的空洞」的标记；值类分析是**另一层**的论证，§2/§3 分开写并非矛盾。**我接受这个反方论点的一半**：§2 的码是**判定**，§3.1 的分析是**机制**，分层是正确的。但反方论点无法解释：为什么 `structurally_not_applicable` 这个**值类**名（`11` 自己造的）没有出现在 §1 的码表里？码表是产物接口；值类名不进码表，抽取层（`13`）就永远看不到它。\nYES`（见 `G-C5`）",
+   "requires_canonical_change": "YES`（见 `G-C5`）\nNO`（逻辑一致性问题，不需实验）",
+   "needs_experiment_or_data": "NO`（逻辑一致性问题，不需实验）\nG-C5`",
+   "duplicate_of": "G-C5`\nACCEPT` — 接受 §3.1 的分析，把它升级为 canonical-change 候选；同时**要求**把 `structurally_not_applicable` 加入 `11` §1 码表作为一等值类，与判定码 `NOT_APPLICABLE` 显式区分（`NA` = 判定；「值类缺失」= 状态空间属性）。",
+   "recommendation_to_architect": "ACCEPT` — 接受 §3.1 的分析，把它升级为 canonical-change 候选；同时**要求**把 `structurally_not_applicable` 加入 `11` §1 码表作为一等值类，与判定码 `NOT_APPLICABLE` 显式区分（`NA` = 判定；「值类缺失」= 状态空间属性）。\n---",
+   "_locator": {
+    "line_start": 105,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C5",
+   "_title": "G-C5 — 现有值类集合与 `AGENTS.md` 硬性规则**逻辑上**不相容（本 lane 第一条 `requires_canonical_change: YES`）",
+   "claim": "11` §3.1：对兄弟姐妹的性欲坐标，正确值既不是 `Unknown`（可能高度确信其不存在）也不是 `0`（「被测到的零」是另一个断言），而是「结构性不适用」；现有值类集合里没有这一格，**唯一的合法表示方式就是把不适用填成 0 或 Unknown —— 正是 `AGENTS.md` 禁止的动作**。\n11` §3.1（行 85–91）、§7 矛盾项 `X-3`（行 411）",
+   "source_report": "11` §3.1（行 85–91）、§7 矛盾项 `X-3`（行 411）\nVERIFIED` — 我**独立地**用 canonical 文本复现了这个不相容，不需要任何文献。",
+   "verdict": "VERIFIED` — 我**独立地**用 canonical 文本复现了这个不相容，不需要任何文献。\n三段 canonical 文本并置 — `AGENTS.md`：「Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values」；`CURRENT_ARCHITECTURE.md` §9 原则 4：「category、ordinal、continuous、constraint、probability、Unknown 可以共存于混合状态空间」（**枚举穷举，无「不适用」**）；`PARAMETER_CONVERGENCE_V0_1.md` §14 允许坐标为 `estimate_or_region / uncertainty / evidence / provenance`（**同样无「不适用」**）— 全部 `VERIFIED_BY_ME`。`CURRENT_ARCHITECTURE.md` §2 写入域原文「允许亲属、朋友、同事、前任、伴侣、第三者、敌对、照护、合作、违法或违反社会规范等现实存在的关系结构进入描述」— `VERIFIED_BY_ME`。",
+   "supporting_refs": "三段 canonical 文本并置 — `AGENTS.md`：「Unknown/missing data must remain explicit; never silently coerce missing information into neutral/perfect-match values」；`CURRENT_ARCHITECTURE.md` §9 原则 4：「category、ordinal、continuous、constraint、probability、Unknown 可以共存于混合状态空间」（**枚举穷举，无「不适用」**）；`PARAMETER_CONVERGENCE_V0_1.md` §14 允许坐标为 `estimate_or_region / uncertainty / evidence / provenance`（**同样无「不适用」**）— 全部 `VERIFIED_BY_ME`。`CURRENT_ARCHITECTURE.md` §2 写入域原文「允许亲属、朋友、同事、前任、伴侣、第三者、敌对、照护、合作、违法或违反社会规范等现实存在的关系结构进入描述」— `VERIFIED_BY_ME`。\n   证成结构：若 §2 写入域**且**值类集合**穷举**于 §9/§14，则存在 `(dyad_type=兄弟姐妹, construct=SexualDesire)` 坐标，其正确值不在集合内；由 `AGENTS.md` 禁止 coerce，矛盾成立。\n存在两条真实的逃生通道，我检查了两条：(a) **`X` 列（前任）** —— `11` 自己的矩阵把 `SexualDesire × X` 判为 `MP`，即前任 dyad 上「对前任的性欲」是有意义的，**这本身就是一个需要解释的强断言**（与 §3.1 的「非恋爱 dyad 上结构性不适用」张力），但它使 `NA` 的适用范围变窄而非消失；(b) **现值类可承载一个区间** —— `PARAMETER_CONVERGENCE_V0_1.md` §14 允许 `estimate_or_region`，理论上可用「空区间」编码不适用。**但 §9 原则 1「原始事实不因归一化而删除」+ `AGENTS.md`「never silently coerce」禁止把「该维度不存在」降级为一个数值区间。** 我未找到 canonical 文本中任何承认「空区间 ≠ 不适用」的条款 —— **这就是缺口**。反方论点把矛盾从「值类缺失」改写为「区间语义未定义」，**不消除**矛盾，只把它挪到 §14。",
+   "strongest_counterevidence": "存在两条真实的逃生通道，我检查了两条：(a) **`X` 列（前任）** —— `11` 自己的矩阵把 `SexualDesire × X` 判为 `MP`，即前任 dyad 上「对前任的性欲」是有意义的，**这本身就是一个需要解释的强断言**（与 §3.1 的「非恋爱 dyad 上结构性不适用」张力），但它使 `NA` 的适用范围变窄而非消失；(b) **现值类可承载一个区间** —— `PARAMETER_CONVERGENCE_V0_1.md` §14 允许 `estimate_or_region`，理论上可用「空区间」编码不适用。**但 §9 原则 1「原始事实不因归一化而删除」+ `AGENTS.md`「never silently coerce」禁止把「该维度不存在」降级为一个数值区间。** 我未找到 canonical 文本中任何承认「空区间 ≠ 不适用」的条款 —— **这就是缺口**。反方论点把矛盾从「值类缺失」改写为「区间语义未定义」，**不消除**矛盾，只把它挪到 §14。\nYES`** — `docs/foundation/CURRENT_ARCHITECTURE.md` **§9**（原则 4 的值类枚举）+ `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§14**。**为什么不能停在 proposal**：这是一条**逻辑**不一致，不是经验命题。任何实验（U1…U12）都无法裁决「已写下的两条硬性规则是否自相矛盾」。Architect 必须二选一：(i) 扩充值类，加入 `structurally_not_applicable`；(ii) 显式记录一条豁免。**两者都是 canonical 动作，proposal 状态使 `AGENTS.md` 保持与自身矛盾的文本。**",
+   "requires_canonical_change": "YES`** — `docs/foundation/CURRENT_ARCHITECTURE.md` **§9**（原则 4 的值类枚举）+ `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§14**。**为什么不能停在 proposal**：这是一条**逻辑**不一致，不是经验命题。任何实验（U1…U12）都无法裁决「已写下的两条硬性规则是否自相矛盾」。Architect 必须二选一：(i) 扩充值类，加入 `structurally_not_applicable`；(ii) 显式记录一条豁免。**两者都是 canonical 动作，proposal 状态使 `AGENTS.md` 保持与自身矛盾的文本。**\nNO`（决策类，不需要数据）",
+   "needs_experiment_or_data": "NO`（决策类，不需要数据）\nG-C4`",
+   "duplicate_of": "G-C4`\nACCEPT` — 这是我在本 cluster 里找到的**唯一**必须落到 canonical 而不能停在 proposal 的 ontology 层项。`11` 把它标为 \"proposal only\" 是**过度保守**；proposal 状态本身不修复 `AGENTS.md` 与 `CURRENT_ARCHITECTURE.md` §9 的矛盾。",
+   "recommendation_to_architect": "ACCEPT` — 这是我在本 cluster 里找到的**唯一**必须落到 canonical 而不能停在 proposal 的 ontology 层项。`11` 把它标为 \"proposal only\" 是**过度保守**；proposal 状态本身不修复 `AGENTS.md` 与 `CURRENT_ARCHITECTURE.md` §9 的矛盾。\n---",
+   "_locator": {
+    "line_start": 120,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C6",
+   "_title": "G-C6 — `Obligation` 作为第九个 directed candidate（8 条提案中证据最强）",
+   "claim": "11` §3.2：五条独立证据线收敛到「obligation 与 affection/attachment 可分离，且在亲属与照护域承重」；提案新增 `Obligation_(i->j)` 为第九个 directed candidate，并把 `Dedication` 收窄为 affective dedication。\n11` §3.2（行 93–105）、§5 排序第 1 行（行 352）",
+   "source_report": "11` §3.2（行 93–105）、§5 排序第 1 行（行 352）\nPLAUSIBLE` — 3 条证据在域内且强，1 条著录不完整，1 条 `WRONG-SCOPE`。",
+   "verdict": "PLAUSIBLE` — 3 条证据在域内且强，1 条著录不完整，1 条 `WRONG-SCOPE`。",
+   "supporting_refs": "- Cicirelli (1993) *Psychology and Aging* 8(2):144–155，doi:10.1037/0882-7974.8.2.144 — Crossref 题名「**Attachment and obligation as daughters' motives for caregiving behavior** and subsequent effect on subjective burden」— `VERIFIED_BY_ME`。**题名本身即含 attachment **and** obligation 的分离**，这是本条最硬的一条，且我独立确认。\n   - Gehr et al. (2021) *BMC Geriatrics*，doi:10.1186/s12877-021-02425-1，题名「A typology of caregiving spouses of geriatric patients without dementia: caring, worried, **desperate**」— `VERIFIED_BY_ME`。motive 三分（affection / obligation / 复合）报告称其为判别维度之一；我核实了题名含 `desperate`（对应 obligation 主导的亚型），**维度内部结构 `NOT_OPENED`**。\n   - Meyer & Allen (1991) *Human Resource Management Review* 1(1):61–89，doi:10.1016/1053-4822(91)90011-z，题名「A three-component conceptualization of **organizational** commitment」— `VERIFIED_BY_ME`。**注意题名：组织心理学的 commitment，不是 dyadic obligation。**\n   - `Reciprocity and Social Support in Caregivers' Relationships` (1995)，doi:10.1177/104973239500500306 — **作者名未取得**（报告 §9 自己标注）。`NOT_OPENED`。\n   - Montgomery, Havvey & Kosloski (1997) *Profiles in Caregiving* — 报告自述「经非出版方镜像读到文本，需合法渠道复核」。`NOT_OPENED`。\nMeyer & Allen (1991)` 是 `WRONG-SCOPE`。** 报告用它推出「承诺研究自身**必须**把 commitment 拆成 affective / **normative** / continuance，说明单一『承诺』坐标**必然欠定**」—— 这是从**组织—员工依恋**（单向、有雇主权力梯度、有退出市场）外推到**二人 dyad**（双向、无雇主、退出成本不同）。组织承诺三分的规范性成分是**制度强加的**，dyadic obligation 的规范性成分可能是**内化的**或**法律构成的** —— 同一个 `normative` 标签在两层是不同构念。这条证据**必须**从支撑集剔除或降为「启发」。",
+   "strongest_counterevidence": "Meyer & Allen (1991)` 是 `WRONG-SCOPE`。** 报告用它推出「承诺研究自身**必须**把 commitment 拆成 affective / **normative** / continuance，说明单一『承诺』坐标**必然欠定**」—— 这是从**组织—员工依恋**（单向、有雇主权力梯度、有退出市场）外推到**二人 dyad**（双向、无雇主、退出成本不同）。组织承诺三分的规范性成分是**制度强加的**，dyadic obligation 的规范性成分可能是**内化的**或**法律构成的** —— 同一个 `normative` 标签在两层是不同构念。这条证据**必须**从支撑集剔除或降为「启发」。\n   第二条反证：`Cicirelli (1993)` 的对象是**成年女儿对父母** —— 一个特定性别、特定代际、特定照护位置的子域；外推到一般 kin dyad 是外推，尽管方向正确。反向证据我也检了：`11` §5 把 `Obligation` 排第 1，但 §6 `U6` 明说「kin/care dyad 中 obligatory vs affectionate 照护的权重与结果弹性」是 `UNKNOWN` —— **报告在提案处用了 U6 的结果**（假定 obligation 承重）而 U6 恰恰是「这个承重是否成立」的检验。**报告内部存在一处循环。**\nNO` — **必须停在 proposal。** 三条理由：(a) 需 U6（承重性）与 U8（三分在恋爱样本上是否也可分离）先跑；(b) 它连带要求**收窄** `PARAMETER_CONVERGENCE_V0_1.md` §4 D7 `Dedication` 的定义，这是已冻结的 candidate；(c) `Dedication` 新定义会影响 §9 R1–R5 的 readout 派生路径。",
+   "requires_canonical_change": "NO` — **必须停在 proposal。** 三条理由：(a) 需 U6（承重性）与 U8（三分在恋爱样本上是否也可分离）先跑；(b) 它连带要求**收窄** `PARAMETER_CONVERGENCE_V0_1.md` §4 D7 `Dedication` 的定义，这是已冻结的 candidate；(c) `Dedication` 新定义会影响 §9 R1–R5 的 readout 派生路径。\nYES:U6 + U8`",
+   "needs_experiment_or_data": "YES:U6 + U8`\nG-C7`（`Obligation` / `RoleContract` / `family obligations` 是同一主张的三次陈述 —— **三重计数**）",
+   "duplicate_of": "G-C7`（`Obligation` / `RoleContract` / `family obligations` 是同一主张的三次陈述 —— **三重计数**）\nACCEPT_AS_PROPOSAL` — 接受为候选登记，但**必须**：(i) 把 `Meyer & Allen` 从支撑集降为「启发」；(ii) 明确 `U6` 未跑，因此「承重」目前是**假设**不是发现。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL` — 接受为候选登记，但**必须**：(i) 把 `Meyer & Allen` 从支撑集降为「启发」；(ii) 明确 `U6` 未跑，因此「承重」目前是**假设**不是发现。\n---",
+   "_locator": {
+    "line_start": 136,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C7",
+   "_title": "G-C7 — `Obligation` / `RoleContract` / `family obligations` 是同一主张的三重计数",
+   "claim": "11` 的 §3.2（新增 `Obligation` directed construct）、§3.7（新增 `RoleContract_(A,B)` pair fact）、§4 `L-10`（`family obligations` 放在 Agent 层是层级错置）三项，最终都主张同一件事：**义务/契约性内容属于 pair-institutional 层，不是 dyadic-psychological 也不是 Agent 层**。\n11` §3.2（行 93–105）、§3.7（行 166–176）、§4 `L-10`（行 337–339）",
+   "source_report": "11` §3.2（行 93–105）、§3.7（行 166–176）、§4 `L-10`（行 337–339）\nVERIFIED`（三重计数确实存在）→ 判定为**计数缺陷**",
+   "verdict": "VERIFIED`（三重计数确实存在）→ 判定为**计数缺陷**\n我交叉核对三处的引用集合 — `VERIFIED_BY_ME`：`Dykstra` 被 §3.2（行 103）与 §3.7（行 170）**各引一次，同一论点**；`Meyer & Allen (1991)` 被 §3.2（行 101）与 §3.7（行 171）**各引一次，同一论点**；§3.7 的 proposal 原文「新增 `RoleContract_(A,B)` pair fact（角色、期限、权限、scope of practice、单方终止权）」—— **这五项就是 `Obligation` 的具体化**。",
+   "supporting_refs": "我交叉核对三处的引用集合 — `VERIFIED_BY_ME`：`Dykstra` 被 §3.2（行 103）与 §3.7（行 170）**各引一次，同一论点**；`Meyer & Allen (1991)` 被 §3.2（行 101）与 §3.7（行 171）**各引一次，同一论点**；§3.7 的 proposal 原文「新增 `RoleContract_(A,B)` pair fact（角色、期限、权限、scope of practice、单方终止权）」—— **这五项就是 `Obligation` 的具体化**。\n三项**不是**完全同义：§3.2 是**构念层**（一个 directed 心理坐标），§3.7 是**容器层**（一个 pair fact：期限/权限/终止权），§L-10 是**层级诊断**（现值放错层）。最合理的重构是：**一个主张、三个落点**（值类 + 坐标 + 容器），而不是三个独立发现。我检了 `11` §5 排序：只有 `Obligation` 进了排序表，`RoleContract` 与 `L-10` 没有 —— **报告自己在排序表里已经隐含了这个合并**，但正文与 `§7 X-5` 把它们分开陈述。",
+   "strongest_counterevidence": "三项**不是**完全同义：§3.2 是**构念层**（一个 directed 心理坐标），§3.7 是**容器层**（一个 pair fact：期限/权限/终止权），§L-10 是**层级诊断**（现值放错层）。最合理的重构是：**一个主张、三个落点**（值类 + 坐标 + 容器），而不是三个独立发现。我检了 `11` §5 排序：只有 `Obligation` 进了排序表，`RoleContract` 与 `L-10` 没有 —— **报告自己在排序表里已经隐含了这个合并**，但正文与 `§7 X-5` 把它们分开陈述。\nNO`",
+   "requires_canonical_change": "NO`\nNO`（计数问题）",
+   "needs_experiment_or_data": "NO`（计数问题）\nG-C6`（被合并方）",
+   "duplicate_of": "G-C6`（被合并方）\nRECLASSIFY_AS_METHOD_LIMIT` — 要求 parent 把三项合并为**一条** canonical-change 候选（「obligation/contract 属于 pair-institutional 层，需一个带 `consent_status` 的 per-edge 容器 + 一个定向 obligation 坐标」），引用计数从 3 降为 1。**不合并会让 Architect 以为有三个独立理由，从而高估该变更的证据量。**",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT` — 要求 parent 把三项合并为**一条** canonical-change 候选（「obligation/contract 属于 pair-institutional 层，需一个带 `consent_status` 的 per-edge 容器 + 一个定向 obligation 坐标」），引用计数从 3 降为 1。**不合并会让 Architect 以为有三个独立理由，从而高估该变更的证据量。**\n---",
+   "_locator": {
+    "line_start": 157,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C8",
+   "_title": "G-C8 — `Constrainedness / Control-Asymmetry`（安全价值最高项，著录最弱之一）",
+   "claim": "11` §3.3：`ConstraintsAndAgreements` 与 P5 都内建「同意/consent」，但域已写入「违法或违反社会规范」；非自愿约束（coercive control、人身控制、勒索、囚禁）既不是 agreement 也不是 `Environment` 也不是 `Agent` —— **违法性有轴，但约束能力本身没有坐标**。§5 排序明标「**安全价值最高**」。\n11` §3.3（行 107–116）、§5 排序第 5 行（行 356）、§4 `L-1`（行 229）",
+   "source_report": "11` §3.3（行 107–116）、§5 排序第 5 行（行 356）、§4 `L-1`（行 229）\nPLAUSIBLE` — 结构性论证可检验成立；**支撑引用的著录质量不配其安全权重**。",
+   "verdict": "PLAUSIBLE` — 结构性论证可检验成立；**支撑引用的著录质量不配其安全权重**。",
+   "supporting_refs": "- Johnson (2006) *Violence Against Women* 12(11):1003–1018，doi:10.1177/1077801206293328，题名「Conflict and Control: **Gender Symmetry and Asymmetry** in Domestic Violence」— `VERIFIED_BY_ME`。引文「the distinctions among the types are based entirely on control context, not frequency or severity of violence」— `NOT_OPENED`（SAGE 付费墙）。\n   - `Dutton, Goodman & Schmidt`：**`11` §9 的著录条目没有年份、没有期刊、没有 DOI、没有页码**，只有 `*Development and Validation of a Coercive Control Measure for Intimate Partner Violence.*`（研究总报告，开放 PDF: `niwaplibrary.wcl.american.edu/`）— `VERIFIED_BY_ME`（这是 `11` 自己写的著录，我逐字段核对）。引文— `NOT_OPENED`。\n   - Hardesty et al. (2015) *Journal of Marriage and Family* 77(3):833–843，doi:10.1111/jomf.12201，题名「Toward a Standard Approach to **Operationalizing Coercive Control** and Classifying Violence Types」— `VERIFIED_BY_ME`。\n   - 结构性论证我独立复核：`PARAMETER_CONVERGENCE_V0_1.md` §4 D8 的 `Open question` 提到 `alternatives`，**不含 consent / constraint 维度**；§9 `R2 PowerImbalance` 被列为 derived readout — `VERIFIED_BY_ME`。→ 报告的可证伪主张「当前 basis 无法区分『互惠的敌意』与『单向的控制』」**按 canonical 文本检查成立**。\n(a) **域外迁移风险**：报告 §10 非主张第 7 条已声明「不主张 IPV 类型学可直接迁移到一般 Human Dyad」—— **这条非主张写得很好，但它与 §5 排序第 5 行的「安全价值最高」+ §4 `L-2` 表中 `Hardesty et al. 显示 post-separation 承重变量仍在 → **neutral 读法在这里是安全隐患**」在张力上**。如果类型学不可迁移，「安全隐患」这个判断用什么支撑？** 报告未回答。(b) **D8 的 readout 冲突比报告说的更可修且更不依赖文献**：`11` §4 `L-1` 已独立指出「一个**健康的高照护 dyad**… 与一个**胁迫 dyad**… 在 D8 上**数值结构相同**，R2 会打成同一类」—— **这一条不依赖任何 IPV 文献**，只依赖 `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 + §9 R2 的文本，我独立复核成立。→ **`L-1` 的 readout 冲突是本条最强的承重论据，而 §3.3 的 `Constrainedness` 提案反而是次要的。报告把重点放反了。** (c) `Hardesty et al. (2015)` 被 §3.3 与 §3.4 各用一次 → `corroboration: NON_INDEPENDENT`。",
+   "strongest_counterevidence": "(a) **域外迁移风险**：报告 §10 非主张第 7 条已声明「不主张 IPV 类型学可直接迁移到一般 Human Dyad」—— **这条非主张写得很好，但它与 §5 排序第 5 行的「安全价值最高」+ §4 `L-2` 表中 `Hardesty et al. 显示 post-separation 承重变量仍在 → **neutral 读法在这里是安全隐患**」在张力上**。如果类型学不可迁移，「安全隐患」这个判断用什么支撑？** 报告未回答。(b) **D8 的 readout 冲突比报告说的更可修且更不依赖文献**：`11` §4 `L-1` 已独立指出「一个**健康的高照护 dyad**… 与一个**胁迫 dyad**… 在 D8 上**数值结构相同**，R2 会打成同一类」—— **这一条不依赖任何 IPV 文献**，只依赖 `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 + §9 R2 的文本，我独立复核成立。→ **`L-1` 的 readout 冲突是本条最强的承重论据，而 §3.3 的 `Constrainedness` 提案反而是次要的。报告把重点放反了。** (c) `Hardesty et al. (2015)` 被 §3.3 与 §3.4 各用一次 → `corroboration: NON_INDEPENDENT`。\nNO` — **必须停在 proposal。** 理由：(a) 支撑引文全部 `NOT_OPENED`；(b) 一条支撑引用无年份/无 DOI；(c) 报告自己声明类型学不可迁移。",
+   "requires_canonical_change": "NO` — **必须停在 proposal。** 理由：(a) 支撑引文全部 `NOT_OPENED`；(b) 一条支撑引用无年份/无 DOI；(c) 报告自己声明类型学不可迁移。\nYES:U9 — 用 `Dependence_asym` 与 `Constraint_asym` 两个独立轴，分类 healthy-care dyad vs conflicted-care dyad + IPV 类型样本，检验 `PowerImbalance` 能否把两者分开`",
+   "needs_experiment_or_data": "YES:U9 — 用 `Dependence_asym` 与 `Constraint_asym` 两个独立轴，分类 healthy-care dyad vs conflicted-care dyad + IPV 类型样本，检验 `PowerImbalance` 能否把两者分开`\nG-C9`（`L-1` 的 readout 冲突是本条的更强版本）",
+   "duplicate_of": "G-C9`（`L-1` 的 readout 冲突是本条的更强版本）\nACCEPT_AS_PROPOSAL` — 但把**主论据**从 §3.3（`Constrainedness` 提案）换成 §4 `L-1` 的 **D8/R2 readout 中立性缺陷**（后者可由 canonical 文本直接复核、不依赖任何付费墙引文），并把 `Dutton, Goodman & Schmidt` 的完整著录补齐或撤下。",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL` — 但把**主论据**从 §3.3（`Constrainedness` 提案）换成 §4 `L-1` 的 **D8/R2 readout 中立性缺陷**（后者可由 canonical 文本直接复核、不依赖任何付费墙引文），并把 `Dutton, Goodman & Schmidt` 的完整著录补齐或撤下。\n---",
+   "_locator": {
+    "line_start": 172,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "G-C9",
+   "_title": "G-C9 — `D8` / `R2` 的 readout 中立性缺陷（可由 canonical 文本直接复核，安全价值最高）",
+   "claim": "11` §4 `L-1`：一个健康的高照护 dyad（受照护者高度依赖、方向不对称、替代方案少）与一个胁迫 dyad（intimate terrorism）在 `OutcomeDependence` (D8) 上**数值结构相同**，`R2 PowerImbalance` 会打成同一类，而它们在伤害上相反。措辞读起来是关于 i 的 option set 的中性事实，**而它实际是伤害结构本身**。\n** `11` §4 `L-1`（行 225–231）",
+   "source_report": "** `11` §4 `L-1`（行 225–231）\n** `VERIFIED` — 我**独立地**用 canonical 文本复现，未依赖报告的外部引用。",
+   "verdict": "** `VERIFIED` — 我**独立地**用 canonical 文本复现，未依赖报告的外部引用。\n** `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 原文：「**语义：** i 的重要结果、福利、机会或生活状态在多大程度上依赖于 j / 该关系。**Open question:** 某些 dependence 是否应完全由 Agent resources / **alternatives** / institutional constraints 推导」— `VERIFIED_BY_ME`（行 212–215）。`PARAMETER_CONVERGENCE_V0_1.md` §9 `R2 Power / Power imbalance` 被列入「当前被判归为 Derived / Readout 表达」— `VERIFIED_BY_ME`（行 472）。`AGENTS.md`：「Descriptive relationship state, legal status, morality, welfare, and social desirability are separate axes unless explicitly modeled together」— `VERIFIED_BY_ME`。",
+   "supporting_refs": "** `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 原文：「**语义：** i 的重要结果、福利、机会或生活状态在多大程度上依赖于 j / 该关系。**Open question:** 某些 dependence 是否应完全由 Agent resources / **alternatives** / institutional constraints 推导」— `VERIFIED_BY_ME`（行 212–215）。`PARAMETER_CONVERGENCE_V0_1.md` §9 `R2 Power / Power imbalance` 被列入「当前被判归为 Derived / Readout 表达」— `VERIFIED_BY_ME`（行 472）。`AGENTS.md`：「Descriptive relationship state, legal status, morality, welfare, and social desirability are separate axes unless explicitly modeled together」— `VERIFIED_BY_ME`。\n   证成：D8 的定义域含 `dependence 程度` + `方向不对称` + `alternatives`，**三项都不含 consent / constraint / coercion 维度**。因此「照护造成的高度依赖、低替代方案」与「控制造成的高度依赖、低替代方案」在 D8 上不可区分。而 `AGENTS.md` 明确要求「welfare 与 relationship state 分层描述」—— **D8 把『福利依赖』与『选择集受限』压在一个坐标里，正是 `AGENTS.md` 禁止的合并**。\n** 我检了两条可能的反证：(a) `D8` 的 `Open question` 已写「某些 dependence 是否应完全由 Agent resources / alternatives / **institutional constraints** 推导」—— canonical **已经**把 `constraints` 列入了，`institutional constraints` 覆盖了法律/政策强制的情形。**所以 canonical 并非完全沉默**，`11` 的指控强度略高于实际。但 (b) `Open question` 是**待办**，不是当前定义；当前定义的 `语义` 行**不含** consent。(c) `L-1` 自己的处置只到「所有 readout 携带 `dyad_type_scope` 与 `valence_not_defined_here` 标记」—— **一个标记不改数值**。所以 D8 在胁迫 dyad 上仍会**读出**「高度依赖」，标记只是提醒读者别当质量分。这弱于报告的语气。",
+   "strongest_counterevidence": "** 我检了两条可能的反证：(a) `D8` 的 `Open question` 已写「某些 dependence 是否应完全由 Agent resources / alternatives / **institutional constraints** 推导」—— canonical **已经**把 `constraints` 列入了，`institutional constraints` 覆盖了法律/政策强制的情形。**所以 canonical 并非完全沉默**，`11` 的指控强度略高于实际。但 (b) `Open question` 是**待办**，不是当前定义；当前定义的 `语义` 行**不含** consent。(c) `L-1` 自己的处置只到「所有 readout 携带 `dyad_type_scope` 与 `valence_not_defined_here` 标记」—— **一个标记不改数值**。所以 D8 在胁迫 dyad 上仍会**读出**「高度依赖」，标记只是提醒读者别当质量分。这弱于报告的语气。\n** `NO`（本条）。但 `AGENTS.md` 的「分轴」原则**已经**覆盖了它。",
+   "requires_canonical_change": "** `NO`（本条）。但 `AGENTS.md` 的「分轴」原则**已经**覆盖了它。\n** `YES:U9`（同 `G-C8`）",
+   "needs_experiment_or_data": "** `YES:U9`（同 `G-C8`）\n** `NONE`（`G-C8` 是同一问题的次强版本）",
+   "duplicate_of": "** `NONE`（`G-C8` 是同一问题的次强版本）\n** `ACCEPT` — 这是本 cluster 中**安全价值最高且最可复核**的发现（不依赖任何付费墙引文）。建议 parent 把它排在所有 IPV 相关材料之前。**但**必须同时写明：`D8` 的 `Open question` 已经提到 `institutional constraints`，所以这是「定义未落地」而非「定义缺失」。",
+   "recommendation_to_architect": "** `ACCEPT` — 这是本 cluster 中**安全价值最高且最可复核**的发现（不依赖任何付费墙引文）。建议 parent 把它排在所有 IPV 相关材料之前。**但**必须同时写明：`D8` 的 `Open question` 已经提到 `institutional constraints`，所以这是「定义未落地」而非「定义缺失」。\n---",
+   "_locator": {
+    "line_start": 191,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C10",
+   "_title": "G-C10 — `Trust` 在 5 类非恋爱 dyad 上判 `MEANING_SHIFTS` 的加权（单源外推）",
+   "claim": "11` §2 把 `Trust` 在 `S`(兄弟姐妹)、`K`(亲子)、`C`(照护)、`W`(专业)、`A`(敌对) 五列判为 `MEANING_SHIFTS`，理由是 `Trust` 定义「愿意把某类脆弱性暴露给 j」内建了**披露史**前提。\n11` §2 行 57；§6.2（行 386–388）",
+   "source_report": "11` §2 行 57；§6.2（行 386–388）\nWRONG-SCOPE` — 支撑这一判定的唯一实证来源是**一个** 定性同胞访谈研究，且 `11` §6.2 自己把同一格称为「**定义欠定**」而非「语义改变」。",
+   "verdict": "WRONG-SCOPE` — 支撑这一判定的唯一实证来源是**一个** 定性同胞访谈研究，且 `11` §6.2 自己把同一格称为「**定义欠定**」而非「语义改变」。\nBlake et al. (2022) *Journal of Family Issues*，doi:10.1177/0192513X211064876，Crossref 题名「Estrangement Between Siblings in Adulthood: A **Qualitative** Exploration」— `VERIFIED_BY_ME`。**「Qualitative」在题名里**——这直接限制了它作为 `MEANING_SHIFTS` 跨域判定的证据等级。报告引文「`I don't really know my brother`（like a stranger）」与 `n=291` — `NOT_OPENED`。**并且 `11` §3.4 的写法「Blake et al. (2022, **n=291**) 受访者自陈 `I don't really know my brother`」在语法上把 n=291 挂在那句话上，读起来像 291 人这么说。Blake 2022 的 291 是研究总样本，不是这句话的出现频次。这是统计归属错误。** `11` §6.2 原文「这一格判为『**定义欠定**，不是「数据缺失」」— `VERIFIED_BY_ME`（行 386）。",
+   "supporting_refs": "Blake et al. (2022) *Journal of Family Issues*，doi:10.1177/0192513X211064876，Crossref 题名「Estrangement Between Siblings in Adulthood: A **Qualitative** Exploration」— `VERIFIED_BY_ME`。**「Qualitative」在题名里**——这直接限制了它作为 `MEANING_SHIFTS` 跨域判定的证据等级。报告引文「`I don't really know my brother`（like a stranger）」与 `n=291` — `NOT_OPENED`。**并且 `11` §3.4 的写法「Blake et al. (2022, **n=291**) 受访者自陈 `I don't really know my brother`」在语法上把 n=291 挂在那句话上，读起来像 291 人这么说。Blake 2022 的 291 是研究总样本，不是这句话的出现频次。这是统计归属错误。** `11` §6.2 原文「这一格判为『**定义欠定**，不是「数据缺失」」— `VERIFIED_BY_ME`（行 386）。\n(a) `定义欠定` 与 `MEANING_SHIFTS` **不是同一个码**。按 `11` §1 自己的码表，`MEANING_SHIFTS` = 「语义在**参照类**或**边界条件**上改变」；`定义欠定` = 定义本身不足以确定语义，更接近 (d) 域界定标签或 (b) 表示问题。**§2 与 §6.2 对同一格给出不同分类。** (b) 一份定性同胞研究不能支撑 5 列的 `MS`；即便 `Trust` 在兄弟姐妹上确实内建披露史，这也只覆盖 `S` 一列，对 `C`/`W`/`A` 无外推许可。(c) 我**未逐字读取** `PARAMETER_CONVERGENCE_V0_1.md` §4 D4 `Trust` 的定义（超出 `offset/limit` 预算），所以「定义是否真的内建披露史前提」我**未独立复核**，标 `NOT_OPENED`。",
+   "strongest_counterevidence": "(a) `定义欠定` 与 `MEANING_SHIFTS` **不是同一个码**。按 `11` §1 自己的码表，`MEANING_SHIFTS` = 「语义在**参照类**或**边界条件**上改变」；`定义欠定` = 定义本身不足以确定语义，更接近 (d) 域界定标签或 (b) 表示问题。**§2 与 §6.2 对同一格给出不同分类。** (b) 一份定性同胞研究不能支撑 5 列的 `MS`；即便 `Trust` 在兄弟姐妹上确实内建披露史，这也只覆盖 `S` 一列，对 `C`/`W`/`A` 无外推许可。(c) 我**未逐字读取** `PARAMETER_CONVERGENCE_V0_1.md` §4 D4 `Trust` 的定义（超出 `offset/limit` 预算），所以「定义是否真的内建披露史前提」我**未独立复核**，标 `NOT_OPENED`。\nNO`",
+   "requires_canonical_change": "NO`\nYES:U1 + U5 — U5 已由 `11` 自己定义：同一 dyad 内操纵披露量（low/high）的实验，测 relational trust，同时测 character-based / ascribed trust 作为替代读法`",
+   "needs_experiment_or_data": "YES:U1 + U5 — U5 已由 `11` 自己定义：同一 dyad 内操纵披露量（low/high）的实验，测 relational trust，同时测 character-based / ascribed trust 作为替代读法`\nG-C30`",
+   "duplicate_of": "G-C30`\nREJECT` — 拒绝以现有形式接受 `Trust` 行的 5 个 `MEANING_SHIFTS`。要求：(i) 降级为 `UNKNOWN`（`11` 对 `PPR` 行已经这么做了，标准应一致）；(ii) 修正 `n=291` 的归属表述；(iii) 统一 `§2` 与 `§6.2` 的分类。",
+   "recommendation_to_architect": "REJECT` — 拒绝以现有形式接受 `Trust` 行的 5 个 `MEANING_SHIFTS`。要求：(i) 降级为 `UNKNOWN`（`11` 对 `PPR` 行已经这么做了，标准应一致）；(ii) 修正 `n=291` 的归属表述；(iii) 统一 `§2` 与 `§6.2` 的分类。\n---",
+   "_locator": {
+    "line_start": 207,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C11",
+   "_title": "G-C11 — `SexualDesire × {F,S,K,A} = NOT_APPLICABLE`：架构论证 + 未处理的内部不对称",
+   "claim": "11` §2/§3.1 把 `SexualDesire` 在友谊、兄弟姐妹、亲子、敌对四列判为 `NOT_APPLICABLE`（结构性不适用），论证依据是状态空间缺「不适用」值类。\n** `11` §2 行 56；§3.1（行 83–91）；§10 非主张第 3 条（行 518）",
+   "source_report": "** `11` §2 行 56；§3.1（行 83–91）；§10 非主张第 3 条（行 518）\n** `PLAUSIBLE`（值类论证 `VERIFIED`；`NA` 判定本身 `PLAUSIBLE`，但**最强反证未被处理**）",
+   "verdict": "** `PLAUSIBLE`（值类论证 `VERIFIED`；`NA` 判定本身 `PLAUSIBLE`，但**最强反证未被处理**）\n** 值类论证见 `G-C5`（`VERIFIED_BY_ME`）。`11` §10 非主张第 3 条原文「**不主张** `SexualDesire` 在亲属 dyad 上『为 0』；主张的是当前 schema 无法把它与 `Unknown` 区分」— `VERIFIED_BY_ME`（行 518）。**这条非主张写得非常准确**：它把主张从「性欲在亲属上不存在」收回到「schema 无法表达」——**报告在这里的自我约束是本报告最专业的一段**。",
+   "supporting_refs": "** 值类论证见 `G-C5`（`VERIFIED_BY_ME`）。`11` §10 非主张第 3 条原文「**不主张** `SexualDesire` 在亲属 dyad 上『为 0』；主张的是当前 schema 无法把它与 `Unknown` 区分」— `VERIFIED_BY_ME`（行 518）。**这条非主张写得非常准确**：它把主张从「性欲在亲属上不存在」收回到「schema 无法表达」——**报告在这里的自我约束是本报告最专业的一段**。\n** **`NA` 判定忽略了报告自己给出的一个反例。** `11` §4 `L-4` **自己**提到照护域的文献记载（「`SexualDesire` 判 `MS` —— 受照护者对照护者的性吸引是**文献记载的类别**（含失智相关去抑制），且是**保护**议题」）—— **报告在同一份文档里对 `C` 列判 `MS`（理由：文献记载该类别存在）、对 `S`/`K` 列判 `NA`（理由：无该类坐标），而没有说明为什么亲属性接触的记载不足以让 `S`/`K` 变成 `MS` 或至少 `UNKNOWN`。** 这是 `11` 内部最不对称的一处判定，也是最接近真实伤害的一处。**我未做亲属性接触文献检索（超出契约 §3「不新增文献调研」）；我指出的是报告内部的不对称，不需要外部证据即可成立。**",
+   "strongest_counterevidence": "** **`NA` 判定忽略了报告自己给出的一个反例。** `11` §4 `L-4` **自己**提到照护域的文献记载（「`SexualDesire` 判 `MS` —— 受照护者对照护者的性吸引是**文献记载的类别**（含失智相关去抑制），且是**保护**议题」）—— **报告在同一份文档里对 `C` 列判 `MS`（理由：文献记载该类别存在）、对 `S`/`K` 列判 `NA`（理由：无该类坐标），而没有说明为什么亲属性接触的记载不足以让 `S`/`K` 变成 `MS` 或至少 `UNKNOWN`。** 这是 `11` 内部最不对称的一处判定，也是最接近真实伤害的一处。**我未做亲属性接触文献检索（超出契约 §3「不新增文献调研」）；我指出的是报告内部的不对称，不需要外部证据即可成立。**\n** `NO`（本条）；值类部分见 `G-C5`。",
+   "requires_canonical_change": "** `NO`（本条）；值类部分见 `G-C5`。\n** `YES:U1`（`S`/`K` 两列的 `NA` vs `MS` vs `UNKNOWN` 只能由不变性序列 + 领域文献定夺）",
+   "needs_experiment_or_data": "** `YES:U1`（`S`/`K` 两列的 `NA` vs `MS` vs `UNKNOWN` 只能由不变性序列 + 领域文献定夺）\n** `G-C4` / `G-C5`",
+   "duplicate_of": "** `G-C4` / `G-C5`\n** `HOLD_FOR_EVIDENCE` — 保留 §3.1 的值类论证（`ACCEPT`），但把 `S`/`K` 两列的 `NA` 降为 `UNKNOWN`，理由是报告自身对 `C` 列的处理证明「文献记载的类别存在」足以推翻 `NA`，而报告未解释为何这条推理不适用于 `S`/`K`。**在亲属性接触这一具体议题上，误标 `NA` 的代价是不对称的。**",
+   "recommendation_to_architect": "** `HOLD_FOR_EVIDENCE` — 保留 §3.1 的值类论证（`ACCEPT`），但把 `S`/`K` 两列的 `NA` 降为 `UNKNOWN`，理由是报告自身对 `C` 列的处理证明「文献记载的类别存在」足以推翻 `NA`，而报告未解释为何这条推理不适用于 `S`/`K`。**在亲属性接触这一具体议题上，误标 `NA` 的代价是不对称的。**\n---",
+   "_locator": {
+    "line_start": 222,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C12",
+   "_title": "G-C12 — §3.8 `source/target/edge` facet 在 kin/care 上不可识别",
+   "claim": "SRM 式加法分解 `Construct(i->j,t) = population baseline + source_i + target_j + directed_dyad_(i->j) + context/history residual` 的可识别性要求 (a) target 属性与 source 的 dyad 进入/选择近似独立、(b) dyad 可重新选择；在亲属 dyad 上两条**按构造成立地失败**，故 `context/history residual` 不是残差而是主项，`target_j` 不能读作 Agent 层 trait。\n** `11` §3.8（行 178–202）",
+   "source_report": "** `11` §3.8（行 178–202）\n** `PLAUSIBLE` — 论证结构成立且是可证伪的；但三条支撑引用**著录不完整**。",
+   "verdict": "** `PLAUSIBLE` — 论证结构成立且是可证伪的；但三条支撑引用**著录不完整**。\n**",
+   "supporting_refs": "**\n   - `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §1 的加法分解原文 — `VERIFIED_BY_ME`（行 26–34）。同文件 §6 末段「**不预先承诺线性叠加**」— `VERIFIED_BY_ME`（行 251）。`11` §7 `X-6` 正确地把这两处列为内部矛盾 — `VERIFIED_BY_ME`。\n   - Voorpostel & Blieszner (2008) *Journal of Marriage and Family* 70(1):157–167，doi:10.1111/j.1741-3737.2007.00468.x — **未核实**（`NOT_OPENED`）。\n   - Hillcoat-Nallétamby et al.：「**（作者/年份未核）**」— `11` §9 著录自己写了这一条 — `VERIFIED_BY_ME`（行 479）。**该源在 `11` 中被使用 3 次**（§3.8 行 195、§4 `L-1` 表格行 223、§4 `L-9` 行 330）。\n   - Pruchno, Burant & Peters (1997)：「（**DOI 未核**）」— `11` §9 自己标注 — `VERIFIED_BY_ME`（行 489）。\n** (a) **一个未核作者/年份的源承担了三次承重引用**，且三次都在关键路径上（kin 的第二梯队、亲子依赖方向可逆、`L-9` 的第三方解释变量需求）。这与 `11` 自己在 §11 对 Gilligan 的处理标准（`RECORD_NOT_FOUND` + 10 路检索 + 显式双向无影响）**不一致**。(b) 最强反方论点：§3.8 的核心论证（`target_j` 由 i 自己历史中的第三方产生 → S/T 不可分离）是**结构性论证**，Hillcoat-Nallétamby 与 Voorpostel 是**例证**而非**必要前提**；去掉这两条，论证仍成立。**但这削弱的是证据等级，不是命题。** (c) 我检索了 canonical 是否有反证：`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 1 项 `scope test` 与第 6 项 `cross-context test` **已经要求**「k 在 Target 上是否有独立语义」与「kin/non-kin 是否保持语义稳定」—— **canonical 已经把这个问题列为收敛判据**。`11` §3.8 的增量是「它在 dyad 类型之间**不不变**」这一更强断言。",
+   "strongest_counterevidence": "** (a) **一个未核作者/年份的源承担了三次承重引用**，且三次都在关键路径上（kin 的第二梯队、亲子依赖方向可逆、`L-9` 的第三方解释变量需求）。这与 `11` 自己在 §11 对 Gilligan 的处理标准（`RECORD_NOT_FOUND` + 10 路检索 + 显式双向无影响）**不一致**。(b) 最强反方论点：§3.8 的核心论证（`target_j` 由 i 自己历史中的第三方产生 → S/T 不可分离）是**结构性论证**，Hillcoat-Nallétamby 与 Voorpostel 是**例证**而非**必要前提**；去掉这两条，论证仍成立。**但这削弱的是证据等级，不是命题。** (c) 我检索了 canonical 是否有反证：`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 1 项 `scope test` 与第 6 项 `cross-context test` **已经要求**「k 在 Target 上是否有独立语义」与「kin/non-kin 是否保持语义稳定」—— **canonical 已经把这个问题列为收敛判据**。`11` §3.8 的增量是「它在 dyad 类型之间**不不变**」这一更强断言。\n** `NO` — **必须停在 proposal。** 需要 U1 + Gate B 扩展（见 `G-C13`）。",
+   "requires_canonical_change": "** `NO` — **必须停在 proposal。** 需要 U1 + Gate B 扩展（见 `G-C13`）。\n** `YES:U1 + U11 — 逐类跑 Gate B（sentence-level mapping），记录 `MAPPING_FAILURE`；`11` 自述预期首先暴露 D2/D3（scope）、P4/P5（容器）、A3/A4（层与 facet）`",
+   "needs_experiment_or_data": "** `YES:U1 + U11 — 逐类跑 Gate B（sentence-level mapping），记录 `MAPPING_FAILURE`；`11` 自述预期首先暴露 D2/D3（scope）、P4/P5（容器）、A3/A4（层与 facet）`\n** `NONE`（与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.1/§7.6 部分重叠 —— canonical 已有判据，`11` 提供的是更强的失效论证）",
+   "duplicate_of": "** `NONE`（与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.1/§7.6 部分重叠 —— canonical 已有判据，`11` 提供的是更强的失效论证）\n** `ACCEPT_AS_PROPOSAL` — 接受为 Gate B 的设计输入。**要求**先补齐 Hillcoat-Nallétamby 与 Pruchno 的著录，或把三处引用降为「例证，非承重」。",
+   "recommendation_to_architect": "** `ACCEPT_AS_PROPOSAL` — 接受为 Gate B 的设计输入。**要求**先补齐 Hillcoat-Nallétamby 与 Pruchno 的著录，或把三处引用降为「例证，非承重」。\n---",
+   "_locator": {
+    "line_start": 237,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C13",
+   "_title": "G-C13 — L-8：三处 canonical cross-context 清单互不相同，且都漏 5 类 dyad（本 lane 第二条 `requires_canonical_change: YES`，成本最低）",
+   "claim": "11` §4 `L-8`：`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6、`PARAMETER_CONVERGENCE_V0_1.md` §2.4、§15 Gate B 三处清单**互不相同**，且**都不含** `sibling`、`parent–adult-child`、`ex-partner`、`professional/cooperative`、`adversarial/harm-asymmetric`、`dating-stranger`；本 audit 的 9 类 dyad 中**有 5 类根本没被项目自己的验证门指定**。→ Gate B 通过**不构成**「跨域稳定」的证据。\n** `11` §4 `L-8`（行 318–326）、§7 `X-7`（行 415）",
+   "source_report": "** `11` §4 `L-8`（行 318–326）、§7 `X-7`（行 415）\n** `VERIFIED` — 我**独立地**逐条比对了三份 canonical 清单。",
+   "verdict": "** `VERIFIED` — 我**独立地**逐条比对了三份 canonical 清单。\n** 三份 canonical 原文 — `VERIFIED_BY_ME`：",
+   "supporting_refs": "** 三份 canonical 原文 — `VERIFIED_BY_ME`：\n   - `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 6 项：`same-sex / opposite-sex / kin / non-kin / stranger / established relationship`（6 项，行 264）。\n   - `PARAMETER_CONVERGENCE_V0_1.md` §2.4：`same-sex / opposite-sex、kin / non-kin、stranger / established relationship、romance / friendship / caregiving / conflict`（行 61）。\n   - `PARAMETER_CONVERGENCE_V0_1.md` §15 Gate B：`same-sex / opposite-sex / kin / non-kin / friendship / romance / caregiving / conflict / unilateral attraction / high-dependence/low-liking / high-attraction/low-trust`（11 项，行 719–733）。\n   差异：第 1 项无 `romance/friendship/caregiving/conflict`；第 2 与第 3 项的 dyad 类型**实质重叠**（只是次序与措辞不同）；Gate B 多出 3 个合成条件。**三份都不含 sibling / parent–adult-child / ex-partner / professional / adversarial / dating-stranger —— 逐条确认。** 按 `11` 的 9 类 dyad 表，漏的是 `S`/`K`（`kin` 是合并标签，不区分同胞与亲子，而 §3.8 的整个论证依赖这两者的区别）、`X`、`W`、`A`、`D` = 5 类 ✓（这个计数正确）。\n** (a) §2.4 与 Gate B 的 dyad 类型**实质重叠**，所以「三处互不相同」字面上成立但**实质差异只有一处**（`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 缺 4 个类型）。`11` 的措辞夸大了这一点。**但这不改变结论**：两份 canonical 文件的清单确实不同，且确实都不覆盖 `11` 的 9 类中的 5 类。(b) `kin` 是否覆盖 `sibling` 与 `parent–adult-child`？若 Architect 读 `kin` 为涵盖一切亲属，则 Gate B 已覆盖 `S`/`K`，缺口降到 3 类。**但 `11` §3.8 明确论证「kin/care 上 `target_j` 不可识别」的机制在同胞与亲子上不同**（同胞共享父母；亲子依赖方向随生命历程可逆），所以把 `kin` 当作一个同质测试单元会掩盖报告自己最关心的区分。→ **缺口计数依赖 `kin` 的粒度解释，5 类是「严格按 dyad 类型」读法下的数字，3 类是「`kin` 合并」读法下的数字。这个依赖必须在采纳前说清。**",
+   "strongest_counterevidence": "** (a) §2.4 与 Gate B 的 dyad 类型**实质重叠**，所以「三处互不相同」字面上成立但**实质差异只有一处**（`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 缺 4 个类型）。`11` 的措辞夸大了这一点。**但这不改变结论**：两份 canonical 文件的清单确实不同，且确实都不覆盖 `11` 的 9 类中的 5 类。(b) `kin` 是否覆盖 `sibling` 与 `parent–adult-child`？若 Architect 读 `kin` 为涵盖一切亲属，则 Gate B 已覆盖 `S`/`K`，缺口降到 3 类。**但 `11` §3.8 明确论证「kin/care 上 `target_j` 不可识别」的机制在同胞与亲子上不同**（同胞共享父母；亲子依赖方向随生命历程可逆），所以把 `kin` 当作一个同质测试单元会掩盖报告自己最关心的区分。→ **缺口计数依赖 `kin` 的粒度解释，5 类是「严格按 dyad 类型」读法下的数字，3 类是「`kin` 合并」读法下的数字。这个依赖必须在采纳前说清。**\n** **`YES`** — `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§15 Gate B**（并与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` **§7 第 6 项** 对齐）。**为什么不能停在 proposal**：这是**两份 canonical 文档之间的可检视不一致**，零研究成本、零实验依赖、一次性修完。`11` 自评 `L-8` 为「**最易修**」—— 我同意。proposal 状态会让 `PARAMETER_CONVERGENCE_V0_1.md` §15 继续持有一份比 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 更宽、且与自身 §2.4 措辞不一致的清单。",
+   "requires_canonical_change": "** **`YES`** — `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` **§15 Gate B**（并与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` **§7 第 6 项** 对齐）。**为什么不能停在 proposal**：这是**两份 canonical 文档之间的可检视不一致**，零研究成本、零实验依赖、一次性修完。`11` 自评 `L-8` 为「**最易修**」—— 我同意。proposal 状态会让 `PARAMETER_CONVERGENCE_V0_1.md` §15 继续持有一份比 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 更宽、且与自身 §2.4 措辞不一致的清单。\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT` — 这是我在本 cluster 里找到的**成本最低**的一个（文档级，三行文本）。建议 parent 与 `G-C5` 并列为最高优先级。**并要求**在采纳前先定 `kin` 的粒度（是否拆分 sibling / parent–adult-child），因为这决定缺口是 5 类还是 3 类。",
+   "recommendation_to_architect": "** `ACCEPT` — 这是我在本 cluster 里找到的**成本最低**的一个（文档级，三行文本）。建议 parent 与 `G-C5` 并列为最高优先级。**并要求**在采纳前先定 `kin` 的粒度（是否拆分 sibling / parent–adult-child），因为这决定缺口是 5 类还是 3 类。\n---",
+   "_locator": {
+    "line_start": 256,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C14",
+   "_title": "G-C14 — `Role` 作为 query lens 的挑战（挑战 Human-settled 方向，证据最弱）",
+   "claim": "11` §3.7：`AGENTS.md`「Keep `Role` explicit as a query/evaluation lens; it does not replace world state」在**专业 / 亲属 / 照护**三类 dyad 上不成立 —— 约束、依赖、行动空间都是 role 决定的。提案保留 `Role` 作为 query lens，新增 `RoleContract_(A,B)` pair fact。\n** `11` §3.7（行 166–176）、§7 `X-5`（行 413）",
+   "source_report": "** `11` §3.7（行 166–176）、§7 `X-5`（行 413）\n** `PLAUSIBLE`（对「专业 dyad 上 role 是承重变量」）/ `WRONG-SCOPE`（对「因此 `AGENTS.md` 第 3 条不成立」这一步推论）",
+   "verdict": "** `PLAUSIBLE`（对「专业 dyad 上 role 是承重变量」）/ `WRONG-SCOPE`（对「因此 `AGENTS.md` 第 3 条不成立」这一步推论）\n**",
+   "supporting_refs": "**\n   - `AGENTS.md`「Current architecture direction」第 3 条原文 — `VERIFIED_BY_ME`。\n   - Horvath & Symonds (1991) *Journal of Counseling Psychology* 38(2):139–149，doi:10.1037/0022-0167.38.2.139，题名「Relation between **working alliance** and **outcome** in psychotherapy: A **meta-analysis**」— `VERIFIED_BY_ME`。**注意题名结构：这是 outcome 相关性的元分析。** 用它推出「working alliance 是**状态成分**而非**结果/工具变量**」是 **outcome-correlation → ontological-status** 的跳跃。\n   - Olson, Russell & Sprenkle (1983) *Family Process* 22(1):69–83 — **`11` §9 给的 DOI `10.1111/j.1545-5305.1983.00069.x` → Crossref 404（`VERIFIED_BY_ME`）。正确 DOI 是 `10.1111/j.1545-5300.1983.00069.x`**（`1545-5300`，非 `1545-5305`），题名「Circumplex Model of Marital and Family Systems: **Vl.** Theoretical Update」— `VERIFIED_BY_ME`。**这是 `11` 引用列表里一个可确证的错误 DOI。**\n   - Dykstra：「Intergenerational family relationships in ageing societies.（**开放获取综述章节**）」— `11` §9 **无年份、无期刊、无 DOI** — `VERIFIED_BY_ME`（行 470）。**这是 `11` 全部引用中最弱的一条，而它在 §3.2、§3.7 两处承重。**\n   - Meyer & Allen (1991) — 组织心理学，`WRONG-SCOPE`（见 `G-C6`）。\n** **本条是 8 条提案中证据最弱的，而它挑战的是 `AGENTS.md` 的一条明确裁决。** 逐条检：(a) Horvath & Symonds 的证据是「working alliance 与治疗结果最稳健相关」—— **相关不等于本体地位**；一个「工具/任务型变量」完全可以是结果的最强预测而仍然是 observation/action 层。(b) Olson circumplex 的 cohesion + adaptability + communication 是**家族系统治疗的传统主轴**，但该传统本身是**临床模型**而非本体分类；用它推「家庭 dyad 领域已用 role-结构坐标替代 affective 坐标」是把**某学派的建模选择**误读为**领域共识**。(c) Dykstra 无著录。(d) Meyer & Allen 域外。(e) `AGENTS.md` 第 3 条原文是「Keep `Role` explicit as a query/evaluation lens; it does not replace **world state**」—— **注意这句禁止的是 Role 替代 world state，不是禁止 Role 成为 world state 的一个成分**。`11` §3.7 的读法与 `AGENTS.md` 的字面禁令**不是直接冲突**。→ **`X-5` 作为「矛盾」被夸大了；它是「一个未被 `AGENTS.md` 明说的边界」。**",
+   "strongest_counterevidence": "** **本条是 8 条提案中证据最弱的，而它挑战的是 `AGENTS.md` 的一条明确裁决。** 逐条检：(a) Horvath & Symonds 的证据是「working alliance 与治疗结果最稳健相关」—— **相关不等于本体地位**；一个「工具/任务型变量」完全可以是结果的最强预测而仍然是 observation/action 层。(b) Olson circumplex 的 cohesion + adaptability + communication 是**家族系统治疗的传统主轴**，但该传统本身是**临床模型**而非本体分类；用它推「家庭 dyad 领域已用 role-结构坐标替代 affective 坐标」是把**某学派的建模选择**误读为**领域共识**。(c) Dykstra 无著录。(d) Meyer & Allen 域外。(e) `AGENTS.md` 第 3 条原文是「Keep `Role` explicit as a query/evaluation lens; it does not replace **world state**」—— **注意这句禁止的是 Role 替代 world state，不是禁止 Role 成为 world state 的一个成分**。`11` §3.7 的读法与 `AGENTS.md` 的字面禁令**不是直接冲突**。→ **`X-5` 作为「矛盾」被夸大了；它是「一个未被 `AGENTS.md` 明说的边界」。**\n** `NO` — **必须停在 proposal，且必须停在 Human 层而非 Architect 层。** `AGENTS.md`：「Human has final sovereignty over project goals, scope, risk acceptance, naming, and **major architecture direction**」。`Role` 是否进入 world state 是架构方向问题。**Architect 不应在本 swarm 内处理。**",
+   "requires_canonical_change": "** `NO` — **必须停在 proposal，且必须停在 Human 层而非 Architect 层。** `AGENTS.md`：「Human has final sovereignty over project goals, scope, risk acceptance, naming, and **major architecture direction**」。`Role` 是否进入 world state 是架构方向问题。**Architect 不应在本 swarm 内处理。**\n** `YES:U1 + Gate B 扩展`",
+   "needs_experiment_or_data": "** `YES:U1 + Gate B 扩展`\n** `G-C7`（`RoleContract` 与 `Obligation` 同源）",
+   "duplicate_of": "** `G-C7`（`RoleContract` 与 `Obligation` 同源）\n** `HOLD_FOR_EVIDENCE` — (i) 更正 Olson 1983 的 DOI；(ii) 补 Dykstra 的完整著录或撤下；(iii) **重写 `X-5`**：`AGENTS.md` 第 3 条禁止的是 Role **替代** world state，不是 Role 成为 world state 的成分 → 这不是矛盾；(iv) 明确标记为 **Human 裁定项**，不交 Architect。",
+   "recommendation_to_architect": "** `HOLD_FOR_EVIDENCE` — (i) 更正 Olson 1983 的 DOI；(ii) 补 Dykstra 的完整著录或撤下；(iii) **重写 `X-5`**：`AGENTS.md` 第 3 条禁止的是 Role **替代** world state，不是 Role 成为 world state 的成分 → 这不是矛盾；(iv) 明确标记为 **Human 裁定项**，不交 Architect。\n---",
+   "_locator": {
+    "line_start": 275,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C15",
+   "_title": "G-C15 — Snijders 2010 排除性引语（`12` 最承重引语，逐字核实通过）",
+   "claim": "Snijders, van de Bunt & Steglich (2010) 原文：tie 的存在被假定为**处于发送方单边控制之下**，因此**排除大多数需要协商才能成立的关系类型**；伴侣、亲属、照护、合作都属于「tie 的存在需要双方协商」的类型，因此 **SAOM 的成功前提与 LHRM 的对象前提互斥**。\n** `12` §0 第 3 条（行 17）、§3.1 C-SAOM（行 119–124）、§8 `I4`（行 311）",
+   "source_report": "** `12` §0 第 3 条（行 17）、§3.1 C-SAOM（行 119–124）、§8 `I4`（行 311）\n** `VERIFIED`（引语逐字无误）→ 但对「互斥」这一步推论判 `PLAUSIBLE`，对 `I4` 的「排除性证据」框架判 `WRONG-SCOPE`",
+   "verdict": "** `VERIFIED`（引语逐字无误）→ 但对「互斥」这一步推论判 `PLAUSIBLE`，对 `I4` 的「排除性证据」框架判 `WRONG-SCOPE`\n** 我抓取并本地抽取作者自存档 PDF `https://www.stats.ox.ac.uk/~snijders/siena/SnijdersVandeBuntSteglich2010.pdf`（361,872 bytes），**逐字读到**：",
+   "supporting_refs": "** 我抓取并本地抽取作者自存档 PDF `https://www.stats.ox.ac.uk/~snijders/siena/SnijdersVandeBuntSteglich2010.pdf`（361,872 bytes），**逐字读到**：\n   > \"Ties are supposed to be, in principle, **under control of the sending actor** (although this will be subject to constraints), **which will exclude most types of relations where negotiations are required for a tie to come into existence**.\"\n   — `VERIFIED_BY_ME`。报告 §3.1 的引文与原文**完全一致**，包括括号内的限定语。DOI `10.1016/j.socnet.2009.02.004` Crossref 解析成功，*Social Networks* 32(1)，题名「Introduction to stochastic actor-based models for network dynamics」— `VERIFIED_BY_ME`。\n** **同一篇论文的 Table 1 就是「friendship evolution models」的参数估计表**（含 `Reciprocity(evaluation) 1.34 / 1.42 / 1.45`、`Reciprocity(endowment) 1.42`、`Outdegree`、`Transitive triplets`、`Transitive ties`、`3-cycles`、`Indegree popularity`、`Outdegree popularity` — 我在抽取文本中定位到该表 — `VERIFIED_BY_ME`）。也就是说：**(a) Snijders 自己把 friendship 列为 tie 关系的例子**（同段前句：ties are the dyadic constituents of relations such as **friendship, trust, or cooperation**）；**(b) 他在同一篇里用 SAOM 拟合了友谊演化数据**；**(c) 排除条款自带限定语「although this will be subject to constraints」**。→ 排除是**有条件的**，不是结构性的普遍排除。`12` §8 `I4` 把它标为「这是一条**排除性**证据，不是支持性证据」，语气比原文强。**这不使 `I4` 为假，但 `12` 未呈现最强反证。**",
+   "strongest_counterevidence": "** **同一篇论文的 Table 1 就是「friendship evolution models」的参数估计表**（含 `Reciprocity(evaluation) 1.34 / 1.42 / 1.45`、`Reciprocity(endowment) 1.42`、`Outdegree`、`Transitive triplets`、`Transitive ties`、`3-cycles`、`Indegree popularity`、`Outdegree popularity` — 我在抽取文本中定位到该表 — `VERIFIED_BY_ME`）。也就是说：**(a) Snijders 自己把 friendship 列为 tie 关系的例子**（同段前句：ties are the dyadic constituents of relations such as **friendship, trust, or cooperation**）；**(b) 他在同一篇里用 SAOM 拟合了友谊演化数据**；**(c) 排除条款自带限定语「although this will be subject to constraints」**。→ 排除是**有条件的**，不是结构性的普遍排除。`12` §8 `I4` 把它标为「这是一条**排除性**证据，不是支持性证据」，语气比原文强。**这不使 `I4` 为假，但 `12` 未呈现最强反证。**\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`（引语核实已完成；剩余问题是判断问题）",
+   "needs_experiment_or_data": "** `NO`（引语核实已完成；剩余问题是判断问题）\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT`（引语与 DOI 均 `VERIFIED_BY_ME`）— 但**要求**在 synthesis 中把「SAOM 在原理上排除 LHRM 的对象」弱化为「SAOM 的单边 tie 控制假设**不覆盖**需要双方协商的关系；Snijders 本人对 friendship 提供了带限定语的适用处理」。",
+   "recommendation_to_architect": "** `ACCEPT`（引语与 DOI 均 `VERIFIED_BY_ME`）— 但**要求**在 synthesis 中把「SAOM 在原理上排除 LHRM 的对象」弱化为「SAOM 的单边 tie 控制假设**不覆盖**需要双方协商的关系；Snijders 本人对 friendship 提供了带限定语的适用处理」。\n---",
+   "_locator": {
+    "line_start": 295,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C16",
+   "_title": "G-C16 — SAOM「严格二值」与「三函数完美共线」两条断言的核实",
+   "claim": "12` §3.1 C-SAOM：SAOM 状态**严格二值**（引 `Weighted networks are not allowed`）；且 creation / endowment / evaluation **三者不可同时出现在同一模型中（完美共线）**。`12` 据此判「二值化也直接违反 LHRM 的混合态表示」。\n** `12` §3.1 C-SAOM（行 111–112、123）、§5 对照表（行 249）",
+   "source_report": "** `12` §3.1 C-SAOM（行 111–112、123）、§5 对照表（行 249）\n** 第一条 `VERIFIED`；第二条 `PLAUSIBLE`（未找到出处）；`12` 的推论 `WRONG-SCOPE`（因为它遗漏了同页的例外句）",
+   "verdict": "** 第一条 `VERIFIED`；第二条 `PLAUSIBLE`（未找到出处）；`12` 的推论 `WRONG-SCOPE`（因为它遗漏了同页的例外句）\n**",
+   "supporting_refs": "**\n   - 我抓取并本地抽取 RSiena Manual（`https://www.stats.ox.ac.uk/~snijders/siena/RSiena_Manual.pdf`，1,416,825 bytes），**逐字读到**：「Stochastic Actor-Oriented Models operate on **binary networks**… **Weighted networks are not allowed**, but as mentioned above, **it is possible to define multiple networks representing discrete levels of relationships**.」— `VERIFIED_BY_ME`。→ `12` 的引文**逐字正确**，但**紧接的例外句被 `12` 完全省略**。\n   - Manual 目录含 `13.1.4 Network creation and endowment functions`（p.191）、`13.1.3.3 Effects for three networks`（p.167）、`13.1.3 Multiple network effects`（p.167）— `VERIFIED_BY_ME`。三分存在，多网络分层也存在。\n   - **「三者不可同时出现 / 完美共线」**：我在 Snijders 2010 PDF 与 RSiena Manual 抽取文本中检索 `perfectlycorrelated` / `areperfect` / `cannotbeincluded` / `inseparab` / `identifiab` / `notbeestimatedtogether` — **只有 Manual §8.1 `Multicollinearity` 的一般性讨论命中**（「Correlations between parameter estimates close to −1 are the most usual signs of this. If the parameter estimates are **perfectly collinear**（standard errors … being infinitely large）, standard errors are reported as NA」），**没有找到** `12` 那句「三函数不可同时出现」的明文出处。`12` 也未给该断言的页码或节号。\n** **同一份 Manual 的同一句话既给了限制也给了绕过限制的官方路径。** `12` 引用了前半句、丢掉了后半句，于是「严格二值 → 违反 LHRM 混合态表示」这条推论**只对单网络情形成立**，而 Manual 明文提供了「用多个二值网络表示离散关系层级」的路线。这实质削弱了 `12` 对 SAOM 的一项主要排除论据。第二条反证：「三函数完美共线」很可能是**实践正确**的（这正是 RSiena 用 evaluation 处理删除、creation 处理新增的原因），但报告把它当作**已引证的硬限制**陈述，无出处 = 引用精度缺陷。",
+   "strongest_counterevidence": "** **同一份 Manual 的同一句话既给了限制也给了绕过限制的官方路径。** `12` 引用了前半句、丢掉了后半句，于是「严格二值 → 违反 LHRM 混合态表示」这条推论**只对单网络情形成立**，而 Manual 明文提供了「用多个二值网络表示离散关系层级」的路线。这实质削弱了 `12` 对 SAOM 的一项主要排除论据。第二条反证：「三函数完美共线」很可能是**实践正确**的（这正是 RSiena 用 evaluation 处理删除、creation 处理新增的原因），但报告把它当作**已引证的硬限制**陈述，无出处 = 引用精度缺陷。\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `G-C15`（同属 SAOM 排除性论证）",
+   "duplicate_of": "** `G-C15`（同属 SAOM 排除性论证）\n** `RECLASSIFY_AS_METHOD_LIMIT` — (i) **要求 `12` 补上** Manual 的例外句，并据此下调「二值化违反混合态表示」的力度；(ii) **要求为「三函数完美共线」补出处**，否则降级为无源断言；(iii) 两条合起来意味着 `12` 的 SAOM 排除论证只剩**单边 tie 控制**这一条（`G-C15`），而该条自带限定语。",
+   "recommendation_to_architect": "** `RECLASSIFY_AS_METHOD_LIMIT` — (i) **要求 `12` 补上** Manual 的例外句，并据此下调「二值化违反混合态表示」的力度；(ii) **要求为「三函数完美共线」补出处**，否则降级为无源断言；(iii) 两条合起来意味着 `12` 的 SAOM 排除论证只剩**单边 tie 控制**这一条（`G-C15`），而该条自带限定语。\n---",
+   "_locator": {
+    "line_start": 313,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C17",
+   "_title": "G-C17 — `12` 的「不存在可比较的既有关系 ABM」强负结论",
+   "claim": "12` §0 第 1 条（headline）：**不存在**可与 LHRM 对象直接比较的既有关系 ABM；LHRM 在「关系内部的、方向化的、保留 Unknown 的时间索引状态」这个维度上「不是落后，而是**孤立**」。§1：「通过 C5 的：**本 lane 未找到任何一个**。」\n** `12` §0（行 15、37）、§10.1 第 3 点（行 380）、§12（行 430）、§13（行 447）",
+   "source_report": "** `12` §0（行 15、37）、§10.1 第 3 点（行 380）、§12（行 430）、§13（行 447）\n** `WRONG-SCOPE` — 该负结论的**层级与被陈述的层级不匹配**：它是「在已检索场所内未找到」，被表述为「不存在」。",
+   "verdict": "** `WRONG-SCOPE` — 该负结论的**层级与被陈述的层级不匹配**：它是「在已检索场所内未找到」，被表述为「不存在」。\n** 检索面我逐项核过 — `VERIFIED_BY_ME`：覆盖的检索场所 = JASSS（`jasss.org`）、CoMSES（2 个 codebase）、Mesa / Repast / MATSim / Concordia / AgentSociety / Agents.jl 的 GitHub 与官网、几个具名 arXiv / ACL / NSF-PAR 页面。**未检索的** = `APIM`（`12` §3.1 自标 `UNKNOWN`，§11 非主张 12 自称「本报告**已知的最大缺口**」）、二人方法学其余分支（cross-lagged / dynamic panel / dyadic latent transition）、`Kenny & Kashy (2015)` 多人层（`12` §13 行动建议 4 自己要求补做）、`NetLogo` / `MASON`（`12` §2.3 自标 `UNKNOWN_AS_OF`，只有 Mesa README 的二手指纹）、APA PsycNet / Scopus / Web of Science / SSRN / *Social Networks* / *Sociological Methods & Research*、关系科学内的计算建模文献（不发表于 JASSS）。",
+   "supporting_refs": "** 检索面我逐项核过 — `VERIFIED_BY_ME`：覆盖的检索场所 = JASSS（`jasss.org`）、CoMSES（2 个 codebase）、Mesa / Repast / MATSim / Concordia / AgentSociety / Agents.jl 的 GitHub 与官网、几个具名 arXiv / ACL / NSF-PAR 页面。**未检索的** = `APIM`（`12` §3.1 自标 `UNKNOWN`，§11 非主张 12 自称「本报告**已知的最大缺口**」）、二人方法学其余分支（cross-lagged / dynamic panel / dyadic latent transition）、`Kenny & Kashy (2015)` 多人层（`12` §13 行动建议 4 自己要求补做）、`NetLogo` / `MASON`（`12` §2.3 自标 `UNKNOWN_AS_OF`，只有 Mesa README 的二手指纹）、APA PsycNet / Scopus / Web of Science / SSRN / *Social Networks* / *Sociological Methods & Research*、关系科学内的计算建模文献（不发表于 JASSS）。\n   报告**自己**的两处限定 — `VERIFIED_BY_ME`：`12` §11 非主张第 7 条「**不主张** `JuSpace`/`smallslm`/`ASON`/`SoS` 已被证明『不存在』——只主张**本次在指定渠道内未能核实**」（行 416）；`12` §12 第一行「本 lane 最重要未知，**倾向**『不存在 / 极少』… **若 R04 找到此类模型，本报告 §10 裁决需修正**」（行 430）。\n** **反证在报告内部，不在外部。** 报告同时说「不存在」（§0 headline、§10.1.3 无限定）与「未找到 / 倾向不存在 / 若被找到则需修正」（§1、§11.7、§12）。**一个报告不能同时持有这两者。** 而且 §13 给出 `status = SUCCESS` 并指示 parent「把 §10.3 的一句话裁决作为 synthesis 的一个独立小节保留。它是本 lane **最难被后续 lane 推翻**的结论」—— **把一个未加限定的负结论提升为最稳固结论，这是把 hedge 从 headline 移到了脚注。** 最强反证检索：我枚举了 `12` §12 的 13 个 `UNKNOWN` 条目，其中至少 5 条（`APIM`、`NetLogo/MASON`、`Angus & Hassani-Mahmooei`、`Guizzetti`、`ten Brooke`）直接削弱其覆盖声明。**我没有找到一份可与 LHRM 对象直接比较的关系 ABM —— 但我也无法确认不存在，而 `12` 自己承认最大的方法学分支没查。**",
+   "strongest_counterevidence": "** **反证在报告内部，不在外部。** 报告同时说「不存在」（§0 headline、§10.1.3 无限定）与「未找到 / 倾向不存在 / 若被找到则需修正」（§1、§11.7、§12）。**一个报告不能同时持有这两者。** 而且 §13 给出 `status = SUCCESS` 并指示 parent「把 §10.3 的一句话裁决作为 synthesis 的一个独立小节保留。它是本 lane **最难被后续 lane 推翻**的结论」—— **把一个未加限定的负结论提升为最稳固结论，这是把 hedge 从 headline 移到了脚注。** 最强反证检索：我枚举了 `12` §12 的 13 个 `UNKNOWN` 条目，其中至少 5 条（`APIM`、`NetLogo/MASON`、`Angus & Hassani-Mahmooei`、`Guizzetti`、`ten Brooke`）直接削弱其覆盖声明。**我没有找到一份可与 LHRM 对象直接比较的关系 ABM —— 但我也无法确认不存在，而 `12` 自己承认最大的方法学分支没查。**\n** `NO`（研究表述问题，不涉及 canonical）",
+   "requires_canonical_change": "** `NO`（研究表述问题，不涉及 canonical）\n** `YES:一个短 lane 专门检索 (i) APIM + 二人动态回归/多层模型 + Kenny & Kashy (2015)；(ii) 非 JASSS 场所（Social Networks / SM&R / PsycNet / SSRN）的 dyadic-state ABM；(iii) NetLogo/MASON/SoS 存在性与维护状态`",
+   "needs_experiment_or_data": "** `YES:一个短 lane 专门检索 (i) APIM + 二人动态回归/多层模型 + Kenny & Kashy (2015)；(ii) 非 JASSS 场所（Social Networks / SM&R / PsycNet / SSRN）的 dyadic-state ABM；(iii) NetLogo/MASON/SoS 存在性与维护状态`\n** `G-C18`",
+   "duplicate_of": "** `G-C18`\n** `REJECT` — 拒绝以「不存在」形式引用。**必须**改写为「**在已检索场所（JASSS / CoMSES / 具名框架清单 / 三个负名核验）内未找到；`APIM` 分支、二人方法学多层模型、以及非 JASSS 的社会网络计算文献均未检索；`NetLogo`/`MASON` 仅有二手指纹**」。这是措辞修正，不是结论推翻。",
+   "recommendation_to_architect": "** `REJECT` — 拒绝以「不存在」形式引用。**必须**改写为「**在已检索场所（JASSS / CoMSES / 具名框架清单 / 三个负名核验）内未找到；`APIM` 分支、二人方法学多层模型、以及非 JASSS 的社会网络计算文献均未检索；`NetLogo`/`MASON` 仅有二手指纹**」。这是措辞修正，不是结论推翻。\n---",
+   "_locator": {
+    "line_start": 331,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C18",
+   "_title": "G-C18 — `12` 的 ABM 裁决「主要是一个隐喻生成器」是否与比例相称",
+   "claim": "对 LHRM 第一阶段目标（表示完备性 + Case Bank 逐句映射），ABM **不是正确工具**；「对 LHRM 声明的问题，ABM 目前主要是一个隐喻生成器」。\n** `12` §10.1、§10.3（行 369–394）、§10.4（行 396–405）",
+   "source_report": "** `12` §10.1、§10.3（行 369–394）、§10.4（行 396–405）\n** `PLAUSIBLE` — 结论方向可辩护，但报告**低配了自己的正面证据**，且推导链依赖 `G-C17` 的未加限定负结论。",
+   "verdict": "** `PLAUSIBLE` — 结论方向可辩护，但报告**低配了自己的正面证据**，且推导链依赖 `G-C17` 的未加限定负结论。\n** 我把 §10 的理由与 §8 的 10 条 `MODEL_HYPOTHESIS` 逐条对撞 — `VERIFIED_BY_ME`：",
+   "supporting_refs": "** 我把 §10 的理由与 §8 的 10 条 `MODEL_HYPOTHESIS` 逐条对撞 — `VERIFIED_BY_ME`：\n   - **§8 `I2`（creation/endowment/evaluation → LHRM §6 `Action/Event` 落点，「三者的更新律不可合并」）** 被降级为「分类本身是模型假设，不是观察事实」，且**从未进入 §10 的裁决**（我逐条检 §10.1–§10.4，`I2` 出现 0 次）。但这是一条**对 `CURRENT_ARCHITECTURE.md` §6 `Action/Event` 落点的离散化方案**，与「是否用 ABM」**正交** —— 它即使完全不做模拟也成立。\n   - **§8 `I6`（MATSim iterative replanning）** 被 `12` 自己称为「**替代 hand-tuned 增量律的唯一现成路线**」，紧接着写「目前不可用」（因 LHRM 缺目标分布）。若这是唯一现成路线，ABM 在转移律层就不是「隐喻来源」而是「候选架构」。**§10.3 的措辞与 §8 I6 直接冲突。**\n   - **§2.1 Repast 行**：「**Context/Projection 二分值得读**：Context 存可变状态、Projection 只读派生量 —— 这正是 LHRM `WorldState` vs readout 的工程对应」（`12` 自述该框架 20+ 年开发、New BSD license、Simphony 2.11.0 (2024-07-01)）— `VERIFIED_BY_ME`（行 48）。\n   - **§8 `I8`（Concordia GM/player 分离 → 等价于 `Reality != Observation != Belief`）** 同上（行 315、203）。\n   - §10.1 的三条理由我核了：理由 1「ABM 对表示完备性零贡献」`VERIFIED`（定义上正确）；理由 2「主动增加风险面」（C7/C8/C10/C11/C12/C15 均有出处）；理由 3 依赖 `G-C17`。\n** §10.1 理由 1「ABM 对表示完备性零贡献」在**狭义上**正确，但报告自己在 §10.2 承认了第三种正当角色：「**表示的压力测试**：用模拟轨迹去撞 schema，看是否出现 `MAPPING_FAILURE` 级的不可表示状态。这**可能是 ABM 对 LHRM 唯一真正独特的价值**」—— **这句话直接反驳 §10.3 的「主要是一个隐喻生成器」**。报告在同一份文件里既说「零贡献」又说「唯一真正独特的价值」。最强反证检索：我逐条检了 `CURRENT_ARCHITECTURE.md` §1（Representation before scalarization）、§6（State/Action/Belief/Constraint 分离）、§9（measurement 原则）—— 三者**都不依赖任何模拟**，所以 §10.1 理由 1 成立。但**理由 1 证明的是「ABM 不是阶段 1 的必要工具」，不是「ABM 主要是隐喻生成器」**。后者是更强的、且被报告自己的 §10.2 与 §8 I2/I6/I8 反驳的论断。",
+   "strongest_counterevidence": "** §10.1 理由 1「ABM 对表示完备性零贡献」在**狭义上**正确，但报告自己在 §10.2 承认了第三种正当角色：「**表示的压力测试**：用模拟轨迹去撞 schema，看是否出现 `MAPPING_FAILURE` 级的不可表示状态。这**可能是 ABM 对 LHRM 唯一真正独特的价值**」—— **这句话直接反驳 §10.3 的「主要是一个隐喻生成器」**。报告在同一份文件里既说「零贡献」又说「唯一真正独特的价值」。最强反证检索：我逐条检了 `CURRENT_ARCHITECTURE.md` §1（Representation before scalarization）、§6（State/Action/Belief/Constraint 分离）、§9（measurement 原则）—— 三者**都不依赖任何模拟**，所以 §10.1 理由 1 成立。但**理由 1 证明的是「ABM 不是阶段 1 的必要工具」，不是「ABM 主要是隐喻生成器」**。后者是更强的、且被报告自己的 §10.2 与 §8 I2/I6/I8 反驳的论断。\n** `NO`（`12` §10.4.1「不要在 `docs/foundation/` 引入 ABM 依赖」是 `AI_RECOMMENDATION` 而非 `Human_requirement`，标注正确 — `VERIFIED_BY_ME`，行 396–398）",
+   "requires_canonical_change": "** `NO`（`12` §10.4.1「不要在 `docs/foundation/` 引入 ABM 依赖」是 `AI_RECOMMENDATION` 而非 `Human_requirement`，标注正确 — `VERIFIED_BY_ME`，行 396–398）\n** `NO`（裁决不需要实验；需要的是 §12 的检索缺口被填上）",
+   "needs_experiment_or_data": "** `NO`（裁决不需要实验；需要的是 §12 的检索缺口被填上）\n** `G-C17`",
+   "duplicate_of": "** `G-C17`\n** `HOLD_FOR_EVIDENCE` — **不要按 `12` §13 的指示把 §10.3 原样提升为 synthesis 独立小节。** 若要保留，措辞须改为：「ABM 对阶段 1 表示完备性**不是必要工具**，且在无校准数据时**主动增加**伪影面；但 (i) 用模拟轨迹撞 schema 可能是 ABM 对 LHRM **唯一独特**的贡献（§10.2），(ii) `creation/endowment/evaluation` 提供了与模拟无关的 `Action/Event` 落点离散化（§8 I2），(iii) Repast 的 Context/Projection 与 Concordia 的 GM/player 分离**外部佐证了 canonical 已有决策**（§2.1、§8 I8），(iv) MATSim 式 replanning 是替代 hand-tuned 增量律的唯一现成路线（§8 I6），前三条不应被「隐喻生成器」四字吞掉。」",
+   "recommendation_to_architect": "** `HOLD_FOR_EVIDENCE` — **不要按 `12` §13 的指示把 §10.3 原样提升为 synthesis 独立小节。** 若要保留，措辞须改为：「ABM 对阶段 1 表示完备性**不是必要工具**，且在无校准数据时**主动增加**伪影面；但 (i) 用模拟轨迹撞 schema 可能是 ABM 对 LHRM **唯一独特**的贡献（§10.2），(ii) `creation/endowment/evaluation` 提供了与模拟无关的 `Action/Event` 落点离散化（§8 I2），(iii) Repast 的 Context/Projection 与 Concordia 的 GM/player 分离**外部佐证了 canonical 已有决策**（§2.1、§8 I8），(iv) MATSim 式 replanning 是替代 hand-tuned 增量律的唯一现成路线（§8 I6），前三条不应被「隐喻生成器」四字吞掉。」\n---",
+   "_locator": {
+    "line_start": 347,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C19",
+   "_title": "G-C19 — 三个框架名的证伪核验（`JuSpace` / `smallslm` / `ASON`）",
+   "claim": "12` §2.3：任务书候选中的 `JuSpace` 实为 Julich 神经影像学工具箱（名字冲突，不采用）；`smallslm` 与 `ASON` 四路检索 0 命中，`UNVERIFIED_OR_UNKNOWN`，倾向不存在。\n** `12` §2.3（行 79–87）、§11 非主张 7（行 416）",
+   "source_report": "** `12` §2.3（行 79–87）、§11 非主张 7（行 416）\n** `JuSpace` `VERIFIED` / `smallslm` `VERIFIED` / `ASON` `PLAUSIBLE`（结论对，**检索不完整**）",
+   "verdict": "** `JuSpace` `VERIFIED` / `smallslm` `VERIFIED` / `ASON` `PLAUSIBLE`（结论对，**检索不完整**）\n**",
+   "supporting_refs": "**\n   - **`JuSpace`**：Crossref `10.1002/hbm.25244` → *Human Brain Mapping*，题名「**JuSpace**: A tool for spatial correlation analyses of magnetic resonance imaging data with nuclear imaging derived neurotransmitter maps」— `VERIFIED_BY_ME`。**确实是神经影像学工具箱，不是 ABM 框架。证伪成立。** 附注：Crossref `issued` = **2020**（online-first），`12` 写 Dukart et al. (2021)（= 期刊卷年）。**良性差异**，不构成缺陷。\n   - **`smallslm`**：GitHub Search API `q=smallslm&in:name` → `total_count: 0` — `VERIFIED_BY_ME`（我自己跑的）。对照查询 `q=repast&in:name` → 316（`12` 记录为 421；**GitHub search 计数会漂移，「对照通道有效」这一结论成立**）— `VERIFIED_BY_ME`。\n   - **`ASON`**：`q=ASON+agent+social+network` → 0 — `VERIFIED_BY_ME`（复现 `12` 的查询）。**但 `q=ASON&in:name` → `total_count: 967`** — `VERIFIED_BY_ME`（**这条 `12` 没跑**）。我检查了前 5 条命中：`afollestad/ason`（[DEPRECATED] .NET DI）、`AlexGoOn/ason`（.NET 应用脚本控制）、`5-Ason/ason-spring-cloud`、`jtenner/ason`（AssemblyScript 紧凑存储格式）、`hemashushu/ason`（JSON 派生数据序列化格式）。**967 个命中中无一为 ABM 框架。**\n** (a) 对 `ASON`：**最明显的查询（裸名）没跑。** 结论（不是 ABM 框架）不仅成立，而且**比 `12` 报告的更稳固**（967 个名字命中全是 DI 库 / 序列化格式 / Android DSL）。但「967 命中 0 相关」是**我**做的检索，不是 `12` 做的 → `corroboration: NON_INDEPENDENT`（同一检索面，结论一致但证据不同源）。(b) 对 `smallslm`：GitHub/arXiv/Crossref/DuckDuckGo 四路 0 命中仍**不排除**非英文或非公开来源；`12` §11.7 已正确声明 `NEGATIVE ≠ DISPROVEN` — `VERIFIED_BY_ME`（行 416）。(c) **真正的覆盖缺口不在这三个名字**：`NetLogo` 与 `MASON` 是该领域**最主要**的两个框架（MASON 还是 CoMSES 的母平台），`12` 对二者只有 Mesa README 的二手指纹，却在同一张表里完成了对三个冷门名字的四路检索。**投入的检索强度与目标的先验概率不成比例。**（我未核实 `NetLogo`/`MASON` —— 这是我在本条上的未闭合缺口。）",
+   "strongest_counterevidence": "** (a) 对 `ASON`：**最明显的查询（裸名）没跑。** 结论（不是 ABM 框架）不仅成立，而且**比 `12` 报告的更稳固**（967 个名字命中全是 DI 库 / 序列化格式 / Android DSL）。但「967 命中 0 相关」是**我**做的检索，不是 `12` 做的 → `corroboration: NON_INDEPENDENT`（同一检索面，结论一致但证据不同源）。(b) 对 `smallslm`：GitHub/arXiv/Crossref/DuckDuckGo 四路 0 命中仍**不排除**非英文或非公开来源；`12` §11.7 已正确声明 `NEGATIVE ≠ DISPROVEN` — `VERIFIED_BY_ME`（行 416）。(c) **真正的覆盖缺口不在这三个名字**：`NetLogo` 与 `MASON` 是该领域**最主要**的两个框架（MASON 还是 CoMSES 的母平台），`12` 对二者只有 Mesa README 的二手指纹，却在同一张表里完成了对三个冷门名字的四路检索。**投入的检索强度与目标的先验概率不成比例。**（我未核实 `NetLogo`/`MASON` —— 这是我在本条上的未闭合缺口。）\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT` — 三个名字的证伪**成立**，可作为「上游清单含错名」的发现上报。**要求**：(i) 补 `q=ASON&in:name`（967 命中 0 相关）到记录；(ii) 明确 `NetLogo`/`MASON` 为 `UNKNOWN_AS_OF` 且**不得**被读作「已排除」；(iii) 附注 Dukart 2020/2021 年份差异属正常。",
+   "recommendation_to_architect": "** `ACCEPT` — 三个名字的证伪**成立**，可作为「上游清单含错名」的发现上报。**要求**：(i) 补 `q=ASON&in:name`（967 命中 0 相关）到记录；(ii) 明确 `NetLogo`/`MASON` 为 `UNKNOWN_AS_OF` 且**不得**被读作「已排除」；(iii) 附注 Dukart 2020/2021 年份差异属正常。\n---",
+   "_locator": {
+    "line_start": 367,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "G-C20",
+   "_title": "G-C20 — `13` 的「多个 LLM 达成一致 = 失败模式」元论证的**证据链失效**（本 lane 最高严重度）",
+   "claim": "13` §9.6（自标「**本报告最强的一条元论证**」）与 §0 立场声明：多个 LLM 在模糊输入上**自发收敛到同一似真解释**，多个模型一致「不是因为对，而是因为共享训练分布与『选取最连贯叙述』的归纳偏置」；检测 arXiv:2602.13224 的「检测 AUROC **域内 0.76–0.99 但跨域 0.50（随机）**，判别方向跨域近正交（平均余弦 **−0.07**）」；→ 「**自发产生的虚假内容与真实内容在可检测性上不可区分**」；推论「**『多个 LLM 达成一致』是 F5/F6 的实例，不是它的解药**」。\n** `13` §0 立场声明（行 15）、§9.6（行 396–407）、§10 `R16`（行 480）、§11.2（行 510）、§14 非主张 4（行 608）",
+   "source_report": "** `13` §0 立场声明（行 15）、§9.6（行 396–407）、§10 `R16`（行 480）、§11.2（行 510）、§14 非主张 4（行 608）\n** **`UNSUPPORTED`（数字）+ `WRONG-SCOPE`（推论）**；规范性结论单独判 `PLAUSIBLE`，但**不成立于报告给出的证据链**。",
+   "verdict": "** **`UNSUPPORTED`（数字）+ `WRONG-SCOPE`（推论）**；规范性结论单独判 `PLAUSIBLE`，但**不成立于报告给出的证据链**。\n** 我抓取 arXiv:2602.13224 的官方 abstract 页与 v3 全文 HTML（`https://arxiv.org/html/2602.13224v3`，236,026 chars，strip 后 57,368 chars）并逐字核对 — `VERIFIED_BY_ME`：",
+   "supporting_refs": "** 我抓取 arXiv:2602.13224 的官方 abstract 页与 v3 全文 HTML（`https://arxiv.org/html/2602.13224v3`，236,026 chars，strip 后 57,368 chars）并逐字核对 — `VERIFIED_BY_ME`：\n   - **题名不符**：实际为「A Geometric Taxonomy of **Hallucinations** in LLMs」（复数），作者 Javier Marín。`13` 写作「Hallucination」（单数）。**良性，但说明未逐字核对。**\n   - **论文实际结论（abstract）**：「(1) query-proximate unfaithfulness is detectable by an angular ratio; (2) **confabulation outside the plausibility region produces a directional signature that outperforms NLI on expert-annotated error**; (3) factual errors sharing vocabulary and frame with correct answers are **not separable** by angular geometry」；数据集为「a **212-pair human-confabulated** dataset across nine domains using provoked confabulation」。\n   - **论文的检测率（Table 3）**：「all-MiniLM-L6-v2: Human **69.3%** / LLM **72.6%** / HaluEval **95.4%**；all-mpnet-base-v2: Human **78.3%** / LLM **75.9%** / HaluEval **97.2%**」；paired cos：Human **.722/.766**、LLM **.858/.888**、HaluEval **.114**。\n   - **论文的显著性陈述（逐字）**：「**All Human and LLM rates significantly above 50% (p < 10⁻⁸, binomial)**」。\n   - **近机会水平的那个数（逐字）**：「NLI on same 212-pair human confabulations: **57.5% detection (AUROC 0.536)**, barely above chance」。\n   - 全文检索 `0.50`、`cross-domain`、`0.76`（作为 AUROC）、`0.99`、`0.07`、`near-chance` — **全部未命中** — `VERIFIED_BY_ME`。\n** **反证来自 `13` 自己引用的那篇论文，四重：**",
+   "strongest_counterevidence": "** **反证来自 `13` 自己引用的那篇论文，四重：**\n   (a) **数字错配**：论文的近机会值是 **AUROC 0.536**，且它属于 **NLI 基线**，不是论文自己方法的结果，更不是「跨域 AUROC」。`13` 的「跨域 0.50（随机）」**在该论文中不存在**。\n   (b) **AUROC 与 cos 混用**：「域内 0.76–0.99」中的 0.76 对应论文里 all-mpnet/Human 的 **paired cos = .766**（余弦相似度，不是 AUROC）；0.99 在论文中**完全不存在**（论文自域内 HaluEval 检测率是 95.4% / 97.2%）。\n   (c) **推论被论文直接反驳**：论文明确写「All Human and LLM rates **significantly above 50%**（p < 10⁻⁸）」，且 abstract 的 (2) 说 confabulation **produces a directional signature that outperforms NLI**。→「自发产生的虚假内容与真实内容在可检测性上**不可区分**」与被引论文的显著性检验**方向相反**。论文的 \"not separable\" 条款 (3) 限定在 **Type III「与正确答案共享词汇与句式框架的事实错误」**，不适用于「自发 confabulation 总体」。\n   (d) **构念替换**：该论文测的是**单模型输出的可检测性**（用**一个** LLM `claude-sonnet-4-5` 生成 confabulation），**全文没有任何跨模型一致性测量**。把「单输出难检测」搬到「多模型一致 = 失败模式」是一个 **non-sequitur** —— 两条不同的构念之间没有桥。\n   (e) 对 `Nakamura et al.` 的使用方向相反：见 `G-C28`。\n   (f) **剩下的、更强的论证 `13` 没有给**：「多模型一致是失败模式」的**正确**理由是**共享训练先验 → 误差相关**（一个标准的、**不需要**任何幻觉论文的论证）。`13` 手里有全部材料（§2.2(c) 的「歧义驱动」、§8.1 的 verbalized confidence 与正确性解耦、§13.3.2 的 `CROSS_RUN_DISPERSION` 不是精度），但它把结论挂在了一个被误述的数字上。\n   **补充事实（对 parent 重要）**：该论文**确实**支持一个更窄、正确的命题 —— 「detection rates on HaluEval (88–97%) **do not transfer** to human confabulations (69–78%)」，即**benchmark 系统性高估自发 confabulation 的可检测性**。`13` 没有用它这个方式。这是可救的版本。\n** `NO`（研究表述与证据链缺陷，不涉及 canonical）。但 `13` §10 `R16` 作为**设计规范**不应因此被否。",
+   "requires_canonical_change": "** `NO`（研究表述与证据链缺陷，不涉及 canonical）。但 `13` §10 `R16` 作为**设计规范**不应因此被否。\n** `YES:跨模型一致性 vs 人类一致性的直接测量（在 LHRM 自己的 dyad 抽取任务上，不是政治学文本分类）。注意：这是 `13` 自己的 `U` 表里没有的缺口`",
+   "needs_experiment_or_data": "** `YES:跨模型一致性 vs 人类一致性的直接测量（在 LHRM 自己的 dyad 抽取任务上，不是政治学文本分类）。注意：这是 `13` 自己的 `U` 表里没有的缺口`\n** `NONE`（`13` §14 非主张 4「不主张 LLM 一致度代表正确性。§9.6 是本报告最强的单条主张」是同一主张的复述）",
+   "duplicate_of": "** `NONE`（`13` §14 非主张 4「不主张 LLM 一致度代表正确性。§9.6 是本报告最强的单条主张」是同一主张的复述）\n** `REJECT` — **拒绝以现有形式把「跨域 AUROC 0.50」与「多个 LLM 达成一致是失败模式」当作已建立结论带入 synthesis。** 具体要求：(i) 更正数字与归属（0.536 / NLI 基线 / 非「跨域」）；(ii) 删除或重写「不可区分」—— 被引论文的显著性检验与之相反；(iii) 改述 `Nakamura et al.` 的结论方向（见 `G-C28`）；(iv) **保留 `R16` 作为保守规范，但把其依据改写为不依赖该数字的两条**：共享训练先验导致误差相关（`13` §2.2(c) 的歧义驱动发现）、以及 `13` 自己的 §13.3.2「`CROSS_RUN_DISPERSION` 不是精度」。**这是我在本 cluster 里发现的最高严重度问题，因为 task prompt 指出 parent synthesis 已提升该主张。**",
+   "recommendation_to_architect": "** `REJECT` — **拒绝以现有形式把「跨域 AUROC 0.50」与「多个 LLM 达成一致是失败模式」当作已建立结论带入 synthesis。** 具体要求：(i) 更正数字与归属（0.536 / NLI 基线 / 非「跨域」）；(ii) 删除或重写「不可区分」—— 被引论文的显著性检验与之相反；(iii) 改述 `Nakamura et al.` 的结论方向（见 `G-C28`）；(iv) **保留 `R16` 作为保守规范，但把其依据改写为不依赖该数字的两条**：共享训练先验导致误差相关（`13` §2.2(c) 的歧义驱动发现）、以及 `13` 自己的 §13.3.2「`CROSS_RUN_DISPERSION` 不是精度」。**这是我在本 cluster 里发现的最高严重度问题，因为 task prompt 指出 parent synthesis 已提升该主张。**\n---",
+   "_locator": {
+    "line_start": 385,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C21",
+   "_title": "G-C21 — `13` §13.2 的六个表示忠实度指标：目标重定向合法，但指标集**简并最优**",
+   "claim": "13` §13.1 主张 LHRM 第一产物是 latent dyad state，没有 ground truth 也**不应该**有，因此「抽取准确率」在 LHRM 语境下**没有定义**；§13.2 提出六个**完全可机器判定**的表示忠实度指标替代之（`SPAN_SUPPORT_RATE`=1.0、`ENTITY_INSERTION_RATE`=0、`UNKNOWN_PRESERVATION_RATE`=1.0、`FUTURE_LEAK_RATE`=0、`HOLDER_LEAK_RATE`=0、`DISTINCTION_LEAK_RATE`=0）；§14.6 声明该方案「不主张是充分的」。\n** `13` §13.1（行 545–556）、§13.2（行 557–570）、§13.5（行 587–599）、§14.6（行 610）",
+   "source_report": "** `13` §13.1（行 545–556）、§13.2（行 557–570）、§13.5（行 587–599）、§14.6（行 610）\n** §13.1 目标重定向 `VERIFIED`（方法论论证成立）；§13.2 的指标集 `UNSUPPORTED` 为充分评估工具（存在两个平凡策略同时最大化全部六项，`13` 未承认）",
+   "verdict": "** §13.1 目标重定向 `VERIFIED`（方法论论证成立）；§13.2 的指标集 `UNSUPPORTED` 为充分评估工具（存在两个平凡策略同时最大化全部六项，`13` 未承认）\n**",
+   "supporting_refs": "**\n   - §13.1 的三条否证理由我逐条检过并**全部成立**：(i) 与人工 gold 比 F1/κ → gold 一致度天花板（Fu et al. 2024 报告 81.9 F1 — `NOT_OPENED`；Artstein & Poesio 2008 的 chance correction 问题）；(ii) 与 LLM 一致度比 → 循环论证（报告自己指认）；(iii) 与真实关系状态比 → 不可观测且伦理上不可获取。→ **这个「accuracy 无定义」的论证是本 cluster 里最扎实的单个方法论判断。**\n   - §13.2 原文「这六个指标有一个共同性质：**它们测的不是『抽得准不准』，而是『有没有凭空引入 / 有没有把未知压实 / 有没有把叙述当事实』**」— `VERIFIED_BY_ME`（行 570）。**报告在这里用文字说出了局限，但没有说出局限的严重形式。**\n   - §13.5 步骤 6 原文「对 `UNKNOWN_PRESERVATION_RATE < 1.0` 的每一处，生成一个 codebook 修订候选」— `VERIFIED_BY_ME`（行 596）。\n   - 六个指标全部是**单边缺陷检测器**（目标 = 1.0 或 = 0），**没有任何召回/覆盖率项** — `VERIFIED_BY_ME`（逐条读定义）。\n** **两个平凡策略同时最大化全部六项指标，而 `13` 都没有承认。**",
+   "strongest_counterevidence": "** **两个平凡策略同时最大化全部六项指标，而 `13` 都没有承认。**\n   **(a) 完全弃权（empty output）**：若抽取层不输出任何 slot，则 `SPAN_SUPPORT_RATE`（在零 slot 上）= 1.0、`ENTITY_INSERTION_RATE` = 0、`UNKNOWN_PRESERVATION_RATE` = 1.0、`FUTURE_LEAK_RATE` = 0、`HOLDER_LEAK_RATE` = 0、`DISTINCTION_LEAK_RATE` = 0。**六项全中。** 且由 `13` §13.5 步骤 6，一个完美弃权的抽取器会产出**零条** codebook 修订候选 —— **报告自己的修订回路被弃权策略击穿。**\n   **(b) 复制 fixture 的状态列**：把 fixture 的 `fact_status` / `fact_or_narrative_status` 原样复制进抽取记录，则 `UNKNOWN_PRESERVATION_RATE` = 1.0 精确达成、`DISTINCTION_LEAK_RATE` = 0。**这在 `13` 自己的语义接口下是合法动作**（`13` §11.1 允许「忠实 paraphrase」与枚举型输出）。\n   **(c) gold 与输入同源**：见 `G-C29`（`13` 对其他指标施加循环论证标准，对自己的 gold 不施加）。\n   我检索了 `13` 是否承认任何一条：全文检索 `abstain`／`弃权`／`coverage`／`floor`／`recall`／`退化为空` = **0 命中**。`13` §14.6「不主张 §13 的度量方案是充分的。它是**在现有条件下唯一诚实可做**的度量」—— 「不充分」远弱于「承认两个平凡策略可使它完美」。\n   **最强反方论点**（我检查过）：有人会说弃权策略违反 `13` §11.1 的**功能要求**（抽取层必须切分单元、定位 span、提出候选映射），所以在功能上不可行。**这可以救 §11 但救不了 §13.2** —— §13.2 把六项指标称为「完全可机器判定」并**不附任何覆盖率前提**；若弃权在指标上满分，则该指标集无法区分「合规地做了功」与「什么都没做」。这是指标集的性质，不是功能层的问题。\n** `NO`（LLM 层评估设计，不改 ontology）。但**评估设计进入 canonical validation 纪律时需同步改**。",
+   "requires_canonical_change": "** `NO`（LLM 层评估设计，不改 ontology）。但**评估设计进入 canonical validation 纪律时需同步改**。\n** `YES:一个 LHRM 式抽取器在冻结 fixture 上跑这六个指标 + 一个覆盖率下限；以及一个「gold 标签与输入分离」的评估设计`",
+   "needs_experiment_or_data": "** `YES:一个 LHRM 式抽取器在冻结 fixture 上跑这六个指标 + 一个覆盖率下限；以及一个「gold 标签与输入分离」的评估设计`\n** `G-C29`（同一缺陷的另一面：gold 同源）",
+   "duplicate_of": "** `G-C29`（同一缺陷的另一面：gold 同源）\n** `ACCEPT` §13.1 的目标重定向（**保留**：这是本 cluster 最正确的方法论判断之一）**+ `REJECT`** §13.2 的六指标集作为评估门。要求：(i) 显式承认**完全弃权最大化全部六项**；(ii) 加覆盖率/召回下限或明确「弃权在覆盖率低于 X 时记为失败」；(iii) 加 `G-C29` 的 gold 分离要求；(iv) 不用 `fact_or_narrative_status`（材料层）作为真值层 gold。",
+   "recommendation_to_architect": "** `ACCEPT` §13.1 的目标重定向（**保留**：这是本 cluster 最正确的方法论判断之一）**+ `REJECT`** §13.2 的六指标集作为评估门。要求：(i) 显式承认**完全弃权最大化全部六项**；(ii) 加覆盖率/召回下限或明确「弃权在覆盖率低于 X 时记为失败」；(iii) 加 `G-C29` 的 gold 分离要求；(iv) 不用 `fact_or_narrative_status`（材料层）作为真值层 gold。\n---",
+   "_locator": {
+    "line_start": 413,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C22",
+   "_title": "G-C22 — `13` 使用 `FIXTURE_003` 六次但从未记录其权利边界（高严重度披露遗漏）",
+   "claim": "13` 在 §1、§4.1、§5.3、§7.3、§9.2、§13.2 六处实质使用 `FIXTURE_003` 的 transcript 单元与 freeze rules，全文**不记录**该 fixture 的 `pointer_only` / `ai-train=no` / `GPTBot Disallow` 权利边界。\n** `13` 行 38、141、191、282、348、445、566（使用）与全文（缺失）",
+   "source_report": "** `13` 行 38、141、191、282、348、445、566（使用）与全文（缺失）\n** `VERIFIED` — 遗漏确实存在（穷尽检索）。",
+   "verdict": "** `VERIFIED` — 遗漏确实存在（穷尽检索）。\n**",
+   "supporting_refs": "**\n   - **使用侧（6 处实质 + 1 引用清单）** — `VERIFIED_BY_ME`（逐处定位）：行 38（把 `SC/transcript/pNN` 列为源 span 约定实例）、行 141（用 freeze rule 2 论证 `recording_time != recalled_event_time != event_time` 是 LHRM 领先点）、行 191（用 freeze rules 2/3/7 论证「访谈记录是状态的共同生产者」）、行 282（称 `FIXTURE_003` 的 knowledge-time 三分**比 PROV 更细**，可能是 LHRM 原创贡献点）、行 348–353（`F2` 的 Bad/Compliant 对照直接引用 `SC/transcript/p004–p011` 的晨间便条仪式与 `shelter`/`color television` 叙述层评价）、行 445（用 freeze rule 6 的 `reported_speaker_ref`）、行 566（用 freeze rule 5 作为 `FUTURE_LEAK_RATE` 的可判定性依据）。\n   - **缺失侧（穷尽检索）** — `VERIFIED_BY_ME`：对 `13` 全文做大小写不敏感子串检索：`rights` = 0、`pointer` = 0、`ai-train` = 0、`GPTBot` = 0、`robots` = 0、`POINTER` = 0、`HUMAN_REVIEW` = 0、`licence` = 0、`license` = 0、`copyright` = 0。→ **全部为 0。**\n   - **边界内容（我读了 `FIXTURE_003` §1）** — `VERIFIED_BY_ME`：「`© StoryCorps`，公开可读但**非 public-domain、非 CC**；`robots.txt` 含 `Content-Signal: search=yes,**ai-train=no**,use=reference`（EU 2019/790 reservation）+ `Disallow` for **GPTBot**/ClaudeBot/CCBot 等；无显式 transcript CC 授权。Eye 判定 `rights_policy=HUMAN_REVIEW_REQUIRED` → `POINTER_HASH_ONLY` fail-closed（`decide(\"HUMAN_REVIEW_REQUIRED\") → raw_allowed=false, representation_allowed=false, store_pointer_only=true`）。LHRM 本文件不存储 transcript/audio 原文，仅保存**忠实 paraphrase + 短锚点**」「下游…**不得**通过 Eye 获取 transcript body / Audio / `long-text-anchored/0.1` Representation」。\n** **最强反证：本报告自身没有发生权利违反。** `13` 只使用仓内已存在的 `faithful_paraphrase` + 锚点，而 fixture 明文允许这种用法（「仅保存忠实 paraphrase + 短锚点（fair use / fair dealing, 保留归属），不镜像全文」）；`13` 的 §9.2 对照引用的是**概述性内容**（晨间便条仪式、`shelter`/`color television` 作为 `narrator_evaluation` 不折算），不是逐字 transcript。因此**这不是侵权，是披露遗漏** —— 严重度来自遗漏的**后果**，不来自已发生的行为。",
+   "strongest_counterevidence": "** **最强反证：本报告自身没有发生权利违反。** `13` 只使用仓内已存在的 `faithful_paraphrase` + 锚点，而 fixture 明文允许这种用法（「仅保存忠实 paraphrase + 短锚点（fair use / fair dealing, 保留归属），不镜像全文」）；`13` 的 §9.2 对照引用的是**概述性内容**（晨间便条仪式、`shelter`/`color television` 作为 `narrator_evaluation` 不折算），不是逐字 transcript。因此**这不是侵权，是披露遗漏** —— 严重度来自遗漏的**后果**，不来自已发生的行为。\n   遗漏之所以仍是高严重度，有三条具体理由：(a) `13` **§7 整节就是关于「provenance 必须记录什么」**，并给出 10 字段最小记录。它遗漏了项目**唯一一条活的、未解决的**权利边界。(b) `13` 提出的管线（`FUTURE_LEAK_RATE`、R17 语种/语域检查、§11.1 的允许清单、以及 §5 的自适应追问）**默认可以把 LLM agent 指向该材料**。而 `ai-train=no` + `GPTBot Disallow` + `representation_allowed=false` 是**对 LLM 层设计的直接约束**，`13` 从未浮现它。(c) `13` §9.8 补充了「LLM 的**预训练记忆**是一条与窗口无关的旁路」并把它列为混淆变量 —— **但没有处理本项目自有语料的 `ai-train=no` 边界**，而后者比前者更直接地约束设计。\n   我检索了 `13` 是否以任何形式暗示了限制：唯一接近的是 §7.2 的 `epistemic_status` 与 §14.8 的「本报告不主张需要修改 canonical」—— **与权利无关**。\n** `YES` — 但**不是 ontology 层**。需要一个 LLM 层/评估设计的**权利约束记录**。**我无法指定确切的 canonical 目标文件**，因为 `docs/validation/VALIDATION_CORPUS_V0_1.md` 与 `docs/validation/*` 的读写权限在我的 cluster 之外（契约 §2 把 fixture 细节限定给 `I`/`K`）。`requires_canonical_change: YES`（需求层面确定），**文件位置 `UNSURE`**。最可能落点：`docs/validation/RIGHTS_CONSTRAINTS.md`（新文件）或 LLM 层 work order 的设计约束节。",
+   "requires_canonical_change": "** `YES` — 但**不是 ontology 层**。需要一个 LLM 层/评估设计的**权利约束记录**。**我无法指定确切的 canonical 目标文件**，因为 `docs/validation/VALIDATION_CORPUS_V0_1.md` 与 `docs/validation/*` 的读写权限在我的 cluster 之外（契约 §2 把 fixture 细节限定给 `I`/`K`）。`requires_canonical_change: YES`（需求层面确定），**文件位置 `UNSURE`**。最可能落点：`docs/validation/RIGHTS_CONSTRAINTS.md`（新文件）或 LLM 层 work order 的设计约束节。\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT` — 要求 (i) `13` 在 §7（provenance）与 §16（引用清单）记录 `FIXTURE_003` 的 `pointer_only / ai-train=no / GPTBot Disallow / representation_allowed=false / rights_policy=HUMAN_REVIEW_REQUIRED`；(ii) **更重要**：在任何 LLM 层设计文档中写明 **`FIXTURE_003` 不得作为抽取*目标*（只可作 paraphrase 级示例）** —— 因为 `representation_allowed=false` 意味着抽取层拿不到 transcript body，也不应经模型取得；(iii) 明确 `13` §9.2 与 §13.2 对该 fixture 的两处使用属**仓内 paraphrase 级**，合规但需标注。",
+   "recommendation_to_architect": "** `ACCEPT` — 要求 (i) `13` 在 §7（provenance）与 §16（引用清单）记录 `FIXTURE_003` 的 `pointer_only / ai-train=no / GPTBot Disallow / representation_allowed=false / rights_policy=HUMAN_REVIEW_REQUIRED`；(ii) **更重要**：在任何 LLM 层设计文档中写明 **`FIXTURE_003` 不得作为抽取*目标*（只可作 paraphrase 级示例）** —— 因为 `representation_allowed=false` 意味着抽取层拿不到 transcript body，也不应经模型取得；(iii) 明确 `13` §9.2 与 §13.2 对该 fixture 的两处使用属**仓内 paraphrase 级**，合规但需标注。\n---",
+   "_locator": {
+    "line_start": 437,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C23",
+   "_title": "G-C23 — `13` §7.1 的 W3C PROV 日期与文档集",
+   "claim": "PROV Working Group 于 **2013-04-30** 发布 12 份文档，其中四项为 W3C Recommendation：`PROV-DM`、`PROV-O`、`PROV-N`、`PROV-CONSTRAINTS`。\n** `13` §7.1（行 245–247）、§10 `R5`（行 469）、§12（行 536）",
+   "source_report": "** `13` §7.1（行 245–247）、§10 `R5`（行 469）、§12（行 536）\n** `VERIFIED` — 日期与 Recommendation 身份逐字核实通过。",
+   "verdict": "** `VERIFIED` — 日期与 Recommendation 身份逐字核实通过。\n** 我抓取 `https://www.w3.org/TR/2013/REC-prov-dm-20130430/` → `STATUS=200`，页面含 `W3C Recommendation` 标记，日期串「**30 April 2013**」— `VERIFIED_BY_ME`。`https://www.w3.org/TR/prov-dm/` → `200` — `VERIFIED_BY_ME`。「12 份文档 / 四项 Recommendation」的具体清单我**未逐份点验**（`PARTIAL`）。",
+   "supporting_refs": "** 我抓取 `https://www.w3.org/TR/2013/REC-prov-dm-20130430/` → `STATUS=200`，页面含 `W3C Recommendation` 标记，日期串「**30 April 2013**」— `VERIFIED_BY_ME`。`https://www.w3.org/TR/prov-dm/` → `200` — `VERIFIED_BY_ME`。「12 份文档 / 四项 Recommendation」的具体清单我**未逐份点验**（`PARTIAL`）。\n** `13` §16 把这条写成「W3C Provenance Working Group (2013-04-30). PROV-DM / PROV-O / PROV-N / PROV-CONSTRAINTS（W3C Recommendations）」— 正确。但 §12 的「Provenance 记录 / 证据强度 = **强（标准）**」这一格**过强**：PROV 是**模型/词汇**标准，不是**方法学正确性**标准；`13` §7.3 自己指出 PROV 不提供 slot 级溯源与 knowledge-time。证据强度格应标「**标准存在（强） / 方法学有效性（空）**」。检索了什么：无外部反证。",
+   "strongest_counterevidence": "** `13` §16 把这条写成「W3C Provenance Working Group (2013-04-30). PROV-DM / PROV-O / PROV-N / PROV-CONSTRAINTS（W3C Recommendations）」— 正确。但 §12 的「Provenance 记录 / 证据强度 = **强（标准）**」这一格**过强**：PROV 是**模型/词汇**标准，不是**方法学正确性**标准；`13` §7.3 自己指出 PROV 不提供 slot 级溯源与 knowledge-time。证据强度格应标「**标准存在（强） / 方法学有效性（空）**」。检索了什么：无外部反证。\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT` — 事实无误。但要求 `13` §12 把 provenance 行的「强」限定为「**标准存在**」，避免被下游读成「provenance 方案已被验证」。",
+   "recommendation_to_architect": "** `ACCEPT` — 事实无误。但要求 `13` §12 把 provenance 行的「强」限定为「**标准存在**」，避免被下游读成「provenance 方案已被验证」。\n---",
+   "_locator": {
+    "line_start": 457,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C24",
+   "_title": "G-C24 — 三份报告的引用著录错误（三处可确证）",
+   "claim": "(a) `11` §9 的 Olson, Russell & Sprenkle (1983) DOI 不可解析；(b) `12` 附录 A 把 Edmonds 误写为 Edwards；(c) `13` §9.6 把 arXiv:2602.13224 的题名单数化。\n** `11` §9 行 487；`12` 附录 A 行 470；`13` §9.6 行 400 / §16 行 688",
+   "source_report": "** `11` §9 行 487；`12` 附录 A 行 470；`13` §9.6 行 400 / §16 行 688\n** `VERIFIED`（三处均经我独立核实）",
+   "verdict": "** `VERIFIED`（三处均经我独立核实）\n**",
+   "supporting_refs": "**\n   - (a) `11` 写 `doi:10.1111/j.1545-5305.1983.00069.x` → Crossref **HTTP 404** — `VERIFIED_BY_ME`。正确 DOI 为 **`10.1111/j.1545-5300.1983.00069.x`**（`1545-5300`，非 `1545-5305`），*Family Process* 22(1)，题名「Circumplex Model of Marital and Family Systems: **Vl.** Theoretical Update」— `VERIFIED_BY_ME`。**题名、年份、卷均正确，仅 DOI 错。**\n   - (b) `12` 附录 A 写「**Edwards**, C., Moss, S. (2005). — 转述于 Windrum et al. 2007 §4.3；确切著录 `UNKNOWN`」。我在 Windrum 页面读到原文引用为「(**Edmonds and Moss 2005**)」— `VERIFIED_BY_ME`。→ **姓氏拼错**（`Edwards` → `Edmonds`）。`12` 已把该记录标为 `UNKNOWN` 著录，但**保留了一个错误的作者名**。\n   - (c) `13` 写「arXiv:2602.13224（*A Geometric Taxonomy of **Hallucination** in LLMs*）」；官方题名为「A Geometric Taxonomy of **Hallucinations** in LLMs」— `VERIFIED_BY_ME`。\n** 三处都是**低严重度**：(a) 论文本身可被题目检索到，只是 DOI 不可解析；(b) 报告已把该记录标为 `UNKNOWN`；(c) 单复数差异。**真正的意义不在单点错误，而在于它们与 `G-C3`（5 个格统计错 3 个）、`G-C14`（Dutton 无年份无 DOI、Dykstra 无著录、Olson DOI 错）合起来所显示的模式**：`11` 的引用质量梯度很陡 —— 顶层引文（Cicirelli、Johnson、Meyer & Allen、Gehr、Walton & Cohen）著录完整且我全部核实通过，**支撑中下层论点的引文大量缺 DOI、缺年份、缺期刊**（Dykstra、Dutton、Feeney 的部分、Silver、Argyle & Henderson（报告自标「经二次转引使用」）、Leib、Park et al.、`Reciprocity and Social Support`（作者名未取得）、Pruchno（DOI 未核）、Hillcoat-Nallétamby（作者/年份未核））。**`11` 的引用著录缺陷与论点的承重程度正相关 —— 这才是可报告的模式。**",
+   "strongest_counterevidence": "** 三处都是**低严重度**：(a) 论文本身可被题目检索到，只是 DOI 不可解析；(b) 报告已把该记录标为 `UNKNOWN`；(c) 单复数差异。**真正的意义不在单点错误，而在于它们与 `G-C3`（5 个格统计错 3 个）、`G-C14`（Dutton 无年份无 DOI、Dykstra 无著录、Olson DOI 错）合起来所显示的模式**：`11` 的引用质量梯度很陡 —— 顶层引文（Cicirelli、Johnson、Meyer & Allen、Gehr、Walton & Cohen）著录完整且我全部核实通过，**支撑中下层论点的引文大量缺 DOI、缺年份、缺期刊**（Dykstra、Dutton、Feeney 的部分、Silver、Argyle & Henderson（报告自标「经二次转引使用」）、Leib、Park et al.、`Reciprocity and Social Support`（作者名未取得）、Pruchno（DOI 未核）、Hillcoat-Nallétamby（作者/年份未核））。**`11` 的引用著录缺陷与论点的承重程度正相关 —— 这才是可报告的模式。**\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `RECLASSIFY_AS_METHOD_LIMIT` — 要求三份报告在下一轮补正著录（Olson DOI、Edmonds 拼写、arXiv 题名）；并要求 `11` 对**无 DOI/无年份/未转引核实**的来源统一加 `CITED_SECONDARY` 或 `UNVERIFIED` 标记，与它对 Ardito & Rabellino（已升 `CITED_PRIMARY_FULLTEXT`）的处理标准对齐。",
+   "recommendation_to_architect": "** `RECLASSIFY_AS_METHOD_LIMIT` — 要求三份报告在下一轮补正著录（Olson DOI、Edmonds 拼写、arXiv 题名）；并要求 `11` 对**无 DOI/无年份/未转引核实**的来源统一加 `CITED_SECONDARY` 或 `UNVERIFIED` 标记，与它对 Ardito & Rabellino（已升 `CITED_PRIMARY_FULLTEXT`）的处理标准对齐。\n---",
+   "_locator": {
+    "line_start": 472,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C25",
+   "_title": "G-C25 — `13` 的「0 条外部文献」与 `12` 的 GM/player 同构先例冲突",
+   "claim": "13` §12 判定其 `Observation / Belief / Environment` 分层的外部证据为「**基本为空**… **0 条外部文献**。这是 LHRM 独有结构」；`12` §8 `I8` 判定 Concordia 的 GM/player 分离「在结构上**等价于** LHRM 的 `Reality != Observation != Belief` 分层」。\n** `13` §12（行 527）、§7.3 第 2 点（行 282）、§14.8（行 612）；`12` §8 `I8`（行 315）、§2.1 Concordia 行（行 51）",
+   "source_report": "** `13` §12（行 527）、§7.3 第 2 点（行 282）、§14.8（行 612）；`12` §8 `I8`（行 315）、§2.1 Concordia 行（行 51）\n** `CONTESTED`（swarm 内 cluster `G` 内部）— `12` 提供了 `13` 标为「0 条文献」的一个**结构同构先例**；`13` 忽略了它。",
+   "verdict": "** `CONTESTED`（swarm 内 cluster `G` 内部）— `12` 提供了 `13` 标为「0 条文献」的一个**结构同构先例**；`13` 忽略了它。\n** `13` §12 表该行原文「`Observation / Belief / Environment` 分层 | **基本为空** | 项目 fixture 有构造 | **0 条外部文献**。这是 LHRM 独有结构」— `VERIFIED_BY_ME`（行 527）。`12` §2.1 Concordia 行「**Game Master / player 分离**：GM 负责环境与结果判定（检查物理可行性），entities 只用自然语言表达意图 | **设计启发**：GM/player 分离与 LHRM §3 `Reality != Observation != Belief` **同构**。**但这是设计类比，不是经验证据**」— `VERIFIED_BY_ME`（行 51）。`12` §8 `I8` 同义复述并标「纯架构类比，无经验支持」— `VERIFIED_BY_ME`（行 315）。`12` §3.3 C-Concordia 卡片「**可复用想法（对 LHRM 最有价值的一条）**：**GM 与 player 分离**在结构上等价于 LHRM 的 `Reality != Observation != Belief` 分层」— `VERIFIED_BY_ME`（行 203）。",
+   "supporting_refs": "** `13` §12 表该行原文「`Observation / Belief / Environment` 分层 | **基本为空** | 项目 fixture 有构造 | **0 条外部文献**。这是 LHRM 独有结构」— `VERIFIED_BY_ME`（行 527）。`12` §2.1 Concordia 行「**Game Master / player 分离**：GM 负责环境与结果判定（检查物理可行性），entities 只用自然语言表达意图 | **设计启发**：GM/player 分离与 LHRM §3 `Reality != Observation != Belief` **同构**。**但这是设计类比，不是经验证据**」— `VERIFIED_BY_ME`（行 51）。`12` §8 `I8` 同义复述并标「纯架构类比，无经验支持」— `VERIFIED_BY_ME`（行 315）。`12` §3.3 C-Concordia 卡片「**可复用想法（对 LHRM 最有价值的一条）**：**GM 与 player 分离**在结构上等价于 LHRM 的 `Reality != Observation != Belief` 分层」— `VERIFIED_BY_ME`（行 203）。\n** **两侧都对，但它们在说不同的事。** `13` 的「0 条外部文献」若指**经验研究**，成立 —— Concordia 确实没有对 `Reality != Observation != Belief` 分层做过任何测量。`12` 自己也立刻标注「**这是架构类比，不是经验证据**」「**纯架构类比，无经验支持**」。所以 `13` 的格子若读作「0 条经验证据」就**没有反证**。→ 反证强度有限。但 `13` 的措辞「这是 LHRM **独有结构**」超出了「0 条经验证据」，进入了「无先例」—— 而 `12` 证明**存在一个同构的工程先例**。两句话都出现在同一份 PR 里，**没有交叉引用**。**注意 `corroboration: NON_INDEPENDENT`**：这是 cluster `G` 内部两条互相矛盾的记录，不是跨 lane 独立佐证。",
+   "strongest_counterevidence": "** **两侧都对，但它们在说不同的事。** `13` 的「0 条外部文献」若指**经验研究**，成立 —— Concordia 确实没有对 `Reality != Observation != Belief` 分层做过任何测量。`12` 自己也立刻标注「**这是架构类比，不是经验证据**」「**纯架构类比，无经验支持**」。所以 `13` 的格子若读作「0 条经验证据」就**没有反证**。→ 反证强度有限。但 `13` 的措辞「这是 LHRM **独有结构**」超出了「0 条经验证据」，进入了「无先例」—— 而 `12` 证明**存在一个同构的工程先例**。两句话都出现在同一份 PR 里，**没有交叉引用**。**注意 `corroboration: NON_INDEPENDENT`**：这是 cluster `G` 内部两条互相矛盾的记录，不是跨 lane 独立佐证。\n** `NO`（报告间的一致性问题）",
+   "requires_canonical_change": "** `NO`（报告间的一致性问题）\n** `YES:LLM 抽取层上 `Observation`/`Belief`/`Environment` 分层的错误率（`13` 自列 `U-9`，0 条文献）`",
+   "needs_experiment_or_data": "** `YES:LLM 抽取层上 `Observation`/`Belief`/`Environment` 分层的错误率（`13` 自列 `U-9`，0 条文献）`\n** `G-C26`",
+   "duplicate_of": "** `G-C26`\n** `RECLASSIFY_AS_METHOD_LIMIT` — 要求 `13` §12 该行改为「经验证据 **0 条**；**工程先例存在**（Concordia GM/player，见 `12` §8 I8），但无任何测量」；把「这是 LHRM 独有结构」改为「这是 LHRM **在测量上无先例**」。**同时要求 parent 在 synthesis 中把 Repast Context/Projection + Concordia GM/player 记为对 `CURRENT_ARCHITECTURE.md` §3/§9 的两条独立外部佐证**（见 `G-C26`）—— 这目前在本 cluster 内被两份报告各自埋掉，无人汇总。",
+   "recommendation_to_architect": "** `RECLASSIFY_AS_METHOD_LIMIT` — 要求 `13` §12 该行改为「经验证据 **0 条**；**工程先例存在**（Concordia GM/player，见 `12` §8 I8），但无任何测量」；把「这是 LHRM 独有结构」改为「这是 LHRM **在测量上无先例**」。**同时要求 parent 在 synthesis 中把 Repast Context/Projection + Concordia GM/player 记为对 `CURRENT_ARCHITECTURE.md` §3/§9 的两条独立外部佐证**（见 `G-C26`）—— 这目前在本 cluster 内被两份报告各自埋掉，无人汇总。\n---",
+   "_locator": {
+    "line_start": 490,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "G-C26",
+   "_title": "G-C26 — 被埋掉的三条 canonical 外部佐证",
+   "claim": "12` 记录了三条对 LHRM **已有 canonical 决策**的独立外部佐证，但三条全部只出现在 §2.1 / §8（作为「可复用想法」），从未进入 §10 的裁决，因此在本报告的最终结论里权重为零。\n** `12` §2.1 Repast 行（行 48）、MATSim 行（行 49）、Concordia 行（行 51）；§8 `I2`（行 309）、`I6`（行 313）、`I8`（行 315）",
+   "source_report": "** `12` §2.1 Repast 行（行 48）、MATSim 行（行 49）、Concordia 行（行 51）；§8 `I2`（行 309）、`I6`（行 313）、`I8`（行 315）\n** `VERIFIED`（三条记录确实存在且确实未被带入裁决）→ 判定为**报告内部权重分配缺陷**",
+   "verdict": "** `VERIFIED`（三条记录确实存在且确实未被带入裁决）→ 判定为**报告内部权重分配缺陷**\n**",
+   "supporting_refs": "**\n   - Repast：「架构原语：**Contexts / Projections / Queries / Watchers** | **Context/Projection 二分值得读**：Context 存可变状态、Projection 只读派生量 —— **这正是 LHRM `WorldState` vs readout 的工程对应**」— `VERIFIED_BY_ME`（行 48）。对应 `CURRENT_ARCHITECTURE.md` §3（`WorldState` = 状态层 vs `Phi_(S,O)` 局部投影）与 `AGENTS.md`「Representation before scalarization; state-space before score」+「Distance/weight/score/probability are **downstream readouts**」— `VERIFIED_BY_ME`。`12` 明示 Repast 20+ 年开发、New BSD license、Simphony 2.11.0 (2024-07-01)。\n   - Concordia：「GM 与 player 分离…与 LHRM §3 `Reality != Observation != Belief` **同构**」— `VERIFIED_BY_ME`（行 51）。对应 `CURRENT_ARCHITECTURE.md` §3「`Reality != Observation != Belief`」— `VERIFIED_BY_ME`。\n   - MATSim：「核心是 **iterative optimization + replanning**」；§8 `I6`「**替代 hand-tuned 增量律的唯一现成路线**：让 `X_(t+1)` 由『在约束下重解一个与观测目标对齐的优化』产生」— `VERIFIED_BY_ME`（行 49、313）。对应 `CURRENT_ARCHITECTURE.md` §6「`X_(t+1) = F(X_t, Action_t, Event_t, Belief_t, Constraint_t, Environment_t)`」**未指定推进语义** — `VERIFIED_BY_ME`。→ MATSim 提供了一种 `F` 的**非 hand-tuned** 实现路径。\n   - 三条在 §10 裁决文本中的出现次数：`I2` = 0、`I6` = 0、`I8` = 0 — `VERIFIED_BY_ME`（逐条检 §10.1–§10.4 全文）。\n** (a) 前两条是**结构同构**而非经验验证 —— `12` 对两条都自己标了「设计类比/值得读」，未主张它们是证据。所以「低权重」部分合理。**但 `AGENTS.md` 的研究纪律要求区分 `Human requirement | empirical evidence | model hypothesis | architecture decision | implementation detail` —— 这三条的恰当标签是「**独立工程先例，与某条 architecture decision 一致**」，这是一个有独立价值的类别，不是零。** (b) 第三条（MATSim）的 `I6` 被 `12` 自己称为「唯一现成路线」，却在 §10 被「主要是一个隐喻生成器」覆盖 —— 这是**报告内部的自相矛盾**，不只是权重问题（见 `G-C18`）。(c) Repast Context/Projection 的一个反驳：Repast 的 Projection 是**技术性的只读派生视图**，与 LHRM 的 readout 在**动机**上不同（LHRM 的 readout 明确「不拥有定义 LHRM 本体的优先权」，Repast 的 Projection 也不定义模型本体）—— 实际上**这一点加强了同构**。",
+   "strongest_counterevidence": "** (a) 前两条是**结构同构**而非经验验证 —— `12` 对两条都自己标了「设计类比/值得读」，未主张它们是证据。所以「低权重」部分合理。**但 `AGENTS.md` 的研究纪律要求区分 `Human requirement | empirical evidence | model hypothesis | architecture decision | implementation detail` —— 这三条的恰当标签是「**独立工程先例，与某条 architecture decision 一致**」，这是一个有独立价值的类别，不是零。** (b) 第三条（MATSim）的 `I6` 被 `12` 自己称为「唯一现成路线」，却在 §10 被「主要是一个隐喻生成器」覆盖 —— 这是**报告内部的自相矛盾**，不只是权重问题（见 `G-C18`）。(c) Repast Context/Projection 的一个反驳：Repast 的 Projection 是**技术性的只读派生视图**，与 LHRM 的 readout 在**动机**上不同（LHRM 的 readout 明确「不拥有定义 LHRM 本体的优先权」，Repast 的 Projection 也不定义模型本体）—— 实际上**这一点加强了同构**。\n** `NO`（这三项**支持**现有 canonical，不需要改）",
+   "requires_canonical_change": "** `NO`（这三项**支持**现有 canonical，不需要改）\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `G-C25`",
+   "duplicate_of": "** `G-C25`\n** `ACCEPT` — 要求 parent 在 synthesis 中**显式**记录：Repast Context/Projection 二分是 `AGENTS.md`「state-space before score / readout 是下游」的**独立外部佐证**；Concordia GM/player 分离是 `CURRENT_ARCHITECTURE.md` §3 `Reality != Observation != Belief` 的**独立外部佐证**；MATSim iterative replanning 是 `CURRENT_ARCHITECTURE.md` §6 未指定推进语义这一空白的**唯一现成候选路径**。**这三条是本 cluster 唯一「支持性」的发现，目前在 `12` 的最终裁决里权重为零。**",
+   "recommendation_to_architect": "** `ACCEPT` — 要求 parent 在 synthesis 中**显式**记录：Repast Context/Projection 二分是 `AGENTS.md`「state-space before score / readout 是下游」的**独立外部佐证**；Concordia GM/player 分离是 `CURRENT_ARCHITECTURE.md` §3 `Reality != Observation != Belief` 的**独立外部佐证**；MATSim iterative replanning 是 `CURRENT_ARCHITECTURE.md` §6 未指定推进语义这一空白的**唯一现成候选路径**。**这三条是本 cluster 唯一「支持性」的发现，目前在 `12` 的最终裁决里权重为零。**\n---",
+   "_locator": {
+    "line_start": 505,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C27",
+   "_title": "G-C27 — `12` §13 行动建议 5 的依赖图误解（C1/C2/C6 其实不依赖未核实元证据）",
+   "claim": "12` §4.2 元证据第 2 条：Grazzini & Richiardi (2015) 报告 Angus & Hassani-Mahmooei (2015) 扫描 100+ 篇 JASSS ABM 论文，「found **very few instances** of additional (statistical) modelling of TS data」。`12` 自称这是「本报告最有力的元证据之一」，并建议单独核实。\n** `12` §4.2 第 2 条（行 231）、§12 表末行（行 441）、§13 行动建议 5（行 454）",
+   "source_report": "** `12` §4.2 第 2 条（行 231）、§12 表末行（行 441）、§13 行动建议 5（行 454）\n** `PLAUSIBLE`（Angus 那条我未核实原文）→ 但**依赖图**部分我判 `VERIFIED`，且方向与 `12` 所述相反（好消息）。",
+   "verdict": "** `PLAUSIBLE`（Angus 那条我未核实原文）→ 但**依赖图**部分我判 `VERIFIED`，且方向与 `12` 所述相反（好消息）。\n** `12` §12 原文「**Angus & Hassani-Mahmooei (2015)** 的完整著录 | `UNKNOWN` | 仅经 Grazzini & Richiardi 转述；**其『100+ 篇 JASSS ABM 中只有极少做 TS 统计建模』是本报告最有力的元证据之一，建议单独核实原文**」— `VERIFIED_BY_ME`（行 441）。`12` §13 行动建议 5「**待补核实**：`Angus & Hassani-Mahmooei (2015)` 的原文与完整著录（**C7 之外的 C1/C2/C6 都依赖这条元证据**）」— `VERIFIED_BY_ME`（行 454）。",
+   "supporting_refs": "** `12` §12 原文「**Angus & Hassani-Mahmooei (2015)** 的完整著录 | `UNKNOWN` | 仅经 Grazzini & Richiardi 转述；**其『100+ 篇 JASSS ABM 中只有极少做 TS 统计建模』是本报告最有力的元证据之一，建议单独核实原文**」— `VERIFIED_BY_ME`（行 441）。`12` §13 行动建议 5「**待补核实**：`Angus & Hassani-Mahmooei (2015)` 的原文与完整著录（**C7 之外的 C1/C2/C6 都依赖这条元证据**）」— `VERIFIED_BY_ME`（行 454）。\n** 我把依赖图完整画了一遍 — `VERIFIED_BY_ME`（逐条读 §7 的「一手证据」列）：`C1`（hand-tuned 参数被表述为发现）的证据是 **Windrum et al. 2007**（我已 `VERIFIED_BY_ME`：原文含 \"there are, in principle, a great many combinations of alternative parameter settings that can produce an identical output trace\"），**不是 Angus**；`C2`（在模拟数据上做验证）的证据是 **Lustick 2000**（我已 `VERIFIED_BY_ME`：§2.5 原文 \"the trade-off … is acceptance of the nearly complete artifactuality of the findings (There is no direct need for field data …) in return for the capacity to run very controlled experiments\"），**不是 Angus**；`C6`（没有 out-of-sample test）的证据是 **Windrum 2007 §3.4**（我已 `VERIFIED_BY_ME`：原文 \"AB models tend to deal with in-sample data … Out-of-sample exercises … are less frequently carried out by AB economists\"），**不是 Angus**。→ **`12` §13 行动建议 5 说「C7 之外的 C1/C2/C6 都依赖这条元证据」，这句是错的** —— C1/C2/C6 各有独立的一手引文，Angus 那条只支撑 §4.2 的**背景性断言**。**这实际上是好消息**：C1/C2/C6 这三条失败模式**不依赖**未经核实的元证据。",
+   "strongest_counterevidence": "** 我把依赖图完整画了一遍 — `VERIFIED_BY_ME`（逐条读 §7 的「一手证据」列）：`C1`（hand-tuned 参数被表述为发现）的证据是 **Windrum et al. 2007**（我已 `VERIFIED_BY_ME`：原文含 \"there are, in principle, a great many combinations of alternative parameter settings that can produce an identical output trace\"），**不是 Angus**；`C2`（在模拟数据上做验证）的证据是 **Lustick 2000**（我已 `VERIFIED_BY_ME`：§2.5 原文 \"the trade-off … is acceptance of the nearly complete artifactuality of the findings (There is no direct need for field data …) in return for the capacity to run very controlled experiments\"），**不是 Angus**；`C6`（没有 out-of-sample test）的证据是 **Windrum 2007 §3.4**（我已 `VERIFIED_BY_ME`：原文 \"AB models tend to deal with in-sample data … Out-of-sample exercises … are less frequently carried out by AB economists\"），**不是 Angus**。→ **`12` §13 行动建议 5 说「C7 之外的 C1/C2/C6 都依赖这条元证据」，这句是错的** —— C1/C2/C6 各有独立的一手引文，Angus 那条只支撑 §4.2 的**背景性断言**。**这实际上是好消息**：C1/C2/C6 这三条失败模式**不依赖**未经核实的元证据。\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `NONE`",
+   "duplicate_of": "** `NONE`\n** `ACCEPT` — 接受 C1/C2/C6 三条失败模式（各自有我 `VERIFIED_BY_ME` 的一手引文支撑）。**要求**更正 `12` §13 行动建议 5 的依赖陈述（Angus 那条只支撑 §4.2 的背景断言，不支撑 C1/C2/C6），并把它从「最有力的元证据之一」降级为「待核实的背景断言」。",
+   "recommendation_to_architect": "** `ACCEPT` — 接受 C1/C2/C6 三条失败模式（各自有我 `VERIFIED_BY_ME` 的一手引文支撑）。**要求**更正 `12` §13 行动建议 5 的依赖陈述（Angus 那条只支撑 §4.2 的背景断言，不支撑 C1/C2/C6），并把它从「最有力的元证据之一」降级为「待核实的背景断言」。\n---",
+   "_locator": {
+    "line_start": 524,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C28",
+   "_title": "G-C28 — `13` §2.2(c) 对 Nakamura et al. 的转述方向与来源相反",
+   "claim": "13` §2.2(c) 标题「**LLM 的一致性是『对齐多数派先验』，不是『更准』**」；推论「把『LLM 一致度高』当质量证据，等于说『LLM 和人群**平均/多数**读法一致』」，并据此推出「这在专家自己都分裂的文本上恰恰是误导」。\n** `13` §2.2(c)（行 69–82）、§9.6（行 401）",
+   "source_report": "** `13` §2.2(c)（行 69–82）、§9.6（行 401）\n** `WRONG-SCOPE` — 转述把来源的结论方向讲反了；`13` 自己引的发现 3 是该转述的反证。",
+   "verdict": "** `WRONG-SCOPE` — 转述把来源的结论方向讲反了；`13` 自己引的发现 3 是该转述的反证。\n** 我读 `https://arxiv.org/abs/2609.22133` 的官方 abstract — `VERIFIED_BY_ME`，逐字：",
+   "supporting_refs": "** 我读 `https://arxiv.org/abs/2609.22133` 的官方 abstract — `VERIFIED_BY_ME`，逐字：\n   > \"recent LLMs agree with **expert coders** at rates **comparable to those observed among experts themselves**\"\n   > \"We find that this equivalence is driven by **ambiguity in the texts and coding rules**.\"\n   > \"Thus, there is **little empirical basis for preferring human coding** on the basis of annotation quality alone, while LLMs offer substantial advantages in speed and cost.\"\n   > \"we propose using **disagreement across LLMs to identify difficult cases and refine codebooks**, and we develop ambiguity-aware bounds for downstream inference when a unique annotation cannot be defined for every text.\"\n   设置：`ten LLMs, three human experts, and 165 crowdsourced workers`、`14 peer-reviewed political science studies` — 与 `13` §2.2(c) 描述一致 — `VERIFIED_BY_ME`。`13` 自引的三条发现（行 78–80）— `VERIFIED_BY_ME`。`13` 自己的表（行 73–74）：易 LLM–expert 0.89–0.91（多数票 0.92）vs expert–expert 0.89；难 LLM–expert 0.69–0.76 vs expert–expert 0.67 — `VERIFIED_BY_ME`。\n** **反证完全在 `13` 自己的文本内。** 若 crowd 与 LLM 呈相同集中模式但与专家一致度显著更低（发现 3），**而** LLM–expert 一致度 ≈ expert–expert 一致度（`13` 自己的数），则 LLM 一致**不能**被等同于「crowd 多数派读法」—— 它**更贴近专家**。因此 §2.2(c) 的标题与推论方向错误。**并且**来源的结论是「little empirical basis for **preferring human coding**」—— `13` 把这篇论文用作「人类 gold 不可靠」的支持（`13` §2.2(b) 与 §13.1 都用它），这是**用对了**；但 §2.2(c)/§9.6 用它来攻击 LLM 一致性，是**用反了**。第三点：来源自己的提案（用 LLM 分歧定位难例改进 codebook）**正是 `13` §9.6 后半句所主张的**（「LLM 一致只能作为歧义定位信号」）—— `13` 同意来源，misattribution 只在标题那一层。",
+   "strongest_counterevidence": "** **反证完全在 `13` 自己的文本内。** 若 crowd 与 LLM 呈相同集中模式但与专家一致度显著更低（发现 3），**而** LLM–expert 一致度 ≈ expert–expert 一致度（`13` 自己的数），则 LLM 一致**不能**被等同于「crowd 多数派读法」—— 它**更贴近专家**。因此 §2.2(c) 的标题与推论方向错误。**并且**来源的结论是「little empirical basis for **preferring human coding**」—— `13` 把这篇论文用作「人类 gold 不可靠」的支持（`13` §2.2(b) 与 §13.1 都用它），这是**用对了**；但 §2.2(c)/§9.6 用它来攻击 LLM 一致性，是**用反了**。第三点：来源自己的提案（用 LLM 分歧定位难例改进 codebook）**正是 `13` §9.6 后半句所主张的**（「LLM 一致只能作为歧义定位信号」）—— `13` 同意来源，misattribution 只在标题那一层。\n   我未核实的部分：0.89 / 0.67 / 0.987（负面竞选）/ 0.533（议会情绪化修辞）这四个具体数、以及「LLM 对齐的是人群平均/多数读法」这句是否出现在**正文**而非 abstract — 全部 `NOT_OPENED`（arXiv PDF 1,099 KB，未抽取）。\n   **附注（对 parent 重要）**：`13` §15 `U-7` 已自标「Nakamura et al. 2026 的**同行评审状态**… **该文是本报告最重的单一支柱**」+ `PEER_REVIEW_STATUS = UNKNOWN_AS_OF`。→ **一个同行评审状态未知的 preprint 承载了最重的支柱，而结论又被夸大** = 风险叠加。\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `NO`",
+   "needs_experiment_or_data": "** `NO`\n** `G-C20`（同一来源在两处被用；`G-C20` 是数字层，本条是转述方向层）",
+   "duplicate_of": "** `G-C20`（同一来源在两处被用；`G-C20` 是数字层，本条是转述方向层）\n** `REJECT` — 拒绝采用「LLM 一致 = 对齐多数派先验」这一表述。要求：(i) 改述为「LLM 一致 ≈ 专家之间一致，其分歧源是**文本与规则本身的歧义**」；(ii) 补上来源自己的提案（用 LLM 分歧改进 codebook），因为它**支持** `13` 的 `R16`；(iii) 补一个 `13` 自己没有的 `U` 项：**在 LHRM 的 dyad 抽取任务上直接测量 LLM 间一致性 vs 人类一致性** —— political-science 二元文本分类不能外推。",
+   "recommendation_to_architect": "** `REJECT` — 拒绝采用「LLM 一致 = 对齐多数派先验」这一表述。要求：(i) 改述为「LLM 一致 ≈ 专家之间一致，其分歧源是**文本与规则本身的歧义**」；(ii) 补上来源自己的提案（用 LLM 分歧改进 codebook），因为它**支持** `13` 的 `R16`；(iii) 补一个 `13` 自己没有的 `U` 项：**在 LHRM 的 dyad 抽取任务上直接测量 LLM 间一致性 vs 人类一致性** —— political-science 二元文本分类不能外推。\n---",
+   "_locator": {
+    "line_start": 539,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C29",
+   "_title": "G-C29 — `13` §13.2 的 gold 与输入同源（循环论证的自我不一致）",
+   "claim": "13` §13.2 主张六项指标「在冻结 fixture 上**完全可机器判定**（因为 fixture 本身是冻结的、有明确 `fact_status` 与 `source_anchor`）」；但被抽取的文本与判定 gold 是同一批文本的同一批标签。\n** `13` §13.1 表第 2 行（行 554）、§13.2（行 559–568）",
+   "source_report": "** `13` §13.1 表第 2 行（行 554）、§13.2（行 559–568）\n** `WRONG-SCOPE` — `13` 对「与 LLM 一致度比」施加循环论证标准，对自己的 gold 不施加。",
+   "verdict": "** `WRONG-SCOPE` — `13` 对「与 LLM 一致度比」施加循环论证标准，对自己的 gold 不施加。\n** `13` §13.1 表逐字把「与 LLM 的一致度」的致命缺陷写成「**循环论证**；且已证明是失败模式的实例（§9.6）」— `VERIFIED_BY_ME`（行 554）。`13` §13.2 逐字把 `UNKNOWN_PRESERVATION_RATE` 的可判定性理由写成「fixture 的 `fact_status` 是**冻结事实**」、把 `DISTINCTION_LEAK_RATE` 的理由写成「`FIXTURE_002/003` 的 `fact_or_narrative_status` **冻结**」— `VERIFIED_BY_ME`（行 565、568）。`FIXTURE_003` §4 原文「`fact_or_narrative_status` 为**材料层状态（非法律真值）**」— `VERIFIED_BY_ME`。`CURRENT_ARCHITECTURE.md` §10 原文「来源等级与事实状态分开：`provenance quality != fact status`」并要求 `adjudicated | admitted | alleged | disputed | unknown` — `VERIFIED_BY_ME`。",
+   "supporting_refs": "** `13` §13.1 表逐字把「与 LLM 的一致度」的致命缺陷写成「**循环论证**；且已证明是失败模式的实例（§9.6）」— `VERIFIED_BY_ME`（行 554）。`13` §13.2 逐字把 `UNKNOWN_PRESERVATION_RATE` 的可判定性理由写成「fixture 的 `fact_status` 是**冻结事实**」、把 `DISTINCTION_LEAK_RATE` 的理由写成「`FIXTURE_002/003` 的 `fact_or_narrative_status` **冻结**」— `VERIFIED_BY_ME`（行 565、568）。`FIXTURE_003` §4 原文「`fact_or_narrative_status` 为**材料层状态（非法律真值）**」— `VERIFIED_BY_ME`。`CURRENT_ARCHITECTURE.md` §10 原文「来源等级与事实状态分开：`provenance quality != fact status`」并要求 `adjudicated | admitted | alleged | disputed | unknown` — `VERIFIED_BY_ME`。\n** 最强反方论点：对 `SPAN_SUPPORT_RATE` / `ENTITY_INSERTION_RATE` / `FUTURE_LEAK_RATE` / `HOLDER_LEAK_RATE`，gold 是**源文本本身**（可机器核验，与 fixture 标签无关），因此这四项**不是**循环的。**这个反方论点成立，我接受。** 循环问题只落在**两项**上：`UNKNOWN_PRESERVATION_RATE`（gold = `fact_status` 标签，与输入同源）与 `DISTINCTION_LEAK_RATE` 的第二半（gold = `fact_or_narrative_status`，**材料层非真值层**）。所以缺陷范围是 **2/6，不是 6/6** —— 这与 `G-C21` 的「两个平凡策略」结论叠加：**六项中四项干净、两项有循环、全部六项无覆盖率项。**",
+   "strongest_counterevidence": "** 最强反方论点：对 `SPAN_SUPPORT_RATE` / `ENTITY_INSERTION_RATE` / `FUTURE_LEAK_RATE` / `HOLDER_LEAK_RATE`，gold 是**源文本本身**（可机器核验，与 fixture 标签无关），因此这四项**不是**循环的。**这个反方论点成立，我接受。** 循环问题只落在**两项**上：`UNKNOWN_PRESERVATION_RATE`（gold = `fact_status` 标签，与输入同源）与 `DISTINCTION_LEAK_RATE` 的第二半（gold = `fact_or_narrative_status`，**材料层非真值层**）。所以缺陷范围是 **2/6，不是 6/6** —— 这与 `G-C21` 的「两个平凡策略」结论叠加：**六项中四项干净、两项有循环、全部六项无覆盖率项。**\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `YES:一个独立于输入的判定源（第二位人工 verifier 按明确规程判定 unknown/disputed，或把 fixture 标签从输入窗口中遮蔽）`",
+   "needs_experiment_or_data": "** `YES:一个独立于输入的判定源（第二位人工 verifier 按明确规程判定 unknown/disputed，或把 fixture 标签从输入窗口中遮蔽）`\n** `G-C21`（同一缺陷的另一面：简并最优）",
+   "duplicate_of": "** `G-C21`（同一缺陷的另一面：简并最优）\n** `ACCEPT`（保留 §13.2 的四项干净指标）**+ `REJECT`** 两项循环指标作为「可判定」的依据。要求：`UNKNOWN_PRESERVATION_RATE` 与 `DISTINCTION_LEAK_RATE` 必须使用**独立于输入文本标签**的判定源，或明确改写为「与 fixture 标签的**一致率**」—— 那时它是可算的，但语义从「忠实度」变成「与项目标注的一致性」，这本身也是一个合法但更弱的目标，`13` 必须承认这一降级。",
+   "recommendation_to_architect": "** `ACCEPT`（保留 §13.2 的四项干净指标）**+ `REJECT`** 两项循环指标作为「可判定」的依据。要求：`UNKNOWN_PRESERVATION_RATE` 与 `DISTINCTION_LEAK_RATE` 必须使用**独立于输入文本标签**的判定源，或明确改写为「与 fixture 标签的**一致率**」—— 那时它是可算的，但语义从「忠实度」变成「与项目标注的一致性」，这本身也是一个合法但更弱的目标，`13` 必须承认这一降级。\n---",
+   "_locator": {
+    "line_start": 562,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "G-C30",
+   "_title": "G-C30 — `11` 的 §2 与 §6.2 对 `Trust` 行的分类冲突",
+   "claim": "11` §2 把 `Trust × {S,K,C,W,A}` 判为 `MEANING_SHIFTS`；§6.2 对同一构念写「这一格判为『**定义欠定**，不是「数据缺失」」。\n** `11` §2 行 57；§6.2 行 386",
+   "source_report": "** `11` §2 行 57；§6.2 行 386\n** `CONTESTED`（报告内部自相矛盾）",
+   "verdict": "** `CONTESTED`（报告内部自相矛盾）\n** `11` §1 码表 `MEANING_SHIFTS` = 「语义在**参照类**或**边界条件**上改变，不是分布/读数差异」— `VERIFIED_BY_ME`（行 34）。§6.2 原文「这一格判为『**定义欠定**，不是「数据缺失」。……这一格不是『噪声大一点』，是 **construct validity 失败**」— `VERIFIED_BY_ME`（行 386–388）。三个码（`MEANING_SHIFTS` / `UNKNOWN` / 域界定标签）对应三种不同处置；`定义欠定` 不等于其中任何一个。",
+   "supporting_refs": "** `11` §1 码表 `MEANING_SHIFTS` = 「语义在**参照类**或**边界条件**上改变，不是分布/读数差异」— `VERIFIED_BY_ME`（行 34）。§6.2 原文「这一格判为『**定义欠定**，不是「数据缺失」。……这一格不是『噪声大一点』，是 **construct validity 失败**」— `VERIFIED_BY_ME`（行 386–388）。三个码（`MEANING_SHIFTS` / `UNKNOWN` / 域界定标签）对应三种不同处置；`定义欠定` 不等于其中任何一个。\n** 两种可能：(a) §2 判**当前构念的语义**、§6.2 判**移植该构念时的状态** —— 两者可以同时成立（语义在兄弟 dyad 上确实变了，而把它搬过去的**尝试**是定义欠定）。**我接受这个读法**，但报告没有说明，因此读者无法分辨。(b) 反过来若 §6.2 为准则 §2 错（应判 `UNKNOWN`）。两种读法导致**不同的下游动作**（`MEANING_SHIFTS` → 需重新定义；`UNKNOWN` → 需检索；`定义欠定` → 需重写构念定义），所以**必须**消歧。",
+   "strongest_counterevidence": "** 两种可能：(a) §2 判**当前构念的语义**、§6.2 判**移植该构念时的状态** —— 两者可以同时成立（语义在兄弟 dyad 上确实变了，而把它搬过去的**尝试**是定义欠定）。**我接受这个读法**，但报告没有说明，因此读者无法分辨。(b) 反过来若 §6.2 为准则 §2 错（应判 `UNKNOWN`）。两种读法导致**不同的下游动作**（`MEANING_SHIFTS` → 需重新定义；`UNKNOWN` → 需检索；`定义欠定` → 需重写构念定义），所以**必须**消歧。\n** `NO`",
+   "requires_canonical_change": "** `NO`\n** `YES:U5`",
+   "needs_experiment_or_data": "** `YES:U5`\n** `G-C10`",
+   "duplicate_of": "** `G-C10`\n** `REJECT` — 拒绝同时接受 §2 与 §6.2 对 `Trust` 行的两个不同分类。要求 `11` 选定一个，并把 `定义欠定` 提升为 §1 码表中的第六个码（它现在无处安放，而这是本报告在语义 vs 表示边界上最诚实的一步）。",
+   "recommendation_to_architect": "** `REJECT` — 拒绝同时接受 §2 与 §6.2 对 `Trust` 行的两个不同分类。要求 `11` 选定一个，并把 `定义欠定` 提升为 §1 码表中的第六个码（它现在无处安放，而这是本报告在语义 vs 表示边界上最诚实的一步）。\n---",
+   "_locator": {
+    "line_start": 577,
+    "section": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer / 3. verdict_matrix"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 30,
+ "field_coverage": {
+  "claim_id": 30,
+  "claim": 30,
+  "source_report": 30,
+  "verdict": 30,
+  "supporting_refs": 30,
+  "strongest_counterevidence": 30,
+  "requires_canonical_change": 30,
+  "needs_experiment_or_data": 30,
+  "duplicate_of": 30,
+  "corroboration": 3,
+  "recommendation_to_architect": 30
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "3. verdict_matrix"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. verdict_matrix",
+    "line_start": 48,
+    "line_end": 591
+   }
+  ]
+ },
+ "files_audited": "### [line 10] 1. files_audited\n| 文件 | 字节 | 行 | 读法 |\n|---|---|---|---|\n| `docs/research/overnight-2026-09-27/11_GENERAL_HUMAN_DYADS_SCOPE.md` | 68,450 | 558 | 全文分段读（`offset/limit`，7 段） |\n| `docs/research/overnight-2026-09-27/12_COMPUTATIONAL_MODELS_ABM.md` | 67,762 | 507 | 全文分段读（`offset/limit`，4 段） |\n| `docs/research/overnight-2026-09-27/13_LLM_SKILL_INTERVIEW_LAYER.md` | 67,875 | 739 | 全文分段读（`offset/limit`，5 段） |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 9,649 | 361 | 全文（重点 §2 研究域 / §5 facet / §9 值类） |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 7,862 | 270 | 全文（重点 §1 加法分解 / §7 六项收敛测试） |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | 18,510 | 780 | 重点：§2.4 scope stability、§2.5 layer test、§6 P4/P5、§9 R1–R5、§14 测量、§15 Gate A/B/C |\n| `docs/validation/fixtures/FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md` | 26,779 | 160 | **仅 metadata block（§1 Source/provenance + §2 锚点约定 + §3 freeze rules 标题 + §4 字段语义说明）**，未读 §4 事实单元表体 |\n| `docs/research/overnight-2026-09-27/review-r2/REVIEW_CONTRACT.md` | — | 103 | 全文 |\n| `AGENTS.md`（项目） | — | — | 全文 |\n\n**fixture 合规声明：** 契约 §2 规定 fixture 细节仅 cluster `I`/`K` 需读。我的 cluster 不在列，故 `FIXTURE_003` **只读 rights / provenance metadata block 与字段语义说明**（这是 task prompt 明确授权的），**未读事实单元表体**。`FIXTURE_001` / `FIXTURE_002` **未打开**。\n\n---",
+ "coverage_statement": "### [line 28] 2. coverage_statement\n**我实际读了什么：**\n- 我的三份报告**全文**（11 / 12 / 13），合计约 204KB，全部覆盖。\n- 三份 canonical foundation 文档的相关章节。\n- `FIXTURE_003` 的 rights / provenance metadata block，为核查 `13` 的 fixture 权利处理。\n\n**我跳过了什么（未覆盖处显式声明）：**\n1. **我没有读任何不属于本 cluster 的报告。** `01`、`02`、`02b`、`03`–`10`、`14`–`19`、`A01`、`A03`、`A04`、`00_MANIFEST` **全部未打开**。因此我**不**判定 `11`/`12`/`13` 与其它 lane 的冲突，也**不**参与 cross-lane contradiction map。\n2. 我**没有**执行新的文献调研。唯一联网行为：Crossref `api.crossref.org/works/<DOI>` 抽样复核 20 个 DOI；打开 5 个 JASSS / W3C / Annual Reviews 官方页；抓取 2 个作者自存档 PDF（Snijders 2010、RSiena Manual）并本地抽文；抓取 2 个 arXiv abstract 与 1 个 arXiv 全文 HTML（2602.13224v3、2609.22133）；GitHub Search API 三次；Semantic Scholar 一次。\n3. **未核实项（`NOT_OPENED`）**：`de Bel et al. (2019)` 的四条引语（我只核实 abstract）、`Blake et al. (2022)` 的参与者原话与 `n=291` 的归属、`Finkel et al. (2017)` 正文第二段引语、`Reis` 手册前言引语、`Johnson (2006)` / `Dutton, Goodman & Schmidt` 正文引语、`Horvath & Symonds (1991)` 正文引语、`Nakamura et al.` 的 0.89/0.67/0.987/0.533 具体数值、`Fu et al. (2024)` 的 81.9 F1、`Angus & Hassani-Mahmooei (2015)` 原文、`Conroy-Beam (2021)` 全文、`Sutcliffe et al.` 正文、`Grazzini & Richiardi (2015)` 原文、`Centola (2010)` 正文、`PARAMETER_CONVERGENCE_V0_1.md` §4 D4 `Trust` 的逐字定义、`Voorpostel & Blieszner (2008)`、`Walton & Cohen (2011)`、`Brady et al. (2020)`。\n4. **task prompt 点名的三项 priority 在我的 cluster 中不存在。** 我对 `11`/`12`/`13` 全文做字符串检索（含大小写与不规则拼写）：`Husley` = 0 命中，`Hughes` = 0 命中，`Nugent` = 0 命中，`Westermarck` = 0 命中。`89%` 在 `13:206` 的唯一命中是 arXiv:2506.20793 的 `5.89%`（多语静态基准差距），与「Husley/Hughes 89%-vs-4%」**无关**。因此这三项对我的 cluster 标记为 **`NOT_APPLICABLE_TO_THIS_CLUSTER`，而非 `NOT_OPENED`**——它们大概率属于 `03`（测量仪器）或 `02b`（冗余审计）的引用池。**Parent 不应把这三项记在 lane G 名下，也不应因我未覆盖而认为它们已被覆盖。**\n5. 我**没有**核实 `NetLogo` / `MASON` 的存在性与维护状态（`12` 自己标 `UNKNOWN_AS_OF`）。这是我在 `12` 负结论审计上的一个未闭合缺口。\n6. 我**没有**重算 `13` 的「70 条指针」总数，因此该数字标 `NOT_OPENED`。\n7. 我**没有**读 `docs/validation/VALIDATION_CORPUS_V0_1.md`（不在我的允许读取清单内）。因此我**无法**为 `13` 的权利约束项指定确切的 canonical 目标文件（见 `G-C22`）。\n\n**独立性声明：** 本 packet 的全部 verdict 只由我实际打开的来源 + 三份报告自身文本 + canonical 文本决定。**「本 swarm 有 N 个 lane 这么说」不构成我任何一条 verdict 的依据。** 凡涉及跨 cluster 的可能一致性，一律标 `corroboration: NON_INDEPENDENT` 或明说「我不知道别的 lane 说了什么」。\n\n---",
+ "top_recommendations": "### [line 700] 5. top_recommendations（7 条，按对 Architect 的重要性排序）\n1. **`REJECT` — 撤回 `13` §9.6 的证据链，不要让 parent synthesis 携带「跨域 AUROC 0.50 / 多个 LLM 达成一致 = 失败模式」的现有形式。**\n   我读了被引论文的 v3 全文（`arXiv:2602.13224v3`）：近机会的数是 **AUROC 0.536** 且属于 **NLI 基线**、不是论文自己方法的结果、更不是「跨域」；「0.76」是 **paired cos = .766** 不是 AUROC；「0.99」在论文中不存在；论文自己的显著性陈述是「All Human and LLM rates **significantly above 50%** (p < 10⁻⁸)」，abstract 说的是 confabulation 的几何签名**outperforms NLI**。→ 「自发产生的虚假内容与真实内容不可区分」与被引论文方向相反。且该论文**完全没有跨模型一致性测量**（只用一个 LLM 生成 confabulation）—— 从「单输出难检测」到「多模型一致是失败模式」是构念替换。**要求**：(i) 更正数字与归属；(ii) 删/改「不可区分」；(iii) 改述 `Nakamura et al.`（其 abstract 结论是「little empirical basis for preferring **human** coding」，与 `13` 的用法方向相反）；(iv) **保留 `R16` 作为保守规范，但换依据**（共享训练先验 → 误差相关；`13` 自己的 §13.3.2「`CROSS_RUN_DISPERSION` 不是精度」）。**这是本 packet 最高严重度项。**\n\n2. **`ACCEPT` — 把 `11` §3.1 的值类发现升级为 canonical-change 候选（`requires_canonical_change: YES`，不能停在 proposal）。**\n   我独立复现了不相容：`AGENTS.md`「never silently coerce missing information into neutral/perfect-match values」+ `CURRENT_ARCHITECTURE.md` §9 原则 4 的**穷举**值类枚举（无「不适用」）+ §2 写入域（含亲属）+ `PARAMETER_CONVERGENCE_V0_1.md` §14（同样无「不适用」）⇒ 存在一个坐标其正确值不在集合内。**这是逻辑问题，不是经验问题** —— U1…U12 任何实验都无法裁决两条已写下的规则是否自相矛盾。Architect 必须二选一：扩值类，或显式记录豁免。`11` 把它标为 \"proposal only\" 是过度保守。我检查了唯一的逃生通道（`estimate_or_region` 的空区间），canonical **没有**任何条款区分「空区间」与「不适用」—— 那就是缺口所在。\n\n3. **`ACCEPT` — 把 `11` §4 `L-8` 升级为 canonical-change 候选（`requires_canonical_change: YES`，成本最低）。**\n   我逐条比对了三份 canonical 清单：`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6（6 项）、`PARAMETER_CONVERGENCE_V0_1.md` §2.4（含 4 个 dyad 类型）、§15 Gate B（含 4 个 dyad 类型 + 3 个合成条件）。**三者互不相同，且都不含 sibling / parent–adult-child / ex-partner / professional / adversarial / dating-stranger。** 零研究成本、一次性修完。**但**采纳前须先定 `kin` 的粒度（是否拆分同胞/亲子）—— 这决定缺口是 5 类还是 3 类，而 `11` §3.8 的整个论证依赖该区分。\n\n4. **`REJECT` — 拒绝以「不存在」形式引用 `12` 的负结论；`12` §10.3 不得按其 §13 的指示原样提升为 synthesis 独立小节。**\n   检索面实际只覆盖 JASSS / CoMSES / 具名框架清单 / 三个负名核验；**`APIM` 分支未检索**（`12` 自称最大缺口）、二人方法学多层模型未检索、非 JASSS 场所未检索、`NetLogo`/`MASON` 仅二手指纹。报告 §0/§10.1.3 说「不存在」而 §1/§11.7/§12 说「未找到 / 倾向不存在 / 若被找到则需修正」—— **一个报告不能同时持有这两者。** 同时 §10.3 与报告自己的 §8 `I2`（`Action/Event` 落点离散化）、§8 `I6`（唯一现成路线 = replanning）、§10.2（「唯一独特价值」= 模拟轨迹撞 schema）**直接冲突**。若要保留裁决，措辞须按 `G-C18` 重写。\n\n5. **`ACCEPT` §13.1 的目标重定向（保留）+ `REJECT` §13.2 的六指标集作为评估门。**\n   「latent dyad state 无 ground truth，故抽取准确率无定义」是本 cluster **最正确的方法论判断之一**（三条否证理由我逐条核对全部成立）。但六项指标**全部是单边缺陷检测器、无任何覆盖率项**，且 `13` **未承认**（a）**完全弃权最大化全部六项**（在零 slot 上 `SPAN_SUPPORT_RATE`=1.0，其余五项 = 目标值）；(b) **复制 fixture 状态列**使 `UNKNOWN_PRESERVATION_RATE`=1.0 精确达成 —— 这在 `13` 自己的语义接口下是合法动作。后果：§13.5 步骤 6（对 `UNKNOWN_PRESERVATION_RATE < 1.0` 生成 codebook 修订候选）会被弃权策略产出**零条**修订 —— **报告自己的修订回路被击穿**。另有两项的 gold 与输入同源（`13` 对「与 LLM 一致度比」施加循环论证标准，对自己的 gold 不施加）。**要求**：加覆盖率下限 + 移出 gold + 不用材料层 `fact_or_narrative_status` 作真值层 gold。\n\n6. **`ACCEPT` — 为 `FIXTURE_003` 的权利边界建立一条 LLM 层设计约束记录（`requires_canonical_change: YES`，位置 `UNSURE`）。**\n   `13` 在 6 处实质使用该 fixture（源 span 约定实例、freeze rules 2/3/5/6/7、`F2` 的 Bad/Compliant 对照引用 p004–p011、`knowledge_time_by_agent` 领先性论证），**全文 0 次记录**其 `pointer_only` / `ai-train=no` / `GPTBot Disallow` / `representation_allowed=false` / `rights_policy=HUMAN_REVIEW_REQUIRED` 边界（穷尽子串检索：`rights`/`pointer`/`ai-train`/`GPTBot`/`robots`/`HUMAN_REVIEW`/`licence`/`license`/`copyright` **全部 0**）。**本报告自身未发生侵权**（只用仓内 `faithful_paraphrase` + 锚点，fixture 明文允许），但遗漏的后果是实质的：`13` 整节 §7 就是关于 provenance 该记录什么；其提出的管线默认可把 LLM agent 指向该材料；`13` §9.8 已把「LLM 预训练记忆旁路」列为混淆变量，却未处理**本项目自有语料的 `ai-train=no` 边界**。**要求**写明该 fixture 不得作为抽取*目标*，只可作 paraphrase 级示例。**文件位置我 `UNSURE`**（`VALIDATION_CORPUS_V0_1.md` 不在我的读取范围）。\n\n7. **`RECLASSIFY` — 合并与排序：三项 obligation 内容合并为一条；值类工作先于抽取态工作；`12` `I1` 与 `11` `Dedication` 拆分的不相容必须显式处理。**\n   (a) `11` §3.2（`Obligation`）+ §3.7（`RoleContract`）+ §4 `L-10`（`family obligations` 层级错置）是**同一主张的三重计数**（`Dykstra` 与 `Meyer & Allen` 各被引两次同一论点），须合并为一条，引用计数 3 → 1，否则 Architect 会高估证据量。(b) **顺序依赖**：`11` §3.1 的值类一旦采纳，会强制 `13` §3.2 的三个抽取态重新表达（`13` 无 `structurally_not_applicable` 位置），但 `13` 未说明自己是 `11` 的下游。(c) **跨报告隐藏不相容**：`12` `I1` 把 `Dedication` 当单一可衰减标量，`11` §3.2 若采纳则 `Obligation` 另立 —— 义务性持久性的期望下调机制将无落点，**双方都没标**。(d) **术语**：必须把 `11` 的 `dyadic_ambivalence`（世界状态）与 `13` 的 `assertion_ambiguity`（记录状态）用不同词，否则 parent 会误合并（`11` §3.5 vs `13` §3.2）；并拆分 `11` 内部 `UNKNOWN`（文献沉默）与 `scope_unknown`（世界取值）这一个词两种义。\n\n---",
+ "explicit_non_claims": "### [line 725] 6. explicit_non_claims（不主张的内容）\n1. **不主张** `11` 的 216 格矩阵中任一格的 `MEANING_SHIFTS` / `NOT_APPLICABLE` / `READOUT_DIFFERS` / `UNKNOWN` 判定为错。我验证了**计数**（`G-C3`）与**分类内部一致性**（`G-C4`、`G-C10`、`G-C30`），**没有**逐格重判 216 格的能力（无 per-cell 引用，且契约禁止新增文献调研）。我的结论是这些格**不可审计**（缺 evidence 列），不是**错误**。\n2. **不主张** `11` 的八条 primitive 变更提案中任何一条为假。我判定的是：(a) 其中三条（§3.1 值类、§3.6 `CohesionScope`、§3.8 facet scope）与 canonical `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 已有判据**高度重复**；(b) §3.7 的证据最弱且挑战 Human-settled 方向；(c) §3.2/§3.7/§4 L-10 是三重计数。\n3. **不主张** `12` 的「ABM 主要是隐喻生成器」为假。我的判定是它与报告自己的 §8 `I2`/`I6`、§10.2 张力，且其推导链依赖 `G-C17` 的未加限定负结论 —— 是**比例问题**与**限定问题**，不是结论颠倒。\n4. **不主张** `13` 的 17 条硬规则（`R1`–`R17`）任一条为假。我判定的是 `R16` 的**依据**失效（`G-C20`），不是 `R16` 这条规范本身为错。`R9`（禁 confidence 作权重）的依据在 `13` §8.1 中是**独立的**，不依赖 2602.13224。\n5. **不主张**「LLM 之间的多数派一致性是错的」。我**没有**测量过它。我主张的是 `13` 用错了引文，且被引论文的检验方向相反。**正确理由**（共享训练先验 → 误差相关）`13` 没有给。\n6. **不主张** `13` 侵犯了 Fixture 003 的权利。我核实 `13` 只使用仓内 `faithful_paraphrase` + 锚点，而 fixture 明文允许这种用法。**遗漏 ≠ 违反**。\n7. **不主张** 亲属性接触（sibling / parent–child sexual contact）的研究现状足以推翻 `11` 的 `SexualDesire × S/K = NA`。我**没有**检索该领域（契约 §3 禁止新增文献调研）。我指出的是 `11` **内部**的不对称：对 `C` 列它接受「文献记载的类别存在」足以推翻 `NA`，对 `S`/`K` 列它不接受，而未说明理由。\n8. **不主张** `NetLogo` / `MASON` 的存在性或维护状态。我未核实它们。这是 `12` 自己标 `UNKNOWN_AS_OF` 的项，也是我在 `G-C19` 上的未闭合缺口。\n9. **不主张** `12` 的失败目录 C1–C15 任一条为假。我核实了 C1/C2/C6 的一手引文（Windrum 2007 ×2、Lustick 2000 逐字），并**发现** `12` §13 行动建议 5 关于它们依赖未核实元证据的陈述是错的（`G-C27`）—— 这对 `12` 是**有利**的发现。\n10. **不主张** arXiv:2602.13224 与 arXiv:2609.22133 的结论无价值。我核实了两者的 abstract。2602.13224 **确实**支持一个更窄的正确命题（`G-C20` 第 7 条的反证段末）：`detection rates on HaluEval (88–97%) do not transfer to human confabulations (69–78%)` —— 即 benchmark 系统性高估自发 confabulation 的可检测性。`13` 没用它这个方式。\n11. **不主张** `11` 的 §3.4 `P-4`（成形前的 dyad 是一个提议）为假。报告已自标它是**架构论证**、非经验发现，且其唯一可用反例检验记录（Gilligan）不存在。`corroboration: NON_INDEPENDENT`：我核实了「该 DOI 404」与「报告的处理方式诚实」，**没有**核实 `P-4` 的内容。\n12. **不主张** `13` 自报的「70 条指针」总数有误。我未重算（`NOT_OPENED`）。我只核实了三条最承重引用的域外性（Gilardi = 推文/新闻分类、Fu = 儿科临床笔记、Nakamura = 政治学文本分类），以及 Gilardi 的全部四个数字（n=6,183 / +25pp / $0.003 / ~30× — `VERIFIED_BY_ME`）。\n13. **不主张** `12` 附录 A 的「Edmonds & Moss (2005)」著录错误会造成实质后果。Windrum 页面确证第一作者是 **Edmonds**（`12` 写 Edwards），但 `12` 已把该记录标为 `UNKNOWN` 且只经转述。这是**低严重度**著录缺陷。\n14. **不主张** 本 packet 与其它 lane 的结论一致或冲突。我**没有读**任何不属于本 cluster 的报告（`01`/`02`/`02b`/`03`–`10`/`14`–`19`/`A01`/`A03`/`A04`/`00_MANIFEST`）。凡涉及可能的跨 lane 一致性，我一律标 `corroboration: NON_INDEPENDENT` 或明说不知道。\n15. **不主张** task prompt 点名的三项（`Husley`/`Hughes` 89%-vs-4%、`Nugent`/Gilardi-vs-Nakamura、`Westermarck`/kin claim）已被核实或证伪 —— 它们在 `11`/`12`/`13` 中**零命中**（`89%` 的唯一命中是 arXiv:2506.20793 的 `5.89%`，与 Husley/Hughes 无关）。这三项在本 cluster 标记为 `NOT_APPLICABLE_TO_THIS_CLUSTER`，**parent 不得把它们记在 lane G 名下，也不得因我未覆盖而认为它们已被覆盖**。\n16. **不主张** `13` §13.2 的**全部**六项指标都是循环的。我核实了四项（`SPAN_SUPPORT_RATE` / `ENTITY_INSERTION_RATE` / `FUTURE_LEAK_RATE` / `HOLDER_LEAK_RATE`）的 gold 是源文本本身，与 fixture 标签无关。循环只落在**两项**（`G-C29`）。但**六项全部**无覆盖率项（`G-C21`）。\n17. **不主张** `11` 的 §2 把 representation 问题记入 semantic 通道是「错误」。我接受反方读法的一半：§2 的码是**判定**、§3.1 的分析是**机制**，分层是正确的。缺陷只在于 `structurally_not_applicable` 这个**值类名**没有进 §1 码表（`G-C4`）。\n\n---",
+ "provenance_note": "### [line 747] 7. packet_sha_note\n**被审对象：** `youling/lhrm#31` @ `8adcf0bacc45c0feb5c14e65e2a45346dd488b43`（25 份报告）。本 packet 只审计其中 3 份（cluster `G`）。\n\n**源与核实方式对照表**\n\n| 源 | 核实方式 | 标记 |\n|---|---|---|\n| `11_GENERAL_HUMAN_DYADS_SCOPE.md` | 全文分段读 + 矩阵 216 格逐格重算（PowerShell）+ 穷尽子串检索 | `VERIFIED_BY_ME` |\n| `12_COMPUTATIONAL_MODELS_ABM.md` | 全文分段读 + 逐条检 §10 对 §8 的引用计数 | `VERIFIED_BY_ME` |\n| `13_LLM_SKILL_INTERVIEW_LAYER.md` | 全文分段读 + 穷尽子串检索（rights 类 10 词全 0） | `VERIFIED_BY_ME` |\n| `CURRENT_ARCHITECTURE.md` / `CONSTRUCT_SCOPE_DIRECTIONALITY.md` / `PARAMETER_CONVERGENCE_V0_1.md` | 相关章节逐条读；三份 cross-context 清单独立比对 | `VERIFIED_BY_ME` |\n| `FIXTURE_003` §1 rights block + §4 字段语义说明 | metadata only（契约 §2） | `VERIFIED_BY_ME` |\n| `10.1177/0003122417715051`（Gilligan 疑似 DOI） | Crossref → **HTTP 404** | `VERIFIED_BY_ME` |\n| Finkel/Simpson/Eastwick 2017「14 principles paint a cohesive and unified picture of **romantic** relationships」 | annualreviews.org 官方 abstract 页 | `VERIFIED_BY_ME` |\n| de Bel, Kalmijn & van Duijn 2019 | Crossref 题名 + Semantic Scholar abstract（n=549 sibling-parent-sibling triads, Netherlands Kinship Panel, \"strong evidence for enhancement… some indication… loyalty conflicts\"） | 摘要 `VERIFIED_BY_ME`；四条引语 `NOT_OPENED` |\n| Bengtson et al. 2002「Solidarity, Conflict, and Ambivalence」 | Crossref 题名解析 | `VERIFIED_BY_ME`（题名/卷期）；引语 `NOT_OPENED` |\n| Bengtson ambivalence 框架的实质内容 | 承 de Bel abstract | `PLAUSIBLE` |\n| **Westermarck / kin claim** | **在 `11`/`12`/`13` 中零命中** | **`NOT_APPLICABLE_TO_THIS_CLUSTER`** |\n| Snijders, van de Bunt & Steglich 2010「under control of the sending actor … exclude most types of relations where negotiations are required」 | 作者自存档 PDF（stats.ox.ac.uk，361,872 bytes）本地抽文，逐字 | `VERIFIED_BY_ME` |\n| 同上论文的 friendship-evolution Table 1 与「Ties are … dyadic constituents of relations such as friendship, trust, or cooperation」 | 同上 PDF 抽取文本 | `VERIFIED_BY_ME`（最强反证） |\n| RSiena Manual「Weighted networks are not allowed, **but … possible to define multiple networks representing discrete levels of relationships**」 | 作者自存档 PDF（1,416,825 bytes）本地抽文，逐字 | `VERIFIED_BY_ME` |\n| 「三函数完美共线」 | 在 Snijders 2010 PDF 与 Manual 中**未找到明文** | `PLAUSIBLE`（无源断言） |\n| Windrum, Fagiolo & Moneta 2007（auto-referential / in-sample / out-of-sample / great many combinations / replication does not necessary imply explanation） | jasss.org/10/2/8 全文抽文，逐字 | `VERIFIED_BY_ME`（五条全部） |\n| 同一处引文的第一作者名 | Windrum 页面原文作「(Edmonds and Moss 2005)」→ `12` 写 Edwards | `VERIFIED_BY_ME`（`Edmonds` 正确） |\n| Lustick 2000（artifactuality / folk theorems / good tricks / stipulative patches） | jasss.org/3/1/1 全文抽文，逐字 | `VERIFIED_BY_ME`（全部四条） |\n| Hills & Todd 2008（0.47 vs 0.50；median 6 vs 7–8 年；~6% vs <5%；by visual inspection；trade up；not qualitatively different） | jasss.org/11/4/5 全文抽文，逐字 | `VERIFIED_BY_ME`（全部数字） |\n| Lawson & Park 2000（never able to reproduce / Figure III-4 / simulation artifact / synchronous time evolution） | jasss.org/3/1/2 全文抽文，逐字 | `VERIFIED_BY_ME` |\n| Galán et al. 2009（core/accessory 定义、artefact 定义、neighbourhood 例子） | jasss.org/12/1/1 全文抽文，逐字 | `VERIFIED_BY_ME`（「换编程语言重实现」未逐字核实 → 该子项 `PLAUSIBLE`） |\n| JuSpace = 神经影像工具箱 | Crossref `10.1002/hbm.25244` → *Human Brain Mapping* | `VERIFIED_BY_ME`（`issued`=2020 vs 报告 2021，良性） |\n| `smallslm` 不存在 | GitHub Search `q=smallslm&in:name` → 0；对照 `q=repast&in:name` → 316 | `VERIFIED_BY_ME` |\n| `ASON` 不是 ABM 框架 | GitHub `q=ASON+agent+social+network` → 0（复现）；**`q=ASON&in:name` → 967（`12` 未跑）**，前 5 条命中全为 DI 库/序列化格式/Android DSL | `VERIFIED_BY_ME` |\n| Gilardi, Alizadeh & Kubli 2023（n=6,183；+25pp；< $0.003；~30×；ICR > crowd & trained） | PMC10372638 abstract 逐字 | `VERIFIED_BY_ME`（全部四个数字） |\n| Gilardi DOI / 题名 | Crossref | `VERIFIED_BY_ME` |\n| **arXiv:2602.13224** 题名 / abstract / Table 3 / 显著性陈述 / AUROC 0.536 | arxiv.org/abs + arxiv.org/html/2602.13224v3 全文（236,026 chars） | `VERIFIED_BY_ME`（全部） |\n| 「跨域 AUROC 0.50 / 域内 0.76–0.99 / 平均余弦 −0.07」 | 同上全文检索 **0.50 / cross-domain / 0.76(AUROC) / 0.99 / 0.07 / near-chance 全部未命中** | `NOT_LOCATED` → 支撑 `G-C20` |\n| **arXiv:2609.22133** 题名 / abstract / 设置 | arxiv.org/abs | `VERIFIED_BY_ME`（abstract 逐字） |\n| Nakamura 0.89 / 0.67 / 0.987 / 0.533 四个具体数 | arXiv PDF（1,099 KB）未抽取 | `NOT_OPENED` |\n| W3C PROV 2013-04-30 + 四项 W3C Recommendation | w3.org/TR/2013/REC-prov-dm-20130430 → 200 + 「W3C Recommendation」+ 「30 April 2013」 | `VERIFIED_BY_ME`（日期/身份）；12 份文档清单 `PARTIAL` |\n| Olson, Russell & Sprenkle 1983 DOI 错误 | `11` 写的 `10.1111/j.1545-5305.1983.00069.x` → **404**；正确为 `10.1111/j.1545-5300.1983.00069.x` | `VERIFIED_BY_ME` |\n| Cicirelli 1993 / Gehr 2021 / Meyer & Allen 1991 / Blake 2022 / Hardesty 2015 / Tan 2014 / Johnson 2006 / Horvath & Symonds 1991 / Snijders 2010 / Kenneth & La Voie 1984 / Glán / Schindler / Grazzini / Sutcliffe / Centola / Schindler 2013 | Crossref 题名·卷·期解析 | `VERIFIED_BY_ME`（著录层）；正文引语 `NOT_OPENED` |\n| `FIXTURE_003` rights 边界全文 | 读 §1（licence/robots/Eye 判定/下游约束） | `VERIFIED_BY_ME` |\n| `13` 对该边界的记录 | 穷尽子串检索 10 词 → 全 0 | `VERIFIED_BY_ME` |\n| **Husley / Hughes / Nugent / Westermarck / 89%-vs-4% / Gilardi-vs-Nakamura 冲突** | 全文检索 | **`NOT_APPLICABLE_TO_THIS_CLUSTER`**（0 命中） |\n\n**未做（明确不主张）**：merge PR #31；修改 `D:\\coding\\lhrm` 任何文件；执行 WO-N1/N2/N3；读 `#20`/`#21`/`#22`；读不属于 cluster `G` 的任何报告；下载受限数据或绕过任何 auth/licence/robots/rights；新增文献调研（唯一例外是契约 §3 允许的对被判为承重且被审计报告质疑的引用做抽样复核 —— 本 packet 的全部联网行为均属此类）；触碰 Eye / Juece。\n\n**packet 生成时间**：2026-09-27",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "4.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 594,
+   "answer": "| # | 推测 | 出处 | 我检索了什么 | 判定 |\n|---|---|---|---|---|\n| 1 | 「LHRM 在这个维度上**不是落后，而是孤立**」 | `12` §0.1 | 枚举了 `12` 自列的 13 个 `UNKNOWN`；`APIM` 分支未检索、二人方法学多层模型未检索、非 JASSS 场所未检索。**无法在 cluster 内找到第二条独立支撑** | `HOLD_FOR_EVIDENCE` |\n| 2 | 「ABM 目前主要是一个隐喻生成器」 | `12` §10.3 | `12` 自己的 §10.2（「唯一独特价值」= 模拟轨迹撞 schema）与 §8 `I6`（唯一现成路线 = replanning）**反驳**它 | `HOLD_FOR_EVIDENCE`（`G-C18`） |\n| 3 | `Belonging / social embeddedness`「跨域证据基础**强于 LHRM 现有若干候选**」 | `11` §5 排名 8 | 该排序**无比较基准**。Walton & Cohen 2011（doi:10.1126/science.1198364）/ Brady et al. 2020（doi:10.1126/sciadv.aay3689）的 DOIs 我**未核实**（`NOT_OPENED`） | `HOLD_FOR_EVIDENCE` |\n| 4 | 「敌对 dyad 的『we』是**对比性**的（we vs. them）；成对分量为 0，群体级『we』极高」 | `11` §3.6 | 报告**未给任何来源**。我检索了 `11` §9 引用列表：Gehr（we-ness 是照护类型判别变量）、de Bel（loyalty conflict）、Voorpostel 三条，都不支撑「敌对 dyad 的 we 是对比性的」 | `HOLD_FOR_EVIDENCE` |\n| 5 | 「多个 LLM 达成一致是 F5/F6 的实例，不是它的解药」 | `13` §9.6 | **被引论文的显著性检验方向相反**；`Nakamura et al.` 结论方向相反（`G-C20`/`G-C28`） | `REJECT` |\n| 6 | 「极性/valence 跨 dyad 类型翻转」（`L-11`） | `11` §4 `L-11` | 报告给了两个可判据（Johnson 的 `based entirely on control context`（`NOT_OPENED`）、照护域一致性调节）；`U12` 自列但未跑 | `PLAUSIBLE`，需 U12 |\n| 7 | 「`GoalAlignment = 0` 在敌对 dyad 里可以意味着『目标高度一致（共同对付第三方）』」 | `11` §4 `L-11` | 合理推论，**无来源**。同上 | `HOLD_FOR_EVIDENCE` |\n| 8 | `13` 自报「70 条指针中直接支撑本项目的 **0 条**」 | `13` §12 行 541 | 我**未重算**指针数（`NOT_OPENED`）。但**立场**被我独立支持：三条最承重的 LLM 数字（Gilardi PNAS = 推文/新闻分类；Fu LREC-COLING = 儿科临床笔记；Nakamura = 政治学文本分类）都来自 LHRM 任务域之外。**`corroboration: NON_INDEPENDENT`**（我用抽样支持 `13` 自己已声明的立场，不是独立发现） | 立场 `PLAUSIBLE` |\n| 9 | **不是**单 lane 推测（我主动排除）：`L-1` 的 D8/R2 readout 冲突 | `11` §4 `L-1` | 我**独立地**用 `PARAMETER_CONVERGENCE_V0_1.md` §4 D8 + §9 R2 文本复现，不依赖报告的外部引用 | `VERIFIED`（`G-C9`） |\n| 10 | **不是**单 lane 推测：L-8 的三份清单不一致 | `11` §4 `L-8` | 我**独立地**逐条比对了三份 canonical 清单 | `VERIFIED`（`G-C13`） |\n| 11 | **不是**单 lane 推测：值类与 `AGENTS.md` 的不相容 | `11` §3.1 | 我**独立地**并置三段 canonical 文本复现 | `VERIFIED`（`G-C5`） |\n| 12 | **不是**单 lane 推测：`13` 的权利遗漏 | `13` 全文 | 我**独立地**读了 `FIXTURE_003` §1 rights block 并对 `13` 做穷尽子串检索 | `VERIFIED`（`G-C22`） |\n\n**方法学声明**：上表第 8 行与 `G-C18` 存在来源关系 —— 我用来支持 `13` 那条立场的三条数字，正是 `13` 自己引用的同三条。`corroboration: NON_INDEPENDENT`。"
+  },
+  {
+   "index": 2,
+   "heading": "4.2 哪些是方法学/访问限制而非 ontology 发现",
+   "line_start": 613,
+   "answer": "| # | 报告中的表述 | 实际层级 | 是否滑动 | 处置 |\n|---|---|---|---|---|\n| 1 | `12` §0.1「**不存在**可与 LHRM 对象直接比较的既有关系 ABM」；§10.1.3「本 lane **未找到任何**已发表的…关系状态转移模型」 | **检索覆盖事实**（JASSS + CoMSES + 具名框架 + 3 个负名核验） | **滑动** — 表述为文献级 ontology 事实 | `RECLASSIFY_AS_METHOD_LIMIT`（`G-C17`） |\n| 2 | `12` §0.1「LHRM…**不是落后，而是孤立**」 | **检索覆盖事实** | **滑动** | 同上 |\n| 3 | `13` §13.2「fixture 的 `fact_status` 是**冻结事实**」/「`fact_or_narrative_status` 冻结」作为 gold | **材料层标签被当作真值层 gold** | **滑动** — 正是 `AGENTS.md` 的「provenance quality != fact status」与 `CURRENT_ARCHITECTURE.md` §10 禁止的层间搬运 | `RECLASSIFY_AS_METHOD_LIMIT`（`G-C29`） |\n| 4 | `13` §13.2 六指标作为「完全可机器判定」的评估方案 | **指标设计限制**（无覆盖率项，弃权满分） | **滑动** —— §14.6 只说「不充分」，未说「有平凡最优」 | `REJECT` 为评估门（`G-C21`） |\n| 5 | `13` §2.2(a)「ExtractBench 的结论**直接适用于**本项目」 | **跨域外推**（ExtractBench = 结构化文档抽取，LHRM = 关系叙事） | **部分滑动** —— 报告在别处警告跨域外推，此处自己做了 | `ACCEPT_AS_PROPOSAL` 但降级措辞 |\n| 6 | `11` §8 的全部「未检索到」条目 | **负结果** | **未滑动** ✓ | **无处置。`11` 是本 cluster 里处理负结果的范本**（Gilligan 10 路检索 + 显式「两个方向都无影响」+ 诚实标注失去反例检验机会） |\n| 7 | `11` §3.4 `P-4`「成形前的 dyad 是一个提议」 | **架构论证**（报告自己标「不是已被反例检验的结论」） | **未滑动** ✓ 但 parent 极易误用 | `ACCEPT_AS_PROPOSAL`，**必须**带「架构论证，非经验发现」的标签进入 synthesis |\n| 8 | `12` §12 「Angus & Hassani-Mahmooei (2015)」是「最有力的元证据之一」 | **二手转述的证据链限制** | **未滑动** ✓（自己标 `UNKNOWN` 并建议核实） | `RECLASSIFY_AS_METHOD_LIMIT`（降级为背景断言，`G-C27`） |\n| 9 | `13` `U-5`（fixture 上人工 verifier ICR 为 `UNKNOWN`，因 `#20/#21/#22` 隔离） | **访问限制** | **未滑动** ✓ | **无处置。** 按隔离契约我不查；`13` 的陈述正确 |\n| 10 | `11` §1 的零测量不变性研究 | **文献/方法空白** | **未滑动** ✓ —— 报告把它作为自身最重要的限制而非他人缺陷 | **无处置。这是 `11` 最强的一段** |\n| 11 | `11` §5 排序表标题「跨域稳定性更好的**构念**」 | 混合：行 1/5 是**本体候选**，行 8/9/10 是**候选池建议** | **轻微滑动** —— 表头把「本体发现」与「待查缺口」混为一类 | 表头改为「跨域稳定性候选（按证据分级）」 |\n\n**关键判断（契约 §6.2 要求的区分）**：\n- **方法事实**：「我们的 instrument / 文献基础是恋爱导向的」 —— 这是**取样与方法**事实，成立且被 `11` 的 §0/§5 反向结论正确陈述。\n- **本体主张**：「这些 primitives 是恋爱特定的」 —— `11` **没有**滑到这里。它的 §10 非主张第 1 条明确写「**不主张** 8 维 basis 在恋爱域之外是错的；最可能结论是**大部分语义可保**，主要缺陷在 basis 之外的容器」— `VERIFIED_BY_ME`（行 516）。**这是正确的界线划分，parent 应照抄。**\n- 真正滑动的是 `12`（检索覆盖 → 文献 ontology）与 `13`（材料层标签 → 真值层 gold），各一处，均已在 `G-C17`/`G-C29` 记录。"
+  },
+  {
+   "index": 3,
+   "heading": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 634,
+   "answer": "| # | 候选变更 | 目标文件 / 章节 | `requires_canonical_change` | **是否必须停在 proposal** | 理由 |\n|---|---|---|---|---|---|\n| 1 | 值类扩为 `{applicable, structurally_not_applicable, scope_unknown}` + `DyadScopeProfile` | `CURRENT_ARCHITECTURE.md` **§9** 原则 4-5 + `PARAMETER_CONVERGENCE_V0_1.md` **§14** | **`YES`** | **否 —— 不能停在 proposal** | 这是**逻辑**不相容（`G-C5`）。实验无法裁决两条已写下的规则是否自相矛盾。Architect 必须扩值类或记录豁免 |\n| 2 | Gate B cross-context 清单扩到 5 类新 dyad + 与 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6 对齐 | `PARAMETER_CONVERGENCE_V0_1.md` **§15 Gate B**（+ `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7.6） | **`YES`** | **否 —— 不能停在 proposal** | **两份 canonical 文档之间的可检视不一致**，零研究成本（`G-C13`）。proposal 状态让不一致持续 |\n| 3 | Gate B 清单的 `kin` 是否拆分 sibling / parent–adult-child | `PARAMETER_CONVERGENCE_V0_1.md` **§15** | `YES`（与 #2 同批） | **否** | 决定缺口是 5 类还是 3 类；`11` §3.8 的整个论证依赖该区分（`G-C13`） |\n| 4 | `U1`（跨 dyad-type 测量不变性序列）列为 Gate C 的**前置门** | `PARAMETER_CONVERGENCE_V0_1.md` **§15** | `UNSURE` | **可以停在 proposal** —— 但若采纳 #2，Gate B 扩展后 U1 就成为实际前置 | `11` §11 自荐；这是**流程顺序**问题不是语义问题 |\n| 5 | 新增 `Obligation_(i->j)` directed candidate；`Dedication` 收窄为 affective | `PARAMETER_CONVERGENCE_V0_1.md` **§4 D7** + §11 Candidate Basis | `NO` | **必须停在 proposal** | 需 U6 + U8；且连带改动已冻结 candidate 与 §9 R1–R5 派生路径（`G-C6`） |\n| 6 | 拆 `Constraints`/`Agreements`；`Constraint` 为 per-edge 带 `consent_status`；`RoleContract_(A,B)` | `CURRENT_ARCHITECTURE.md` **§3** + `PARAMETER_CONVERGENCE_V0_1.md` **§6 P5** | `NO` | **必须停在 proposal** | 支撑引文全部 `NOT_OPENED`；类型学外推风险；且这是**三重计数**的合并项（`G-C7`） |\n| 7 | 所有 readout 携带 `dyad_type_scope` + `valence_not_defined_here`；`D8` 的 `alternatives` 项声明 `reference_class` | `PARAMETER_CONVERGENCE_V0_1.md` **§9 R1–R5** + **§4 D8** | `NO` | **必须停在 proposal** | 方向正确且**与 `AGENTS.md` 现有规则一致**（readout 是下游产物），所以这是**重申 + 扩展**，不需新裁决；但具体标记形态需 U12（极性是否跨 dyad 翻转） |\n| 8 | `Relationship_ij.existence` 九值枚举 + `RelationshipIdentity` 四轴拆分 | `PARAMETER_CONVERGENCE_V0_1.md` **§6 P4** + `CURRENT_ARCHITECTURE.md` **§2** | `NO` | **必须停在 proposal** | `P-4` 是**架构论证**且**未经反例检验**（`11` 自认，Gilligan 记录不存在使其失去一次反例检验机会）；需 U3 |\n| 9 | `Role` 从 query lens 升为 world state 成分 | `AGENTS.md`「Current architecture direction」第 3 条 | `NO` | **必须停在 proposal，且必须停在 Human 层** | `AGENTS.md`：Human 对 major architecture direction 有最终主权。**且 `X-5` 本身被夸大**（`G-C14`） |\n| 10 | `CohesionScope ∈ {pair, subgroup, coalition}`；Agent facet 加 `dyad_type_scope` | `CURRENT_ARCHITECTURE.md` **§5** + `CONSTRUCT_SCOPE_DIRECTIONALITY.md` **§1** | `NO` | **必须停在 proposal** | 部分已在 canonical §7.6 有判据（`G-C12`）；需 U7 + U1 |\n| 11 | LLM 层权利约束记录（Fixture 003 `pointer_only` / `ai-train=no` / `GPTBot Disallow` / `representation_allowed=false`） | **新文件** `docs/validation/RIGHTS_CONSTRAINTS.md` 或 LLM 层 work order 设计约束节 —— **文件位置 `UNSURE`**（`VALIDATION_CORPUS_V0_1.md` 不在我的读取范围） | **`YES`**（需求层面确定） | **不能停在 proposal** —— 需求层面 | 这是**设计合法性前提**，不是研究问题；在它被记录之前，任何 LLM 层设计都在假设一个未声明的许可（`G-C22`） |\n| 12 | `13` §13.2 六指标作为 LLM 层评估门 | LLM 层评估设计（尚未 canonical） | `NO` | **必须停在 proposal**（且当前形态必须 `REJECT`） | 简并最优 + 2/6 gold 循环（`G-C21`/`G-C29`） |\n| 13 | `13` 的 `evidence_item` 十字段最小记录 | LLM 层设计（尚未 canonical） | `NO` | **必须停在 proposal** | `13` §14.8 已正确声明 `knowledge_time_by_agent` 是否升格为 LHRM 对 PROV 的扩展是 **Architect / Human 裁定** |\n| 14 | `12` 的 §10.4.1「不要在 `docs/foundation/` 引入 ABM 依赖」 | `docs/foundation/*` | `NO` | — | `12` 自己标为 `AI_RECOMMENDATION` 而非 `Human_requirement`，标注正确。**不需要 canonical 变更**，只需 parent 保持该标注 |\n| 15 | Repast Context/Projection + Concordia GM/player 作为 canonical 已有决策的外部佐证 | 无（**支持**现有 canonical） | `NO` | — | `AGENTS.md` 研究纪律要求区分「empirical evidence」与「architecture decision」；这三条的恰当标签是「独立工程先例」，值得 parent 记入 synthesis 而非 canonical（`G-C26`） |\n\n**汇总：2 条 `YES` 且不能停在 proposal（#1 值类、#2 Gate B）+ 1 条 `YES` 需求层面确定但位置未定（#11 权利约束）+ 1 条 `UNSURE`（#4 U1 前置门）+ 11 条必须停在 proposal。**"
+  },
+  {
+   "index": 4,
+   "heading": "4.4 哪些结论重复、同义或双重计数",
+   "line_start": 656,
+   "answer": "**A. 本 cluster 内部（G 内部）**\n\n| # | 重复组 | 成员 | 关系 | 处置 |\n|---|---|---|---|---|\n| A1 | **obligation / contract 归属层** | `G-C6`（§3.2 `Obligation`）、`G-C14`（§3.7 `RoleContract`）、`G-C7`（§4 `L-10` `family obligations` 层级错置） | **三重计数**。`Dykstra` 在 §3.2 与 §3.7 各引一次同一论点；`Meyer & Allen` 同；`RoleContract` 的五项字段就是 `Obligation` 的具体化 | **合并为一条**。引用计数 3 → 1（`G-C7`） |\n| A2 | **`Trust` 行分类冲突** | `G-C10`（§2 判 `MEANING_SHIFTS`）、`G-C30`（§6.2 判「定义欠定」） | **同格两码**，非独立结论 | 消歧（`G-C30`） |\n| A3 | **`NA` 判定的值类面与语义面** | `G-C4`（记入 semantic 码表）、`G-C5`（值类不相容）、`G-C11`（`S`/`K` 两列的具体判定） | 同一发现的三个面 | 前两个合并（`G-C4` ⊂ `G-C5`），第三个独立 |\n| A4 | **`12` 的负结论与裁决** | `G-C17`（负存在）、`G-C18`（隐喻生成器） | 后者**依赖**前者 | 合并为一条改写（`G-C18` 的措辞已吸收 `G-C17` 的限定） |\n| A5 | **`12` 的 SAOM 排除论证** | `G-C15`（单边 tie 控制）、`G-C16`（二值 + 三函数共线） | 同一结论的两条论据 | 论据 #2 被削弱，**论据 #1 成为唯一支柱且自带限定语** |\n| A6 | **`13` 的「LLM 一致性」主张** | `G-C20`（数字层 + 推论层）、`G-C28`（Nakamura 转述方向层）、§14 非主张 4（复述） | 同一主张的三个面 | 合并为一条 `REJECT` + 一条 `R16` 保留 |\n| A7 | **`13` 的评估缺陷** | `G-C21`（简并最优）、`G-C29`（gold 同源） | 同一缺陷的两个独立机制 | **两个都要修**，缺一不可：修覆盖率但不同步移 gold 仍循环；移 gold 但无覆盖率仍弃权满分 |\n| A8 | **canonical 外部佐证被埋没** | `G-C25`（`13` 声称 0 先例）、`G-C26`（`12` 已提供两条同构先例） | **互相矛盾**的记录 | `G-C26` 胜（它是具体的、可指认的）；`13` 的措辞须改 |\n| A9 | **D8 的两个问题** | `G-C8`（§3.3 `Constrainedness`，需 IPV 文献）、`G-C9`（§4 `L-1` readout 冲突，**不需外部文献**） | 同一安全问题，两种论据强度 | **以 `G-C9` 为主论据**，`G-C8` 为次（`G-C8` 的处置已如此建议） |\n\n**B. 与 canonical 现有条目的重复**\n\n| # | `11`/`12`/`13` 的结论 | canonical 已有 | 重复程度 | 处置 |\n|---|---|---|---|---|\n| B1 | §3.6 `CohesionScope ∈ {pair, subgroup, coalition}` | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 1 项 `scope test`（问「k 是否存在 pair-level 共同属性或可派生模式」） | **高度重复** —— canonical 已要求问这个问题 | 增量仅为「敌对/合作/kin 的 we 归属是 group 级」这一具体失效论证。**不要作为新判据上报** |\n| B2 | §3.8 Agent facet 加 `dyad_type_scope` | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 6 项 `cross-context test` | **高度重复** | 同上（`G-C12`） |\n| B3 | §4 `L-1`「所有 readout 携带 `valence_not_defined_here`」 | `AGENTS.md`：「Distance/weight/score/probability are downstream readouts unless later validated」；`CURRENT_ARCHITECTURE.md` §1「任何 distance、score、probability、recommendation 都是对既有状态空间的 readout，不是 LHRM 本体」 | **重复** —— canonical 已确立 | `11` 的增量是「跨 dyad 类型连**极性**都不共享」。**记为对 canonical 现有规则的重申 + 一项扩展**，不作为新原则 |\n| B4 | §4 `L-8` 三份清单不一致 | 无（canonical 自己就是不一致的三方） | **不重复** —— 这是 canonical 的**内部缺陷** | `G-C13`，`requires_canonical_change: YES` |\n| B5 | §7 `X-3`（值类 vs `AGENTS.md`） | 无 | **不重复** | `G-C5`，`requires_canonical_change: YES` |\n| B6 | §3.5 `Ambivalence` 升为一等状态 | 无 | **不重复**，但**必须**先消解与 `13` 的术语冲突（见 C1） | `HOLD_FOR_EVIDENCE` |\n| B7 | `12` §8 `I8` / §2.1 Concordia → `Reality != Observation != Belief` | `CURRENT_ARCHITECTURE.md` §3 已冻结该分层 | **重复但方向相反** —— `12` 是**佐证** | **记为外部佐证**（`G-C26`），不是新主张 |\n| B8 | `12` §8 `I6` MATSim replanning | `CURRENT_ARCHITECTURE.md` §6 的 `X_(t+1) = F(...)` 未指定推进语义 | **不重复** —— 填补 canonical 空白 | `ACCEPT_AS_PROPOSAL`（`G-C18`） |\n| B9 | `13` §13.4.1「`MAPPING_FAILURE` 的**分布 profile** 才是该看的量」 | `AGENTS.md` 验证纪律段：「Case Bank primarily tests `representation completeness | closure | regression | adversarial coverage`, **not population probability**」；`CURRENT_ARCHITECTURE.md` §10 同义 | **完全重复** | `13` 自己也说「与 `AGENTS.md` 验证纪律段一致，**不是新发明**」— 措辞正确。**不作为发现上报** |\n| B10 | `13` §4.1(c) 时间对齐三分类 | `VALIDATION_CORPUS_V0_1.md` 的 `future_leakage_risk` 字段（`13` 自引） | **部分重复** —— 字段已存在 | 增量是 `CONTRADICTORY_AT_SAME_TIME_SLICE` / `UNRESOLVED_PENDING_TIME_ALIGNMENT` 两值分类，**无文献背书**（`13` §12 自认） |\n| B11 | `13` §11.2「不允许对 dyad 状态做总结、评分、排序、建议」 | `AGENTS.md` §8「High-level labels such as 漂亮/贤惠/高价值/真爱/关系质量/匹配度 are not assumed to be primitive variables」；`CURRENT_ARCHITECTURE.md` **§11 当前非目标**（不冻结单一 LoveScore / 匹配分 / 从单个案例估计现实概率） | **完全重复** | `13` 自己标为 `A`（现有项目约束的延伸），标注正确。**不作为发现上报** |\n\n**C. 术语/语义冲突（不是重复，但会让 parent 误合并）**\n\n| # | 冲突 | 分析 | 处置 |\n|---|---|---|---|\n| C1 | `11` 的 **`Ambivalence`（亲属 dyad 的一等关系状态）** vs `13` 的 **`AMBIGUOUS_NO_UNIQUE_ANSWER`（抽取记录的一等状态）** | **不同对象**。前者是**世界**状态（dyad 的「又爱又怨」），后者是**记录**状态（某条断言在当前 codebook 下无唯一解）。`11` §3.5 的依据是 Bengtson/de Bel/Blake 关于 family science 不把「又爱又怨」当作低分合成；`13` §3.2 的依据是 Krippendorff/Nakamura 关于文本没有 reader-independent 品质。**但两者在中文里都可能被译成「歧义 / 矛盾」。** | **不是 duplicate，是 synonymy hazard。** Parent 必须显式区分并要求两份报告用不同词（例如 `11` 用 `dyadic_ambivalence`（状态），`13` 用 `assertion_ambiguity`（记录））。**这是我在本 cluster 找到的最容易导致错误合并的一处。** |\n| C2 | `11` 的 **`structurally_not_applicable`（值类）/ `scope_unknown`** vs `13` 的 **`UNKNOWN_EVIDENCE` / `AMBIGUOUS_NO_UNIQUE_ANSWER` / `DISPUTED_BY_SOURCE`** | **同一值空间问题在两层**。`13` 的三个抽取态是**记录层**的；`11` 提的是**状态层**的。**`11` 的提案一旦采纳，会强制 `13` 的 `UNKNOWN_EVIDENCE` 重新表达**，且 `13` 完全没有 `structurally_not_applicable` 这个位置。 | **不是 duplicate，是隐藏的顺序依赖。** Parent 必须排序：**先值类（`G-C5`），后抽取态（`13` §3.2）**。`13` 是 `11` 的下游，未说明。 |\n| C3 | `11` 的 **`UNKNOWN`（§1 码表 = 「文献真正沉默」，关于证据）** vs `scope_unknown`（§3.1 提案 = 值类，关于世界） | **同一报告内一个词两种含义**。§1 定义 `UNKNOWN` 为「文献真正沉默」（a statement about the literature），§3.1 造 `scope_unknown` 为一个**值**（a statement about the world）。两者都表示「不知道」，但一个是**证据缺口**、一个是**状态取值**。 | **命名卫生缺陷。** 这正是 `AGENTS.md`「Unknown/missing data must remain explicit」所禁止的混同 —— 「我们不知道」与「该维度不存在」必须用不同词。要求 `11` 拆分。 |\n| C4 | `11` 的 **`Dedication` 拆分（`Obligation` 提出后收窄为 affective）** vs `12` 的 **`I1`（`Dedication` / `OutcomeDependence` 的期望随时间下调）** | **不相容但双方都没标。** `12` `I1` 把 `Dedication` 当作一个可施加指数松弛的**单一标量**（`j_t = j_0·λ^t`）；`11` §3.2 若采纳则 `Dedication` 变成 affective 部分且必须与 `Obligation` 并列。→ **`12` 的 `I1` 只能落在 affective dedication 上，义务性持久性的期望下调机制将无落点。** | **跨报告隐藏不一致，parent 必须处理。** `corroboration: NON_INDEPENDENT` 不适用（这是两条互不引用的独立结论）。**我未在任何一侧找到对此的记录。** |\n| C5 | `12` 的 **`Ambivalence`（无）** — 不适用。`13` 的 **`F10` 跨构念族重复计数** vs `11` 的 **`Gate C` 语义冗余** vs canonical `PARAMETER_CONVERGENCE_V0_1.md` §15 Gate C | 三者都是「同一潜在状态被重复命名」的检测，但层次不同：`F10` 是**抽取层**（一次事件抬高多个坐标）、`Gate C` 是**本体层**（两个候选构念重复描述同一 latent state）、§15 Gate C 是**判决**。`13` §9.10 的 Bad 对照直接引用「W79 的四机制问题」和 §8 四关审查，**已经引用了 canonical 的框架**。 | **不重复，但 `13` R14 引用 canonical 的四关审查是正确做法，应保留。** parent 需知 `F10` 不替代 Gate C。 |\n\n---"
+  }
+ ],
+ "specialty_section": "4. 四项必答专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2_G — Review child lane `G`：general dyad scope / ABM / LLM layer",
+   "line_start": 1,
+   "line_end": 797
+  },
+  {
+   "level": 2,
+   "title": "1. files_audited",
+   "line_start": 10,
+   "line_end": 27
+  },
+  {
+   "level": 2,
+   "title": "2. coverage_statement",
+   "line_start": 28,
+   "line_end": 47
+  },
+  {
+   "level": 2,
+   "title": "3. verdict_matrix",
+   "line_start": 48,
+   "line_end": 591
+  },
+  {
+   "level": 3,
+   "title": "G-C1 — 216 格矩阵的自我计数（216 格 / 69 格 MP / 0 项不变性研究）",
+   "line_start": 54,
+   "line_end": 68
+  },
+  {
+   "level": 3,
+   "title": "G-C2 — 69 格 MP 的加权：披露够，编码不够",
+   "line_start": 69,
+   "line_end": 83
+  },
+  {
+   "level": 3,
+   "title": "G-C3 — §3 与 §6 引用了 5 个矩阵格统计，其中 3 个算错（本 lane 唯一的自证伪发现）",
+   "line_start": 84,
+   "line_end": 104
+  },
+  {
+   "level": 3,
+   "title": "G-C4 — §2 把 representation 问题记进了 semantic 通道（报告自认）",
+   "line_start": 105,
+   "line_end": 119
+  },
+  {
+   "level": 3,
+   "title": "G-C5 — 现有值类集合与 `AGENTS.md` 硬性规则**逻辑上**不相容（本 lane 第一条 `requires_canonical_change: YES`）",
+   "line_start": 120,
+   "line_end": 135
+  },
+  {
+   "level": 3,
+   "title": "G-C6 — `Obligation` 作为第九个 directed candidate（8 条提案中证据最强）",
+   "line_start": 136,
+   "line_end": 156
+  },
+  {
+   "level": 3,
+   "title": "G-C7 — `Obligation` / `RoleContract` / `family obligations` 是同一主张的三重计数",
+   "line_start": 157,
+   "line_end": 171
+  },
+  {
+   "level": 3,
+   "title": "G-C8 — `Constrainedness / Control-Asymmetry`（安全价值最高项，著录最弱之一）",
+   "line_start": 172,
+   "line_end": 190
+  },
+  {
+   "level": 3,
+   "title": "G-C9 — `D8` / `R2` 的 readout 中立性缺陷（可由 canonical 文本直接复核，安全价值最高）",
+   "line_start": 191,
+   "line_end": 206
+  },
+  {
+   "level": 3,
+   "title": "G-C10 — `Trust` 在 5 类非恋爱 dyad 上判 `MEANING_SHIFTS` 的加权（单源外推）",
+   "line_start": 207,
+   "line_end": 221
+  },
+  {
+   "level": 3,
+   "title": "G-C11 — `SexualDesire × {F,S,K,A} = NOT_APPLICABLE`：架构论证 + 未处理的内部不对称",
+   "line_start": 222,
+   "line_end": 236
+  },
+  {
+   "level": 3,
+   "title": "G-C12 — §3.8 `source/target/edge` facet 在 kin/care 上不可识别",
+   "line_start": 237,
+   "line_end": 255
+  },
+  {
+   "level": 3,
+   "title": "G-C13 — L-8：三处 canonical cross-context 清单互不相同，且都漏 5 类 dyad（本 lane 第二条 `requires_canonical_change: YES`，成本最低）",
+   "line_start": 256,
+   "line_end": 274
+  },
+  {
+   "level": 3,
+   "title": "G-C14 — `Role` 作为 query lens 的挑战（挑战 Human-settled 方向，证据最弱）",
+   "line_start": 275,
+   "line_end": 294
+  },
+  {
+   "level": 3,
+   "title": "G-C15 — Snijders 2010 排除性引语（`12` 最承重引语，逐字核实通过）",
+   "line_start": 295,
+   "line_end": 312
+  },
+  {
+   "level": 3,
+   "title": "G-C16 — SAOM「严格二值」与「三函数完美共线」两条断言的核实",
+   "line_start": 313,
+   "line_end": 330
+  },
+  {
+   "level": 3,
+   "title": "G-C17 — `12` 的「不存在可比较的既有关系 ABM」强负结论",
+   "line_start": 331,
+   "line_end": 346
+  },
+  {
+   "level": 3,
+   "title": "G-C18 — `12` 的 ABM 裁决「主要是一个隐喻生成器」是否与比例相称",
+   "line_start": 347,
+   "line_end": 366
+  },
+  {
+   "level": 3,
+   "title": "G-C19 — 三个框架名的证伪核验（`JuSpace` / `smallslm` / `ASON`）",
+   "line_start": 367,
+   "line_end": 384
+  },
+  {
+   "level": 3,
+   "title": "G-C20 — `13` 的「多个 LLM 达成一致 = 失败模式」元论证的**证据链失效**（本 lane 最高严重度）",
+   "line_start": 385,
+   "line_end": 412
+  },
+  {
+   "level": 3,
+   "title": "G-C21 — `13` §13.2 的六个表示忠实度指标：目标重定向合法，但指标集**简并最优**",
+   "line_start": 413,
+   "line_end": 436
+  },
+  {
+   "level": 3,
+   "title": "G-C22 — `13` 使用 `FIXTURE_003` 六次但从未记录其权利边界（高严重度披露遗漏）",
+   "line_start": 437,
+   "line_end": 456
+  },
+  {
+   "level": 3,
+   "title": "G-C23 — `13` §7.1 的 W3C PROV 日期与文档集",
+   "line_start": 457,
+   "line_end": 471
+  },
+  {
+   "level": 3,
+   "title": "G-C24 — 三份报告的引用著录错误（三处可确证）",
+   "line_start": 472,
+   "line_end": 489
+  },
+  {
+   "level": 3,
+   "title": "G-C25 — `13` 的「0 条外部文献」与 `12` 的 GM/player 同构先例冲突",
+   "line_start": 490,
+   "line_end": 504
+  },
+  {
+   "level": 3,
+   "title": "G-C26 — 被埋掉的三条 canonical 外部佐证",
+   "line_start": 505,
+   "line_end": 523
+  },
+  {
+   "level": 3,
+   "title": "G-C27 — `12` §13 行动建议 5 的依赖图误解（C1/C2/C6 其实不依赖未核实元证据）",
+   "line_start": 524,
+   "line_end": 538
+  },
+  {
+   "level": 3,
+   "title": "G-C28 — `13` §2.2(c) 对 Nakamura et al. 的转述方向与来源相反",
+   "line_start": 539,
+   "line_end": 561
+  },
+  {
+   "level": 3,
+   "title": "G-C29 — `13` §13.2 的 gold 与输入同源（循环论证的自我不一致）",
+   "line_start": 562,
+   "line_end": 576
+  },
+  {
+   "level": 3,
+   "title": "G-C30 — `11` 的 §2 与 §6.2 对 `Trust` 行的分类冲突",
+   "line_start": 577,
+   "line_end": 591
+  },
+  {
+   "level": 2,
+   "title": "4. 四项必答专项",
+   "line_start": 592,
+   "line_end": 699
+  },
+  {
+   "level": 3,
+   "title": "4.1 哪些是单 lane 推测（无第二条独立支撑）",
+   "line_start": 594,
+   "line_end": 612
+  },
+  {
+   "level": 3,
+   "title": "4.2 哪些是方法学/访问限制而非 ontology 发现",
+   "line_start": 613,
+   "line_end": 633
+  },
+  {
+   "level": 3,
+   "title": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 634,
+   "line_end": 655
+  },
+  {
+   "level": 3,
+   "title": "4.4 哪些结论重复、同义或双重计数",
+   "line_start": 656,
+   "line_end": 699
+  },
+  {
+   "level": 2,
+   "title": "5. top_recommendations（7 条，按对 Architect 的重要性排序）",
+   "line_start": 700,
+   "line_end": 724
+  },
+  {
+   "level": 2,
+   "title": "6. explicit_non_claims（不主张的内容）",
+   "line_start": 725,
+   "line_end": 746
+  },
+  {
+   "level": 2,
+   "title": "7. packet_sha_note",
+   "line_start": 747,
+   "line_end": 797
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [
+   {
+    "rule": "PCOT-4",
+    "detects": "internal deliberation / planning narration / unfilled placeholder",
+    "matched": "待补",
+    "disposition": "retained_as_uncertainty",
+    "why": "The 2 matches are both `待补核实` and both are **quotations of the audited report's own wording** (`12` §13 action item 5), i.e. evidence about the audited text, not the child's private note. The 1 `我先` match is lane `EV1`'s method disclosure (read canonical first, then grep), which `REVIEW_CONTRACT.md` §5 field 6 requires. **0 captured fields excluded.**"
+   },
+   {
+    "rule": "PCOT-4",
+    "detects": "internal deliberation / planning narration / unfilled placeholder",
+    "matched": "待补",
+    "disposition": "retained_as_uncertainty",
+    "why": "The 2 matches are both `待补核实` and both are **quotations of the audited report's own wording** (`12` §13 action item 5), i.e. evidence about the audited text, not the child's private note. The 1 `我先` match is lane `EV1`'s method disclosure (read canonical first, then grep), which `REVIEW_CONTRACT.md` §5 field 6 requires. **0 captured fields excluded.**"
+   }
+  ],
+  "excluded_regions": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,998 @@
+{
+ "child_id": "R2_I",
+ "lane": "I",
+ "cluster": "red-team falsifiers / Gate A-B-C",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "table_wide",
+ "source": {
+  "file": "R2_I.md",
+  "sha256": "516e8e8cd02eb0be7b4cb111647bf1a6dc5f9ba102a1b75a5ece4e420b99f8b2",
+  "bytes": 75733,
+  "lines": 329
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 55,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C1",
+   "claim": "Gate A/B/C 三门在判据原文下均不存在会被算作失败的结果",
+   "source_report": "A03 §1.2/§1.3；17 §3 F1/F11 + §1.3(2)",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`PARAMETER_CONVERGENCE` §15 line 707–748（5 步全为记录义务，无阈值、无「若…则否决」句）、§13 line 616–649（10 类 + 7 项诊断）、`AGENTS.md:62` — 全部 `VERIFIED_BY_ME` 逐行",
+   "strongest_counterevidence": "我检索了 §2.1–§2.6、§13、§14、§15 与三份 fixture 的 verdict 词表，**未找到任何否决分支**。唯一近似失败条件是 §15 step 5「不允许 Agent 为了通过测试现场发明变量」，而它约束过程、无后果定义",
+   "requires_canonical_change": "**YES** — `PARAMETER_CONVERGENCE_V0_1.md` §15 Gate A/B/C 必须新增「若…则…」判定句与失败终态；不能停在 proposal，因为三门是 candidate→MSS 的唯一闸门，无判定句即无门",
+   "needs_experiment_or_data": "NO（纯文本裁定）",
+   "duplicate_of": "NONE",
+   "corroboration": "`NON_INDEPENDENT`（A03 §1.4 明确是对 17 F1 的 re-audit；两报告同源文本，**不构成两次独立支持**）",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "1"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 56,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C2",
+   "claim": "§2.6 `Representation necessity` 结构上永不触发，8 项 basis 单调增长",
+   "source_report": "A03 §1.6 / §2.3 / N-A03-2",
+   "verdict": "**CONTESTED**（核心成立，两处子命题被我推翻）",
+   "supporting_refs": "支持：`PARAMETER_CONVERGENCE` line 84「若删除该 construct…」+ line 86「这项将在 Case Bank regression 中直接测试」；§15 无删除臂；`VALIDATION_CORPUS` 与三份 fixture **均无「移除构念 k 后重跑」的臂** — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "**反证 1（推翻「唯一」子命题）**：§2.1（无损替代）、§2.2（line 53「若无法构造或观察解耦反例，可能属于同一 latent state 的重复命名」= merge）、§2.3（无增量信息）、§2.5（line 80「如果只是行为、标签、结果或 proxy，不因常见就升级为 primitive」= demote）**同样蕴含删除**。A03 §2.3 自己的记分卡已把这五条全标为 `NOMINAL_ONLY`/`UNFALSIFIABLE`/`BLOCKED`，却在 §1.6 单挑 §2.6 为「唯一」，**A03 §1.6 与 §2.3 自相矛盾且 §1.6 是较弱的那个**。<br>**反证 2（推翻「MERGE/REJECT 一次也没签发」）**：`PARAMETER_CONVERGENCE` line 499 §9 R4 `` `REJECT as primitive` ``、line 505 §9 R5 `` `REJECT as single primitive` `` —— canonical 层面签发了 **2 次 REJECT**；§8 降级 13 项、§9 降级 5 项、§12 拒绝 7 个熟悉词 = **27 条非准入裁定**。且这两次 REJECT 都在 §9 readout 上，**从未落在 §4/§5/§6 的 8 项 basis 构念上**",
+   "requires_canonical_change": "**YES** — §2.1–§2.6 全族 + §2.6 line 86 的自我断言需改写；不能停在 proposal，因为 line 86 是**关于自身可测性的未兑现承诺**",
+   "needs_experiment_or_data": "YES：`§2.6` 需要「删除 k → 同语料重跑 → 计数」的反事实臂",
+   "duplicate_of": "NONE（与 I-C1 相邻但不同命题）",
+   "corroboration": "`NON_INDEPENDENT`（A03 与 17 都未处理 §2.6；此处**确为独立发现**——17 对 `2.6`/`Representation necessity` 全文 0 命中）",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（接受「无门产生否决」这一事实；不接受「§2.6 是唯一删除判据」与「basis 单调增长」的表述）",
+   "_extra_columns": {
+    "#": "2"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 57,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C3",
+   "claim": "**`§2.6` line 86「这项将在 Case Bank regression 中直接测试」是一句关于自身可测性的未兑现承诺**：全项目不存在「移除构念 k 后以同语料重跑」的测试臂",
+   "source_report": "我的独立发现（`17` 与 `A03` 均未提出）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`PARAMETER_CONVERGENCE` line 86（断言）vs §15 Gate A 五步（无删除臂）+ `VALIDATION_CORPUS` line 15–17/377（无映射结果）+ 三份 fixture §5/§7（只要求 verdict，不要求反事实重跑）— 全部 `VERIFIED_BY_ME` | 我 grep 了 `docs/foundation` + `docs/validation` 全目录的 `删除该 construct | 阈值 | threshold | 否决",
+   "strongest_counterevidence": "veto`，除 §2.6 自身提问外**无任何实现**。`FIXTURE_003` §7 明确「不得通过改写本 fixture 或新增 LHRM construct 来'修复'输入」，进一步说明重跑臂连制度上都不存在",
+   "requires_canonical_change": "**YES** — `PARAMETER_CONVERGENCE_V0_1.md` §2.6 与 §15；不能停在 proposal：这是**唯一能让 8 项 basis 缩小的可执行程序**，缺它则 basis 只能由 drafting 时的散文判断裁剪",
+   "needs_experiment_or_data": "YES：一次三 verifier 盲跑（删 k → Fixture 001 C001–C026 重映射 → 计 `MAPPING_FAILURE`）",
+   "duplicate_of": "NONE",
+   "corroboration": "**INDEPENDENT**（`17` 0 命中 §2.6；`A03` 走到「恒为假」但未指出 line 86 是一句未兑现的**自我断言**，也未指出 Gate A 缺的是「删除臂」而非「阈值」）",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "3"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 58,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C4",
+   "claim": "`MAPPING_FAILURE` 在类型上不可达",
+   "source_report": "17 §3 F1；A03 §1.4 CONFIRMED",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`PARAMETER_CONVERGENCE` §13 line 618–629（10 类，第 7/8/9/10 类）+ §3 line 108 `ProvenanceAndUncertainty` 自由文本 + `AGENTS.md:62` `or merely narrative/irrelevant` — `VERIFIED_BY_ME`。**另加两条两份报告都没有的仓内证据**：`FIXTURE_003` §7 line 152 把 `NARRATIVE_ONLY` 与 `IRRELEVANT` 列为**一等合法 verdict**；且 §7 只要求报告 `direct/partial/multi/unknown/failure` 计数，**不要求报告 `narrative_only`/`irrelevant` 计数**",
+   "strongest_counterevidence": "我逐类检验 10 个映射类是否能穷尽「任意输入串」：不能。`Derived/Narrative-only` 按名即收一切叙述/评价；`Provenance/Uncertainty` + §3 自由文本槽可逐字收纳任何串并附不确定标记；`Environment`/`History-Timeline` 在判决/口述这类**通篇带时间戳与情境**的语料上近乎全覆盖；`AGENTS.md:62` 另给第 7 个出口。**未找到任何输入串能被强制判为 `MAPPING_FAILURE`**",
+   "requires_canonical_change": "**YES** — `FIXTURE_003` §7 的计数报告清单（但**不能改已冻结 fixture**，须在新版本或 §15 落）；`PARAMETER_CONVERGENCE` §13/§15",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE（与 I-C1 同源但结论更强：I-C1 说门不能失败，本条说**失败码本身不可达**）",
+   "corroboration": "`NON_INDEPENDENT`（A03 §1.4 是对 17 F1 的 re-audit）",
+   "recommendation_to_architect": "**ACCEPT**（并采用我补的 fixture 级证据）",
+   "_extra_columns": {
+    "#": "4"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 59,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C5",
+   "claim": "catch-all 数量 = 4 个类 + 1 自由文本槽 + 1 诊断出口",
+   "source_report": "A03 §1.4（4）；17 F1（自述「三个」，但枚举了 4 个类）",
+   "verdict": "**VERIFIED**（采 A03 计数）",
+   "supporting_refs": "`PARAMETER_CONVERGENCE` §13 第 7/8/9/10 类 line 625–629 + §3 line 108 + `AGENTS.md:62` — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "17 §3 F1 line 110 写「第 7 类…第 8 类…第 9 类…第 10 类…构成**三个 catch-all + 一个自由文本槽**」——**枚举 4 个类却计为 3**，且 §1.3(2)(a) 复述为「三个 catch-all」。17 内部计数不自洽",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C4`",
+   "corroboration": "`NON_INDEPENDENT`",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**（把 17 的「三个」更正为 A03 的「4+1+1」；这是计数更正，不需动 canonical）",
+   "_extra_columns": {
+    "#": "5"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 60,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C6",
+   "claim": "§13「禁止**第一反应**直接新增 primitive」+ §15 step 5 构成无终止条件的修复环；出口没堵死，但**唯一被写下来的动作就是「修」**",
+   "source_report": "A03 §1.4（对 F1 的补充）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`PARAMETER_CONVERGENCE` line 637「禁止第一反应直接新增 primitive」+ §13 line 641–649 七项诊断 + §15 line 715「Architect 只分析 failure」 — `VERIFIED_BY_ME` 逐字",
+   "strongest_counterevidence": "17 已在 F1 引用 Lakatos（1970）protective belt 论证，**但未注意到「第一反应」这个限定词正是修复环的授权来源**。A03 的这一条是 17 漏掉的机制识别，非重复",
+   "requires_canonical_change": "YES — `PARAMETER_CONVERGENCE` §13 诊断出口需绑定「诊断后动作」的终态集合（含「不修」为一个合法终态）",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C1` / `I-C4`",
+   "corroboration": "**INDEPENDENT**（17 未指出该措辞的循环效果）",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "6"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 61,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C7",
+   "claim": "**Gate B 的 11 个 cell 中 10 个是项目自己既有文本的逐条复述，唯一新 cell 是 `high-attraction/low-trust`**",
+   "source_report": "我的裁定（`17` 11/11 vs `A03` 8/11，两家皆错）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "§15 Gate B line 721–733 vs §2.4 line 61「same-sex / opposite-sex、kin / non-kin、stranger / established relationship、romance / friendship / caregiving / conflict」= **前 8 个 cell 逐条命中**；`unilateral attraction` = §4 D2 line 152 逐字；`high-dependence/low-liking` = §4 D8 line 238 逐字 — 全部 `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "`high-attraction/low-trust` **无逐条前例**：A03 §1.5 line 157 把它映射到 §4 D4 line 179「**可高喜欢低信任**」并判为「复述」——**这是把 `Liking` 偷换成 `Attraction`**，恰是 D1/D2 要维持的区分、也恰是 `17` N5（Sternberg 1987）所依赖的区分。§4 D5 line 194 的实际断言是「强吸引但低 **security**」（attraction × AttachmentSecurity），不是 attraction × Trust",
+   "requires_canonical_change": "YES — `PARAMETER_CONVERGENCE` §15 Gate B 需重写为**外部生成的**反例集；不能停在 proposal：反例集由被测 schema 自己导出 = 结构性确认偏误",
+   "needs_experiment_or_data": "YES：外部生成的对抗件语料",
+   "duplicate_of": "NONE",
+   "corroboration": "**INDEPENDENT**（`17` 与 `A03` 各给一个错数；正确分割由我给出）",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "7"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 62,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C8",
+   "claim": "`17` 的 Gate B 覆盖表枚举不完整：含 1 个非 Gate B cell（`work colleague`），漏 2 个真 cell（`opposite-sex`、`non-kin`）",
+   "source_report": "我的核查（`17` F9 line 298–309 vs `A03` §1.2 line 110–121）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "程序化计数：`17` F9 表 10 行数据；`A03` 表 10 行覆盖 11 cell — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "无。这是可直接复核的枚举事实。`17` 漏掉 `opposite-sex` 尤其实质不利：该 cell 是 `17` 自己「恋爱构念外推」论证的核心语境",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C7`",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**（`17` F9 表应重出；A03 的表更完整，两处 cell 判定不同）",
+   "_extra_columns": {
+    "#": "8"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 63,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C9",
+   "claim": "Magi（`L1-003` / Fixture 002）**不**覆盖 `unilateral attraction`",
+   "source_report": "`17` F9 判「可」；`A03` §1.2 判「L1-003 不是」",
+   "verdict": "**VERIFIED（`A03` 对，`17` 错）**",
+   "supporting_refs": "`FIXTURE_002` M001–M061 逐行 + §4 K1–K4 — `VERIFIED_BY_ME`。Magi 中二人**互相爱**；张力在**知识不对称**（`K1` Jim 不知卖发 / `K3` Della 不知卖表），不在吸引不对称。`17` 自己的 F4b 用的就是这个「信念不对称 ≠ 吸引不对称」的区别 | `17` F9 line 301 写「unilateral attraction \\ | L1-003、L2-003 \\",
+   "strongest_counterevidence": "可」。**A03 抓对了但没有把它记成对 `17` 的更正**（`X-5`/`N-A03-6` 只记了计数）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C7`",
+   "corroboration": "INDEPENDENT（`A03` 抓对，但双方都未在结论层标注这是对 `17` 的更正规 kind）",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（更正 `17` F9；Gate B 该 cell 实际只有 `L2-003` 一份未冻结材料）",
+   "_extra_columns": {
+    "#": "9"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 64,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C10",
+   "claim": "`caregiving` 与 `high-attraction/low-trust` 两个 cell 的覆盖被两份报告都判为 0，实际应为 partial / 0",
+   "source_report": "我的独立重算（`17` F9 与 `A03` §1.2 均判 5 个零覆盖）",
+   "verdict": "**PLAUSIBLE**",
+   "supporting_refs": "`VALIDATION_CORPUS` L0-003 line 99 core_dyad = `Mr. Jonas <-> GP / primary-care practice`，line 100 记 207 GP visits / 23 年 / 显式照护行为序列 — `VERIFIED_BY_ME`。`high-attraction/low-trust`：`L3-001` line 274 core_dyad 为 care/control + 依恋，**几乎无吸引内容**",
+   "strongest_counterevidence": "反证：Gate B 的 `caregiving` 若要求**非机构性**照护接受者，则 L0-003 不合格，0 覆盖成立。`L3-001` 若按「John 的 physician 身份 = 早期 attraction 语境」宽松读，也勉强算 1 份。**该 cell 的判定依赖 Gate B 对「context」的定义，而 §15 未定义** —— 这正是 `I-C7` 要修的同一处",
+   "requires_canonical_change": "YES — 与 `I-C7` 同处（§15 Gate B 需定义每个 cell 的合格判据）",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C7`",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**HOLD_FOR_EVIDENCE**（先定义 cell 判据，再重数；不要在定义前把 5 或 6 当定论）",
+   "_extra_columns": {
+    "#": "10"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 65,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C11",
+   "claim": "Gate B 零覆盖 cell 的**成因**部分来自 rights/access 约束，不是 curation 缺陷",
+   "source_report": "我的独立发现",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`VALIDATION_CORPUS` line 353–356 推荐 **Fixture 001 = L0-002 (LGSCO caregiving)**，理由「lowest sensitivity of the L0 set」；`FIXTURE_001` line 5 写「原 LGSCO source 因 **Eye rights gate 保持 fail-closed**，本包按 `#19` durable source-switch 改用公开 OGL tribunal source」；`FIXTURE_003` line 20 `rights_policy=HUMAN_REVIEW_REQUIRED → POINTER_HASH_ONLY` — 全部 `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "反证：若 L0-002 在仓，`caregiving` 至少有 20 个单元可用；rights gate 使其不可用是**外部条件**。因此「语料在结构上无法执行 Gate B」这一表述**把 access 限制写成了 ontology/curation 缺陷**",
+   "requires_canonical_change": "NO（诊断性陈述）",
+   "needs_experiment_or_data": "YES：解除 rights gate 后重取 L0-002",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT（`17`/`A03` 均未查 fixture 编号与 corpus 推荐的不一致）",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**",
+   "_extra_columns": {
+    "#": "11"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 66,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C12",
+   "claim": "`VALIDATION_CORPUS_V0_1.md` 的「Recommended Fixture 001–003」已被实际冻结的三个 fixture 取代，canonical 内部存在**未更新的文档级冲突**",
+   "source_report": "我的独立发现",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "corpus line 353/357/361 = `001=L0-002 LGSCO` / `002=L1-003 Magi` / `003=L0-001 Carty`；实际文件 = `FIXTURE_001_L0_001_CARTY`(Carty) / `FIXTURE_002_L1_003`(Magi) / `FIXTURE_003_L1_001`(StoryCorps)。`git log`：`1a02d969`(09-11 corpus) → `f2377849`/`e26a8dac`(09-14 freeze 001/002) → `d54779aa`/`95805771`(09-15 freeze/repair 003) — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "无反证。corpus 文档日期 2026-09-11，早于三次冻结，从未回填。**后果**：`VALIDATION_CORPUS` 不能作为「当前 fixture 集是什么」的权威指针；`17` F9 与 `A03` §1.2 都默认按 corpus 推荐编号读 fixture，**编号错位风险已实际发生**（`A03` §1.2 写 Gate A T3 PASS 依据 `FIXTURE_001` 的 Carty 内容——结论对，但它是靠读文件而非靠 corpus 索引得到的）",
+   "requires_canonical_change": "**YES** — `docs/validation/VALIDATION_CORPUS_V0_1.md` 的「Recommended Fixture 001–003」小节需标注已被 `#19`/`#24`/`#25` 取代；不能停在 proposal，因为**两份报告与后续所有 verifier 都以它为索引**",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "12"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 67,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C13",
+   "claim": "`17` §0 独立性声明为真（Git 层与内容层均通过核查）",
+   "source_report": "`17` §0 / §13「独立性：CONFIRMED」",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "Git：`8ee07c25`(09:00:53) 是**首个**含 lane 报告的 commit（`--diff-filter=A` 证实 18 份报告同批入库）；`17` durable mtime = **08:33:31** < 09:00:53。SHA256：`R17_report_body.md` = `7F8C9FB4…58D0` = `17_RED_TEAM_FALSIFIERS.md`，**完全一致**（我自己算的）。内容层：全文 grep `R00`–`R16`、`U-`、`G9`、`E8`、`判 E`、`FZ-0`、`sibling` = **0 命中**；`00_MANIFEST`/`A01`/`A04`/`19_` 的全部命中都在 §0「明确未读取」清单内。`00_CHILD_CONTRACT` §2 line 15 证实 `docs/research/*` mission 允许读，故「主动不读」是**比 mission 更严**的选择",
+   "strongest_counterevidence": "**唯一缺口**：`17` §0 只声明未读**仓库内**其它 lane 产出，未排除共享临时工作区 `…\\Temp\\opencode\\lanes\\`。该目录在我核查时含 **18 份** `R00`–`R17` packet；按 mtime，**8 份在 `R17_packet.md`(08:18:03) 之前已存在**（R00 07:58、R02 07:55、R06 07:47、R08 07:53、R13 07:51、R09 08:11、R03 08:17、R07 08:06）。该目录同时是 `17` 自己的写入目标，sibling 产出近在一次目录列表之隔",
+   "requires_canonical_change": "NO（若要补，只需在 `17` 加一句 temp 目录声明；**但 `17` 是被审对象，本 Work Order 禁止我改**）",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT（我自己做的 git + SHA + grep + mtime 四路核查）",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（独立性成立，登记 temp 目录为**未声明的暴露面**；不构成污染证据）",
+   "_extra_columns": {
+    "#": "13"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 68,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C14",
+   "claim": "`17` 的 S 编号体系（`S1`…`S29`）无法从其 §12 引用清单解析",
+   "source_report": "我的核查",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`17` §3 F1–F11 与 §4 表大量使用 `S3`/`S7`/`S11`/`S12`/`S14`/`S15`/`S16`/`S17`/`S18`/`S20`/`S29`；§12 清单编号为 1–41，两者**无映射表**。反推：`S1`=Joel、`S2`=Eastwick、`S3`=Segal&Fraley，但 `S15` 在 T1/T3 被指为 `Rusbult/Martz/Agnew 1998`，而 §12 中 Rusbult 是第 **13** 项、`Sandberg` 才是第 15 项 — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "`17` 可能使用了未落盘的内部编号；无论成因，**读者无法把 CHALLENGED 裁定的证据追到具体条目**。`17` §12 未提供 S↔序号对照",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**HOLD_FOR_EVIDENCE**（`17` 的 12 条 `CHALLENGED` 中，至少 A2/A4/A5/A7/A13/A16/A20/A21 依赖不可解析的 S 编号 → 需 `17` 作者补映射表后才可逐条审计）",
+   "_extra_columns": {
+    "#": "14"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 69,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C15",
+   "claim": "`17` §4 表实际裁定分布是 `CHALLENGED 12 / CONTESTED 6 / UNCHALLENGED 3 / NO_EVIDENCE 2`",
+   "source_report": "我的程序化计数（`17` line 358–382，23 行）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "逐行匹配；`A6` 因粗体包裹「CHALLENGED（推翻）」需单独计入，故程序化初值 11 + 1 = **12**",
+   "strongest_counterevidence": "`17` §13 line 613 自述「3 项 CONTESTED（F5、F6、A15/A16/A17/A23）」——**说 3、列 6**，且 `F5`/`F6` 是 falsification card 不是假设行，分类混用。`17` 内部三处计数不自洽（§1.3「12 条攻击线」/§4「23 行」/§13 的 3-vs-6）",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**",
+   "_extra_columns": {
+    "#": "15"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 70,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C16",
+   "claim": "`17` F2 的五条 Joel et al. (2020) 结论",
+   "source_report": "`17` §3 F2 表",
+   "verdict": "**VERIFIED**（3 条）/ **NOT_OPENED**（2 条）",
+   "supporting_refs": "`VERIFIED_BY_ME`（Crossref 出版社摘要）：标题/PNAS 117(32)/19061–19071/2020 全对；「11,196 romantic couples」✓；结论 2 的「partner's judgments did not add information, nor did either person's personalities or traits」✓；结论 3「none of these variables could predict whose relationship quality would increase versus decrease over time」✓；结论 5 的 baseline「approximately 45%」✓。`NOT_OPENED`：结论 1 的 top-5 逐项措辞、结论 2 的「two to four times more variance」比率、结论 4（objective variables matter little）、结论 5 的「up to 18%」",
+   "strongest_counterevidence": "我**未**找到任何与 `17` 转述冲突的表述。但注意：Crossref 摘要的措辞是「explained approximately 45% of their **current satisfaction**」——**这是对 satisfaction 的横断面预测**，见 `I-C19`",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**",
+   "_extra_columns": {
+    "#": "16"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 71,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C17",
+   "claim": "`17` F3：**LHRM 的层边界被经验文献反向排序**（PPR 应升为一等状态层 / Satisfaction 不应是 Derived）",
+   "source_report": "`17` §1(1)、§3 F3、§11 建议 1",
+   "verdict": "**WRONG-SCOPE**",
+   "supporting_refs": "书目 `VERIFIED_BY_ME`（Crossref：`JSPR 33(5)/581-599`、摘要「perceived partner responsiveness shaped investment model variables which, in turn, shaped commitment」）。`NOT_OPENED`：「serves as an organizing variable」的逐字",
+   "strongest_counterevidence": "**这是本 cluster 最重要的方法学越界。** (a) **Joel et al.** 用「最能预测 quality 的变量」来定 ontological layer —— 但 quality/satisfaction 正是**因变量**，对 DV 最邻近的变量在任何回归里都会胜出。**预测邻近性不是层归属的证据。** (b) **Segal & Fraley** 说的是 PPR 在其模型内**因果上游**（shaped IM variables → shaped commitment），**从没说 PPR 是 state 而非 belief**。「organizing variable」与「belief 层构念」完全可共存。`17` 未处理此点即推出「LHRM 把它降级了」。(c) `17` §11 建议 1 与其自身 **T1** 冲突：T1 说 `Dedication` 在源理论里由 (satisfaction, alternatives, investment) 决定；`17` §11 却同时要求把 `Satisfaction` 升为一等层而**不问这对 D7 意味着什么**",
+   "requires_canonical_change": "**YES** — `PARAMETER_CONVERGENCE` §5 B1（PPR 层）与 §9 R3（Satisfaction=DERIVED）；不能停在 proposal：这是 8 项 basis 的相空间重排",
+   "needs_experiment_or_data": "YES：需「控制 8 个 directed 坐标后 PPR 的 within-person 增量信息，且在 ≥2 种关系类型上同号复制」（即 `A03` 改写 4 的形式）",
+   "duplicate_of": "`I-C22`（Le & Agnew 证据）",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**（把「层被反向排序」降为**待检验的竞争假说**；`A03` 改写 4 的双分支登记是对的形式，`17` 的单一方向不是）",
+   "_extra_columns": {
+    "#": "17"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 72,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C18",
+   "claim": "`17` F7：基于文本的 benchmark 可取得 100% 映射覆盖率而与驱动现场行为的层完全无关",
+   "source_report": "`17` §3 F7",
+   "verdict": "**PLAUSIBLE**",
+   "supporting_refs": "`VERIFIED_BY_ME`（Crossref 书目：`JPSP 101(5)/993-1011/2011`，标题含 \"A double dissociation in predictive validity\" —— 与 `17` 转述一致）。`NOT_OPENED`：「The correlation between these constructs was .00 on average」的逐字（Crossref 无摘要）",
+   "strongest_counterevidence": "缺口已具名：`17` 的推理需要一个**未声明的桥接假设** —— 「关于关系的情节文本」在测量学上占据与「对外貌吸引的显式评分」相同的位置。Eastwick 比较的是**同一被试身上** implicit/explicit 两种量表；文本映射 benchmark 与显式自评量表并不同一。`17` 结论本身（completeness ≠ ecological validity）**正确且限定得当**，我不判其为错，只记缺口",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "YES：需一个文本 fixture + 一个现场行为任务",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（保留结论，补上桥接假设）",
+   "_extra_columns": {
+    "#": "18"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 73,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C19",
+   "claim": "`17` F4：复合态无法由「每构念一个坐标」表达，状态空间必须增加模态/析取层",
+   "source_report": "`17` §3 F4",
+   "verdict": "**UNSUPPORTED**（就其结论链而言）",
+   "supporting_refs": "(a) MacDonald et al. `VERIFIED_BY_ME` 逐字（Crossref 摘要与 `17` 引文**逐字一致**，N=1004 ✓）；(b) Zoppolat et al. = `17` 自标 `CITED_SECONDARY`，我 `NOT_OPENED`",
+   "strongest_counterevidence": "**(a) 被误读**：MacDonald 的发现是「threat 与 reward 感知**强度相近**」（anxious: similar **and intense**；avoidant: similar but **not intense**）。这是两个坐标之间的**相对幅度**，用两条坐标 + 强度即可表达；论文自己说这在 avoidant 组「something more akin to **indifference**」。**这是 Gate C 冗余发现，不是状态空间不足。**(b) Zoppolat 的 subjective/objective 解离**恰好是 LHRM 已有的 Observation≠Belief 分离**（§13 第 4 类 `BeliefState`、`AGENTS.md` 的 Reality≠Observation≠Belief）。它**支持**现有架构，不反对状态空间",
+   "requires_canonical_change": "**YES** — 若要保留「需模态层」这一主张，canonical 必须接受 lattice/析取状态空间；**但该主张目前无支撑，不应停在一份 proposal 上也不应被实施**",
+   "needs_experiment_or_data": "YES：需一个「同一 Z、不同 subjective 报告、下游行为不同」的构造",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**REJECT**（作为架构主张）；真实的现象改写为 Gate C 冗余条目 + 已有 Observation/Belief 分离条目",
+   "_extra_columns": {
+    "#": "19"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 74,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C20",
+   "claim": "`17` F5a：一致性项在 actor/partner 主效应之外携带额外方差",
+   "source_report": "`17` §3 F5a",
+   "verdict": "**VERIFIED**（引文）/ **PLAUSIBLE**（推论）",
+   "supporting_refs": "`VERIFIED_BY_ME` **逐字**：Crossref 摘要与 `17` 引文完全一致，含「2,337 stable couples / German Family Panel / 8 years / APIM + dyadic response surface analyses」",
+   "strongest_counterevidence": "推论的方向性被 `17` 自己说窄了：Mund & Johnson 的 congruence 效应是**性别与因变量特异的**（女性满意度在「双方都低」时最高；男性只在自己低时最高，与伴侣无关）。`17` 写「这份证据说**差分**是一阶预测因子」——只在女性 DV 上成立。`17` 把它标 `CONTESTED` 而非 `CHALLENGED`，**这个自我限定是诚实的**，我给正面评价",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "YES",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**",
+   "_extra_columns": {
+    "#": "20"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 75,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C21",
+   "claim": "`17` §9 item 14：Le & Agnew (2003) 自身同时说「moderators vary minimally」与「significantly stronger in relational domains」",
+   "source_report": "`17` §9(14) / §2 N4",
+   "verdict": "**VERIFIED — 且为本报告最诚实的一处**",
+   "supporting_refs": "`VERIFIED_BY_ME` **逐字**：Crossref 摘要含**两句**：①「Support for the model was obtained in predicting commitment in both relational domains … and nonrelational domains …, but was **significantly stronger in relational domains**.」②「the associations between commitment and its theorized bases **vary minimally** as a function of demographic (e.g., ethnicity) or relational (e.g., duration) factors.」两句**在同一摘要内并存** — 逐字确认",
+   "strongest_counterevidence": "无反证。这是红队如实报告**自己承重来源自相矛盾**的实例，满足「不能输的红队不是红队」这一标准",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "21"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 76,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C22",
+   "claim": "Le & Agnew (2003) 报告 IM 三分量解释 commitment 约 **2/3** 方差",
+   "source_report": "我的独立发现（`17` T1 未用此量化证据）",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`VERIFIED_BY_ME` **逐字**：「satisfaction with, alternatives to, and investments in a relationship each correlated significantly with commitment … Moreover, these three variables collectively accounted for **nearly two-thirds of the variance in commitment**.」（52 studies / 60 samples / 11,582 participants）",
+   "strongest_counterevidence": "无反证。`17` T1 用「源理论用方程定义」+ Rusbult et al. (1998) 量表手册作证，**证据形态更弱**；`17` 手里已有 Le & Agnew 却未取这个数",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "`I-C17`",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（作为 `17` T1 的证据升级）",
+   "_extra_columns": {
+    "#": "22"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 77,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C23",
+   "claim": "**`17` T1 + F3/A21 合起来蕴含一个 `17` 自己没看见的二选一**：若 Dedication 由 (satisfaction, alternatives, investment) 决定，则 §4 D7（primitive）与 §9 R3（Satisfaction=DERIVED）不能同时成立",
+   "source_report": "我的独立发现",
+   "verdict": "**VERIFIED**（逻辑）；`NOT_OPENED`（D7 的最终处置需 sibling 报告）",
+   "supporting_refs": "`I-C22` 的逐字证据 + `PARAMETER_CONVERGENCE` §4 D7 line 224–225 + §9 R3 line 489–495 — `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "反证：Investment Model 的定义式是**理论定义**，Le & Agnew 的 2/3 是**回归 R²**，两者不必等同。若 Dedication 被当作「由三个可观测输入实时计算的 readout」而非 latent state，则 D7 与 R3 可共存（`17` 自己在 T1 里就用了「源理论用方程定义」这个区分）。**但那样 D7 就不是 primitive，而是 `A03` X-4 对 `§9 R2 Power` 用的同一个词：`UNFALSIFIABLE_AS_WRITTEN`。** 无论取哪一支，`17` §11 建议 1 都不完整",
+   "requires_canonical_change": "YES — §4 D7 或 §9 R3 二选一",
+   "needs_experiment_or_data": "YES",
+   "duplicate_of": "`I-C17` / `I-C22`",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**",
+   "_extra_columns": {
+    "#": "23"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 78,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C24",
+   "claim": "`17` A22 / F9(3)：Fixture 输入与 ontology 有共同作者",
+   "source_report": "`17` §4 A22 / §3 F9(3)",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`FIXTURE_001` line 5「准备者：LHRM Project Architect（2026-09-14）」；`FIXTURE_002` line 5「本包由 Architect 仅做**材料清洗与冻结**，不参与后续独立 mapping verdict」；`FIXTURE_003` line 5「准备者：LHRM Research（Fresh Research … 2026-09-14 warm resume）」 — `VERIFIED_BY_ME` 三份全对",
+   "strongest_counterevidence": "反证（对 `17` 有利）：Fixture 003 **确实**由独立 lane 做（`17` 自己指出 2/3 由 Architect 准备）；且 Architect 的自陈是「仅做材料清洗与冻结」，`17` 也已披露「冻结是机械的，这不是造假」。**判定公平**。但 `17` 未指出「选哪一段做 fixture」不在「仅做材料清洗」的覆盖范围内（`A03` H-10 补上了这一点）",
+   "requires_canonical_change": "NO（流程）",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（采纳 `A03` H-10 的补充限定）",
+   "_extra_columns": {
+    "#": "24"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 79,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C25",
+   "claim": "`17` T5：`CONSTRUCT_SCOPE_DIRECTIONALITY` §1 的加性分解把跨时间常数/trait 静默导入时间索引状态",
+   "source_report": "`17` §3 T5 / §4 A23",
+   "verdict": "**PLAUSIBLE**（设计异味成立），但取证偏重",
+   "supporting_refs": "`VERIFIED_BY_ME`：SCOPE line 25–34 逐字为「**可写成近似分解**：… = population baseline + source_i + target_j + directed_dyad_(i->j) + context/history residual」；line 20–22 确把 `source_i`/`target_j` 描述为「某个 Agent **一般**是否…」",
+   "strongest_counterevidence": "**取证偏重**：该段原文自称「**可写成近似分解**」——是**示意性建模建议**，不是已承诺的架构等式。`17` 把它当既定分解来挑战，**A23 判 `CONTESTED` 尚可，但作为架构缺陷的指控偏重**。另：`17` 引文把 `context/history residual` 截掉了，而该残差项正是把时间依赖放回状态的合法出口",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**",
+   "_extra_columns": {
+    "#": "25"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 80,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C26",
+   "claim": "`A03` §4.4「writeback 阶段不存在判据弱化」这条机器可核否定结果",
+   "source_report": "`A03` §4.4 / N-A03-7",
+   "verdict": "**PLAUSIBLE**（我无法复现其 `Compare-Object`，但发现覆盖缺口）",
+   "supporting_refs": "`A03` 的 R17 SHA256 一项我**独立复现成功**（`7F8C9FB4…58D0` 双边一致）。`NOT_OPENED`：其余 15 个 lane 的 packet↔durable 比对（packet 在 temp 目录，不在 repo）",
+   "strongest_counterevidence": "**覆盖缺口**：`A03` §4.4 表列出 16 个 lane（12「未改写」+ R02/R09/R11「只增加」+ R17「SHA 一致」），**缺 `R04` 与 `R10`**；而 `C:\\…\\lanes\\` 下 `R04_packet.md`(08:24:56) 与 `R10_packet.md`(08:21:44) **确实存在**。`A03` §11.3 把 packet 集写作「（16 份）」，**实为 18 份**。故这条否定结果的真实覆盖率是 **16/18**，不是 16/16",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT（我独立枚举了 temp 目录）",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（结论方向很可能对，但必须补 R04/R10 才能称「Wave 1 全覆盖」）",
+   "_extra_columns": {
+    "#": "26"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 81,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C27",
+   "claim": "`A03` H-3：`SPAN_SUPPORT_RATE` / `ENTITY_INSERTION_RATE` 在 Fixture 003 上永久不可计算",
+   "source_report": "`A03` §4.2 H-3",
+   "verdict": "**VERIFIED**（就仓内证据而言）",
+   "supporting_refs": "`VERIFIED_BY_ME`：`FIXTURE_003` line 20–21 `raw_artifact_ref=null`、`representation_artifact_refs=[]`、`content_hashes=[]`、`rights_policy=HUMAN_REVIEW_REQUIRED → POINTER_HASH_ONLY`、「不得通过 Eye 获取 transcript body」；`VALIDATION_CORPUS` line 24 + 394「No bulk text ingested into repo」",
+   "strongest_counterevidence": "**但 `A03` 低估了范围**：三份 fixture **都不含逐字源 span**，只有 paraphrase + anchor。所以这两项在 Fixture **001**（OGL，只存 paraphrase + 段号）与 **002**（Magi，public domain，语料 line 166 明说「may copy/re-use」）上**同样不可计算**。差别在成因：001/002 是**可逆的自定仓内政策**，003 是**不可逆的 rights block**",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（并把范围更正为「三份全部」，成因分两类）",
+   "_extra_columns": {
+    "#": "27"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 82,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C28",
+   "claim": "`A03` §4.1：`future_leakage_risk` 把「文档内/结局泄漏」与「预训练记忆泄漏」合并为一列，互相遮蔽",
+   "source_report": "`A03` §4.1 / N-A03-10",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`VERIFIED_BY_ME`：`L1-003` line 172 `future_leakage_risk: HIGH — extremely famous, ubiquitous in pretraining, twist widely known`（**记忆**轴）；`L0-001` line 59 `HIGH if uncleaned — operative judgment … leaks outcome`（**文档内**轴）；同一字段承载两轴 — `A03` 的例子逐字成立",
+   "strongest_counterevidence": "无反证。这是我在本 cluster 见到的**最干净、最便宜、最可执行**的 canonical 修复候选：加一列，不改任何判据语义",
+   "requires_canonical_change": "**YES** — `docs/validation/VALIDATION_CORPUS_V0_1.md` 12 份材料的 `future_leakage_risk` 字段拆为两列；不能停在 proposal，因为**下一个 verifier 会读这一列做窗口化决策**",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT**",
+   "_extra_columns": {
+    "#": "28"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 83,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C29",
+   "claim": "`17` §5 的 R1–R6 是否可触发",
+   "source_report": "`17` §5",
+   "verdict": "**PLAUSIBLE**（5 条可触发 / 1 条不可判定）",
+   "supporting_refs": "",
+   "strongest_counterevidence": "R1（移除 catch-all 后仍无 `MAPPING_FAILURE`）**可执行、成本极低**，且 `A03` U-F 独立确认「全项目唯一一条可执行且后果明确的 falsifier，尚未运行」— `VERIFIED_BY_ME`（我确认三份 fixture 均具备该重跑条件）。R2（≥4/5 predictor 落在 Directed 之外）：可触发，但**前提是 I-C17 的层裁定本身站不住** → 触发条件不可靠。R3（≥2 关系类型 invariance 失败）：需自建 instrument，`BLOCKED_NO_INSTRUMENT`。R4：依赖 I-C19（`UNSUPPORTED`）→ **触发条件依赖一条未获支撑的前提**。R5：可执行。R6（写不出「本 schema 会预测而现有 instrument 不会预测」的命题）：**可触发且是唯一由 Human 判定的**，但它不是经验命题，无法被数据裁决",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "部分（见 `needs_experiment_or_data`）",
+   "duplicate_of": "`I-C17` / `I-C19`",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**ACCEPT_AS_PROPOSAL**（R1 与 R5 优先；R2/R4 须先解 `I-C17`/`I-C19`）",
+   "_extra_columns": {
+    "#": "29"
+   },
+   "corroboration_source": "explicit_field"
+  },
+  {
+   "_title": "",
+   "_locator": {
+    "line_start": 84,
+    "section": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C） / 3. `verdict_matrix`",
+    "table_header": "# | claim_id | claim | source_report + 指针 | verdict | supporting_refs | strongest_counterevidence | requires_canonical_change | needs_experiment_or_data | duplicate_of | corroboration | recommendation_to_architect"
+   },
+   "claim_id": "I-C30",
+   "claim": "`17` §12 line 549 的「所有卷期页均经 Crossref API 核验」这一**总括声明**不成立",
+   "source_report": "我的核查",
+   "verdict": "**VERIFIED**",
+   "supporting_refs": "`VERIFIED_BY_ME`：`17` §12 item 19 引 `Cartwright, D., & Harary, F. (1956). *Psychological Review* **63(4)**, 277–293`；Crossref `10.1037/h0046049` 记录 `volume 63 / **issue 5** / page 277-293`",
+   "strongest_counterevidence": "我**不能**排除 Crossref 与 print 册号不一致或 `17` 用了另一版记录。**但总括声明「所有…均经 Crossref 核验」在至少一处与 Crossref 记录不符，因此该声明本身未被证实**。附带正面项：`17` 把 Cartwright & Harary 标 `CITED_CLASSIC` 并**只用来证明「项目测不了唯一候选」，不用来证明平衡成立** —— 这个自律是对的",
+   "requires_canonical_change": "NO",
+   "needs_experiment_or_data": "NO",
+   "duplicate_of": "NONE",
+   "corroboration": "INDEPENDENT",
+   "recommendation_to_architect": "**RECLASSIFY_AS_METHOD_LIMIT**",
+   "_extra_columns": {
+    "#": "30"
+   },
+   "corroboration_source": "explicit_field"
+  }
+ ],
+ "record_count": 30,
+ "field_coverage": {
+  "claim_id": 30,
+  "claim": 30,
+  "source_report": 30,
+  "verdict": 30,
+  "supporting_refs": 29,
+  "strongest_counterevidence": 30,
+  "requires_canonical_change": 30,
+  "needs_experiment_or_data": 30,
+  "duplicate_of": 30,
+  "corroboration": 30,
+  "recommendation_to_architect": 30
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "tables_accepted": 1,
+  "rows_with_cell_repair": 3,
+  "rows_with_cell_repair_ids": [
+   "I-C3",
+   "I-C9",
+   "I-C29"
+  ],
+  "composite_columns_split": 0,
+  "composite_columns_unparsed": 0,
+  "in_scope_sections": [
+   "3. `verdict_matrix`"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. `verdict_matrix`",
+    "line_start": 49,
+    "line_end": 87
+   }
+  ]
+ },
+ "files_audited": "### [line 12] 1. `files_audited`\n| file | bytes | lines | 读取方式 |\n|---|---|---|---|\n| `docs/research/overnight-2026-09-27/17_RED_TEAM_FALSIFIERS.md` | 62,803 | 618 | **全文逐行读完** |\n| `docs/research/overnight-2026-09-27/A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` | 93,592 | 986 | 全文读完（§0–§1、§2.3–§2.6、§4、§5.2、§7、§8、§9、§11 为逐行；§2.1/§2.2/§2.7–§2.9/§3/§5.1/§6/§10 为结构扫描 + 定点读） |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` | 18,510 | 780 | **全文逐行读完**（承重文件） |\n| `docs/validation/VALIDATION_CORPUS_V0_1.md` | 37,678 | 394 | **全文逐行读完** |\n| `docs/validation/fixtures/FIXTURE_001_L0_001_CARTY_FACT_PACKAGE.md` | 11,981 | 79 | **全文逐行读完** |\n| `docs/validation/fixtures/FIXTURE_002_L1_003_MAGI_PACKAGE.md` | 16,169 | 128 | **全文逐行读完** |\n| `docs/validation/fixtures/FIXTURE_003_L1_001_STORYCORPS_PACKAGE.md` | 26,779 | 160 | **全文逐行读完** |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` | 7,862 | 270 | 定点读（§1 line 12–36、§2 line 40–91、§4–§7 headings + `Asymmetry`/`distance`/`baseline` 全文 grep） |\n| `docs/foundation/CURRENT_ARCHITECTURE.md` | 9,649 | 361 | 定点读（§2、§7 line 208–228、§8、§9 line 267–289、§10 line 292–328、§11 line 331–345、§12 line 347–361） |\n| `AGENTS.md` | 5,718 | 70 | **全文逐行读完** |\n| `docs/research/overnight-2026-09-27/00_CHILD_CONTRACT.md` | 4,121 | 64 | **全文逐行读完**（用于验证 17 §0 的 mission 主张） |\n\n**未读且不得读**（cluster 外）：`01`–`16`、`18`、`19`、`A01`、`A04`、`00_MANIFEST.md`。**我一份都没有打开。** 见 §2。\n\n**未打开的一手/二手来源**（因此相关 verdict 只能是 `NOT_OPENED`）：`03_MEASUREMENT_INSTRUMENTS.md`(R13)、`06_TRANSITION_LAWS.md`(R06)、`16_EMPIRICAL_VALIDATION_PROTOCOL.md`(R16)、`15_CASEBANK_EXPANSION.md`(R15)、`02_CONSTRUCT_CONVERGENCE.md`(R01)、`02b`(R02)、`07_PARTIAL_OBSERVABILITY.md`(R07)。**A03 与 17 大量依赖这些 sibling 报告的具体内容；凡我未亲自打开的 A03/17 转述，一律标 `NOT_OPENED` 并在 `strongest_counterevidence` 里说明。**\n\n---",
+ "coverage_statement": "### [line 34] 2. `coverage_statement`\n**我实际读了什么**：本 cluster 的两份报告全文；四份 canonical 文件（`PARAMETER_CONVERGENCE`、`VALIDATION_CORPUS`、三份 fixture）全文；`CONSTRUCT_SCOPE_DIRECTIONALITY` / `CURRENT_ARCHITECTURE` 定点段；`AGENTS.md` 全文；`00_CHILD_CONTRACT.md` 全文；`git log` 全历史；对 `docs/foundation` + `docs/validation` 全目录的 `REJECT|MERGE|阈值|threshold|否决|veto|删除该 construct` grep；6 个 DOI 的 Crossref 记录（见 §8）。\n\n**我跳过了什么、为什么**：\n1. **A03 §2.1/§2.2/§2.7/§2.8/§3/§5.1/§6/§10 未逐行读**。这些段落的主体是 R06/R13/R16/R07 的转录与打分卡，其承重性取决于 sibling 报告原文，而 sibling 报告不在我的 cluster 内。**因此我不对 A03 的 `N-A03-3`（R01 七值词表只用了 4 个值）、`N-A03-4`（R13 六指标两条平凡通过路径）、`N-A03-5`（R06 §10 遗漏 5 条）、`N-A03-9`（R16 FZ-0 不可执行）、`H-1`–`H-4`/`H-8`/`H-9` 的证据成立与否表态。** 这些在本 packet 中一律 `NOT_OPENED`。\n2. **Gate A/B/C 的 T3 供给测试我独立重做了一遍**（不用 A03 的表），因为我读全了 `VALIDATION_CORPUS` 与三份 fixture，具备重算条件。\n3. **外部文献抽样只做了书目 + 摘要级**（Crossref）。我没有打开 `Segal & Fraley`、`Eastwick et al.`、`Zoppolat et al.`、`Musick & Bumpass`、`Stutzer & Frey`、`Cartwright & Harary` 的正文 PDF。涉及正文逐字引用的断言一律 `NOT_OPENED`。\n4. **任务点名要我复核的三条引用 —— deterioration-model head-to-head、2026 synchrony review、terminal-decline estimates —— 在 `17` 与 `A03` 中均 0 命中**（我对 `deterioration|synchrony|terminal decline|衰减模型|同步|head-to-head|Cochrane` 逐词 grep，两文件全 0）。**这三条不属于 cluster `I`，我未打开其可能出处（应在 `05`/`06`/`09`/`16`）。`NOT_OPENED`，且按隔离契约我不猜测其内容。**\n5. **LHRM `#20`/`#21`/`#22` 未读、未查、未引用。** Eye / Juece / `juece#30` / PR#31 未触碰。\n\n**我明确没有做的事**：没有 merge PR #31；没有修改 `D:\\coding\\lhrm` 任何文件；没有执行 WO-N1/N2/N3；没有新增文献调研（唯一的联网行为是 6 次 `api.crossref.org/works/<DOI>` 抽样复核，符合 contract §3）。\n\n---",
+ "top_recommendations": "### [line 263] 6. `top_recommendations`（≤7，按对 Architect 的重要性）\n1. **`ACCEPT` 并优先实施 `I-C3` + `N-2` + `N-3`：`PARAMETER_CONVERGENCE_V0_1.md` §2 全族（2.1–2.6）没有任何可执行测试，且 §2.6 line 86 是一句关于自身可测性的未兑现承诺。** §2.1/§2.2/§2.3/§2.5 同样蕴含删除却同样不可失败——A03 只改写 §2.6 是不完整的。这是唯一能让 8 项 basis 缩小的程序通道。\n2. **`ACCEPT` `I-C1` + `N-1`：三门无判定句、无阈值、无失败终态（含「不修」）。** 同时执行 `A03` 改写 1 的分项统计要求，并采纳我的 fixture 级补丁（`N-9`，须新版本）。\n3. **`REJECT` `17` F4 的架构结论（`I-C19`），`RECLASSIFY` 为 Gate C 冗余条目 + 已有 Observation/Belief 分离条目。** MacDonald 是冗余证据，Zoppolat 支持现有分离。**不要**据此引入 lattice/析取状态空间。\n4. **`RECLASSIFY_AS_METHOD_LIMIT` `17` F3 / A5 / A20 / A21（`I-C17`）。** 采用 `A03` 改写 4 的**双分支竞争假说登记**形式，不采用 `17` 的单向提升。并**必须**连带处理 `I-C23`（T1 + F21 蕴含 D7 与 R3 不能同时成立）。\n5. **`ACCEPT` `I-C7`（Gate B 10/11 自证，唯一新 cell 是 `high-attraction/low-trust` 且零覆盖）→ `N-4` 重写 Gate B 为外部生成的反例集并定义每个 cell 的合格判据。** 无人画出的推论：Gate B 同时是确认装置且不可执行。同时采 `I-C11`：`caregiving` 覆盖缺失的成因是 **rights gate**，在语料层解决。\n6. **`ACCEPT` `N-5` + `N-6`（成本最低、无判据语义变更）：`VALIDATION_CORPUS` 的 `future_leakage_risk` 拆两列；「Recommended Fixture 001–003」小节标注已被 `#19`/`#24`/`#25` 取代。** 后者是**已经发生过的**文档级冲突（`I-C12`），两份报告都靠读文件而非索引躲过了它。\n7. **立即执行 `17` R1 / R5 那一次实验（`I-C29`）。** 删掉 `NARRATIVE_ONLY`/`IRRELEVANT` 出口后重跑 Fixture 001 的 C001–C026。这是全项目**唯一一条可执行、后果明确、今天就能跑、且能同时产出两个退守结论**的 falsifier。`A03` U-F 已独立确认它尚未运行。\n\n---",
+ "explicit_non_claims": "### [line 275] 7. `explicit_non_claims`（不主张什么）\n1. **不主张 `17` 的独立性被污染。** 我的四路核查（git 时序 / SHA256 / sibling-token grep / temp 目录 mtime）支持它无污染。temp 目录是**未声明的暴露面**，不是污染证据（`I-C13`）。\n2. **不主张 Gate A/B/C 应当被删除或改造。** 我裁定的只是「按原文不能失败」。删除、改造、降级为缺口清单是 Human / Architect 权限（与 `A03` §9-3 一致）。\n3. **不主张 `MAPPING_FAILURE` 不可达意味着 Case Bank 无价值。** 我主张的是：它的**失败码不可达**，因此它测的是「未映射材料的裁决纪律」，不是「schema 容量」。这两件事都可能有价值。\n4. **不对 LHRM 项目该不该继续表态。** 本 packet 只审计仪器，不审计目的（与 `A03` §9-2 一致）。\n5. **不对任何外部实证结论的真伪表态超出我打开的范围。** 我打开的是 6 个 DOI 的 Crossref 书目 + 出版社摘要。凡正文逐字引用一律 `NOT_OPENED`。\n6. **不主张 `17` 的 12 条 `CHALLENGED` 全部错误。** 我判 4 条公平（A4 / A7 / A16 / A22）、5 条公平但需补限定（A2 / A6 / A13 / A18 / A23）、3 条有 `WRONG-SCOPE` 或 `UNSUPPORTED` 风险（A5+A20+A21 合并计 1、A9、A4 派生项）。`17` 的**攻击面选择**质量很高。\n7. **不对 A03 的 R06/R13/R16/R07/R15/R01/R02/R03 转述表态。** 这些报告不在我的 cluster，我一条都没打开。A03 对它们的证据评分（`N-A03-3`/`-4`/`-5`/`-9`、`H-1`–`H-4`）在我这里全部是 `NOT_OPENED`。\n8. **不主张 `17` 应被改写。** `17` 是被审对象；我提出的计数更正（`I-C15`）、S 编号问题（`I-C14`）、Crossref 册号差异（`I-C30`）都是**给作者的 repair request**，不是我的编辑权。\n9. **不主张 deterioration-model head-to-head、2026 synchrony review、terminal-decline estimates 三条引用的内容。** 它们在 `17` 与 `A03` 中均 0 命中，不属于 cluster `I`；按隔离契约我不猜测其出处与结论。`NOT_OPENED`。\n10. **不主张 `Cartwright & Harary (1956)` 的经验地位。** 与 `17` 一样，我只主张「三人组符号约束不能由二人投影导出」这一**数学**事实（平衡要求 `t_ij·t_jk·t_ki = +1`，涉及 3 条边），**不主张**平衡理论成立。`17` 在这一点上的自律是正确的。\n11. **不主张本 packet 的 Gate B 零覆盖计数（5 vs 6）已是定论。** `I-C10` 是 `HOLD_FOR_EVIDENCE`：cell 的合格判据在 §15 未定义，计数依赖定义。\n12. **不主张 R2 与 R4 现在可以执行。** R2 的触发条件依赖 `I-C17`（待修），R4 依赖 `I-C19`（`UNSUPPORTED`）。\n\n---",
+ "provenance_note": "### [line 292] 8. `packet_sha_note`\n**我打开并逐行核对的源（`VERIFIED_BY_ME`）**\n\n| 源 | 核实方式 |\n|---|---|\n| `17_RED_TEAM_FALSIFIERS.md` | 全文 618 行逐行；程序化统计 §4 表 23 行裁定分布、F9 表 10 行、sibling-token grep、`S\\d+` 编号解析尝试 |\n| `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` | §0–§1 / §2.3–§2.6 / §4 / §5.2 / §7 / §8 / §9 / §11 逐行；其余结构扫描；§4.4 表 lane 枚举程序化计数 |\n| `PARAMETER_CONVERGENCE_V0_1.md` | 全文 780 行逐行。承重段：§2.1–§2.6 (line 45–86)、§3 (line 92–113)、§4 D1–D8 (line 117–241)、§5 (line 245–287)、§6 (line 291–367)、§8 (line 416–457)、§9 R1–R5 (line 461–515)、§12 (line 586–611)、§13 (line 614–649)、§14 (line 653–698)、§15 (line 701–748) |\n| `VALIDATION_CORPUS_V0_1.md` | 全文 394 行逐行。承重段：independence statement (line 11–17)、selection method (line 19–33)、12 份材料全文字段、cross-level map (line 328–346)、Recommended Fixture 001–003 (line 348–369)、readiness (line 371–378)、verification log (line 387–394) |\n| `FIXTURE_001` (79 行) / `FIXTURE_002` (128 行) / `FIXTURE_003` (160 行) | **三份全文逐行读完**。承重段：头部 provenance/准备者、epistemic freeze rules、全部原子单元、knowledge boundaries、downstream validation rule、verdict 词表、rights 状态 |\n| `CONSTRUCT_SCOPE_DIRECTIONALITY.md` | line 12–61 逐行 + `Asymmetry|distance|baseline|source_i|target_j` 全文件 grep |\n| `CURRENT_ARCHITECTURE.md` | §7 (line 208–228)、§9 (line 267–289)、§10 (line 292–328)、§11 (line 331–345)、§12 (line 347–361) 逐行 + 全部 headings |\n| `AGENTS.md` | 全文 70 行逐行 |\n| `00_CHILD_CONTRACT.md` | 全文 64 行逐行（用于验证 `17` §0 的 mission 主张） |\n| `git log`（`origin/research/opencode-overnight-2026-09-27` 全 20 commit） | `git log --format=\"%H %cI %s\"` + `--diff-filter=A` 逐文件首次入库 + `git show --name-status` |\n| SHA256 比对 | 我自己计算：`…\\lanes\\R17_report_body.md` = `…\\17_RED_TEAM_FALSIFIERS.md` = `7F8C9FB4809A821730CE0043F6B097A43550363AAA08145E3A5F506216C058D0` |\n| temp 目录枚举 | `Get-ChildItem C:\\…\\opencode\\lanes` 全量 69 项 + mtime。**确认 18 份 `R00`–`R17` packet，其中 8 份早于 `R17_packet.md`(08:18:03)** |\n| `docs/foundation` + `docs/validation` 全目录 grep | `MERGE|REJECT|阈值|threshold|否决|veto|移除 basis|remove the construct|删除该 construct|不得计入|不通过` |\n\n**我打开的外部源（`VERIFIED_BY_ME`，Crossref 书目 + 出版社摘要）**\n\n| DOI | 我核实到的 | 对 `17` 的裁定 |\n|---|---|---|\n| `10.1073/pnas.1917036117` | PNAS 117(32) 19061–19071；摘要含「11,196 romantic couples」「partner's judgments did not add information, nor did either person's personalities or traits」「none of these variables could predict whose relationship quality would increase versus decrease over time」「approximately 45% of their current satisfaction」 | 结论 2/3/5-baseline `VERIFIED`；结论 1 措辞、结论 2 的「2–4 倍」比率、结论 4、结论 5 的「18%」`NOT_OPENED` |\n| `10.1177/0265407515584493` | JSPR 33(5) 581–599；摘要「perceived partner responsiveness shaped investment model variables which, in turn, shaped commitment」 | 书目 `VERIFIED`；「serves as an organizing variable」逐字 `NOT_OPENED`（但**摘要证实了 PPR 的因果上游地位**）；`17` 的层推论 `WRONG-SCOPE` |\n| `10.1037/a0024061` | JPSP 101(5) 993–1011；标题含 \"A double dissociation in predictive validity\"；**Crossref 无摘要** | 书目 `VERIFIED`；「r = .00 on average」逐字 `NOT_OPENED` |\n| `10.1007/s10902-020-00241-9` | J Happiness Stud 22(2) 575–597；摘要与 `17` 引文**逐字一致**；2,337 couples / GFP / 8 years / APIM + DRSA | 引文 `VERIFIED`（逐字）；推论性别/DV 特异性 `PLAUSIBLE` |\n| `10.1111/1475-6811.00035` | Pers Relat 10(1) 37–57；摘要含 `17` 引用的**两句矛盾句（逐字）** + 「collectively accounted for nearly two-thirds of the variance in commitment」 | 引文 `VERIFIED`（逐字）；矛盾确认 `VERIFIED`；2/3 方差 → `I-C22` |\n| `10.1177/0265407512465221` | JSPR 30(5) 647–661；摘要与 `17` 引文**逐字一致**；N=1004；含「something more akin to indifference for those high in attachment avoidance」 | 引文 `VERIFIED`（逐字）；`17` 的**推论** `UNSUPPORTED` |\n| `10.1037/h0046049` | Psychol Rev **63(5)** 277–293（`17` 作 63**(4)**）；无摘要 | 册号差异 → `17` §12 总括核验声明未被证实（`I-C30`） |\n\n**我明确未打开**：`03_MEASUREMENT_INSTRUMENTS.md`(R13)、`05`/`06`/`16`(R06/R16)、`15_CASEBANK_EXPANSION`(R15)、`02`/`02b`(R01/R02)、`07_PARTIAL_OBSERVABILITY`(R07)、`A01`、`A04`、`01`–`14`、`18`、`19`、`00_MANIFEST.md`；LHRM `#20`/`#21`/`#22`；Eye / Juece / `juece#30` / PR#31；`Segal & Fraley`、`Eastwick`、`Zoppolat`、`Musick & Bumpass`、`Stutzer & Frey`、`Sternberg`、`Rusbult/Martz/Agnew`、`Cartwright & Harary` 的正文 PDF；deterioration-model / 2026 synchrony / terminal-decline 三条引用的任何来源。\n\n---\n\n*本 packet 由 Review child lane `I` 生成。`D:\\coding\\lhrm` 未被修改。未 merge PR #31。未执行 WO-N1/N2/N3。所有 canonical 变更均为裁定意见，最终由 Human / Project Architect 仲裁。*",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "4.1 哪些是单 lane 推测（cluster 内无第二条独立支撑）",
+   "line_start": 90,
+   "answer": "| id | 结论 | 唯一支撑 | 为什么仍是单 lane |\n|---|---|---|---|\n| S-1 | `17` T1（`Dedication` 在源理论里是函数，不是 primitive） | 仅 `17` T1 | A03 全文 0 次处理 T1（我把 `I-C22` 的量化证据补上，但那是**新证据**，不是**第二条独立推理**） |\n| S-2 | `17` T3（`Trust` 单坐标） | 仅 `17` T3，且 `17` 自标 `AGENT_RECALL`、`不承重` | `17` 自己已降权。不应进入任何 verdict join |\n| S-3 | `17` A23 / T5（加性分解跨层污染） | 仅 `17` | 我判 `PLAUSIBLE` 而非 `VERIFIED`（取证偏重，见 `I-C25`） |\n| S-4 | `17` F7（文本 benchmark 对隐式层盲） | 仅 `17` + Eastwick | 桥接假设未声明（`I-C18`）；无第二条 lane 独立提出 |\n| S-5 | `17` F6a/6b（存活偏误 / 社会世界收缩） | 仅 `17`（Musick & Bumpass 全文 + Stutzer & Frey） | `NOT_OPENED`；且 6d 承认适应速度文献是活争议 → 该条自身已限定 |\n| S-6 | `A03` §2.5 对 R07 `I1–I19` 的 19 条打分 | 仅 `A03` | R07 不在我的 cluster，逐条我 `NOT_OPENED` |\n| S-7 | `A03` §4.2 H-1/H-2（仪器–案例共设计 / 指标为特定 fixture 设计） | 仅 `A03` | 依赖 R07/R13/R15 原文，`NOT_OPENED`。方向可信、证据未核 |\n| S-8 | `A03` §4.4 第一层否定结果 | 仅 `A03` | 我只复现了 R17 的 SHA 一项；R04/R10 未覆盖（`I-C26`） |\n\n**唯一有第二条独立支撑的**：`I-C1`（Gate 三门无否决分支）—— 但**那两条不是独立的**（`A03` §1.4 明确 re-audit `17` F1），按 contract §4 标 `corroboration: NON_INDEPENDENT`。"
+  },
+  {
+   "index": 2,
+   "heading": "4.2 哪些是方法学 / 访问限制而非 ontology 发现",
+   "line_start": 105,
+   "answer": "| id | 被误读为「项目缺陷」的项 | 实际层级 | 证据 |\n|---|---|---|---|\n| M-1 | 「Gate B 的 `caregiving` 零覆盖」 | **rights/access 限制**。`VALIDATION_CORPUS` 原本推荐 `L0-002 (LGSCO)` 作 Fixture 001，正是因为它是 `caregiving` 材料；`FIXTURE_001` line 5 记录该源因 **Eye rights gate fail-closed** 而被 source-switch 掉 | `VERIFIED_BY_ME`（`I-C11`） |\n| M-2 | `17` F9(5)/`A03` H-5「法院事实认定是相关性预过滤」 | **语料法律属性**，不是 schema 缺陷。判决的 `Findings of Fact` 按定义只保留与法律争点实质相关的命题 —— 这是**取材方法的必然**，任何用判决做表示测试的项目都会如此 | `VERIFIED_BY_ME`（`VALIDATION_CORPUS` L0-001/L0-002/L2-001 的 `recommended_cleaning` 全部按争点裁剪） |\n| M-3 | `17` A6 / `F1`「Case Bank 不是测试」 | **判据设计问题**，不是 ontology 问题。10 个映射类是**表示层分类学**，其完备性不受 8 构念对错影响。删 catch-all 不需要动 ontology | `VERIFIED_BY_ME`（`PARAMETER_CONVERGENCE` §13 与 §15 互不引用 8 构念） |\n| M-4 | `A03` H-3（span 类指标不可计算） | **rights + 仓内不镜像全文政策**，不是测量设计缺陷。且 001/002 的成因可逆 | `VERIFIED_BY_ME`（`I-C27`） |\n| M-5 | `A03` T3 FAIL（Gate C 冗余不可执行） | **无 instrument**（`BLOCKED_NO_INSTRUMENT`），不是冗余不存在。Gate C 要的是同一被试、同一工具下的因子相关；文档语料**在原理上**给不出 | `VERIFIED_BY_ME`（`A03` 的理由成立；但我**未**打开 R03/R01 原文，故对被引的具体标注 `NOT_OPENED`） |\n| M-6 | `17` A13 / F7（文本映射验不了状态） | **测量学盲区**，不是「Case Bank 谎报」。`CURRENT_ARCHITECTURE` §10 line 296 已写「Case Bank 不用于估计 population base rate」——项目从未声称 ecological validity | `VERIFIED_BY_ME`；`17` F7 自己也说「当前文档没有收紧这个结论边界」，措辞准确 |\n\n**M-1 与 M-6 是我判定 `WRONG-SCOPE` 时最重要的两条边界**：`17` F7 与 `A03` H-5 都把「验证材料的属性」当作「schema 的属性」来用。`17` F7 措辞小心（用的是「可以」），`A03` H-5 更硬（「三层预过滤使全部官方材料的覆盖率成为过滤函数的产物」——这句是对的，且它明确说的是**语料**不是 schema）。**两份报告在这一点上基本是干净的；真正的 `WRONG-SCOPE` 在 `I-C17`（层裁定）与 `I-C19`（状态空间不足）。**"
+  },
+  {
+   "index": 3,
+   "heading": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 118,
+   "answer": "| # | 建议 | 目标文件与节 | 必须停在 proposal？ | 理由 |\n|---|---|---|---|---|\n| N-1 | Gate A/B/C 各加一条「若…则否决」判定句 + 一个失败终态（含「不修」为合法终态） | `PARAMETER_CONVERGENCE_V0_1.md` §15 | **否，必须实施** | 三门是 candidate→MSS 的唯一闸门。无判定句 = 无门。这是全部发现中最高优先 |\n| N-2 | §2.6 补「删除 k → 同语料重跑 → 计数」反事实臂；删改 line 86 的未兑现自我断言 | 同上 §2.6 | **否，必须实施** | 这是 8 项 basis 唯一能缩小的程序。缺它则 demotion 只能靠 drafting 散文 |\n| N-3 | §2.1/§2.2/§2.3/§2.5 各补可失败形式（不只 §2.6） | 同上 §2.1–§2.5 | **否，必须实施** | `A03` 只改写 §2.6 是**不完整**的（见 `I-C2` 反证 1）。五条都不可失败 |\n| N-4 | Gate B 11 cell 重写为**外部生成**的反例集，并给每个 cell 定合格判据 | 同上 §15 Gate B | **否，必须实施** | 10/11 是自证（`I-C7`）；cell 定义缺失使覆盖率无法计数（`I-C10`） |\n| N-5 | `future_leakage_risk` 拆为 `within_document_outcome_leakage` + `pretraining_memorization_risk` | `docs/validation/VALIDATION_CORPUS_V0_1.md` 12 份材料 | **否，必须实施** | 纯加列，不改判据语义，成本最低（`I-C28`） |\n| N-6 | `VALIDATION_CORPUS` 的「Recommended Fixture 001–003」小节标注已被 `#19`/`#24`/`#25` 取代 | 同上 | **否，必须实施** | canonical 内部冲突已在两份报告里造成编号错位（`I-C12`） |\n| N-7 | `CONSTRUCT_SCOPE_DIRECTIONALITY` §2 的 `Asymmetry_k = distance(...)` 在混合状态空间下 `distance` 未定义 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 vs `CURRENT_ARCHITECTURE` §9 原则 4 / §11 | **是，可停 proposal** | `17` §10 的诊断我 `VERIFIED_BY_ME`（SCOPE line 84–85 确有 `distance`；`CURRENT_ARCHITECTURE` line 284/336 确实允许混合类型且不冻结欧氏距离）。但**修法不唯一**（定义一个 type-generic distance / 改为按 facet 分别定义 / 降级为 readout），属架构方向，**须 Human/Architect 裁决** |\n| N-8 | `PPR` 升一等状态层 / `Satisfaction` 脱离 Derived | `PARAMETER_CONVERGENCE` §5 B1 + §9 R3 | **是，必须停 proposal —— 且当前不应实施** | 触发它的证据链有 `WRONG-SCOPE` 缺陷（`I-C17`）。正确形式是 `A03` 改写 4 的**双分支竞争假说登记**，不是单向提升 |\n| N-9 | 把 `NARRATIVE_ONLY` / `IRRELEVANT` 计数加入 verifier 必报项 | `FIXTURE_003` §7 计数清单（**须新版本**）+ `PARAMETER_CONVERGENCE` §15 | **是（就 fixture 而言）** | 三份 fixture 是冻结件，`FIXTURE_003` line 72/153 明文禁止在验证中重写。修复只能落在 §15 或 fixture v2 |\n| N-10 | Fixture 输入改由对 schema 不可见的一方清洗 | fixture 制作流程（非文档） | **是** | 流程变更，非文本变更；且 `FIXTURE_003` 已证明可行（`I-C24`） |"
+  },
+  {
+   "index": 4,
+   "heading": "4.4 哪些结论重复 / 同义 / 双重计数",
+   "line_start": 133,
+   "answer": "**cluster 内（`17` ↔ `A03`）**\n\n| 重复对 | 关系 | 处置 |\n|---|---|---|\n| `17` F1 ↔ `A03` §1.4 第 1 行 | **完全重复**。A03 自述 CONFIRMED | `corroboration: NON_INDEPENDENT`。合并为 `I-C4`，计 **1** 票 |\n| `17` F11 ↔ `A03` §1.4 第 3 行 | 完全重复 | 合并入 `I-C4` |\n| `17` F9(3)(4) ↔ `A03` §1.4 第 4/5 行 + H-10 | 重复，A03 加了 H-5 的第三层（真增量） | `17` 计 1，A03 的**第三层**计 1，共 2；H-5 ①② 与 `17` F9(5) 标 `NON_INDEPENDENT` |\n| `17` F9(2) ↔ `A03` §1.4 第 2 行 / §1.5 / X-5 | **互相矛盾**（11/11 vs 8/11），且 A03 的第三映射有误 | 见 `I-C7`：两家皆错，正确值 10/11，**由我裁定**。不计重复 |\n| `17` §1.3(2) 三机制 ↔ `A03` §1.2 T1/T2/T3 | 同一对象，不同方法 | `17` 的三机制与 A03 的三测试**结论重合但推导独立**（`17` 从 catch-all 数出发，A03 从「否定支」出发）→ 标 `PARTIAL_INDEPENDENT`，仍只计 1 票（对象唯一） |\n| `17` A6 ↔ `A03` §1.3 三裁定 | 同一结论 | 合并为 `I-C1` |\n\n**与 canonical 现有条目的重复**\n\n| 重复 | 说明 |\n|---|---|\n| `A03` §1.6 §2.6 链条 ↔ `PARAMETER_CONVERGENCE` §4 D8 Open question | D8 line 241 已把「`OutcomeDependence` 是否应完全由 Agent resources / alternatives / institutional constraints 推导」标为 open question 并「交给 redundancy test」。`A03` 的 `X-4`（`§9 R2 PowerImbalance` 输入不可测）与 `17` A18 是**同一未决项的三种表述** → 合并为 canonical 的**一个** open question 条目，勿计三票 |\n| `17` A7 / F8 ↔ `PARAMETER_CONVERGENCE` §2.4 | `17` 的挑战对象就是 §2.4 本身 → **不是新发现，是对该条判据的执行性攻击**。应挂在 §2.4 的 open question 上 |\n| `17` T1 ↔ `I-C22` / `I-C23` | T1 的量化版；`I-C22` 是升级而非重复 |\n| `17` §8.3（fixture 信息边界装置可复用）↔ `17` §8.4（三层时间结构是空白） | **同源**：两者都以「三层时间」为卖点，§8.3 已含该装置 → 双重计数，合并为一条「可辩护的项目形态」 |\n\n**与 `A03` 自身内部的重复**：`A03` §1.6 与 §2.3 对 §2.6 的裁定必须合并（A03 自相矛盾，见 `I-C2`）；`A03` §7.2 `N-A03-7` 与 §4.4 结论是同一结果的两处陈述（一致，不构成矛盾，但勿计两票）。\n\n---"
+  }
+ ],
+ "specialty_section": "4. 四个必答专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "§5 the ten focus-question rulings",
+    "not part of contract §5"
+   ],
+   [
+    "§6 top_recommendations is captured; §7 explicit_non_claims is captured",
+    "no exclusion"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `I`（red-team falsifiers / Gate A-B-C）",
+   "line_start": 1,
+   "line_end": 329
+  },
+  {
+   "level": 2,
+   "title": "1. `files_audited`",
+   "line_start": 12,
+   "line_end": 33
+  },
+  {
+   "level": 2,
+   "title": "2. `coverage_statement`",
+   "line_start": 34,
+   "line_end": 48
+  },
+  {
+   "level": 2,
+   "title": "3. `verdict_matrix`",
+   "line_start": 49,
+   "line_end": 87
+  },
+  {
+   "level": 2,
+   "title": "4. 四个必答专项",
+   "line_start": 88,
+   "line_end": 158
+  },
+  {
+   "level": 3,
+   "title": "4.1 哪些是单 lane 推测（cluster 内无第二条独立支撑）",
+   "line_start": 90,
+   "line_end": 104
+  },
+  {
+   "level": 3,
+   "title": "4.2 哪些是方法学 / 访问限制而非 ontology 发现",
+   "line_start": 105,
+   "line_end": 117
+  },
+  {
+   "level": 3,
+   "title": "4.3 哪些建议会导致 canonical change（逐条 + 是否必须停在 proposal）",
+   "line_start": 118,
+   "line_end": 132
+  },
+  {
+   "level": 3,
+   "title": "4.4 哪些结论重复 / 同义 / 双重计数",
+   "line_start": 133,
+   "line_end": 158
+  },
+  {
+   "level": 2,
+   "title": "5. 十个 focus question 的裁定（Architect 请直接读本节）",
+   "line_start": 159,
+   "line_end": 262
+  },
+  {
+   "level": 3,
+   "title": "Q1 · `17` 的独立性：**VERIFIED（成立），但有一处未声明的暴露面**",
+   "line_start": 161,
+   "line_end": 164
+  },
+  {
+   "level": 3,
+   "title": "Q2 · Gate A/B/C 能否产生否决：**核心成立，我独立验证；但 A03 的两处子命题我推翻**",
+   "line_start": 165,
+   "line_end": 171
+  },
+  {
+   "level": 3,
+   "title": "Q3 · `MAPPING_FAILURE` 可达性：**不可达，`VERIFIED`（我比两份报告更强）**",
+   "line_start": 172,
+   "line_end": 174
+  },
+  {
+   "level": 3,
+   "title": "Q4 · Gate B 计数之争：**`17` 错 1，`A03` 的「更正」本身引入新错；正确值 10/11**",
+   "line_start": 175,
+   "line_end": 181
+  },
+  {
+   "level": 3,
+   "title": "Q5 · 23 条裁定是否公平：**12 条 `CHALLENGED` 中，我判 4 条公平、5 条取证不足或偏重、3 条有 `WRONG-SCOPE` 风险**。至少 5 个具体个案：",
+   "line_start": 182,
+   "line_end": 198
+  },
+  {
+   "level": 3,
+   "title": "Q6 · 红队是否诚实：**是真实的谦逊，不是少报**",
+   "line_start": 199,
+   "line_end": 207
+  },
+  {
+   "level": 3,
+   "title": "Q7 · §5 R1–R6 能否触发",
+   "line_start": 208,
+   "line_end": 219
+  },
+  {
+   "level": 3,
+   "title": "Q8 · `WRONG-SCOPE` 发现：**2 条 `WRONG-SCOPE` + 1 条 `UNSUPPORTED` + 6 条应重分类为方法学限制**",
+   "line_start": 220,
+   "line_end": 227
+  },
+  {
+   "level": 3,
+   "title": "Q9 · `A03` 对 `17` 的独立性：**约 65% 独立 / 约 35% 复述或应答**",
+   "line_start": 228,
+   "line_end": 254
+  },
+  {
+   "level": 3,
+   "title": "Q10 · 哪些必须停在 proposal",
+   "line_start": 255,
+   "line_end": 262
+  },
+  {
+   "level": 2,
+   "title": "6. `top_recommendations`（≤7，按对 Architect 的重要性）",
+   "line_start": 263,
+   "line_end": 274
+  },
+  {
+   "level": 2,
+   "title": "7. `explicit_non_claims`（不主张什么）",
+   "line_start": 275,
+   "line_end": 291
+  },
+  {
+   "level": 2,
+   "title": "8. `packet_sha_note`",
+   "line_start": 292,
+   "line_end": 329
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [
+   {
+    "rule": "PCOT-2",
+    "detects": "first-person authorial-action subject",
+    "matched": "我推翻",
+    "disposition": "retained_as_conclusion_text",
+    "why": "The proposition itself is the child's verdict on which side prevails. That is a conclusion, not private reasoning; contract §4 requires the child's own wording to be preserved."
+   }
+  ],
+  "excluded_regions": [
+   [
+    "§5 the ten focus-question rulings",
+    "not part of contract §5"
+   ],
+   [
+    "§6 top_recommendations is captured; §7 explicit_non_claims is captured",
+    "no exclusion"
+   ]
+  ]
+ }
+}

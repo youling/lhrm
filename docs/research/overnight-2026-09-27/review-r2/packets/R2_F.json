@@ -1,0 +1,912 @@
+{
+ "child_id": "R2_F",
+ "lane": "F",
+ "cluster": "dynamics / hysteresis / pair-state emergence",
+ "role": "cluster_review",
+ "record_unit": "verdict_matrix_row",
+ "layout_variant": "block_bullet",
+ "source": {
+  "file": "R2_F.md",
+  "sha256": "3189d251d87a1af9a95b7a2a2f35b345faaf67a4e2cc6cf02a48ed4b955f062e",
+  "bytes": 128442,
+  "lines": 822
+ },
+ "pr_under_review": "youling/lhrm#31",
+ "pr_under_review_head": "8adcf0bacc45c0feb5c14e65e2a45346dd488b43",
+ "pr_base_main": "ee393ca24f9fbf738ac0ed839e99bdc99de6fc3a",
+ "records": [
+  {
+   "claim_id": "F-C1",
+   "_title": "迟滞在真实二元关系数据上的存在性目前未知（`NEGATIVE_RESULT`）**",
+   "claim": "在夫妻/恋爱/亲子/照护数据上未找到任何估计出迟滞环或路径依赖分支的同行评审实证研究；因此「迟滞是人类二人关系的可观测动力学性质」目前是 `model hypothesis`。",
+   "source_report": "09` §0-5、§5.2 表格「二元关系数据的 dyad 级迟滞」行、§5.3、§8.4-A-4、§9.7 表",
+   "verdict": "UNSUPPORTED`**",
+   "supporting_refs": "三组检索式（`09` §5.3）+ Peterman 1963（`NOT_OPENED`，作者/卷期自标 `AGENT_RECALL`）。**负向检索结果本身不是支持。**",
+   "strongest_counterevidence": "报告自己列出的五条覆盖缺口就是反证**（`09` §5.3）：未检索法文/德文数据库（`pairfam` 德语文献）、未检索 `path dependence + marriage/couple` 组合、未检索 `critical slowing down`、一篇综述 `FETCH_FAILED`、2024–2026 覆盖可能偏旧。我另检索 crossref 全部相关条目，**未定位到任何反驳性研究**——也**未定位到任何支持性研究**，即该命题的证据状态是双向空白。**关键：报告没有犯「未找到 = 不存在」的错。** §5.3 明写「这是 `PARTIAL` 的 negative result，**不是**穷尽性证明」；§8.4-A-4 明写「**不主张**迟滞已被证明，**也不主张**迟滞已被排除」；§9.7 把该项列为 `UNKNOWN`（`model hypothesis`，**不是** `empirical evidence`）。三处一致。**这是本 cluster 里对「not found vs does not exist」处理得最干净的一条。**",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` §5.1 的 E1 realized design（同一控制量 `u` 的升序/降序分别呈现序列）在关系数据上尚无实现",
+   "duplicate_of": "F-C16`（同一 absence 在 `09` 内被并联陈述四次）",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 维持 `UNKNOWN` / `model hypothesis` 标签，不因这是 `NEGATIVE_RESULT` 而升级为排除。\n---",
+   "_locator": {
+    "line_start": 66,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C2",
+   "_title": "「迟滞所需的强耦合前提在多数真实 dyad 中不成立」**",
+   "claim": "不是「我们还没测迟滞」，而是「我们测的那个过程（双向耦合）在多数 dyad 里不存在，所以迟滞的物理前提在多数 dyad 里不成立」。",
+   "source_report": "09` §5.4 第 3 点（原文加粗）；被 `§9.2-FACT-4`、`§9.6-K7`、`§8.4-A-8` 复用为承重前提",
+   "verdict": "WRONG-SCOPE`**",
+   "supporting_refs": "ES=0.09, I²=76.0%`（Mayo et al. 2021，`VERIFIED_BY_ME`）；`14–38%`（PMC7065936，`NOT_OPENED`）；`lovers>friends>strangers` 未成立（PMC7017247，`NOT_OPENED`）",
+   "strongest_counterevidence": "三重层级错配。**\n  1. **Mayo 2021 的 ES 是「生理同步读数 ↔ 关系结果」的相关系数，不是「A 影响 B、B 影响 A 的反馈回路强度」。** 我打开 abstract 核实原文措辞：「the overall estimated correlation was small with a marginal significance (ES=0.09, p>.10) and high heterogeneity (I²=76.0%)」。由「同步—结果相关弱」推出「双向耦合不存在」是 non-sequitur：可以存在强心理学反馈环而其生理同步读数与结果无关——`I²=76%` 恰恰在提示同步是**差**代理。`ES` 在此处被读成了它所测量之外的东西。\n  2. **`09` 自己降级过这个来源。** §3.4 第 2 点原话：情绪互依的负面结果「是一个**强负面提示**，不是否证」。§5.4 转头把同一来源当作「前提不成立」的第 2 个独立理由。**报告内部不一致**：一个被显式降级的来源，四节后成为承重前提。\n  3. **`lovers>friends>strangers` 未成立与耦合强度无关。** 该假设问的是同步是否**随关系亲密度递增**，其失败不提供任何关于回路强度的信息。\n  4. 检索未发现任何直接测量「关系 dyad 双向心理耦合强度」的研究——**因此这个前提既没被证实也没被否证，它是一个未测量的量。**",
+   "requires_canonical_change": "NO`（若写入 canonical 必须写成 method limit）",
+   "needs_experiment_or_data": "YES:` 直接估计 dyad 级双向耦合强度的设计（互惠交换序列 / 交叉滞后 / 行为对称性）",
+   "duplicate_of": "F-C20`(K7) 与 `F-C24`(FACT-4) 复用同一前提 → `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT`** — 降级为「当前可用的耦合代理（生理同步 / 情绪协动）与关系结果关联弱且异质性高」这一**方法/测量事实**；删去「多数 dyad 中前提不成立」的本体化表述。\n---",
+   "_locator": {
+    "line_start": 80,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C3",
+   "_title": "Mayo, Lavidor & Gordon (2021) 同步 meta 的全部数值**",
+   "claim": "同步与关系结局 `ES = 0.09, p > .10, I² = 76.0%`；亚组交感 `+0.19`、副交感 `−0.21`、合并 `+0.16`；与表现结局 `ES = 0.26, I² = 52.7%`。",
+   "source_report": "09` §3.1-(3)、§5.4-2、§9.2-FACT-1、§8.4-A-8、§9.4",
+   "verdict": "VERIFIED`**",
+   "supporting_refs": "10.1016/j.physbeh.2021.113391`（*Physiology & Behavior* **235**:113391, 2021；题名「Interpersonal autonomic nervous system synchrony and its association to relationship and performance — a systematic review and meta-analysis」）— **`VERIFIED_BY_ME`**，Europe PMC abstract 逐字核对，**七个数字全部精确命中**（含 `p=.02 / p=.03 / p=.02 / p<.01`）。",
+   "strongest_counterevidence": "检索了可能构成更新的 meta（Ohayon & Gordon 2025, *BBR* 480:115369, 「Multimodal interpersonal synchrony: Systematic review and meta-analysis」）— **未取得 abstract，未据此下结论**。另注：报告（正确地）**没有**在此处把 `ES=0.09` 说成「耦合不存在」——`F-C2` 的越界只发生在 §5.4。数值层无反证。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "同一组数字在 `09` 内被引用 **4 次**（§3.1-(3) / §5.4 / §9.2-FACT-1 / K7）→ `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "ACCEPT`** — 数值层完全可信；引用时必须同时带 `I²=76%`。\n---",
+   "_locator": {
+    "line_start": 98,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C4",
+   "_title": "Liddell & Kruschke (2018) 序数当度量的五项失败**",
+   "claim": "JPSP / Psychological Science / JEP:General 中所有提及 Likert 的文章 **100%** 用度量模型处理序数数据；导致 false alarm、漏检、**系统性效应反转**（均值排序颠倒）；交互作用与趋势分析同样受影响；**对多个序数项取平均不能修复**；**不存在可靠的事后检出办法**；建议改用 ordered-probit。",
+   "source_report": "09` §2-F10 末行、§3.3-R2、§8.1-(4)、§9.3.3(L-C)、§9.7 表",
+   "verdict": "VERIFIED`**",
+   "supporting_refs": "10.1016/j.jesp.2018.08.009`（*JESP* **79**:328–348, 2018）— **`VERIFIED_BY_ME`**，取回三个独立来源（ScienceDirect 页 / Indiana ScholarWorks 记录 / OSF preprint 页）一致的 abstract。逐条核对：「**100%** of the articles that analyzed ordinal data did so using a metric model」✓；「false alarms (i.e., detecting an effect where none exists, **Type I** errors)」✓；「failures to detect effects (i.e., **loss of power, Type II** errors)」✓；「**systematic inversions of effects**, for which treating ordinal data as metric indicates the **opposite ordering of means**」✓；「the same problems — false alarms, misses, and inversions — for **interactions in factorial designs and for trend analyses in regression**」✓；「**averaging across multiple ordinal measurements does not solve or even ameliorate these problems**」✓；「there is **no sure-fire way** to detect these problems by treating the ordinal values as metric」✓；「advocate use of **ordered-probit** models」✓。",
+   "strongest_counterevidence": "未找到。** 检索了 SSRN 早期版本（`2692323`）——其结论**方向一致但强度较低**（用 \"low correct detection rates / distorted effect size estimates\" 而非 \"systematic inversions\"），即正式版比预印本**更强**。这对报告有利而非不利。",
+   "requires_canonical_change": "YES`** — `docs/foundation/CURRENT_ARCHITECTURE.md` §9「Measurement / Canonicalization 的原则」第 3 条（不强迫 `0..1`）目前**没有写出理由**；`09` §8.1-(4) 正确指出了这一点。**为什么不能停在 proposal：这是纯增补文档，不改任何本体、不依赖任何未验证参数、不需要新数据**，而其论证基础我已逐字核实。把一条已确证的理由补进 invariant 的 rationale，不属于「需要 Human 决策的架构方向变更」，属 `mutation discipline` 下的常规文档维护。",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C4` 在 `09` 内三次重述（§2-F10 / §3.3-R2 / §8.1-(4)）→ `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "ACCEPT`** — 本 packet 中唯一一条我建议**直接升级为 durable change 而非 proposal** 的项目（见专项 3 的 `CC-8`）。\n---",
+   "_locator": {
+    "line_start": 112,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C5",
+   "_title": "Kelso (2012)「亚稳态字面上是一种平稳瞬态」**",
+   "claim": "Kelso (2012)` 明确——「亚稳态字面上是一种平稳瞬态」，而这类度量基于平稳性假设 → 「估计与定义冲突」。",
+   "source_report": "09` §2-F4「可识别性」行、§2.1、§8.4-A-5、§9.4",
+   "verdict": "VERIFIED`（引文逐字命中；量词归属有轻微 `WRONG-SCOPE` 偏移）**",
+   "supporting_refs": "10.1098/rstb.2011.0351`，Kelso, *Phil. Trans. R. Soc. B* **367**(1591):906–918, 2012 — **`VERIFIED_BY_ME`**，PMC3282307 全文。原文（§4「Why metastability?」第四点）逐字：「Measures of complexity reach a maximum when the balance between segregative and integrative forces is achieved [79]. **Note, however, that such measures are based upon stationarity assumptions whereas metastability in coordination dynamics is literally a 'stationary transient'.**」",
+   "strongest_counterevidence": "两处偏移，另附一条对报告有利的发现。**\n  1. **先行词是「complexity measures」，不是「metastability measures」。** 原文的 `such measures` 回指上一句的「measures of complexity」。`09` §2-F4 把它放在「亚稳态」作为可观测量那一行的「可识别性」栏，读作「这类度量（亚稳态度量）基于平稳性假设」。语义方向一致，但先行词被替换。改为「**复杂度**度量基于平稳性假设，而亚稳态字面上是 stationary transient」即完全无瑕。\n  2. **该文实际范围以脑/神经为主，不只是「运动协调」。** 题名即「…in the brain」；证据含 TMS 诱导双稳态转换、MEG/EEG 的 critical slowing down、Jantzen 的 fMRI。`09` §8.4-A-5 把它归为「秒—分钟尺度的运动/互动协调层」，**漏掉神经层**。这使 `09` 对该来源的范围刻画偏窄，且方向上对 LHRM 更不利（神经层证据比 `09` 承认的更多，但仍在年尺度之外）。\n  3. **对 `09` 有利：** 同一篇 §3(d) 明确写「Such **hysteresis**, a basic form of memory in nonlinear dynamical systems, is exactly what is observed in experiments」，且 §3(f) 描述的 **scanning probe**（13 个相对相位、0°–180°、15° 步进）**正是 `09` §5.1 的 E1 realized design 的实验实现**。`09` 说 E1「在关系数据上不存在」是对的，但没指出 E1 在运动协调层**已被实现**——补上会让 E1 从「想象的检验」变成「已实现但未迁移的检验」，显著提高 K5 的可执行性。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "NONE`",
+   "recommendation_to_architect": "ACCEPT`**（引文层）—— 同时要求修 `F4` 行的先行词与范围两处。\n---",
+   "_locator": {
+    "line_start": 126,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C6",
+   "_title": "Front. Hum. Neurosci. 14:317 明确列出 dyadic social coordination 证据**",
+   "claim": "该文明确列出 `Tognoli et al. 2007; Oullier et al. 2008; Tognoli 2008` 作为 dyadic social coordination 的 metastability 发现，并含 Human Dynamic Clamp 实验。",
+   "source_report": "09` §2-F4「真实证据基础」行（引作「Frontiers in Human Neuroscience 14:317」）、§5.2 表格（引作「`Tognoli & Kelso 2020`」）、§9.4",
+   "verdict": "VERIFIED`（含引文卫生问题）**",
+   "supporting_refs": "10.3389/fnhum.2020.00317` — **`VERIFIED_BY_ME`**，Frontiers 全文。逐字命中：「**Findings of metastability span dyadic social coordination (Tognoli et al., 2007; Oullier et al., 2008; Tognoli, 2008; Figure 3A)**; experiments with a **'Human Dynamic Clamp'** in which one of the dyad is a computational model of a surrogate social partner governed by the HKB equations (Figure 3B, Kelso et al., 2009); multiagent social coordination (Figure 3C…)」。三篇引用、HDC、dyadic social coordination 全部精确命中。",
+   "strongest_counterevidence": "同一篇论文在 `09` 内部被以两个作者串引用。** Crossref 作者为 **Tognoli, Zhang, Fuchs, Beetle & Kelso（5 人）**；`09` §5.2 写作「`Tognoli & Kelso 2020`」（2 人），§2-F4 写作「Frontiers in Human Neuroscience 14:317」（无作者）。丢掉 3 位作者会让读者以为存在一篇两人合著。**这是报内指针重复（`corroboration: NON_INDEPENDENT`）。**",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C6` 的两个引用位置指同一篇论文",
+   "recommendation_to_architect": "ACCEPT`**（内容层）—— 但要求把 `09` §5.2 的作者串统一为五人。\n---",
+   "_locator": {
+    "line_start": 143,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C7",
+   "_title": "Marín, Christensen & Atkins (2014) 双路径 + n=19 + 离婚率 >2 倍**",
+   "claim": "不忠伴侣 5 年后分岔为「持续改善并维持」与「明显恶化并离婚」两条路径；不忠组离婚率超过对照组两倍；n=19；由「满意度读数 + 离婚这一离散标签事件」定义。",
+   "source_report": "09` §5.4、§6.1 表、§6.2「可主张的最强修复命题」、§8.1-(3)、§9.2-FACT-3",
+   "verdict": "VERIFIED`（内容）** + **`WRONG-SCOPE`（把它称为「分岔 / bifurcation」）**",
+   "supporting_refs": "10.1037/cfp0000012`，*Couple and Family Psychology* — **`VERIFIED_BY_ME`**，取回全文 PDF。逐条核对：n=19 不忠伴侣、来自 N=134 RCT 子样本 ✓；「the odds of divorce for infidelity couples were **more than three times** that of noninfidelity couples (OR 3.7, 95% CI 1.4, 9.7)」，正文另表述为「infidelity couples had **more than double** the divorce rate of noninfidelity couples by 5 years post therapy」✓（`09` 用的是正文的「more than double」，与论文一致）；「Results suggest **two potential pathways** for couples recovering from infidelity such that some infidelity couples **continue to improve and remain indistinguishable from their noninfidelity counterparts** whereas other infidelity couples appear to **markedly deteriorate and divorce**」✓ **逐字**；「once divorce was accounted for, infidelity and noninfidelity couples' relationship satisfaction **continued to improve over time** well beyond the end of therapy」✓（`09` §5.4 的「控制离婚后仍持续改善」精确命中）。",
+   "strongest_counterevidence": "「分岔」是被 `09` 强加的框架。** 论文原文用的是 \"**two potential pathways**\"（两个**可能的**路径），且这两条路径是**按结果变量（是否离婚）事后划分**的，不是从状态轨迹前瞻估计的。`09` 在 §3.4 第 3 点正确地指责 Bühler & Orth 2025「`time-to-separation` 是结果变量」——**然后在 §6.2 / §8.1-(3) / §9.2-FACT-3 对 Marín 犯下同一个错误**。§8.1-(3) 断言「**真实的 dyad 级分岔确实存在**」，比论文的 \"two potential pathways\" 强得多，且 n=19（其中离婚 10）。附带的**引文元数据错误**：`09` §5.4 引作「CFP **3(2):129–141**」；实际为 **3(1):1–12**（论文 PDF 页眉自印「2014, Vol. 3, No. 1, 1–12」）。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` 需一个不按结果变量划分、而按前瞻轨迹估计的分岔分析（并给出 n 功效）",
+   "duplicate_of": "F-C7` 在 `09` 内四处重述 → `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT`** — 改称「**按离婚结果事后划分的两组轨迹**」，删除「真实的 dyad 级分岔确实存在」。同时修 `3(2):129–141` → `3(1):1–12`。\n---",
+   "_locator": {
+    "line_start": 157,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C8",
+   "_title": "Bühler & Orth (2022) 秩序稳定性 `r = .76` 与 O1「稳定性主导」**",
+   "claim": "148 个样本、153,396 名参与者、关系时长 3 个月–46 年、平均年龄 19–71 岁，个体差异秩序稳定性平均 `r = .76`（已校正测量误差衰减，平均时滞 2.30 年），且稳定性随年龄升高、在关系头几年较低。",
+   "source_report": "09` §2-F6「可识别性」行、§4.2-O1、§6.2-4、§9.5",
+   "verdict": "PLAUSIBLE`**",
+   "supporting_refs": "10.1037/pspp0000430`（*JPSP* **123**(5):1138–1165, 2022；题名「Rank-order stability of relationship satisfaction: **A meta-analysis of longitudinal studies**」）— `VERIFIED_BY_ME`（元数据）。**具体 n、r 值、校正说明均在正文，未开正文 → `NOT_OPENED`。**",
+   "strongest_counterevidence": "论文题名确认它是**满意度**的 meta（「Rank-order stability of **relationship satisfaction**」），因此 `09` 把 `r=.76` 用作「构念的类特质成分吞掉方差」的一般性 O1 是**外推**。`09` 在 §4.4 正确地把结论限定为「单条自报满意度读数」，限定到位。第二个反证方向：`r=.76` 是**秩**稳定（rank-order），既不是 Pearson r，也不是 within/between 分解；`09` 用它同时支撑「个体均值主导」和「小部分是个体内」两句，**第二句需要的是 within 比例而非秩稳定——两个量不能互相代替**。未找到反证研究。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C11`（O1 的正式论证条）",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`**（限 `09` §4.4 已写下的限定条件内）。\n---",
+   "_locator": {
+    "line_start": 171,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C9",
+   "_title": "O2：过程随机输入 vs 测量误差不可分离（Hamaker et al. 2015）**",
+   "claim": "(a) CLPM 的滞后参数不表示真实的 within-person 关系，可能导致对因果影响之**符号**的错误结论；(b) 当自回归参数极接近 0 时，难以区分测量误差方差与自回归过程的随机输入方差。推论：低自回归 = 低信噪比，而这是关系数据最常见的情形。",
+   "source_report": "09` §2-F6、§4.2-O2、§9.5",
+   "verdict": "PLAUSIBLE`（Hamaker 两句）/ `WRONG-SCOPE`（报告的转述与归因）**",
+   "supporting_refs": "10.1037/a0038889`（Hamaker, Kuiper & Grasman, *Psychological Methods* **20**(1):102–116, 2015，题名「A critique of the cross-lagged panel model」）— `VERIFIED_BY_ME`（元数据）。两段引文 `NOT_OPENED`。另 `10.1177/25152459241302300` = Cole, Abitante, Kan, Liu, Preacher & Maxwell, *AMMPS* **8**(1), 2025，「Practical Problems Estimating and Reporting Power When Hypotheses Are Embedded in Complex Statistical Models」— `VERIFIED_BY_ME`（元数据 + abstract）。",
+   "strongest_counterevidence": "报告的转述比 Hamaker 强。** Hamaker (b) 是条件句「**when** the autoregressive parameter is very close to zero」——一个条件，不是关于数据 regime 分布的断言。`09` 把它读成「低自回归正是低信噪比的表现，而**这恰恰是关系数据最常见的情形**」；后半句**没有任何来源**（报告自标的 `AI_DERIVED_CHARACTERIZATION` 只覆盖 O1 那段推论，未覆盖这一句）。且存在逻辑缺口：**AR≈0 往往正是真实 within 过程≈0 的情形**——此时本就没多少个体内信号可找，「分不清测量误差与过程噪声」不构成额外障碍。\n  - **Cole et al. 的用法有两处偏移。** (i) 报告引「载荷 `.35–.45` 时 4 波 RI-CLPM power 仅 `0.04–0.33`」——Cole 的方法论贡献是 **PVSP（次级参数合理值上下界）**，产出的是 power 的**界**。把下界当点估计写成「仅 0.04–0.33」强于来源允许。（`09` §4.4 自己补了「这是给定特定 DGP 的模拟结果，不能直接搬到 LHRM 的观测结构上」——**部分自纠，有效**。）(ii) 报告把「时变个体内因子稳定性越高，就越难把它与特质成分区分开」归给 Cole——**这是 Hamaker 的论点，不是 Cole 的**；Cole 论的是 power。归属错误。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` 需在目标 DGP 下重算 within-person 效应功效（不得跨 DGP 搬运 Cole 的模拟）",
+   "duplicate_of": "NONE`",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 保留 O2，但删去「这恰恰是关系数据最常见的情形」，把稳定性/trait 区分的论点归还 Hamaker，把 PVSP 表述改为「下界可达 0.04–0.33」。\n---",
+   "_locator": {
+    "line_start": 185,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C10",
+   "_title": "O3 状态数/参数数不可识别（Pohle et al. 2017 等）**",
+   "claim": "HMM 阶数选择是「notorious」问题；AIC/BIC 系统性偏向过多状态；不存在普适判据；状态数超数据支持时的非可识别性是阶数估计的隐含组成部分；随机效应方差在 `N<50` 时系统性正偏。",
+   "source_report": "09` §2-F2/F3、§4.2-O3、§9.3.2、§9.4(a)、§9.5、§9.6-K4",
+   "verdict": "PLAUSIBLE`（Pohle 部分）/ `WRONG-SCOPE`（`N<50` 部分）**",
+   "supporting_refs": "arXiv:1701.08673` 及期刊版 `10.1007/s13253-017-0283-8`（Pohle, Langrock, van Beest & Schmidt, *JABES* **22**(3):270–293, 2017，题名「Selecting the Number of States in Hidden Markov Models: Pragmatic Solutions Illustrated Using **Animal Movement**」）— `VERIFIED_BY_ME`（元数据）。引文、van Havre et al. (2015, *Bayesian Analysis*)、Schultzberg & Muthén (2018) 均 `NOT_OPENED`。",
+   "strongest_counterevidence": "两个问题。**\n  1. **`N<50` 随机效应方差正偏不是「可识别性障碍」，是估计偏误。** `09` §4.2 把 O1–O3 称作「三个可叠加的识别障碍」并把这条放进 O3。它属方法/偏误事实，与「参数不可识别」是不同范畴。混放会让 §9.5 的 O3 矩阵格（`L-C: 中`、`L-B: 决定性`）继承一个它不该继承的语义。\n  2. **该来源是动物移动数据**（题名自陈）。把其阶数结论搬到人类 dyad 年度自报数据是跨域外推。`09` 用它批评 HMM 侧（成立），但从未说明这个跨域。\n  3. **credit：报告对 O3 的作用域控制其实是对的。** §9.5 只把 O3 判为对 L-B「决定性」、对 L-C「中」、对 L-A「弱（枚举由外部给定，不需估计）」。这个 scoping 是本报告最好的方法学操作之一。**问题只在 O3 内部混入了 `N<50`。**",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C14`(K4) 依赖同一来源",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT`** — 把 `N<50` 那句从 O3 移出、单列为 estimation-bias 限制；并注明 Pohle 的证据域为 animal movement。\n---",
+   "_locator": {
+    "line_start": 200,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C11",
+   "_title": "§4.4 的「可以主张 / 不主张」二分是正确的方法学边界**",
+   "claim": "在 3–7 波、12–21 年、`r≈.76`、单条自报满意度读数的条件下，组均值分段非线性趋势可估，dyad 层吸引域/停留时间/迟滞不可估；且报告明确**拒绝**给出任何所需波次数或功效值。",
+   "source_report": "09` §4.3-O4/O5、§4.4",
+   "verdict": "PLAUSIBLE`（且我认为这是 `09` 最正确的一节）**",
+   "supporting_refs": "内部一致性核查 + Bühler & Orth 2025/2024/2022 元数据（均 `VERIFIED_BY_ME`）；Hamaker / Cole / Pohle（见 `F-C08`–`F-C10`）",
+   "strongest_counterevidence": "我没有找到反证；我找到的是一个缺口。** §4.4 的条件式限定正确，且**没有**越界关闭 ESM / intensive-longitudinal 设计——它把「不可估」明确挂在 `3–7 波 / 年度自报 / 单条读数` 上，逻辑上对更密集设计开放。**但报告全文从未点名那个开放 regime。** §4.3-O4 写「**本 lane 见到的**最强关系纵向研究是 3–7 波」——限定正确，但紧接着 §4.4 的「可以主张的」框把「本 lane 见到的」这个限定丢了，直接以条件句形式断言。**读者（尤其 Architect）会合理地把 §4 读成「密集设计也不行」，而报告自己的逻辑允许更密集设计。** §8.3-V3 列了迟滞检索的五条覆盖缺口，**没有一条**是「未检索 ESM / daily-diary / EMA 设计」。这是本 packet 我认为最值得修补的一处（成本极低、价值极高）。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "与 §8.2 表第 (1) 行重述同一结论",
+   "recommendation_to_architect": "ACCEPT`** — 补一条明确的 ESM/IL/EMA escape clause 到 §4.4（措辞建议见 `top_recommendations`）。\n---",
+   "_locator": {
+    "line_start": 217,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C12",
+   "_title": "§9.2-FACT-1 被用来为「四层都不配当引擎」背书**",
+   "claim": "FACT-1「没有任何一个框架在真实二元关系数据上有可接受的、可复现的动力学参数估计证据」+ FACT-4「迟存在性未知」⇒「任何离散层的位置，若要求它承担 `F` 的引擎角色，就必须先通过一个目前没有任何框架通过的证据门槛」⇒ 四层全部是非引擎位置。",
+   "source_report": "09` §9.2、§9.8 收尾句",
+   "verdict": "WRONG-SCOPE`**（方法事实被用作本体/设计授权）",
+   "supporting_refs": "内部逻辑 + `F-C01` / `F-C02` / `F-C03`",
+   "strongest_counterevidence": "这就是契约 §6.2 点名的那个滑坡，而且它发生在报告自己划清界线之后。** `09` §4.3 做对了一件事：明确写下「LHRM 当前阶段的 `F` 是 **architecture decision / model hypothesis**，不是 empirical estimate。任何把 `F` 的形式当作『已经选对了』的表述都是越权。」**这句话是正确的，也正是防滑坡的句子。** 但 §9.2/§9.8 紧接着用「**证据目前全部不存在**」推出「**没有任何一层现在有资格充当 `F` 的引擎**」。FACT-1 是关于**文献与数据可得性**的事实（`09` 自己在 §2-F1/F3/F5 用的措辞是「本 lane 未找到」），不是关于**本体**的事实。把「我们没有支持 X 的证据」转成「X 没有资格」，是从**证据缺失**到**授权否决**的跳跃。\n  - 报告的**条件化措辞**（§9.1 与 §9.8 的「在**年度、自报、聚合观测**这一尺度上」）**减轻但未消除**该问题：「现在有资格」仍然在讲 warrant，不是在讲本体。正确表述是：「在当前证据状态下，我们**无法**为任何一层充当引擎提供正当理由」——报告写的却是关于**资格**的。\n  - **加重项：K9 被指定为「唯一能推翻 FACT-1 的条件」，而 K9 结构上不能（见 `F-C14`）。因此 §9 的「非引擎」判决实际上是**不可撤销**的。**",
+   "requires_canonical_change": "NO`（若写入 canonical 必须写成 method limit）",
+   "needs_experiment_or_data": "YES:` K1 / K6 / K9 的实际执行",
+   "duplicate_of": "FACT-1 另在 §2.1 与 §9.8 收尾句第三次重述 → `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "RECLASSIFY_AS_METHOD_LIMIT`** — 把「无资格」改为「无证据支撑」，并把 FACT-1 的定性从「强制性的事实条件」降为「当前证据状态」。\n---",
+   "_locator": {
+    "line_start": 231,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C13",
+   "_title": "§9 的四个离散层位置（L-A / L-B / L-C / L-D）**",
+   "claim": "离散层应当存在且不止一层；四个具体位置为制度/协议事实层、观测者知识层、测量模型层、readout 层；任一层都不应是 `F` 的引擎。",
+   "source_report": "09` §9.1–§9.5、§9.7",
+   "verdict": "PLAUSIBLE`**（L-A / L-B / L-C 成立；**L-D 不成立为独立层**）",
+   "supporting_refs": "AGENTS.md` rule 2/4/5 + Representation-first invariant 3/4/5（`VERIFIED_BY_ME`，已读）；`CURRENT_ARCHITECTURE.md` §6 / §9（`VERIFIED_BY_ME`，已读）；`PARAMETER_CONVERGENCE_V0_1.md` P4「Relationship Identity / Agreement = {friend, exclusive romantic partners, engaged, married, open relationship, care arrangement}」+ 判定「**KEEP as pair/institutional agreement fact / NOT affective primitive**」（`VERIFIED_BY_ME`，已读 337–354）→ `09` §7-O3 / §9.3.1 对 P4 的引述**准确**。",
+   "strongest_counterevidence": "L-D 不是第四层，它是 L-A 与 L-B 的一个 join。** 逐条比对报告自己的枚举：\n  - `09` §9.3.1 L-A：「婚姻状态、订婚、同居、财产/监护安排、排他协议、居住安排、法定分居」+ P4 的 `{friend, exclusive romantic partners, engaged, married, open relationship, care arrangement}`\n  - `09` §9.3.2 L-B：「`Belief_i(A–B 是什么) ∈ {friend, partner, married, ex, unknown, contested}`」\n  - `09` §9.3.4 L-D：「`friend / partner / married / ex` 等，作为从 `X_t` + L-A 事实 + L-B belief **导出**的粗粒化读数」\n  **L-D 的取值集合 `{friend, partner, married, ex}` 是 L-B 取值集合的严格子集**，而 `{married, engaged, friend, partner, ex, …}` 又全部落在 L-A 里。L-D 自己的「转移规则」栏写的就是「**派生量**，由 `Phi` 从连续/混合状态计算」——即它按定义是投影。而 L-D 的「典型失效模式 (c)」写「用 L-A 的枚举清单去定义 L-D 的取值——这会让 L-D 退化为 L-A 的投影」，**却没有注意到 §9.3.1 与 §9.3.2 已经在用同一套清单定义 L-D 了**。§9.3.4 的「复用价值」栏自己承认「**动力学复用价值 = 0**（按定义）」。\n  **结论：§9 实际提出的是三层 + 一个 join，不是四层。** 这不使 §9 无效——但 Architect 若按「四层」写入 schema，会建一个没有独立内容的第四个容器。\n  **正面 credit：§9.3.3（L-C）是两份报告里论证最硬的一节。**「不做就已知会出错」的性质使其正当性**独立于任何本体主张**，而我已逐字核实其证据基础（`F-C04`）。这一节我建议直接采纳。",
+   "requires_canonical_change": "NO`（`09` 已正确标为 `AI recommendation`）",
+   "needs_experiment_or_data": "YES:` K1 / K2 / K3 / K4",
+   "duplicate_of": "F-C25`（L-A 与 `10` 的 Φ 是同一个 canonical 容器）",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 但改称「三层（L-A / L-B / L-C）+ 一个显式 join（`L-D = Φ(X_t, L-A, L-B)`）」，并在 schema 落地前先定 join 的输入契约。\n---",
+   "_locator": {
+    "line_start": 247,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C14",
+   "_title": "§9.6 的九条可证伪/撤退条件（K1–K9）**",
+   "claim": "K1–K9 构成可被 reviewer 直接攻击的撤退条件集，其中 K4 的撤退成本最低、建议优先执行。",
+   "source_report": "09` §9.6（K1–K9 表 + 整节撤退条件 + 次级撤退条件）",
+   "verdict": "CONTESTED`** — 「K3 / K4 / K6 是真撤退条件」**成立**；「K1 / K5 / K7 / K8 / K9 是撤退条件」**不成立**。\n| K | 判定 | 理由（均可从 `09` 自身文本检验） |\n|---|---|---|\n| **K1** | **条件真实，但被自己的析取句废掉** | 检验是「给定 `X_t`（**或给定 L-A + L-B**）后，label 序列是否提供增量预测信息」。第二析取项是致命的：L-A 含 `divorced`/`married`/协议事件，L-B 含「我认为他是我伴侣吗」。**给定 L-A + L-B 之后，下一年的关系标签在很大程度上已被 L-A 决定**（不离婚 ⇒ 明年仍 married），因此 K1 的「不提供增量」分支**几乎不可能触发**。要触发 K1，必须删掉该析取项，只留 `X_t`。 |\n| **K2** | **单向，不是撤退** | 「若是 → 升为必须；若否 → 仍建议保留」。只能削弱、不能推翻。报告自己承认，**诚实**，但它不该被算进「可证伪条件」集。 |\n| **K3** | ✅ **真撤退** | 「`ex` 是协议事实还是 `married/partner` 的减法」是可判定的具体事实检查（U16），任一不满足即降级为 `Unknown`。会真的触发。 |\n| **K4** | ✅ **真撤退，构造最好** | 「belief 潜类数是否在 `Nagin & Odgers 2010` 报告规范 + 敏感性分析下稳定」→ 稳定则 HMM/GBTM 成为 L-B 默认工具；随样本变动则 L-B 退回有序/区间式。**双向都会改变结论**，且报告自己指出这是唯一不改项目立场、只改工具的撤退。 |\n| **K5** | **现实上不可触发 = 永久锁，不是 kill criterion** | E1 要求「同一控制量 `u` 在**上升段与下降段**都被扫过，且两段可比较」。自然关系轨迹中**不存在**可被研究者上下扫描的外生控制量 `u`。报告自己写「当前连 E1 在关系数据上都不存在」——**它已承认这一点，却仍把 K5 列为检验**。（对照 `F-C05`：E1 在运动协调层已由 scanning probe 实现，故 E1 是「已实现但未迁移」，不是不可实现。） |\n| **K6** | ✅ **真撤退** | 三项前提（更密观测 / 客观行为读数 / 外生控制扫描）在原理上都可获得（daily diary、行为编码、自然实验）。K6 还正确指出 Bühler & Orth 的 terminal 起点是**持续时间区间估计**（0.58–2.30 年）而非水平跳变阈值，故不与 Gelman–Stern 冲突。 |\n| **K7** | **已被 inadequate evidence 预先回答** | 见 `F-C02`。K7 的「当前状态」栏写「现有证据指向『未达到』」——**K7 被判定为已答**。一个被它所依据的不充分证据预先回答的条件不是活条件；其两个分支导向的结论已在 §5.4 写死。 |\n| **K8** | **键控在一个 lane 从未打开的引用上** | 触发条件是「`Kay & Hensler (2018)` 的结论」。§8.3-V1 诚实标了 `FETCH_FAILED`（四次查询 + 一次 webfetch 全败），并列为「本 lane 已知的、**会直接推翻本报告一条核心建议**的单点」。**这份自我标记值得信用。** 但键控在未读论文上的 K 不是条件，是备注。正确写法是把「若成立」分支改写为「若能证明 X，则 L-D 需重做」。 |\n| **K9** | ❌ **结构上循环 —— 最重要的一条缺陷** | K9 问：「**是否存在**任何在真实 dyad 数据上估计出双吸引域 / 停留时间分布的同行评审研究」。其「若不成立 → 维持本节结论」分支意味着：**一次未找到 = 对报告结论的肯定**。而 §5.3 已自认检索有五条覆盖缺口。**把不完整的检索失败计为支持，是确认偏误机器，不是 kill criterion。** 必须换成**数据条件**（例如「在满足 §4-O4 密度的 dyad 面板上，双吸引域能否被估计出」），而不是文献存在性问题。 |\n| **整节撤退** | ✅ **条件形式写得好** | 「若 K1 与 K8 同时朝不利方向解决……**本报告没有能力预判这一条，只能把它标出来**」——**这是本节最好的一段**：明确承认单点脆弱性并交出去。保留。 |",
+   "strongest_counterevidence": "见上表。`09` 自己提供的两处最致命：(i) §5.3 的五条覆盖缺口直接使 K9 失效；(ii) §8.3-V1 的 `FETCH_FAILED` 直接使 K8 失效。**报告标记了 V1，但没意识到同一逻辑适用于 K9。**",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` K1 / K4 / K6",
+   "duplicate_of": "F-C12` 是 K9 的下游后果；`F-C2` 是 K7 的依据",
+   "recommendation_to_architect": "REJECT`**（针对 K9；并对 K1 / K5 / K7 / K8 做定点修补）— 保留 K2 / K3 / K4 / K6 与整节撤退条件。\n---",
+   "_locator": {
+    "line_start": 270,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "supporting_refs": "",
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C15",
+   "_title": "§7-O1 提出的 rule 9 可证伪改写**",
+   "claim": "把 rule 9 的绝对否定降级为可证伪的分工主张：「标签序列不是状态的**充分**引擎。若在任何数据集上，给定底层状态后 label 序列不提供增量预测信息，则应正式承认 label 可作为可接受的粗状态层。」",
+   "source_report": "09` §7-O1",
+   "verdict": "PLAUSIBLE`**",
+   "supporting_refs": "AGENTS.md` rule 9（`VERIFIED_BY_ME`，已读）+ `CURRENT_ARCHITECTURE.md` §6（`VERIFIED_BY_ME`，已读）",
+   "strongest_counterevidence": "两层。**\n  1. **「`F` 未指定 = 预写查找表的隐式版本」这个 reviewer 攻击是**真的**，但 `09` 提不出反驳它的东西。`09` 自己在 FACT-1 / §9.8 承认没有任何框架的参数被估计过——即 `F` 的形式目前是**先验设定的**。一个先验设定的 `F`，在工程实现上确实与一张查找表无异。`09` 的改写（把否定句换成可证伪句）**回避**了这个问题而没有**解决**它。正确回应不是改措辞，而是 §7-O5 已提对的那件事：**先冻结一组能被数据否定的转移律族**。\n  2. **rule 9 是 `Human requirement`。** `09` §8.2 自己写：rule 8/9「是 `Human requirement`……其正当性目前**不依赖**任何动力学证据」。**那么改写 rule 9 就是 Human 决策，不是 Architect 决策。** `09` §7 表头标了「提案，非 mutation」，这一点做对了；但它没有指出这条改写的**权限归属**。",
+   "requires_canonical_change": "YES`** — `AGENTS.md`「Current architecture direction」第 9 条。**不能停在 proposal，也不能由 Architect 单方执行**（Human-gated）。",
+   "needs_experiment_or_data": "YES:` K1",
+   "duplicate_of": "F-C14`(K1) 是同一提案的检验形式",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 标 `HUMAN_GATED`；优先执行 §7-O5（先冻结可证伪转移律族），因为那一条**不需要**改 rule 9 就能解决 reviewer 攻击。\n---",
+   "_locator": {
+    "line_start": 297,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C16",
+   "_title": "同一 absence 在 `09` 内部被并联陈述四次**",
+   "claim": "「无任何框架 / 无迟滞 / 无阈值」这一 absence 同时出现在 §2.1、§5.3、§8.4-A-4/5/6、§9.2-FACT-1/4、§9.8。",
+   "source_report": "09` §2.1 / §5.3 / §8.4 / §9.2 / §9.8",
+   "verdict": "UNSUPPORTED`**（作为累积论证）；`corroboration: NON_INDEPENDENT`",
+   "strongest_counterevidence": "契约 §4 硬规则：同一来源支撑多次**不得**因此升级 verdict。`09` 的重述在**文字上**做了正确分标（哪些是 absence、哪些是 unknown），但**在论证结构**上 §9.8 的收尾句把 §2.1 + §5.3 + §9.2 的 absence **并联**使用，读起来像三条独立支柱。实际是一条。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:`",
+   "duplicate_of": "F-C01`, `F-C12`",
+   "recommendation_to_architect": "REJECT`**（作为累积论证）— 单一 absence，多处措辞不同但来源同一；parent join 时**不得**因「多处出现」而升级。\n### 3.2 报告 `10`：互惠 / 权力 / 依赖的 pair-level 派生\n---",
+   "_locator": {
+    "line_start": 313,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "supporting_refs": "",
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C17",
+   "_title": "Bodenmann, Meuwly & Kayser (2011)：systemic 测度胜过 discrepancy 测度**",
+   "claim": "在 443 对瑞士伴侣上，两个模型（comparative/discrepancy vs systemic）比较对关系质量的预测力，**systemic dyadic coping measure 是比 discrepancy measure 更强的预测者**。",
+   "source_report": "10` §4.8、§5 表格第 18 行、§8-G8、§11-A8、§9-14",
+   "verdict": "VERIFIED`（引文与方向）**",
+   "supporting_refs": "10.1027/1016-9040/a000068`（*European Psychologist* **16**(4):255–266, 2011）— **`VERIFIED_BY_ME`**，abstract 逐字核对。「The study is conducted with **443 Swiss couples**. Results reveal that both dyadic coping measures are related to relationship quality and psychological well-being. **However the systemic dyadic coping measure is a stronger predictor than the discrepancy measure for relationship quality.** Both measures show weaker associations with well-being.」→ **N、样本、方向三项全部精确命中；引文是论文原句。**",
+   "strongest_counterevidence": "报告漏掉了 abstract 里与其结论张力最大的那半句。** abstract 明写「**both** dyadic coping measures are related to relationship quality」以及「Both measures show weaker associations with **well-being**」。即：**discrepancy measure 并不无效——它也显著预测关系质量，只是更弱。** `10` §4.8 写「discrepancy / congruence 正是『两个有向状态的函数』的教科书形式。它在与联合过程竞争同一 outcome 时**落败**」，并在 §5 表第 18 行标「**直接判别实验**」。三处都需收紧：\n  1. **是相对强弱，不是判别性否证。** 除非两模型嵌套、且比较的是同一 outcome 的增量解释力——abstract 未说明嵌套性，也未给模型比较统计量。「落败」在 head-to-head 意义上对，在「被否证」意义上不对。\n  2. **该结果只在 relationship quality 上成立**；在 well-being 上两测度都弱。报告只引了前者。\n  3. `10` §4.8 称其为「**唯一**一个……并且联合过程赢了的实验」。「唯一」我**无法证实也无法证伪**（未做穷尽检索）；「赢了」在相对意义上成立。\n  - **credit：** `10` §4.8 末尾的本体论不确定性与 §9-14 是**正确的**，且是本报告最有价值的一段：「`Bodenmann et al. (2011)` 证明的是『**只靠两条有向状态的函数不够**』，它没有证明『**必须**有一个独立的 pair state 变量』。在 LHRM 的框架里，联合过程也可能是 `Action/Event` 层的一种**结构化轨迹**。」这条守住了 method/ontology 界线，**没有**滑。",
+   "requires_canonical_change": "NO`（若采纳 A8，需连带 U6）",
+   "needs_experiment_or_data": "YES:` U6 — 判断 joint process 是 ontology 状态还是 `Action/Event` 结构化轨迹",
+   "duplicate_of": "F-C18` 是「直接判别实验」框架的展开",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 引文与方向接受；措辞改为「在 relationship quality 上预测力更强（两者均显著），非判别性否证」，并把 U6 设为 A8 的前置阻断条件。\n---",
+   "_locator": {
+    "line_start": 328,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C18",
+   "_title": "Common dyadic coping 是「唯一的真涌现」证据**",
+   "claim": "10` §4.8 / §13：dyadic coping 是文献中**唯一**被实验证明「两个有向状态的函数不足」的构念；`CommonDyadicCoping_(A,B)` 是真正的 pair-level 涌现候选。",
+   "source_report": "10` §4.8、§5 表第 18 行、§8-G8、§13",
+   "verdict": "UNSUPPORTED`**（就「唯一」与「涌现」两处用词；底层 Bodenmann 结果本身 `VERIFIED`，见 `F-C17`）",
+   "supporting_refs": "同 `F-C17`；另 Falconier et al. 2015（见 `F-C29`）",
+   "strongest_counterevidence": "三点。**\n  1. **「唯一」是 lane 内的检索断言，不是事实。** `10` **未披露它的检索式**（对比 `09` §5.3 老老实实列了三组检索式——这是 `10` 相对 `09` 的一处退步）。因此「唯一」既不能证实也不能否证，且报告没有为它标注 `AI_DERIVED_CHARACTERIZATION`。\n  2. **「涌现」（emergent）在报告自己的用法里过强。** `10` 同段给出的结构性论证（样本题项是联合行动属性）是一个**构念分类学**论证（这类题项测量的是耦合系统属性），不是**涌现性**论证——涌现需要证明该量在两方向状态之外有**无法由历史 / Action 层解释的剩余**。`10` 自己在下一段就说这正是未决的 U6。**「emergent」这个词在 U6 未决时不该出现在 §4.8 的判定里。**\n  3. **§13 与 §4.8 合起来把 U6 未决的东西讲成了已决。** §13 写「文献中**唯一被实验证明**『两个有向状态的函数不足』」；§9-14 写「**只**证明了『两条有向状态的函数不够』，**没有证明**『必须有独立 pair state 变量』」。两者不直接冲突，但配合 §4.8 的「真涌现」，读者会得到一个比 U6 所允许的更强结论。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` U6 / U2",
+   "duplicate_of": "F-C17`",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 删「唯一」与「真涌现」；保留为「文献中已知的、唯一一处两个有向状态的函数在同 outcome 竞争中被系统性超越的构念」，并把 U6 写成显式前置条件。\n---",
+   "_locator": {
+    "line_start": 346,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C19",
+   "_title": "互惠必须在 SRM 残差上计算**",
+   "claim": "Mutuality_k(A,B,t) = H(e_k(A->B,t), e_k(B->A,t))`，其中 `e_k(i->j) = D_k(i->j) − R_k(i) − T_k(j)`；朴素 `H(D_AB, D_BA)` 会系统性混入与本对无关的成分。falsifier：控制 `R,T` 后 `H(e)` 若不显著优于 `H(D)`，则残差化不必要。",
+   "source_report": "10` §4.1、§5 表第 1 行、§11-A1、§13",
+   "verdict": "PLAUSIBLE`**",
+   "supporting_refs": "Kenny (1988) *JSPR* **5**(2):247–261（S24）；Kenny & Acitelli (2001) *JPSP* **80**(3):439–448, `10.1037/0022-3514.80.3.439` — **元数据 `VERIFIED_BY_ME`**（作者、卷、期、页、年全部精确）；引文 `NOT_OPENED`",
+   "strongest_counterevidence": "这条有一个报告完全没提的硬约束，而它会打到 canonical 推导规则的本体。**\n  - `e_k = D_k(i→j) − R_k(i) − T_k(j)` 中的 `R_k`（perceiver/source 分量）与 `T_k`（target 分量）是**跨 dyad 估计量**。SRM 的关系效应 `e` 只有在**足够多 dyad** 上做多变量回归才能与 `R`、`T` 分离。\n  - **LHRM 的最小查询单元是一个具体 dyad**（`CURRENT_ARCHITECTURE.md` §2：「Human Dyad 仍是最小关系查询单元」），而**项目的首要验证工具是 Case Bank**（`AGENTS.md` Validation discipline；`CURRENT_ARCHITECTURE.md` §10；issue `#13`），其单位是**单案例逐句映射**。\n  - 因此：**在 Case Bank 的单 dyad 语境下，`R_k` 与 `T_k` 不可估计，`e_k` 不可计算。** 若把残差化写成 canonical R1 的强制前置步骤而不带「不可得时退回 `Unknown` / 显式声明为 unresolved」的分支，**它会让 canonical 的派生规则在本项目最主要的验证工具上不可适用。**\n  - `10` 的 falsifier「控制 `R,T` 后 `H(e)` 是否显著优于 `H(D)`」本身就预设了跨 dyad 数据；报告从未讨论单 dyad 分支。**这是本 packet 中我认为最需要 Architect 看到的 canonical-change 附带条件。**\n  - **正面 credit：** `10` §2 与 §9-6 正确地把残差化定位为 **measurement 层操作**而非 ontology 主张（「`e_k` 的残差化**不是** ontology 主张，而是测量层操作」）。**这与 canonical rule 4 不冲突**——`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 的原则是「互惠/不对称优先由两条有向边派生」，从未规定输入必须是裸 `Z`；且 §3 的 attraction family 示例已包含 `AttractionSusceptibility_i` / `TargetAttractiveness_j`，即 source/target 分量本来就在 canonical 里。**所以这是输入规定的细化，不是对 rule 4 的违反。**",
+   "requires_canonical_change": "YES`** — `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` §9 **R1**（`Mutuality_k(A,B) = H(Z[k,A,B], Z[k,B,A])`）。**为什么不能停在 proposal：若不带单 dyad 分支就写入，它会静默地使 rule 4 在 Case Bank 上不可适用。因此它必须携带一条 `Unknown`-when-unavailable 规则才能被采纳——也就是说，缺了那条分支的 proposal 本身就是不可采纳的。**",
+   "needs_experiment_or_data": "YES:` 跨 dyad SRM 估计 + 单 dyad 下的退回规则设计",
+   "duplicate_of": "F-C20`（`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 的对应公式）",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 先要求 `10` 补上单 dyad / Case Bank 分支，再考虑写入 R1。\n---",
+   "_locator": {
+    "line_start": 363,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C20",
+   "_title": "`Asymmetry_k` 必须是「带声明比较器的比较关系」而非 `distance()`**",
+   "claim": "canonical 的 `Asymmetry_k(A,B) = distance(Z[k,A,B], Z[k,B,A])` 与 `AGENTS.md` representation invariant #4（不强迫 `0..1` / 欧氏 / 共同语义尺度）冲突；当 `Z` 是区间、序数、类别、概率分布或 `Unknown` 时 `distance` 未定义。修正为 `{left, right, comparison: 显式声明的比较器, comparator_id, evidence, uncertainty}`。",
+   "source_report": "10` §4.3、§5 表第 3 行、§11-A2、§13",
+   "verdict": "VERIFIED`**（矛盾的存在性可由 canonical 文本本身证明；修正形式的合理性 `PLAUSIBLE`）",
+   "supporting_refs": "AGENTS.md` invariant #4/#5（`VERIFIED_BY_ME`，已读：「Do not force every coordinate into `0..1`, Euclidean space, or one common semantic scale. A coordinate may be an interval, ordinal state, category, constraint, probability distribution, Unknown, or estimate + uncertainty + evidence.」）；`CURRENT_ARCHITECTURE.md` §9 原则 3/4（`VERIFIED_BY_ME`，已读）；`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2（`VERIFIED_BY_ME`，已读，逐字读到 `Asymmetry_k(A,B) = distance(Z[k,A,B], Z[k,B,A])` 与 `MutualSexualDesire(A,B) = H(SexualDesire(A->B), SexualDesire(B->A))`）",
+   "strongest_counterevidence": "我没有反证；我确认了矛盾，并发现 `10` 找到的是一条真实的 canonical 内部冲突。** `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 在同一节里既给出 `distance()` 公式，又在 §3 承认坐标可以是 interval / ordinal / category；§6 甚至已声明「当前不假定整个状态空间必然是普通欧氏空间」——**即该文件自己声明了不用欧氏空间，却在 §2 用 `distance()` 定义了一个派生量。** `CURRENT_ARCHITECTURE.md` §9 还额外声明「Fuzzy / normalization / distance 等技术可以作为 measurement/readout 工具，但不拥有定义 LHRM 本体的优先权」——这几乎逐字就是 `10` 的论证。**`10` §4.3 的判断正确。**\n  - **「为什么不能停在 proposal」必须分两层：** 矛盾的**存在**是可由 canonical 文本自身证明的文档缺陷（无需新证据、无需新架构判断）；修正**形式**（声明式比较器 vs 标量）是 `AI recommendation`，需 Architect 签字。**这两层必须分开处理。**\n  - 唯一可查的弱点：`10` §4.3 的 falsifier「若某任务证明一个**声明过的**序数比较器与一个连续 `distance` 在该任务上无显著差异，则可以退回标量形式」——**可测，写得好**，且 `10` 明确标「该主张待测」。",
+   "requires_canonical_change": "YES`** — `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 的 `Asymmetry_k` 公式（及 `MutualSexualDesire` 的输入规定）。**矛盾部分可升级为 durable finding；替换形式停在 proposal。**",
+   "needs_experiment_or_data": "YES:` 声明式比较器 vs 连续 distance 在 Case Bank 检索 / adversarial 覆盖任务上的对照",
+   "duplicate_of": "F-C19`（同一 canonical 节，相邻公式）",
+   "recommendation_to_architect": "ACCEPT`**（矛盾诊断）+ **`ACCEPT_AS_PROPOSAL`**（替换形式）。\n---",
+   "_locator": {
+    "line_start": 382,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C21",
+   "_title": "权力分解：relative（零和）/ total（非零和）/ punitive**",
+   "claim": "relative power = power difference`（零和，可由两方向依赖不对称派生）；`total power = mutual dependence / relational cohesion`（非零和）；`punitive / retaliatory capacity` 不可由 dependence 派生。→ R2 作为完整表述 `NEGATIVE`；作为 relative power 分量的 readout **正确**。",
+   "source_report": "10` §4.6.1–§4.6.3、§5 表第 7–9 行、§7、§8-G2/G6、§11-A4、§13",
+   "verdict": "VERIFIED`**（relative / total / punitive 三分量）— 这是 `10` 最强的一节",
+   "supporting_refs": "Lawler (1993)**「From Revolutionary Coalitions to Bilateral Deterrence: A Nonzero-Sum Approach to Social Power」— **`VERIFIED_BY_ME`**，取回章节 OCR 全文。逐条核对：\n  - 「With the unit of analysis being a single relation or dyad, **total power refers to the sum of each party's absolute power (i.e., `Pab + Pba`); relative power refers to the power difference or ratio**」✓ 与 `10` 的三分完全一致。\n  - 「Increases or decreases in total power involve changes in the degree of **mutual dependence**, or what Emerson (1972) termed **'relational cohesion'**」✓\n  - 「**In Emerson's terms, total power constitutes the level of mutual dependence or 'relational cohesion' in the relationship. Higher total power in a relationship essentially produces an increase in the opportunity costs associated with leaving the relation**」✓ **逐字命中 `10` 的第一条引文。**\n  - 「**Proposition 1: If total power in a relationship increases and the power difference decreases, then greater commitment will develop.**」✓ **逐字命中 `10` 的第三条引文，包括 \"Proposition 1\" 与前置的 \"The geometric-mean specification leads to the following proposition\"。**\n  - **Lawler & Bacharach (1987)** *Social Forces* **66**(2):446, `10.2307/2578749` — **元数据 `VERIFIED_BY_ME`**。且 Lawler 1993 章内**直接描述了该实验**：「Relative and total dependence was manipulated by varying the probability of a good agreement from the alternative. **Coercive capability (i.e., potential to punish) also was manipulated.** The results indicated that the likelihood of conflict resolution (agreement) was **significantly higher when parties had both high total and equal power** in their relationship.」→ **`10` §4.6.2「双方都有权 vs 双方都无权被 R2 判成同一状态」与 §4.6.3「punitive 与 dependence 被实验分离」两条论证，都在这一段里被我直接核实。**",
+   "strongest_counterevidence": "三点，全部可修。**\n  1. **`10` §4.6.2 的第二条引文是**加引号的**改写，不是原文。** 报告写「`total power has cohesive or integrative effects on the relationship, and these effects are distinguishable from the effects of relative power or power differences.`」（带引号）。我读到的对应原文是 chapter abstract 的「A nonzero-sum approach to power stipulates that **the total amount of power in a relationship can have effects distinct from those of relative power or power difference**」以及正文的 Total-power / Relative-power 两条 proposition。**意思对，但不是这句话。** 同一份报告对 `Lawler & Bacharach 1987` 的引文（「The results support the theory of bilateral deterrence **with regard to punitive power**, offer partial support to extension of the theory to power dependence, and demonstrate that **the distinction between punitive and dependence forms of power is important**」）是**逐字**的。→ 同一节里两种引文精度并存，需统一标记。\n  2. **§4.6.3 对 Lawler 1993 的第三条引文（\"only one form of cost — opportunity costs… Retaliation or punishment costs were not easily incorporated\"）我未能在取回片段中定位逐字版。** 内容与该章主旨一致（该章明确讨论 punishment costs 与 hostile tactics 的连接困难），但 verbatim 未确认 → `NOT_OPENED`，标 `PLAUSIBLE`。\n  3. **R2「遗漏」total power 的说法过强。** `10` §4.6.2 写「**R2 的写法把它排除在外**」，§4.6.6 写「R2 只看不平衡」。但 canonical R2 的**输入**是 `OutcomeDependence_(A->B), OutcomeDependence_(B->A), alternatives, resources, constraints` —— **两个方向的 dependence 都在输入里**，因此对称聚合 `TP` 在 R2 的输入下**是可得的**。R2 的问题是**输出形式**被写成 `PowerImbalance_(A,B)`（一个不对称形状的量），**不是输入缺项**。准确表述是「R2 对 total power **沉默**，而非排除」。（`09` §7-O3 对 canonical P4 的引述我核对过，准确。）",
+   "requires_canonical_change": "YES`** — `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` §9 **R2**（已读原文 472–487：`### R2. Power / Power imbalance`，`当前优先假说` 写 `PowerImbalance_(A,B) = f(OutcomeDependence_(A->B), OutcomeDependence_(B->A), alternatives, resources, constraints)`，`不先设一个独立\"权力值\"`）。**能否停在 proposal：见 `F-C22` 的拆分建议。**",
+   "needs_experiment_or_data": "NO`（本条）",
+   "duplicate_of": "F-C22`（同一 canonical 改写的处置）",
+   "recommendation_to_architect": "ACCEPT`** — 权力三分判定与所引主文献一致，punitive 分离有实验支持。\n---",
+   "_locator": {
+    "line_start": 398,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C22",
+   "_title": "「R2 应当被改写，不是被否决」**",
+   "claim": "把 R2 限定为「relative power 分量的 derived readout」，同时在 schema 中显式加入 punitive capacity、legitimacy/bases、perceived power、felt compliance 四个槽位 + 一个 domain 索引；`PowerImbalance_(A,B)` 保留为 derived readout。",
+   "source_report": "10` §7、§11-A4、§13",
+   "verdict": "PLAUSIBLE`**（处置正确，但执行必须分批）",
+   "supporting_refs": "同 `F-C21`；`PARAMETER_CONVERGENCE_V0_1.md` §9 R2（`VERIFIED_BY_ME`，已读）",
+   "strongest_counterevidence": "「改写而非否决」是正确的处置**——理由：R2 的**输入没错**（两方向 dependence 都在），错的是**输出形式**（只命名了 imbalance）**加上标题把 \"Power\" 和 \"PowerImbalance\" 混成一个条目**。否决会丢掉正确的输入集；改写保留它。**这个判断我同意。**\n  **但 A4 把四个槽位一次性塞进同一次改写，其中两个的证据基础 `10` 自己已经否掉了：**\n  1. **legitimacy / power bases**：`10` §4.6.5 引 Junkins et al.：「There were **no established scales used repeatedly that were developed specifically with power bases in mind**」——**「没有反复使用的成熟量表」**。同时 A4 要求 schema 加入 `legitimate / expert / referent / informational` 四个基底槽位。**`10` 引用了一个说「没有量表」的来源来支持加槽位，且从未调和这两件事。**（Junkins 元数据我已核实：JFTR **18**(1):170–191, **2025**；`10` 写「2025/2026」——年份含糊但不算错。）\n  2. **felt compliance**：`10` §7 自己写「**它的证据是间接的**……**不应被当作已确立的架构发现**」，§4.6.4 判定栏也标「证据是间接的」。支持它的 `Solomon & Samp (1998)` 在 `10` 自己的 §12.1 里标「**出版元数据；内容未读**」——**支撑 `10` 自认最弱的那个槽位的来源，是它没读的那一篇。**\n  **我的处置拆分：** **R2-a（可立即执行）**：R2 标题拆为 relative-power readout；**新增** total-power 对称 readout；**新增** domain 索引（依据 `F-C21` 已核实的 Lawler 1993 + Lawler & Bacharach 1987 实验）。**R2-b（HOLD_FOR_EVIDENCE）**：punitive capacity（实验分离已支持，但需在亲密关系而非两方谈判中复核）、legitimacy / power bases（无量表）、perceived power（作者名单 `10` 自标 `UNVERIFIED`）、felt compliance（间接 + 关键来源未读）。",
+   "requires_canonical_change": "YES`** — `PARAMETER_CONVERGENCE_V0_1.md` §9 R2。**R2-a 可以不停在 proposal（证据已核实，属文档增补）；R2-b 必须停在 proposal。**",
+   "needs_experiment_or_data": "YES:` R2-b 四槽位各自需要亲密关系域的增量检验；felt compliance 尤其需要「控制 `PerceivedPower` 后 chilling 是否仍有增量」",
+   "duplicate_of": "F-C21`",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`**（附 R2-a / R2-b 拆分；R2-a 可直接 durable 化，R2-b 须先 `HOLD_FOR_EVIDENCE`）。\n---",
+   "_locator": {
+    "line_start": 420,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C23",
+   "_title": "`total power` 的派生形式是「对称聚合（如 geometric mean）」**",
+   "claim": "total power` 可派生，形式为「对两条有向状态的对称聚合（Lawler 用几何平均）」；`10` 指出 R2 的写法遗漏此项。",
+   "source_report": "10` §4.6.2、§5 表第 8 行「派生形式 / 需要的额外 Φ」栏、§7",
+   "verdict": "WRONG-SCOPE`**（技术性错配：把 Lawler 的 relational-cohesion 规格当成了 total-power 规格）",
+   "supporting_refs": "Lawler (1993) 章节全文 — **`VERIFIED_BY_ME`**",
+   "strongest_counterevidence": "我读到了原文，它恰好反对这个写法。** Lawler 1993 的公式与偏导是：\n  ```text\n  Relational Cohesion (C) = sqrt(Pab × Pba)  或  sqrt(Dba × Dab)\n  C = f(TP, RP)\n  dC/dRP < 0     dC/dTP > 0\n  TP = Pab + Pba   (total power)\n  RP = |Pab − Pba| (relative power)\n  ```\n  而 Lawler 明说为何用几何平均：「A geometric-mean specification… **while arithmetic average power, adopted by Molm (1987), varies only as a function of the sum of the two values of power (i.e., total power), the geometric-mean specification varies as a function of both total power and relative power.**」\n  即：**几何平均是 relational cohesion `C` 的规格，而 `C` 是 `TP` 与 `RP` 的联合函数**（Lawler 明确用偏导把两者分开）。`10` 表第 8 行写「对称聚合（如 geometric mean），Lawler Prop.1」——把 `C` 的规格安到了 `total power` 槽位上，且 `Prop.1` 讲的是 `C`（commitment 的来源），不是 `TP`。\n  **更要紧的是：若按 `10` 的建议把 total power 实现为「对称聚合」，那恰好是 Lawler 明确批评的 arithmetic mean 路径**——「arithmetic average … varies **only** as a function of the sum」意味着它对 `RP` 完全不敏感，即**它无法实现 Lawler 自己的 Prop.1**（Prop.1 要求 `TP` 上升**且** `RP` 下降）。`10` 想解决的问题（R2 压平 both-high 与 both-low）会被一个「对称聚合」部分地重新引入。\n  **正确表述应为**：`total power`（`TP = Pab + Pba`）是**对称**聚合，**正确**；但要复现 Lawler 的可检验命题，需要的是 `C`——一个**同时依赖 `TP` 与 `RP` 的联合函数**，而 `C` 本身才是应当与 `total power` **并列**的另一个读出。二者不可互相替代。",
+   "requires_canonical_change": "NO`（本条是缺陷诊断；修正后仍属 `F-C22` 的 R2-a）",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C21`（同节），但**结论不同** — `F-C21` 接受三分，`F-C23` 否定其中一分的实现规格",
+   "recommendation_to_architect": "REJECT`**（第 8 行的派生形式）— 改为：`TP` = 对称聚合（和）；`C`（relational cohesion）= `f(TP, RP)` 的联合读出，作为与 `TP` 并列的独立 readout 槽位，**不是 `TP` 的实现方式**。\n---",
+   "_locator": {
+    "line_start": 438,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C24",
+   "_title": "Overall & Hammond (2026) 的 power 幂零发现**",
+   "claim": "真实亲密关系中 actor 与 partner 的**感知权力倾向正相关**而非反相关（若权力总是零和的话），且「few interactions involve one person having very high power and the other very low power」；因此 `f(dependence asymmetry)` 会把「双方都无权」与「双方都有权」判成同一状态。",
+   "source_report": "10` §4.6.2（两条逐字引文）、§5 表第 8 行、§8-G6、§13",
+   "verdict": "PLAUSIBLE`**",
+   "supporting_refs": "10.1146/annurev-psych-012325-032022`（Overall & Hammond, *Annual Review of Psychology* **77**(1):393–421, 2026，题名「Power and Ideology in Close Relationships」）— **`VERIFIED_BY_ME`**（Crossref 元数据 + Semantic Scholar abstract）。两条引文**在正文中，`NOT_OPENED`**（`annualreviews.org` 403）。",
+   "strongest_counterevidence": "abstract 层我核实到的内容支持报告的实质推理，但不支持那两条逐字引文。** abstract 原文：「We emphasize the need to consider **actor and partner power, relationship and structural power, power symmetries and asymmetries**, and competitive and cooperative ideologies.」以及「High-power actors can promote their own needs, whereas **low-power actors must inhibit their needs** or enact aggression or manipulation to fight for their needs. Actors must also **accommodate** the needs of high-power partners but can neglect or may feel obliged to protect low-power partners.」\n  - **对报告有利**：review 明确把 **symmetries 与 asymmetries 并列**为必须同时考虑的维度 → 支持 `10` 的「不能只看 imbalance」；且「low-power actors must inhibit their needs」+「accommodate the needs of high-power partners」直接支持 `F-C25` 的 felt-compliance 槽位。\n  - **缺口**：两条引文（\"positively correlated rather than inversely related\"；\"few interactions involve one person having very high power and the other very low power\"）我**无法核实**。`10` 把 S6 标为 `CITED_PRIMARY`（本次实际读到原文），但我未能复现。考虑到同一报告对 Lawler 1993 存在加引号改写（`F-C21` counterevidence-1），**这一处应降为 `NOT_OPENED` 并请 lane 补页码。**\n  - **第二重反证**：「both high power」与「both low power」是**行为上不同**的 dyad —— 这个推理需要「感知权力正相关」**且**「该正相关的行为后果不同」两件事。abstract 只给了前半。",
+   "requires_canonical_change": "NO`（属 `F-C22` 的 R2-a）",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C21`；另 `10` 的「common (total) power」在 §4.6.2 / §5-8 / §7-(5) / §8-G6 / §13 **五处**重述 → `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 依据 abstract 成立；请 lane 补 Overall & Hammond 的具体页码后再落 durable。\n---",
+   "_locator": {
+    "line_start": 466,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C25",
+   "_title": "`FeltCompliance` / chilling effect 不可由结构派生**",
+   "claim": "结构性权力不平等**不决定**顺从；`FeltCompliance_i(j, domain)` 是 `10` 唯一主张的「不可约关系-体验成分」，**但其证据是间接的**（`Lawler 1993` 明说抵抗 vs 顺从的条件**尚未解决**；没有任何研究在控制 perceived power 后检验 felt compliance 的增量）。",
+   "source_report": "10` §4.6.4(a)–(e)、§5 表第 12 行、§7 末段、§9-4、§10 U4、§11-A4、§13",
+   "verdict": "PLAUSIBLE`**（就「间接」这一自我定级 —— `PLAUSIBLE` 恰是正确档位）；但**报告内部对该档级的表述不一致**",
+   "supporting_refs": "Lawler (1993)`（`VERIFIED_BY_ME` 章节全文，未在该片段中逐字定位）；`Keltner, Gruenfeld & Anderson (2003)` *Psychological Review* **110**(2):265–284, `10.1037/0033-295X.110.2.265`（元数据 `VERIFIED_BY_ME`）；`Birnbaum et al. (2024)` PMC11782303；PSPB `10.1177/01461672251409849`（`10` 自标作者名单 `UNVERIFIED`）；`Solomon & Samp (1998)` *JSPR* **15**(2):191–209, `10.1177/0265407598152004`（元数据 `VERIFIED_BY_ME`；**`10` 自标「内容未读」**）",
+   "strongest_counterevidence": "10` 对本条的自我标记是本 cluster 最诚实的一处，应予明确信用**：§4.6.4 判定栏标「**证据是间接的**」；§7 末段标「**不应被当作已确立的架构发现**」；§10 U4 标「**当前无直接检验**」；§5 表第 12 行「增量证据」栏标「**间接**」。**四处一致。**\n  **但 §13 的总结句把它推回了一格**：「权力的『不得不顺从』体验有**间接但真实的支持**」。「间接但**真实**的支持」比「间接、未确立」强——「真实」暗示存在可指认的支持。而报告自己的 §7 说它**不应被当作已确立的发现**。**§13 与 §7 直接冲突，且 §13 是最容易被引用的一句。**\n  另两条：`Lawler 1993` 的「An effort is needed to understand further the conditions under which unequal power relationships produce such resistance rather than compliance」我**未在取回片段中逐字定位**，但其作为「这是未解决问题」的性质清楚且与该章主旨一致；PSPB 那篇作者名单 `10` 已自标 `UNVERIFIED`，§9-4 也已限定「只主张存在系统性、动机驱动的偏差」——**这一处自我限定做得对。**",
+   "requires_canonical_change": "NO`（若采纳 A4，必须连带 U4）",
+   "needs_experiment_or_data": "YES:` U4 — 控制 `PerceivedPower` 后 chilling / felt compliance 是否仍携带独立增量",
+   "duplicate_of": "F-C22`（R2-b 的第四槽位）；另 `10` §4.6.4 / §5-12 / §7-(4) / §13 **四处**重述 → `corroboration: NON_INDEPENDENT`",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — §13 的「间接但真实的支持」必须改回 §7 的定级；A4 的 felt-compliance 槽位设为 `CANDIDATE / NOT_ESTABLISHED`。\n---",
+   "_locator": {
+    "line_start": 483,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C26",
+   "_title": "「情境客观互赖结构 `Omega(S)`」是本体漏洞（ontology hole）**",
+   "claim": "Interdependence Theory 的 interdependence matrix 提供 actor control / partner control / joint control 的 outcome-contingency 结构；该结构与 SRM 的 perceiver / target / relationship effect 三段分解**同构**，但 LHRM **没有** `actor × partner interaction` 这一层的**情境**表示。两个 dyad 可以有完全相同的两条有向状态却处在结构上相反的情境中。",
+   "source_report": "10` §3、§5 表第 5 行、§8-G1、§11-A5、§13",
+   "verdict": "PLAUSIBLE`**（论证结构 sound；本体定位正确）",
+   "supporting_refs": "Kelley & Thibaut (1978)；Kelley, Holmes, Kerr, Reis, Rusbult & Van Lange (2003)；`van Lange & Rusbult (2011)` ch.39 — 均 `NOT_OPENED`；Gerpott et al. (2018) 见 `F-C27`",
+   "strongest_counterevidence": "我确认这是一个真正的本体漏洞，且 `10` 的类型化是正确的。** `CURRENT_ARCHITECTURE.md` §3（已读）把世界写作 `WorldState = Agents + Relationships + Environment`，§2 冻结「Human Dyad 为最小关系查询单元」；`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §6（已读）把局部状态写作 `AgentState_S / AgentState_O / DirectedState_(S->O) / DirectedState_(O->S) / PairState_(S,O) / Belief_S / Belief_O / RelevantEnvironment`——**其中没有任何一个槽位承载「谁的行为决定谁的结果」这一结构**。`10` 的反例论证（同样的两条有向状态 + 相反的 actor/partner control）是干净的可证伪论证。\n  - **但 `10` 自己给出的两个更弱支撑需分开看**：(a)「这个三段分解与 SRM 的 perceiver / target / relationship effect **完全同构**」是一个**强**结构断言（未标 `AI_DERIVED_CHARACTERIZATION`）；SRM 的 decomposition 是**个体知觉数据**的分解，IT 的 matrix 是**情境结构**的分解，同型不等于同物。(b) 主观侧的 Gerpott 6→5 证据是关于**知觉**的，不支持客观侧存在性（`10` §9-7 已自标，做得对）。\n  - **未被 `10` 讨论的替代位置**：`10` §11-A5 写「在 ontology 中补 `SituationStructure`（`Omega`），与 `Environment` / `PairState` **并列**」——即它**拒绝决定** `Omega` 该放哪。而 `CURRENT_ARCHITECTURE.md` §3 的 `Environment` 是一个**已经存在**的槽位。这是本条最关键的未决问题，也是它必须停在 proposal 的理由。",
+   "requires_canonical_change": "YES`** — `docs/foundation/CURRENT_ARCHITECTURE.md` §3（`WorldState` 分解）与 §6（局部状态槽位表），或 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §6（槽位表）。**必须停在 proposal**：这是两份报告中最重的一项本体新增，且 `10` 自己拒绝决定落位。",
+   "needs_experiment_or_data": "YES:` 「两个有向状态相同但 actor/partner control 相反的 dyad，是否被 LHRM 判为同一状态」——这是 `10` §5 表第 5 行自己写的 falsifier，写得好",
+   "duplicate_of": "10` 的 `Omega(S)` 在 §2 记号 / §3 / §5-5 / §8-G1 / §11-A5 **五处**出现 → 三重计数（见专项 4）",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 接受 ontology-hole 的诊断；`SituationStructure` 的**落位**（新顶层实体 vs 并入 `Environment`）作为独立决策项交 Architect，报告不应替它决定（`10` 已正确地没决定）。\n---",
+   "_locator": {
+    "line_start": 499,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C27",
+   "_title": "Gerpott et al. (2018) 6→5 互赖维度塌缩**",
+   "claim": "242 个条目；人们（in situ 与 ex situ）只能可靠区分 6 个维度中的 5 个，缺 **coordination**；得到的主观互赖模型仍解释 24% 的合作方差，超出 DIAMONDS。",
+   "source_report": "10` §3、§5 表第 6 行、§12.1 S2",
+   "verdict": "VERIFIED`**（含一处术语错配）",
+   "supporting_refs": "10.1037/pspp0000166`（Gerpott, Balliet, Columbus, Molho & de Vries, *JPSP* **115**(6):716–742）— **`VERIFIED_BY_ME`**，abstract 逐字核对：「We find that people (in situ and ex situ) can reliably differentiate situations according to **5, but not 6**, dimensions of interdependence: (a) **mutual dependence**, (b) **power**, (c) **conflict**, (d) **future interdependence**, and (e) **information certainty**.」✓；「explains **24% of the variance in cooperation**, above and beyond the DIAMONDS model」✓；242 items ✓；in situ + ex situ ✓。删除理由亦取到：「the low and high items on this scale were positively correlated (r ≈ .24 in Study 1a, r ≈ .34 in Study 1b)」+「coordination items possessed **high cross-loadings on the mutual dependence factor**」。",
+   "strongest_counterevidence": "一处术语错配。** `10` §3 写「缺 *coordination*（**basis of dependence**）」。**`coordination` 与 `basis of dependence` 是 Kelley et al. (2003) 的两个不同结构维度。** 我取到的 Gerpott 自己列的六维是：`interdependence`（level）、`conflict`、`coordination`、`power`、`future interdependence`、`information certainty`——其中 `coordination` 的定义是「Degree to which an individual's behavior influences how an [other's outcome is determined]」，即**利益协变 / covariation of interests**。而 `basis of dependence` 是 IT 里另一个维度（partner control vs joint control）。`10` §3 开头把 Kelley 六维列为「level of dependence / mutuality of dependence / **basis of dependence** / covariation of interests / temporal structure / information certainty」——**这是与 Gerpott 的六维不同的另一套命名**，报告把二者混用，导致「coordination（basis of dependence）」这个括注在两套体系里都站不住。\n  - 这是**术语层面**错配，**不影响**核心结论（6→5、塌掉的是 coordination、24% 方差、超 DIAMONDS 全部正确）。但它出现在一个**承重**的派生论证上（`10` 用它推出「任何 LHRM pair 派生量若声称『人们实际能感知 X』，必须先通过这 6→5 的有损检验」）。\n  - `10` §9-7 正确自标「**不主张** 6→5 的塌缩适用于亲密关系长期情境。`Gerpott et al. (2018)` 的样本是**情境描述任务**」——**这条自我限定做得好**，把 `WRONG-SCOPE` 风险压住了。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "YES:` 亲密关系长期面板中 power 维度是否仍可区分",
+   "duplicate_of": "F-C26`（同一来源支撑 §3 的两段相邻论证）",
+   "recommendation_to_architect": "ACCEPT`**（引文与 6→5 结论）— 删掉「（basis of dependence）」括注；两套六维命名必须择一。\n---",
+   "_locator": {
+    "line_start": 515,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C28",
+   "_title": "Emery et al.：couple identity clarity 超越 agreement**",
+   "claim": "clarity（「作为伴侣二人中的一员，我相信我们知道自己作为一对是谁」）与实际 agreement 相关，但**在 agreement 之外**预测 commitment（Study 2），并**预测 9 个月内解体可能性的降低**（Study 4）。四项研究：横断 1–2、实验 3、纵向 4。",
+   "source_report": "10` §5 表第 22 行、§6.2-B1、§6.3 判决、§11-A6、§13",
+   "verdict": "VERIFIED`**",
+   "supporting_refs": "10.1177/0146167220921717`（Emery, Gardner, Carswell & Finkel, *Personality and Social Psychology Bulletin* **47**(1):146–160, 2020（online）/ 2021（issue））— **`VERIFIED_BY_ME`**，Europe PMC abstract 逐字核对：「This research introduces the construct of **couple identity clarity**—the extent to which an individual, as one of two partners in a romantic relationship, believes that the two of them know who they are as a couple. **Cross-sectional (Studies 1-2), experimental (Study 3), and longitudinal (Study 4)** studies supported the hypothesis that couple identity clarity is associated with higher commitment. Moreover, **higher couple identity clarity, although related to actual agreement between partners on their identity as a couple, predicted commitment above and beyond agreement (Study 2)—as well as predicted reduced likelihood of relationship dissolution over a 9-month period (Study 4).**」→ **构造定义、四研究设计、「above and beyond agreement」、「9-month」四项全部逐字命中。**",
+   "strongest_counterevidence": "两点。**\n  1. **引文元数据小错**：`10` §12.1 写「PSPB **47(2)**, 146–160」；实际为 **47(1)**。年份 `10` 写「(2020)」并在正文写「(2020/2021)」——Crossref issued year 为 2020，issue 为 2021，两种写法都可接受，**不算错**。\n  2. **`10` 对该结果的解读方向需收紧。** `10` §6.2-B1 写：「如果『we』只是两个 directed 状态的函数，那么当双方都正确地反映了那个函数时，『双方一致』应当平凡地预测『双方都清楚』。事实是：clarity 有超出 agreement 的独立预测力。」——**推论方向是对的**（agreement 平凡蕴含 clarity 是可反驳的，clarity 超出 agreement 是经验事实）。但注意：**clarity 是个体层面**的（an individual's belief），agreement 是**二元层面**的。`10` 用它论证「存在不能由两条有向状态 + shared facts 解释的 pair-level 内容」——而 clarity 的个体层面性质其实**更支持 `10` 的立场 A**（「we-ness 是两个 perception」）而非立场 B。`10` 选了立场 B，理由是「超出 agreement 的独立预测力」。**两条推理都成立，但它们指向不同层。** §6.3 的「两者都对，因为回答的是不同问题」这一调和其实**还需要第三条**：clarity 落在 **Belief 层**（即 `10` §6.3 判决里自己列的 `Belief_i(R1)` 那一行），而不是一个 pair-state 变量。",
+   "requires_canonical_change": "NO`（§6.3 牵涉 P1，见 `F-C30`）",
+   "needs_experiment_or_data": "YES:` U2 — 加入 joint `Action/Event` 历史后 clarity 是否仍有增量",
+   "duplicate_of": "F-C30`",
+   "recommendation_to_architect": "ACCEPT`**（引文层）— 修 issue 号（47(1)）；在 §6.2-B1 补一句「clarity 是 directed belief 层的量」。\n---",
+   "_locator": {
+    "line_start": 531,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C29",
+   "_title": "Falconier et al. (2015) 的 meta 数值 + 国别调节的自相矛盾表述**",
+   "claim": "72 个独立样本 / 57 篇报告 / 17,856 人；total dyadic coping 与关系满意度的聚合零阶相关 `r = .45 (p=.000)`；按 partner 与按双方的知觉比按 self 的知觉预测更强；collaborative common / supportive / hostile-ambivalent coping 比 stress communication / delegated / protective buffering / overprotection 预测更强；且 effect 在性别、年龄、关系长度、教育、国别上**都不被调节**，但**被国别显著调节**（Hilpert et al. 2016）。",
+   "source_report": "10` §4.8、§5 表第 18/19 行",
+   "verdict": "VERIFIED`（数值）/ `UNSUPPORTED`（国别那一句的表述）**",
+   "supporting_refs": "10.1016/j.cpr.2015.07.002`（Falconier, Jackson, Hilpert & Bodenmann, *Clinical Psychology Review* **42**:28–46, 2015）— **`VERIFIED_BY_ME`**，abstract 逐字核对：72 / 57 / 17,856 ✓；「The aggregated standardized zero-order correlation (r) for total dyadic coping with relationship satisfaction was **.45** (p=.000)」✓；「strongly predicted relationship satisfaction **regardless of gender, age, relationship length, education level, and nationality**」✓；「Perceptions of overall dyadic coping **by partner and by both partners together were stronger predictors** … than … **by self**」✓；「**collaborative common coping, supportive coping, and hostile/ambivalent coping** were stronger predictors … than stress communication, delegated coping, protective buffering coping, and overprotection coping」✓。",
+   "strongest_counterevidence": "报告在同一段里既说「国别不被调节」又说「被国别显著调节」，中间不加区分地并列。** 原文（`10` §4.8）的实际结构是：前半引 Falconier 的「regardless of … nationality」，后半引 Hilpert 2016 的跨国 meta 得出「被国别显著调节（香港强、加纳/肯尼亚弱）」，然后写成「**而且** effect 在性别、年龄、关系长度、教育、国别上**都不被调节**（罕见的稳健性），但**被国别显著调节**」。**这两句在同一行里互相矛盾，且第二句的来源是另一篇论文。** 实际情况并不矛盾——Falconier 检验的是**主效应的稳健性**，Hilpert 检验的是**效应量是否被国别调节**——但报告的写法让读者读成自我否定。\n  - **这在契约语境下是 `duplicate_of` 问题的实例**：同一个「robustness」论点被两个来源承载，报告没有做 `corroboration: NON_INDEPENDENT` 标注，反而让它们互相抵消。\n  - **顺带一处引文错误**（详见 `F-C30` 的 provenance 表）：`10` §4.8 把 `Frontiers in Psychology 10:571` 引作「**Lehne & Bodenmann (2019)**」；而 `10` 自己的 §12.1 把同一 DOI（`10.3389/fpsyg.2019.00571`）列为「**Falconier, M. K., & Kuhn, R. (2019)**……**A Conceptual Integration and a Review of the Empirical Literature**」。**Crossref 确认后者正确** → **正文作者名错误**（疑似把两篇不同的 2019 年 dyadic coping 综述混为一谈），且引用表的题名尾部「and a research agenda」亦不符。",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C17`（共同支撑 Bodenmann 结论）",
+   "recommendation_to_architect": "ACCEPT`**（数值）— 改写国别那句为两篇文献分工陈述；修 `F-C30` 的作者名。\n---",
+   "_locator": {
+    "line_start": 547,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "NON_INDEPENDENT (inline mention in packet text)",
+   "corroboration_source": "inline_mention"
+  },
+  {
+   "claim_id": "F-C30",
+   "_title": "表格内部重复计数与自相矛盾（契约 §6.4 强制专项）**",
+   "claim": "10` §5 的 test table 与 §6.3 / §7 / §8 之间存在同义与双重计数。",
+   "source_report": "10` §5、§6.3、§8",
+   "verdict": "VERIFIED`**（重复确实存在，且多处由报告**自己**的交叉引用证实）",
+   "supporting_refs": "报告自身的行内引用（`同 #21b`、`见 #22`、`[= §4.6.5 的 domain 分区]`、`与 P2 ValueCongruence 同类`）— `VERIFIED_BY_ME`（已读原文）",
+   "strongest_counterevidence": "我逐条查了，**以下为确认的重复/矛盾**：\n| # | 位置 | 问题 | 证据 |\n|---|---|---|---|\n| 1 | §5 表 **第 4 行**（依赖不平衡）vs **第 7 行**（relative power） | **同一现象两行。** `10` §4.6.1 原话：「**relative power 就是「谁的依赖更高」。它可以由两条有向依赖的不对称读出。**」→ 第 7 行的 `f(Dependence(i→j) − Dependence(j→i))` 就是第 4 行的 `Dependence_(i,j,S)` 之差 | 报告自证 |\n| 2 | §5 表 **第 21b 行**（`partner similarity`）vs **第 23 行**（value congruence / goal alignment） | **同一现象两行，且报告自己写明。** 第 21b「派生形式」栏：「Agent 属性比较（**与 `P2 ValueCongruence` 同类**）」；第 23 行：「Agent 属性或状态的比较（**同 #21b**）」 | 报告两处自证 |\n| 3 | §5 表 **第 18 行**（Common DC，`N`）vs **第 19 行**（Supportive DC，`部分 Y`） | **同一来源导出相反判定。** 第 18 行据 Falconier 2015 判 common DC **不可派生**；第 19 行据**同一篇** Falconier 2015 判 supportive DC **可派生**。但 Falconier 把 **collaborative common coping 与 supportive coping 并列**为「stronger predictors」——**它们在同一 meta 里的预测地位相同**。报告无法用这一来源把一个判 `N`、一个判 `Y` | 我核实 abstract：两者并列 |\n| 4 | §6.3 `PairRepresentation_R1` vs §5 表 **第 21d 行** `CoupleIdentity_(A,B,t)` vs **第 22 行** `couple identity clarity` | **三个名字，一个构造簇。** 任务书直接问「是否同时提出 `PairRepresentation` 族与 `CoupleIdentity` 构念」——**是**。§6.3 判决列 `R1  couple identity / shared narrative (\\\"who we are, why\\\")`；表第 21d 行写「需要 `CoupleIdentity_(A,B,t)`（pair 共享内容）+ 两个 directed belief」，其 falsifier 栏直接写「**见 #22**」。**报告自己的交叉引用承认了同义。** | 报告自证 |\n| 5 | §8 **G11**（第三方极，`PairState_(A,B)` 定义过窄 → `ontology hole`）vs §8 **G13**（三角/多边现象，`Φ_(S,O)` 是二人投影 → `projection hole`） | **同一现象被标为两种缺口类型，且两者互相矛盾。** G13 明说「**世界图能表示但投影取不到**」；G11 说本体缺一个实体。若 `CURRENT_ARCHITECTURE.md` §3 的 `WorldState = Agents + Relationships + Environment` 已能容纳第三方，G11 就是 projection 问题；若 `PairState_(A,B)` 真需扩展，那是 ontology 问题。**报告同时主张了两者。** | 报告自证（类型标注互斥） |\n| 6 | §6.3 `R3`（division of labor）与 §8 **G10**（分工与领域规范） | 报告**自己发现了这个重复并当成发现来卖**：「`R3` 值得单独指出：它**同时**是 we-ness 的内容、也是 power 的 domain 分区（§4.6.5）。这提示 pair 内容层与权力层共享一个对象——**这是一条本 lane 之前没有看到的架构线索**，建议 Architect 考虑。」→ **一个已在自己内部出现三次的对象（§4.6.5 的 domain 分区 + §6.3 的 R3 + G10）被表述为「新线索」。这是双重计数被当作发现的最清晰一例。** | 报告自证 |\n| 7 | G2 ≡ §4.6.3 ≡ 表 9 ≡ §7-(1)；G6 ≡ §4.6.2 ≡ 表 8 ≡ §7-(5)；G8 ≡ §4.8 ≡ 表 18 ≡ §11-A8；G14 ≡ §4.10 ≡ 表 13 ≡ §11-A9 | 每个 gap **四处**重述 | 逐条计数 |\n| 8 | `Omega(S)` | 出现在 §2 记号 / §3 / 表 5 / §8-G1 / §11-A5 = **五处** | 逐条计数 |",
+   "requires_canonical_change": "NO`（报告内部记账问题）",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "本条本身即 `duplicate_of` 的载体",
+   "recommendation_to_architect": "REJECT`**（表格当前形态）— 合并第 4/7 行、第 21b/23 行；第 19 行的判定需撤回或改依据；G11 与 G13 择一类型；`R3`/G10 的「重叠」应改写为「同一对象被两个 gap 描述」，不得作为新发现上报。\n---",
+   "_locator": {
+    "line_start": 563,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C31",
+   "_title": "`10` 的引文 provenance 缺陷（自标体系被自身违反）**",
+   "claim": "10` 建立三档证据分级（`CITED_PRIMARY` / `CITED_SECONDARY` / `AGENT_RECALL`）并据此把若干来源标为「本次实际读到原文」；我核实后发现若干条**分级或元数据与事实不符**。",
+   "source_report": "10` §12.1 / §12.3，及正文各引用点",
+   "verdict": "UNSUPPORTED`**（就这些具体条目）",
+   "supporting_refs": "Crossref（26 次 DOI 查询）— `VERIFIED_BY_ME`",
+   "strongest_counterevidence": "五条，全部由我核实：**\n| 来源 | `10` 的写法 | Crossref 事实 | 性质 |\n|---|---|---|---|\n| **Cruwys et al.** | §6.1 与 §12.1 均列 **6 位作者**：「Cruwys, T., South, E. I., **Kim, W.**, Halford, J. A., Murray, J. A., & Fladerer, M. P.」 | **5 位作者**：Cruwys, Tegan; South, Erica I.; **Halford, William Kim**; Murray, Judith A.; Fladerer, Martin P. | **凭空多出一位作者。**「Halford, William Kim」被拆成「Halford, J. A.」+「Kim, W.」。（v62, p795–817, 2022 ✓；`10` 标 `CITED_PRIMARY`） |\n| **Front Psychol 10:571** | 正文 §4.8：**「`Lehne & Bodenmann (2019), Frontiers in Psychology 10, 571`」**；§12.1 S38：**「`Falconier, M. K., & Kuhn, R. (2019)`……`A Conceptual Integration and a research agenda`」**（同一 DOI） | **Falconier, Mariana Karin; Kuhn, Rebekka**，题名「Dyadic Coping in Couples: A Conceptual Integration and a **Review of the Empirical Literature**」 | **同一 DOI 在正文与引用表里作者不同**；引用表题名尾部亦不符。**正文错。** |\n| **Emery et al.** | §12.1：`PSPB 47(2), 146–160` | **47(1)**, 146–160 | issue 号错 |\n| **`10` §12.1 孤儿条目** | 「Stress, dyadic coping, and relationship satisfaction: A longitudinal study disentangling timely stable from yearly fluctuations. (2020). *PLOS ONE*. — **S40**」 | 无 DOI、无作者 | **引用表里有、正文零引用。** 且它是**第二个**独立的 dyadic-coping 来源——**若被使用，`F-C17` 就会有第二条独立支撑**。它躺在列表里没被用，等于丢掉了反驳所需的独立支撑 |\n| **Overall & Hammond (2026)** | S6 标 `CITED_PRIMARY`（本次实际读到原文），正文给两条逐字引文 | 元数据 `VERIFIED_BY_ME`；**正文我未能复现**（annualreviews 403） | 分级可能虚高。**对照**：同一报告对 `Lawler & Bacharach 1987` 的引文确实逐字准确，说明它有真读的能力；因此这是**疏漏**而非系统性造假 |",
+   "requires_canonical_change": "NO`",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C29`（Front Psychol 10:571 的作者名错误同源）",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 要求 `10` 在 §12 加一列 `page_verified`（逐字引文所在页），并修上述 4 条；在该列补齐前，`10` 的 `CITED_PRIMARY` 标记不应被 parent 当作已核实。**注意：这是 provenance 层问题，不影响本 packet 对 `10` 实质结论的 verdict——那些结论我另有独立来源支撑。**\n### 3.3 跨报告冲突（本 cluster 内，两份报告互为对立方）\n---",
+   "_locator": {
+    "line_start": 589,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C32",
+   "_title": "`09` 的 L-A 合法性判据 (ii) 与 `10` 的 Φ 成员冲突**",
+   "claim": "09` §9.3.1 判 L-A（制度/协议事实层）合法，三条判据之一是 (ii)「**被关系状态更新而非生成关系状态**」。`10` §2 定义 `Φ(i,j,t) = shared pair facts：制度事实、约定、规范、分工、第三极、领域分区`，其中**分工**与**领域规范**被 `10` 自己的 §6.3-B3 证明会**直接改写有向状态**。",
+   "source_report": "09` §9.3.1（判据 (ii)）vs `10` §2、§4.6.5、§6.3-B3、§8-G10",
+   "verdict": "CONTESTED`**（两份报告均在 lane `F` 内，冲突可指名）",
+   "supporting_refs": "10` §6.3-B3 引 DPSIM 逐字：「As a relationship develops and grows, partners are likely to identify new couple-based goals (e.g., buying a house, starting a family), **leading them to merge many of their personal goals with those held by their partner** (Aron et al., 1992). **Over time, this transformation should render the more powerful partner in the relationship somewhat less powerful** because what is good for Johnny is now also good for Tara as **he becomes more dependent on her.**」（`NOT_OPENED`；但报告把这条作为 `KEEP coupling R1/R2 -> D_k(i->j)` 的依据）",
+   "strongest_counterevidence": "这是两份报告之间最实质的一处不一致，且双方都没注意到。** 若把 `09` 的判据 (ii) 严格套到 `10` 的 Φ 上，则 `10` 的 **R3（division of labor）** 与 **G10（分工与领域规范）** 都必须被排除出 L-A —— 因为它们**生成** dependence / power 的变化，而不是被更新。**两份报告对同一个 canonical 容器（`AGENTS.md` rule 5 的「shared pair facts」）给出了不兼容的准入判据。** Architect 若同时采纳 §9 的三层 schema 与 §10 的 Φ 扩展，会在 `division of labor` 这个槽位上撞车。\n  - 附带：**L-A 与 Φ 是同一个 slot 的两个名字**（`F-C25`/`F-C13` 的 `duplicate_of`）。`09` 的 L-A 更窄（纯法律/制度），`10` 的 Φ 更宽（加约定/规范/分工/第三极/领域分区）。这个宽度差就是冲突的来源。",
+   "requires_canonical_change": "YES`** — `AGENTS.md` rule 5（shared pair facts 的范围）+ `PARAMETER_CONVERGENCE_V0_1.md` §6 P4 / §7。**必须停在 proposal**，且**必须先由 Architect 裁决「shared pair fact 是否允许有向因果出边`**。这是本 packet 里 Architect 必须亲自做的一个窄而硬的决定。",
+   "needs_experiment_or_data": "NO`（这是架构裁决，非经验问题）",
+   "duplicate_of": "F-C13`（L-A）、`F-C25`（Φ / `PairRepresentation_R3`）",
+   "recommendation_to_architect": "HOLD_FOR_EVIDENCE`** — 不必等数据；这是一个**架构裁决**。请 Architect 明确写下 shared pair fact 的准入判据（是否允许 pair→directed 因果出边），并据此统一 `09` §9.3.1 与 `10` §2/§6.3。\n---",
+   "_locator": {
+    "line_start": 614,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  },
+  {
+   "claim_id": "F-C33",
+   "_title": "`09` 的 L-B 与 `10` 的 `B_i` 是同一层，两个名字**",
+   "claim": "09` §9.3.2 定义 L-B = `Belief_i(A–B 是什么) ∈ {friend, partner, married, ex, unknown, contested}`；`10` §2 定义 `B_i(X) = i 关于 X 的信念`，并注明 `[LHRM 已有层]`。",
+   "source_report": "09` §9.3.2 vs `10` §2",
+   "verdict": "VERIFIED`**（同一层的两个名字，跨报告同义）",
+   "supporting_refs": "AGENTS.md` rule 2（`World representation separates Agent | Relationship | Environment | Belief`）、`CURRENT_ARCHITECTURE.md` §3（`Reality != Observation != Belief`）— `VERIFIED_BY_ME`，已读",
+   "strongest_counterevidence": "不是内容冲突，是**命名不一致**。`09` 写 `Belief_i`，`10` 写 `B_i`，指同一 canonical 层。若两份报告的分层建议同时落地，schema 里会出现两个 belief 容器。另 `10` 的 `B_i` 是**一般信念**（可用于任何 X），`09` 的 L-B 是**特指对关系身份类的信念**——严格说 `09` 的 L-B 只是 `B_i` 的一个实例化，不是整个层。**`09` §9.3.2 的标题「观测者知识层（belief）」与它实际定义的内容（关系身份信念）不匹配。**",
+   "requires_canonical_change": "NO`（命名统一属文档卫生）",
+   "needs_experiment_or_data": "NO`",
+   "duplicate_of": "F-C13`",
+   "recommendation_to_architect": "ACCEPT_AS_PROPOSAL`** — 统一采用一个符号（建议 `Belief_i(·)`），并把 `09` 的 L-B 明确降为 `Belief_i(RelationshipCategory)` 这一实例，层本身留给 `10` 的一般形式。\n---",
+   "_locator": {
+    "line_start": 629,
+    "section": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence） / 3. `verdict_matrix`"
+   },
+   "corroboration": "",
+   "corroboration_source": "absent_in_packet"
+  }
+ ],
+ "record_count": 33,
+ "field_coverage": {
+  "claim_id": 33,
+  "claim": 33,
+  "source_report": 33,
+  "verdict": 33,
+  "supporting_refs": 31,
+  "strongest_counterevidence": 33,
+  "requires_canonical_change": 33,
+  "needs_experiment_or_data": 33,
+  "duplicate_of": 33,
+  "corroboration": 10,
+  "recommendation_to_architect": 33
+ },
+ "diagnostics": {
+  "scope_overlap": [],
+  "in_scope_sections": [
+   "3. `verdict_matrix`"
+  ],
+  "in_scope_ranges": [
+   {
+    "title": "3. `verdict_matrix`",
+    "line_start": 60,
+    "line_end": 642
+   }
+  ]
+ },
+ "files_audited": "### [line 11] 1. `files_audited`\n| 文件 | bytes | 行数（raw LF） | 行数（`Get-Content -Line`） | SHA-256 |\n|---|---|---|---|---|\n| `09_DYNAMIC_SYSTEMS_AND_HYSTERESIS.md` | 83,181 | 811 | 563 | `277AEA98BECE4B0913A40247566CCAADF02E017FD16868E2CFF575D2B6CA0A36` |\n| `10_MUTUALITY_POWER_DEPENDENCE.md` | 77,610 | 839 | 574 | `6C75BAE86EC7B148FA9EBFFCA36FCD166A4C6EF200510A7D744B805BF62FB6A7` |\n| `AGENTS.md`（只读） | 5,718 | 71 | 54 | `59E01E1400C9F629F44A086F7C9FE6F0DCDDF325FEF6021B27BB5E3255F6060E` |\n| `docs/foundation/CURRENT_ARCHITECTURE.md`（只读） | 9,649 | 362 | 243 | `A94EADE595ACC64DB898B19D1203FF5BFFB18C32D6CC68D40446831D8340FF49` |\n| `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md`（只读） | 7,862 | 271 | 185 | `6EAF0AF812604E52B780A1D8E9382B8489158B282E575D6827822FC000BA0C9C` |\n| `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`（只读） | 18,510 | 781 | 528 | `57DCD7AC948AD16A5B7DAF7658A0E893D41EA2F336B8CF34D7A679DFEFFFA8A2` |\n| `review-r2/REVIEW_CONTRACT.md`（只读） | 8,210 | 104 | 78 | `6F689441533463F0A9D292E2A96B8AB7F4710182416D856F4E616BF04E936292` |\n\n> 注：任务书给的体积是「78KB / 83KB」。实测 `09`=81.2 KiB、`10`=75.8 KiB，**两个数字被互换了**（`09` 是较大的那个）。不影响任何 verdict，仅记录。\n\n---",
+ "coverage_statement": "### [line 27] 2. `coverage_statement`\n### 2.1 我实际完整读完的\n\n- `09` 的 §0–§9 **全文**（811 行；三次 `read` 覆盖 1–220 / 220–519 / 519–810）。**无段落跳过。**\n- `10` 的 §1–§13 **全文**（839 行；三次 `read` 覆盖 1–270 / 270–559 / 559–838）。**无段落跳过。**\n- `AGENTS.md` 全文、`CURRENT_ARCHITECTURE.md` 全文、`CONSTRUCT_SCOPE_DIRECTIONALITY.md` 全文。\n- `PARAMETER_CONVERGENCE_V0_1.md` **部分**：§4 D8（227–241）、§5（245–287）、§6 P1–P4（291–354）、§9 R1–R5（461–514）逐行读完。**未读** §1–§3、§5 余下条目、§7、§8、§10–§15。\n\n### 2.2 我明确未读的（独立性声明）\n\n**未读取任何不属于 lane `F` 的报告。** 明确声明我没有打开：\n\n`01_CURRENTNESS_AND_GAP_MAP.md` · `02_CONSTRUCT_CONVERGENCE.md` · `02b_CONSTRUCT_REDUNDANCY_AUDIT.md` · `03_MEASUREMENT_INSTRUMENTS.md` · `04_DATASET_LANDSCAPE.md` · `05_IDENTIFICATION_AND_STATISTICS.md` · `06_TRANSITION_LAWS.md` · `07_PARTIAL_OBSERVABILITY.md` · `08b_BELIEF_DECEPTION_KNOWLEDGE.md` · `11_GENERAL_HUMAN_DYADS_SCOPE.md` · `12_COMPUTATIONAL_MODELS_ABM.md` · `13_LLM_SKILL_INTERVIEW_LAYER.md` · `14_PAPER_POSITIONING_NOVELTY.md` · `17_RED_TEAM_FALSIFIERS.md` · `18_CROSS_LANE_CONFLICT_AUDIT.md` · `19_SYNTHESIS_CANDIDATE.md` · `00_MANIFEST.md` · `A01_EVIDENCE_QUALITY_AUDIT.md` · `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` · `A04_CITATION_PROVENANCE_AUDIT.md` · `00_CHILD_CONTRACT.md`。\n\n> **必须声明的一次工具性越界：** 我第一次调用 `Grep` 时误把 `path` 传成了整个 `overnight-2026-09-27` 目录（而非单个文件），返回结果中**包含 `02`、`03`、`06` 等非本 lane 报告的章节标题行**（约 100 条 `## 标题` 匹配）。我随即改用 `Select-String -LiteralPath` 逐文件查询，未再越界。这些越界内容**仅是章节标题行**；我**没有**用它们形成任何 verdict，也**没有**用它们替其它 cluster 下结论。本 packet 每一条 `claim` 的行号指针均来自逐文件读取。声明此项以免 parent 误判本 lane 的独立性价值。\n\n- 未读 `docs/validation/*`（本 lane 无需）。\n- 未读 LHRM `#20` / `#21` / `#22`（按隔离契约；不猜测其内容）。\n- 未读 `RELATIONSHIP_EVALUATION_FOUNDATION.md` / `PROJECT_HISTORY_*.md` / `STAGE_SUMMARY_*.md`。\n\n### 2.3 外部核实方式\n\n- `api.crossref.org/works/<DOI>`：**26 次**直接 DOI 查询 + 9 次 bibliographic 检索（用于定位我手上没有 DOI 的引用）。\n- Europe PMC REST（abstract）：4 次。\n- Semantic Scholar Graph API：6 次尝试（**5 次被 429 限流**，1 次 404）。\n- OpenAlex：4 次尝试（3 次无 abstract 字段）。\n- 直接抓取全文：Kelso 2012（PMC3282307）、Frontiers in Human Neuroscience 14:317（Tognoli/Zhang/Fuchs/Beetle/Kelso 2020）、Cornell eCommons Lawler 1993 章（OCR 文本）。\n- `websearch`：5 次，用于取回被 403/429 挡住的 abstract。\n- **被墙记录**：`annualreviews.org` 403 · `econtent.hogrefe.com` 403 · `sciencedirect.com` 403 · Semantic Scholar 429 · OpenAlex 缺 abstract。→ 记 `UNVERIFIABLE_HERE`，未据此下结论。\n\n---",
+ "top_recommendations": "### [line 752] 5. `top_recommendations`（按对 Architect 的重要性排序，≤7）\n1. **`ACCEPT` — 立即把 Liddell & Kruschke 的论证基础写进 `CURRENT_ARCHITECTURE.md` §9（CC-8）。** 这是本 packet 唯一一条我建议**越过 proposal 直接 durable 化**的项目：纯增补 rationale，不改本体、不依赖新数据，而其证据我已**逐字核实全部五点**（100% 度量模型误用 / Type I / Type II / 系统性效应反转 / 取平均不修复 / 无可靠事后检出）。它同时把 `09` §7-O2 落地，并**独立加强**项目已有的 invariant 4。\n\n2. **`RECLASSIFY_AS_METHOD_LIMIT` — `09` §5.4-3 与 §9.2-FACT-1 的两处方法→本体滑坡必须同时改掉。** (a) 「强耦合前提在多数 dyad 中不成立」→ 改写为「当前可用的耦合代理与关系结局关联弱且 `I²=76%`、情绪协动超伪伴侣仅 14–38%」这一**方法/测量事实**；(b) 「没有任何一层现在**有资格**充当 `F` 的引擎」→ 改写为「目前**没有证据**支持任何一层充当引擎」。`09` §4.3 自己已经写下了正确的防滑坡句，§9 却越过了它。\n\n3. **`REJECT` — `09` §9.6 的 K9 不是一个 kill criterion，而是一台确认偏误机器。** 它把「是否存在已发表的双吸引域估计」这个**文献存在性问题**的否定答案计为对本报告结论的支持，而 §5.3 已自认检索有五条覆盖缺口。必须换成数据条件（例：「在满足 §4-O4 密度的 dyad 面板上，双吸引域能否被估计出」）。同批修补：K1 删掉「或给定 L-A + L-B」这个使其几乎不可能触发的析取项；K7 被不充分证据预先回答，须重开；K8 的「若成立」分支改写为「若能证明 X」（键控在 `FETCH_FAILED` 的 `Kay & Hensler (2018)` 上不是条件，是备注）；K5 标注为「已实现但未迁移」而非活检验（Kelso 2012 的 scanning probe 已实现 E1）。**保留 K2 / K3 / K4 / K6 与整节撤退条件——那部分是本报告最好的可证伪设计。**\n\n4. **`ACCEPT_AS_PROPOSAL` — `10` 的「R2 改写而非否决」判断我同意，但必须拆成 R2-a / R2-b 执行。** **R2-a**（relative-power readout + total-power 对称 readout + domain 索引）证据已由 Lawler 1993 原文与 Lawler & Bacharach 1987 实验逐字核实，**可越过 proposal durable 化**；**R2-b**（punitive、legitimacy/bases、perceived、felt）须 `HOLD_FOR_EVIDENCE` —— 其中 legitimacy 被 `10` 自己引用的 Junkins「没有成熟量表」否定，felt compliance 被 `10` 自己的 §7 定级为「不应被当作已确立的发现」且其关键来源 Solomon & Samp 被 `10` 自标「内容未读」。另：总 power 的实现规格须改（`F-C23`）——对称聚合是 `TP` 的正确形式，但 Lawler 的 `C`（relational cohesion）是对 `TP` 与 `RP` 的**联合**函数，不能拿几何平均当 `TP` 的实现。\n\n5. **`ACCEPT`（缺陷诊断）+ `ACCEPT_AS_PROPOSAL`（替换形式）— `10` §4.3 找到了一条真实的 canonical 内部矛盾（CC-1）。** `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2 用 `distance()` 定义 `Asymmetry_k`，而同一文件 §3/§6 与 `AGENTS.md` invariant #4 都允许非度量坐标并声明「不假定欧氏空间」。**缺陷部分可由 canonical 文本自身证明，请直接作为 durable finding 处理；替换形式（带声明比较器的比较关系）停在 proposal。**\n\n6. **`HOLD_FOR_EVIDENCE` — `10` 的「mutuality 必须算在 SRM 残差上」（CC-2）缺一个必需分支，现在不能写进 canonical。** `e_k = D_k − R_k − T_k` 中的 `R`、`T` 是**跨 dyad** 估计量；而 LHRM 的首要验证工具是**单案例 Case Bank**。因此必须先补「单 dyad / `R`、`T` 不可得时退回 `Unknown` 或显式声明 unresolved」的分支。**这不是打磨，这是可适用性问题：不带该分支的 proposal 本身不可采纳。**（`10` 把残差化定位为 measurement 层而非 ontology 主张这一点是对的，也与 rule 4 不冲突——问题只在操作后果未处理。）\n\n7. **`ACCEPT_AS_PROPOSAL`，但先做一次 schema 归并 — `09` §9 的「四层」实际是「三层 + 一个 join」，且跨报告的准入判据互相冲突。** (a) L-D 的取值集 `{friend, partner, married, ex}` 是 L-B 取值集的**严格子集**，而 `married/engaged/friend/partner/ex` 全部落在 L-A 里；L-D 自己的「转移规则」栏就写它是派生量，「复用价值」栏自承「动力学复用价值 = 0」。**按四层建 schema 会建出一个没有独立内容的第四个容器。** (b) `09` L-A 的判据 (ii)「被关系状态更新而非生成关系状态」会**排除** `10` 的 Φ 成员 R3 / G10（division of labor、领域规范）——因为 `10` 自己用 DPSIM 证明了它们会**反向改写**有向状态的 dependence / power。**这是两份报告之间最实质的一处冲突，且双方都没注意到；它是一个纯架构裁决（CC-10），不必等数据。** 附带：给 `09` §4.4 补一条 ESM / IL / EMA 的 escape clause（成本极低、价值极高——`09` 的 O1–O5 全部是 regime 条件化的，它自己的逻辑对密集设计开放，但全文从未点名那个 regime，读者会合理地误读为「密集设计也不行」）。\n\n---",
+ "explicit_non_claims": "### [line 770] 6. `explicit_non_claims`（本 lane 明确不主张）\n1. **不主张本 packet 覆盖了 `PARAMETER_CONVERGENCE_V0_1.md` 全文。** 只逐行读了 §4 D8、§5、§6 P1–P4、§9 R1–R5。所有关于该文件其他条目的陈述（`D1`–`D5`、`P5`、`B2`、Gate A/B/C §15）**均为 `NOT_OPENED`**，我未核实 `10` 对它们的任何转述。\n2. **不主张 `09` 或 `10` 的「本 lane 未找到」等同于「不存在」。** 我在 `F-C01` 上判 `UNSUPPORTED` 是针对**命题的证据状态**（负向检索不构成支持），**不是**断言「迟滞已被证明存在」。这一区分与两份报告自己的表述一致。\n3. **不主张 `F-C2` 的耦合前提已被否证。** 我的判断是该前提**未被测量**——既未被 Mayo 2021 的生理同步-结果相关证实，也未被否证。把它说成「不成立」和把它说成「成立」一样，都超出证据。\n4. **不主张我核实了 `10` 所引全部 59 条指针。** 我核实了 12 条来源（其中 9 条取得 abstract 或全文，3 条仅元数据）。**未打开**的有：`Peterman (1963)`、`Marzoratti & Evans 2022`、`Böllenrücher et al. 2023/2024`、`Nagin & Odgers 2010`、`van Havre et al. 2015`、`Schultzberg & Muthén 2018`、`Thompson (2011)`、`arXiv:0911.0013`、`Gelman & Stern 2006`、`Gelman & Loken 2014`、`Loken & Gelman 2017`、`Heck, Simons & Chabris 2018`、`Sussmann & Zahler 1978`、`Alexander et al. 1992`、`Guastello 1992/2008`、`Golubitsky 2010`、`Schokkenbroek et al. 2022`、`Vigl et al. 2022`、`Natsal-COVID`、`Cassinat et al.`、`Fife et al. 2023`、`Heintzelman et al. 2014`、`Kelley & Thibaut 1978`、`Kelley et al. 2003`、`Kenny (1988)`、`Koltlok/Molm`、`Gneezy & Fessler (2012)`、`Laurenceau et al. (1998)`、`Cruwys et al.` 正文、`Falconier & Kuhn` 正文、`Hilpert et al. (2016)`、`Simpson et al. (2019)`、`Moreland & Argote (1996)`、`Overall & Cross (2019)`、`Lawler & Bacharach (1987)` 正文。这些一律记 `NOT_OPENED`，**未据其升级任何 verdict**。\n5. **不主张 `Overall & Hammond (2026)` 的两条引文是错的。** 我只是**未能复现**（`annualreviews.org` 403）。我核实到的 abstract 支持 `10` 的实质推理（明确并列 symmetries 与 asymmetries；low-power actor 必须抑制自身需要）。**引文真伪待 lane 补页码**，我不判 `UNSUPPORTED`，只判 `PLAUSIBLE` 并标 `NOT_OPENED`。\n6. **不主张 `10` 的引文 provenance 缺陷代表系统性造假。** 五条缺陷（`F-C31`）中有四条是元数据级错误（多一位作者、issue 号、正文与引用表作者不一致、孤儿条目），且同一份报告对 `Lawler & Bacharach 1987` 与 `Lawler 1993` 的部分引文**确实逐字准确**——这说明 lane 有真读能力。因此我判为**疏漏**，并只建议加一列 `page_verified`。\n7. **不主张 `09` §9 的四层划分应被否决。** 我的判断是 L-A / L-B / L-C 三层**成立且 L-C 论证最硬**，只有 L-D 需要从「层」降为「join」。§9 整体应 `ACCEPT_AS_PROPOSAL`，不是 `REJECT`。\n8. **不主张任何 `WO-N1/N2/N3` 应被执行。** 本 lane 未评估其实施产物，也未产出任何实施产物；按契约 §3 只做评估。\n9. **不主张我替 lane `A`–`L` 中任何其它 cluster 下了结论。** 凡我提到 `02`/`03`/`06` 的章节标题（那次误操作），仅出现在 `coverage_statement` 的越界声明里，**未进入任何 verdict**。本 packet 的每一条 `claim` 指针都在 `09` 或 `10` 内。\n10. **不主张 `10` 的 R2 应当被否决。** 我同意「改写而非否决」是正确处置。`F-C22` 的要求是**分批**，不是改变处置方向。\n11. **不主张 `F-C12` 的四层「非引擎」判决是错的。** 我的判断是它的**论证类型**错了（从 warrant 滑到 ontology），而不是它的**结论**错了。在当前证据状态下，「不推荐任何一层充当引擎」是合理的建议；问题只在该建议被表述成不可撤销的本体判决（而 K9 又无法撤销它）。\n\n---",
+ "provenance_note": "### [line 786] 7. `packet_sha_note`\n### 7.1 被审文件（SHA-256 见 §1）\n\n`09_DYNAMIC_SYSTEMS_AND_HYSTERESIS.md` · `10_MUTUALITY_POWER_DEPENDENCE.md` · 5 份 canonical 只读文件 · `REVIEW_CONTRACT.md`\n\n### 7.2 我实际打开并取得内容的一手来源\n\n| 指针 | 取得层级 | 用于判定 |\n|---|---|---|\n| `10.1016/j.jesp.2018.08.009` — Liddell & Kruschke 2018, *JESP* 79:328–348 | **abstract**（3 个独立来源一致：ScienceDirect 页 / Indiana ScholarWorks 记录 / OSF preprint 页） | `F-C04` = `VERIFIED`（五点逐字） |\n| `10.1027/1016-9040/a000068` — Bodenmann, Meuwly & Kayser 2011, *European Psychologist* 16(4):255–266 | **abstract**（逐字） | `F-C17` = `VERIFIED`（N=443 / Swiss / 方向） |\n| `10.1016/j.physbeh.2021.113391` — Mayo, Lavidor & Gordon 2021, *Physiol Behav* 235:113391 | **abstract**（Europe PMC，逐字） | `F-C03` = `VERIFIED`（七个数字） |\n| `10.1177/0146167220921717` — Emery et al., *PSPB* 47(1):146–160 | **abstract**（Europe PMC，逐字） | `F-C28` = `VERIFIED`（构造定义 / 四研究 / above-and-beyond / 9-month） |\n| `10.1098/rstb.2011.0351` — Kelso 2012, *Phil Trans R Soc B* 367(1591):906–918, PMC3282307 | **全文** | `F-C05` = `VERIFIED`（「stationary transient」逐字） |\n| `10.3389/fnhum.2020.00317` — Tognoli, Zhang, Fuchs, Beetle & Kelso 2020, *Front Hum Neurosci* 14:317 | **全文** | `F-C06` = `VERIFIED`（dyadic social coordination 三引用 + HDC 逐字） |\n| Lawler (1993)「From Revolutionary Coalitions to Bilateral Deterrence」章 | **章节 OCR 全文**（Cornell eCommons） | `F-C21` = `VERIFIED`（TP/RP 定义 + \"relational cohesion\" + Proposition 1 逐字）；`F-C23` = `WRONG-SCOPE`（C 的公式与偏导逐字） |\n| `10.1037/cfp0000012` — Marín, Christensen & Atkins 2014, *CFP* 3(1):1–12 | **全文 PDF** | `F-C07` = `VERIFIED`（two potential pathways / n=19 / more than double 逐字） |\n| Falconier, Jackson, Hilpert & Bodenmann 2015, *Clin Psychol Rev* 42:28–46 | **abstract**（3 个独立来源一致：PubMed / ScienceDirect 页 / Surrey openresearch） | `F-C29` = `VERIFIED`（72/57/17,856、r=.45、by-partner>by-self、共同与支持性 coping 并列） |\n| Gerpott, Balliet, Columbus, Molho & de Vries 2018, *JPSP* 115(6):716–742 | **abstract + 方法段**（PubMed / 机构库 PDF） | `F-C27` = `VERIFIED`（5-not-6 / coordination / 24% / 242 items） |\n| `10.1146/annurev-psych-012325-032022` — Overall & Hammond 2026, *Annu Rev Psychol* 77(1):393–421 | **abstract**（Semantic Scholar） | `F-C24` = `PLAUSIBLE`（两条引文 `NOT_OPENED`） |\n\n### 7.3 仅取得元数据（Crossref / OpenAlex）的来源\n\n`10.1037/pspp0000551`（Bühler & Orth 2025 终末下降）· `10.1037/pspp0000492`（Bühler & Orth 2024, 126(5):930–945）· `10.1037/pspp0000430`（Bühler & Orth 2022, 123(5):1138–1165）· `10.1037/a0038889`（Hamaker et al. 2015, 20(1):102–116）· `10.1177/25152459241302300`（Cole et al. 2025, *AMMPS* 8(1)）· `10.1007/s13253-017-0283-8` + `arXiv:1701.08673`（Pohle et al. 2017, *JABES* 22(3):270–293）· `10.1037/a0020928`（Anderson, Van Ryzin & Doherty 2010, *J Family Psychol* 24(5):587–596）· `10.1037/0022-3514.80.3.439`（Kenny & Acitelli 2001, *JPSP* 80(3):439–448）· `10.2307/2578749`（Lawler & Bacharach 1987, *Social Forces* 66(2):446）· `10.1037/0033-295X.110.2.265`（Keltner et al. 2003）· `10.1111/jftr.70019`（Junkins et al. 2025, *JFTR* 18(1):170–191）· `10.1111/famp.12811`（Cruwys et al. 2022, *Fam Process* 62:795–817 — **作者 5 人，非 `10` 所列 6 人**）· `10.3389/fpsyg.2019.00571`（**Falconier & Kuhn 2019**，非 `10` 正文所称 Lehne & Bodenmann）· `10.1177/0265407598152004`（Solomon & Samp 1998）· `10.1111/fare.12885`（Carrese-Chacra et al. 2023, *Fam Relat* 72(3):645–664）\n\n### 7.4 核实方式说明与本 packet 的可信度边界\n\n- **`VERIFIED` 的门槛**：`F-C03` / `F-C04` / `F-C05` / `F-C06` / `F-C17` / `F-C21` / `F-C27` / `F-C28` / `F-C29` 均取得了**原文 abstract 或全文**，且我把报告的每一条具体数字 / 每一条引语与来源逐字比对。**这七条是我最信任的部分。**\n- **`F-C07`（Marín）与 `F-C23`（Lawler 的 C 公式）** 也取得了全文，因此我对它们的**批评**（分岔是按结果变量事后划分；几何平均是对 `C` 而非 `TP` 的规格）建立在原文而非摘要上。\n- **`PLAUSIBLE` 的门槛**：元数据核实 + 内容与报告转述一致，但**正文未开**。这一档的结论强度不超过来源，我不据其升级任何判断。\n- **`UNSUPPORTED` 的门槛**：断言存在但证据不足，**不等于为假**。我在 `F-C01`（迟滞 absence）与 `F-C18`（唯一真涌现）上使用它，两者都是**报告的表述强于其证据**，而非事实错误。\n- **被墙记录（`UNVERIFIABLE_HERE`，未据此下结论）**：`annualreviews.org` 403 · `econtent.hogrefe.com` 403 · `sciencedirect.com` 403 · Semantic Scholar 429（5/6）· OpenAlex 缺 abstract 字段。\n- **一条重要的相关性观察**（供 parent 参考，非 verdict）：我在核实中发现 `10` 有 4 条元数据级引文缺陷，**但**其对 `Lawler & Bacharach 1987`、`Lawler 1993`（部分）、`Bodenmann 2011`、`Emery 2020`、`Falconier 2015` 的引文**确实逐字准确**。因此我倾向把 `F-C31` 判为疏漏而非系统性失真。**lane `J`（`A01` / `A04`）若有不同发现，应以 lane `J` 的系统化审计为准——我在本 packet 中没有替它下结论。**\n- **未核实项的集中提示**：上述 7.3 节 16 条 + `explicit_non_claims` 第 4 条列出的 31 条，构成 parent join 时最需要保留 `NOT_OPENED` 标记的区域。**按契约 §4，任何一条都不得因「本 swarm 有其他 lane 也这么说」而升级。**",
+ "specialty_answers": [
+  {
+   "index": 1,
+   "heading": "专项 1 — 哪些是**单 lane 推测**（本 cluster 内无第二条独立支撑）",
+   "line_start": 645,
+   "answer": "| 结论 | 位置 | 支撑状态 | 为什么它仍是关键 |\n|---|---|---|---|\n| 「只有 14–38% 的伴侣情绪协动超过 pseudo-couple」 | `09` §3.1-(3) / §5.4-2 / §9.2-FACT-1 / K7 | **单一来源**（PMC7065936，`NOT_OPENED`）；且 `09` **自己**在 §3.4-2 把它降级为「强负面提示，不是否证」 | 它是 `F-C2` 的第 2 个理由。四个引用点，一个来源，跨 4 处 |\n| 「`lovers > friends > strangers` 预期未成立」 | `09` §3.1-(3) / §5.4-2 / §8.4-A-8 | **单一来源**（PMC7017247，`NOT_OPENED`） | `F-C2` 的第 3 个理由；`09` 未对它做任何降级标注 |\n| Peterman (1963) 心理物理迟滞的经典展示 | `09` §5.2 | **单一来源，且自标 `CITED_PARTIAL` + 作者/卷期 `AGENT_RECALL` 未核实** | 这是 `09` 表中唯一的「迟滞可被展示」的人类层面先例 |\n| 「在关系数据上未找到成功的 K>1 regime 估计」 | `09` §2-F3 | **单一检索、无检索式披露** | 与 F2/F5 的「无」共同构成 §9.2-FACT-1 |\n| relational event models / dyadic latent class 的「中」等证据 | `09` §2-F8 | 报告**自标** `CITED_SECONDARY`、「本 lane 未审计具体实证」 | 无 |\n| L-A 三判据（外部权威定义 / 被更新而非生成 / 可穷举） | `09` §7-O3 / §9.3.1 | **`AI_DERIVED_CHARACTERIZATION`，零经验锚点** | 这是 L-A 全部合法性的来源。写法好（可判定），但它是提案不是发现 |\n| PSPB 感知权力偏差研究 | `10` §4.6.4(d) / §5-11 | **单一来源，且 `10` 自标作者名单 `UNVERIFIED`** | 支撑 `P3_perceived` 槽位。`10` §9-4 已正确限定为「只主张存在系统性、动机驱动的偏差」 |\n| `Solomon & Samp (1998)` chilling effect | `10` §4.6.4(e) | **单一来源，`10` 自标「内容未读」** | 支撑 `10` 自认最弱的 felt-compliance 槽位（见 `F-C25`） |\n| `Johnson & Ford (1996)` legitimacy 正交操纵 | `10` §4.5 / §5-10 / §8-G4 | **单一来源，`10` 自标「摘要级；卷页 UNVERIFIED」** | 支撑 legitimacy 槽位（`F-C22` 的 R2-b） |\n| transactive memory 需要「外部」内容（B2） | `10` §6.2-B2 / §5-26 | **跨域外推**：Moreland & Argote (1996) 是**工作场所群体**论文（`CITED_SECONDARY`），Close Relationships 2004 章作者名单 `UNVERIFIED`，两者都外推到亲密关系。**`10` 未标记此 scope 跳跃** | 支撑 `PairRepresentation_R4`（shared external memory） |\n| `common dyadic coping` 是「唯一真涌现」 | `10` §4.8 / §13 | **单一来源（Bodenmann 2011）+ 未披露检索式** | 见 `F-C18` |\n| `G16` conflict pattern 类型（如 demand–withdraw） | `10` §8-G16 | **零支撑**，报告自标「本 lane 未找到强引用，标 `UNKNOWN_AS_OF`」 | 却在 gap list 里带一个「最小补丁方向」上报 |\n\n**总结：本 cluster 最重要的两条承重论断（`F-C2` 的耦合前提、`F-C18` 的唯一涌现）各自只有一条未打开的支撑，且报告自己已对其中一条做了降级。**\n\n---"
+  },
+  {
+   "index": 2,
+   "heading": "专项 2 — 哪些是**方法学/访问限制**而非 ontology 发现",
+   "line_start": 666,
+   "answer": "按契约 §6.2 的方向（被误读为项目缺陷 / 被误读为本体结论）列出：\n\n**A. 本来就正确标为 method limit 的（credit）**\n\n| 项 | 位置 | 为什么分类正确 |\n|---|---|---|\n| O1–O5 全部五条 | `09` §4.2–§4.3 | 都是关于**数据获取条件**（波密度、`r=.76`、参数-信息比、HMM 阶数）的陈述；§4.3 明确把 `F` 定级为 `architecture decision / model hypothesis`，并写下防越权句 |\n| §4.4 的「可以主张 / 不主张」二分 | `09` §4.4 | 正确地把「不可估」挂在 `3–7 波 / 年度自报 / 单条读数` 的条件上，并**明确拒绝**给出所需波次数或功效值。这是本 swarm 我见过的最克制的一段 |\n| §5.3 的 `PARTIAL negative result` + 五条覆盖缺口 | `09` §5.3 | 正确地把「没找到」标为**文献可得性**状态而非世界状态 |\n| §2-F1/F3/F5 的「无」 | `09` §2 | 措辞都是「**本 lane 未找到**」，不是「不存在」 |\n| `Omega(S)` 作为 `ontology hole` | `10` §3 / §8-G1 | 这是**真** ontology 声明：LHRM 的槽位表（`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §6，我已读）确实没有任何槽位承载「谁的行为决定谁的结果」 |\n| `e_k` 残差化属 measurement 层 | `10` §2 / §9-6 | 正确地把它与 ontology 主张分开（**尽管 `F-C19` 指出了它的跨 dyad 操作后果**） |\n| joint process 的 U6 未决 | `10` §4.8 末 / §9-14 / §10 | 正确地守住了「两条有向状态的函数不够」与「必须有独立 pair state」之间的区别 |\n\n**B. 被误用为 ontology / 设计授权的（应 `RECLASSIFY_AS_METHOD_LIMIT`）**\n\n| 项 | 位置 | 哪一层对、哪一层被误用 |\n|---|---|---|\n| 「强耦合前提在多数 dyad 中不成立」 | `09` §5.4-3 → §9.2-FACT-4 → K7 | **对的一层**：当前可用的耦合代理（生理同步 / 情绪协动）与关系结局关联弱、`I²=76%`、伪伴侣超比例只有 14–38%。**被误用的一层**：把它读成关于 dyad 本身的事实。见 `F-C02` |\n| 「没有任何一层现在有资格充当 `F` 的引擎」 | `09` §9.2 / §9.8 | **对的一层**：目前没有证据支持任何一层充当引擎。**被误用的一层**：「有资格 / 无资格」是 warrant 词汇，被当成了本体判决。见 `F-C12` |\n| 「Pohle 的阶数结论」 | `09` §4.2-O3 | 证据域是**动物移动数据**（题名自陈）。用于批评 HMM 侧成立；用于判定 dyad 年度数据的状态数不可识别是跨域外推 |\n| 「N<50 随机效应方差正偏」 | `09` §4.2-O3 | 这是**估计偏误**，不是可识别性障碍。混放在 O 编号体系里让 §9.5 的 O3 矩阵格继承了错误语义 |\n| **SRM 残差化需要跨 dyad 数据** | `10` §4.1 / §11-A1 | **对的一层**：`e_k = D − R − T` 的可估性是数据条件。**被误用的一层**：报告把它写成**可派生性**结论（`DERIVABLE`），而完全未处理「单 dyad 的 Case Bank 里 `R`、`T` 不可估」这一后果。见 `F-C19` |\n\n**C. 反向的滑（ontology 声明带着未检验的经验 warrant）**\n\n- `10` §4.4 对 D8 `OutcomeDependence_(i->j)` 的 `NEGATIVE` 判定是**形式论证**（Ω(S) 是情境而非人的状态）——**这一步是 ontology，合法**；但报告同时给出一个**未运行的经验 falsifier**（「给定 (a)(b)(c) 后 `OutcomeDependence_(i→j)` 是否仍携带稳定增量动态信息？」），却已把 D8 记为应降级。**ontology 判决不应在经验 falsifier 未运行时生效。**\n\n---"
+  },
+  {
+   "index": 3,
+   "heading": "专项 3 — 哪些建议会导致 canonical change，逐条 + 能否停在 proposal",
+   "line_start": 698,
+   "answer": "| ID | 目标文件 / 章节 | 改什么 | 能否停在 proposal | 理由 |\n|---|---|---|---|---|\n| **CC-1** | `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md` **§2** | `Asymmetry_k(A,B) = distance(Z[k,A,B], Z[k,B,A])` 在非度量坐标下未定义，与 `AGENTS.md` invariant #4 / `CURRENT_ARCHITECTURE.md` §9 原则 3–4 冲突；替换为「带声明比较器的比较关系」 | **缺陷部分：NO，可升级为 durable finding。替换部分：YES（`ACCEPT_AS_PROPOSAL`）** | 缺陷可由 canonical 文本自身证明，零新证据、零新架构判断。替换形式是 `AI recommendation`（`10` 自标），需 Architect 签字。见 `F-C20` |\n| **CC-2** | `PARAMETER_CONVERGENCE_V0_1.md` **§9 R1** | 在 `Mutuality_k(A,B) = H(Z[k,A,B], Z[k,B,A])` 前加 SRM 残差化前置步骤（`e = D − R − T`） | **NO —— 且「缺了单 dyad 分支的 proposal 本身不可采纳」** | 残差化需**跨 dyad** 估计 `R`、`T`；而 LHRM 的首要验证工具是**单案例 Case Bank**（`AGENTS.md` Validation discipline；`CURRENT_ARCHITECTURE.md` §10）。不带 `Unknown`-when-unavailable 分支写入，会静默使 rule 4 在项目主要验证工具上不可适用。见 `F-C19` |\n| **CC-3** | `PARAMETER_CONVERGENCE_V0_1.md` **§9 R2** | 拆分标题；新增 total-power 对称 readout；新增 domain 索引（= R2-a）／ punitive、legitimacy/bases、perceived、felt 四槽位（= R2-b） | **R2-a：NO（可 durable 化，证据已逐字核实）。R2-b：YES（必须 `HOLD_FOR_EVIDENCE`）** | Lawler 1993 原文 + Lawler & Bacharach 1987 实验已核实 R2-a。R2-b 中 legitimacy 无成熟量表（`10` 自引 Junkins）、felt compliance 证据间接且关键来源未读。见 `F-C21` / `F-C22` |\n| **CC-4** | `PARAMETER_CONVERGENCE_V0_1.md` **§4 D8** | 把 `OutcomeDependence_(i->j,t)` 降级为 `Omega(S)` 的 readout 或 `B_i` 层的知觉 | **YES** | canonical D8 自带几乎相同的 open question（「某些 dependence 是否应完全由 Agent resources / alternatives / institutional constraints 推导」）。`10` 的回答在形式上自洽，但经验 falsifier 未运行，且未处理「高 value + 高 alternatives」这一 case |\n| **CC-5** | `PARAMETER_CONVERGENCE_V0_1.md` **§6 P1** | 回答 canonical 明文递延的问题：是否再需要 shared latent `Cohesion_(A,B)` | **YES** | canonical 说「待 **Case Bank / longitudinal data** 判定」；`10` 交的是**横断面 EFA**（Cruwys N=375）+ 4 项 clarity 研究（其中 Study 4 是 9 个月纵向，对 pair-content 问题部分合法）。方法匹配度不足，但 redundancy 论证（3/4 因子已有 LHRM 落点）正是 canonical 说的 Gate C 测试 |\n| **CC-6** | `AGENTS.md` **Research discipline** | 加一条：`attractor` / `hysteresis` / `regime` / `threshold` 使用时必须带 `model hypothesis` 标签 | **NO —— 可直接 durable 化** | 只约束**标注**，不改本体，不依赖未验证参数。理由是项目自身既有纪律（不得把未验证 state transition 标为已确立）的直接延伸。见 `09` §7-O7 |\n| **CC-7** | `AGENTS.md` **Current architecture direction 第 9 条** | 把绝对否定降级为可证伪的分工主张 | **YES，且 `HUMAN_GATED`** | rule 9 是 `Human requirement`（`09` §8.2 自认）。改它是 Human 决策，非 Architect 决策。**优先替代方案：先执行 `09` §7-O5（冻结可证伪转移律族），它不需要改 rule 9 就能解决同一 reviewer 攻击**。见 `F-C15` |\n| **CC-8** | `docs/foundation/CURRENT_ARCHITECTURE.md` **§9** | 为 Representation-first invariant 4（不强迫 `0..1`）补写 Liddell & Kruschke 的论证基础 | **NO —— 可直接 durable 化（本 packet 唯一一条）** | 纯增补 rationale，不改任何本体、不依赖新数据；其证据我已**逐字核实全部五点**。见 `F-C04` |\n| **CC-9** | `CURRENT_ARCHITECTURE.md` **§3/§6** 或 `CONSTRUCT_SCOPE_DIRECTIONALITY.md` **§6** | 补 `SituationStructure` / `Omega(S)` 实体 | **YES** | 两份报告中最重的本体新增；`10` 自己拒绝决定落位（新顶层实体 vs 并入已存在的 `Environment`）。需 Architect 先裁决落位。见 `F-C26` |\n| **CC-10** | `AGENTS.md` **rule 5** + `PARAMETER_CONVERGENCE_V0_1.md` **§6 P4 / §7** | 明确 shared pair fact 的**准入判据**（是否允许 pair→directed 因果出边），并统一 `09` L-A 与 `10` Φ | **YES** | 纯架构裁决，**不必等数据**。这是两份报告的直接冲突点（`F-C32`）。建议 Architect 优先处理，因为它会决定 CC-3/CC-5/CC-9 的落位 |\n\n---"
+  },
+  {
+   "index": 4,
+   "heading": "专项 4 — 哪些结论**重复、同义或双重计数**",
+   "line_start": 715,
+   "answer": "**4.1 `09` 内部**\n\n| 现象 | 出现次数 | 性质 |\n|---|---|---|\n| 「无任何框架有可复现的动力学参数估计证据」 | §2.1、§9.2-FACT-1、§9.8 收尾句（3 处） | 同一 absence，`corroboration: NON_INDEPENDENT` |\n| Liddell & Kruschke 的五项失败 | §2-F10 末行、§3.3-R2、§8.1-(4)（3 处） | 同一来源 |\n| Bühler & Orth (2025) 终末下降 | §3.1-(1)、§3.3-R3、§8.1-(1)、§9.2-FACT-2（4 处，各带不同 gloss） | 单一研究，`corroboration: NON_INDEPENDENT` |\n| 「14–38% 伴侣协动超 pseudo-couple」 | §3.1-(3)、§5.4-2、§9.2-FACT-1、K7（4 处） | 单一来源 |\n| 「可证伪分工主张」 | §7-O1 与 §9.6-K1 | 同一提案的「改写」与「检验」两形 |\n| 「rule 9 ↔ 混合状态空间的一致性要求」 | §7-O2 与 §9.3.3(L-C) | 同一提案两处 |\n| 「readout 不得回流」 | §7-O6 与 §9.3.4「必须显式声明不回流」 | 同一提案两处 |\n| §4.4「可以主张的」框 与 §8.2 表第 (1) 行 | 2 处 | 同一结论 |\n| `Front Hum Neurosci 14:317` | §2-F4（无作者）与 §5.2（「Tognoli & Kelso 2020」，实为 5 人） | **同一篇论文两个作者串** |\n\n**4.2 `10` 内部** — 见 `F-C30` 的八行表（4/7 行同义、21b/23 行同义、18/19 行同源相反判定、21d/22/`PairRepresentation_R1` 三名一物、G11/G13 同一现象两种 gap 类型、R3/G10 重复被当新发现、四个 gap 各四处重述、`Omega(S)` 五处）\n\n**4.3 两份报告之间**\n\n| 重复 | 位置 | 性质 |\n|---|---|---|\n| `09` L-A（制度/协议事实） ≡ `10` Φ（shared pair facts，**含**制度事实） | `09` §9.3.1 vs `10` §2 | **同一 canonical 容器（`AGENTS.md` rule 5）两个名字，宽度不同** → 且宽度差直接产生 `F-C32` 的判据冲突 |\n| `09` L-B `Belief_i` ≡ `10` `B_i(X)` | `09` §9.3.2 vs `10` §2 | 同一层两个符号；`09` 的 L-B 实为 `B_i` 的一个实例化（见 `F-C33`） |\n| `09` §9.2-FACT-1 的「年度自报 regime」被 `10` 默默预设 | `09` §9.2 vs `10` 全文 | `10` 从不挑战这个 regime 前提，也不独立论证它。**注意：按契约 §4，这既不构成对 `09` 的独立支持，也不构成反驳**——`corroboration: NON_INDEPENDENT` |\n| canonical P4 `Relationship Identity / Agreement` 的**归属** | `09` §9.3.1 明确把 P4 收进 L-A | `10` 全程未提 P4，但其 `ExchangeStructureType_(i,j,domain)`（G7）是**结构平行**的另一类别值 Φ。若两份建议同时落地，`Relationship Status` 与 `ExchangeStructureType` 需明确区分，否则会重复 |\n\n**4.4 与 canonical 现有条目的重复**\n\n- `10` §5 表第 7 行（relative power = dependence 差）与 canonical D8 自带的理由「power imbalance 很可能可由两方向 dependence 不对称派生」（`PARAMETER_CONVERGENCE_V0_1.md` §4 D8，239 行）**是同一条**。`10` 的贡献是**反驳**它（因 punitive/total 分量），不是新增。\n- `10` §5 表第 21b / 23 行与 canonical **P2 `ValueCongruence_(A,B,t)`**（`KEEP as pair comparison / derived structural quantity`）重叠。`10` 自己在第 21b 行写了「与 `P2 ValueCongruence` 同类」——**即它承认这是 canonical 已有条目**，却仍在表中另立一行。\n- `10` §4.1（mutuality 需残差化）与 canonical **R1** 重叠（`10` 提的是修正，方向正确）。\n- `10` §4.3（asymmetry 表示形式）与 canonical **`CONSTRUCT_SCOPE_DIRECTIONALITY.md` §2** 重叠（`10` 提的是修正，方向正确）。\n- `09` §9.3.1 对 canonical **P4** 的引述**准确**，无重复（它是把已有条目归层，不是新增）。\n\n---"
+  }
+ ],
+ "specialty_section": "4. 契约 §6 四项强制专项",
+ "specialty_answers_note": "",
+ "capture_scope": {
+  "contract": "tools/packet_contract.py",
+  "captured": [
+   "records[] (every field of the declared record unit, verbatim)",
+   "files_audited",
+   "coverage_statement",
+   "specialty_answers[] (4, for cluster children)",
+   "top_recommendations",
+   "explicit_non_claims",
+   "provenance_note"
+  ],
+  "not_captured": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ },
+ "sections_index": [
+  {
+   "level": 1,
+   "title": "R2 Review Packet — Lane `F`（dynamics / hysteresis / pair-state emergence）",
+   "line_start": 1,
+   "line_end": 822
+  },
+  {
+   "level": 2,
+   "title": "1. `files_audited`",
+   "line_start": 11,
+   "line_end": 26
+  },
+  {
+   "level": 2,
+   "title": "2. `coverage_statement`",
+   "line_start": 27,
+   "line_end": 59
+  },
+  {
+   "level": 3,
+   "title": "2.1 我实际完整读完的",
+   "line_start": 29,
+   "line_end": 35
+  },
+  {
+   "level": 3,
+   "title": "2.2 我明确未读的（独立性声明）",
+   "line_start": 36,
+   "line_end": 47
+  },
+  {
+   "level": 3,
+   "title": "2.3 外部核实方式",
+   "line_start": 48,
+   "line_end": 59
+  },
+  {
+   "level": 2,
+   "title": "3. `verdict_matrix`",
+   "line_start": 60,
+   "line_end": 642
+  },
+  {
+   "level": 3,
+   "title": "3.1 报告 `09`：框架比较 / 可识别性 / 迟滞 / 离散层",
+   "line_start": 62,
+   "line_end": 323
+  },
+  {
+   "level": 3,
+   "title": "3.2 报告 `10`：互惠 / 权力 / 依赖的 pair-level 派生",
+   "line_start": 324,
+   "line_end": 609
+  },
+  {
+   "level": 3,
+   "title": "3.3 跨报告冲突（本 cluster 内，两份报告互为对立方）",
+   "line_start": 610,
+   "line_end": 642
+  },
+  {
+   "level": 2,
+   "title": "4. 契约 §6 四项强制专项",
+   "line_start": 643,
+   "line_end": 751
+  },
+  {
+   "level": 3,
+   "title": "专项 1 — 哪些是**单 lane 推测**（本 cluster 内无第二条独立支撑）",
+   "line_start": 645,
+   "line_end": 665
+  },
+  {
+   "level": 3,
+   "title": "专项 2 — 哪些是**方法学/访问限制**而非 ontology 发现",
+   "line_start": 666,
+   "line_end": 697
+  },
+  {
+   "level": 3,
+   "title": "专项 3 — 哪些建议会导致 canonical change，逐条 + 能否停在 proposal",
+   "line_start": 698,
+   "line_end": 714
+  },
+  {
+   "level": 3,
+   "title": "专项 4 — 哪些结论**重复、同义或双重计数**",
+   "line_start": 715,
+   "line_end": 751
+  },
+  {
+   "level": 2,
+   "title": "5. `top_recommendations`（按对 Architect 的重要性排序，≤7）",
+   "line_start": 752,
+   "line_end": 769
+  },
+  {
+   "level": 2,
+   "title": "6. `explicit_non_claims`（本 lane 明确不主张）",
+   "line_start": 770,
+   "line_end": 785
+  },
+  {
+   "level": 2,
+   "title": "7. `packet_sha_note`",
+   "line_start": 786,
+   "line_end": 822
+  },
+  {
+   "level": 3,
+   "title": "7.1 被审文件（SHA-256 见 §1）",
+   "line_start": 788,
+   "line_end": 791
+  },
+  {
+   "level": 3,
+   "title": "7.2 我实际打开并取得内容的一手来源",
+   "line_start": 792,
+   "line_end": 807
+  },
+  {
+   "level": 3,
+   "title": "7.3 仅取得元数据（Crossref / OpenAlex）的来源",
+   "line_start": 808,
+   "line_end": 811
+  },
+  {
+   "level": 3,
+   "title": "7.4 核实方式说明与本 packet 的可信度边界",
+   "line_start": 812,
+   "line_end": 822
+  }
+ ],
+ "schema": {
+  "version": "r3-b1-packets-v1",
+  "field_list": [
+   "claim_id",
+   "claim",
+   "source_report",
+   "verdict",
+   "supporting_refs",
+   "strongest_counterevidence",
+   "requires_canonical_change",
+   "needs_experiment_or_data",
+   "duplicate_of",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "join_fields": [
+   "claim_id",
+   "claim",
+   "verdict",
+   "requires_canonical_change",
+   "corroboration",
+   "recommendation_to_architect"
+  ],
+  "derived_fields": [
+   "claim_source",
+   "corroboration_source",
+   "_composite_raw",
+   "_composite_slots",
+   "_extra_columns",
+   "_extra_fields",
+   "_locator",
+   "_title",
+   "_claim_id_raw",
+   "_claim_id_disambiguated"
+  ]
+ },
+ "sanitisation": {
+  "policy": "no captured text is truncated or rewritten; detected items are logged with a disposition (see tools/packet_contract.py::SANITISATION_RULES)",
+  "findings": [],
+  "excluded_regions": [
+   [
+    "packet header block (title / lane / cluster / PR / date / status line)",
+    "session metadata; the same facts are captured structurally as child_id / lane / role / base_sha / pr_under_review"
+   ],
+   [
+    "preamble and method narration not bound to a required field",
+    "no join field consumes it; the method facts that matter are inside `coverage_statement` and `provenance_note`"
+   ]
+  ]
+ }
+}
