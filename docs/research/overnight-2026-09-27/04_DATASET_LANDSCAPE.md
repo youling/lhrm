@@ -582,7 +582,7 @@ classification: NOT_DYADIC_ENOUGH
 canonical_pointer:
   archive: DIW Berlin
   negative_evidence_source: BACON, P., CONTE, A.M. & MOFFATT, P.G. (2014) "Assortative mating on risk
-    attitude", J Behav Dec Making (https://link.springer.com/content/pdf/10.1007/s11238-014-9448-x.pdf)
+    attitude", Theory and Decision (https://link.springer.com/content/pdf/10.1007/s11238-014-9448-x.pdf)
 why_not_dyadic (CITED_PRIMARY_SECONDARY 方法节原文):
    "For the purposes of this research, a subset of 'household couples' is extracted from the panel,
     comprising 7,761 couples, observed on average 3.1 times over the four years.
@@ -1009,7 +1009,7 @@ CLS (英国 cohort 关系/生育 harmonised histories)
 
 方法学反面教材
   Bacon, P., Conte, A.M. & Moffatt, P.G. (2014). "Assortative mating on risk attitude."
-    J Behav Dec Making. https://link.springer.com/content/pdf/10.1007/s11238-014-9448-x.pdf
+    Theory and Decision. https://link.springer.com/content/pdf/10.1007/s11238-014-9448-x.pdf
   Seltzer, J.A., Bachrach, C.A., Bianchi, S.M., Bledsoe, C., Casper, L.L., Chase-Lansdale, P.L. et al. (2005).
     "Explaining Family Change and Variation: Challenges for Family Demographers." JMF 67(4):908-925.
 

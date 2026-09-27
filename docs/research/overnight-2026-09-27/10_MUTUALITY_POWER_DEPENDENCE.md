@@ -783,7 +783,7 @@ R10 lane status                       : SUCCESS
 - Laurenceau, J.-P., Barrett, L. F., & Pietromonaco, P. R. (1998). Intimacy as an interpersonal process: The importance of self-disclosure, partner disclosure, and perceived partner responsiveness in interpersonal exchanges. *JPSP*, 74(5), 1238–1251. https://doi.org/10.1037/0022-3514.74.5.1238 ; PDF https://www.affective-science.org/wp-content/uploads/2024/04/LaurenFBPl1998.pdf — **S32**
 - Lawler, E. J. (1993). From revolutionary coalitions to bilateral deterrence: A nonzero-sum approach to social power（书章；venue UNVERIFIED）。正文片段: https://ecommons.cornell.edu/server/api/core/bitstreams/cb8acb6b-d8df-4509-8e74-130f6ebed363/content — **S8**
 - Lawler, E. J., & Bacharach, S. B. (1987). Comparison of dependence and punitive forms of power. *Social Forces*, 66(2), 446–462. https://doi.org/10.2307/2578749 — **S7**
-- Lehne, Y., & Bodenmann, G. (2019). Dyadic coping in couples: A conceptual integration and a research agenda. *Frontiers in Psychology*, 10, 571. https://doi.org/10.3389/fpsyg.2019.00571 — **S38**
+- Falconier, M. K., & Kuhn, R. (2019). Dyadic coping in couples: A conceptual integration and a research agenda. *Frontiers in Psychology*, 10, 571. https://doi.org/10.3389/fpsyg.2019.00571 — **S38**
 - Overall, N. C., & Hammond, M. D. (2026). Power and ideology in close relationships. *Annual Review of Psychology*, 77, 393–421. https://doi.org/10.1146/annurev-psych-012325-032022 — **S6**
 - Reis, H. T., & Shaver, P. (1988). Interpersonal process model of intimacy. 章节 PDF: https://sk.sagepub.com/ency/edvol/download/humanrelationships/chpt/interpersonal-process-model-intimacy.pdf — **S34**
 - Rusbult, C. E. (1983). A longitudinal test of the investment model: The development (and deterioration) of satisfaction and commitment in heterosexual involvements. *JPSP*, 45(1), 101–117. https://doi.org/10.1037/0022-3514.45.1.101 — **S46**
@@ -801,7 +801,7 @@ R10 lane status                       : SUCCESS
 - Bacharach, S. B., & Lawler, E. J. (1976). The perception of power. *Social Forces*, 55(1), 123–134. https://doi.org/10.1093/sf/55.1.123 — 支撑：dependence power 概念的来源之一
 - Bodenmann, G. (2008). *Dyadisches Coping Inventar (DCI). Test Manual*. Huber. — **S41**
 - Collins, N. L., & Miller, L. C. (1994). Self-disclosure and liking: A meta-analytic review. *Psychological Bulletin*, 116(3), 457–475. https://doi.org/10.1037/0033-2909.116.3.457 — **S33**
-- Emerson, R. M. (1962). Power-dependence relations. *American Sociological Review*, 27(3), 31–41. https://doi.org/10.2307/2092623 — **S49**
+- Emerson, R. M. (1962). Power-dependence relations. *American Sociological Review*, 27(3), 31–41. https://doi.org/10.2307/2089716 — **S49**
 - Falbo, T. L., & Peplau, L. A. (1980). Power strategies in intimate relationships. *JPSP*, 38(4), 618–628. https://doi.org/10.1037/0022-3514.38.4.618 — **S16**
 - French, J. R. P., & Raven, B. (1959). The bases of social power. In D. Cartwright (Ed.), *Studies in Social Power*, pp. 150–167. — **S17**
 - Gonzalez, R., & Griffin, D. (2002). Modeling the personality of dyads and groups. *JPSP*, 83(5), 1109–1126. — **S54**

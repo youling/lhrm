@@ -35,9 +35,11 @@
 | Wave 1 终稿 durable writeback | `SUCCESS` | commit `8ee07c2`，18 份报告 / 11328 行 / 1,221,011 字节 |
 | R17 独立性 | `CONFIRMED` | R17 在任何 lane 报告写入之前完成首稿；见 `17_RED_TEAM_FALSIFIERS.md` §0 |
 | Repair pass | 3 次 | R16（首次 dispatch 失败 → 完整重做）、R09（packet 缺 §8/§9 → 补写）、R02 + R11（各一次窄修复） |
-| Wave 2 audits | `IN_PROGRESS` | A01–A04 于 Wave 1 全部 durable 后启动 |
-| Research PR | `PENDING` | |
-| `AGENT_TERMINAL_RESULT` | `PENDING` | |
+| Wave 2 audits | `SUCCESS` | A01–A04 四份报告已 durable；A01/A04 触发的 load-bearing 引用修复已收口 |
+| Audit 触发的引用修复 | `SUCCESS` | 2 轮窄修复，共 5 个文件；**唯一被实测推翻的审计断言已记录**（见 §5） |
+| `19_SYNTHESIS_CANDIDATE.md` | `SUCCESS` | parent join 交付 |
+| Research PR | 见 `AGENT_TERMINAL_RESULT` | |
+| `AGENT_TERMINAL_RESULT` | 见 `AGENT_TERMINAL_RESULT` | |
 
 ## 2. Lane 状态表
 
@@ -70,10 +72,36 @@
 
 | Lane | 报告路径 | 状态 | 备注 |
 | --- | --- | --- | --- |
-| A01 Evidence quality audit | `A01_EVIDENCE_QUALITY_AUDIT.md` | `IN_PROGRESS` | Wave 1 durable 后启动 |
-| A02 Cross-lane contradiction / duplicate audit | `18_CROSS_LANE_CONFLICT_AUDIT.md` | `IN_PROGRESS` | Wave 1 durable 后启动 |
-| A03 Falsifiability / hindsight-fitting audit | `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` | `IN_PROGRESS` | Wave 1 durable 后启动 |
-| A04 Citation / provenance audit | `A04_CITATION_PROVENANCE_AUDIT.md` | `IN_PROGRESS` | source 量级足够，按 Work Order 启动 |
+| A01 Evidence quality audit | `A01_EVIDENCE_QUALITY_AUDIT.md` | `SUCCESS` | 353 unique DOI，95.5% Crossref 解析；**3 条 BLOCKER**（承重指针错误，修正值已核实并已应用） |
+| A02 Cross-lane contradiction / duplicate audit | `18_CROSS_LANE_CONFLICT_AUDIT.md` | `SUCCESS` | 顶层发现：Wave 1 拓扑为「17 条独立单点 + 1 条 join lane」；`PPR` 层位三方互斥；12 条 `NARROW_REPAIR_REQUEST` |
+| A03 Falsifiability / hindsight-fitting audit | `A03_FALSIFIABILITY_HINDSIGHT_AUDIT.md` | `SUCCESS` | Gate A `EXECUTABLE_BUT_NON_FALSIFIABLE`；Gate B/C 既不可证伪也不可执行；**§2.6 结构上无法触发**；机器核验 0 条判据被削弱 |
+| A04 Citation / provenance audit | `A04_CITATION_PROVENANCE_AUDIT.md` | `SUCCESS` | 1,199 原始出现 → 642 distinct pointer → 533 distinct source；`PEER_REVIEWED_*` **350**；DOI 覆盖 340/340；6 条 MAJOR |
+
+## 2b. Audit 触发的引用修复（已收口）
+
+A01 与 A04 各自独立实测核出承重引用的 DOI / 期刊 / 作者归属错误。修正值均经实时验证后应用。
+
+| 文件 | 缺陷 | 修正 | 状态 |
+| --- | --- | --- | --- |
+| `03_MEASUREMENT_INSTRUMENTS.md` | `10.1037/2021-17028-001` 不解析 | `10.1037/pas0000986`（Crasta et al. 2021, *Psychological Assessment* 33(4):338–355） | 已应用 |
+| `14_PAPER_POSITIONING_NOVELTY.md` | `10.1609/aaai.v35i1.16792` 不解析 | `10.1609/aaai.v35i7.16792` | 已应用 |
+| `10_MUTUALITY_POWER_DEPENDENCE.md` | `10.3389/fpsyg.2019.00571` 归给 Lehne & Bodenmann | 实为 **Falconier & Kuhn (2019)** | 已应用 |
+| `10_MUTUALITY_POWER_DEPENDENCE.md` | `10.2307/2092623` 实为 Gouldner (1960) | `10.2307/2089716` = Emerson (1962)，与正文 byline 一致 | 已应用 |
+| `08b_BELIEF_DECEPTION_KNOWLEDGE.md` | 6 处系统性作者/期刊误引（含 `Audi` → `Goldberg & Henderson`、PII 混入 DOI 槽） | 7 处逐条修正，7/7 经 Crossref 独立复核 | 已应用 |
+| `08b_BELIEF_DECEPTION_KNOWLEDGE.md` | `[S13]` `Borges, M. (2013)` | `Sharon, A., & Spectre, L. (2010)`，DOI `10.1007/s11098-008-9330-1` | 已应用 |
+| `04_DATASET_LANDSCAPE.md` | `10.1007/s11238-014-9448-x` 期刊记为 *J Behav Dec Making* | 实为 ***Theory and Decision*** 77(3):389–401 | 已应用 |
+| `05_IDENTIFICATION_AND_STATISTICS.md` | `10.1177/019251391012001003` 期刊记为 *JMF*、作者缺失 | *Journal of Family Issues* 12(1):22–42；Bumpass, Martin & Sweet (1991) | 已应用 |
+| `02b_CONSTRUCT_REDUNDANCY_AUDIT.md` | `10.31234/osf.io/f6wbn` 404 | 追加版本后缀 → 302 解析 | 已应用 |
+
+**唯一被实测推翻的审计断言（重要流程观察）**：A04 主张 `10.31234/osf.io/…` 前缀非法、应改为 `10.31219/…`。修复 child 实测 `10.31234` **解析（302）**、`10.31219` **404**；`10.31234` 是 OSF-preprint 前缀，`10.31219` 是 OSF **project** 前缀。**该修改未应用**——若应用会把两个 live DOI 变成 404。
+→ **规则沉淀：审计 child 的断言必须经独立实测复核后才能落到 durable artifact。**
+
+**未修复且如实保留**：
+- `05_…` 一处 DOI（`10.3102/10769986024002179` 实为 Vermunt et al. 1999，非所引 Hoffmann 1985）——A01 **未提供**已核实的替换指针，修复 child **拒绝猜测**，原文未动。
+- `08b_…` `[S15]` 年份自相矛盾（A01 表格给 2008、其 action 行给 2010）——只改作者，未改年份。
+- A01 `NR-08-4` 的散文把第 5 作者写成 "Tomlinson, Eastwick"，Crossref 实为 **Troister, T.** ——按 Crossref 应用，A01 该行待 Architect 更正。
+- `03_…` 一处 `UNVERIFIED_DOI` 标注现已过期（新 DOI 可解析）——属验证状态标注而非书目字符串，留待 Architect 处置。
+- A04 自身报告把 `10.1007/s11238-014-9448-x` 标为 "Bodenmann & Frighi 2011"，Crossref 实为 Bacon, Conte & Moffatt (2014)——A04 报告自身的作者错误，留在 audit 报告中作为审计质量记录。
 
 ## 3. 计数汇总
 
@@ -82,7 +110,8 @@
 - Repair pass 数：**3 lane**（R16 完整重做 / R09 补 §8–§9 / R02 与 R11 各一次窄修复）
 - Wave 1 状态计数：`SUCCESS` **13** · `PARTIAL` **5**（R02 / R04 / R11 / R15 / R16）· `NEGATIVE_RESULT` 0 · `BLOCKED` 0 · `FAILED` 0（首派失败已由 repair 关闭）
 - Wave 1 报告体量：**18 份 / 1,221,011 字节 / 11,328 行**
-- 单 lane 自报去重指针数：R00 30+ · R01 45 · R02 34 · R03 41 family · R04 16 dataset · R05 109 · R06 33 · R07 33 · R08 72 · R09 78 · R10 59 · R11 60+ · R12 40 · R13 70 · R14 60+ · R15 30 · R16 24 · R17 41+3。**全 swarm 未做跨 lane 全局去重**（见 §4 B-3）
+- 单 lane 自报去重指针数：R00 30+ · R01 45 · R02 34 · R03 41 family · R04 16 dataset · R05 109 · R06 33 · R07 33 · R08 72 · R09 78 · R10 59 · R11 60+ · R12 40 · R13 70 · R14 60+ · R15 30 · R16 24 · R17 41+3。**各 lane 自报数不可相加**（见 §4 B-9）
+- **A04 实测全局去重口径（权威）**：1,199 原始指针出现 → 642 distinct pointer → **533 distinct source**；其中 `PEER_REVIEWED_PRIMARY + PEER_REVIEWED_REVIEW` = **350**。**#30 的 150+ 去重目标以 A04 口径达成（2.3×）**
 - 严肃候选 quantitative dyadic dataset：**16**（R04；目标 12+，达成；其中 `CALIBRATION_READY` 3）
 - 已 catalog validated measurement instrument family：**41**（R03；目标 30+，达成）
 - falsifiable transition-law family：**5**（R06：BMR / APES / DVA / RGM / RT；目标 3–5，达成）
@@ -93,8 +122,12 @@
 
 - **B-1｜网络出口限制，parent 无法修复**：R04 / R15 / R16 的 `PARTIAL` 主因是本环境出口对 `icpsr.umich.edu`(403)、`hrs.isr.umich.edu`(403/timeout)、`saflii.org`(403)、`courts.ie`、`wenshu.court.gov.cn`、`gutenberg.org`(timeout)、`gpair.wustl.edu` 等站点不可达。Work Order 要求「不得下载受限数据、不得绕过 access」，因此**不得**以任何方式规避。影响：三份 `CALIBRATION_READY` 数据集的**构念内容**（而非结构）未核实；R15 的 7 条来源仍为 `UNVERIFIED_CANDIDATE`。
 - **B-2｜文献层面的未命中，非网络问题**：R11 若干 `UNVERIFIED_AGENT_RECALL` 条目（如 Gilligan 2017 ASR、Parsons & Bales 1955 原件）经 Crossref 检索未命中。R02 的「全候选电池单次 ESEM/bifactor 分析」在文献中可能本就不存在（`NEGATIVE`，非未找到）。
-- **B-3｜跨 lane 全局去重未做**：各 lane 各自报数，同一来源可能被 2–3 个 lane 独立引用。全局去重与质量分级由 A04 执行。**在 A04 完成前，上表「单 lane 自报指针数」不可相加，也不可对外声称为 150+ 独立来源。**
+- **B-3｜跨 lane 全局去重已由 A04 完成**：见 §4 B-9。**在 A04 结论被 Human 采信前，上表「单 lane 自报指针数」不可相加。**
 - **B-4｜R09 迟滞在二元数据上无任何估计**：这是负结果，不是缺口。R09 明确记录迟滞所依赖的强耦合前提在多数真实 dyad 中不成立。
 - **B-5｜`#20/#21/#22` 隔离 lane 的 durable 结果仍未知**：R13 记录的 U-5（fixture 上人工 verifier 的真实 ICR）因此无法回答。按隔离契约，本 attempt 不查。
+- **B-6（来自 A03，阻塞级）｜Gate A/B/C 在当前定义下不能产生否决**：A03 三项可复现检验判定 Gate A `EXECUTABLE_BUT_NON_FALSIFIABLE`、Gate B/C 既不可证伪也不可执行；`PARAMETER_CONVERGENCE_V0_1.md` §2.6（唯一能删除 construct 的准入侧判据）结构上无法触发 ⇒ 8 项 candidate basis 单调增长，`MERGE` 与 `REJECT` **从未被签发过一次**。**修复需改 canonical，本 Work Order 明确禁止。**
+- **B-7（来自 R02 repair）｜`Liking ↔ RomanticAttraction` 仍缺同样本斜交因子相关 / CFA 判别检验**：repair 后已取得 Rubin (1970) 自相关矩阵（经二手转录）、McCroskey & McCain (1974) 因子分离、Fehr (1994) 单因子合并、Graham (2011) 元分析矩阵、Hendrick & Hendrick (1989) 德语复制，但**仍无同一斜交因子相关估计**。E1 维持 `CONTESTED`。
+- **B-8｜`OutcomeDependence` 关系级可测性无任何公开工具**：见 `19_SYNTHESIS_CANDIDATE.md` §6.1 G1。
+- **B-9（跨 lane 全局去重）｜已完成，但不得对外声称 lane 自报数之和**：A04 实测 1,199 原始指针出现 → 642 distinct pointer → **533 distinct source**，其中 `PEER_REVIEWED_PRIMARY + REVIEW` = **350**。各 lane 自报数相加 ≈1,201，**高估 2.3–3.4×**。两个独立机制：跨 lane 重复（单个来源被最多 7 个 lane 引 13 次）+ 书写形态重复（340 个 DOI 有 740 次出现）。
 
-> 终态 blocker 列表以 `19_SYNTHESIS_CANDIDATE.md` 与 `AGENT_TERMINAL_RESULT` comment 为准。
+> 终态 blocker 列表以 `19_SYNTHESIS_CANDIDATE.md` §8 与 `AGENT_TERMINAL_RESULT` comment 为准。

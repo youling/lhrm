@@ -569,7 +569,7 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 - Lillard, L. A., & Panis, C. W. (2003). PSID 婚姻 / 劳动史同时 hazard. `https://mrdrc.dev.isr.umich.edu/wp-content/uploads/2024/04/cp00_lillard.pdf`
 - Menken, J. A., et al. (1981). Proportional hazards life table models. *Demography, 18*, 181–200.（`CITED_SECONDARY`）
 - *She Left, He Left: How Employment and Satisfaction Affect Women's and Men's Decisions to Leave Marriages*. `https://statisticalhorizons.com/wp-content/uploads/2022/01/She-let-he-left.pdf`（作者与发表信息 `UNKNOWN_AS_OF`）
-- *The Impact of Family Background and Early Marital Factors on Marital Disruption*. *JMF*. `10.1177/019251391012001003`（作者 `UNKNOWN_AS_OF`）
+- Bumpass, L. L., Martin, T. C., & Sweet, J. A. (1991). *The Impact of Family Background and Early Marital Factors on Marital Disruption*. *Journal of Family Issues*. `10.1177/019251391012001003`
 - Tuma, T. B., Hannan, M. T., & Groeneveld, L. P. (1979). *AJS, 84*(4), 820–854. `10.1086/226863`（`CITED_SECONDARY`）
 
 ### 因果推断 / interference

@@ -95,7 +95,7 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 |---|---|---|
 | `xIntent / xNeed / xReact / xWant / oWant / xEffect / oEffect / xAttr / oAttr`（9 维 if-then，PersonX/PersonY/PersonZ 分离，300K 事件 / 877K 推论，Sap et al. 2019） | `Action/Event + Belief` 分离；`DirectedState_(i->j)` vs `DirectedState_(j->i)` | ATOMIC 的 **xWant（PersonX 想要）vs oWant（PersonY 想要）** 与 LHRM 的两个方向状态在**结构上高度同构**。差别只剩：ATOMIC 是**群体常识先验**（`if-then` 关系），LHRM 声称是**个体特异、带不确定性、有 provenance 的状态**。**必须写成差别，否则会被说成「你重做了 ATOMIC 的 xWant/oWant」** |
 | COMET / 动态 commonsense KG（`arXiv:1911.03876`）：按需生成上下文相关 KG，不依赖静态图 link | 保留 raw evidence/provenance；不强迫 normalization | 目标相近但目的不同（NLU 推理 vs 关系状态表示） |
-| ATOMIC 2020（`10.1609/aaai.v35i1.16792`）| 「不把 literature 数量当 validation」 | **值得注意的反证**：ATOMIC 2020 报告 **GPT-3 few-shot 比用 ATOMIC 训练的 BART 模型低约 12 个百分点**（参数少 430×）——「模型自带知识比专门标注的知识库更好」是错的。这**支持** LHRM 的 schema-first 立场 |
+| ATOMIC 2020（`10.1609/aaai.v35i7.16792`）| 「不把 literature 数量当 validation」 | **值得注意的反证**：ATOMIC 2020 报告 **GPT-3 few-shot 比用 ATOMIC 训练的 BART 模型低约 12 个百分点**（参数少 430×）——「模型自带知识比专门标注的知识库更好」是错的。这**支持** LHRM 的 schema-first 立场 |
 | SOCIAL IQA 最佳 baseline 64.5%（BERT-large），人类接近 90%（Sap et al. 2019） | 期待 LLM 稳定做逐句多维状态映射 | 社会情境的机器推理与人类仍有 **~25 个百分点**缺口。LHRM 任务难度不低于 SOCIAL IQA |
 
 ### 2.5 LLM 从文本抽多类关系语义的实证上限（对 LHRM 最直接的相关性反证）
@@ -397,7 +397,7 @@ status: lane SUCCESS; novelty NEGATIVE_RESULT
 ### 社会常识 / 事件图
 - Sap, M., et al. (2019). ATOMIC. *AAAI*. `https://maartensap.com/pdfs/sap2019atomic.pdf`
 - Sap, M., et al. (2019). SOCIAL IQA. `https://maartensap.com/pdfs/sap2019socialIQa.pdf`
-- Hwang, J. D., et al. (2021). (Comet-) Atomic 2020. *AAAI*. DOI `10.1609/aaai.v35i1.16792`
+- Hwang, J. D., et al. (2021). (Comet-) Atomic 2020. *AAAI*. DOI `10.1609/aaai.v35i7.16792`
 - COMET-based dynamic commonsense QA. arXiv `1911.03876`
 
 ### 跨理论整合

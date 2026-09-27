@@ -3,6 +3,7 @@
 **Status:** RESEARCH_CANDIDATE / NOT CANONICAL
 **As of:** 2026-09-27
 **Lane:** R11 · Wave 1
+**Repair pass:** Narrow repair pass 2026-09-27（3 项重试：Gilligan 记录 / Parsons & Bales / Ardito & Rabellino 全文）· 精确变更清单见 §11 · §0–§10 的全部矩阵格、§4 条目、§5 排序、§7 矛盾项**未改**
 **Scope:** 检验 `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md` 的 candidate construct 在 9 类 Human Dyad 上的含义稳定性与域泄漏
 **Authority:** 本文件不改 ontology、不改 canonical docs、不给参数/权重/公式。§3–§7 全部条目为 **proposal only**。
 
@@ -36,6 +37,11 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 | `UNKNOWN` | 文献真正沉默 |
 
 > **矩阵效力边界（必读）**：本矩阵中所有 `MEANING_PRESERVED` 都是**语义判断**，不是**心理测量判断**。本次**没有找到**任何针对这 8 维 directed battery 的跨 dyad-type 测量不变性研究。因此"跨 9 类 dyad 语义稳定"在 LHRM 内部目前是**未经检验的假设**，不能写成"已验证"，也不应被后续 lane 当作既成前提引用。
+> **量级与后果（R11 修复轮补记，2026-09-27；只增不删）**：本矩阵 24 行 × 9 类 dyad = **216 个判定格**，其中 **69 格**为 `MEANING_PRESERVED`；这 69 格背后有**零**项跨 dyad-type 测量不变性研究。因此：
+> (1) 这 69 格**不可被计数、不可被聚合、不可当作相互独立的证据** —— 它们是同一个未检验假设的 69 次重述，不是 69 条发现；
+> (2) 任何把本矩阵当作"已验证的跨域稳定性清单"的下游用途（Gate B/C 清单设计、Case Bank 分层抽样、跨类型 pooled 分析的入样规则）都**没有已验证的许可**；
+> (3) 若后续真的执行 §6 `U1` 的不变性序列并出现失败，失败在观测上与"语义其实稳定"不可区分，届时这 69 格必须**重做**，而不是"修正一个系数"；`U1` 因此应先于 Gate C。
+> 本段在修复轮被**加强而非减弱**：原有警告一字未删、未改写、未降级。
 
 列码：`R` 恋爱伴侣 · `D` 约会陌生人（未成形）· `F` 友谊 · `S` 兄弟姐妹 · `K` 亲子（成年）· `C` 照护 dyad · `X` 前任 · `W` 专业/合作 · `A` 冲突/敌对
 
@@ -118,6 +124,22 @@ LHRM 的研究域已冻结为 Human–Human relationship system，最小对象�
 - **约会陌生人**：矩阵 D 列有 4 个 `NA` + 1 个 `RD` + 2 个 `UK`，根源在此 —— **成形前的 dyad 不是一个有状态坐标的 pair，而是一个"提议"**。目前只能靠 `Unknown` 兜，会把"还没发生"与"发生了但我不知道"混为一谈。
 
 > **Proposal（仅提案）**：`Relationship_ij.existence ∈ {not_formed, proposed_unilateral, proposed_mutual_unknown, formed, formed_contested, terminated_unilateral, terminated_mutual, terminated_with_continuing_maintenance, inert_estranged}`；`RelationshipIdentity` 拆为 `{relational_role, legal_status, functional_arrangement, termination_status}` 四轴。
+
+**修复轮补记（R11 repair pass, 2026-09-27；上列三条与 Proposal 一字未改）· Gilligan 条目的定案结果**
+
+第一轮把 `Gilligan, Kleemans & Rodriguez (2017), American Sociological Review` 记为 `FETCH_FAILED`（疑 DOI `10.1177/0003122417715051`），并因此拒绝用它作任何结论。修复轮做了**一次真正的重试**，结论是**该记录按此引法不存在**（definitive non-availability）：
+
+- `https://api.crossref.org/works/10.1177/0003122417715051` → **HTTP 404**；
+- Crossref `query.author=Gilligan` + `filter=container-title:American Sociological Review` → `total-results: 0`；改按 ISSN 检索**全刊不限年份** `api.crossref.org/journals/0003-1224/works?query.author=Gilligan` → 同样 `total-results: 0`；
+- Crossref 拉取 ASR 2017 **全年卷目**（`filter=from-pub-date:2017-01-01,until-pub-date:2017-12-31`，`total-results: 51`，逐条枚举）→ 无任何作者为 Gilligan / Kleemans / Rodriguez 的条目；
+- Crossref `journals/0003-1224/works?query.author=Rodriguez` → 2 条，均无关；
+- Crossref `query.author=Kleemans`（`total-results: 242`）→ 全部为 E. R. / Machiel / Floris / Nico / Lineke Kleemans（犯罪学、物理学、水利教育），**无一位关系研究者**；
+- OpenAlex `authors?filter=display_name.search:Kleemans` → 31 位作者全部枚举，**无一位是恋爱/约会关系研究者**；`authors?search=Marguerite Kleemans` → `count: 0`；
+- 2 轮通用 web 检索未命中该记录（返回同名电视剧 *First Dates* 等噪声）。
+
+**对 `P-4`（"成形前的 dyad 是一个提议"）的方向性影响：两个方向都没有。** 这不是回避判断：(a) 该记录无法取得，因此**既不能支持也不能削弱** `P-4`；(b) 更关键——`P-4` 与矩阵 D 列的 4 个 `NA` / 1 个 `RD` / 2 个 `UK` **本来就不依赖这条来源**，其依据是本节开头的定义性论证（`CURRENT_ARCHITECTURE.md` §2 直接假设 `Relationship_ij` 存在）加 Tan et al. (2014) 与 Blake et al. (2022) 两处**已核实**原文。因此这条来源不可得对本节**不产生任何损失**，`P-4` 原样保留，**方向未变**。
+
+**诚实限定的反向风险（不隐瞒）**：修复轮**未能**取得一个本可用于检验 `P-4` 的"初次约会印象的持久性"实证记录，因此"首次约会后双方对彼此的判断是否已稳定到可作为 pair 状态坐标读出"这一**具体经验问题**在本文中仍为 `UNKNOWN`。若该项目后被发现确实存在并给出持久性证据，它将是 `P-4` 的**反例候选**（一个尚未成形的 dyad 仍可能承载可读出的稳定状态）。→ `P-4` 目前是**架构论证**，不是**已被反例检验的结论**。
 
 ### 3.5 `Ambivalence` 在亲属 dyad 里是一等状态，不是"几个坐标低的组合"
 
@@ -269,6 +291,30 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 
 定义是通用的（`i 是否感到 j 理解、重视、回应自己的需要与核心自我`），泄漏在词 `Partner`，以及 Laurenceau et al. (1998) 的原始三元模型与全部因果后果都在恋爱 dyad 上建立。**并且本次检索未找到任何在友谊/亲属/照护 dyad 上验证过同一模型的工作**（§6 U2）→ 该行 F/S/K/C 列是 `UNKNOWN`，不是 `MP`。把 PPR 放在 Belief 层是**正确的缓解**，但"perceived 的是 partner"会被下游默认带进所有 dyad。
 
+#### R11 修复轮补记（附于 L-7；L-7 原文一字未改）· `B1×W` 的证据重估
+
+第一轮把"therapeutic alliance 是由一方评定的、指向 dyad 的**单向构念**"标为 `UNVERIFIED`，并声明矩阵 `B1×W`（= `PPR` × `W` 专业/合作 dyad，判 `READOUT_DIFFERS`）当时**只由** Horvath & Symonds (1991) 与 Flückiger et al. (2018) 的**元数据级**证据支撑。修复轮取得了 Ardito & Rabellino (2011) 的**全文**（`https://www.frontiersin.org/articles/10.3389/fpsyg.2011.00270/full`，本次实读，`CITED_PRIMARY`），结果与预期**相反**：
+
+- WAI：`There are three versions of the WAI according to the rater's perspective`；评定者列写明 `Therapists / clients / clinical observers`；
+- TARS：`There are three versions of the TARS according to the rater's perspective`；`42 items (21 pertaining to the patient and 21 pertaining to the therapist)`；
+- ARM：`28 items rated on parallel forms by patients and therapists`；评定者列 `Therapists / clients`；
+- 结论段：治疗联盟破裂的分析 `must necessarily consider the differences between that perceived by the patient and that perceived by the therapist`。
+
+→ **"alliance 是单向构念"被原文直接反驳（`REFUTED`）**，该支撑**撤回**。
+
+**但支撑撤回后 `B1×W` 仍判 `READOUT_DIFFERS`（verdict 不变），理由更换为更强的一条**：同一篇原文显示，同一构念标签的**指称对象在 `j` / `i` / `(i,j)` 之间摆动** —— CALTRAS 为 `41 items, 20 of which refer to the therapist, and 21 to the patient`（**同一量表内部指称已分裂**），CALPAS 的维度同时包含 `therapist understanding and involvement`（**directed，指向 j**）与 `patient–therapist agreement on goals`（**pair 级，(i,j)**）。Bordin 三分本身（`the bond` + `the agreement on goals` + `the agreement on tasks`）是**协作性**的，**测量**才是**视角化**的。
+
+**因此**：参照系（referent）是**测量面（facet）**，不是构念的属性；把它当成构念属性并据此判"单向"，是把 instrument 的 rater 维度误当成 ontology。这是**支持 L-7 的正面证据**（`PPR` 的泄漏不止于词 `Partner`，还包括指称层级本身未被声明），**不是**对 L-7 的缓解。
+
+| 项 | 修复轮前 | 修复轮后 |
+|---|---|---|
+| `B1×W` verdict | `READOUT_DIFFERS` | **`READOUT_DIFFERS`（不变）** |
+| 证据强度 | 元数据级（Horvath & Symonds 1991 / Flückiger et al. 2018），且其中一条支撑已失效 | **`CITED_PRIMARY`**（Ardito & Rabellino 2011 全文实读） |
+| "单向构念"子命题 | `UNVERIFIED` | **`REFUTED`（明确撤回）** |
+| 现行理由 | 存在任务/协作型 dyad 变量且其结果关联最稳健 | 该变量的**指称在 `i` / `j` / `(i,j)` 之间随工具而变**，故 `W` 列的 readout 不可与 R/F/S/K 列共用 |
+
+**诚实限定**：以上**不是**"已取得 `W` 列跨域等价性证据"。Ardito & Rabellino 是治疗联盟的**单一领域**综述；本节**不主张** `PPR` 在专业 dyad 上的构念等价性已被建立。`W` 列 `RD` 仍然**只**意味着"读数/后果/极性随 dyad 类型变"，语义是否仍守恒**未被检验**（承 §1 的测量不变性警告）。
+
 ### L-8（最易修）· 项目自己的 cross-context gate 有采样框架漏洞
 
 - `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 第 6 项：`same-sex / opposite-sex / kin / non-kin / stranger / established relationship`
@@ -315,6 +361,15 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 | 10 | **`Reconciliation / forgiveness`（不在 basis）** | 本次无已核实指针 | 只登记为待查缺口（§6 U4），不作任何主张 |
 
 **反向结论（值得写进定位章节）**：`RomanticAttraction` / `SexualDesire` 的**测量基础**几乎全部在恋爱/约会 dyad 上生成（Laurenceau et al. 1998；Bruch & Newman 2018）；`Dedication` 的理论骨架来自一个**婚配选择集**模型；P4 枚举、P5 示例集、Agent 层 `baseline libido` 三处是纯婚恋/性框架。→ **越是"关系科学核心"的构念，恋爱框架依赖越深。** 这与"通用关系模型"的目标方向相反。
+
+**修复轮补记（R11 repair pass, 2026-09-27；上表 10 行字节未改）· 第 9 行一处已失效的说明被取代**
+
+上表第 9 行的建议栏写有 `本次**未取得** alliance 单向性原文 → `UNKNOWN``。修复轮**已取得**该原文，并发现其前提**被原文反驳**（详见 §4 L-7 后的修复轮补记）。**取代说明如下**：
+
+- **被撤回的说明**：`本次未取得 alliance 单向性原文`。
+- **被撤回的子命题**：`alliance 是单向构念` —— 状态由 `UNVERIFIED` 改为 **`REFUTED`**。
+- **`UNKNOWN` 本身仍成立，但理由已更换**：原理由（无法判断 alliance 是否单向）已消失；新理由是——该来源只覆盖**单一领域**（治疗），**既未检验** shared-goal / collaborative-task 状态在专业 dyad 上是否需要一个**独立于 `GoalAlignment` 的 perceived 定向坐标**，也**未提供**任何跨 dyad-type 的测量等价性证据。
+- 因此第 9 行的**排名与提案均不变**（新增一个 perceived、directional 的 shared-goal 坐标仍为 **proposal only**），只有其**证据状态**被更正。
 
 ---
 
@@ -369,6 +424,10 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 - **未检索到**任何在友谊 / 亲属 / 照护 dyad 上验证过 perceived partner responsiveness 三元模型的工作。→ `PPR` 行 F/S/K/C 列判 `UNKNOWN`，**不**判 `MEANING_PRESERVED`。这直接反驳"Reis 模型天然跨域"这一常见假设。
 - **未检索到**针对本 basis（或任何 8 维 directed dyad-state battery）的跨 dyad-type 测量不变性研究。→ 矩阵中所有 `MP` 仅为语义判断。**这是本文件最重要的单一空白。**
 - **未取得**"敌对 human dyad 在 dyad（而非 group）层面可持续多年"的一手同行评议指针。→ "长期定向敌意是可持续状态"在本文中作为**架构论证**（basis 无对应 primitive）呈现，实证状态 `UNKNOWN`；本文件只支持"per-edge control 是定义性变量"这一条。
+- **修复轮定案（新增）· `Gilligan, Kleemans & Rodriguez (2017), American Sociological Review` = 记录不存在**（`RECORD_NOT_FOUND`）。10 条独立路径全部未命中（含 Crossref 全刊作者检索 `total-results: 0`、ASR 2017 全年 51 条卷目逐条枚举、OpenAlex 31 位 `Kleemans` 作者全部枚举），逐条查询与错误码见 §3.4 修复轮补记。**对本 lane 不利**：本文件因此**永久失去**一个本可用于检验 `P-4` 的初次约会持久性记录；§3.4 的 D 列判定**不依赖**它，结论未变。
+- **修复轮定案（新增）· `Parsons & Bales (1955)` 记录已解析，但仍然不承重。** 正确记录：Parsons, T., & Bales, R. F. (1955). *Family, Socialization and Interaction Process.* Glencoe, IL: Free Press, xvii + 422 pp.（Internet Archive `familysocializat00parsrich` / `familysocializat0000pars`，`LCCN 55007343`）。CSUN 的全扫描件（`https://www.csun.edu/~snk1966/T.%20Parsons%20The%20American%20Family.pdf`）经本次取回确认**无文字层（仅图像流）**，只可核到扉页/书眉/目录，**未读正文** → `CITED_SECONDARY`。**本文件正文从未引用 P&B**，故解析后**对任何判定不产生变化**；仅登记指针。
+- **修复轮定案（新增）· 测量不变性警告的"显著性"复核：已存在、且未被埋没。** 修复轮前该警告已在三处：§1 矩阵正上方的 `矩阵效力边界（必读）` 引用块、§8 本节第 2 条（`这是本文件最重要的单一空白`）、§10 第 2 条非主张。修复轮**核对确认三处均在正文中、未被折叠或降级**，并按 Work Order 要求**在原地加强**（只增不删）：§1 引用块新增了格数（216 格 / 69 格 `MP` / 0 项不变性研究）与三条禁止性后果。**原有警告一字未删、未改写。**
+- **修复轮新增未知（未开新 `U` 行，故在此显式登记）**：`PPR` 类构念的**指称层级**（`i about j` vs 双方 vs 共同目标）在**同一 instrument family 内部**即分裂（Ardito & Rabellino 2011 全文实读，见 §4 L-7 补记）。这与 §6 `U2`（F/S/K/C 上因果模型是否同构）**不是同一个问题**，`U2` 不覆盖它。状态 `UNKNOWN`；**未新增 `U` 行**以免改动受保护的表。
 
 **本 lane 的自我更正**（记录以免下游引用错误指针）
 
@@ -379,6 +438,8 @@ Silver 另给出一个直接反例：友谊理想 `grounded in open-ended commit
 - de Bel 等人的 triad 论文在 **Journal of Family Issues 40(18)**，作者 de Bel, Kalmijn, van Duijn (2019)。
 - Meyer & Allen (1991) 在 **Human Resource Management Review 1(1):61–89**。
 - Flückiger et al. (2018) 的 alliance meta-analysis 在 **Psychotherapy 55(4):316–340**。
+- `Parsons & Bales (1955)` 的**书名**不是 "The American Family: Its Relations to Personality and to the Social Structure" —— 那是该书**第 I 章**的标题；书名是 *Family, Socialization and Interaction Process*。
+- "alliance 是单向构念"这一说法**已被 Ardito & Rabellino (2011) 原文反驳**（WAI 与 TARS 各有三个 rater 版本，ARM 有 patients/therapists 的 parallel forms）。第一轮标注的 `UNVERIFIED` 作废，改为 `REFUTED`（见 §4 L-7 修复轮补记）。
 
 **能定案后续未知项的研究设计**
 
@@ -444,6 +505,9 @@ Park, J., Sanchez, K., & Bryndilsen, K. (2011). Maladaptive responses to relatio
 Argyle, M., & Henderson, M. (1984). *The Anatomy of Friendship.* Routledge.（经二次转引使用）
 Ardito, A., & Rabellino, U. (2011). Therapeutic alliance and outcome of psychotherapy. *Frontiers in Psychology*, 2:70. doi:10.3389/fpsyg.2011.00270
 Brady, G., Cohen, G., Jarvis, J., & Walton, K. (2020). A brief social-belonging intervention in college improves adult outcomes for Black Americans. *Science Advances*, 6(18). doi:10.1126/sciadv.aay3689
+Parsons, T., & Bales, R. F. (1955). *Family, Socialization and Interaction Process.* Glencoe, IL: Free Press. xvii + 422 pp. In collaboration with James Olds, Phillip E. Slater, Morris Zelditch, Jr. `LCCN 55007343`. Internet Archive: `https://archive.org/details/familysocializat00parsrich`（另一记录 `familysocializat0000pars`）；全扫描件 `https://www.csun.edu/~snk1966/T.%20Parsons%20The%20American%20Family.pdf`（**无文字层，未读正文**）· `CITED_SECONDARY` · **不作论据，本文件正文零引用**
+Ardito, A., & Rabellino, U. (2011). Therapeutic alliance and outcome of psychotherapy. *Frontiers in Psychology*, 2:70. doi:10.3389/fpsyg.2011.00270 — 修复轮已取得**全文**（`https://www.frontiersin.org/articles/10.3389/fpsyg.2011.00270/full`）并实读；证据等级由 `CITED_PRIMARY（元数据）` 升级为 **`CITED_PRIMARY（全文）`**
+Gilligan / Kleemans / Rodriguez (2017), *American Sociological Review* — `RECORD_NOT_FOUND`（修复轮 10 路检索，逐条见 §3.4）· **不作为论据，且不构成任何方向性证据**
 
 ---
 
@@ -458,3 +522,37 @@ Brady, G., Cohen, G., Jarvis, J., & Walton, K. (2020). A brief social-belonging 
 - 不主张 IPV 类型学可直接迁移到一般 Human Dyad；只把它用作"承重变量可以是 per-edge 约束能力"这一结构事实的反例。
 - 不主张任何矩阵格是最终判定；每条 `MP`/`MS` 都对应 §6 的一个可定案研究。
 - 不主张对 canonical 文档做任何变更。
+- **修复轮新增（2026-09-27）**：
+- 不主张修复轮改变了本文件的任何矩阵格、任何 §3 条目、任何 §4 条目、任何 §5 排序或任何 §7 矛盾项；修复轮**只新增**证据记录与限定。
+- 不主张 `Gilligan, Kleemans & Rodriguez (2017)` 的缺失**支持** `P-4`；一条取不到的记录在两个方向上都是零证据。`P-4` 的方向未变，且它仍是**架构论证**，不是**已被反例检验的结论**。
+- 不主张 Ardito & Rabellino (2011) 建立了 `PPR` 在专业 dyad 上的构念等价性；该文只证明**指称层级在 instrument family 内部就会分裂**。
+- 不主张"alliance 有多 rater 版本"因此等于"alliance 跨域稳定"；`B1×W` 的 `RD` 与 §1 的测量不变性警告**同时**成立。
+- 不主张 Parsons & Bales (1955) 被本文件用作论据；它只是被**解析**了，正文未读、零引用。
+- **取代声明（必读）**：上一行区中 `不主张 therapeutic alliance 是单向知觉构念（未取得原文）` 一条，其括注 `（未取得原文）` 在修复轮**已失效** —— 原文已于本次取得（全文实读）。该条的**前半句仍然成立且更强**：`alliance` **确实不是**单向知觉构念，但这不再是"未取得原文所以不断言"，而是**已被原文反驳**（`REFUTED`，见 §4 L-7 修复轮补记与 §8 自我更正）。该旧行按 0-删除约束**原样保留**，以本取代声明为准。
+
+---
+
+## 11. 状态建议（修复轮定案）
+
+**状态：`PARTIAL` —— 维持不变。** 依据 Work Order，`PARTIAL` 是可接受的终态。修复轮**没有**取得足以升级状态的证据，且本轮唯一的"新证据"在关键处是**反向的**。
+
+**本轮精确变更清单（共 7 处新增/加强 + 新增本节；其余字节未动）**
+
+| # | 位置 | 变更类型 | 内容 |
+|---|---|---|---|
+| 1 | 头部元信息 | 新增 1 行 | `**Repair pass:**` 标注与指向 |
+| 2 | §1 `矩阵效力边界（必读）` 引用块 | **原地加强（只增不删）** | 216 格 / 69 格 `MP` / 0 项不变性研究 + 三条禁止性后果 |
+| 3 | §3.4 之后 | 新增补记 | Gilligan 定案 = 记录不存在；10 路检索与错误码；对 `P-4` **两个方向都无影响** |
+| 4 | §4 L-7 之后 | 新增补记 | Ardito & Rabellino 全文实读；"单向构念" `REFUTED`；`B1×W` verdict 不变、理由更换；referent 是测量面 |
+| 5 | §5 表后 | 新增补记 | 第 9 行失效说明被取代；`UNKNOWN` 理由更换；排名与提案不变 |
+| 6 | §8 负结果 + 自我更正 | 新增 4 条 + 2 条 | Gilligan 定案；P&B 解析但不承重；不变性警告显著性复核；新增未登记未知 |
+| 7 | §9 引用列表 / §10 非主张 | 新增 3 条 / 新增 6 条 | P&B 正确记录；Ardito 升级为全文；Gilligan `RECORD_NOT_FOUND`；修复轮非主张 + 对 §10 旧行 `（未取得原文）` 的**取代声明** |
+
+**为什么不能升级（逐条）**
+
+1. **最大空白未被触碰**：跨 dyad-type 测量不变性研究**仍为零**（§6 `U1` 仍未执行）。这是本文件自评"最重要的单一空白"，而且它**不是**文献检索能补的 —— 它需要 LHRM 自己的多题项 instrument。任何状态升级都必须先跨过 `U1`。
+2. **唯一的新证据是反向的**：`B1×W` 原先的一条支撑被原文**撤回**（`UNVERIFIED` → `REFUTED`）。verdict 之所以不变，是因为**换**了一条理由，不是因为原理由被证实。
+3. **另一条重试是纯负结果**：Gilligan 记录不存在，`P-4` 未获任何新的反例检验，"初次约会印象的持久性"仍是 `UNKNOWN`。
+4. **第三条重试解析了一个零引用来源**：P&B 解析后**对任何判定无影响**，不构成升级理由。
+
+**交付建议**：按 `PARTIAL` 交付。下游若引用本文件，**必须**同时引用 §1 的测量不变性警告与 §10 的非主张清单。`U1` 建议作为 Gate C 的**前置门**（而非 Gate C 内部项），其余 11 条 `U` 项按 §6 表执行；§7 的 8 条矛盾项可并行交给 Architect，**不依赖本文件升级**。

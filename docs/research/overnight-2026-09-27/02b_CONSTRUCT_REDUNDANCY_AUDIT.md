@@ -5,7 +5,7 @@
 **Lane:** R02（Wave 1）
 **Inputs:** `docs/foundation/PARAMETER_CONVERGENCE_V0_1.md`, `docs/foundation/CONSTRUCT_SCOPE_DIRECTIONALITY.md`, `docs/foundation/CURRENT_ARCHITECTURE.md`
 **Scope:** 构念之间的语义冗余与双重计数；不改 ontology；不改 canonical。
-**Evidence base:** 34 条指针（其中 meta 分析 / 系统综述 / 大样本纵向 8 条），零篇中文文献。
+**Evidence base:** 50 条指针（其中 meta 分析 / 系统综述 / 大样本纵向 8 条），中文文献 5 条（其中可承载任何判定的 0 条）。
 
 > 本文件**不**裁决哪些构念该留、该删。它只做一件事：把"看起来可能重复计数"的构念对，逐对放到五个 lens 下称重，并把称重结果标成 `SUPPORTED_REDUNDANCY | CONTESTED | INDEPENDENT | UNKNOWN`。
 > 本文件遵守项目自有规则：**低冗余 = 低语义/条件冗余，不等于零统计相关或动态独立。** 反向也成立——**高统计相关不构成语义冗余证据**。本文件中每一条 `SUPPORTED_REDUNDANCY` 都至少有一条**定义层**或**量表层**证据，绝不只靠相关系数。
@@ -224,7 +224,7 @@ graph LR
 
 | edge | A vs B | S | D | I | V | F | strength | 判定 |
 |---|---|:-:|:-:|:-:|:-:|:-:|---|---|
-| **E1** | `Liking` / `RomanticAttraction` | ✗ | ✓ | ? | ? | ? | MOD | **CONTESTED** |
+| **E1** | `Liking` / `RomanticAttraction` | ✗ | ✓ | ? | ? | ~ | MOD | **CONTESTED** |
 | **E2** | `RomanticAttraction` / `SexualDesire` | ✗ | ✓ | ✓ | ✗ | ✗ | MOD | **INDEPENDENT** |
 | **E3** | `SexualDesire` / `SexualArousal` | ✗ | ✓ | ✓ | ✗ | ✗ | **STRONG** | **CONTESTED** |
 | **E4** | `Trust` / `AttachmentSecurity` | **✓部分** | ✓ | ✓ | ~ | ✓ | **STRONG**(重叠) / MOD(残余) | **CONTESTED** |
@@ -347,6 +347,69 @@ Montoya, Horton & Kirchner (2008, JSPR 25(6):889–922, `doi:10.1177/02654075080
 3. Arriaga 等 2006 证明 **perceived** partner commitment 的**波动**独立预测分手；Le & Agnew 2006 证明 **partner-reported** investment 独立于 **perceived** investment 预测 commitment。→ 报告与知觉是两条独立的信息通道。
 
 **但**：`ResponsiveAction_(j->i)` 这**一个事件**同时被写入 `Caregiving_(j->i)`（发送者状态通道）与 `PPR_(i about j)`（接收者信念通道），而两者共用**同一份证据**。这不是构念冗余，是**索引双计**。见 H4。
+
+### 5.7 E1 补检索结果（narrow repair pass，2026-09-27 第二次尝试）
+
+> **本节为 repair pass 新增。§5.1–§5.6 与 §1–§4 既有内容逐字未改。**
+> 第一次尝试时本 lane 因 `websearch` HTTP 429 与 `webfetch` 失败，未取得任何 `Liking` ↔ `RomanticAttraction` 的因子层估计，因而把 E1 的 lens `F` 记为 `?`、判定记为 `CONTESTED`。本节记录第二次尝试**实际取得**的内容。
+> **仍未取得**理想证据，即"在同一批被试、同一份电池内，同时报告 liking 因子与 romantic-attraction 因子的斜交相关或 CFA discrimination 检验"。下面是能拿到的最接近物，逐条标注来源标记与证据强度。
+
+**分离侧（弱）**
+
+1. **Rubin (1970) 自陈的相关矩阵本身。** Rubin 同时给出四个"对伴侣的吸引指标"：`Love`、`Liking`、单题 `In Love`、`Marriage Probability`。女性：Liking–Love `.39`、Liking–`In Love` **`.28`**、Liking–Marriage Probability `.32`；男性：`.60`、**`.28`**、`.35`。`CITED_SECONDARY`（原始表格未打开；转录件 [39] 与 Masuda (2003) [35] 独立一致）。
+   → **要点**：一个 liking 工具与"恋爱状态"指标（`In Love`）的相关（`.28`）**低于**它与"爱"量表的相关（`.39/.60`）。这与"`Liking` 不蕴含 `RomanticAttraction`"方向一致；但 `.28` 本身也是**低**的——留不出多少可分空间。**注意**：`In Love` 是单题自评指标，不是现代 romantic-attraction 量表；把它当 `RomanticAttraction` 的代理是**模型假设**，不是文献事实。
+2. **McCroskey & McCain (1974)** [40]：N=215，30 个 7 点条目针对一位**熟人**（非恋人），主成分分析 + **varimax** 提取三因子——`social`（作者原文称 "a social or personal **liking** property"）、`physical`、`task`，合计解释总方差 49%，内部信度 `.75/.80/.86`。`CITED_PRIMARY`（作者自托管全文 + 独立 PDF 副本）。
+   → **要点**：**在一个 attraction 电池内部，liking 型内容与外貌吸引型内容确实落到不同因子上**，条目交叉载荷极低。**但作者那句 "these dimensions are independent of one another" 不能当作因子相关读**：主解是 varimax（正交旋转），正交解下因子间相关按构造为 0；斜交解的因子相关矩阵本次未取得。→ **内容分离 `MOD`；"独立" `WEAK`（旋转 artifact）**。
+
+**重叠侧（中）**
+
+3. **Fehr (1994)** [36]：对 **22 个 love 量表**做聚合与区分效度因子分析，Rubin 的 `Love Scale` 与 `Liking Scale` **同落在一个 companionate love 因子上、未分出**。`CITED_SECONDARY`（两条互相独立的转述：Masuda 2003 [35] 原文、Graham 2011 [37] 原文）。**原文未读。**
+4. **跨语言复制反而更重叠。** Dermer & Pyszczynski (1978) 的德语版复制研究（N=156，Love/Liking 德语版 α 均 > .80）报告 **Love–Liking `r = .70`（男）/ `.69`（女）**，远高于 Rubin 原始的 `.39/.60`。`CITED_SECONDARY` [44]。
+   → **要点**：`Liking` 的判别效度**不跨样本稳定**。`.39–.70` 的跨度意味着"`Liking` 与 `Love` 只是中等相关、故构念不同"这句推论本身不牢靠。
+5. **Hendrick & Hendrick (1989)** [41]：N=391 未婚大学生，5 个 love 工具（LAS / STLS / PLS / RRF / Shaver–Hazan love-and-attachment）**全部子表一起**做因子分析 → 5 个因子（passionate love、closeness、ambivalence、secure attachment、practicality）；TLS 与 RRF 各自子表间呈 "strong interdependency"。`CITED_PRIMARY`（APA PsycNet 题录摘要）。
+6. **Graham (2011)** [37]：81 篇研究 / 103 个样本 / 19,387 人，多个常用 love 工具的报告相关被聚合成**元分析相关矩阵，再做主成分分析** → general love / romantic obsession / practical friendship 三因子。`CITED_PRIMARY`（摘要；全文 PDF 本次为二进制，未取到文本层）。两条可用于 E1 的细节：附录记"当保留 Rubin 的 `Loving` 时，PLS 与 TLS 的 `Passion`、`Intimacy` 三个工具须被剔除，初始矩阵才变为正定"——**爱工具电池的相关矩阵本身不正定**；正文另有一句 "A factor analysis of various love scales by Fehr (1994) indicated that the liking and loving scales loaded together on a companionate love factor… It appears likely that both the loving and liking scales are measuring similar constructs"。
+   → **诚实边界**：Graham 的矩阵里**是否包含 Rubin 的 `Liking` 分量，本次未能核实**；因此第 3 条（Fehr）是"跨工具合并"证据，**不能**被说成"Graham 也把 Liking 合并了"。
+
+**方法学先例（只用于 U1 设计，不承担 E1 判定）**
+
+7. **Singh, Goh, Sankaran & Bhullar (2016)** [42]：N=176（新加坡陌生人），对 trust / respect / attraction 的 12 个反应做三因子 CFA——三因子解 `χ²(51)=125.49, TLI=.93, RMSEA=.09, SRMR=.06`；单维解 `χ²(54)=278.67, TLI=.79, RMSEA=.15, SRMR=.08`；`Δχ²(3)=153.18, p<.001`，两者 90% CI 不重叠 → "we accepted trust, respect, and attraction as empirically distinct constructs"。三量表 α = `.78/.81/.92`，**因子间相关 `.62–.66`**。
+   → **要点**：**高因子相关与显著 discrimination 检验可以并存**。这正是 E1 所缺的那种证据形态；也说明 U1 若只报一个相关系数而不报 `Δχ²` / RMSEA / CFI 差，**仍然答不了 Gate C**。注意该研究的 `attraction` 面里混入了 liking 型条目（"I would like to meet my partner… be with my partner"），所以它证明的是"该电池里 trust/respect/attraction 可分"，**不是**"liking 与 attraction 可分"。
+
+**对 E1 判定的处置**
+
+`F` lens 由 `?` 改为 `~`（部分），`strength` 保持 `MOD`，**判定仍是 `CONTESTED`——但理由变了**：不再是"检索失败所以悬置"，而是**两侧证据同时存在且方向相反**。同一批 love/attraction 工具里，liking 型内容与吸引型内容**能**分因子（McCroskey & McCain 1974；Rubin `.28`）；但**跨工具的因子分析又把 Liking 与 Loving 合并**（Fehr 1994），且**该分离在最该出现的德语复制里反而更弱**（`.69–.70`）。U1 不因此作废，反而更必要：**必须报斜交因子相关 + `Δχ²` + 跨文化复制，而不是单一相关系数。**
+
+### 5.8 中文文献检索尝试（narrow repair pass）
+
+> **本节同为 repair pass 新增，记录 2026-09-27 的实际尝试。** 第一次尝试记录为"零篇中文/非英文文献"。**结果：找到了中文文献，但没有找到任何一条能直接回答冗余问题的估计。**
+
+**用过的查询**（`websearch`，2 组，均命中，无 429）
+
+- `亲密关系 依恋安全感 信任 构念冗余 区分效度 因子分析 中文`
+- `关系承诺 关系满意度 投资模型 元分析 相关 承诺 满意度 冗余 中文研究`
+
+**找到并核到数字的中文来源**
+
+| 来源 | 内容（本次实际读到的） | 对本审计的可用性 |
+|---|---|---|
+| 李同归、加藤和生 (2006) [45] | ECR 中文版；371 名中国大学生（231 名有恋爱经历者进入分析），IRT 项目分析；α = .82（回避）/ .77（焦虑），重测 .71/.72；焦虑分量表 ↔ RQ 自我模型 `r = −.44`、↔ Rosenberg 自尊 `r = −.22`；回避分量表 ↔ RQ 他人模型 `r = −.58` | 只给 attachment ↔ **自我/他人模型**，**不涉及 trust**，对 E4 无增量。`CITED_PRIMARY`（中文全文） |
+| 吴薇莉、张伟、刘协和 (2004) [46] | AAS-1996 修订版；N=110 正常 + 89 病例；KMO = .795；球形检验拒绝 → 原文写"各个因子间**并非独立**"；斜交旋转提三因子，解释方差 48.3%；亲近/依赖/焦虑 α = .718/.620/.785 | 因子间相关**存在但系数未可读**（原文只说"亲近依赖两因子相关"故采用斜交旋转，未给数值）。`PARTIAL` |
+| 彭小凡、罗长群、王颖、尹桂玲 (2020) [47] | ECR-RS 中文版；**N=1685 中学生 + 566 大学生**；EFA 两维度（回避/焦虑）解释方差 58.8%，载荷 .47–.91；CFA 拟合良好；α > .79；重测 .53–.72。**效标清单里明确含"信任量表"** | **本轮最有价值的一条**：这正是 E4 (`Trust` ↔ `AttachmentSecurity`) 需要的大样本中文判别效度检验，**但 ECR-RS 两维度与信任量表的具体相关系数本次未取得**（摘要与检索片段只列了效标清单）→ 只能登记为**未取得系数的指针**，**不承载任何判定** |
+| 张兴、陈旭 (2020) [48] | ASQ 中文版；4 因子（自信/依恋焦虑/亲近不适/关系次要），累积解释 41.793%；**因子间 Pearson `r = −.47 / −.40 / −.36 / .43`（p<.001）**；条目打包后 CFA `χ²=174.013, df=48, RMSEA=.079, CFI=.938, TLI=.914`；α = .78/.83/.68/.70 | 测的是**一般依恋风格（Agent 层）**，不是 edge 层 `AttachmentSecurity`；与 E16 相关、与 E4 不同层。作者自己把中英结构差异（英文 5 因子 → 中文 4 因子）归因于**集体主义文化** → 对 §2.4 scope-stability 是正面输入 |
+| 安全依恋对人际信任的影响：依恋焦虑的调节效应 (2016) [49] | 两个实验：词汇决策任务（N=100）与信任博弈（N=65）；安全依恋启动显著提高信任相关词反应时与信任博弈分配金额，**特质依恋焦虑起调节效应** | **本轮唯一一条中文 `V` lens 证据**（干预可移动性）。但样本小、用 ECR + ITS 特质量表、且是**启动**而非关系层坐标 → 只登记为 E4 的 `V` 侧 `WEAK` 支持，**不改动 E4 判定** |
+
+**没找到的（诚实清单）**
+
+- 任何**中文**的 `Liking` ↔ `RomanticAttraction`（或"喜爱 ↔ 浪漫吸引"）因子层相关或区分效度估计 → **E1 在中文侧仍为零**。
+- 任何**中文**的"信任 vs 依恋安全感"冗余分析；唯一对口的彭小凡等 (2020) 未取得系数。
+- 任何**中文**的 `Dedication`(承诺) ↔ `Satisfaction`(满意度) 冗余估计。第二组查询返回的"关系承诺/关系满意"文献几乎全部在**营销与消费者关系**域（Morgan & Hunt 的承诺–信任模型、转换成本、替代者吸引力），与 Rusbult 投资模型的 interpersonal `dedication` **不是同一构念族**，不能顶替 E8。唯一沾边的是一篇台湾硕士论文转述 Johnson (1991) 的三类承诺与 Rhoades et al. (2010) 的 interpersonal commitment，属 `CITED_SECONDARY`，且未报告任何 satisfaction–commitment 系数。
+- 任何中文 ESEM / bifactor 研究（LHRM 全候选电池或其任何子集）→ **再次确认 §10 的 `NEGATIVE`**：这不是本轮检索不足，是文献里确实不存在。
+
+**一条被本 lane 拒绝采用的中文来源（如实登记）**
+
+刘聚红《关系模型视角下的婚恋满意度的变化研究》（汉斯出版社，N=1500，覆盖 9 省）[50] 确实同时施测了 ECR 与关系满意度量表，但其**结论段与结果段自相矛盾**：结果段报 `F(1,1195)=65.49, p<.001` 且"恋爱时的关系满意度要显著高于结婚时"，结论段却写"婚后的关系满意度显著高于恋爱时的关系满意度"；摘要称满意度与持续时间无相关，3.2.3 节却描述满意度随时间下降。**本审计不采用该文的任何数字**，仅登记为"中文域存在此类大样本施测、但本次未获得可用估计"。
+
+**小结**：中文覆盖由"零"变为"**5 条，其中 1 条大样本且正对 E4 但系数未取，1 条提供 E4 的 `V` 侧弱证据，3 条只提供背景或 Agent 层数据**"。这**不足以**把任何一条边的判定从 `UNKNOWN` / `CONTESTED` 升级；**E12（`AttachmentSecurity` ↔ `Cohesion`）仍无任何中文证据，保持 `UNKNOWN`。**
 
 ---
 
@@ -480,8 +543,8 @@ MGS-C action log（原样保留）
 7. **不主张** `r = 0.08` 证明 `ValueCongruence` 语义冗余。它证明条件预测效度不足，不证明语义同一性。
 8. **不主张** §5.3 证明 `PowerImbalance` 不可派生。它证明"**仅**由 dependence 派生"证据薄弱且被方法学劝阻；更宽的派生式仍可能成立。
 9. **不主张** §9 的任何 MGS 是正确的。三个都是显式临时假说。
-10. **不主张**本 lane 完成了 `F` lens。它**部分**完成：未找到对 LHRM 全候选电池的单次 ESEM/bifactor 研究。
-11. **不主张**本 lane 覆盖中文或非英文文献。**零覆盖。**
+10. **不主张**本 lane 完成了 `F` lens。它**部分**完成：未找到对 LHRM 全候选电池的单次 ESEM/bifactor 研究。（2026-09-27 补检索后追加：E1 的 `F` 已由 `?` 升为 `~`，但 `F` lens 整体仍只**部分**完成，且上述 `NEGATIVE` 维持不变——见 §5.7。）
+11. **不主张**本 lane 覆盖中文或非英文文献。**零覆盖。**（2026-09-27 补检索后追加：中文来源由 0 增至 5 条，但**可承载任何判定的仍为 0 条**；E1 与 E12 的中文侧仍为零——见 §5.8。）
 12. **未核实**：2025 年 "Trust in close relationships revisited"（PMC12316384）的作者与期刊元数据。
 
 ---
@@ -530,7 +593,7 @@ MGS-C action log（原样保留）
 23. Šironová, D. et al. (2020). Psychometric characteristics of the ECR-RS, structure of the relationship between global and specific attachment. *Studia Psychologica*, 62(4), 291–313. `https://www.studiapsychologica.com/uploads/Sironova_SP_4_vol.62_2020_pp.291-313.pdf`
 24. Overall, N. C., & Hammond, M. D. (2026). Power and ideology in close relationships. *Annual Review of Psychology*. `doi:10.1146/annurev-psych-012325-032022`
 25. Keltner, D., Gruenfeld, D. A., & Anderson, C. A. (2003). Power, approach, and inhibition. *Psychological Review*, 110(4), 451–473. `https://greatergood.berkeley.edu/dacherkeltner/docs/keltner.power.psychreview.2003.pdf`
-26. Measures of relationship power dynamics in romantic relationships. *Journal of Family Theory & Review*. `doi:10.1111/jftr.70019` （预印本 `https://doi.org/10.31234/osf.io/f6wbn`）
+26. Measures of relationship power dynamics in romantic relationships. *Journal of Family Theory & Review*. `doi:10.1111/jftr.70019` （预印本 `https://doi.org/10.31234/osf.io/f6wbn_v1`）
 27. The Relationship Power Inventory: Development and validation. `https://abcdocz.com/doc/1699137/the-relationship-power-inventory--development-and-validation`
 28. A critical review of relationship quality measures. *Journal of Organizational Behavior*. `doi:10.1111/joop.12395`
 29. Zanella Delatorre, M., & Wagner, A. (2020). Marital quality assessment: Reviewing the concept, instruments, and methods.
@@ -540,12 +603,42 @@ MGS-C action log（原样保留）
 33. Reis, H. T., Clark, M. S., & Holmes, J. G. (2004). Perceived partner responsiveness as an organizing construct in the study of intimacy and closeness. In *Handbook of closeness and intimacy*, pp. 211–236. Erlbaum.
 34. *Filling the Void: Bolstering Attachment Security in Committed Relationships.* `doi:10.1177/1948550613509287` （经 S12 转引；`CITED_SECONDARY`）
 
+**以下 35–50 为 2026-09-27 narrow repair pass 新增（§5.7 / §5.8），1–34 号逐字未改。**
+
+35. Masuda, M. (2003). Meta-analyses of love scales: Do various love scales measure the same psychological constructs? *Australian Journal of Psychology*. `10.1111/1468-5884.00030` （`CITED_SECONDARY`，全文文本层可读；本 pass 用于核对 Rubin 1970 的 Love–Liking 相关与 Fehr 1994 的因子结论）
+36. Fehr, B. (1994). Prototype-based assessment of laypeople's views of love. *Personal Relationships*, 1(4), 309–331. `10.1111/j.1475-6811.1994.tb00068.x` （**原文未读**；结论经 35 与 37 两条 `CITED_SECONDARY` 独立转述）
+37. Graham, J. M. (2011). Measuring love in romantic relationships: A meta-analysis. *JSPR*, 28(6), 748–771. `10.1177/0265407510389126` （摘要 `CITED_PRIMARY`；全文 PDF 为二进制，本 pass 未取到文本层；矩阵是否含 Rubin `Liking` 分量 `UNVERIFIED`）
+38. Rubin, Z. (1970). Measurement of romantic love. *JPSP*, 16(2), 265–273. `10.1037/h0029841` （本 pass 新增；其相关矩阵经 39 转录，`CITED_SECONDARY`）
+39. Goertzel, T. Rubin (1970) 相关矩阵转录页. `https://crab.rutgers.edu/users/goertzel/RomanticLove.htm` （`CITED_SECONDARY`，访问 2026-09-27）
+40. McCroskey, J. C., & McCain, T. A. (1974). The measurement of interpersonal attraction. *Human Communication Research*. `UNVERIFIED_VOL_PAGES` · 作者自托管全文 `https://www.jamescmccroskey.com/publications/57.htm` · 检索副本 `https://scispace.com/pdf/the-measurement-of-interpersonal-attraction-3dbn3n56am.pdf` （`CITED_PRIMARY`）
+41. Hendrick, C., & Hendrick, S. S. (1989). Research on love: Does it measure up? *JPSP*, 56(5), 784–794. `10.1037/0022-3514.56.5.784` （`CITED_PRIMARY`，APA PsycNet 题录摘要）
+42. Singh, R., Goh, A., Sankaran, K., & Bhullar, N. (2016). Similarity and liking effects on interpersonal attraction: A test of the two-dimensional trust-respect model. *Psychologia*, 59(1), 1–18. `10.2117/psysoc.2016.1` （`CITED_PRIMARY`，J-STAGE 免费全文；**仅作 U1 的方法学先例，不承担 E1 判定**）
+43. Dermer, D., & Pyszczynski, J. (1978) 的德语复制研究（原文 `UNVERIFIED`，经 44 转录）
+44. 德国复制研究全文（Rubin 1970 德语版 Love/Liking 的 erotica 实验）. `https://d.docksci.com/download/effects-of-erotica-upon-mens-and-womens-loving-and-liking-responses-for-their-pa_5eb14347097c473e668b4589.html` （`CITED_SECONDARY`；报告 Love–Liking `r = .70` 男 / `.69` 女，N=156）
+45. 李同归、加藤和生 (2006). 成人依恋的测量：亲密关系经历量表(ECR)中文版. *心理学报*, 38(3), 399–406. `https://journal.psych.ac.cn/xlxb/CN/Y2006/V38/I03/399` （`CITED_PRIMARY`，中文全文）
+46. 吴薇莉、张伟、刘协和 (2004). 成人依恋量表(AAS-1996修订版)在中国的信度和效度. *四川大学学报(医学版)*, 35(4), 536–538. `UNVERIFIED_DOI` （`CITED_PRIMARY`，转载全文；因子间相关未给数值）
+47. 彭小凡、罗长群、王颖、尹桂玲 (2020). 亲密关系体验-关系结构量表(ECR-RS)中文版测评大中学生的效度和信度. *中国心理卫生杂志*, 34(11), 957–963. `UNVERIFIED_DOI` （摘要 `CITED_PRIMARY`；**与信任量表的具体相关系数未取得**）
+48. 张兴、陈旭 (2020). 依恋风格问卷中文版在大学生群体中的修订及其信效度研究. *西南大学学报（自然科学版）*. `https://xbgjxt.swu.edu.cn/article/doi/10.13718/j.cnki.xdzk.2020.06.013` （`CITED_PRIMARY`，中文全文；测 Agent 层一般依恋风格）
+49. 安全依恋对人际信任的影响：依恋焦虑的调节效应 (2016). *心理科学*. `10.3724/SP.J.1041.2016.00989` （`CITED_PRIMARY`，中英双语摘要；E4 的 `V` 侧 `WEAK` 支持）
+50. 刘聚红. 关系模型视角下的婚恋满意度的变化研究. 汉斯出版社. `https://pdf.hanspub.org/AP20221200000_93861397.pdf` （`REJECTED_INTERNAL_INCONSISTENCY` —— **本审计不采用其任何数字**，仅作覆盖登记）
+
 ---
 
 ## 13. 建议状态
 
-**`PARTIAL`**
+**`PARTIAL`（状态不变；本轮为 narrow repair pass，只补证据、不改判定）**
 
-理由：(a) 8 个必需构念对全部被处理，但 `Liking↔RomanticAttraction` 缺直接因子估计、`AttachmentSecurity↔Cohesion` 为 `UNKNOWN`；(b) 五个 lens 中的 `F`（measurement-factor overlap）**只部分满足**——领域内不存在对 LHRM 全候选电池的单次 ESEM/bifactor 研究；(c) 最后 4 次 `websearch` 遭 `429` 限流、SAGE/PMC `webfetch` 失败；(d) **零篇中文/非英文文献**，而 LHRM 目标域含中文判决与纪实材料。
+### 13.1 本轮（2026-09-27 第二次尝试）实际改变了什么
 
-尽管状态为 `PARTIAL`，本 lane 产出了 **2 条与 canonical 候选表直接冲突的 `RESEARCH_CANDIDATE` 观察**（dedication 的可派生性排序反转；power 派生式证据不足）与 **1 条新增候选节点**（`PowerLevel_(i->j)`），以及 **11 个定位到具体机制的高危双计点**。这些不因 `PARTIAL` 而降级。
+- **E1 的 lens `F` 由 `?` 改为 `~`**（§4 边表 E1 行一个字符）；`strength` 仍 `MOD`，**判定仍 `CONTESTED`**。理由：取得了真实可引的因子层/判别层证据，但**方向相反**——分离侧（Rubin 自陈矩阵 Liking–`In Love` = `.28`；McCroskey & McCain 1974 的 attraction 电池内 liking 型与 physical-attraction 型分属不同因子）与重叠侧（Fehr 1994 的 22 量表因子分析把 Liking 与 Loving 并入同一 companionate love 因子；德语复制中 Love–Liking 升至 `.69–.70`；Hendrick & Hendrick 1989 报 love 工具子表 strong interdependency）同时成立。**因此 `CONTESTED` 不再因为检索失败，而因为证据真的双向。** 详见 §5.7。
+- **中文覆盖不再是"零"。** §5.8 记录了 2 组查询、5 条中文来源、3 条已核到数字。但**没有一条能直接回答冗余问题**：E1 中文侧仍为零；E4 最对口的一条（彭小凡等 2020，N=1685 中学生 + 566 大学生，效标含信任量表）**相关系数未取得**，只能登记为指针。
+- **本轮不改变任何判定。** E1 仍 `CONTESTED`；**E12 仍 `UNKNOWN`**（中文侧同样零证据，未升级）；`NEGATIVE: 未找到任何一篇对 LHRM 全候选电池做单次 ESEM / bifactor 分析的研究` **维持为 `NEGATIVE`**——§5.8 再次确认这不是检索不足。
+- **改动范围**：mermaid 图、ASCII 图、边表结构、节点清单、§5.1–§5.6、§6、§7（H1–H11）、§8（C1–C10）、§9（MGS-A/B/C）、§11（U1–U10）、§12 的 1–34 号引用**逐字未改**。新增：§5.7、§5.8、§12 的 35–50 号引用。仅有的两处追加式更正：文件头 `Evidence base` 的指针条数与中文覆盖描述、§10 第 10/11 条非主张——二者因本轮新增证据而已不再准确，**原有文字全部保留**，只在句尾追加指向 §5.7 / §5.8 的括注。
+
+### 13.2 为什么仍然是 `PARTIAL`
+
+(a) `Liking` ↔ `RomanticAttraction` 仍缺**同一批被试、同一份电池内**的斜交因子相关或 CFA discrimination 检验——U1 未被本轮任何证据取代；(b) `AttachmentSecurity` ↔ `Cohesion` 仍为 `UNKNOWN`；(c) 五个 lens 中的 `F` 仍只**部分**满足：领域内依旧不存在对 LHRM 全候选电池的单次 ESEM/bifactor 研究（这是 `NEGATIVE`，不是缺口）；(d) 中文证据虽由 0 增至 5 条，**可承载判定的仍为 0 条**。
+
+### 13.3 结论
+
+**`PARTIAL` 是本 lane 的诚实终态，不因本轮补检索而降级或升级。** 尽管状态为 `PARTIAL`，本 lane 产出的 **2 条与 canonical 候选表直接冲突的 `RESEARCH_CANDIDATE` 观察**（dedication 的可派生性排序反转；power 派生式证据不足）、**1 条新增候选节点**（`PowerLevel_(i->j)`）、**11 个定位到具体机制的高危双计点**，以及本轮新增的 **1 条方法学结论**（U1 必须报 `Δχ²` / RMSEA / CFI 差与跨文化复制，单一相关系数答不了 Gate C，见 §5.7 第 7 条），均不因 `PARTIAL` 而降级。
