@@ -11,13 +11,30 @@
 
 ---
 
+## ROUND-3 REPAIR PASS（`A3c`，依 `ARCHITECT_ADJUDICATION_V1`）
+
+> **本节是 Round-3 repair 的记账头。** 它**不**新增任何识别结论，只记录本文件被改了哪些地方、依据哪一条裁决。
+> **无一条转移律因本节被冻结或验证。**
+
+- **依 `X-14`**（field-wide absence claim → search-scope claim）：本文件原有的每一个"领域里没有 / 结构上不可能"式表述已逐条降级为**检索范围**表述（见 §5 四类分级、§8 `ctsem`、U8）。
+- **依 R-D1**（`REJECT`）：§12 原建议 1（把 `I4` / `I11` / `I14` 写成 canonical 永久非目标）**被拒绝并撤回**。理由见 §12 的 `REJECTED` 记录。
+- **依 R-D2**（`WRONG-SCOPE`）：§5 由"一等交付物、单一逻辑类型"改写为四类分级（`I-STRUCTURAL` / `I-DESIGN` / `I-LIT-OPEN` / `I-CONVENTION`），并补上清单自身缺失的 `已识别 / 不可识别` 标记列。
+- **依 R-D3**（`CONTESTED`）：`I8` 改写。**依 R-D4**（`WRONG-SCOPE`）：`I12` 改为口径陈述。**依 R-D5**（`CONTESTED`）：`I9` 改为 estimand-scope 陈述。**依 R-D16**（`ACCEPT` 但补限定）：`I1` / `I17` 补限定。
+- **依 dispatch Track R3-E3 / `ROUND3_CHILD_CONTRACT` §4 的来源记账纪律**：本轮**未打开任何新来源**。凡本轮未打开的引用一律标 `NOT_OPENED`（见 §4 M8 的 89% / 4% 数字）。
+- **本轮发现的跨文件引文冲突（未解决，`NOT_OPENED`）**：§4 M8 与 §11 把 Hussey & Hughes 记作 **2018** 且 `DOI UNKNOWN_AS_OF`，而 `16 §16` 第 9 条把同一来源记作 **2020**（*AMPPS*, 3(2), 166–184，`10.1177/2515245919882903`）。本轮**未打开**该来源，**因此不裁决哪一年正确**；两处并存并各自标注，移交 R3-E3 复核。
+- **依 `PENDING_EVIDENCE_CHECK (R3-E3)`**：本文件不依赖 `Joel et al. 2020 / S04`、`Lavner / S19`、`Ideal / S31` 三个正在复核的承载源，故本节无相应挂起项。若将来加入，必须挂 `PENDING_EVIDENCE_CHECK (R3-E3)`。
+
+---
+
 ## 0. 读法
 
 LHRM 第一阶段的目标是 *"在任意时刻，对两个具体人及其关系进行结构化、方向化、时间索引、保留 Unknown 与不确定性的数学状态表示语言"*（`CURRENT_ARCHITECTURE.md` §1）。这不是"估计一个参数"，是"定义什么可以估计、什么不能"。
 
 因此本文件的主交付**不是方法推荐，而是边界**。
 
-建议阅读顺序：§1 识别约束 → §2 十个真实问题 → §3 覆盖矩阵 → §4 逐方法属性表 → **§5 识别不可能清单** → §6 自我欺骗模式 → §7 活跃争议 → §8 软件指针 → §9 非主张 → §10 剩余未知 → §11 引用。
+建议阅读顺序：§1 识别约束 → §2 十个真实问题 → §3 覆盖矩阵 → §4 逐方法属性表 → **§5 识别不可能清单（已按四类分级）** → §6 自我欺骗模式 → §7 活跃争议 → §8 软件指针 → §9 非主张 → §10 剩余未知 → §11 引用。
+
+**Round-3 读法补充：** §5 现在是**四个不同逻辑类型**的清单，不再是单一类型的"硬边界"。混读这四类会犯两种相反的错误：把 `I-DESIGN` 当成永久不可能（关闭唯一能解决它的研究计划），或把 `I-CONVENTION` 当成统计障碍（其实是写错，不是估不出）。
 
 ---
 
@@ -53,8 +70,34 @@ Reality != Observation != Belief
 
 这不是免责套话，是识别事实。它把 `AGENTS.md` 两条规则
 （*"Do not label an unvalidated formula, parameter, weight, probability, causal relation, distance metric, normalization rule, or state transition as scientifically established"*、
-*"Distance/weight/score/probability are downstream readouts"*)
+*"Distance/weight/score/probability are downstream readouts"*）
 变成可检查的书写规范。
+
+### 1.1 识别性的粒度：`个体层点值` 不可识别 ≠ `分布层量` 不可识别
+
+**Round-3 补记（依 R-D2 派生；原 §1 缺这一层，是本文件最容易被过度外推的一处。）**
+
+上表说的是"每一层的**真值**都不可由观测直接读出"。若把它读成"因此 LHRM 什么都不可识别"，
+就是从**个体层点值**的不可识别性过度外推到**分布层**。正确的关系是：
+
+| 粒度 | 状态 | 说明 |
+|---|---|---|
+| **个体层点值**（"person i 在 τ₀ 对 j 的 trust 是 0.63"） | **即使在完美模型下也不可识别** | 观测是 `report_function(state, context)`；数据只给 `P(state \| report)`。见 `I2`。 |
+| **分布层量**（`Z^k` 的 person 间方差、均值、与 `X` 的协方差、`d_k(a,b)` 的**分布**） | **在已知测量模型下可识别** | 识别走的是**测量模型的参数**（IRT 曲线、loadings、thresholds），不是单个个体的状态值。 |
+| **跨情境 / 跨 `t` 的均值比较**（强 mean comparison） | **未测测量不变性时未定义** | 见 `I8`。aliasing 仍可能（见 `I8` 改写后的措辞）。 |
+| **机制 / 形式**（`F` 的函数形式、归因机制） | **不由数据学习** | 见 `I10`；`F` 的形式是理论 / 设计承诺。 |
+
+**因此 LHRM 的书写义务被收窄为三条，全部可检查：**
+
+1. 任何 `Z[k,i,j,t]` 的读出**必须**写成 **estimate + uncertainty + evidence**（`AGENTS.md`
+   *"A coordinate may be … an estimate + uncertainty + evidence"*）。**posterior mean 不是状态真值。**
+2. **分布层结论必须显式声明所依赖的测量模型**（哪些 loadings / thresholds / IRT 曲线被当成已知）。
+   不声明测量模型的分布层陈述同样不成立。
+3. **强均值比较必须先给测量不变性层级序列**；未给则该比较**未定义**，而不是"证据不足"。
+
+**明确不主张：** 本文件**不**主张 LHRM 的任何 `Z` 是不可识别的。它主张的是：`Z` 的**点值**
+不可识别，**分布层**在给定测量模型下可识别，而这两句话都**不**是"因此本项目没有可估量的东西"。
+
 
 ---
 
@@ -280,6 +323,19 @@ Asparouhov, Hamaker & Muthén (2018) 把 DSEM 定位为四种技术的统一体�
 
 **结构效度报告不足的量化后果**（Hussey & Hughes 2018）：N = 144,496 sessions、15 问卷 26 分量表。按只查内部一致性的 modal practice，**89% 尺度"看似有效"**；按全面评估（内部一致性 + 即时/延迟 test-retest + 因子结构 + 对年龄与性别的 invariance），**只剩 4%**。作者提出 **"validity hacking (v-hacking)"**，并发现 *"the less commonly a test is reported in the literature, the more likely it was to be failed"*。
 
+> **Round-3 证据状态：`NOT_OPENED`。**
+> **记账依据：** dispatch Track R3-E3 与 `ROUND3_CHILD_CONTRACT` §4 的来源记账纪律 ——
+> **本轮未实际打开的来源一律记 `NOT_OPENED`，不得承担论证重量。**
+> 本轮**未打开** Hussey & Hughes (2018) 正文。上面这段是 Round-1 lane 的转述，其**来源语境未被核对**：
+> 被评估的 15 个量表如何被选出、"modal practice" 的定义、"4%" 是在哪一套判据下算出的，本文件**均未核实**。
+> **因此：**(a) 89% / 4% 这两个数字在本文件中**不得**承担任何论证重量；
+> (b) 它**只**支持一个**不依赖数字**的方向性论点——*"结构效度报告不全"* 这一问题存在；
+> (c) 任何引用这两个数字的文本必须同时携带 `NOT_OPENED`。
+> **保留它的唯一理由：** 它是 `SD10`（researcher DoF / v-hacking）唯一的量化锚；删掉它会让 `SD10` 变成无证据的断言。
+> **记账标记：** `CITED_SECONDARY / SOURCE_CONTEXT_NOT_OPENED`。
+> **对照（可承重）：** 同段前面的 Robitzsch (2022) PISA 2018 multiverse 逐字引文是**已核实**的，
+> 它的 "model uncertainty had almost the same impact as sampling errors" 独立支撑 `SD10` 与 `SD18`。
+
 | Q | 可识别 | 所需数据结构 | 关键假设 | 失败模式 / 误用 | 不得因果主张 |
 |---|---|---|---|---|---|
 | Q4 测量误差占比 | multi-indicator latent model 把 person 间方差分解为 trait component / group(nuisance) component / residual | 每构念 ≥3 指标 × 多波 | conditional independence（bifactor 下放宽到 S+1 个 latent 条件） | **单指标尺度上，person 间差异与 occasion 特异差异不可分** | 不得 |
@@ -348,31 +404,73 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 
 ---
 
-## 5. 识别不可能清单（**一等交付物**）
+## 5. 识别不可能清单（Round-3 已按四类分级；**不是**单一逻辑类型的一等交付物）
 
-> 这一节不是脚注。它是 LHRM 应在 canonical 层面承认的硬边界。**换方法不能越过这一节。**
+> **Round-3 记账（依 R-D2 `WRONG-SCOPE`）。** 本节在 Round-1 形态下被呈现为"一等交付物"、
+> 并暗示"换方法不能越过这一节"。那**是一处层级误置**：17 条里混着四种逻辑上不同的东西，
+> 用同一句话描述它们，会同时产生两个方向的错误。
+> **逐字保留的原始主张：** *"这一节不是脚注。它是 LHRM 应在 canonical 层面承认的硬边界。换方法不能越过这一节。"*
+> **取代依据：** `REJECTED_OR_WEAK_FINDINGS.md` **R-D2**（依据 `D-C1` / `D-C10`，判 `WRONG-SCOPE`）
+> + `ARCHITECT_ADJUDICATION_V1` 的 X-14（field-wide claim → search-scope claim）。
+> **仍然成立的一半：** "换方法不能越过这一节"对 `I-STRUCTURAL` 那一类成立；对其余三类不成立。
 
-| ID | 结构上不可能回答的问题 | 为什么换方法也解决不了 | 对 LHRM 的具体后果 |
+### 5.0 四类的定义
+
+| class | 定义 | 正确的行动 | 误用它的后果 |
 |---|---|---|---|
-| **I1** | 单一段 case（Case Bank 材料）能否拟合关系状态转移律 `F`？ | `F` 的函数形式不可由数据学习（结构因果模型不可由数据识别，只能由理论 + 设计限制）。单一轨迹对 `F` 的约束是**无穷薄的曲线**。 | Case Bank 继续只做 representation completeness / closure / regression 测试（与 `CURRENT_ARCHITECTURE.md` §10 一致）。**不得**从 case 拟合转移律。 |
-| **I2** | 对方真实状态 `Z[k,j,i,t]` 的真值 | 观测是 `report_function(state, context)`。数据只给 `P(state \| report)`；即使完美模型，posterior 也不会坍缩到点。 | 任何 `Z` 都必须**始终**表示为 estimate + uncertainty + evidence（§9.6）。**不得**把 posterior mean 写成"真实状态"。 |
-| **I3** | partner 报告的准确性 | SRM 的 accuracy 成分需要多个 target 与多个 perceiver（round-robin）。两人 dyad 不满足。 | **不得**把 partner report 的差异解释为"一方更了解对方"。 |
-| **I4** | ⭐ 两人 dyad 里分离 `source_i` / `target_j` / `directed_dyad_(i->j)` | 自由度：2 条有向边 = 2 个自由度；SRM 三成分 + 多个 target 需要更多。 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §1 的分解式在**纯 dyad 设计下不可识别**。三者可作**架构占位符**存在，但**不得**写成"估计值"。要估计它们必须重新采集 round-robin / 交叉设计数据。 |
-| **I5** | 关系的"因果优先级"（谁是原因） | 需要 exchangeability + 无 time-varying 混杂 + 顺序可交换性。二人关系中"共同环境 + 共同第三方 + 归因反馈 + 双向行为反馈"同时破坏它们；且 no-interference 本身不成立。 | **不得**给"A 导致了 B 的关系破裂"这类单向归因。 |
-| **I6** | 互惠 / 不对称作为 primitive 的额外信息 | 若 `Z[k,i,j]` 与 `Z[k,j,i]` 可稳定解耦，则 `MutualX` / `Asymmetry` 是**确定性派生量**，零自由度。 | 这**支持** §2 的"优先派生"决定。同时：**不得**反过来用"互惠低"去推断哪个方向分量错（推导不可逆）。 |
-| **I7** | "这对关系现在处于哪个离散状态"作为**主要估计目标** | LTA/LMM 的状态数 K 与转移矩阵约束是人为设定；换 K 与约束就换一套"状态"。 | 与"不用 pre-enumerated state machine 作引擎"一致：LTA 只能作**压缩投影 + 诊断**，且须报 K / 约束敏感性。 |
-| **I8** | ⭐ "变化了多少"与"变了什么"（测量工具变了） | 观测协方差模式在两种生成机制（DIF vs 真变）下**相同**。除非有 invariant 锚定 item 或外部锚。 | 任何动态结论前必须先做 invariance 层级序列。否则结论**未定义**。 |
-| **I9** | `Constraint`（如"订婚前不发生性行为"）的 effect | Constraint 本身是"未发生的事件"，无反事实对照就无 estimand。 | `AGENTS.md` 已把 constraint 与 state 分开。**不得**把 constraint 的存在写成"性欲为零"（§6 明举此例）。统计上是 **structural zero / undefined**，不是 `0`。 |
-| **I10** | "为什么这段关系如此"的机制归因 | 不可约化的等价模型：不同 DAG / `F` 形式可给相同拟合；g-formula 的各组成部分**可能都没有**因果解释。 | **不得**把最好拟合的 `F` 当机制。`F` 的形式是理论承诺，不是估计结果。 |
-| **I11** | "这是关系的性质 / 这个人的性质 / 这段历史的性质 / 这个文化标签的性质" | 需要构念 × 角色 × 情境 × 文化的**正交交叉设计**。LHRM 当前数据源不满足。 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 的 cross-context test 目前**不可执行**。应标 `BLOCKED_BY_DATA`。 |
-| **I12** | ⭐ 状态转移的**速率** | 同一 `psi(t)` 序列在不同 lag / 时间分辨率下给出不同 AR 系数与不同"惯性"结论；若 `tau` 是 history branch 或回忆时间而非真实连续时间，"lag"**不是物理时差**。 | 所有速率陈述必须**相对于采样协议**表述。`X_(t+1) = F(...)` 中的 `+1` 不是一个自然量。 |
-| **I13** | "完整轨迹"的陈述（当存在任何缺失时） | 任何"完整轨迹"都是 MAR 下的模型外推；FIML 也不例外。 | 缺失不是中性。必须报 MNAR 敏感性。 |
-| **I14** | ⭐ dyad 内两条有向边的**非独立来源分解**（person 层 trait vs dyad 层特殊） | 同一 dyad 内至少有 person 层与 dyad 层两个来源；Mplus DSEM 是 two/three-level，dyad 当 cluster 时两条边在同一 level，**无法**同时分离两者。要分离需 SRM 式多 target 设计（I4），或至少 3 波 + STARTS + 显式排除遗漏型 TVC。 | **这是 LHRM 最难的一个识别缺口**，直接限制 §1 分解式中"多少是 `source_i` / `target_j` / `directed_dyad`"的可回答性。 |
-| **I15** | 从单个案例估计现实概率 | `AGENTS.md` 与 `CURRENT_ARCHITECTURE.md` §10/§11 已明示。 | 方法学上：n = 1 的 hazard / transition 无 estimand。 |
-| **I16** | 观测数据能否给出"关系应当如何"的规范性判断 | 描述性 / 预测性 / 因果性三类问题的 estimand 互不相同（*"we should distinguish between descriptive, predictive, and causal research questions"*）。规范性判断不在其中任何一类。 | 任何 LHRM 输出的"建议"必须标为 downstream readout，不得反向进入 ontology。 |
-| **I17** | "trait 还是 state"这个二分本身 | TSE 会 improper solution；LST-AR 只适用于自相关随时间增加的构念；TSO 仍有 occasion factor stability 太大 / 太小的问题。Cole et al. 明确这是 *"empirical or conceptual problems"*，不是已解决的对立。 | **不得**把 Q2 当成有唯一答案的分类问题。应作为**模型依赖的分解比例**报告，并报模型敏感性。 |
+| **`I-STRUCTURAL`** | 限制是**研究对象本身**的属性。在本项目的研究对象（Human-Dyad、`Z[k,i→j,τ]`）内，**换方法与换设计都不能消除**。 | 在写作规范与 protocol 层承认。 | 若把"本类"与"下一类"混同，会把可解的问题写成不可解。 |
+| **`I-DESIGN`** | 限制来自**当前数据的设计**。本文件自己的 §10（U8 / U10 等）给出了绕开路径（重新采集 / 换设计）。 | **保留为研究计划**；写进采集需求，不写进永久非目标。 | **把它写成永久 canonical 非目标 = 关闭唯一能解决它的研究计划。** |
+| **`I-LIT-OPEN`** | 是否构成限制、以及限制的确切边界，**本次未读到能定论的来源**。 | 标 `PENDING_EVIDENCE_CHECK`，列入取样复核。 | 把未定写成否定。 |
+| **`I-CONVENTION`** | **不是识别限制**，而是 estimand scope / 报告口径 / 冗余约定。违反它得到的是"写错"，不是"估不出"。 | 写进书写规范与 `FREEZE_RECORD` 字段。 | 把它算成统计障碍，会虚增"不可识别"的规模。 |
+
+**分级汇总（17 条，计数可复算）：** `I-STRUCTURAL` **8**（I1 / I2 / I3 / I5 / I8 / I10 / I13 / I15）·
+`I-DESIGN` **3**（I4 / I11 / I14）· `I-LIT-OPEN` **1**（I17）· `I-CONVENTION` **5**（I6 / I7 / I9 / I12 / I16）。
+
+> **清单自身缺一个标记（R-D2 的第二半，Round-3 补上）。** Round-1 形态的这张表**只有**"为什么换方法也解决不了"
+> 一列，**没有**"这一行涉及的 LHRM 量在当前设计下到底是不是可识别的"这一列。
+> 结果是：读者无法区分"这一行说某个量**不可识别**"与"这一行说某个量的**书写方式被规定**"。
+> Round-3 因此增加 `识别状态` 列（`UNIDENTIFIABLE_*` / `SCOPE_NO_*` / `MODEL_*` / `NO_ESTIMAND_*` / `DERIVED_*`），
+> 每一行的取值都在表内给出。**这是清单层面的记账修正，不是新的识别主张。**
+
+### 5.1 逐条清单
+
+| ID | class | 识别状态 | 问题（Round-3 改写后的措辞） | 机理 | 对 LHRM 的具体后果 |
+|---|---|---|---|---|---|
+| **I1** | `I-STRUCTURAL`（窄） | `UNIDENTIFIABLE_AS_STATED` | 单一段 case（Case Bank 材料）能否拟合关系状态转移律 `F`？ | `F` 的函数形式不可由数据学习（结构因果模型不可由数据识别，只能由理论 + 设计限制）。单一轨迹对 `F` 的约束是**无穷薄的曲线**。 | Case Bank 继续只做 representation completeness / closure / regression 测试（与 `CURRENT_ARCHITECTURE.md` §10 一致）。**不得**从 case 拟合转移律。**限定（R-D16）**：`n = 1` 下"不可识别"**不等于**"换任何方法也做不到"——换方法可以对单条轨迹作**样本内**拟合，只是**没有 population estimand**。两者不可混写。 |
+| **I2** | `I-STRUCTURAL`（个体层） | `PARTIALLY_IDENTIFIABLE` | 对方真实状态 `Z[k,j,i,t]` 的**点值** | 观测是 `report_function(state, context)`。数据只给 `P(state \| report)`；即使完美模型，posterior 也不会坍缩到点。 | 任何 `Z` 都必须**始终**表示为 estimate + uncertainty + evidence（§9.6）。**不得**把 posterior mean 写成"真实状态"。**限定（§1.1）**：**分布层**量（方差、均值、与 `X` 的协方差）在**已知测量模型**下**可识别**；因此本行**不是**"关系状态不可研究"。 |
+| **I3** | `I-STRUCTURAL` | `UNIDENTIFIABLE_AS_STATED` | partner 报告的准确性 | SRM 的 accuracy 成分需要多个 target 与多个 perceiver（round-robin）。两人 dyad 不满足。 | **不得**把 partner report 的差异解释为"一方更了解对方"。 |
+| **I4** | **`I-DESIGN`** | `UNIDENTIFIABLE_UNDER_CURRENT_DESIGN` | ⭐ 两人 dyad 里分离 `source_i` / `target_j` / `directed_dyad_(i->j)` | 自由度：2 条有向边 = 2 个自由度；SRM 三成分 + 多个 target 需要更多。 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §1 的分解式在**纯 dyad 设计**下不可识别。三者可作**架构占位符**存在，但**不得**写成"估计值"。**限定（R-D1）**：这是**数据设计限制**，**不是**永久非目标——要估计它们必须重新采集 round-robin / 交叉设计数据（§10 **U10**）。 |
+| **I5** | `I-STRUCTURAL` | `UNIDENTIFIABLE_AS_STATED` | 关系的"因果优先级"（谁是原因） | 需要 exchangeability + 无 time-varying 混杂 + 顺序可交换性。二人关系中"共同环境 + 共同第三方 + 归因反馈 + 双向行为反馈"同时破坏它们；且 no-interference 本身不成立。 | **不得**给"A 导致了 B 的关系破裂"这类单向归因。**限定**：本行的补救**不是**放弃因果写法，而是给出显式 **exposure map**（§4 M10）。no-interference 在二人关系中是**由定义**不成立，这是本项目唯一一条真正的 `I-STRUCTURAL` 因果限制。 |
+| **I6** | `I-CONVENTION` | `DERIVED_ZERO_DOF` | 互惠 / 不对称作为 primitive 的额外信息 | 若 `Z[k,i,j]` 与 `Z[k,j,i]` 可稳定解耦，则 `MutualX` / `Asymmetry` 是**确定性派生量**，零自由度。 | 这**支持** §2 的"优先派生"决定。同时：**不得**反过来用"互惠低"去推断哪个方向分量错（推导不可逆）。**这是冗余约定，不是识别障碍。** |
+| **I7** | `I-CONVENTION` | `DESIGN_SET_NOT_ESTIMAND` | "这对关系现在处于哪个离散状态"作为**主要估计目标** | LTA/LMM 的状态数 K 与转移矩阵约束是人为设定；换 K 与约束就换一套"状态"。 | 与"不用 pre-enumerated state machine 作引擎"一致：LTA 只能作**压缩投影 + 诊断**，且须报 K / 约束敏感性。**这是投影约定**——把 LTA 当主估计目标是**选错了 estimand**，不是"撞上了一堵统计墙"。 |
+| **I8** | `I-STRUCTURAL`（**限缩**） | `UNDEFINED_WITHOUT_INVARIANCE` | ⭐ "变化了多少"与"变了什么"（测量工具变了） | 观测协方差模式在两种生成机制（DIF vs 真变）下**相同**。除非有 invariant 锚定 item 或外部锚。 | **Round-3 改写（依 R-D3 `CONTESTED`）。** 逐字保留原文：*"任何动态结论前必须先做 invariance 层级序列。否则结论未定义。"* **该措辞过强，被取代。** 正确表述：**未测测量不变性时，强均值比较（scalar / strict level 下的跨组、跨 `t` 均值差）未定义**；而 aliasing（DIF vs 真变的不可区分性）**仍然可能，即使不做均值比较**。**本文件自引的反证来源：** Robitzsch, D. (2023), *Why full, partial, or approximate measurement invariance needs to take a validity-based perspective*, *SEM*, `10.1080/10705511.2023.2191292`（§11「测量」引用组的 Robitzsch (2023) 条目，DOI 逐字沿用）—— 它否定的是"任何动态结论都需要完整不变性序列"这一强形式。**因此不得**用本行取消"跨 `t` 比较同一构念前先给不变性报告"这一较弱要求（`R16-UC06` 仍成立）。 |
+| **I9** | **`I-CONVENTION`** | `SCOPE_NO_ESTIMAND` | `Constraint`（如"订婚前不发生性行为"）的 effect | Constraint 本身是"未发生的事件"，无反事实对照就**无 estimand**。 | `AGENTS.md` 已把 constraint 与 state 分开。**不得**把 constraint 的存在写成"性欲为零"（§6 明举此例）。统计上是 **structural zero / undefined**，不是 `0`。**Round-3 改写（依 R-D5 `CONTESTED`）**：本行是**estimand scope 陈述**——该 estimand **不在定义域内**，因此不存在"估不准"的问题；把它登记成"识别限制"会**虚增**不可识别清单的规模（正是 §5.0 `I-CONVENTION` 一栏要防的错误）。 |
+| **I10** | `I-STRUCTURAL` | `UNIDENTIFIABLE_AS_STATED` | "为什么这段关系如此"的机制归因 | 不可约化的等价模型：不同 DAG / `F` 形式可给相同拟合；g-formula 的各组成部分**可能都没有**因果解释。 | **不得**把最好拟合的 `F` 当机制。`F` 的形式是理论承诺，不是估计结果。 |
+| **I11** | **`I-DESIGN`** | `BLOCKED_BY_CURRENT_DESIGN` | "这是关系的性质 / 这个人的性质 / 这段历史的性质 / 这个文化标签的性质" | 需要构念 × 角色 × 情境 × 文化的**正交交叉设计**。LHRM 当前数据源不满足。 | `CONSTRUCT_SCOPE_DIRECTIONALITY.md` §7 的 cross-context test 目前**不可执行**。应标 `BLOCKED_BY_DATA`。**限定（R-D1）**：这是**数据设计限制**，不是永久非目标。 |
+| **I12** | **`I-CONVENTION`** | `SCOPE_NO_NATURAL_QUANTITY` | ⭐ 状态转移的**速率** | 同一 `psi(t)` 序列在不同 lag / 时间分辨率下给出不同 AR 系数与不同"惯性"结论；若 `tau` 是 history branch 或回忆时间而非真实连续时间，"lag"**不是物理时差**。 | 所有速率陈述必须**相对于采样协议**表述。`X_(t+1) = F(...)` 中的 `+1` 不是一个自然量。**Round-3 改写（依 R-D4 `WRONG-SCOPE`）**：本行是**口径陈述**——问题不是"速率不可识别"，而是"**速率这个量在未指定采样协议时没有唯一取值**"。同一序列在不同 lag 上给出不同 AR 系数，是**同一份数据的两种合法读法**，不是两种互斥的估计。 |
+| **I13** | `I-STRUCTURAL` | `MODEL_EXTRAPOLATION_ONLY` | "完整轨迹"的陈述（当存在任何缺失时） | 任何"完整轨迹"都是 MAR 下的模型外推；FIML 也不例外。 | 缺失不是中性。必须报 MNAR 敏感性。 |
+| **I14** | **`I-DESIGN`** | `UNIDENTIFIABLE_UNDER_CURRENT_DESIGN` | ⭐ dyad 内两条有向边的**非独立来源分解**（person 层 trait vs dyad 层特殊） | 同一 dyad 内至少有 person 层与 dyad 层两个来源；Mplus DSEM 是 two/three-level，dyad 当 cluster 时两条边在同一 level，**无法**同时分离两者。要分离需 SRM 式多 target 设计（I4），或至少 3 波 + STARTS + 显式排除遗漏型 TVC。 | **这是 LHRM 最难的一个识别缺口**，直接限制 §1 分解式中"多少是 `source_i` / `target_j` / `directed_dyad`"的可回答性。**限定（R-D1）**：数据设计限制，**不是**永久非目标；§10 **U8**（dyadic DSEM / 连续时间 SDE 的现成实现）给出一条**待核实**的绕开路径。 |
+| **I15** | `I-STRUCTURAL` | `NO_ESTIMAND_AT_N1` | 从单个案例估计现实概率 | `AGENTS.md` 与 `CURRENT_ARCHITECTURE.md` §10/§11 已明示。 | 方法学上：n = 1 的 hazard / transition 无 estimand。 |
+| **I16** | `I-CONVENTION` | `SCOPE_NO_ESTIMAND` | 观测数据能否给出"关系应当如何"的规范性判断 | 描述性 / 预测性 / 因果性三类问题的 estimand 互不相同（*"we should distinguish between descriptive, predictive, and causal research questions"*）。规范性判断不在其中任何一类。 | 任何 LHRM 输出的"建议"必须标为 downstream readout，不得反向进入 ontology。**这是 estimand-class 纪律**（`DESCRIPTIVE \| PREDICTIVE \| CAUSAL` 三值封闭表），不是识别限制。 |
+| **I17** | **`I-LIT-OPEN`** | `MODEL_DEPENDENT / LIT_UNSETTLED` | "trait 还是 state"这个二分本身 | TSE 会 improper solution；LST-AR 只适用于自相关随时间增加的构念；TSO 仍有 occasion factor stability 太大 / 太小的问题。Cole et al. 明确这是 *"empirical or conceptual problems"*，不是已解决的对立。 | **不得**把 Q2 当成有唯一答案的分类问题。应作为**模型依赖的分解比例**报告，并报模型敏感性。**Round-3 补限定（依 R-D16）：** (a) **trait 与 state 不可直接比较**——它们是同一方差的两套**分解记账**，`RIx` 的方差**不是** trait 的量，`Slope` 的方差**不是** state 的量；因此本行禁止"测出 trait = 0.42 ⇒ 0.42 是 trait"这类**跨分解记账**的读法（与 `SD6` 同源）。(b) "不可识别"**不等于**"换方法也做不到"：`B6`（multiverse / specification curve）正是把这一未决问题变成**可报告分布**的标准工具。 |
+
+### 5.2 四条跨行结论
+
+1. **只有 `I-STRUCTURAL` 那 8 条能支持"换方法不能越过"这句话。** 其余 9 条各有各的正确行动
+   （保留为研究计划 / 标 `PENDING_EVIDENCE_CHECK` / 写进书写规范）。
+2. **`I-DESIGN` 那 3 条（I4 / I11 / I14）是最容易被写成永久非目标、因而最危险的三条。**
+   Round-1 §12 建议 1 正是这么做的；该建议已被 `REJECT`，理由见 §12。
+3. **`I-CONVENTION` 那 5 条（I6 / I7 / I9 / I12 / I16）不进入"不可识别"计数。**
+   它们进入 `FREEZE_RECORD` 的字段与报告规范（见 `16_EMPIRICAL_VALIDATION_PROTOCOL.md` §7.1）。
+4. **分级中有一处边界条目，必须点名：`I8`。** 它被放在 `I-STRUCTURAL`，但它自己的机理栏写着
+   *"除非有 invariant 锚定 item 或外部锚"* —— 即**存在一种工具/锚的设计可以部分绕开它**。
+   ⇒ 它的准确读法是：**"在自陈数据 + 无外部锚的默认设计下不可区分"**（`I-STRUCTURAL` 的一半）
+   **与**"加锚定 item 后部分可解"（`I-DESIGN` 的一半）。本文件**不**把它改判进 `I-DESIGN`，
+   因为 DIF 与真变"协方差模式相同"这一核心在加锚后**仍不自动消失**；但**任何人不得**用
+   "本行 ∈ `I-STRUCTURAL`" 来主张"加锚定 item 也没用"。
 
 ---
+
 
 ## 6. 统计自我欺骗模式
 
@@ -383,11 +481,11 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 | **SD3** | 把 measurement invariance 失败当真实变化（**或反向**） | 两者协方差模式相同（I8） | 把"量表在离婚后失效"读成"离婚导致自我报告改变" |
 | **SD4** | 把 actor / partner path 叫 influence | 官方脚注即禁止 | "partner effect 表明 A 影响了 B" |
 | **SD5** | 把 within-person 效应当总体相关 | RI-CLPM 的 estimand 转移：*"around the person mean"*，*"typically less relevant"* | 用 RI-CLPM 论证"高 trust 的人更少焦虑"——那其实是 between-person 命题 |
-| **SD6** | ⭐ 把 random intercept 当"真 trait" | illusory between-person component：可能**只**来自省略的 time-varying covariate | "`RIx` 的方差 0.42 → trust 是稳定 trait" |
+| **SD6** | ⭐ 把 random intercept 当"真 trait" | illusory between-person component：可能**只**来自省略的 time-varying covariate（Robitzsch & Lüdtke 2025 原文：*"can occur **only** due to the presence of time-varying covariate processes that are **omitted** from the analysis model"*） | "`RIx` 的方差 0.42 → trust 是稳定 trait"。**Round-3 补处置：`RIx` 的方差不得直接写进"stable trait"。** 正确写法：`RIx` 的方差 = **一个分解记账的残差项**，其身份是"在当前模型规格下未被 within-person 变化与测量误差吸收掉的 person 间方差"；只有在**显式排除**了遗漏型 time-varying covariate 的充要条件之后，它才可被读作 person 层稳定成分。**未排除前的合法表述只有一种**：`RIx_variance = 0.42, model = <规格>, omitted-TVC condition = <已检查/未检查>`。另见 §5 `I17` (a)：`RIx` 的方差**不是** trait 的量，两套分解记账不可直接比较。 |
 | **SD7** | 把 effect size / R² / fit 当因果证据 | 2 波 CLPM 饱和 → 无 fit 信息；且 45% 文献这样做 | "模型拟合良好 → 我们的关系状态模型是对的" |
-| **SD8** | 把 dyad 内 N 加大当精度提高 | 分析单位是 **dyad** | 把 200 人 × 2 方向的 400 个数当 n = 400 |
+| **SD8** | 把 dyad 内 N 加大当精度提高 | 分析单位是 **dyad**。**Round-3 补处置（数量形式）：** `n_dyads ≠ n_people × 2`。200 个人 × 2 个方向 = **400 个数字**，**不是** `n = 400`：**这 400 个数字落在 200 个 person 上、组成 200 个 dyad block 内的 200 对有向量**，其自由度受 (a) person 层非独立（每人被计入两次）与 (b) dyad 内两成员残差协方差 双重约束。任何 dyad 层推断的有效样本量是 **`n_dyads`**；person 层推断的是 **`n_people`**；**没有任何一种推断的有效 n 是 2 × n_people**。 | 把 200 人 × 2 方向的 400 个数当 n = 400；把 `n_people × 2` 写进 `R16-UC02` 的 `n_dyads` 位 |
 | **SD9** | 从 p 值挑最终随机结构 | 明确禁止：*"do not use p values to decide for the final model"* | 用"收敛良好"或"p 显著"决定保留哪些 pair-level 方差 |
-| **SD10** | researcher degrees of freedom / **v-hacking** | 结构效度报告不全 → 89% vs 4% 的差距 | 换 indicator、换 invariance 处理、换 centering、换约束直到 cross-lag 显著 |
+| **SD10** | researcher degrees of freedom / **v-hacking** | 结构效度报告不全 → 89% vs 4% 的差距（**`NOT_OPENED`：该数字的来源语境本轮未打开，不得承担论证重量；见 §4 M8**）。**可承重的锚**是 Robitzsch (2022) PISA 2018 multiverse 的逐字引文（`model uncertainty had almost the same impact as sampling errors`），它不依赖 89/4。 | 换 indicator、换 invariance 处理、换 centering、换约束直到 cross-lag 显著 |
 | **SD11** | 把 partial invariance 当解决方案 | n > 2 组时 *"comparing apples and oranges"*（被释放的 item 不参与 linking） | 三个文化情境各用不同 item 集做均值比较 |
 | **SD12** | 把"不显著"当"不存在" | power 随效应类型差 1–2 个量级；部分理论问题是 between-person 而 RI-CLPM 原理上无法表达 | partner effect 常被指为 power 不足 |
 | **SD13** | 把 hazard ratio 当"确定解体" | competing risks + 双向报告偏差 + latent initiation | "HR = 2.1 → 这段关系会解体" |
@@ -402,6 +500,43 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 ---
 
 ## 7. 活跃争议（呈现争议，不给伪共识）
+
+> **保留（本轮不改）。** 本节的方法学纪律是：**呈现争议，不给伪共识。**
+> 逐字保留的原始标题与主张：*"## 7. 活跃争议（呈现争议，不给伪共识）"* ·
+> LHRM 立场列中反复出现的 **"不给伪共识"**（测量不变性之争行）。
+> **这是本文件最强的一条方法学陈述，Round-3 不削弱它。** 它的具体形式是：
+> **不在两条未被裁定的路线之间宣布赢家；同时仍规定"该怎么做"**（并行报告 + 声明 estimand 差异 + 不用 fit 选模型）。
+> 拒绝伪共识 **不等于** 拒绝给操作规则。
+
+### 7.0 反向批评：不给伪共识本身也会失败
+
+**Round-3 新增。本条在 `REJECTED_OR_WEAK_FINDINGS.md` §R-D 中**没有**逐条对应项；它与 R-D2 要求同一种记账：把一个混在一起的清单拆成可判定的类型。本文件 Round-1 形态缺这一半。**
+
+"呈现争议"有一个**对称的失败模式**，本文件 Round-1 形态**没有**处理它：
+
+> **把"两边都有人主张"当成结论本身。** 一张只列双方论点、不列**"什么会裁定它"**的表，
+> 可以无限延长而不产生任何决策；它把"尚未决定"渲染成"两边对称"，
+> 而**论据数量对称**与**证据强度对称**是两件事。
+
+因此本节每一行必须额外回答一个问题：**什么会把这一行从"未解决"移到"已解决"？**
+下表给出该问题的答案（`SETTLED_BY` 列）。**没有 `SETTLED_BY` 的行不是"中立"，是"未做功课"。**
+
+| 议题 | `SETTLED_BY`（会把该行移出"未解决"的东西） |
+|---|---|
+| CLPM vs RI-CLPM vs STARTS vs ARTS | **不由一次模拟裁定。** 由 DGP 假设的**可检验后果**裁定：需要一个设计，能在同一份数据上让 CLPM 与 RI-CLPM 给出**不同**的实质结论，并预先登记哪个结论为真。在此之前状态是 `UNRESOLVED_BY_CONSTRUCTION`。 |
+| random intercept 是否为真 trait | Robitzsch & Lüdtke (2025) 给出的**充要条件**是否在具体研究中可检验并被检验。**当前**：条件明确、被引，但**在 LHRM 的候选数据上从未被检验** ⇒ `UNTESTED_HERE`。 |
+| 测量不变性是必要前提吗 | Robitzsch (2023) 提出的 validity-based 取向若能被形式化，则**部分争议**（"必要且充分"这一强形式）可结清。**当前**：`ACTIVE`。 |
+| trait vs state 的二分 | 见 §5 `I17` —— 本文件已把它登记为 `I-LIT-OPEN`，**不**再当作可被本节裁定的问题。 |
+| LTA/LMM 的 K 与约束 | 不可裁定。它是**约定**，见 §5 `I7`（`I-CONVENTION`）。 |
+| CLPM with binary/ordinal | 待 Muthén et al. (2024) 的方法被独立复现。 |
+| DSEM 的"环"与"边界" | 需要在人类 dyadic 数据上做出第一份实证基线；**目前尚无**。 |
+| AR vs RDSEM | **已解决**（Asparouhov & Muthén 2020 的重参数化等价）。 |
+| DAG / `F` 形式是否可由数据学到 | **已解决**（不可）。 |
+| 2-wave CLPM 能否谈 fit | **已解决**：不能。附量化锚 —— Hamaker et al. (2015) 摘要逐字：*"We found that **45% of the studies** that we examined estimated the CLPM based on only two waves of data. In these cases, the CLPM is saturated, and hence **no statements regarding model fit can be made**."* ⚠ **措辞纪律：** 该数字说的是"**所估计的 CLPM 只基于两波**"，**不是**"45% 的文献拟合了二波 CLPM"，更**不是**关于拟合质量的判断。 |
+| no-interference 在二人关系是否可能 | **已解决**：不可能。这是 LHRM 的定义性约束。 |
+
+**明确不主张：** 上表**不**主张任何一行已经裁定，也**不**主张"双方论据等量"。
+它主张的是：**未解决必须写成未解决，并附上裁定条件**；把未解决写成中立是一种记账错误。
 
 | 议题 | 争议双方 | 现状 | LHRM 立场 |
 |---|---|---|---|
@@ -431,7 +566,7 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 | RI-CLPM 官方代码补充站（Mplus + lavaan + FAQ） | Mulder & Hamaker | `https://jeroendmulder.github.io/RI-CLPM/`（`/mplus`、`/lavaan`、`/faq.html`） | 已核实（FAQ 全文） |
 | CLPM 建模策略 web talk | Muthén & Asparouhov | `https://statmodel.com/download/WebTalk4.pdf` | 已核实 |
 | ILM 模型比较 / RDSEM | Asparouhov & Muthén | `https://statmodel.com/download/RDSEM.pdf` | 已核实 |
-| **连续时间 SDE / DSEM（R）** | `ctsem` **v3.11.1**（published 2026-07-13；Driver, Voelkle, Oud）；SDE / 差分方程 + ML/EM 或 Stan HMC | `https://CRAN.R-project.org/package=ctsem`；repo `https://github.com/cdriveraus/ctsem` | 已核实（CRAN 页 fetch） |
+| **连续时间 SDE / DSEM（R）** | `ctsem` **v3.11.1**（published 2026-07-13；Driver, Voelkle, Oud）；SDE / 差分方程 + ML/EM 或 Stan HMC | `https://CRAN.R-project.org/package=ctsem`；repo `https://github.com/cdriveraus/ctsem` | **Round-3 由「已核实」降为 `PLAUSIBLE`。** 已核实的只是 **CRAN 包页 + 版本号 + 发布日期**；上面这句的**能力描述**（"SDE / 差分方程 + ML/EM 或 Stan HMC"）来自包页摘要，**本轮未逐条打开文档核实**。**能力时间戳：`ctsem` v3.11.1，published 2026-07-13，核实日期 2026-09-26 / 2026-09-27。任何能力主张必须携带该版本戳**——工具能力随版本变化，脱离版本的"该工具能做 X"是**无时间戳的陈述**，等于未陈述。 |
 | **多维 IRT / bifactor / two-tier（Q4, Q7）** | `mirt` **v1.47**（published 2026-08-20；Chalmers）；含 confirmatory bifactor / two-tier、mixture IRT、unfolding models | `https://CRAN.R-project.org/package=mirt` | 已核实（CRAN 页 fetch） |
 | SEM / FIML / RI-CLPM（R） | `lavaan` | `https://lavaan.ugent.be/`（**本次 fetch 失败 → `UNKNOWN_AS_OF`**）；教程 PDF 已读 | URL 未核实 |
 | MI（Q8） | `mice`、`blimp` | 本次未 fetch | `UNKNOWN_AS_OF` |
@@ -465,6 +600,13 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 13. **不主张** 修改任何 canonical doc。本文件为 `RESEARCH_CANDIDATE`。
 14. **不主张** R03 / R04 等 sibling lane 的结论。本 lane 未读 sibling lane 输出。
 15. **不主张** dyad 数据已足够回答 Q1–Q3。这取决于剩余未知 U5 / U10。
+16. **（Round-3）不主张**任何 `I-DESIGN` 类条目是永久不可解的。`I4` / `I11` / `I14` 是数据设计限制，本文件自己的 U8 / U10 给出了绕开路径。
+17. **（Round-3）不主张** §5 的 17 条构成同一种"硬边界"。它们按四类分级，计数为 `8 / 3 / 1 / 5`；只有 `I-STRUCTURAL` 那 8 条支持"换方法不能越过"。
+18. **（Round-3）不主张** LHRM 的 `Z` 不可研究。`I2` 只说**个体层点值**即使在完美模型下也不可识别；**分布层**量在**已知测量模型**下可识别（§1.1）。
+19. **（Round-3）不主张** 89% / 4%（Hussey & Hughes 2018）这一数字的来源语境已被核实。该数字标 `NOT_OPENED`，**不承担论证重量**。
+20. **（Round-3）不主张** `ctsem` 具备 dyadic / 多 agent 扩展。§8 的 `ctsem` 能力陈述为 `PLAUSIBLE` 且带版本戳（v3.11.1 / 2026-07-13）；dyadic 扩展为 `NOT_ESTABLISHED`。
+21. **（Round-3）不主张** §7 的"不给伪共识"等于"不必给出裁定条件"。Round-3 为每一行补了 `SETTLED_BY`，因为"两边都有人主张"不是中立。
+22. **（Round-3）不主张**本轮新打开过任何来源。本轮全部改动是**记账与措辞**修正；未打开的引用标 `NOT_OPENED`。
 
 ---
 
@@ -479,7 +621,8 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 | U5 | ⭐ LHRM 实际可获得的**波数分布** | **决定 Q1–Q5 是否可行**。若多数数据只有 1–2 波 → Q1 / Q2 / Q3 基本不可估计（2 波 CLPM 饱和且无法分离 within-person） | 与 R04 对齐后重估；可能需要把 LHRM 动态部分明确标为"需专门采集设计" |
 | U6 | 中文 / 东亚语境的 relationship state 测量工具 | Q7 跨文化部分 | 与 R03 对齐 |
 | U7 | `Sonnenstag et al.` 综述的确切年份 | 引用 | 标 `UNKNOWN_AS_OF` |
-| U8 | dyadic DSEM / dyadic 连续时间 SDE 的现成实现 | **直接决定 I14 能否被绕开** | 需单独核实 `ctsem` 是否有 dyadic / 多 agent 扩展 |
+| U8 | dyadic DSEM / dyadic 连续时间 SDE 的现成实现 | **直接决定 I14 能否被绕开** | 需单独核实 `ctsem` 是否有 dyadic / 多 agent 扩展。**Round-3 补记：`NOT_ESTABLISHED`。** §8 的 `ctsem` 行**只**核到包页与版本（v3.11.1 / 2026-07-13），能力陈述为 `PLAUSIBLE`；**不得**由 §8 的表格行推出"`ctsem` 具备 dyadic / 多 agent 扩展"。在打开其文档前，本行状态是 `UNKNOWN_AS_OF`，且 §5 `I14` 的 `I-DESIGN` 分类**不依赖**该工具存在——它依赖的是"需要重新采集"这个设计事实。 |
+| U8b | ⭐ 人类关系状态是否存在**迟滞 / 路径依赖** | 决定 I-DESIGN 之外的另一条设计需求 | 移交 R09。`06 §10 U-2` 记录本项在现有检索下**未验证**。**Round-3 补记（`X-14`）：** 该记录是**检索范围**结论（"本次未找到"），**不是**领域存在性结论。 |
 | U9 | ESM 类设计中"dyad 同步采样"的合规率与 reactivity 实证 | M7 的设计可行性 | R04 / R16 |
 | U10 | ⭐ 关系研究里 rival-directed / 多 target（round-robin）数据集是否存在 | **直接决定 I4 能否被绕开** | R04 专项确认 |
 | U11 | 二人 dyad 的 third-party / network 结构测量方案 | interference 结构假设 | R08 / R10 |
@@ -601,8 +744,35 @@ Orth et al. 也直接引用 false-positive psychology 说 CLPM 文献存在 *"se
 
 ---
 
-## 12. 给 Architect 的三条可执行建议（`AI recommendation`，非 Human requirement）
+## 12. 给 Architect 的可执行建议（`AI recommendation`，非 Human requirement）
 
-1. **把 §5 识别不可能清单（尤其 I4 / I8 / I12 / I14）纳入 canonical 文档的显式非目标。** 这四条不是"暂时做不到"，是"换方法也做不到"。当前 `CURRENT_ARCHITECTURE.md` 的非目标列表覆盖了"单一 LoveScore / 统一欧氏距离 / 统一权重表 / 预写关系状态机 / 从单个案例估计现实概率"，但**没有**覆盖"person / dyad / occasion 三层来源分解的可识别性上限"与"trait-state 二分本身的无解性"。
-2. **Wave 2 应加一个 cross-lane 检查：R03（instrument catalog）与本文件的 Q7 结论是否一致。** 若 R03 catalog 的任何 instrument 缺 invariance 证据，则该 instrument 不能进入任何动态陈述。
+> **Round-3 记账（依 R-D1 `REJECT`）。** 本节原有 3 条建议。**第 1 条已被拒绝并撤回**；
+> 撤回记录逐字保留在下方，**不删除历史文本**。Round-3 后本节有效建议为 **3 条**（原 2、3 条 + 新增 1 条）。
+
+### 12.0 `REJECTED` · 原建议 1（逐字保留 + 取代依据）
+
+> **被拒绝的原文（逐字保留）：**
+> 1. **把 §5 识别不可能清单（尤其 I4 / I8 / I12 / I14）纳入 canonical 文档的显式非目标。** 这四条不是"暂时做不到"，是"换方法也做不到"。当前 `CURRENT_ARCHITECTURE.md` 的非目标列表覆盖了"单一 LoveScore / 统一欧氏距离 / 统一权重表 / 预写关系状态机 / 从单个案例估计现实概率"，但**没有**覆盖"person / dyad / occasion 三层来源分解的可识别性上限"与"trait-state 二分本身的无解性"。
+
+- **判定：`REJECT`**（`REJECTED_OR_WEAK_FINDINGS.md` **R-D1**，依据 `D-C2`；
+  `D` 判 **"这是本 lane 唯一一条会主动损害项目的建议"**）。
+- **反对理由（三条，逐条可复算）：**
+  1. **`I4` / `I11` / `I14` 是 `I-DESIGN` 类（数据设计限制），不是 `I-STRUCTURAL` 类。**
+     本文件**自己的 U8 / U10** 就给出了绕开路径（重新采集 round-robin / 多 target 数据）。
+     把一个**已知有解法**的问题写成 canonical **永久**非目标，等于**关闭唯一能解决它的研究计划**。
+  2. **分类本身是错的。** 按 Round-3 §5.0 的四类分级：`I4` / `I11` / `I14` ∈ `I-DESIGN`；
+     只有 `I-STRUCTURAL` 那 8 条能支持"换方法也做不到"。
+  3. **`I8` 与 `I12` 的原措辞已被 Round-3 改写**（`I8`：见 §5 `I8` 行，Robitzsch 2023 否定其强形式；
+     `I12`：是 estimand-scope 陈述，不是识别限制）。把**已被本文件自己降级**的措辞提升为 canonical 非目标，
+     是把一个错误固化。
+- **保留的部分（可以写进 canonical，但要改词）：** `I1`（单案例拟合转移律）与 `I15`（n=1 的现实概率）
+  **确实**是 `I-STRUCTURAL`，且 `CURRENT_ARCHITECTURE.md` §10/§11 已经覆盖它们（无需新增）。
+- **取代文本：** §5 的四类分级 + `I-DESIGN` 三条转入**采集需求**（见 12.1 第 3 条），**不**转入非目标清单。
+
+### 12.1 有效建议（3 条）
+
+1. ~~（原建议 1 已 `REJECT`，见 12.0）~~
+2. **Wave 2 应加一个 cross-lane 检查：R03（instrument catalog）与本文件的 Q7 结论是否一致。** 若 R03 catalog 的任何 instrument 缺 invariance 证据，则该 instrument 不能进入任何动态陈述。**Round-3 补注：** 这条建议现在有一个更强的、已由本文件给出的具体形式——按 §5 `I8` 的改写，"缺 invariance 证据"的**后果分级**是"强均值比较未定义"，而**不是**"一切动态结论未定义"。因此 R03 的 catalog 字段应记**实际达到的层级**，而不是布尔式的 `has_invariance_evidence`。
 3. **本文件与 R04 对齐后重估 Q1–Q5 可行性（U5）。** 若数据以 1–2 波为主，LHRM 的动态部分应明确标为"需专门采集设计"，并把 ILD / ESM（R7? / M7）列为独立的采集 lane 而非分析 lane。
+4. **（Round-3 新增）把 §5 的 `I-DESIGN` 三条（I4 / I11 / I14）登记为采集需求，并给每一条一个可判定的解除条件。** 具体地：`I4` ← 需要 round-robin / 多 target 设计（U10）；`I11` ← 需要构念 × 角色 × 情境 × 文化的正交交叉设计；`I14` ← 需要 SRM 式多 target，或 ≥3 波 + STARTS + 显式排除遗漏型 TVC。**这三条必须以"采集需求"而非"非目标"的形式进 register**（依 `X-12` / `C-P9` 的单一 register 纪律：research design 与 negative result 必须分列）。
+

@@ -11,14 +11,75 @@
 
 ---
 
+## ROUND-3 REPAIR PASS（`A3c`，依 `ARCHITECT_ADJUDICATION_V1` / `X-11`）
+
+> ### 裁决 §C 第 5 条（逐字）：**"No transition law is validated/frozen by PR #31/#32."**
+> **本文件因此：`NO_LAW_FROZEN / NO_LAW_VALIDATED`。** 下面每条律的状态都是**未冻结**的。
+
+### 0.1 逐律最终状态（Round-3 依 `X-11` 落地；`NONE FROZEN`）
+
+| 律 | 族 | **Round-3 最终状态** | 保留什么 | 阻塞项（诚实措辞） |
+|---|---|---|---|---|
+| A | `BMR` | **`HOLD_FOR_EVIDENCE`** | **只保留方向性版本**（`∂(E[ΔZ^k]) / ∂ PPR_{i→j} > 0`）作为 research candidate | 判别版本（"信念而非行动驱动状态更新"）需要 relation-level dependence 工具。**原文"现有绝大多数 dyadic 面板只有自陈"是一个未被取样框架支持的 field-wide claim ⇒ 依 `X-14` 降级为检索范围表述**（见 §10 U-1） |
+| B | `APES` | **`HOLD_FOR_EVIDENCE`** | 全部（`Std` / `Alt` / `Inv` 三通道的 directional 预测） | **未定位到已验证的关系层 dependence 工具，且经典的相互依赖工具文献未被检索。** ⛔ **不得**写成"结构性不可测" |
+| C | `DVA` | **只保留为 `LEVEL_CONDITIONAL_SLOPE` 候选** | `Level → Slope` 交互这一个形状 | **删掉"incremental change 已被击败"的框架**（见 §6）。存活结论是 **level-conditional slope** |
+| D | `RGM` | **`HOLD_FOR_EVIDENCE`** | 全部（`Gap` 与 `Movement` 两通道的 directional 预测） | **`Ideal` 来源未核实**（`S31` 为 `CITED_SECONDARY`；见 0.2）。排在 `Ideal` 裁决之后 |
+| E | `RT` | **`MODEL_HYPOTHESIS` / `UNTESTABLE_WITH_CURRENT_ORDINARY_WAVE_DATA`** | 分支的形式（`Λ⁺` / `Λ⁻`） | **不是冻结。** 核心主张"`s` 由 dyadic state 决定"**零直接支持**——本文件 §8.4 自己写"无来源直接检验"。需要**事件内顺序** + **双方 + 双方信息源**，普通多波面板给不出 |
+
+**逐条落地位置：** `BMR` → §4 标题块 · `APES` → §5 标题块 · `DVA` → §6 标题块与 §6.3 / §6.4 ·
+`RGM` → §7 标题块 · `RT` → §8 标题块。全表另见 §9（跨律对照表的"状态"行）。
+
+### 0.2 承载源状态（`PENDING_EVIDENCE_CHECK (R3-E3)`）—— **标记，不猜测**
+
+sibling child 正在复核以下三个来源。**本轮未打开任何一个。**
+**凡依赖它们的陈述一律标 `PENDING_EVIDENCE_CHECK (R3-E3)`；既不主张，也不否认。**
+
+| 承载源 | 是什么 | 依赖它的本文件内容 | Round-3 处置 |
+|---|---|---|---|
+| **`S04`** = Joel, S., Eastwick, P. W., Allison, C. J., Arriaga, X. B., et al. (2020). *PNAS*, 117(32), 19061–19071. `10.1073/pnas.1917036117` | 43 数据集 / 11,196 对伴侣的预注册协作研究 | §3 总览 A 行与 C 行的"限制证据"；§4.3 第 2 条；§4.4 第 4 行；§6.4 第 6 行；§9 的"最强反证"；§11 非主张 5 | 标 `PENDING_EVIDENCE_CHECK (R3-E3)`。**本文件对该源的任何复述都不得被读作已核实。** |
+| **`S19`** = Lavner, J. A., Bradbury, T. N., & Karney, B. R. (2012). *Journal of Family Psychology*, 26(4), 606–616. `10.1037/a0029052` | 婚姻 trajectories / 起点 vs 变化率 | §3 总览 C 行；§6.1–§6.4 的全部依据；§6.3 第 1–2 条；§9 | 标 `PENDING_EVIDENCE_CHECK (R3-E3)`。**Round-3 特别记录：Table 5 的精确数值与正文的逐字措辞都在复核范围内**；本文件不复述任何 Table 5 数字。 |
+| **`S31`** = `Ideal` / RGM 的来源（本文件标 `CITED_SECONDARY`，**未读原文**） | 伴侣调整理想偏好以匹配实际伴侣 | §7.4 "Ideal 会随实际对象漂移"；§7.5；§9；§12 裁决请求 2 | 标 `PENDING_EVIDENCE_CHECK (R3-E3)`。**在核实前，`Ideal` 不得进入 `PARAMETER_CONVERGENCE`**（§12 裁决请求 2 已改为 `HOLD`） |
+
+**未被复核、但本文件标 `AGENT_RECALL` / `UNVERIFIED` 的项（Round-3 保持原样）：** S13 的比较水平公式细节（`AGENT_RECALL`）；U-6 的"火花型 / 生长型"区分（`AGENT_RECALL` + `UNVERIFIED`）。**本轮未打开新来源。**
+
+### 0.3 Round-3 落地的裁决清单
+
+| 裁决 | 内容 | 落地位置 |
+|---|---|---|
+| **`X-11`** | 五条律 `NONE FROZEN`；逐律状态见 0.1 | §0.1、各律标题块、§9、§12 |
+| **`X-14`** | field-wide existence claim → search-scope claim | §3、§4.4、§6.4、§10 U-1 / U-2 / U-5、§11 |
+| **R-D6** | `06 §8` 两个分支行 `SUPPORTED` → `MODEL_HYPOTHESIS`（来源全是 outcome 层） | §8.4 |
+| **R-D7** | "结构性" → "**数据收集方式的限制**" | §10 U-3、§12 裁决请求 5 |
+| **R-D12** | `Ded` 与 `Trust` / `AttachmentSecurity` 解耦 = `SUPPORTED（现象存在）/ ILLUSTRATIVE` | §5.4 |
+| **R-D13** | `Ideal` 裁决请求（唯一会改 schema 层的建议）→ `HOLD` 待来源核实 | §12 裁决请求 2 |
+| **R-D14** | 判 H 与判 N **无法被空结果推翻** → 移入显式不可证伪/前提审计清单 | §2 的 G-2、§6.8、§8.8、§10 新增 `P-A1` / `P-A2` |
+| **R-D15** | 功效护栏从"只给律 E"提升为**跨律通用** | §2 的 G-1、§8.7 第 5 条 |
+| **R-B16**（`06 §6.4` Lavner 的 *limited evidence* 被标 `DIRECTION_NOT_SUPPORTED（明确反证）` = **标过头**） | 去掉"（明确反证）"后缀，改为无后缀 + 三条限定 | §6.4 第 4 行 |
+| **R-L9** / **`X-11`**（`19:210` 把"性别不对称**未检出**"读成"kill criterion 已开火"） | 性别不对称判据 `NOT_TRIGGERED`；"明确不预测" ≠ "已检出不存在" | §4.4 末行、§8.4 末行 |
+| **C-P12** | `⊥` 偏算子：**`HOLD / NOT_CANONICAL_NOW`**；U4 仍 `UNKNOWN` | §1 的 U-4、§12 裁决请求 1 |
+| **R-D9（跨文件）** | `06 §12` "不要在 R16 之前冻结函数形式"与 `16` 的 freeze 漏洞合谋 | §12 明确不建议的动作 |
+| **`X-6` / `C-P10`（镜像侧）** | 删掉"null 赢了"与"被拒绝（初始差异胜）"的措辞 | §6.3 第 1 条、§9 |
+
+---
+
 ## 0. 阅读须知（先读这一节）
 
 1. 本文**不给出任何参数、权重、阈值、滞后、尺度或归一化公式**。所有方程都是
    **schematic semantic equation**：其中的函数符号是被命名的**未定函数占位符**，不是建议的函数形式。
 2. 本文**没有**声称任何一个律族正确描述人类关系。它们是提交审阅的 `RESEARCH_CANDIDATE`。
+   **Round-3 追加（依裁决 §C 第 5 条）：没有一条律被验证或冻结。** 逐律状态见 §0.1。
 3. 方向性主张只在**本次实际读到的来源**支持时才写。找不到支持的写
    `DIRECTION_NOT_SUPPORTED`，其含义是"**未确立**"，不是"为假"。
+   **Round-3 追加：** `DIRECTION_NOT_SUPPORTED` 的**括号后缀**必须区分两种强度，
+   本轮据此改写了三处：
+   - **无后缀** = "本次读到的来源未确立"（默认强度）。
+   - **（明确反证）** = 来源自己给出了**否定的实质结论**。
+   ⚠ **误用记录：** §6.4 曾把来源的 *"limited evidence"* 标成 `DIRECTION_NOT_SUPPORTED（明确反证）`，
+   而同一来源在另一侧写着 *"consistent with the incremental change model"* —— **这不是反证**。
+   §8.4 曾把两个 **outcome 层**的分支标成 `SUPPORTED`。两处 Round-3 均已改写（见 §6.4 / §8.4）。
 4. 凡超出任何文献支持的部分，逐条标 `MODEL_HYPOTHESIS`，并写明"无经验支持主张"。
+   **Round-3 追加：** `MODEL_HYPOTHESIS` 有一个更弱的同义档：
+   **"零直接支持"** —— 即本文件**自己**写"无来源直接检验"。这比"未确立"更弱，必须显式区分。
 5. `⊥`（`UNKNOWN`）在形式化里是**一等值**，不是 0、不是均值、不是"中性"。
 
 ---
@@ -67,9 +128,19 @@
 偏算子在格上不一定满足结合律或可逆性。若 Gate A 的覆盖推理依赖算子组合，
 必须先证其组合性与闭包性，否则 `MAPPING_FAILURE` 的归因会出错。此项 `UNKNOWN`。
 
+> **Round-3 记账（依 `C-P12`，`HOLD / NOT CANONICAL_NOW`）：**
+> **U-4 是 `self-audit`，不是发现。** 本文件 §1 的 `MH1` 段落自己写明它是
+> *"架构候选而非经验发现"*，且 `U4 = UNKNOWN`；本文件 §12 裁决请求 1 就是在请求 Architect 裁决它。
+> ⇒ **本文件不主张 Gate A 的归因推理会出错**，也**不主张**它不会出错。
+> **Architect 裁决（C-P12）：`HOLD / NOT_CANONICAL_NOW`** —— 只有当某个实现**确实**
+> 为 Gate 归因而组合偏更新算子、且代数风险**确实**变成现实问题时，才考虑加前置条件。
+> **前置工程检查项归 R3-H**（"判定当前/拟议的 Gate A 是否实际组合偏更新算子"）。
+> **若 R3-H 判 `NOT_APPLICABLE_YET`，则 C-P12 关闭为 `NOT_APPLICABLE_YET`。**
+> ⚠ **不得**把本段读成"`⊥` 规则已通过形式审查"——它是**未审查**。
+
 ---
 
-## 2. 三个跨律的硬性设计约束（来自方法学文献，不是本 lane 的偏好）
+## 2. 三个跨律的硬性设计约束 + **两条适用于全部 15 条判据的通用条款**（来自方法学文献，不是本 lane 的偏好）
 
 **C-A（分辨率即识别参数）。** Granger (1969) 指出"apparent instantaneous causality"常常
 "arises due to **slowness in recording information**"。Muthén & Asparouhov (2024) 进一步展示：
@@ -94,20 +165,94 @@ between-person prospective effects。
 **C-C（ordinal / categorical 不能当 continuous 处理）。** Muthén, Asparouhov & Witkiewitz (2024)
 指出：把 ordinal 变量当连续处理"can cause strong biases"。
 
-> **约束：** 本项目的 `Coord_k` 允许区间 / 序数 / 类别 / `⊥` / 分布共��（invariant 4）
+> **约束：** 本项目的 `Coord_k` 允许区间 / 序数 / 类别 / `⊥` / 分布共存（invariant 4）
 > **不只是**表示偏好，也是估计正确性的要求。
+
+### 2.1 通用条款 G-1（功效护栏，**跨全部 15 条判据**）
+
+> **Round-3 新增（依 R-D15 / `D-C16`）。** 本文件 Round-1 形态把功效护栏**只**写在 §8.7 第 5 条
+> （律 E 专属）。逐字保留该条：*"必须在 protocol 中预先做功效计算，而不是事后解释不显著。"*
+>
+> **问题：** 护栏只给一条律，其余 14 条判据都会在功效不足时把"检不出"读成"律被拒"。
+> **这是本文件最容易被误用的一处**，因为 15 条判据的措辞都是"**拒绝**…"。
+>
+> **G-1（适用于判 A – 判 O 的全部 15 条）：**
+>
+> 1. **任何判据的空结果 / 不显著 / CI 含 0 都不构成"该律被拒"。** 除非该设计对**目标效应量**
+>    具备**预登记的充分功效**。三者的区别必须在结论里分开：
+>    - 功效充分 + 未触发该判据 ⇒ 可按判据行动；
+>    - 功效不足 + 未触发 ⇒ **`UNDERPOWERED_INCONCLUSIVE`（不等于拒绝）**；
+>    - 触发判据（方向相反 / 等价性成立 / 交互 CI 排除）⇒ 按判据行动。
+> 2. **每条判据在预登记时必须同时写下 `min_detectable_effect`**（可借 `16` 的 `R16-OC05` / `R16-UC02`）。
+>    没有这一数字的判据，**登记时不成立**。
+> 3. **等效性型判据**（判 B / 判 L 明确写"等价性检验 / 等价区间"；判 F 的 *"无实质改善"* 与
+>    判 G 的 *"不少于"* 只有在**无差异区间于登记时冻结**的前提下才属这一类）**不受第 1 条的空结果保护**：
+>    它们失败需要的是**等价性成立**，不是"没拒绝"。⚠ 反之，它们**也**不能被"不显著"**误判为通过**。
+>    ⚠ **Round-3 记账：** 判 F 与判 G 在 Round-1 形态下**只写了"无实质改善" / "不少于"，
+>    没有写那个区间**在哪冻结**。⇒ 在补上"等价/无差异区间于登记时冻结"这一句之前，
+>    它们**实际上退化成了"无差异则失败"的单向规则**，而单向规则**是可以**被空结果触发的。
+>    **本条因此是待补项，不是已完成项。**
+> 4. **禁止的推理形态（逐字登记）：** "功效不足 → 结论一致 ⇒ 接受该律族" 与
+>    "功效不足 → 结论不一致 ⇒ 拒绝该律族" **都是错的**；正确结论都是 `UNDERPOWERED_INCONCLUSIVE`。
+
+**与 §8.7 第 5 条的关系（不重复、不冲突）：** §8.7 第 5 条是律 E 的**具体**应用
+（破坏性事件在多数 dyad 中低频）；**G-1 是它的推广**。§8.7 第 5 条**继续有效**，并被 G-1 覆盖。
+
+### 2.2 通用条款 G-2（哪些判据**不能**被空结果推翻 —— 前提审计，不是律的证伪）
+
+> **Round-3 新增（依 R-D14 / `ADJ2` Q1）。**
+>
+> **问题：** 15 条判据被混在一个列表里，读者默认每一条都是"如果……就拒绝某律"。
+> 但其中**两条**守的是**前提**，而这些前提**没有失败路径**：
+> 空结果**不能**推翻它们，因为它们从不被"数据支持"——它们只在**前提被数据否定**时改变结论。
+>
+> | 判据 | 它实际守的是什么 | 为什么空结果不能推翻它 | Round-3 处置 |
+> |---|---|---|---|
+> | **判 H**（`06 §6.8`） | 前提"关系状态自然衰减" | 若 `Slope ≈ 0`，这只说明**衰减不明显**；它既不支持也不反对"自然衰减"这个前提。判据的**触发方向**是"`Slope` 符号为正"，而那需要**功效与符号**都足够。 | **移入 §10 的 `P-A1`（前提审计）**，原位留指针 |
+> | **判 N**（`06 §8.8`） | 前提"分支由 dyadic state 决定" | `s` 的跨 dyad 变异的分解中，**空结果既可能**是 dyadic-state 部分为 0，**也存**是 person 常数部分为 0。判据的原措辞（"person 常数部分**显著大于**"）本身就是一个**单向比较**，不是双向分解，因此**单向 null 不能触发它**。 | **移入 §10 的 `P-A2`（前提审计）**，原位留指针 |
+>
+> **G-2（适用于全部 15 条判据）：**
+>
+> 1. **判据必须先被分类。** 本文件 15 条判据中：
+>    **`LAW_FALSIFIER` 13 条**（A / B / C / D / E / F / G / I / J / K / L / M / O）——
+>    它们有**空结果失败路径**，受 G-1 保护。
+>    **`PREMISE_AUDIT` 2 条**（H / N）—— 它们**没有**空结果失败路径，**移入 §10 的显式清单**。
+> 2. **`PREMISE_AUDIT` 不得被计为"已触发的证伪"或"已通过的验证"。** 它们的输出只有三种：
+>    `PREMISE_NOT_ASSESSED` / `PREMISE_WEAKENED`（前提被数据削弱）/ `PREMISE_UNDERPOWERED`。
+>    **没有** `PREMISE_CONFIRMED` —— 因为不存在能让前提"被确认"的观测。
+> 3. **判 M（律 E 的分支证伪）用的是 AND 门**，其中 (ii) 就是 `P-A2` 的内容。
+>    **Round-3 修正其记账：** 判 M 的 (ii) 在 `P-A2` 判为 `PREMISE_WEAKENED` 时**仍然成立**
+>    （即分支选择器不可由 dyadic state 预测），但**不得**因此宣称"person trait 解释了它"——
+>    那需要一个**单独的双向分解检验**，不属于判 M。
+
+### 2.3 三条硬约束的适用范围（Round-3 明确）
+
+`C-A` / `C-B` / `C-C` 适用于**全部** 15 条判据：任何判据若在**违反** `C-A`（分辨率不足）、
+`C-B`（trait–state 未分离）、`C-C`（ordinal/categorical 当 continuous）的设计下被评估，
+其结果标 `DESIGN_PRECONDITION_VIOLATED`，**不进入** G-1 的三分类。
+**这一条在 Round-1 形态下是隐含的**（三条约束写在 §2，15 条判据写在 §4–§8，
+中间没有任何交叉引用的句子）——本节把它显式化。
 
 ---
 
 ## 3. 律族总览
 
-| # | 律族 id | 一句话主张 | 主要作用层 | 最重要的支持来源 | 最重要的限制证据 |
-|---|---|---|---|---|---|
-| A | `BMR` Belief-Mediated Responsiveness | `i` 的状态只经由 `i` **相信** `j` 做了什么而移动；归属（attribution）决定符号 | Belief → Directed-edge | S01, S02 | S04（partner 报告几乎无增量） |
-| B | `APES` Actor–Partner Exchange with Stock | 满意度–替代品–投入驱动一个**积累的** dependence 存量，dedication 是其下游读出 | Directed-edge + Pair stock | S12（52 研究 / ≈2/3 方差）, S15 | S14（量表把 satisfaction 与 commitment 捆在一起） |
-| C | `DVA` Deterioration vs Actualization | 评价读出的下降由两个**可分离**机制产生：起点选择 + 个体内实际化 | Derived readout + History | S19（起点差异胜出） | S04（变化大体不可预测） |
-| D | `RGM` Reference Gap and Movement | 同一对方行为可通过**两条通道**缩小 gap：改变 Actual，或移动 Ideal | Belief(标准) + Agent + Edge | S16, S17, S18 | 自陈 common-method（S29） |
-| E | `RT` Rhythm and Threshold | 事件级互动有**两条分支**：放大（`Λ⁺`）与抑制/修复（`Λ⁻`）；分支选择由 dyadic state 决定 | Action ↔ Directed-edge 反馈 | S09, S10, S21 | S09 自陈反向因果；S03 反对性别不对称 |
+| # | 律族 id | 一句话主张 | **Round-3 状态**（`NONE FROZEN`） | 主要作用层 | 最重要的支持来源 | 最重要的限制证据 |
+|---|---|---|---|---|---|---|
+| A | `BMR` Belief-Mediated Responsiveness | `i` 的状态只经由 `i` **相信** `j` 做了什么而移动；归属（attribution）决定符号 | **`HOLD_FOR_EVIDENCE`** · 只保留**方向性版本**为 research candidate | Belief → Directed-edge | S01, S02（**方向性版本**） | S04（partner 报告几乎无增量）⚠ `PENDING_EVIDENCE_CHECK (R3-E3)`；**判别版本**的阻塞是 relation-level 工具未定位（§10 U-1） |
+| B | `APES` Actor–Partner Exchange with Stock | 满意度–替代品–投入驱动一个**积累的** dependence 存量，dedication 是其下游读出 | **`HOLD_FOR_EVIDENCE`** | Directed-edge + Pair stock | S12（52 研究 / ≈2/3 方差）, S15 | S14（量表把 satisfaction 与 commitment 捆在一起）；**关系层 dependence 工具未定位**（§5 状态块） |
+| C | `DVA` Deterioration vs Actualization | 评价读出的下降由两个**可分离**机制产生：起点选择 + 个体内实际化 | **只保留为 `LEVEL_CONDITIONAL_SLOPE` 候选** | Derived readout + History | S19（**level-conditional slope**）⚠ `PENDING_EVIDENCE_CHECK (R3-E3)` | S04（变化大体不可预测）⚠ `PENDING_EVIDENCE_CHECK (R3-E3)`；**起点波次可识别性**（§6.6） |
+| D | `RGM` Reference Gap and Movement | 同一对方行为可通过**两条通道**缩小 gap：改变 Actual，或移动 Ideal | **`HOLD_FOR_EVIDENCE`**（待 `Ideal` 来源核实） | Belief(标准) + Agent + Edge | S16, S17, S18 | 自陈 common-method（S29）；**S31 未读原文** ⚠ `PENDING_EVIDENCE_CHECK (R3-E3)` |
+| E | `RT` Rhythm and Threshold | 事件级互动有**两条分支**：放大（`Λ⁺`）与抑制/修复（`Λ⁻`）；分支选择由 dyadic state 决定 | **`MODEL_HYPOTHESIS` / `UNTESTABLE_WITH_CURRENT_ORDINARY_WAVE_DATA`** · **不是冻结** | Action ↔ Directed-edge 反馈 | S09, S10, S21 —— **全部 outcome 层**（§8.4 Round-3 改写） | S09 自陈反向因果；**核心主张零直接支持**（§8.4 末行） |
+
+**Round-3 对本表两处措辞的改写（逐条）：**
+
+1. **C 行"最重要的支持来源"：** ~~`S19（起点差异胜出）`~~ → **`S19（level-conditional slope）`**。
+   **理由（依 `X-6` / `C-P10` 第 6 条 + `ADJ2`）：** "起点差异胜出"是把一条 *"limited evidence"* 的
+   结果读成了判决。见 §6.4 的逐字改写。
+2. **E 行"最重要的限制证据"：** ~~`S03 反对性别不对称`~~ → **"性别不对称判据 `NOT_TRIGGERED`"**。
+   **理由：** `S03` 是"**未检出**性别差异"，不是"**检出**反对"。见 §8.4 的读法限定。
+   `S09` 的 r = .380 vs .392 同理：是**近乎相等**，因此**未检出不对称**，**不是**"检出无不对称"。
 
 **共享机制声明（N-6）：** 律族 A 的事件级证据项 `Net_k(τ,Δτ)` 被 B / C / D / E **刻意共享**。
 五族争的不是"事件怎么被编码"，而是"聚合动力学的形状是什么"。
@@ -115,6 +260,23 @@ between-person prospective effects。
 ---
 
 ## 4. 律族 A — `BMR` Belief-Mediated Responsiveness
+
+> ### Round-3 状态：`HOLD_FOR_EVIDENCE`（依 `X-11`：*"hold directional version as research candidate"*）
+> **本律未被冻结，也未被验证。**
+>
+> | 本律的哪一部分 | Round-3 状态 | 理由 |
+> |---|---|---|
+> | **方向性版本**：`∂(E[ΔZ^k]) / ∂ PPR_{i→j} > 0` | **`RESEARCH_CANDIDATE`（保留）** | S01 / S02 支持；`X-11` 逐字是 *"hold directional version as research candidate"* —— 注意**不是** "freeze"：依裁决 §C 第 5 条 `NONE FROZEN`，本行是**保留为候选**，不是冻结 |
+> | **判别版本**：`∂ΔZ/∂Resp` 在控制 `PPR` 之后的方向（§4.4 第 2 行、判 A） | **`HOLD_FOR_EVIDENCE`** | 需要 relation-level 的 dependence 观测（对方行为的独立观察 + 双方信念的独立报告）。见 §10 U-1 |
+> | **归别门控**（`Ω_k` 依赖 `R_i`，判 B） | **`HOLD_FOR_EVIDENCE`** | `Ω_k` 是潜变量（§4.7 第 5 条自陈），与 `NO-ATTRIB` 几乎不可分离 |
+>
+> **阻塞项的诚实措辞（依 `X-14`）：**
+> **"未定位到已验证的关系层 dependence 工具，且经典的相互依赖工具文献未被检索。"**
+> ⛔ **不得**写成"结构性不可测"或"结构上不可证伪"——那是 field-wide absence claim，
+> 而本 lane 的检索不支持该强度（见 §10 U-1 的 Round-3 改写）。
+> ⚠ **特别记录：** Round-1 形态把这条写成了 `16` 的 `F-05`「现有绝大多数 dyadic 面板只有自陈
+> → 律 A 与朴素的"行动→状态"律在数学上不可区分」。**该 field-wide 部分已被依 `X-14` 撤回**（`16 F-05` 已同步改写）。
+> **"数学上不可区分"那半句本身仍然成立**——它说的是**在只有自陈的设计内**不可区分，是设计内的条件陈述。
 
 > **中文名：** 信念中介的回应性更新律
 > **主张（RESEARCH_CANDIDATE）：** `i` 的有向状态**只**经由 `i` 对 `j` 行为的**解释**而移动，
@@ -181,7 +343,9 @@ Net_k(τ,Δτ) = ⊥                       若  窗口 W(τ) 内**没有任何**
    **同时**存在且显著，因此"只有自回归"很可能不够——但这是必须被检验的，不是可以假设的。
 2. **`NO-PARTNER`（无 partner 效应）**：`Net_k` 的系数全部约束为 0。
    S04 使这个 null **非常强**：跨 43 个数据集，partner 报告的变量在 actor 报告的关系变量之外
-   "no predictive effects"。注意 S04 说的是 *partner 的自我报告*，不是 *对方的可观察行为*；
+   "no predictive effects"。⚠ **`PENDING_EVIDENCE_CHECK (R3-E3)`：S04 的确切主张正在被复核；
+   本段复述 S04 的内容一律视为待核。**
+   注意 S04 说的是 *partner 的自我报告*，不是 *对方的可观察行为*；
    本律主张的是后者。二者不可混同，但这确实是一个必须认真对待的竞争者。
 3. **`ACT-NOT-BELIEF`（行动而非信念驱动）**：直接用 `Resp_{j→i}` 预测 `Z`，
    不经 `PPR` 与 `Ω`。这是本律的**主要对手**。
@@ -199,6 +363,18 @@ Net_k(τ,Δτ) = ⊥                       若  窗口 W(τ) 内**没有任何**
 | `∂(E[ΔZ^k]) / ∂(actor 自身历史)` 的存在性 | **SUPPORTED（个体层）** | S22：个体在行为分布上的**中心趋势**差异"almost perfectly stable"，且单次状态水平本身不可高度预测。这支持"存在一个 person-specific 中心"这个结构，但**不支持**它在关系状态上的具体形式。 |
 | partner 回应对**对方**状态的效应大小 vs 对**自己**状态 | **`DIRECTION_NOT_SUPPORTED`** | S04 明确报告 partner 报告几乎无增量；不支持任何方向性断言。 |
 | 性别不对称 | **明确不预测** | S03：日间与年间两个尺度上，约束男女路径相等后拟合**未变差**。S09：wife-demand r = .380 vs husband-demand r = .392，量级近乎相同。 |
+
+> **⚠ Round-3 读法限定（依 `X-11` / **R-L9**（`ADJ2`）；适用于本表末行，也适用于 §8.4 的同名行）：**
+> **"明确不预测" = 本文件不提出任何性别不对称的方向预测，NOT "已检出不存在性别不对称"。**
+> `S03` 的结果是**约束相等后拟合未变差**（`NOT_DETECTED`）；`S09` 的 r = .380 vs .392 是**近乎相等**
+> （同样是 `NOT_DETECTED`）。**推论三条：**
+> 1. 任何形如 **"当前最佳证据反对性别不对称耦合 ⇒ 律族须重写"** 的括号读法
+>    **误述了一个未触发的判据**——本文件从未把性别不对称写成一条 kill criterion，因此**没有**判据开火。
+>    逐字保留该误述形态供检索：*"性别不对称的耦合被检出（**当前最佳证据反对**）⇒ 律族须重写"*
+>    —— **该形态已判定为 `WRONG-SCOPE`，不成立**（**R-L9** / `X-11`；`19:210` 的原文即该误述形态）。
+> 2. **"未检出"不等于"已检出为无"。** 在功效不足时它是 `UNDERPOWERED_INCONCLUSIVE`（§2.1 的 G-1）。
+> 3. 性别不对称是**本文件不预测**的量，因此它**不构成对任何律的证据**，无论正反。
+>    ⇒ **它不能被计入"律被拒绝"的证据清单。**
 
 ### 4.5 值得考虑的非线性 / 阈值 / 迟滞变体
 
@@ -279,6 +455,25 @@ Net_k(τ,Δτ) = ⊥                       若  窗口 W(τ) 内**没有任何**
 ---
 
 ## 5. 律族 B — `APES` Actor–Partner Exchange with Stock
+
+> ### Round-3 状态：`HOLD_FOR_EVIDENCE`（依 `X-11`：*"hold pending relation-level dependence measurement"*）
+> **本律未被冻结，也未被验证。**
+>
+> **阻塞项的诚实措辞（依 `X-14`；逐字登记）：**
+> **"未定位到已验证的关系层 dependence 工具，且经典的相互依赖工具文献未被检索。"**
+>
+> ⛔ **不得**写成 **"结构性不可测" / "结构上不可证伪" / "在关系层不存在可测的 dependence"**。
+> **理由：** 那是一条 **field-wide absence claim**，而本 lane 的检索框架**不支持**该强度
+> （本 lane 未做工具学检索；`X-14` 要求把 field-wide claim 降级为 search-scope claim）。
+> **本文件只主张：** 它**本次没有找到**工具，**并且承认自己没有去找过那个文献群**。
+>
+> **因此本律的两类主张状态不同，不可混读：**
+>
+> | 本律的哪一部分 | Round-3 状态 | 理由 |
+> |---|---|---|
+> | **方向性预测**（`∂Ded/∂Std′ > 0`、`∂Ded/∂Alt < 0`、`∂Ded/∂Inv > 0`、`Ded → 解体`） | **`RESEARCH_CANDIDATE`（保留）** | S12（一手 meta 分析，`CITED_PRIMARY`）。这些是**个体层 / 关系层结果变量**上的关联，不需要关系层 dependence **工具** |
+> | **"dependence 是一个积累的存量"这一动力学主张** | **`HOLD_FOR_EVIDENCE`** | 它需要一个**关系层 dependence 的独立测量**（不是 `Ded` 的自陈），才能把"存量"与"流量"分开。见 §5.3 第 1 条与 §5.7 第 1 条 |
+> | **迟滞支** | **`MODEL_HYPOTHESIS`（无任何经验支持）** | §5.5；§10 U-2。**本 lane 未找到**任何支持人类关系状态存在迟滞的来源 |
 
 > **中文名：** 主—客互依交换（带存量）律
 > **主张（RESEARCH_CANDIDATE）：** 满意度、替代品、投入驱动一个**积累的** dependence 存量；
@@ -365,7 +560,7 @@ Std^d_i(τ) = ⊥   ⇒  报酬评价**不能**折算为"高于/低于标准"，
 | `Ded → 关系解体` | **SUPPORTED** | S12：commitment 是解体的显著预测因子 |
 | 该关系在**关系域**强于非关系域 | **SUPPORTED** | S12：关系域支持"significantly stronger" |
 | 该关系随**关系时长**减弱 | **`DIRECTION_NOT_SUPPORTED`（明确反证）** | S12 原文：各关联"vary **minimally** as a function of demographic (e.g., ethnicity) or relational (e.g., **duration**) factors"。**这是一条被最好的一手 meta 分析直接否定的通俗说法，必须写进非主张。** |
-| `Ded` 可与 `Trust` / `AttachmentSecurity` 解耦 | **SUPPORTED** | S15：abusive relationship 中 commitment 仍高 → 高 dedication + 低 trust 可共存 |
+| `Ded` 可与 `Trust` / `AttachmentSecurity` 解耦 | **`SUPPORTED（现象存在）/ ILLUSTRATIVE`**（Round-3 改标，依 **R-D12** / `D-C33`） | S15：abusive relationship 中 commitment 仍高 → 高 dedication + 低 trust 可共存。**Round-3 限定：** S15 支持的是**现象存在**（这两个量在某些 dyad 中**可以**不同向），**不是**它们在**统计上可分离**、也**不是**它们**应当**是两个 primitive。⚠ "可共存" ⇒ "可解耦"这一步**不成立**：共存不排除两者由同一潜在因子驱动。**因此本行不得被引用为"`Dedication` 是独立 primitive"的证据**——那是判 E 的任务，判 E 未触发。 |
 | 积累是**路径依赖**（迟滞）还是**无记忆** | **`MODEL_HYPOTHESIS`（MH2）** | 本 lane **未找到**任何支持人类关系状态存在迟滞的来源。见 §10 |
 | `Inv` 与关系时长可分离 | **SUPPORTED（设计含义）** | S12 的"duration 不调节"意味着二者可分离；因此**不能用时长作为 `Inv` 的工具变量** |
 
@@ -444,10 +639,35 @@ Std^d_i(τ) = ⊥   ⇒  报酬评价**不能**折算为"高于/低于标准"，
 
 ## 6. 律族 C — `DVA` Deterioration vs Actualization
 
+> ### Round-3 状态：**只保留为 `LEVEL_CONDITIONAL_SLOPE` 候选**（依 `X-11`：*"keep only as level-conditional-slope candidate, not 'incremental change defeated'"*）
+> **本律未被冻结，也未被验证；也未被拒绝。**
+>
+> **Round-3 逐字改写的主张行（被取代的原文在上）：**
+> 逐字保留：*"评价读出的"下降"由两个**可分离**机制产生：起点选择（level）与段内实际化（slope）。把两者混为一谈是本文献最常见的错误。"* ·
+> *"**本律是本次五个律族中最可能先被拒绝的一个。**"*
+>
+> **取代后的主张（`LEVEL_CONDITIONAL_SLOPE` 候选）：**
+> **"在本文件读到的证据中，评价读出的段内变化速率本身依赖起点水平；
+> 因此可保留的候选不是"起点 vs 增量"的对立，而是"`Level` 条件化的 `Slope`"这一个交互形状。"**
+>
+> **三条必须一起读的记账：**
+> 1. **判 G 未触发。** 判 G（§6.8）是 DVA 唯一的真证伪判据，它要求"`Level` 独解释的人内变化方差
+>    **不少于** `Level + Slope`"。`19` 的 L3 格写的**不是**判 G，是一个注记；
+>    **本文件从未报告过判 G 的计算结果** ⇒ **无任何判据开火。**
+> 2. **"incremental change 已被击败"被撤回。** 来源说的是 *"limited evidence"*，
+>    而**同一来源在另一侧写着** *"consistent with the incremental change model"*。
+>    **既不是"击败"，也不是"被反驳"。** 见 §6.4 的逐字改写。
+> 3. **S19 正在被复核。** `PENDING_EVIDENCE_CHECK (R3-E3)`。⚠ **本文件不复述 S19 Table 5 的任何数值。**
+>
+> **对 `16` 的镜像处置（依 `X-6` / `C-P10` 第 6 条）：**
+> `16` 的 `B2` rationale 与本节的 §6.3 第 1 条**同源**。`16` 已把 `B2` 改名 `B2_STABLE_LEVEL`、
+> 停止使用 `SELECTION_ONLY`、删除"已经击败过一个候选"、并把本节的 Level+RW 模型另立为 `B8_LEVEL_PLUS_RW`。
+> **`16` 的 `N8_LEVEL_CONDITIONAL_SLOPE` 就是本节保留的那个候选的模型形式。**
+
 > **中文名：** 起点选择 vs 段内实际化
-> **主张（RESEARCH_CANDIDATE）：** 评价读出的"下降"由两个**可分离**机制产生：
-> 起点选择（level）与段内实际化（slope）。把两者混为一谈是本文献最常见的错误。
-> **本律是本次五个律族中最可能先被拒绝的一个。**
+> **主张（RESEARCH_CANDIDATE，`LEVEL_CONDITIONAL_SLOPE` 版本）：** 见上方 Round-3 主张行。
+> **中文名的 Round-3 限定：** 逐字保留"起点选择 vs 段内实际化"，但该二分的**对立**读法已被撤回；
+> 保留的是**条件化**读法（`Slope` 依赖 `Level`），不是二选一。
 
 ### 6.1 完整语义方程
 
@@ -485,24 +705,71 @@ Slope^k_{i→j}(τ)  =  ∫_{τ₀}^{τ} [ Φ_k( X(s),  M_i,  M_j,  H_i )
 
 ### 6.3 必须击败的竞争模型
 
-1. **`SELECTION-ONLY`（只起点，无 slope）**：`E(τ) = Level(τ₀) + 随机游走 + 误差`。
-   **这是本律最强、最危险的对手。** S19 正是它赢了。
-2. **`DECAY-ONLY`（无条件衰减）**：`Slope = −δ`，与起点无关。S19 直接反对。
+1. **`LEVEL_PLUS_RANDOM_WALK`（只起点 + 随机游走，无 slope）**：`E(τ) = Level(τ₀) + 随机游走 + 误差`。
+   **这是本律最强、最危险的对手。**
+   > **⚠ Round-3 逐字改写（依 `X-6` / `C-P10`）：**
+   > **被取代的原文（逐字保留）：** ~~**`SELECTION-ONLY`（只起点，无 slope）** …… **这是本律最强、最危险的对手。** S19 正是它赢了。~~
+   > **三处改动：**
+   > (a) **名称改为 `LEVEL_PLUS_RANDOM_WALK`（并停止使用 `SELECTION_ONLY`）。**
+   >     `SELECTION_ONLY` 这个名字在 `16` 与本节指向**两个不同的模型**（`16` 的旧 `B2` 是**纯随机截距**，
+   >     本节的是**随机游走**），是 PR 内最危险的一处同名异义。`16` 已同步改名为
+   >     `B2_STABLE_LEVEL`（纯随机截距）与 `B8_LEVEL_PLUS_RW`（本节这个模型）。
+   > (b) **删掉"S19 正是它赢了"。** §6.4 的三条限定说明：来源给的是 *"limited evidence"*，
+   >     **不是**"它赢了"；且论断对象是 `predictor` 变量，不是 outcome 的人内斜率。
+   > (c) **保留"这是本律最强、最危险的对手"这半句。** 它是**关于模型难度**的陈述（不含随机变化的模型
+   >     总是更容易拟合），**不依赖**任何来源结论，因此**继续有效**。
+   > ⚠ **本条的 null 身份（依 `X-6`）：** 它在 `16` 中是 `B8_LEVEL_PLUS_RW`，
+   > **与** `B2_STABLE_LEVEL`（纯随机截距，**没有**随机变化的增量）是**两个不同的 null**。
+2. **`DECAY-ONLY`（无条件衰减）**：`Slope = −δ`，与起点无关。
+   > **⚠ Round-3 逐字改写（依 **R-B16**，与 §6.4 第 4 行同源）：**
+   > **被取代的原文（逐字保留）：** ~~"S19 直接反对。"~~
+   > **取代为：** **S19 未确立该方向。** 原文是 *"limited evidence"* + 妻子侧 null，
+   > 而**丈夫侧逐字** *"Consistent with the incremental change model"*。
+   > ⇒ **既不得**写"直接反对"（那是把证据不足读成证据相反），**也不得**写"已确立"。
+   > ⚠ `PENDING_EVIDENCE_CHECK (R3-E3)`（S19 精确措辞与 Table 5 正在复核）。
 3. **`AR-ONLY`**。
 4. **`COHORT-MODEL`**：`Slope` 由出生队列/时期解释，与个体无关。
 5. **`RANDOM-SLOPES-ONLY`**：每个 dyad 一个随机斜率，无任何机制解释。
+6. **（Round-3 新增，必需）`N8_LEVEL_CONDITIONAL_SLOPE` 的对照项。** 若要测"slope 依赖起点"这个交互，
+   必须有一个**把交互显式写出来**的模型与一个**不写交互**的模型对照。
+   在 `16` 中这是 `N8`；在本节，判 G（§6.8）是它的判据形态。
+   **没有这一项，本律保留的候选形状就没有参照物。**
 
 ### 6.4 方向 / 形状预测
 
+> **⚠ Round-3：本表的承载源 `S19` 与 `S04` 均标 `PENDING_EVIDENCE_CHECK (R3-E3)`。**
+> 本表所有依赖它们的行**都是待核复述**；Round-3 **不新增也不否认**任何一行。
+> **本轮改写的只有一件事：把两行过强的状态标签降级（见下方批注）。**
+
 | 预测 | 状态 | 依据 |
 |---|---|---|
-| 下降**集中**在起点低者 | **SUPPORTED** | S19："declines were isolated to partners who began their marriages with lower levels of satisfaction" |
-| 最严重的下降限于**起点最低**的一个子集 | **SUPPORTED** | S19 同上 |
-| `Level → Slope` 存在交互（即斜率本身依赖起点） | **SUPPORTED（存在性）** | S19 的"subset"表述即此含义 |
-| **段内实际化模型**能解释不同满意度组 | **`DIRECTION_NOT_SUPPORTED`（明确反证）** | S19 原文："we found **limited evidence** to support an incremental change model in which differences in patterns of change in these predictor variables distinguished among trajectory groups" |
-| 中高满意度组的离婚率无差异 | **SUPPORTED** | S19：引用 Amato & Hohmann-Marriott (2007)，并与"S09 之外"的一致性判断 |
-| 人内变化幅度随时间 | **`DIRECTION_NOT_SUPPORTED`** | S04：**"relationship-quality change was largely unpredictable from any combination of self-report variables"**（43 数据集 / 2,413 工具） |
-| 关系状态本身（而非 satisfaction）是否也遵循"起点差异优先" | **`DIRECTION_NOT_SUPPORTED`** | S19 只测 satisfaction；外推到 `Trust`/`Liking` 等无依据 |
+| 下降**集中**在起点低者 | **SUPPORTED** ⚠待核 | S19："declines were isolated to partners who began their marriages with lower levels of satisfaction" |
+| 最严重的下降限于**起点最低**的一个子集 | **SUPPORTED** ⚠待核 | S19 同上 |
+| `Level → Slope` 存在交互（即斜率本身依赖起点） | **`SUPPORTED（存在性）` = 本节 Round-3 保留的唯一候选** ⚠待核 | S19 的"subset"表述即此含义。**这就是 `LEVEL_CONDITIONAL_SLOPE` 候选的全部内容**；它在 `16` 中对应 `N8_LEVEL_CONDITIONAL_SLOPE` |
+| **段内实际化模型**能解释不同满意度组 | ~~**`DIRECTION_NOT_SUPPORTED`（明确反证）**~~ → **Round-3 改标：`DIRECTION_NOT_SUPPORTED`（无后缀 = 本次未确立），并附三条限定** ⚠待核 | S19 原文逐字保留："we found **limited evidence** to support an incremental change model in which differences in patterns of change **in these predictor variables** distinguished among trajectory groups" |
+| 中高满意度组的离婚率无差异 | **SUPPORTED** ⚠待核 | S19：引用 Amato & Hohmann-Marriott (2007)，并与"S09 之外"的一致性判断 |
+| 人内变化幅度随时间 | **`DIRECTION_NOT_SUPPORTED`** ⚠待核 | S04：**"relationship-quality change was largely unpredictable from any combination of self-report variables"**（43 数据集 / 2,413 工具） |
+| 关系状态本身（而非 satisfaction）是否也遵循"起点差异优先" | **`DIRECTION_NOT_SUPPORTED`** ⚠待核 | S19 只测 satisfaction；外推到 `Trust`/`Liking` 等无依据 |
+
+> **⚠ Round-3 对第 4 行的逐字改写与三条限定（依 `X-11` / `C-P10` 第 6 条 / `ADJ2`）：**
+>
+> **被取代的原文（逐字保留）：** `**DIRECTION_NOT_SUPPORTED**（明确反证）`
+> **该标注被删除。** **理由（三条，每条对应来源自身的一句话）：**
+> 1. **来源说的是 *"limited evidence"*，不是 explicit refutation。** "有限证据"是**证据弱**，
+>    不是**证据反向**。标"明确反证"是把**证据不足**读成了**证据相反**。
+> 2. **该论断的对象是 `predictor` 变量。** 逐字：*"differences in patterns of change **in these predictor
+>    variables** distinguished among trajectory groups"*。**它讲的是预测变量的变化率，
+>    不是 outcome 的人内斜率。** 本文件 §6.4 第 1–3 行讲的才是 outcome 侧的 level-conditional 形状。
+>    **两者不是同一个命题，因此不能互相裁决。**
+> 3. **同一来源在另一侧写着** *"Consistent with the incremental change model"*。
+>    ⇒ **既不得**写"initial differences 击败了 incremental change"，**也不得**写"incremental change 已被反驳"。
+>
+> **存活下来的结论（唯一）：** **`LEVEL_CONDITIONAL_SLOPE`** ——
+> 段内变化的**形状**依赖起点水平。这既不是"起点赢了"，也不是"增量输了"。
+> **它是一个交互形状，因此必须有交互模型才能测** ⇒ `16` 的 `N8_LEVEL_CONDITIONAL_SLOPE` 是必需项。
+>
+> **不主张：** Round-3 **不主张** `LEVEL_CONDITIONAL_SLOPE` 为真。它是**待核的**候选，
+> 且其形式依据（S19 的精确措辞与 Table 5）正在被 R3-E3 复核。
 
 ### 6.5 非线性 / 阈值 / 迟滞变体
 
@@ -532,19 +799,34 @@ Slope^k_{i→j}(τ)  =  ∫_{τ₀}^{τ} [ Φ_k( X(s),  M_i,  M_j,  H_i )
 
 ### 6.8 明确的证伪判据（**在看到数据之前**固定）
 
-**判 G（拒绝「段内实际化」通道）：**
+**判 G（`LAW_FALSIFIER`；拒绝「段内实际化」通道）：**
 
 > 在**有真实起点波次**的 dyadic panel 中，仅 `Level`（+ per-person 随机截距）
 > 解释的人内变化方差，**不少于** `Level + Slope` 合计所解释者，
 > 且 `Level → Slope` 交互项的 95% CI **包含 0**
 > → **拒绝**律 C 的段内实际化通道。
+>
+> **Round-3 三条记账（必读）：**
+> 1. **判 G 是 DVA 唯一的真证伪判据，且它【未触发】。** `19` 的 L3 格写的**不是**判 G，
+>    是一个注记；本文件从未报告判 G 的计算结果。⇒ **不得**写"判 G 已开火"或"已核实证伪"。
+> 2. **G-1 适用于判 G。** "CI 包含 0"这一半**不**自动导致拒绝：
+>    若对目标交互效应的功效不足，结论是 `UNDERPOWERED_INCONCLUSIVE`（§2.1）。
+> 3. **判 G 是"不少于"型（等价性型）判据**：它的失败需要 `Level` 独解释**不少于**合计者，
+>    即**等价性成立**。因此它**也不**能被"不显著"**误判为通过**（§2.1 第 3 条）。
 
-**判 H（空转）：**
+**判 H → 已移出本节（Round-3；依 R-D14 / `ADJ2` Q1）：**
 
-> 若 `Slope` 的**符号**在预登记的多数 `k` 上为正（即人内实际上升而非下降），
-> → **拒绝**"关系状态自然衰减"这一前提，律 C 退化为"起点 + 无变化"。
+> **被取代的原文（逐字保留）：**
+> **判 H（空转）：** *"若 `Slope` 的**符号**在预登记的多数 `k` 上为正（即人内实际上升而非下降），
+> → **拒绝**"关系状态自然衰减"这一前提，律 C 退化为"起点 + 无变化"。"*
+>
+> **移出理由：** 判 H 守的是**前提**"关系状态自然衰减"，而这个前提**没有空结果失败路径**：
+> `Slope ≈ 0` 既不支持也不反对"自然衰减"这个前提。把它与判 G 并列放在"证伪判据"标题下，
+> 会让读者以为"判 H 没开火"是**支持**本律——**那是误读**。
+> **新位置：§10 的 `P-A1`（`PREMISE_AUDIT`）。** 它的输出只有
+> `PREMISE_NOT_ASSESSED` / `PREMISE_WEAKENED` / `PREMISE_UNDERPOWERED`，**没有** `PREMISE_CONFIRMED`。
 
-**判 I（不可识别）：**
+**判 I（`LAW_FALSIFIER`；不可识别）：**
 
 > 若起点波次是回溯指定的 → 本律**不可检验**，标 `UNTESTABLE_BY_DESIGN`，
 > 不得以任何 post hoc 方式报告 slope 估计。
@@ -563,6 +845,22 @@ Slope^k_{i→j}(τ)  =  ∫_{τ₀}^{τ} [ Φ_k( X(s),  M_i,  M_j,  H_i )
 ---
 
 ## 7. 律族 D — `RGM` Reference Gap and Movement
+
+> ### Round-3 状态：`HOLD_FOR_EVIDENCE`（依 `X-11`：*"hold pending Ideal-source verification"*）
+> **本律未被冻结，也未被验证。**
+>
+> **阻塞项（逐字登记）：** **`Ideal` 来源未核实。** `S31` 在本文件是 **`CITED_SECONDARY`（未读原文）**，
+> 而"伴侣调整理想偏好以匹配实际伴侣"这一条**正是本律的 `Movement` 通道的唯一经验支点**。
+> ⇒ 标 **`PENDING_EVIDENCE_CHECK (R3-E3)`**，排在 `Ideal` 裁决之后。
+>
+> **本律两部分的状态不同：**
+>
+> | 部分 | Round-3 状态 | 理由 |
+> |---|---|---|
+> | **`Gap` 通道**（`Actual` 低于 `Desired` → 关系质量更低；两侧都可能有代价） | **`RESEARCH_CANDIDATE`（保留）** | S17（`CITED_PRIMARY`）。这些是**结果变量**上的关联，不依赖 `S31` |
+> | **`Movement` 通道**（对方肯定行为 → 移动自己的 `Ideal`） | **`HOLD_FOR_EVIDENCE`** | S16 支持 `Affirm → Movement` 与 `Affirm → 关系功能`；但"`Ideal` 会随实际对象漂移"这条**只**由 `S31` 支撑，而 `S31` 未读原文 |
+> | **两通道可分离（MH3）** | **`MODEL_HYPOTHESIS`** | S16 + S31 各自支持一半；**无来源同时检验两半**。Round-1 形态已经这样标，**Round-3 确认不变** |
+> | **`Ideal` 成为动态 directed state**（本文件唯一的 schema 层建议） | **`HOLD`** | 见 §12 裁决请求 2（依 **R-D13**）。⚠ **在 `S31` 核实前，`Ideal` 不得进入 `PARAMETER_CONVERGENCE`** |
 
 > **中文名：** 参考落差与自我移动
 > **主张（RESEARCH_CANDIDATE）：** `Actual` 与 `Ideal` 的落差是一个通道；
@@ -644,7 +942,7 @@ Movement 的累积：若某区间 GapWant = ⊥，该区间 Movement **不更新
 | **两侧都可能有代价**（"感觉太近"也有害） | **SUPPORTED（现象存在）** | S17："Feeling too close … may … propel individuals to distance themselves from their partners … likely inducing dissatisfaction on the partner's side" |
 | 两侧代价的**相对大小 / 对称性** | **`DIRECTION_NOT_SUPPORTED`** | 未找到任何来源确立两侧对称或不对称。**不得**假设对称。 |
 | `Affirm → Movement` 正；`Affirm → 关系功能/稳定性` 正 | **SUPPORTED** | S16：4 项研究；"perceived partner **behavioral** affirmation was strongly associated with quality of couple functioning and stability" |
-| `Ideal` 会**随实际对象漂移** | **SUPPORTED（作为现象）** | S31：伴侣调整理想偏好以匹配实际伴侣；另见年龄/偏好文献中"进入关系者调整了对伴侣的偏好，未进入者下调了预期"的转述（**`CITED_SECONDARY`**） |
+| `Ideal` 会**随实际对象漂移** | **SUPPORTED（作为现象）** ⚠ `PENDING_EVIDENCE_CHECK (R3-E3)` | S31：伴侣调整理想偏好以匹配实际伴侣；另见年龄/偏好文献中"进入关系者调整了对伴侣的偏好，未进入者下调了预期"的转述（**`CITED_SECONDARY`**）。⚠ **Round-3：`S31` 是本文件 `Movement` 通道的唯一经验支点，而它是 `CITED_SECONDARY`（未读原文）** ⇒ 本行是**待核复述**，`RGM` 因此为 `HOLD_FOR_EVIDENCE`。见 §7 状态块 |
 | 期望为正可能有**负面**效果 | **SUPPORTED** | S26："some evidence that positive relationship expectations may sometimes have negative effects" |
 | 同一对方行为可经由**两条可分离通道**缩小落差 | **`MODEL_HYPOTHESIS`（MH3）** | S16 + S31 各自支持一半；**无来源同时检验两半** |
 | `Girth` 是独立潜变量 | **`MODEL_HYPOTHESIS`（MH4）** | 无支持 |
@@ -669,7 +967,7 @@ Movement 的累积：若某区间 GapWant = ⊥，该区间 Movement **不更新
   不分别测"实际"与"理想"。
 - **`Affirm` 的知觉版与客观版都要。** 只测知觉版则 Belief/Observation 分离不可测
   （这正是 R08 的问题，也会使本律的判别内容落空）。
-- **对方肯定行为的**独立观察或编码**（非自陈）。
+- **对方肯定行为的独立观察或编码**（非自陈）。
 - ≥3 wave，供 `Ideal` 的漂移可测。
 - `d_k` 必须在每个 `k` 内部良定义；若某 `k` 的 `Coord_k` 只能是无序类别，
   `d_k` 退化为指示函数，落差信息几乎为零 → 该 `k` 应标 `GAP_UNDEFINED` 而非硬算。
@@ -726,6 +1024,32 @@ Movement 的累积：若某区间 GapWant = ⊥，该区间 Movement **不更新
 ---
 
 ## 8. 律族 E — `RT` Rhythm and Threshold
+
+> ### Round-3 状态：`MODEL_HYPOTHESIS` / `UNTESTABLE_WITH_CURRENT_ORDINARY_WAVE_DATA`（依 `X-11`）
+> **本律未被冻结，也未被验证，也未被拒绝。**
+>
+> **必须先读的三条（本文件最容易被误用的三处）：**
+>
+> 1. **核心主张零直接支持。** 本律的实质内容是 **"`s` 由 dyadic state 决定"**（§8.4 末行）。
+>    **本文件 §8.4 自己写：** *"无来源直接检验。"* ⇒ 这是**零直接支持**，
+>    比 `MODEL_HYPOTHESIS` 的通常强度**更弱**（§0 第 4 条的区分档）。
+>    **Round-3 确认：** 该行 Round-1 已标 `MODEL_HYPOTHESIS`；Round-3 **不**把它升级，
+>    并把它**明确记为零直接支持**（`ADJ2` Q1 第 (b) 点）。
+> 2. **两个分支的存在性是 `MODEL_HYPOTHESIS`，不是 `SUPPORTED`。** 见 §8.4 的 Round-3 改写：
+>    Round-1 形态把"存在一条独立的正向（趋近）分支"与"存在一条独立的抑制/修复分支"标 `SUPPORTED`，
+>    而**所引来源（S21 / S10 / S11）全部是 outcome 层**——它们测的是正性情感、满意度、承诺、
+>    投入、关系中心性、视角采择、替代品，**没有**任何一项测"下一次行为被放大/抑制"。
+>    **现象在 outcome 层存在 ≠ 分支在行为层存在。**
+> 3. **性别不对称的判据【未触发】。** 见 §8.4 末行下的读法限定：
+>    *"性别不对称的耦合被检出（**当前最佳证据反对**）⇒ 律族须重写"* 这一读法
+>    **误述了一个从未写下的 kill criterion**。
+>
+> **`UNTESTABLE_WITH_CURRENT_ORDINARY_WAVE_DATA` 的诚实含义（逐字）：**
+> **普通多波问卷面板给不出本律需要的东西。** §8.6 列的硬要求是
+> **事件触发式记录 + 事件内顺序 + 双方 + 双方信息源 + 编码手册信度**。
+> **"普通多波数据不可测"是【数据收集方式的限制】，不是"本律为假"。**
+> ⚠ **与 §12 裁决请求 5 的"结构性"改词同源**（依 R-D7）。
+> **本文件不主张**本律在**任何**数据上不可测——行政记录、行为观察、ESM 编码都可能给得出。
 
 > **中文名：** 互动节律与分支阈值
 > **主张（RESEARCH_CANDIDATE）：** 事件级互动不是"行为更新状态"这么简单；
@@ -803,11 +1127,26 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 | demand–withdraw **模式**与关系 / 沟通结果相关 | **SUPPORTED** | S09：总体 r = .360；关系类 r = .423、沟通类 r = .418；人口统计类 r = .239、幸福感类 r = .249；74 研究 / N = 14,255 |
 | 模式在临床/高困扰样本中更强 | **SUPPORTED** | S09：distressed r = .413 vs non-distressed r = .345 |
 | 两个方向角色的量级**近乎相同** | **SUPPORTED** | S09：wife-demand r = .380；husband-demand r = .392 |
-| **存在一条独立的正向（趋近）分支** | **SUPPORTED** | S21：分享正面事件带来超出事件本身的日间正性情感与幸福感（4 项研究） |
-| **存在一条独立的抑制/修复分支** | **SUPPORTED** | S10：accommodation（抑制破坏性回击、改为建设性回应）与更高满意度、承诺、投入、关系中心性、视角采择、较差替代品相关；承诺起中介作用；自我控制促进 accommodation，**当下自我调节耗竭降低** accommodation（4 项研究）。S11 独立确认定义与建设性/破坏性 × 主动/被动四类响应 |
+| **存在一条独立的正向（趋近）分支** | ~~**SUPPORTED**~~ → **Round-3 改标：`MODEL_HYPOTHESIS`**（依 **R-D6** / `D-C17`） | S21：分享正面事件带来**超出事件本身的日间正性情感与幸福感**（4 项研究）。⚠ **Round-3 的理由（逐字登记）：来源全部是 outcome 层。** S21 测的是**正性情感与幸福感**，**不是**"下一次行为被放大"。**"分享正面事件 → 更高的当日正性情感"** 与 **"某行为是状态依赖的放大控制信号"** 是**两个不同命题**：前者是 event → outcome 的**跨结果**关联，后者是 event → **next behavior** 的**序列内**分支。**Round-1 形态的 `SUPPORTED` 把前者当成了后者的证据**（`WRONG-SCOPE`）。 |
+| **存在一条独立的抑制/修复分支** | ~~**SUPPORTED**~~ → **Round-3 改标：`MODEL_HYPOTHESIS`**（依 **R-D6** / `D-C17`） | S10：accommodation（抑制破坏性回击、改为建设性回应）与更高满意度、承诺、投入、关系中心性、视角采择、较差替代品相关；承诺起中介作用；自我控制促进 accommodation，**当下自我调节耗竭降低** accommodation（4 项研究）。S11 独立确认定义与建设性/破坏性 × 主动/被动四类响应。⚠ **Round-3 的理由（逐字登记）：来源全部是 outcome 层。** 全部关联变量是**满意度、承诺、投入、关系中心性、视角采择、替代品**——**没有一个是"下一次行为"**。⚠ **但是** S11 的四类响应分类**本身**是行为层分类学，**它使 `Λ⁻` 的操作化成为可能**；这是**形式**贡献，不是**存在性**证据。**因此本行标 `MODEL_HYPOTHESIS`，而"S11 提供了可用的分类手册"这一半继续有效。** |
 | demand–withdraw **导致**不满（方向） | **`DIRECTION_NOT_SUPPORTED`（来源自陈反向因果可能）** | S09 作者自述："although researchers have generally examined DM/W as a predictor of relational dissatisfaction, it is certainly plausible that dissatisfied partners are motivated to communicate desires for change that lead to DM/W behaviors" |
 | 性别不对称（谁在升级 / 谁在撤退） | **明确不预测** | S09 两方向近乎相等；S03 无性别差异 |
-| `s` 由 dyadic state（而非 person 常数）决定 | **`MODEL_HYPOTHESIS`** | 无来源直接检验。S15 给出"高 commitment + 恶劣情形下仍承诺"的**个例提示**，属定性支持，非证据 |
+| `s` 由 dyadic state（而非 person 常数）决定 | **`MODEL_HYPOTHESIS` / 零直接支持**（Round-3 强化标注） | 无来源直接检验（**本文件 §8.4 自陈**）。S15 给出"高 commitment + 恶劣情形下仍承诺"的**个例提示**，属定性支持，非证据。⚠ **Round-3：这是本律的实质内容，其直接支持为【零】。** 定性个例提示**不构成**对"`s` 由 dyadic state 决定"的检验（个例不能排除 person 常数解释）。 |
+
+> **⚠ Round-3 读法限定（依 `X-11` / **R-L9**（`ADJ2`）；适用于本表倒数第二行）：**
+> **"明确不预测" = 本文件不提出性别不对称的方向预测，NOT "已检出不存在性别不对称"。**
+> `S09` 的 r = .380 vs .392 是**近乎相等**（`NOT_DETECTED`）；`S03` 是**约束相等后拟合未变差**（`NOT_DETECTED`）。
+> **推论三条：**
+> 1. 逐字保留的误述形态：*"性别不对称的耦合被检出（**当前最佳证据反对**）⇒ 律族须重写"*
+>    —— **判定 `WRONG-SCOPE`，不成立。** 本文件**从未**把性别不对称写成 kill criterion，
+>    因此**没有任何判据开火**。"当前最佳证据反对"这个括号把
+>    **"本文件不预测"** 读成了 **"证据已检出反向"**。
+> 2. **"未检出"不等于"已检出为无"**；功效不足时是 `UNDERPOWERED_INCONCLUSIVE`（§2.1 的 G-1）。
+> 3. 性别不对称既**不构成**对律 E 的证据，也**不构成**反证据。**它不能进"律被拒绝"的清单。**
+>
+> **⚠ 与 §4.4 同名行的关系：** 两条读法限定**内容一致**，**分别就地写出**是为了
+> 两处都不需要跳转即可正确阅读（`05` 的"一份 SSOT"纪律在研究文档层不适用：
+> 读者常常只读其中一节）。
 
 ### 8.5 非线性 / 阈值 / 迟滞变体
 
@@ -853,25 +1192,51 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 
 ### 8.8 明确的证伪判据（**在看到数据之前**固定）
 
-**判 M（拒绝分支结构）：**
+**判 M（`LAW_FALSIFIER`；拒绝分支结构）：**
 
 > 若（i）`Λ⁺`（放大）相对"自身先前行为的自回归 + 对方当前行为"**无 episode 内增量预测力**，
 > **且**（ii）升级 vs 修复的分支选择器**不可由 dyadic state 预测**
 > （即 `s(n)` 在等价性检验下恒等于"中性"），
 > → **拒绝**律 E 的分支结构，只保留"行为经归属更新状态"（律 A）。
 > **律 E 降级为律 A 的一个特例并退出独立律族地位。**
+>
+> **Round-3 三条记账（必读；依 R-D14 / `ADJ2` Q1 第 (d) 点）：**
+> 1. **判 M 是 AND 门 ⇒ 它的两个分支的失败条件不同。** (i) 与 (ii) 都可以单独失败；
+>    (i) 失败而 (ii) 成立，**不足以**拒绝分支结构。Round-1 形态没有说这一点。
+> 2. **G-1 适用于 (i)，但对 (ii) 的保护是反向的。** (i) 是"无增量预测力"型 ⇒ 功效不足时是
+>    `UNDERPOWERED_INCONCLUSIVE`，**不是**"分支结构被拒"。(ii) 是**等价性型** ⇒
+>    它失败需要**等价性成立**（`s` 确实恒为中性），**不是**"没拒绝"；
+>    但它**同样不能**被"不显著"**误判为通过**（§2.1 第 3 条）。
+> 3. **判 M 的 (ii) 与 `P-A2`（原判 N）是同一件事的两面。** (ii) 成立（`s` 不可由 dyadic state 预测）
+>    **不足以**推出"person trait 解释了它"。**后者需要一个单独的双向分解检验**，
+>    而那正是原判 N——它**没有**空结果失败路径，已被移入 §10（见下）。
 
-**判 N（拒绝状态依赖，改为特质依赖）：**
+**判 N → 已移出本节（Round-3；依 R-D14 / `ADJ2` Q1）：**
 
-> 若 `s` 的跨 dyad 变异中，**person 常数**部分显著大于 dyadic-state 解释部分
+> **被取代的原文（逐字保留）：**
+> **判 N（拒绝状态依赖，改为特质依赖）：** *"若 `s` 的跨 dyad 变异中，**person 常数**部分显著大于 dyadic-state 解释部分
 > → **拒绝**"状态依赖分支"这一实质主张；
 > **修正方向：** 把相应构念移至 **Agent 层**（person trait），
-> 而非保留为 directed relationship state。**这是层级变更，须提交 R01 / R02。**
+> 而非保留为 directed relationship state。**这是层级变更，须提交 R01 / R02。**"*
+>
+> **移出理由（两条）：**
+> 1. **它守的是前提，不是律。** 它守的前提是"分支由 dyadic state 决定"，而这个前提
+>    **没有空结果失败路径**：`s` 的变异分解中，**空结果既可能**是 dyadic-state 部分为 0，
+>    **也可能**是 person 常数部分为 0。
+> 2. **它的原措辞是单向比较。** "person 常数部分**显著大于** dyadic-state 解释部分"
+>    是一个**单向**比较，不是**双向分解**。⇒ **单向 null 不能触发它**，
+>    而"没触发"在"证伪判据"的标题下会被误读成"支持本律"。
+>
+> **新位置：§10 的 `P-A2`（`PREMISE_AUDIT`）。**
+> ⚠ **其"修正方向"（把构念移到 Agent 层）本身是一条真实的架构后果**，
+> 但它现在挂在 `P-A2` 的 `PREMISE_WEAKENED` 分支上，**不是**挂在一条不会触发的判据上。
 
-**判 O（方向性证伪）：**
+**判 O（`LAW_FALSIFIER`；方向性证伪）：**
 
 > 若在**控制** `Z` 之后，`a^n_{j→i} → a^{n+1}_{i→j}` 的净效应为 0 或与 S09/S10 相反
 > → **拒绝**律 E 的全部方向性主张，只保留"状态读出"部分。
+> ⚠ **G-1 适用于判 O**：在破坏性事件稀疏的设计中（§8.7 第 5 条），
+> 净效应估不出来时结论是 `UNDERPOWERED_INCONCLUSIVE`，**不是**"方向性主张被拒"。
 
 ### 8.9 什么证据会导致**修正**而非拒绝
 
@@ -890,16 +1255,17 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 
 | 维度 | A `BMR` | B `APES` | C `DVA` | D `RGM` | E `RT` |
 |---|---|---|---|---|---|
+| **Round-3 状态（`NONE FROZEN`）** | **`HOLD_FOR_EVIDENCE`**（只保留方向性版本） | **`HOLD_FOR_EVIDENCE`** | **只保留 `LEVEL_CONDITIONAL_SLOPE` 候选** | **`HOLD_FOR_EVIDENCE`**（待 `Ideal` 来源） | **`MODEL_HYPOTHESIS` / `UNTESTABLE_WITH_CURRENT_ORDINARY_WAVE_DATA`** |
 | 主要主张层次 | Belief → edge | edge 存量 + pair 存量 | derived readout + history | 标准(Belief) + Agent + edge | Action ↔ edge 反馈 |
 | 共享事件机制 | `Net_k`（本体） | `Net_k` | 经由 A/B | `Net_k` → `Actual` | `Λ⁺`/`Λ⁻`（本体） |
-| 是否路径依赖 | 否（可含 `M` 漂移，MH5） | **是**（`Inv` + `D` 累加） | 否（`Slope` 积分） | **是**（`Ideal` 漂移，有 S31 支持） | **可选**，无支持（MH2） |
+| 是否路径依赖 | 否（可含 `M` 漂移，MH5） | **是**（`Inv` + `D` 累加） | 否（`Slope` 积分） | **是**（`Ideal` 漂移，⚠ 待核 S31） | **可选**，无支持（MH2） |
 | 显式 `⊥` 的关键作用 | 证据为 `⊥` ⇒ 不更新不填充 | `Alt = ⊥` ⇒ 该通道单独挂起（S15 情形） | 起点波次缺失 ⇒ **不可测** | `d_k` 任一为 `⊥` ⇒ 落差为 `⊥` 非 0 | `s` 不可判定 ⇒ **不得默认中性** |
-| 最强支持 | S01, S02 | S12, S15 | S19（**但支持的是对手**） | S16, S17, S31 | S09, S10, S21 |
-| 最强反证 / 限制 | S04 | S14（测量纠缠） | S19, S04 | 自陈 common-method | S09 自陈反向因果 |
+| 最强支持 | S01, S02 | S12, S15 | S19（⚠ 待核；**支持的是 level-conditional slope**） | S16, S17（⚠ S31 待核） | S09, S10, S21 —— **全部 outcome 层** |
+| 最强反证 / 限制 | S04 ⚠待核 | S14（测量纠缠） | S19（*"limited evidence"*，**不是**击败）, S04 ⚠待核 | 自陈 common-method | S09 自陈反向因果；**核心主张零直接支持** |
 | 主要识别威胁 | 同窗口互为因果 | 存量/流量不可识别 | 起点后置偏差 | 自利偏差 / 回溯重校 | 事件内顺序不可信 |
 | 最小可测设计 | ≥3 wave，日间，双方+双方信息源 | **≥4 wave**，含高 `Ded`+低 `Trust` 的 dyad | **真实起点波次** + ≥3 wave | 双方各自测 `Actual` 与 `Ideal` + `Affirm` 客观版 | 事件触发式 + 事件内顺序 + 编码手册 |
-| 概率最高的结局 | 部分 `k` 成立 → 收敛为部分构念的律 | `Ded` 与 `Satisfaction` 难分离 → 降级 | **被拒绝（初始差异胜）** | `Ideal` 漂移 = 回溯伪影 → 移出 state | 退化为律 A |
-| 与架构的关系 | 支持 Belief 独立层 | 支持 `Dedication` 独立（**待 R02 裁决**） | 支持"起点表示优先于动力学" | **要求 `Ideal` 成为动态 state** | 支持无 FSM 的连续转移 + 分支 |
+| 概率最高的结局 | 部分 `k` 成立 → 收敛为部分构念的律 | `Ded` 与 `Satisfaction` 难分离 → 降级 | ~~**被拒绝（初始差异胜）**~~ → **Round-3 改写为：被重写为 `LEVEL_CONDITIONAL_SLOPE`**（依 `X-6` / `C-P10` 第 6 条） | `Ideal` 漂移 = 回溯伪影 → 移出 state | 退化为律 A |
+| 与架构的关系 | 支持 Belief 独立层 | 支持 `Dedication` 独立（**待 R02 裁决**；且 §5.4 解耦行已降为 `SUPPORTED（现象存在）/ ILLUSTRATIVE`） | 支持"起点表示优先于动力学" | **要求 `Ideal` 成为动态 state** —— ⚠ **`HOLD`，在 `S31` 核实前不得进入 `PARAMETER_CONVERGENCE`** | 支持无 FSM 的连续转移 + 分支（**形式**支持；`Λ⁺`/`Λ⁻` 的**存在性**是 `MODEL_HYPOTHESIS`） |
 
 ---
 
@@ -907,26 +1273,91 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 
 > 本节是本报告**最诚实**的部分。以下各项在现有可得数据下**无法被检验**。
 > 它们被点名，是因为把不可证伪的东西写进架构的风险，大于承认它不可证伪。
+>
+> **⚠ Round-3：本节新增两个 `PREMISE_AUDIT` 条目（`P-A1` / `P-A2`），并给全节加 `X-14` 的检索范围限定。**
+> **分类纪律（依 R-D14 / `ADJ2` Q1，配套 §2.2 的 G-2）：**
+> 本节的每一项属于**两类之一**，不可混读：
+> - **`UNTESTABLE_WITH_AVAILABLE_DATA`**（U-1 … U-8）：**有**失败路径，只是现有数据给不出。
+>   它们**可以**在某一天被数据检验。
+> - **`PREMISE_AUDIT`**（`P-A1` / `P-A2`）：守的是**前提**，**没有**空结果失败路径。
+>   它们**永远不会**输出 `CONFIRMED`。⚠ **它们"没开火"绝不等于"本律得到支持"。**
+>
+> **`X-14` 限定（逐字登记）：** 本节每一项的"未找到"都是**本 lane 检索范围内的结论**，
+> **不是**关于领域的结论。**逐字保留的过强形态（供检索）：** *"没有任何公开数据集做后者。"*（U-2）
+> *"本 lane 在 Human–Human 关系语境中**未找到**任何支持来源"*（U-5）——
+> 这两句**本身是合规的检索范围表述**；不合规的是把它们**升格**为"结构性 / 领域性"结论的那一步
+> （Round-1 形态在 U-3 走了这一步，本轮已改词，见下）。
+
+**P-A1 前提审计（原判 H，Round-3 移入；依 R-D14）。**
+
+> **逐字保留的原文：** *"若 `Slope` 的**符号**在预登记的多数 `k` 上为正（即人内实际上升而非下降），
+> → **拒绝**"关系状态自然衰减"这一前提，律 C 退化为"起点 + 无变化"。"*
+> **守的前提：** "关系状态自然衰减"。
+> **为什么不能被空结果推翻：** `Slope ≈ 0` 既不支持也不反对这个前提；它只说明**衰减不明显**。
+> **输出三态：** `PREMISE_NOT_ASSESSED` / `PREMISE_WEAKENED`（`Slope` 显著为正）/ `PREMISE_UNDERPOWERED`。
+> **⛔ 没有 `PREMISE_CONFIRMED`。**
+> **⚠ 它不是判 G 的辅助判据**：`P-A1` 与判 G 守的是**不同的**东西
+> （前提 vs 段内实际化通道），二者的结论不可互相代替。
+
+**P-A2 前提审计（原判 N，Round-3 移入；依 R-D14）。**
+
+> **逐字保留的原文：** *"若 `s` 的跨 dyad 变异中，**person 常数**部分显著大于 dyadic-state 解释部分
+> → **拒绝**"状态依赖分支"这一实质主张；**修正方向：** 把相应构念移至 **Agent 层**（person trait）…"*
+> **守的前提：** "分支由 dyadic state 决定"。
+> **为什么不能被空结果推翻：** 变异的双向分解中，**空结果既可能**是 dyadic-state 部分为 0，
+> **也可能**是 person 常数部分为 0；而原措辞是**单向比较**，单向 null 不触发它。
+> **输出三态：** `PREMISE_NOT_ASSESSED` / `PREMISE_WEAKENED`（双向分解显示 dyadic-state 部分不占优）/
+> `PREMISE_UNDERPOWERED`。**⛔ 没有 `PREMISE_CONFIRMED`。**
+> **⚠ 与判 M 的分工：** 判 M 的 (ii) 只需"`s` 不可由 dyadic state 预测"；
+> `P-A2` 的 `PREMISE_WEAKENED` 还需要**正向**指出 person 常数部分占优。
+> **前者可以成立而后者不成立**，此时**不得**宣称"person trait 解释了它"。
+> **⚠ 架构后果仍在：** `P-A2` 的 `PREMISE_WEAKENED` 分支仍然要求
+> "把相应构念移至 Agent 层，须提交 R01 / R02" —— 层级变更请求**不因移位而消失**。
 
 **U-1 信念层与现实层的普遍分离。**
 所有"由信念而非行动驱动"的律（含律 A 的判别部分）都要求同时拥有
 **对方行为的独立观察** + **双方各自信念的独立报告**。
-现有的绝大多数 dyadic 面板**只有自陈**。在只有自陈的设计中，
-律 A 与一个朴素的"行动→状态"律**在数学上不可区分**。
-→ **不可证伪，用现有公开数据。** 这是 R08 的核心问题，也会使律 A 的判别内容落空。
+> **⚠ Round-3 改词（依 `X-14`）：** 逐字保留的原文 *"现有的绝大多数 dyadic 面板**只有自陈**"*
+> 是**未被取样框架支持的 field-wide claim**。
+> **取代后的表述（检索范围）：** **"在 R06 本次检索到的来源中，未发现同时满足
+> '对方行为的独立观察 + 双方各自信念的独立报告'的 dyadic 面板；
+> 且 R06 **未**做工具学检索（见 §5 状态块的阻塞项措辞）。"**
+> **下面这半句继续有效（它是设计内的条件陈述，不依赖 field-wide claim）：**
+> 在只有自陈的设计中，律 A 与一个朴素的"行动→状态"律**在数学上不可区分**。
+→ **在只有自陈的设计内不可证伪。** 这是 R08 的核心问题，也会使律 A 的判别内容落空。
+⇒ **`BMR` 的状态因此是 `HOLD_FOR_EVIDENCE`（等工具），不是"结构性不可证伪"**（§4 状态块 / §0.1）。
 
 **U-2 人类关系状态中的迟滞 / 路径依赖（MH2）。**
 本 lane **未能验证**任何关于人类关系状态存在迟滞的来源。
 可验证的只有社交采纳扩散中的迟滞（S32）与无标定的耦合 love ODE（S33）。
 检验迟滞需要：足够细的事件级数据 + **在固定当前状态的前提下操纵历史**的实验。
-没有任何公开数据集做后者。→ **当前不可证伪。** R09 应主导。
+> **⚠ Round-3 降级（依 `X-14`）：** 逐字保留的原文 *"没有任何公开数据集做后者。"*
+> **取代后的读法：** **"在 R06 本次检索中，未发现做后者的数据集。"**
+> **这是检索范围结论，不是领域存在性结论。** "未找到"与"不存在"之间隔着取样框架。
+> ⚠ **保留的一半：** "检验迟滞需要操纵历史的实验"这一**要求**完全正确，
+> 且它解释了为什么**普通观测数据不足以支持迟滞主张**。
+
+→ **在本次检索到的数据下不可证伪。** R09 应主导。
 
 **U-3 关系终止作为状态转移。**
-律族把 `exit`（离开、解散）当作最大的转移，但**自陈面板在结构上无法观测它**：
+> **⚠ Round-3 改词（依 R-D7 / `D-C35`；与 `16 F-04` 同步）：**
+> **被取代的原文（逐字保留）：** ~~*"但**自陈面板在结构上无法观测它**"* ~~+~~ ~~"这是本次 lane 发现的**最重要的结构性盲点**。"~~
+> **取代措辞：**
+> **"自陈面板这一【数据收集方式】无法观测它。"**
+> **"这是本次 lane 发现的【最重要的数据收集方式盲点】。"**
+> **改词理由：** 终止事件**不是**"关系这个对象在原理上不可观测终止"——
+> 行政记录、法律记录、事件记录**可以**观测它。**"结构性"这个词把一个采集方式的缺陷
+> 升格成了对象的本体属性**，而 `AGENTS.md` 的 representation-first invariant 要求这两者分开。
+> ⚠ **保留的一半（继续有效）：** **"用受访者数据不可证伪"** 这一**设计内**的结论成立，
+> 且**"需要行政 / 法律 / 事件记录，而非问卷"** 这条出路完全正确。
+> ⚠ **连带改词（`16`）：** `16 F-04` 的 severity 由 `结构性` 改为 **"数据收集方式的限制"**；
+> `16 R16-OC03` 引用的"最重要的结构性盲点"这句话随之改读本节。
+
+律族把 `exit`（离开、解散）当作最大的转移，但**自陈面板这一数据收集方式无法观测它**：
 离开的人停止了作答。终止事件是**设计性删失（censoring by design）**，
 不是可处理的缺失。任何关于"关系最重要的一次转移"的律，
 用受访者数据都不可证伪。→ **需要行政 / 法律 / 事件记录，而非问卷。**
-这是本次 lane 发现的**最重要的结构性盲点**。
+这是本次 lane 发现的**最重要的数据收集方式盲点**。
 
 **U-4 环境的直接通道 vs 经由行为的通道（MH6）。**
 几乎所有设计中，环境/压力在 person-year 层测量，而行为在 event 层测量。
@@ -979,12 +1410,38 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 10. **不主张来源数量或模型一致度构成验证。** 每条方向性主张都绑定具体来源 id；
     绑定不到就写 `DIRECTION_NOT_SUPPORTED`。
 11. **不引用 LHRM issue #20 / #21 / #22 的任何内容。** 未触碰 Juece #30 / PR #31 / Eye / Juece 仓库。
+12. **（Round-3）不主张任何律族被冻结或被验证。** 依裁决 §C 第 5 条：
+    **"No transition law is validated/frozen by PR #31/#32."** 逐律状态见 §0.1，全部为未冻结。
+13. **（Round-3）不主张 `DVA` 被拒绝。** 它被**重写为** `LEVEL_CONDITIONAL_SLOPE` 候选；
+    判 G **未触发**。⚠ "被重写"既不是"被拒"也不是"被接受"。
+14. **（Round-3）不主张 `RT` 的两个分支存在。** §8.4 的两行由 `SUPPORTED` 改标 `MODEL_HYPOTHESIS`
+    （所引来源**全部是 outcome 层**）。⚠ 同时**不主张**它们不存在——改标只是把"未确立"写对。
+15. **（Round-3）不主张性别不对称已被检出为无。** `S09` / `S03` 给的是**未检出**
+    （r = .380 vs .392；约束相等后拟合未变差）。见 §4.4 与 §8.4 的读法限定。
+16. **（Round-3）不主张 `BMR` / `APES` 结构上不可测。** 阻塞项的措辞是
+    **"未定位到已验证的关系层 dependence 工具，且经典的相互依赖工具文献未被检索"** ——
+    这是**检索范围**结论（`X-14`）。
+17. **（Round-3）不主张 `⊥` 规则的形式风险已解决或已恶化。** U-4 = `UNKNOWN`，
+    且它是 `self-audit` 不是发现；Architect 裁决 `HOLD / NOT CANONICAL_NOW`（C-P12）。
+18. **（Round-3）不主张判 H 与判 N 是"通过"的。** 它们是 `PREMISE_AUDIT`，
+    **没有** `CONFIRMED` 档；"未触发"**不等于**"支持本律"。
+19. **（Round-3）不主张 `S04` / `S19` / `S31` 的任何内容成立或不成立。** 三者标
+    `PENDING_EVIDENCE_CHECK (R3-E3)`；本轮**未打开**任何一个。
+20. **（Round-3）不主张本文件的关系终止盲点是"结构性"的。** 它是**数据收集方式的限制**
+    （R-D7 改词；`16 F-04` 同步）。
 
 ---
 
 ## 12. 建议状态与下一步
 
-**建议状态：`SUCCESS`（`RESEARCH_CANDIDATE`，待 Human / Architect 审阅）。**
+> **⚠ Round-3 对本节状态词的改写（依 `X-11` + 裁决 §C 第 5 条）：**
+> **逐字保留的原文：** *"**建议状态：`SUCCESS`（`RESEARCH_CANDIDATE`，待 Human / Architect 审阅）。**"*
+> **Round-3 限定（保留 `SUCCESS` 这一 lane 级自评，但堵掉它的误读）：**
+> **`SUCCESS` 在此只表示"本 lane 完成了它被指派的事"（提出 5 个可证伪候选 + 固定 15 条判据），
+> 不表示任何律被验证。** 依裁决 §C 第 5 条与 `X-11`：
+> **`NO_LAW_FROZEN / NO_LAW_VALIDATED`。** 逐律状态见 §0.1。
+> ⚠ **`SUCCESS` 与 `NO_LAW_FROZEN` 并不矛盾**，但把 `SUCCESS` 读成"律站得住"就是误读 ——
+> 本文件 Round-1 形态没有堵这个漏洞。
 
 **给 Architect 的具体裁决请求（按优先级）：**
 
@@ -992,21 +1449,59 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
    若形式化不可行（例如偏算子的结合性/闭包性在 Gate A 推理中不可用，见 U4），
    需要一个**非算子**的替代表达（例如把状态坐标集合本身扩展为包含 `⊥` 的格，
    而非在算子中处理 `⊥`）。
-2. **裁决 RGM（律 D）是否要求 `Ideal` 成为动态 directed state。**
-   这是本 lane 提出的**唯一会改变 schema 层级**的建议（S31 + S17 提供支持，
-   但 MH3 仍是 `MODEL_HYPOTHESIS`）。它会连带影响 `PARAMETER_CONVERGENCE_V0_1.md` §5。
+   > **⚠ Round-3：本项已被 Architect 裁决为 `HOLD / NOT CANONICAL_NOW`（C-P12）。**
+   > **前置工程检查归 R3-H**："判定当前/拟议的 Gate A 是否实际组合偏更新算子"。
+   > 若 R3-H 判 `NOT_APPLICABLE_YET`，C-P12 关闭为 `NOT_APPLICABLE_YET`。
+   > ⇒ **本请求从"待裁决"改为"等 R3-H 的结果"**；U-4 仍是 `UNKNOWN`。
+2. ~~**裁决 RGM（律 D）是否要求 `Ideal` 成为动态 directed state。**~~ →
+   **`HOLD`（Round-3 改写，依 R-D13 / `D-C34`）。**
+   **逐字保留的原文：** *"这是本 lane 提出的**唯一会改变 schema 层级**的建议（S31 + S17 提供支持，
+   但 MH3 仍是 `MODEL_HYPOTHESIS`）。它会连带影响 `PARAMETER_CONVERGENCE_V0_1.md` §5。"*
+   **Round-3 处置：** **在 `S31` 原文核实之前（`PENDING_EVIDENCE_CHECK (R3-E3)`），不裁决。**
+   ⛔ **`Ideal` 不得进入 `PARAMETER_CONVERGENCE`。**
+   **理由：** 这是本文件**唯一**会改 schema 层的建议，而它的唯一经验支点（`Ideal` 漂移）
+   是一条**未读原文**的 `CITED_SECONDARY` 转述。**把一个未核实来源支撑的层级变更写进 canonical，
+   是本文件能犯的最贵的错误。** 核实成本很低（一个来源），因此先核实。
+   ⚠ **`D-C34` 的同一顾虑也适用于 `S17` 那一半**：`Gap` 通道有 `S17`（`CITED_PRIMARY`）支撑，
+   但 `Gap` 通道**不要求** schema 变更——**要求 schema 变更的是 `Movement` / `Ideal` 那一半**。
 3. **裁决 APES（律 B）的判 E。** 若该判据成立，应**删除** `Dedication` 这个候选 primitive。
    本 lane 建议把判 E 优先转交 R02（冗余审计），因为 S14 的工具纠缠使这更像
    测量问题而非动力学问题。
+   > **⚠ Round-3 补一条约束：** 判 E **不得**被 §5.4 的解耦行
+   > （已降为 `SUPPORTED（现象存在）/ ILLUSTRATIVE`）当作已获支持。
+   > **"可共存"不等于"可解耦"**（见 §5.4 的 Round-3 限定）。判 E 未触发。
 4. **确认 R09 对 U-2（迟滞）与律 E 迟滞支的主导权。** R06 只登记
    "关系状态迟滞 = `MODEL_HYPOTHESIS`"这一事实，不主张任何形式。
-5. **把 U-3（终止的结构性删失）升级为独立议题。**
-   本 lane 认为这是**本次最重要的结构性盲点**，且它不属于 R06 的可解范围。
+5. **把 U-3（终止的数据收集方式删失）升级为独立议题。**
+   本 lane 认为这是**本次最重要的数据收集方式盲点**（Round-3 改词，依 R-D7），
+   且它不属于 R06 的可解范围。
    若无人认领，`Case Bank`（R15）与 `Empirical Validation Protocol`（R16）
    应当显式记录该盲点，而不是让"关系会结束"默认为可观测。
+6. **（Round-3 新增）裁决 `P-A1` / `P-A2` 的登记形式。** 它们现在是 §10 的显式不可证伪/前提审计条目。
+   需裁决：它们是否应进入 `#29` 的 protocol 正文（因为 `#29` 的字段表里目前没有
+   "前提审计"这一类输出档）。
+7. **（Round-3 新增）认领 `F-SELF19/20/21` 的归属。** **记账更正（R-D11 要求，`A3c` 复核）：**
+   `F-SELF01`–`F-SELF18` 不是本 lane 的产物——它们逐条对应 `05 §6` 的 `SD` 项与
+   `R17 F1` / `PROJECT` P03（**不是**全部来自 `SD1–SD20`：`F-SELF01` = R17 F1、
+   `F-SELF02` = P03 §6、`F-SELF15` 含 P03 §9）。
+   `F-SELF19` / `20` / `21` 同样**不是**本 lane（`R06`）的产物：**它们是 `16`（R16）的独立观察**，
+   其中 `F-SELF20` 的防线列答复逐字是 **"无。"**（英文写法 `None.`；**该英文写法不是原文**）。
+   ⇒ **`F-SELF19/20/21` 应计为 `16` 的首要交付物**（`16 §12` / `16 §17` 已同步改标为
+   `JOIN LANE` 的首要交付物）。本 lane **不**认领这三条。
 
-**明确不建议的动作：** 不要在 R16 之前冻结任何转移律的函数形式；
+**明确不建议的动作：** 不要在 `FZ-1` 之前冻结任何转移律的函数形式（原措辞 *"不要在 R16 之前冻结任何转移律的函数形式"*，**仍然有效**；Round-3 只把它的时间锚从 "R16" 改成 `FZ-1`）；
 不要在 R02 完成之前把 `Dedication` 视为已收敛。
+> **⚠ Round-3 交叉注记（与 `16` 的 freeze 漏洞相关；依 R-D9）：**
+> 逐字保留的原文 *"不要在 R16 之前冻结任何转移律的函数形式"* **方向正确，但与 `16` 的
+> freeze 漏洞**同向**：`16` 的 `FREEZE_RECORD` 字段 12 允许写 `TBD_AT_FZ1`，
+> 于是"不冻结函数形式"会被读成"主 estimand 也可以晚定"。
+> **Round-3 的区分（`16 §11.2` 已落地）：**
+> **"不冻结函数形式"与"冻结 estimand"是两件事。前者可以晚，后者不能。**
+> ⇒ **本文件的建议已据此改写（不是新增一条禁令，是把原句的时间锚从 "R16" 换成 `FZ-1`）：**
+> **不要在 `FZ-1` 之前冻结任何转移律的函数形式（`16` 要求 `FZ-1` 在看 holdout 之前）；
+> 但 `primary_estimand` 必须在 `FZ-1` 冻结，与函数形式是否已裁决无关。**
+> ⚠ **"不要在 R16 之前冻结函数形式"这句话在 `16` 的语境下继续有效**；
+> 需要被禁止的只是**由它推出的**"estimand 也可以晚定"。
 
 ---
 
@@ -1046,6 +1541,17 @@ s(n) = ⊥      若  使 s 可判定的 dyadic state 任一为 ⊥
 30. Kenny, D. A., & Ledermann, T. (2010). Detecting, measuring, and testing dyadic patterns in the actor–partner interdependence model. *Journal of Family Psychology*, 24(3), 359–366. https://doi.org/10.1037/a0019651
 
 `CITED_SECONDARY`（转述，未读原文）：S20, S27, S29, S30, S31。
+
+> **⚠ Round-3：三个承载源标 `PENDING_EVIDENCE_CHECK (R3-E3)`（sibling child 正在复核；本轮未打开）。**
+> **标记，不猜测 —— 既不主张也不否认其内容：**
+> - **`S04`**（第 4 条，Joel et al. 2020）：精确主张待核。
+> - **`S19`**（第 19 条，Lavner et al. 2012）：**精确措辞与 Table 5 待核。**
+>   ⚠ **本文件不复述 Table 5 的任何数值**，也**不**据其判定 `DVA` 的胜负。
+> - **`S31`**：`Ideal` / RGM 的来源。⚠ **在核实前，`Ideal` 不得进入 `PARAMETER_CONVERGENCE`**
+>   （§12 裁决请求 2 = `HOLD`；§7 状态块）。
+>
+> **本轮（R06 的 Round-3 pass）未打开任何新来源。** 凡标 `NOT_OPENED` 者即为未打开；
+> 标 `AGENT_RECALL` / `UNVERIFIED` 者本轮**同样未打开**（状态不变）。
 
 `FETCH_FAILED`（如实记录，未用作支撑）：F01–F08（见 packet §2.2）。
 
