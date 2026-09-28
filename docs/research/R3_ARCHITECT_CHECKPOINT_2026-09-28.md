@@ -136,3 +136,66 @@ X01–X03 initial reconnaissance is durable in:
 - `#20/#21/#22 = ISOLATED`
 - `EYE/JUECE MUTATION = FORBIDDEN`
 - `CANONICAL MUTATION = only through repaired integration PR and later exact-head review`
+
+
+---
+
+## Follow-up exact-head review — X04 / X05
+
+**Exploration branch exact tip reviewed:** `919ef87150ca16951a9313c5a5c62763e52d099e`  
+**Compare to main:** 7 commits ahead / 0 behind.
+
+New durable artifacts reviewed:
+- X04 benchmark population plan @ `bb88a36536a0489ba3a31a9c7e2a3130bdaaa6ff`
+- X05 observability evidence audit @ `919ef87150ca16951a9313c5a5c62763e52d099e`
+
+### X04 disposition
+
+**ACCEPT AS RESEARCH DESIGN INPUT / NOT VALIDATION.**
+
+Accepted design constraints:
+- controlled decoupling is the primary minimality arm;
+- target at least 2 positive + 1 adversarial case per D1-D8;
+- hidden expected-bearing metadata must be frozen before mapping;
+- naturalistic public-domain material is only a realism stress test;
+- D8 may survive ablation through a lossless derived representation, which counts as redundancy/DERIVE evidence rather than benchmark failure;
+- author intent alone never establishes construct necessity.
+
+Do not freeze or run X04 until the future integrated #33/#34/#35 semantics are pinned to an exact reviewed head.
+
+### X05 disposition
+
+**ACCEPT AS PARTIAL REPAIR INPUT / NOT A COMPLETE REGISTRY.**
+
+Architect accepts these invariants:
+1. `UNASSESSED != NO`.
+2. measurement channel != epistemic target != ontology layer.
+3. behavioral anchor != construct identity.
+4. Action/Event membership does not imply direct observability.
+5. partner report of an internal state is an informant estimate/belief unless the target itself is externally observable.
+6. `Withhold` and `Misrepresent` require relational evidence beyond silence/speech alone.
+
+The proposed schema direction is accepted:
+`construct_ref + epistemic_target + channel + directness + assessment_status + temporal_resolution + evidence_provenance`.
+
+No X05 row is COMPLETE. Do not bulk-import the first-pass matrix as canonical truth.
+
+### Verification-policy correction
+
+The earlier integration order in this checkpoint listed three fresh review roles. Current `youling/ai-use/CONSTITUTION.md §7` controls and permits at most **one fresh independent Verifier** for ordinary complex/high-risk work unless Incident Mode or Human/Global Architect explicitly escalates.
+
+Therefore the executable integration sequence is superseded to:
+
+`#31 Repair-B -> #32 repaired-head revalidation -> #33/#34/#35 narrow repair -> architect/round3-integration-v0.1 -> ONE fresh independent semantic/consistency Verifier -> Project Architect exact-head/currentness review`.
+
+The Project Architect exact-head/currentness check is Architect Review, not another independent Verifier.
+
+### READY actions
+
+1. Repair #34/#35 now using X05 invariants; do not wait for X07 to fix known schema errors.
+2. Complete the already-adjudicated narrow #31 Repair-B.
+3. Revalidate #32 only against the final repaired #31 exact head.
+4. Continue research: `X09 -> X10 -> X06/X07/X11/X12`.
+5. Keep X04 fixture generation blocked until the integrated semantics head exists.
+
+No merge is authorized by this follow-up.
